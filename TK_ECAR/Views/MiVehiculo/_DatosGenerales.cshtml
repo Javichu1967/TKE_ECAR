@@ -1,0 +1,139 @@
+﻿@*<table id="tabledatosgenerales" cellspacing="0" width="100%">
+
+    <tbody>
+        <tr><td colspan="5"></td></tr>
+        <tr>
+            <td><strong>Marca</strong></td>
+            <td><strong>Modelo</strong></td>
+            <td><strong>Tipo vehiculo</strong></td>
+            <td><strong>Número bastidor</strong></td>
+        </tr>
+        <tr>
+            <td>PEUGEOT</td>
+            <td>207 1.4 Hdi</td>
+            <td>TURISMO</td>
+            <td>VF3WC8HZC9E041158</td>
+        </tr>
+        <tr>
+            <td><strong>Centro de coste</strong></td>
+            <td><strong>Delegación</strong></td>
+            <td><strong>Departamento</strong></td>
+            <td><strong>Ubicación</strong></td>
+            <td><strong>Empresa Renting</strong></td>
+
+        </tr>
+        <tr>
+            <td>103081 TALAVERA MOI</td>
+            <td>TALAVERA</td>
+            <td>P.V.</td>
+            <td>Ubicación</td>
+            <td>LEASEPLAN</td>
+        </tr>
+        <tr><td colspan="5"><h2>Datos seguro</h2></td></tr>
+        <tr>
+            <td><strong>Compañia</strong></td>
+            <td><strong>Poliza</strong></td>
+            <td><strong>Importe</strong></td>
+            <td><strong>Vencimiento</strong></td>
+            <td><strong>Tipo</strong></td>
+        </tr>
+        <tr>
+            <td>LEASEPLAN</td>
+            <td>EP00349402</td>
+            <td>702,80 €</td>
+            <td>01/11/2016</td>
+            <td>T.R.</td>
+        </tr>
+        <tr><td colspan="5"><h2>Observaciones</h2></td></tr>
+        <tr>
+            <td>Esto en un campo de observaciones </td>
+        </tr>
+    </tbody>
+</table>*@
+@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Models
+@model DatosGeneralesModel
+
+<style>
+    p {      
+      width: 100%;     
+      padding-right : 2px; 
+    }
+</style>
+<div class="notice notice-Lightgreen">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>@resourceView.TabDatosGenerales</h2>
+
+        </div>
+    </div>
+    <div class="row">
+        @Html.HiddenFor(model => model.IDEmpresa)
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.Matricula)</strong>
+            <p>@Html.DisplayFor(model => model.Matricula)</p>
+        </div>
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.Marca)</strong>
+            <p>@Html.DisplayFor(model => model.Marca)</p>
+        </div>
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.Modelo)</strong>
+            <p>@Html.DisplayFor(model => model.Modelo)</p>
+
+        </div>
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.TipoVehiculo)</strong>
+            <p>@Html.DisplayFor(model => model.TipoVehiculo)</p>
+
+        </div>
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.Bastidor)</strong>
+            <p>@Html.DisplayFor(model => model.Bastidor)</p>
+
+        </div>
+    </div>
+</div>
+ 
+<div class="notice notice-Lightgreen">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Datos seguro</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.Seguro_Compañia)</strong>
+            <p>@Html.DisplayFor(model => model.Seguro_Compañia)</p>
+        </div>
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.Seguro_Poliza)</strong>
+            <p>@Html.DisplayFor(model => model.Seguro_Poliza)</p>
+        </div>
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.Seguro_Importe)</strong>
+            <p>@Html.DisplayFor(model => model.Seguro_Importe)</p>
+        </div>
+        <div class="col-sm-3">
+            <strong>@Html.LabelFor(model => model.Seguro_FechaVencimiento)</strong>
+            <p>@Html.DisplayFor(model => model.Seguro_FechaVencimiento)</p>
+        </div>
+        <div class="col-sm-3">
+            <strong>@Html.LabelFor(model => model.Seguro_Tipo)</strong>
+            <p>@Html.DisplayFor(model => model.Seguro_Tipo)</p>
+        </div>
+    </div>
+</div>
+<br />
+<div class="notice notice-Lightgreen">
+    <div class="row">
+        <div class="col-sm-12">
+            <strong>@Html.LabelFor(model => model.Observaciones)</strong>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            @Html.DisplayFor(model => model.Observaciones)
+        </div>
+    </div>
+</div>

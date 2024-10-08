@@ -1,0 +1,57 @@
+﻿@model IncidenciaModel
+@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<link href="~/Content/styles/Application/Application.css" rel="stylesheet" />
+<section>
+    @Html.HiddenFor(m => m.LoginUsuario)
+    @Html.HiddenFor(m => m.CorreoCAU)
+    @Html.HiddenFor(m => m.NombreAplicacion)
+    @Html.HiddenFor(m => m.CodigoAplicacion)
+
+
+    <div class="panel panel-default notice notice-blueTK">
+        <div id="divPrinc">
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="tk-icon-big icon-tk-tag" style="margin-top:-20px"></div>
+                </div>
+                <div class="col-sm-10">
+                    <div>
+                        <div>
+                            @Html.DisplayFor(m => m.NombreUsuario)
+                        </div>
+                    </div>
+                    @Html.HiddenFor(m => m.NombreUsuario)
+
+                    <div class="form-group">
+                        <div class="nombre1">
+                            @Html.DisplayFor(m => m.CorreoUsuario)
+                        </div>
+                    </div>
+                    @Html.HiddenFor(m => m.CorreoUsuario)
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <label class="" for="DescripcionIncidencia">
+                        @resourceView.lblDescripcionIncidencia
+                    </label>
+                    @Html.TextAreaFor(m => m.DescripcionIncidencia, new { @style = "max-width: 529px; min-height: 250px; min-width: 529px; width: 529px; height: 257px; max-height: 500px;" })
+                </div>
+                @Html.HiddenFor(m => m.DescripcionIncidencia)
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="nombre2">@resourceView.lblTextoAdjunto</div>
+                </div>
+                <div class="col-md-6">
+                    @Html.EditorFor(m => m.FileToImport)
+                </div>
+                @Html.HiddenFor(m => m.FileToImport)
+            </div>
+        </div>
+    </div>
+</section>

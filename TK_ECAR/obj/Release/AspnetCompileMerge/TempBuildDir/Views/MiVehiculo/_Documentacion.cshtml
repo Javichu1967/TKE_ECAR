@@ -1,0 +1,289 @@
+﻿@using resourceView = TK_ECAR.Content.resources
+@using TK_ECAR.Models
+@using TK_ECAR.Framework;
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="info">
+            @{
+                var actionLink = Ajax.ActionLink("JSTITLEMODAL", "NuevoDocumentoVehiculo", "MiVehiculo", new { matricula = "valormatricula" },
+                        new AjaxOptions
+                        {
+                            UpdateTargetId = "modalbodyDocumentacionVehiculo",
+                            OnSuccess = "showModalDocumentacionVehiculo();",
+                            OnComplete = "completeModal()",
+                            InsertionMode = InsertionMode.Replace,
+                            OnBegin = "setTitleModal('JSTITLEMODAL')",
+                            HttpMethod = "POST"
+                        }, new { @title = "tooltip", @class = "tk-icon-med icon-tk-plus", @style = "float: right;" }).ToString();
+            }
+            <span id="linkuser" style="float: right;">@resourceView.TK_ECAR_Resource.LNuevoDocumento</span>
+            @Html.Raw(actionLink.Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.LNuevoDocumento).Replace("valormatricula", @ViewData["Matricula"].ToString()))
+        </div>
+        <div style="float:left; margin: 6px; border-bottom: 1px solid #ddd;" class="col-sm-12" width="100%"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $.validator.setDefaults({ ignore: null }); //para validar campos ocultos
+</script>
+
+@using (Html.BeginForm("GrabaDocumentoVehiculo", "MiVehiculo", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "stripHtml('formDocumentacionVehiculo')", @id = "formDocumentacionVehiculo" }))
+{
+  @Html.AntiForgeryToken()
+
+    <input type="text" id="matricula" class="form-control" value=@ViewData["Matricula"] style="visibility:hidden" />
+
+    <table id="tableDocumentacion" class="display responsive" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>idDocumento</th>
+                <th>Documento</th>
+                <th>FechaAlta</th>
+                <th>IdAlerta</th>
+                <th>idCategoria</th>
+                <th>Matricula</th>
+                <th>@TK_ECAR.Content.resources.ModelsResources.lblCategoria</th>
+                <th>@TK_ECAR.Content.resources.ModelsResources.lblDescripcion</th>
+                <th class="text-center">@resourceView.TK_ECAR_Resource.DataTableCabAccion</th>
+
+            </tr>
+        </thead>
+    </table>
+
+    <div class="modal fade" id="modalDocumentacionVehiculo" role="dialog">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog  vertical-align-center">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="modal-header-logo"></span>
+                        </button>
+                        <h4 class="modal-title" id="modaltitleDocumentacionVehiculo"> </h4>
+                    </div>
+
+                    <div class="modal-body">
+                        @*<div id="toast-container"></div>*@
+                        <div id="modalbodyDocumentacionVehiculo"></div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="btnaceptarDocumentacionVehiculo" class="btn btn-default">@resourceView.TK_ECAR_Resource.AccionAceptar</button>
+                        @*<button type="button" class="btn btn-cancel" data-dismiss="modal">@resourceView.TK_ECAR_Resource.AccionCerrar</button>*@
+                        <button type="button" id="btcancelarDocumentacionVehiculo" class="btn btn-cancel">@resourceView.TK_ECAR_Resource.AccionCerrar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @*@Html.Partial("_DocumentacionVehiculoModal")*@
+}
+
+<script type="text/javascript">
+    var _tableDocumentacion;
+    var uRl_DownLoadDoc;
+    var uRl_DeleteDoc;
+    var TipoITV = @((int)EnumTipoAlerta.ITV);
+
+    $(document).ready(function () {
+
+        $('#formDocumentacionVehiculo').validate({
+            ignore: [],
+        });
+
+        $('#existente').hide();
+
+        uRl_DownLoadDoc = '@Html.Raw(@Url.Action("DowmnLoadDocumentoVehiculo", "MiVehiculo", new { idDocumento = "valoriddocumento", matricula = "valormatricula", idAlerta = "valoridalerta", idCatergoria = "valoridcategoria" }))';
+        uRl_DeleteDoc = '@Html.Raw(@Url.Action("BorrarDocumentoVehiculo", "MiVehiculo", new { idDocumento = "valoriddocumento", matricula = "valormatricula" }))';
+
+        var _matricula = $("#matricula").val();
+
+        var uRl_DataTable = '@Url.Action("DocumentacionVehiculoJson", "MiVehiculo", new {matricula = "valormatricula" })';
+        uRl_DataTable = uRl_DataTable.replace("valormatricula", _matricula);
+
+        _tableDocumentacion = $('#tableDocumentacion').DataTable({
+            //"destroy": true,
+            "autoWidth": false,
+            "ordering": true,
+            "processing": true,
+            "paginate": true,
+            "ajax": {
+                "url": uRl_DataTable,
+                "datatype": "json",
+                "type": "POST"
+
+            },
+            "columns": [
+                { "data": "idDocumento" },
+                { "data": "Documento" },
+                { "data": "FechaAlta" },
+                { "data": "IdAlerta" },
+                { "data": "idCategoria" },
+                { "data": "Matricula" },
+                { "data": "DescCategoria" },
+                { "data": "DescDocumento" },
+                { "data": "Accion" }
+            ],
+            "language": {
+                "url": "//desapps.thyssenkrupp.gtk.local/TKCommon/Content/DataTables/i18n/Spanish.json"
+            },
+            //"data": respuesta.data,
+            "columnDefs": [
+            {
+                "targets": [0, 1, 2, 3, 4, 5],
+                "visible": false,
+                "searchable": false
+            },
+            @*{
+                "targets": 1,
+                "type": "html",
+                "render": function (data, type, row) {
+                    var cadena = row.Documento;
+                    var idalerta = row.IdAlerta;
+                    if (row.idDocumento == 0) {
+                        cadena = '@globalUtils.PathToUploadDocumentAlertas' + idalerta + "/" + row.Documento;
+                    }
+                    return cadena;
+                }
+            },*@
+            {
+                "targets": 8,
+                "type": "html",
+                "render": function (data, type, row) {
+                    var idalerta = row.IdAlerta;
+                    var cadena = "<div style='text-align: center'>";
+                    cadena += '<a href="#" onclick="downloadFileMiVehiculo(' + row.idDocumento + ',\'' + row.Matricula + '\',' + row.IdAlerta  + ', ' + row.idCategoria + ')" class="tk-icon icon-tk-download"  data-toggle = "tooltip" title = "@resourceView.TK_ECAR_Resource.btnVerDoc"> </a>';
+                    if (row.IdAlerta == 0 && row.idCategoria != TipoITV) {
+                        cadena += '<a href="#" onclick="deleteFileMiVehiculo(' + row.idDocumento + ',\'' + row.Matricula + '\')" class="tk-icon icon-tk-delete" data-toggle = "tooltip" title = "@resourceView.TK_ECAR_Resource.TitleDocumentacionBorrar"> </a>';
+                    }
+                    cadena += '</div>';
+                    return cadena;
+                }
+            }
+            ]
+        });
+
+        $("#formDocumentacionVehiculo").submit(function (e) {
+            if ($("#formDocumentacionVehiculo").valid()) {//validamos el form
+                LimpiaValidationSummary();
+                if ($("#Documento").val() != "") {
+                    var formData = new FormData(this);
+                    $.ajax({
+                        type: this.method,
+                        url: this.action,
+                        data: formData,
+                        contentType: false,
+                        processData: false
+                    }).done(function (data) {
+                        doneSuccess(data);
+                    });
+                }
+                else {
+                    $("#divValidationSummaryPanel_body ul").append(textError.replace("texto", '@Html.Raw(@resourceView.ModelsResources.RequiredFile)'));
+                    $('#divValidationSummary').addClass("validation-summary-errors").removeClass("validation-summary-valid");
+                    $("#divValidationSummary").show();
+                }
+            }
+
+            e.preventDefault();
+        });
+
+        $(document).on('click', '#btcancelarDocumentacionVehiculo', function (event) {
+            $('#modalDocumentacionVehiculo').modal('hide');
+        });
+
+    });
+
+    function doneSuccess(data) {
+
+        if (data == "Success") {
+            @*toastr["info"]("@resourceView.TK_ECAR_Resource.toastrInfDocumentoCorrecto");*@
+            notify('@resourceView.TK_ECAR_Resource.toastrInfAccionOK', 'i');
+            $('#modalDocumentacionVehiculo').modal('hide');
+            reloadTable();
+        }
+        else {
+            @*toastr["info"]("@resourceView.TK_ECAR_Resource.toastrInfDocumentoError");*@
+            notify('@resourceView.TK_ECAR_Resource.toastrInfDocumentoError', 'i');
+        }
+    }
+
+    function downloadFileMiVehiculo(idDocumento, matricula, idalerta, idcategoria) {
+        var uRl = uRl_DownLoadDoc.replace("valoriddocumento", idDocumento)
+                                    .replace("valormatricula", matricula)
+                                    .replace("valoridalerta", idalerta)
+                                    .replace("valoridcategoria", idcategoria);
+        //$.ajax({
+        //    type: 'POST',
+        //    url: uRl,
+        //    async: false,
+        //    success: function (data) {
+        window.location = uRl;
+        //    }
+        //});
+    }
+
+    function deleteFileMiVehiculo(idDocumento, matricula) {
+        var uRl = uRl_DeleteDoc.replace("valoriddocumento", idDocumento).replace("valormatricula", matricula);
+        confirm('@resourceView.TK_ECAR_Resource.TitleDocumentacionBorrar', '@resourceView.TK_ECAR_Resource.DocumentacionBorrar',
+            function (result) {
+                if (result) {
+                    $.ajax({
+                        type: "POST",
+                        async: false,
+                        url: uRl,
+                        dataType: "json",
+                        contentType: "application/json"
+                    }).done(function (data) {
+                        if (data == 'Success') {
+                            @*toastr["info"]("@resourceView.TK_ECAR_Resource.toastrInfDocumentoBorradoCorrecto");*@
+                            notify('@resourceView.TK_ECAR_Resource.toastrInfDocumentoBorradoCorrecto', 'i');
+                            reloadTable();
+                        }
+                        else {
+                            @*toastr["info"]("@resourceView.TK_ECAR_Resource.toastrInfDocumentoError");*@
+                            notify('@resourceView.TK_ECAR_Resource.toastrInfDocumentoError', 'i');
+                        }
+                    });
+                }
+            });
+    };
+
+    function reloadTable() {
+        _tableDocumentacion.ajax.reload(null, false);
+        //_tableDocumentacion
+        //.clear();
+
+        //_tableDocumentacion.rows.add(data)
+        //.draw();
+    }
+
+
+    function showModalDocumentacionVehiculo() {
+        $('#modalDocumentacionVehiculo').modal('show');
+    }
+    function setTitleModal(title) {
+        $('#modaltitleDocumentacionVehiculo').text(title);
+    }
+
+    //function completeModal() {
+    //    //para que funcione los validadores a la viewpartial recien creada.
+    //    //reconstruye el DOM con los validadores de los campos nuevos
+    //    $("form").removeData("validator");
+    //    $("form").removeData("unobtrusiveValidation");
+    //    $.validator.unobtrusive.parse("form");
+    //    $("form").validate();
+    //}
+
+
+    $("#modalDocumentacionVehiculo").on('hidden.bs.modal', function () {
+        $(this).data('bs.modal', null);
+    });
+
+
+</script>
+
+ 

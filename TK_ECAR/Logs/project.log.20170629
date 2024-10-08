@@ -1,0 +1,311 @@
+2017-06-29 09:22:46,130 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 93, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 93. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:46,199 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 97, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 97. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:46,519 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 141, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 141. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 3. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:46,582 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 148, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 148. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:46,632 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 154, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 154. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:47,101 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 220, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 220. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:47,442 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 267, PASO <GENERANDO CONDUCTOR> FILA -> 267. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:47,491 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 272, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 272. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:47,670 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 299, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 299. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:47,821 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 322, PASO <GENERANDO CONDUCTOR> FILA -> 322. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:48,039 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 349, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 349. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:48,360 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 403, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 403. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:48,389 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 404, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 404. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:48,417 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 405, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 405. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:48,802 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 467, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 467. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:48,862 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 474, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 474. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:48,901 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 478, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 478. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:49,102 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 511, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 511. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:49,302 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 541, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 541. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:49,321 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 542, PASO <GENERANDO CONDUCTOR> FILA -> 542. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:49,348 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 544, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 544. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:22:49,499 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 566, PASO <GENERANDO CONDUCTOR> FILA -> 566. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:26,152 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 93, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 93. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:26,193 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 97, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 97. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:26,499 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 141, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 141. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 3. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:26,555 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 148, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 148. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:26,617 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 154, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 154. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:27,039 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 220, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 220. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:27,353 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 267, PASO <GENERANDO CONDUCTOR> FILA -> 267. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:27,404 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 272, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 272. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:27,588 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 299, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 299. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:27,735 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 322, PASO <GENERANDO CONDUCTOR> FILA -> 322. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:27,913 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 349, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 349. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:28,261 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 403, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 403. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:28,291 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 404, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 404. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:28,312 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 405, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 405. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:28,675 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 467, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 467. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:28,741 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 474, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 474. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:28,787 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 478, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 478. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:29,007 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 511, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 511. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:29,203 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 541, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 541. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:29,217 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 542, PASO <GENERANDO CONDUCTOR> FILA -> 542. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:29,244 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 544, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 544. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:24:29,386 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 566, PASO <GENERANDO CONDUCTOR> FILA -> 566. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:17,480 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 93, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 93. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:17,540 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 97, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 97. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:17,759 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 141, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 141. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 3. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:17,803 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 148, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 148. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:17,846 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 154, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 154. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:18,166 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 220, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 220. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:18,376 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 267, PASO <GENERANDO CONDUCTOR> FILA -> 267. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:18,411 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 272, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 272. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:18,545 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 299, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 299. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:18,653 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 322, PASO <GENERANDO CONDUCTOR> FILA -> 322. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:18,800 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 349, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 349. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:19,055 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 403, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 403. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:19,075 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 404, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 404. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:19,095 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 405, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 405. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:19,392 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 467, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 467. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:19,432 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 474, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 474. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:19,471 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 478, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 478. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:19,629 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 511, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 511. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:19,780 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 541, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 541. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:19,797 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 542, PASO <GENERANDO CONDUCTOR> FILA -> 542. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:19,820 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 544, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 544. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:36:19,924 [7] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 566, PASO <GENERANDO CONDUCTOR> FILA -> 566. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:55,478 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 93, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 93. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:55,540 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 97, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 97. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:55,795 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 141, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 141. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 3. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:55,844 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 148, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 148. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:55,897 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 154, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 154. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:56,265 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 220, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 220. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:56,549 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 267, PASO <GENERANDO CONDUCTOR> FILA -> 267. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:56,605 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 272, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 272. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:56,750 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 299, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 299. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:56,886 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 322, PASO <GENERANDO CONDUCTOR> FILA -> 322. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:57,049 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 349, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 349. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:57,348 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 403, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 403. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:57,372 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 404, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 404. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:57,396 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 405, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 405. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:57,752 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 467, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 467. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:57,818 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 474, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 474. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:57,864 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 478, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 478. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:58,049 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 511, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 511. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:58,234 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 541, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 541. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:58,251 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 542, PASO <GENERANDO CONDUCTOR> FILA -> 542. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:58,283 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 544, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 544. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 09:40:58,416 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 566, PASO <GENERANDO CONDUCTOR> FILA -> 566. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-06-29 10:40:31,499 [11] INFO  <EXTRACTO> <ID_EXTRACTO> 000192654/01/2017, <TOTAL> 556,00 29/06/2017 10:40:31 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:31,522 [11] INFO  <IDENTIFICADOR> 1 de 9 <MATRICULA> 23-NC-42 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:40:31 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:31,554 [11] INFO  <INICIO TRANSACCIONES> 5 <FECHA IMPORTACIÓN> 29/06/2017 10:40:31 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:31,599 [11] INFO  <FINALIZADAS TRANSACCIONES> 5 <FECHA IMPORTACIÓN> 29/06/2017 10:40:31 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:31,600 [11] INFO  <IDENTIFICADOR> 2 de 9 <MATRICULA> 76-ND-64 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:40:31 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:31,607 [11] INFO  <INICIO TRANSACCIONES> 91 <FECHA IMPORTACIÓN> 29/06/2017 10:40:31 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:32,265 [11] INFO  <FINALIZADAS TRANSACCIONES> 91 <FECHA IMPORTACIÓN> 29/06/2017 10:40:32 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:32,266 [11] INFO  <IDENTIFICADOR> 3 de 9 <MATRICULA> 28-ND-42 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:40:32 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:32,282 [11] INFO  <INICIO TRANSACCIONES> 15 <FECHA IMPORTACIÓN> 29/06/2017 10:40:32 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:32,402 [11] INFO  <FINALIZADAS TRANSACCIONES> 15 <FECHA IMPORTACIÓN> 29/06/2017 10:40:32 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:32,403 [11] INFO  <IDENTIFICADOR> 4 de 9 <MATRICULA> 30-RO-04 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:40:32 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:32,414 [11] INFO  <INICIO TRANSACCIONES> 50 <FECHA IMPORTACIÓN> 29/06/2017 10:40:32 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:32,844 [11] INFO  <FINALIZADAS TRANSACCIONES> 50 <FECHA IMPORTACIÓN> 29/06/2017 10:40:32 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:32,844 [11] INFO  <IDENTIFICADOR> 5 de 9 <MATRICULA> 82-NN-40 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:40:32 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:32,855 [11] INFO  <INICIO TRANSACCIONES> 10 <FECHA IMPORTACIÓN> 29/06/2017 10:40:32 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:32,954 [11] INFO  <FINALIZADAS TRANSACCIONES> 10 <FECHA IMPORTACIÓN> 29/06/2017 10:40:32 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:32,955 [11] INFO  <IDENTIFICADOR> 6 de 9 <MATRICULA> Desconhecida , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:40:32 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:32,966 [11] INFO  <INICIO TRANSACCIONES> 19 <FECHA IMPORTACIÓN> 29/06/2017 10:40:32 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:33,159 [11] INFO  <FINALIZADAS TRANSACCIONES> 19 <FECHA IMPORTACIÓN> 29/06/2017 10:40:33 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:33,160 [11] INFO  <IDENTIFICADOR> 7 de 9 <MATRICULA> 92-PE-46 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:40:33 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:33,171 [11] INFO  <INICIO TRANSACCIONES> 10 <FECHA IMPORTACIÓN> 29/06/2017 10:40:33 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:33,267 [11] INFO  <FINALIZADAS TRANSACCIONES> 10 <FECHA IMPORTACIÓN> 29/06/2017 10:40:33 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:33,269 [11] INFO  <IDENTIFICADOR> 8 de 9 <MATRICULA> 01-SG-38 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:40:33 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:33,289 [11] INFO  <INICIO TRANSACCIONES> 50 <FECHA IMPORTACIÓN> 29/06/2017 10:40:33 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:33,824 [11] INFO  <FINALIZADAS TRANSACCIONES> 50 <FECHA IMPORTACIÓN> 29/06/2017 10:40:33 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:33,826 [11] INFO  <IDENTIFICADOR> 9 de 9 <MATRICULA> 91-RQ-11 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:40:33 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:33,836 [11] INFO  <INICIO TRANSACCIONES> 41 <FECHA IMPORTACIÓN> 29/06/2017 10:40:33 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:34,277 [11] INFO  <FINALIZADAS TRANSACCIONES> 41 <FECHA IMPORTACIÓN> 29/06/2017 10:40:34 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:34,284 [11] INFO  <Finalizado el proceso de importación Via Verde... 29/06/2017 10:40:34 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:40:34,284 [11] INFO  ******************************************************************************************** - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:37,572 [44] INFO  <EXTRACTO> <ID_EXTRACTO> 017107674/12/2016, <TOTAL> 774,70 29/06/2017 10:46:37 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:37,573 [44] INFO  <IDENTIFICADOR> 1 de 9 <MATRICULA> 23-NC-42 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:46:37 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:37,586 [44] INFO  <INICIO TRANSACCIONES> 13 <FECHA IMPORTACIÓN> 29/06/2017 10:46:37 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:37,670 [44] INFO  <FINALIZADAS TRANSACCIONES> 13 <FECHA IMPORTACIÓN> 29/06/2017 10:46:37 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:37,671 [44] INFO  <IDENTIFICADOR> 2 de 9 <MATRICULA> 76-ND-64 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:46:37 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:37,678 [44] INFO  <INICIO TRANSACCIONES> 110 <FECHA IMPORTACIÓN> 29/06/2017 10:46:37 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:38,526 [44] INFO  <FINALIZADAS TRANSACCIONES> 110 <FECHA IMPORTACIÓN> 29/06/2017 10:46:38 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:38,527 [44] INFO  <IDENTIFICADOR> 3 de 9 <MATRICULA> 28-ND-42 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:46:38 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:38,537 [44] INFO  <INICIO TRANSACCIONES> 43 <FECHA IMPORTACIÓN> 29/06/2017 10:46:38 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:38,936 [44] INFO  <FINALIZADAS TRANSACCIONES> 43 <FECHA IMPORTACIÓN> 29/06/2017 10:46:38 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:38,937 [44] INFO  <IDENTIFICADOR> 4 de 9 <MATRICULA> 30-RO-04 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:46:38 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:38,947 [44] INFO  <INICIO TRANSACCIONES> 58 <FECHA IMPORTACIÓN> 29/06/2017 10:46:38 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:39,578 [44] INFO  <FINALIZADAS TRANSACCIONES> 58 <FECHA IMPORTACIÓN> 29/06/2017 10:46:39 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:39,579 [44] INFO  <IDENTIFICADOR> 5 de 9 <MATRICULA> 82-NN-40 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:46:39 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:39,593 [44] INFO  <INICIO TRANSACCIONES> 11 <FECHA IMPORTACIÓN> 29/06/2017 10:46:39 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:39,715 [44] INFO  <FINALIZADAS TRANSACCIONES> 11 <FECHA IMPORTACIÓN> 29/06/2017 10:46:39 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:39,717 [44] INFO  <IDENTIFICADOR> 6 de 9 <MATRICULA> 71-ND-72 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:46:39 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:39,729 [44] INFO  <INICIO TRANSACCIONES> 17 <FECHA IMPORTACIÓN> 29/06/2017 10:46:39 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:39,890 [44] INFO  <FINALIZADAS TRANSACCIONES> 17 <FECHA IMPORTACIÓN> 29/06/2017 10:46:39 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:39,892 [44] INFO  <IDENTIFICADOR> 7 de 9 <MATRICULA> 92-PE-46 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:46:39 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:39,910 [44] INFO  <INICIO TRANSACCIONES> 21 <FECHA IMPORTACIÓN> 29/06/2017 10:46:39 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:40,156 [44] INFO  <FINALIZADAS TRANSACCIONES> 21 <FECHA IMPORTACIÓN> 29/06/2017 10:46:40 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:40,157 [44] INFO  <IDENTIFICADOR> 8 de 9 <MATRICULA> 64-NE-91 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:46:40 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:40,170 [44] INFO  <INICIO TRANSACCIONES> 108 <FECHA IMPORTACIÓN> 29/06/2017 10:46:40 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:41,472 [44] INFO  <FINALIZADAS TRANSACCIONES> 108 <FECHA IMPORTACIÓN> 29/06/2017 10:46:41 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:41,474 [44] INFO  <IDENTIFICADOR> 9 de 9 <MATRICULA> 91-RQ-11 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:46:41 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:41,488 [44] INFO  <INICIO TRANSACCIONES> 38 <FECHA IMPORTACIÓN> 29/06/2017 10:46:41 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:41,997 [44] INFO  <FINALIZADAS TRANSACCIONES> 38 <FECHA IMPORTACIÓN> 29/06/2017 10:46:41 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:41,999 [44] INFO  <Finalizado el proceso de importación Via Verde... 29/06/2017 10:46:41 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:46:42,001 [44] INFO  ******************************************************************************************** - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:48:20,931 [25] INFO  <EXTRACTO> <ID_EXTRACTO> 015654453/11/2016, <TOTAL> 22215,98 29/06/2017 10:48:20 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:48:20,931 [25] INFO  <IDENTIFICADOR> 1 de 2 <MATRICULA> 39-RS-08 , <REF_PAGAMENTO> 10022857319 <FECHA IMPORTACIÓN> 29/06/2017 10:48:20 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:48:20,959 [25] INFO  <INICIO TRANSACCIONES> 2 <FECHA IMPORTACIÓN> 29/06/2017 10:48:20 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:48:20,971 [25] INFO  <FINALIZADAS TRANSACCIONES> 2 <FECHA IMPORTACIÓN> 29/06/2017 10:48:20 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:48:20,971 [25] INFO  <IDENTIFICADOR> 2 de 2 <MATRICULA> 39-RS-13 , <REF_PAGAMENTO> 10022857319 <FECHA IMPORTACIÓN> 29/06/2017 10:48:20 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:48:20,982 [25] INFO  <SE BORRAN TODODAS LAS TRANSACCIONES DEL IDENTIFICADOR POR YA EXISTIR EN BBDD> <IDENTIFICADOR> 2 de 2  <MATRICULA> 39-RS-13 , <REF_PAGAMENTO> 10022857319 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:48:21,066 [25] INFO  <INICIO TRANSACCIONES> 6 <FECHA IMPORTACIÓN> 29/06/2017 10:48:21 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:48:21,133 [25] INFO  <FINALIZADAS TRANSACCIONES> 6 <FECHA IMPORTACIÓN> 29/06/2017 10:48:21 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:48:27,093 [25] INFO  <Finalizado el proceso de importación Via Verde... 29/06/2017 10:48:27 - [:0]
+2017-06-29 10:48:27,094 [25] INFO  ******************************************************************************************** - [:0]
+2017-06-29 10:48:38,423 [25] INFO  <EXTRACTO> <ID_EXTRACTO> 014045922/10/2016, <TOTAL> 969,10 29/06/2017 10:48:38 - [:0]
+2017-06-29 10:48:38,424 [25] INFO  <IDENTIFICADOR> 1 de 10 <MATRICULA> 23-NC-42 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:48:38 - [:0]
+2017-06-29 10:48:38,435 [25] INFO  <SE BORRAN TODODAS LAS TRANSACCIONES DEL IDENTIFICADOR POR YA EXISTIR EN BBDD> <IDENTIFICADOR> 1 de 10  <MATRICULA> 23-NC-42 , <REF_PAGAMENTO> 10031496737 - [:0]
+2017-06-29 10:48:38,443 [25] INFO  <INICIO TRANSACCIONES> 4 <FECHA IMPORTACIÓN> 29/06/2017 10:48:38 - [:0]
+2017-06-29 10:48:38,460 [25] INFO  <FINALIZADAS TRANSACCIONES> 4 <FECHA IMPORTACIÓN> 29/06/2017 10:48:38 - [:0]
+2017-06-29 10:48:38,461 [25] INFO  <IDENTIFICADOR> 2 de 10 <MATRICULA> 76-ND-64 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:48:38 - [:0]
+2017-06-29 10:48:38,473 [25] INFO  <SE BORRAN TODODAS LAS TRANSACCIONES DEL IDENTIFICADOR POR YA EXISTIR EN BBDD> <IDENTIFICADOR> 2 de 10  <MATRICULA> 76-ND-64 , <REF_PAGAMENTO> 10031496737 - [:0]
+2017-06-29 10:48:38,656 [25] INFO  <INICIO TRANSACCIONES> 86 <FECHA IMPORTACIÓN> 29/06/2017 10:48:38 - [:0]
+2017-06-29 10:48:39,123 [25] INFO  <FINALIZADAS TRANSACCIONES> 86 <FECHA IMPORTACIÓN> 29/06/2017 10:48:39 - [:0]
+2017-06-29 10:48:39,123 [25] INFO  <IDENTIFICADOR> 3 de 10 <MATRICULA> 28-ND-42 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:48:39 - [:0]
+2017-06-29 10:48:39,131 [25] INFO  <SE BORRAN TODODAS LAS TRANSACCIONES DEL IDENTIFICADOR POR YA EXISTIR EN BBDD> <IDENTIFICADOR> 3 de 10  <MATRICULA> 28-ND-42 , <REF_PAGAMENTO> 10031496737 - [:0]
+2017-06-29 10:48:39,160 [25] INFO  <INICIO TRANSACCIONES> 13 <FECHA IMPORTACIÓN> 29/06/2017 10:48:39 - [:0]
+2017-06-29 10:48:39,251 [25] INFO  <FINALIZADAS TRANSACCIONES> 13 <FECHA IMPORTACIÓN> 29/06/2017 10:48:39 - [:0]
+2017-06-29 10:48:39,251 [25] INFO  <IDENTIFICADOR> 4 de 10 <MATRICULA> 28-ND-50 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:48:39 - [:0]
+2017-06-29 10:48:39,259 [25] INFO  <SE BORRAN TODODAS LAS TRANSACCIONES DEL IDENTIFICADOR POR YA EXISTIR EN BBDD> <IDENTIFICADOR> 4 de 10  <MATRICULA> 28-ND-50 , <REF_PAGAMENTO> 10031496737 - [:0]
+2017-06-29 10:48:39,271 [25] INFO  <INICIO TRANSACCIONES> 4 <FECHA IMPORTACIÓN> 29/06/2017 10:48:39 - [:0]
+2017-06-29 10:48:39,301 [25] INFO  <FINALIZADAS TRANSACCIONES> 4 <FECHA IMPORTACIÓN> 29/06/2017 10:48:39 - [:0]
+2017-06-29 10:48:39,301 [25] INFO  <IDENTIFICADOR> 5 de 10 <MATRICULA> 76-ND-63 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:48:39 - [:0]
+2017-06-29 10:48:39,310 [25] INFO  <SE BORRAN TODODAS LAS TRANSACCIONES DEL IDENTIFICADOR POR YA EXISTIR EN BBDD> <IDENTIFICADOR> 5 de 10  <MATRICULA> 76-ND-63 , <REF_PAGAMENTO> 10031496737 - [:0]
+2017-06-29 10:48:39,412 [25] INFO  <INICIO TRANSACCIONES> 43 <FECHA IMPORTACIÓN> 29/06/2017 10:48:39 - [:0]
+2017-06-29 10:48:39,707 [25] INFO  <FINALIZADAS TRANSACCIONES> 43 <FECHA IMPORTACIÓN> 29/06/2017 10:48:39 - [:0]
+2017-06-29 10:48:39,708 [25] INFO  <IDENTIFICADOR> 6 de 10 <MATRICULA> 82-NN-40 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:48:39 - [:0]
+2017-06-29 10:48:39,716 [25] INFO  <SE BORRAN TODODAS LAS TRANSACCIONES DEL IDENTIFICADOR POR YA EXISTIR EN BBDD> <IDENTIFICADOR> 6 de 10  <MATRICULA> 82-NN-40 , <REF_PAGAMENTO> 10031496737 - [:0]
+2017-06-29 10:48:39,726 [25] INFO  <INICIO TRANSACCIONES> 2 <FECHA IMPORTACIÓN> 29/06/2017 10:48:39 - [:0]
+2017-06-29 10:48:39,739 [25] INFO  <FINALIZADAS TRANSACCIONES> 2 <FECHA IMPORTACIÓN> 29/06/2017 10:48:39 - [:0]
+2017-06-29 10:48:39,739 [25] INFO  <IDENTIFICADOR> 7 de 10 <MATRICULA> 71-ND-72 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:48:39 - [:0]
+2017-06-29 10:48:39,747 [25] INFO  <SE BORRAN TODODAS LAS TRANSACCIONES DEL IDENTIFICADOR POR YA EXISTIR EN BBDD> <IDENTIFICADOR> 7 de 10  <MATRICULA> 71-ND-72 , <REF_PAGAMENTO> 10031496737 - [:0]
+2017-06-29 10:48:39,818 [25] INFO  <INICIO TRANSACCIONES> 24 <FECHA IMPORTACIÓN> 29/06/2017 10:48:39 - [:0]
+2017-06-29 10:48:40,010 [25] INFO  <FINALIZADAS TRANSACCIONES> 24 <FECHA IMPORTACIÓN> 29/06/2017 10:48:40 - [:0]
+2017-06-29 10:48:40,010 [25] INFO  <IDENTIFICADOR> 8 de 10 <MATRICULA> 92-PE-46 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:48:40 - [:0]
+2017-06-29 10:48:40,019 [25] INFO  <SE BORRAN TODODAS LAS TRANSACCIONES DEL IDENTIFICADOR POR YA EXISTIR EN BBDD> <IDENTIFICADOR> 8 de 10  <MATRICULA> 92-PE-46 , <REF_PAGAMENTO> 10031496737 - [:0]
+2017-06-29 10:48:40,086 [25] INFO  <INICIO TRANSACCIONES> 20 <FECHA IMPORTACIÓN> 29/06/2017 10:48:40 - [:0]
+2017-06-29 10:48:40,249 [25] INFO  <FINALIZADAS TRANSACCIONES> 20 <FECHA IMPORTACIÓN> 29/06/2017 10:48:40 - [:0]
+2017-06-29 10:48:40,250 [25] INFO  <IDENTIFICADOR> 9 de 10 <MATRICULA> 64-NE-91 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:48:40 - [:0]
+2017-06-29 10:48:40,263 [25] INFO  <SE BORRAN TODODAS LAS TRANSACCIONES DEL IDENTIFICADOR POR YA EXISTIR EN BBDD> <IDENTIFICADOR> 9 de 10  <MATRICULA> 64-NE-91 , <REF_PAGAMENTO> 10031496737 - [:0]
+2017-06-29 10:48:40,884 [25] INFO  <INICIO TRANSACCIONES> 138 <FECHA IMPORTACIÓN> 29/06/2017 10:48:40 - [:0]
+2017-06-29 10:48:42,413 [25] INFO  <FINALIZADAS TRANSACCIONES> 138 <FECHA IMPORTACIÓN> 29/06/2017 10:48:42 - [:0]
+2017-06-29 10:48:42,414 [25] INFO  <IDENTIFICADOR> 10 de 10 <MATRICULA> 91-RQ-11 , <REF_PAGAMENTO> 10031496737 <FECHA IMPORTACIÓN> 29/06/2017 10:48:42 - [:0]
+2017-06-29 10:48:42,423 [25] INFO  <SE BORRAN TODODAS LAS TRANSACCIONES DEL IDENTIFICADOR POR YA EXISTIR EN BBDD> <IDENTIFICADOR> 10 de 10  <MATRICULA> 91-RQ-11 , <REF_PAGAMENTO> 10031496737 - [:0]
+2017-06-29 10:48:42,621 [25] INFO  <INICIO TRANSACCIONES> 40 <FECHA IMPORTACIÓN> 29/06/2017 10:48:42 - [:0]
+2017-06-29 10:48:43,086 [25] INFO  <FINALIZADAS TRANSACCIONES> 40 <FECHA IMPORTACIÓN> 29/06/2017 10:48:43 - [:0]
+2017-06-29 10:48:43,087 [25] INFO  <Finalizado el proceso de importación Via Verde... 29/06/2017 10:48:43 - [:0]
+2017-06-29 10:48:43,088 [25] INFO  ******************************************************************************************** - [:0]
+2017-06-29 10:50:36,319 [7] INFO  <EXTRACTO> <ID_EXTRACTO> 015757745/11/2016, <TOTAL> 396,45 29/06/2017 10:50:36 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:50:36,341 [7] INFO  <IDENTIFICADOR> 1 de 2 <MATRICULA> 98-PR-46 , <REF_PAGAMENTO> 10022857319 <FECHA IMPORTACIÓN> 29/06/2017 10:50:36 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:50:36,396 [7] INFO  <SE BORRAN TODODAS LAS TRANSACCIONES DEL IDENTIFICADOR POR YA EXISTIR EN BBDD> <IDENTIFICADOR> 1 de 2  <MATRICULA> 98-PR-46 , <REF_PAGAMENTO> 10022857319 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:50:36,822 [7] INFO  <INICIO TRANSACCIONES> 116 <FECHA IMPORTACIÓN> 29/06/2017 10:50:36 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:50:37,784 [7] INFO  <FINALIZADAS TRANSACCIONES> 116 <FECHA IMPORTACIÓN> 29/06/2017 10:50:37 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:50:37,784 [7] INFO  <IDENTIFICADOR> 2 de 2 <MATRICULA> 62-MC-81 , <REF_PAGAMENTO> 10022857319 <FECHA IMPORTACIÓN> 29/06/2017 10:50:37 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:50:37,796 [7] INFO  <SE BORRAN TODODAS LAS TRANSACCIONES DEL IDENTIFICADOR POR YA EXISTIR EN BBDD> <IDENTIFICADOR> 2 de 2  <MATRICULA> 62-MC-81 , <REF_PAGAMENTO> 10022857319 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:50:38,151 [7] INFO  <INICIO TRANSACCIONES> 111 <FECHA IMPORTACIÓN> 29/06/2017 10:50:38 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:50:39,243 [7] INFO  <FINALIZADAS TRANSACCIONES> 111 <FECHA IMPORTACIÓN> 29/06/2017 10:50:39 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:50:39,247 [7] INFO  <Finalizado el proceso de importación Via Verde... 29/06/2017 10:50:39 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 10:50:39,248 [7] INFO  ******************************************************************************************** - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:158]
+2017-06-29 11:36:45,139 [7] INFO  <EXTRACTO> <ID_EXTRACTO> 015757745/11/2016, <TOTAL> 396,45 29/06/2017 11:36:45 - [:0]
+2017-06-29 11:36:45,192 [7] INFO  <IDENTIFICADOR> 1 de 2 <MATRICULA> 98-PR-46 , <REF_PAGAMENTO> 10022857319 <FECHA IMPORTACIÓN> 29/06/2017 11:36:45 - [:0]
+2017-06-29 11:36:45,244 [7] INFO  <SE BORRAN TODODAS LAS TRANSACCIONES DEL IDENTIFICADOR POR YA EXISTIR EN BBDD> <IDENTIFICADOR> 1 de 2  <MATRICULA> 98-PR-46 , <REF_PAGAMENTO> 10022857319 - [:0]
+2017-06-29 11:36:45,465 [7] INFO  <INICIO TRANSACCIONES> 116 <FECHA IMPORTACIÓN> 29/06/2017 11:36:45 - [:0]
+2017-06-29 11:36:46,311 [7] INFO  <FINALIZADAS TRANSACCIONES> 116 <FECHA IMPORTACIÓN> 29/06/2017 11:36:46 - [:0]
+2017-06-29 11:36:46,312 [7] INFO  <IDENTIFICADOR> 2 de 2 <MATRICULA> 62-MC-81 , <REF_PAGAMENTO> 10022857319 <FECHA IMPORTACIÓN> 29/06/2017 11:36:46 - [:0]
+2017-06-29 11:36:46,327 [7] INFO  <SE BORRAN TODODAS LAS TRANSACCIONES DEL IDENTIFICADOR POR YA EXISTIR EN BBDD> <IDENTIFICADOR> 2 de 2  <MATRICULA> 62-MC-81 , <REF_PAGAMENTO> 10022857319 - [:0]
+2017-06-29 11:36:46,802 [7] INFO  <INICIO TRANSACCIONES> 111 <FECHA IMPORTACIÓN> 29/06/2017 11:36:46 - [:0]
+2017-06-29 11:36:47,775 [7] INFO  <FINALIZADAS TRANSACCIONES> 111 <FECHA IMPORTACIÓN> 29/06/2017 11:36:47 - [:0]
+2017-06-29 11:36:47,777 [7] INFO  <Finalizado el proceso de importación Via Verde... 29/06/2017 11:36:47 - [:0]
+2017-06-29 11:36:47,778 [7] INFO  ******************************************************************************************** - [:0]

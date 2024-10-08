@@ -1,0 +1,16 @@
+﻿
+@Html.Hidden(ViewData.TemplateInfo.FormattedModelValue.ToString())
+<select id="miEmpleado" title="Seleccionar un empleado" search class="form-control">
+    <option value="' + @ViewData.TemplateInfo.FormattedModelValue.ToString() + '" selected="selected">@ViewData.TemplateInfo.FormattedModelValue.ToString()</option>
+</select> 
+<style type="text/css">
+    #miEmpleado_chosen {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+ <script type="text/javascript">
+     
+     $("#miEmpleado").ajaxChosen( );
+    
+</script>

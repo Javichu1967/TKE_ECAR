@@ -1,0 +1,2 @@
+2017-08-30 13:59:03,648 [5] ERROR <AñadeLEASEPLAN> <ELEMENTO> 1, <MATRICULA> 7644-JXR, The INSERT statement conflicted with the FOREIGN KEY constraint "FK_T_G_DATOS_LEASING_ECAR_Datos_Vehiculo". The conflict occurred in database "TKE_CAR_BOTAS", table "dbo.ECAR_Datos_Vehiculo", column 'Matricula'.
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:163]

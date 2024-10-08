@@ -1,0 +1,381 @@
+﻿@using resourceView = TK_ECAR.Content.resources
+@using TK_ECAR.Models
+@using TK_ECAR.Framework;
+@model ConductorECARModel
+
+@{
+    bool interno = Model.PersonalInterno;
+    bool pendienteDeDefinir = Convert.ToBoolean(Model.PendienteDefinir);
+}
+
+@Html.HiddenFor(m => m.Cod_Conductor)
+@Html.HiddenFor(m => m.IDEmpresa)
+@Html.HiddenFor(m => m.Accion)
+@Html.HiddenFor(m => m.PersonalInterno)
+@Html.HiddenFor(m => m.NumEmpleado)
+@Html.HiddenFor(m => m.CECO)
+@Html.HiddenFor(m => m.PendienteDefinir)
+@Html.HiddenFor(m => m.TipoDocumentoIdentificacion)
+
+<style>
+    .alert-info-definir {
+            color: #31708f;
+            background-color: #d9edf7;
+            border-color: #bce8f1;
+            padding: 12px;
+            font-size: xx-large;
+            font-weight: bold;
+            text-align: center;
+
+            }
+</style >
+
+<div class="form-horizontal">
+    @{
+        if (pendienteDeDefinir)
+        {
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="sublinks col-sm-12 alert-info-definir">
+                        <span> @resourceView.ModelsResources.lblPendienteDefinir</span>
+                    </div>
+                </div>
+            </div>
+        }
+}
+
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.PersonalInterno, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-2" style="margin-left: -27px; margin-top: 6px;">
+            <div class="material-switch pull-right col-xm-2">
+                <input id = "marcaPersonalInterno" name="marcaPersonalInterno" type="checkbox" puedeDeshabilitarse = "SI" />
+                <label for="marcaPersonalInterno" class="label-primary"></label> @*label-default, label-primary, label-success, label-info, label-warning, label-danger*@
+                <span class="valorPersonalInterno">
+                    @Html.DisplayFor(m => m.PersonalInterno)
+                </span>            
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group" id="Empleado">
+        @Html.RequiredLabelFor(m => m.Conductor, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.EditorFor(m => m.Conductor)
+        </div>
+    </div>
+
+    <div class="form-group" id="NombreExterno">
+        @Html.RequiredLabelFor(m => m.Nombre, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+    <div class="form-group"  id="ApellidosExterno">
+        @Html.RequiredLabelFor(m => m.Apellidos, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.TextBoxFor(m => m.Apellidos, new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.DNI, new { @class = "control-label col-sm-3" })
+        <div class="col-md-8">
+            <div class="input-group">
+                <div class="input-group-btn">
+                    @Html.EditorFor(m => m.IdTipoDocumentoIdentificacion, new { @class = "form-control" })
+                </div>
+                @Html.TextBoxFor(m => m.DNI, new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+            </div>
+        </div>
+    </div>
+
+    @*<div class="form-group">
+        @Html.LabelFor(m => m.DNI, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.TextBoxFor(m => m.DNI, new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>*@
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Direccion, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.TextAreaFor(m => m.Direccion, new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Cod_Postal, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.TextBoxFor(m => m.Cod_Postal, new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Poblacion, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.TextBoxFor(m => m.Poblacion, new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Provincia, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.TextBoxFor(m => m.Provincia, new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Tlfn, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.TextBoxFor(m => m.Tlfn, new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Movil, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.TextBoxFor(m => m.Movil, new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Fecha_Nacimiento, new { @class = "control-label col-sm-3" })
+        <div class="col-md-4">
+            @Html.EditorFor(m => m.Fecha_Nacimiento, new {@puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.NumeroCarnetConducir, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.TextBoxFor(m => m.NumeroCarnetConducir, new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.Fecha_Carnet, new { @class = "control-label col-sm-3" })
+        <div class="col-md-4">
+            @Html.EditorFor(m => m.Fecha_Carnet, new { @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Fecha_Vencimiento_Carnet, new { @class = "control-label col-sm-3" })
+        <div class="col-md-4">
+            @Html.EditorFor(m => m.Fecha_Vencimiento_Carnet, new { @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.CECO, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.EditorFor(m => m.CECO, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-12">
+            @Html.Partial("_CustomValidationSummary", ViewData.ModelState)
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    var _Nombre = "";
+    var _Direccion = "";
+    var _Fecha_Nacimiento = "";
+    var _Cod_Postal = "";
+    var _Poblacion = "";
+    var _Provincia = "";
+    var _Apellidos = "";
+    var _DNI = "";
+    var _IDEmpresa = "";
+    var _CECO = "";
+    var _Email = "";
+    var _NumeroEmpleadoAnt = "";
+    var _NumeroEmpleadoInicial = "";
+
+    $(document).ready(function () {
+        if ($("#Accion").val() == '@EnumAccionEntity.Consulta') {
+            disableControlsConductor();
+        } else {
+            $('#aceptarConductor').show();
+        }
+
+
+        if ($("#PersonalInterno").val().toLowerCase() == "true") {
+            $("#marcaPersonalInterno").prop('checked', true);
+        }
+        CambioEsInterno($("#marcaPersonalInterno").is(':checked'), true);
+        _NumeroEmpleadoInicial = $('#NumEmpleado').val();
+    });
+
+    $("#marcaPersonalInterno").click(function () {
+        CambioEsInterno($("#marcaPersonalInterno").is(':checked'), false);
+    });
+
+    function CambioEsInterno(esInterno, inicial) {
+        if (esInterno) {
+            $("#PersonalInterno").val(true);
+            $("#Empleado").show();
+            $("#NombreExterno").hide();
+            $("#ApellidosExterno").hide();
+            //$("#Nombre").val('esinterno');
+            //$("#Apellidos").val('esinterno');
+
+            //$("#DNI").prop("readonly", true);
+            //$('#Fecha_Nacimiento').prop('disabled', true);
+            $('#miCECO').prop('disabled', true).trigger("chosen:updated");
+            jQuery(".valorPersonalInterno").html('@resourceView.TK_ECAR_Resource.ValorYES');
+        }
+        else {
+            LimpiaFiltroChosen("miConductor");
+            chosenConductor();
+            $('#miCECO').prop('disabled', false).trigger("chosen:updated");
+            $("#PersonalInterno").val(false);
+            $("#Empleado").hide();
+            $("#NombreExterno").show();
+            $("#ApellidosExterno").show();
+            if (!inicial) {
+                //$("#Nombre").val('');
+                //$("#Apellidos").val('');
+
+                $("#DNI").prop("readonly", false);
+                $('#Fecha_Nacimiento').prop('disabled', false);
+                //$('#CECO').prop('readonly', false);
+            }
+            jQuery(".valorPersonalInterno").html('@resourceView.TK_ECAR_Resource.ValorNO');
+        }
+        if (!inicial) {
+            LimpiaDatos();
+        }
+    }
+
+    $('#miConductor').on('change', function(evt, params) {
+        _NumeroEmpleadoAnt = $('#NumEmpleado').val();
+        //if (this.value != '') {
+        if (evt.target.selectedIndex != 0) { //No hay seleccionado ninguno si es = 0.
+            $('#NumEmpleado').val(this.value);
+            _Nombre = "";
+            _Direccion = "";
+            _Fecha_Nacimiento = "";
+            _Cod_Postal = "";
+            _Poblacion = "";
+            _Provincia = "";
+            _Apellidos = "";
+            _DNI = "";
+            _IDEmpresa = "";
+            _CECO = "";
+            _Email = "";
+            $.ajax({
+                url: '@Url.Action("GetConductorSAPByID", "Conductores")',
+                type: "POST",
+                data: {
+
+                    ID: $('#NumEmpleado').val(),
+                }
+            }).done(function (data) {
+                _Nombre = data.Nombre;
+                _Direccion = data.Direccion;
+                _Fecha_Nacimiento = data.Fecha_Nacimiento;
+                _Cod_Postal = data.Cod_Postal;
+                _Poblacion = data.Poblacion;
+                _Provincia = data.Provincia;
+                _Apellidos = data.Apellidos;
+                _DNI = data.DNI;
+                _IDEmpresa = data.IDEmpresa;
+                _CECO = data.CECOFormated;
+                _Email = data.Email;
+                if (_NumeroEmpleadoInicial != $('#NumEmpleado').val()) {
+                    $.ajax({ //COMPROBAR SI EXISTE
+                        url: '@Url.Action("ExisteConductor", "Conductores")',
+                        type: "POST",
+                        data: {
+                            ID: $('#NumEmpleado').val(),
+                        }
+                    }).done(function (data) {
+                        //SI NO EXISTE PONERLO
+                        if (data == 'NO') {
+                            ponValoresConductor();
+                        }
+                        else {
+                            $('#NumEmpleado').val(_NumeroEmpleadoAnt);
+                            notify('@resourceView.TK_ECAR_Resource.toastrInfConductorExistente', 'e');
+                        }
+                        chosenCentroCosteConductorSeleccionado();
+                    });
+                }
+                else {
+                    ponValoresConductor();
+                }
+            });
+        }
+        else {
+            $('#NumEmpleado').val('');
+            LimpiaDatos();
+        }
+    });
+
+
+    function ponValoresConductor() {
+        $('#Nombre').val(_Nombre);
+        $('#Direccion').val(_Direccion);
+        $('#Fecha_Nacimiento').val(_Fecha_Nacimiento);
+        $('#Cod_Postal').val(_Cod_Postal);
+        $('#Poblacion').val(_Poblacion);
+        $('#Provincia').val(_Provincia);
+        $('#Apellidos').val(_Apellidos);
+        $('#DNI').val(_DNI);
+        $('#IDEmpresa').val(_IDEmpresa);
+        $('#CECO').val(_CECO);
+        $('#Email').val(_Email);
+    }
+
+    function LimpiaDatos() {
+        $('#NumEmpleado').val('0');
+        $('#Direccion').val('');
+        //$('#Fecha_Nacimiento').val(data.Fecha_Nacimiento);
+        $('#Cod_Postal').val('');
+        $('#Poblacion').val('');
+        $('#Provincia').val('');
+        $('#Nombre').val('');
+        if ($('#PersonalInterno').val().toLowerCase() == "true") {
+            $('#Apellidos').val('esInterno');
+        }
+        else {
+            $('#Apellidos').val('');
+        }
+        $('#DNI').val('');
+        $('#IDEmpresa').val('');
+        $('#CECO').val('');
+        $('#Email').val('');
+        $('#Tlfn').val('');
+        $('#Movil').val('');
+
+        LimpiaFiltroChosen("miCECO");
+        chosenCentroCosteConductor();
+    }
+
+    function disableControlsConductor() {
+        $("[puedeDeshabilitarse=SI]").each(function () {
+            $(this).prop('disabled', true);
+            if (this.nextElementSibling != null) {
+                if (this.nextElementSibling.id.replace("_chosen", "") == this.id) {
+                    $('#' + this.id).prop('disabled', true).trigger("chosen:updated");
+                }
+            }
+        });
+        $('#aceptarConductor').hide(); 
+    }
+
+</script>
+
+ 

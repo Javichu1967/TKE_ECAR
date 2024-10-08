@@ -1,0 +1,249 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@*@model IEnumerable<TK_ECAR.Models.CategoriasDataTableModel>*@
+@using System.Configuration;
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="infoCategGestion">
+            @{
+                var actionLink = Ajax.ActionLink("JSTITLEMODAL", "NuevaCategoria", "Categorias", new { },
+                new AjaxOptions
+                {
+                    UpdateTargetId = "modalbodyCategorias",
+                    OnSuccess = "showModalCategorias();",
+                    OnComplete = "completeModal()",
+                    InsertionMode = InsertionMode.Replace,
+                    OnBegin = "setTitleModal('JSTITLEMODAL')"
+                }, new { @title = "tooltip", @class = "tk-icon-med icon-tk-plus", @style = "float: right;" }).ToString();
+            }
+            @*<h3>@resourceView.TitleCategorias    @Html.Raw(actionLink.Replace("JSTITLEMODAL", @resourceView.LNuevaCategoria))</h3>*@
+            <h3>@resourceView.TitleCategorias    
+                <span id="linkuser" style="float: right;">@resourceView.LAñadir</span> 
+                @Html.Raw(actionLink.Replace("JSTITLEMODAL", @resourceView.LNuevaCategoria).Replace("tooltip", @resourceView.LNuevaCategoria))
+            </h3>
+            <p>@resourceView.TitleCategoriasInf</p>
+        </div>
+    </div>
+</div>
+
+@*
+    @{
+        var actionLinkEdit = Ajax.ActionLink("JSTITLEACTION", "EditarCategoria", "Categorias", new { idDocumentacion = "JSVARTIPO" },
+        new AjaxOptions
+        {
+            UpdateTargetId = "modalbodyCategorias",
+            OnSuccess = "showModalCategorias();",
+            OnComplete = "completeModal()",
+            InsertionMode = InsertionMode.Replace,
+            OnBegin = "setTitleModal('JSTITLEMODAL')"
+        }).ToString();
+    }
+*@
+
+<table id="tableCategorias" class="display responsive" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>ID_Categoria</th>
+            <th>@resourceView.CategoriasCabOrdenacion</th>
+            <th>@resourceView.GeneralCabDescripcion</th>
+            <th>@resourceView.DataTableCabAccion</th>
+            @*<th>@resourceView.DataTableBaja</th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @*@foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                <img src="~/Content/img/Application/details_open.png"
+                     rel="@item.Descripcion" alt="expand/collapse">
+            </td>
+            <td>@item.ID_Categoria</td>
+            <td>@item.ID_Documento</td>
+            <td>@item.Ruta</td>
+            <td>@item.DescCategoria</td>
+            <td>@item.Nombre</td>
+            <td>
+                <span></span> @Html.Raw(actionLinkEdit.Replace("JSVARTIPO", (item.ID_Categoria).ToString()).Replace("JSTITLEACTION", @resourceView.AccionEditar).Replace("JSTITLEMODAL", @resourceView.TitleCategoriaEditar))
+            </td>
+        </tr>
+    }*@
+    </tbody>
+
+</table>
+
+@Html.Partial("_ModalCategorias")
+
+@section Scripts {
+
+
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecss")'>
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecssResponsive")'>
+    
+
+    <script src='@Scripts.Url("~/bundles/datatable")'> </script>
+    <script src='@Scripts.Url("~/bundles/dtresponsive")'> </script>
+
+
+    <script type="text/javascript">
+        var _tableCategorias = null;
+
+        var actionCategoria = '@Ajax.RawActionLink("textoQuitarPorVacio", "EditarCategorias", "Categorias", new { idCategoria = "valordelidaccion" },
+        new AjaxOptions { UpdateTargetId = "modalbodyCategorias", OnSuccess = "showModalCategorias();", OnComplete = "completeModal()", InsertionMode = InsertionMode.Replace },
+        new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" })';
+        actionCategoria = actionCategoria.replace("textoQuitarPorVacio", "");
+
+        $(document).ready(function () {
+            _tableCategorias = $('#tableCategorias').DataTable(
+                {
+                    "ordering": true,
+                    "processing": true,
+                    "paginate": true,
+                    "order": [[1, "asc"]],
+                    "ajax": {
+                        "url": '@Url.Action("CategoriasJson", "Categorias")',
+                        "datatype": "json",
+                        "type": "POST"
+
+                    },
+                    "columns": [
+                        { "data": "ID_Categoria" },
+                        { "data": "Ordenacion" },
+                        { "data": "Nombre" },
+                        { "data": "AccionDatatable" },
+                        //{ "data": "Baja" }
+                    ],
+                    "language": {
+                        "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.ArchivoIdiomaDataTable )'
+                    },
+                    "drawCallback": function () {
+                        $('[data-toggle="popover"]').popover({ html: true });
+                    },
+                    "columnDefs": [
+                    {
+                        "targets": 0,
+                        "visible": false,
+                        "searchable": false
+                        //,
+                        //"mRender": function ( data, type, row ) {
+                        //    return '<img src="/Content/img/Application/details_open.png" rel="' + row.Respuesta + '" alt="expand/collapse">';}
+                    },
+                    {
+                        "targets": 1,
+                        "width": "2%",
+                    },
+                    {
+                        "targets": 2,
+                        "width": "82%",
+                    },
+                    {
+                        "targets": 3,
+                        "orderable": false,
+                        "searchable": false,
+                        "className": "dt-center",
+                        "type": "html",
+                        "render": function (data, type, row) {
+                            var menuAcciones = "";
+                            menuAcciones = menuAcciones + "<a class='tk-icon-med icon-tk-edit tk-icon-bold ' "
+                                            + actionCategoria.replace("valordelidaccion", row.ID_Categoria)
+                                            .replace("TITTLEACCION", '@resourceView.AccionEditar')
+                                            .replace("accionmenu", "@resourceView.AccionEditar") + " </a>";
+                            menuAcciones = menuAcciones + "<a class='tk-icon-med icon-tk-delete tk-icon-bold tk-icon-red ' "
+                                            + "href='#' onclick='return clickBorrar(event," + row.ID_Categoria + ");' "
+                                            + " data-toggle = 'popover', data-placement = 'top', data-trigger = 'hover' "
+                                            + "data-content = '@Html.Raw(@resourceView.AccionBorrar)'>"
+                                            + "</a>";
+
+                            return menuAcciones;
+
+                            @*var actionCategoria = '@Ajax.RawActionLink("<span>TITTLEACCION</span>", "EditarCategorias", "Categorias", new { idCategoria = "valordelidaccion" },
+                            new AjaxOptions { UpdateTargetId = "modalbodyCategorias", OnSuccess = "showModalCategorias();", OnComplete = "completeModal()", InsertionMode = InsertionMode.Replace }, new { @class = "" })';
+                            actionCategoria = actionCategoria.replace("valordelidaccion", row.ID_Categoria); //Reemplazar valordelidaccion por el valor de row.columna
+                            actionCategoria = actionCategoria.replace("TITTLEACCION", '@resourceView.AccionEditar'); //Reemplazar TITTLEACCION por el valor de row.columna
+                            return actionCategoria;*@
+                        }
+                    },
+                    //{
+                    //    "targets": 4,
+                    //    "orderable": false,
+                    //    "type": "html",
+                    //    "render": function (data, type, row) {
+                    //        return syntaxLinkBaja(data, row);
+                    //    }
+                    //},
+                    ]
+                });
+        });
+
+
+        function syntaxLinkBaja(data, row) {
+            return "<a class='tk-icon icon-tk-delete tk-icon-bold tk-icon-red' href='#' onclick='return clickBorrar(event," + row.ID_Categoria + ");'></a>";
+        }
+
+        function clickBorrar(e, numCategoria) {
+            e.preventDefault();
+
+            var numDocumentosInCategoria = 0;
+
+            var linkCategorias = '@Html.Raw(Url.Action("GetDocumentosByCategoriaJson", "Categorias", new { categoria = "idborrar" }))';
+            linkCategorias = linkCategorias.replace("idborrar", numCategoria);
+            $.ajax({
+                "url": linkCategorias,
+                "async": false,
+                "dataType": 'json',
+                "success": function (data, t, x) {
+                    numDocumentosInCategoria = data.data.length;
+                }
+            });
+
+            var pregunta = '@resourceView.msgPreguntaBorrarCategoria';
+            if (numDocumentosInCategoria > 0) {
+                pregunta = pregunta + '</br></br>'
+                pregunta = pregunta + '<p>' + '@resourceView.preguntaBorrarCategoriaDocumento1' + " </p>";
+                pregunta = pregunta + '<p>' + '@resourceView.preguntaBorrarCategoriaDocumento2' + "</p>";
+                pregunta = pregunta.replace("numerodocumentos", numDocumentosInCategoria);
+            }
+
+            confirm('@resourceView.msgBorrarCategoria', pregunta,
+                function (result) {
+                    if (result) {
+                        var link = '@Html.Raw(Url.Action("BorraCategoriaDocumento", "Categorias", new { idCategoria = "idborrar" }))';
+                        link = link.replace("idborrar", numCategoria);
+                        $.ajax({
+                            "url": link,
+                            "dataType": 'json',
+                            "success": function (data, t, x) {
+                                reloadTablecategorias();
+                            }
+                        });
+                        //_tableCategorias.rows.draw();
+                    }
+                });
+
+
+        }
+
+
+        function reloadTablecategorias() {
+            _tableCategorias.ajax.reload(null, false);
+        }
+
+        function showModalCategorias() {
+            $('#modalCategorias').modal('show');
+        }
+        function setTitleModal(title) {
+            $('#modaltitleCategorias').text(title);
+        }
+
+        //function completeModal() {
+        //    //para que funcione los validadores a la viewpartial recien creada.
+        //    //reconstruye el DOM con los validadores de los campos nuevos
+        //    $("form").removeData("validator");
+        //    $("form").removeData("unobtrusiveValidation");
+        //    $.validator.unobtrusive.parse("form");
+        //    $("form").validate();
+        //}
+
+    </script>
+}
+

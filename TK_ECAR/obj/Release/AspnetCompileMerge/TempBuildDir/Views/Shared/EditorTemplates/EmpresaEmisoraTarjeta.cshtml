@@ -1,0 +1,59 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<select id="miEmpresaEmisora" title=@resourceView.LSelectCompany search class="form-control" data-placeholder=@resourceView.placeholderChosen>>
+    <option></option>
+</select>
+<style type="text/css">
+    #miEmpresaEmisora_chosen {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+<script type="text/javascript">
+
+    if ($("#IDEmpresaEmisora").val() != '') {
+        var uRl = '@Html.Raw(@Url.Action("GetEmpresaEmisoraTarjetaByID_Chosen", "TarjetasCombustible", new { ID = "idchosen" }))'
+        uRl = uRl.replace("idchosen", $("#IDEmpresaEmisora").val());
+        $.ajax({
+            "url": uRl,
+            "dataType": 'json',
+            //"async": false,
+            "success": function (data, t, x) {
+                $.each(data, function (i, val) {
+                    var $opt = $('<option value="' + val.value + '" selected="selected">').html(val.text);
+                    $('#miEmpresaEmisora').append($opt);
+                });
+
+                $("#miEmpresaEmisora").trigger("chosen:updated");
+            }
+        });
+    }
+
+    EmpresaChosen();
+
+    function EmpresaChosen() {
+        $("#miEmpresaEmisora").ajaxChosen({
+            type: 'GET',
+            url: '@Url.Action("GetEmpresasEmisorasTarjetaCombustible", "TarjetasCombustible")',
+            minTermLength: 0,
+            dataType: 'json'
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+
+        },
+            {
+                //options
+                disable_search_threshold: -1
+            });
+    }
+    //Pasar como parámetro a chosen el filtro de lo que se quiere.
+    $('#miEmpresaEmisora').change(function () {
+        $("#IDEmpresaEmisora").val(this.value);
+    });
+
+
+</script>

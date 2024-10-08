@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'TKTypeBoldRegular';
+    src: url('tktypebold.eot');
+    src: url('tktypebold.eot') format('embedded-opentype'),
+         url('tktypebold.woff') format('woff'),
+         url('tktypebold.ttf') format('truetype'),
+         url('tktypebold.svg#TKTypeBoldRegular') format('svg');
+}

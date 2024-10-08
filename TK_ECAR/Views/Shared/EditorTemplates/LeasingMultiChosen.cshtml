@@ -1,0 +1,44 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Framework;
+
+<select id="miEmpresasLeasing" title=@resourceView.LSelectCompany multiple="multiple" class="form-control">
+    <option></option>
+</select>
+<style type="text/css">
+    #miEmpresasLeasing_chosen {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+
+<script type="text/javascript">
+
+    $(function () {
+        EmpresasLeasingVehiculoChosen();
+    }); 
+
+    function EmpresasLeasingVehiculoChosen() {
+        var Url =  '@Html.Raw(@Url.Action("GetEmpresaVehiculo_chosen", "MiFlota", new { TipoEmpresa = "idTipo" }))'
+        Url = Url.replace("idTipo", @((int)@EnumTipoEmpresaVehiculo.Leasing));
+
+        $('#miEmpresasLeasing').ajaxChosen({
+            type: 'GET',
+            url: Url,
+            minTermLength: 0,
+            dataType: 'json',
+            "async": false,
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+        },
+            {
+                //options
+                disable_search_threshold: -1,
+                allow_single_deselect: true,
+            });
+    }
+
+</script>

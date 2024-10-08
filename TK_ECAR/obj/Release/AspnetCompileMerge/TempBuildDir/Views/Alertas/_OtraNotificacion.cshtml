@@ -1,0 +1,166 @@
+﻿@model DatosOtraNotificacionModel
+@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+@{
+    bool alta = (Model.IdAlerta == 0);
+
+    bool edicionRespuesta = (ViewBag.ModoEdicion ?? false);
+}
+@Html.HiddenFor(m => m.IdTipoAlerta)
+ <div class="form-horizontal"> 
+        <div class="form-group">
+            @Html.RequiredLabelFor(m => m.Matricula, new { @class = "control-label col-sm-3" })
+            <div class="col-sm-8">
+                @if (alta)
+                {
+                    @Html.EditorFor(m => m.Matricula)
+                }
+                else
+                { @Html.DisplayFor(m => m.Matricula) }
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.RequiredLabelFor(m => m.IdTipoClasificacion, new { @class = "control-label col-sm-3" })
+            <div class="col-sm-8">
+                @if (alta)
+                {
+                    @Html.DropDownListTipoClasificacion("IdTipoClasificacion", new { @class = "form-control" }, Model.IdTipoClasificacion)
+                }
+                else
+                {
+                    @Html.DropDownListTipoClasificacion("IdTipoClasificacion", new { @class = "form-control", @disabled = "disabled" }, Model.IdTipoClasificacion)
+                }
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.RequiredLabelFor(m => m.Observaciones, new { @class = "control-label col-sm-3" })
+            <div class="col-sm-8">
+
+                @if (alta)
+                {
+                    @Html.TextAreaFor(m => m.Observaciones, new { @class = "form-control" })
+                }
+                else
+                { @Html.DisplayFor(m => m.Observaciones) }
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.FileUpload, new { @class = "control-label col-sm-3" })
+            <div class="col-sm-8">
+                @if (alta)
+                {
+                    @Html.EditorFor(m => m.FileUpload)
+                }
+                else if (!string.IsNullOrEmpty(Model.FileDownload))
+                {
+
+                    <a href="@Url.Action("DownloadFile", "Alertas", new { idAlerta = Model.IdAlerta, fichero = Model.FileDownload })">
+                        @Html.DisplayFor(m => m.FileDownload)
+                    </a>
+
+                }
+            </div>
+        </div>
+        @*@using (Html.BeginForm("NotificarRespuesta", "Alertas", FormMethod.Post, new { enctype = "multipart/form-data", @id = "formNotificar" }))
+        {*@
+            @Html.HiddenFor(m => m.IdAlerta)
+
+            @*@Html.AntiForgeryToken()*@
+            @if (!alta)
+            {
+
+                <h2>@resourceView.TitleDarRespuesta</h2>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.ObservacionesRespuesta, new { @class = "control-label col-sm-3" })
+                            <div class="col-sm-8">
+                                @if (edicionRespuesta)
+                                {
+                                    @Html.TextAreaFor(m => m.ObservacionesRespuesta, new { @class = "form-control" })
+                                }
+                                else
+                                { @Html.DisplayFor(m => m.ObservacionesRespuesta) }
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(m => m.FileUploadRespuesta, new { @class = "control-label col-sm-3" })
+                            <div class="col-sm-8">
+
+
+                                @if (edicionRespuesta)
+                                {
+                                    @Html.EditorFor(m => m.FileUploadRespuesta)
+                                }
+                                else if (!string.IsNullOrEmpty(Model.FileDownloadRespuesta))
+                                {
+
+                                    <a href="@Url.Action("DownloadFile", "Alertas", new { idAlerta = Model.IdAlerta, fichero = Model.FileDownloadRespuesta })">
+                                        @Html.DisplayFor(m => m.FileDownloadRespuesta)
+                                    </a>
+
+                                }
+
+                            </div>
+                        </div>
+                        @if (edicionRespuesta)
+                        {
+                            <div class="form-group">
+                                <div class="col-sm-12 ">
+                                    <button type="submit" id="btnrespuesta" class="btn btn-default pull-right">@resourceView.AccionAceptar</button>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            }
+
+        @*}*@
+        <div class="form-group">
+            <div class="col-sm-12">
+                @Html.Partial("_CustomValidationSummary", ViewData.ModelState)
+            </div>
+        </div>
+
+ 
+</div>
+
+               
+<script type="text/javascript">
+
+    @*$("#formNotificar").submit(function (e) {
+
+        if ($("#formNotificar").valid()) {//validamos el form
+            var formData = new FormData(this);
+
+            $.ajax({
+                type: this.method,
+                url: this.action,
+                data: formData,
+                contentType: false,
+                processData: false
+
+            }).done(function (data, textStatus, jqXHR) {
+                if (data == 'Success') {
+
+                    tableAlertas.ajax.reload(null, false);
+
+                    notify('@resourceView.toastrInfAccionOK', 'i');
+
+
+                    $('#modalSolicitud').modal('hide');
+
+                }
+                else {
+                    notify(data, 'e');
+                }
+            });
+        }
+
+        e.preventDefault();
+    });*@
+
+
+</script>

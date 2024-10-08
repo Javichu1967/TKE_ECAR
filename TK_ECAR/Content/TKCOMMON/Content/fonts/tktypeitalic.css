@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'TKTypeRegularItalic';
+    src: url('tktypeitalic.eot');
+    src: url('tktypeitalic.eot') format('embedded-opentype'),
+         url('tktypeitalic.woff') format('woff'),
+         url('tktypeitalic.ttf') format('truetype'),
+         url('tktypeitalic.svg#TKTypeRegularItalic') format('svg');
+}

@@ -1,0 +1,26 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@model ModelStateDictionary
+ 
+<div id="divValidationSummaryBis" class="@(Html.ViewData.ModelState.IsValid ? "validation-summary-valid" : "validation-summary-errors") panel panel-danger" 
+  data-valmsg-summary ="true">
+
+  <div class="panel-heading">
+      <a style="color: #a94442;" data-toggle="collapse" data-target="#collapseListaErroresBis" href="#">
+          @resourceView.msgValidationSumary
+      </a>
+  </div>
+
+    <div id="collapseListaErroresBis" class="collapse in">
+        <div id="divValidationSummaryPanel_bodyBis" class="panel-body">
+            <ul id="ulListaErroresBis">
+                @foreach (var modelError in Model.SelectMany(keyValue => keyValue.Value.Errors))
+                {
+                    <li>
+                        @modelError.ErrorMessage
+                    </li>
+
+                }
+            </ul>
+        </div>
+    </div>
+</div>

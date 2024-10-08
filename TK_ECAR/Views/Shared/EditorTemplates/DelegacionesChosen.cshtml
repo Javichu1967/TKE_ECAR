@@ -1,0 +1,81 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<select id="miDelegacion" title=@resourceView.LSelectCompany search class="form-control" data-placeholder=@resourceView.placeholderChosen puedeDeshabilitarse = "SI">
+    <option></option>
+</select>
+<style type="text/css">
+    #miDelegacion_chosen {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+<script type="text/javascript">
+
+    if ($("#IDDelegacion").val() != '') {
+        SeleccionaDelegacion()
+    }
+
+    function SeleccionaDelegacion() {
+        var uRl = '@Html.Raw(@Url.Action("GetDelegacionByID_Chosen", "Filter", new { idDelegacion = "iddelegacionchosen", idEmpresa = "idempresachosen" }))';
+        uRl = uRl.replace("iddelegacionchosen", $("#IDDelegacion").val()).replace("idempresachosen", $("#IDEmpresa").val());
+        $.ajax({
+            "url": uRl,
+            "dataType": 'json',
+            "async": false,
+            "success": function (data, t, x) {
+                $.each(data, function (i, val) {
+                    var $opt = $('<option value="' + val.value + '" selected="selected">').html(val.text);
+                    $('#miDelegacion').append($opt);
+                });
+
+                $("#miDelegacion").trigger("chosen:updated");
+            }
+        });
+
+    }
+
+    DelegacionChosen();
+
+    function DelegacionChosen(DespuesDeBorrado) {
+        var uRl = '@Html.Raw(@Url.Action("GetDelegacionesByEmpresa_Chosen", "Filter", new { idEmpresa = "idempresachosen" }))';
+        uRl = uRl.replace("idempresachosen", $("#IDEmpresa").val());
+        if (DespuesDeBorrado == undefined || DespuesDeBorrado == false) {
+            $('#miDelegacion').prepend($('<option></option>').html('@resourceView.msgCargando'));
+        }
+        $("#miDelegacion").ajaxChosen({
+            type: 'GET',
+            url: uRl, @*'@Url.Action("GetDelegaciones", "MiFlotaController")',*@
+            minTermLength: 0,
+            dataType: 'json'
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+
+        },
+            {
+                //options
+                disable_search_threshold: -1,
+                allow_single_deselect: true,
+            });
+    }
+    //Pasar como parámetro a chosen el filtro de lo que se quiere.
+    $('#miDelegacion').change(function () {
+        $("#IDDelegacion").val(this.value);
+
+        LimpiaFiltroChosen("miCentroCoste");
+        chosenCentroCosteChosen(true);
+        $('#CentroCoste').val('');
+        $('#IDCentroCoste').val('');
+
+
+        //LimpiaFiltroChosen("miDepartamento");
+        //DepartamentoChosen();
+
+        //LimpiaFiltroChosen("miConductor");
+        //chosenConductor();
+    });
+
+</script>

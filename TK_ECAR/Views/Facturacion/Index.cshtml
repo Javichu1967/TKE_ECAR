@@ -1,0 +1,483 @@
+﻿@using resourceView = TK_ECAR.Content.resources
+@using TK_ECAR.Framework
+@using System.Configuration;
+@model TK_ECAR.Models.GeneracionFacturacionModels
+
+<script src='@Scripts.Url("~/bundles/choosenJqJs")'> </script>
+<script src='@Scripts.Url("~/bundles/choosenAjaxJs")'> </script>
+<link href="~/Content/styles/Site.css" rel="stylesheet" />
+
+<script type="text/javascript">
+    $.validator.setDefaults({ ignore: null }); //para validar campos ocultos
+</script>
+
+<section>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="infoImportar">
+                <h3>@resourceView.TK_ECAR_Resource.TitleFacturacion</h3>
+                <p>@resourceView.TK_ECAR_Resource.TitleFacturacionInf</p>
+            </div>
+            <div style="float:left; margin: 6px; border-bottom: 1px solid #ddd;" class="col-sm-12" width="100%"></div>
+        </div>
+    </div>
+
+    @using (Html.BeginForm("GenerarFacturacion", "Facturacion", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "stripHtml('formFacturacion')", id = "formFacturacion" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @*@Html.HiddenFor(model => model.IDEmpresa)*@
+        @Html.HiddenFor(model => model.IDEmpresaLeasing)
+        @Html.HiddenFor(model => model.FechaFacturacion)
+        <!-- File Upload Row -->
+        <div class="row">
+            <div class="form-horizontal">
+                <div class="notice notice-gray col-md-12">
+                    @*<div class="col-md-12">
+                        <div class="form-group">
+                            @Html.RequiredLabelFor(model => model.Empresa, new { @class = "control-label col-md-2" })
+                            <div class="col-md-6">
+                                @Html.EditorFor(model => model.Empresa)
+                            </div>
+                        </div>
+                    </div>*@
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.RequiredLabelFor(model => model.EmpresaLeasing, new { @class = "control-label col-md-2" })
+                            <div class="col-md-6">
+                                @Html.EditorFor(model => model.EmpresaLeasing)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.RequiredLabelFor(model => model.F_Facturacion, new { @class = "control-label col-md-2" })
+                            <div class="col-md-2">
+                                @Html.EditorFor(model => model.F_Facturacion)
+                            </div>
+                            <div class="col-md-4">
+                                <button id="btnFacturarLeasing" type="button" class="btn btn-default form-control"><i class="fa fa-spinner"></i>&nbsp;@resourceView.TK_ECAR_Resource.btnFacturarLeasing</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="rowValidationSummary">
+            <div class="form-group" id="divValidationSummary">
+                <div class="col-lg-12">
+                    @Html.Partial("_CustomValidationSummary", ViewData.ModelState)
+                </div>
+            </div>
+        </div>
+    }
+
+    <div style="float:left; margin: 6px; border-bottom: 1px solid #ddd;" class="col-sm-12" width="100%"></div>
+
+    <div class="row" id="rowProgress">
+        @Html.Partial("_Progress", @resourceView.TK_ECAR_Resource.TitleGenerarFacturacion)
+    </div>
+
+    <div class="row" id="rowResumen">
+        <h4 id="TituloResumen">
+            @resourceView.TK_ECAR_Resource.titleResumenFacturacion
+        </h4>
+
+        <table id="tableResumenImp" class="responsive compact stripe" cellspacing="0" width="100%" style="font-size: 12px;">
+            <thead>
+                <tr>
+                    <th>TipoLinea</th>
+                    <th>@resourceView.TK_ECAR_Resource.TitleResumen</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div class="row" id="rowResGeneracionFacturas">
+        <br />
+        <h4 id="TituloResGeneracionFacturas">
+            @resourceView.TK_ECAR_Resource.titleResumenGeneracionFacturas
+        </h4>
+
+        <table id="tableResGeneracionFacturas" class="display responsive" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>@resourceView.TK_ECAR_Resource.cabEmpresaFactura</th>
+                    <th>@resourceView.TK_ECAR_Resource.cabEmpresaLeasing</th>
+                    <th>@resourceView.TK_ECAR_Resource.cabNumFactura</th>
+                    <th>@resourceView.TK_ECAR_Resource.cabFechaFactura</th>
+                    <th>@resourceView.TK_ECAR_Resource.cabBaseFactura</th>
+                    <th>@resourceView.TK_ECAR_Resource.cabImpuestoFactura</th>
+                    <th>@resourceView.TK_ECAR_Resource.cabTotal</th>
+                </tr>
+            </thead>
+        </table>
+
+        <br />
+        <div class="form-horizontal">
+            @*<div class="col-md-12">
+                <div class="form-group">*@
+                    <div class="col-md-3 text-left">
+                        <button id="btnGenerarFacturas" type="button" class="btn btn-default form-control" style="margin-left: -15px;"><i class="fa fa-download"></i>&nbsp;@resourceView.TK_ECAR_Resource.btnFinalizarFacturasLeasing</button>
+                    </div>
+                    <div class="col-md-3 text-left">
+                        <button id="btnCancelar" type="button" class="btn btn-cancel form-control">@resourceView.TK_ECAR_Resource.AccionCancelar</button>
+                    </div>
+                @*</div>
+            </div>*@
+        </div>
+    </div>
+
+</section>
+
+<style>
+    .export-btn {
+        margin: 10px;
+        padding: 5px;
+    }
+    #tableResumenImp.dataTables_wrapper table thead{
+        display:none;
+    }
+</style>
+
+@section Scripts {
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecss")'>
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecssResponsive")'>
+
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/choosenCSS")'>
+
+    @*<script src="~/Content/scripts/signalR/jquery.signalR-2.2.2.js"></script>
+    <script src="~/signalr/hubs"></script> Hay que crear este directorio*@
+
+    <script src='@Scripts.Url("~/bundles/datatable")'> </script>
+    <script src='@Scripts.Url("~/bundles/dtresponsive")'> </script>
+    <script src='@Scripts.Url("~/bundles/DateTimeTableSortJs")'> </script>
+
+    <script src='@Scripts.Url("~/bundles/DataTablesButtonJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsFlashJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsHtml5Js")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesjszipJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesVfsFontsJs")'> </script>
+
+    <script src="~/Content/scripts/Application/Global.js"></script>
+    <script src="~/Content/scripts/Application/DataTableUtilities.js"></script>
+
+    <script type="text/javascript" language="javascript">
+        var tableResumenImp = null;
+        var tableResGeneracionFacturas = null;
+        var uRl = '@Url.Action("GenerarFacturacion", "Facturacion")';
+        var conexionEstablecida = false;
+        var backColorIncidencia = '#ffb400';
+        var backColorVehiculoExistente = '#ffb400';
+        var backColorError = '#e60050';
+        var backColorConductorNuevo = '#73c3f0';
+        var backColorResumen = '#eee';
+        var continuar = true;
+
+        $(document).ready(function () {
+            //$('#btnFacturarLeasing').hide();
+            $('#rowProgress').hide();
+            $('#rowResumen').hide();
+            $('#rowResGeneracionFacturas').hide();
+
+            $.fn.dataTable.moment('DD/MM/YYYY');
+
+            tableResumenImp = $('#tableResumenImp').DataTable({
+                "dom": 'Blfrtip',
+                "bInfo" : false,
+                "ordering": false,
+                "processing": true,
+                "paginate": true,
+                "pageLength": 10,
+                "buttons": [
+                    {
+                        text: '@resourceView.TK_ECAR_Resource.btnExportarExcel',
+                        extend: 'excel',
+                        className: 'btn btn-default export-btn',
+                        title: '@Html.Raw(@resourceView.TK_ECAR_Resource.titleResumenFacturacion + "_" + @resourceView.TK_ECAR_Resource.TitleFacturacion + "_")' + GetCurrentDateFormatYYYYMMDD(),
+                        exportOptions: {
+                            columns: [1]
+                        }
+                    }
+                ],
+                "ajax": {
+                    "url": '@Url.Action("ResumenProcesoFacturacionJson", "Facturacion")',
+                    "datatype": "json",
+                    "type": "POST",
+                },
+                "rowCallback": function (row, data, index) { //Cambiar formato de la línbea.
+                    switch (data.TipoLinea)
+                    {
+                        case @((int)EnumTipoLineaImportacion.ConceptoLeasinNoContemplado):
+                            $(row).css('background-color', backColorIncidencia);
+                            break;
+                        case @((int)EnumTipoLineaImportacion.Error):
+                            $(row).css('background-color', backColorError);
+                            $(row).css('color', '#ffffff');
+                            break;
+                        case @((int)EnumTipoLineaImportacion.Resumen):
+                            $(row).css('font-weight', 'bold');
+                            $(row).css('font-size', '15px');
+                            $(row).css('background-color', backColorResumen);
+                            break;
+                        case @((int)EnumTipoLineaImportacion.Normal):
+                            $(row).css('background-color', backColorResumen);
+                            break;
+                    }
+                },
+                "columns": [
+                        { "data": "TipoLinea" },
+                        { "data": "Texto" }
+                ],
+                "language": {
+                    "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.TK_ECAR_Resource.ArchivoIdiomaDataTable )'
+                },
+                //"data": respuesta.data,
+                "columnDefs": [
+                {
+                    "targets": 0,
+                    "visible": false,
+                    "searchable": false,
+                },
+                {
+                    "targets": 1,
+                    "searchable": true,
+                },
+                ]
+            });
+
+
+            tableResGeneracionFacturas = $('#tableResGeneracionFacturas').DataTable({
+                "dom": 'Blfrtip',
+                "ordering": true,
+                "processing": true,
+                "paginate": true,
+                "pageLength": 25,
+                "buttons": [
+                    {
+                        text: '@resourceView.TK_ECAR_Resource.btnExportarExcel',
+                        extend: 'excel',
+                        className: 'btn btn-default export-btn',
+                        title: '@Html.Raw(@resourceView.TK_ECAR_Resource.titleResumenFacturacion + "_" + @resourceView.TK_ECAR_Resource.titleResumenGeneracionFacturas + "_")' + GetCurrentDateFormatYYYYMMDD(),
+                        exportOptions: {
+                            columns: [0, 1, 2, 3, 4, 5, 6]
+                        }
+                    }
+                ],
+                "ajax": {
+                    "url": '@Url.Action("DatosResumenFacturasJson", "Facturacion")',
+                    "datatype": "json",
+                    "type": "POST",
+                },
+                "order": [0, 2],
+                "columns": [
+                        { "data": "EmpresaFactura" },
+                        { "data": "EmpresaLeasing" },
+                        { "data": "NumFactura" },
+                        { "data": "FechaFactura" },
+                        { "data": "BaseFactura_FORMATEADA" },
+                        { "data": "ImpuestoFactura_FORMATEADA" },
+                        { "data": "TotalFactura_FORMATEADA" },
+                ],
+                "language": {
+                    "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.TK_ECAR_Resource.ArchivoIdiomaDataTable )'
+                },
+                "columnDefs": [
+                 {
+                     "targets": 1,
+                     "visible": false,
+                     "searchable": false
+                 },
+                 {
+                    "targets": 3,
+                    "render": function (data, type, full, meta) {
+                        return formatJSONDate(data);
+                    }
+                },
+                {
+                    "targets": [4, 5, 6],
+                    "className": "dt-right",
+                }
+                ]
+            });
+
+            function formatJSONDate(jsonDate) {
+                var resul = moment(jsonDate);
+                return (resul && resul.isValid()) ? resul.format("DD/MM/YYYY") : "";
+            }
+
+
+            $(document).on('click', '#btnCancelar', function (event) {
+                var uRlReload = '@Html.Raw(@Url.Action("LimpiarSesionFacturacion", "Facturacion"))'
+                $.ajax({
+                    url: uRlReload,
+                    dataType: 'json',
+                    //async: false,
+                    success: function (data) {
+                        location.reload(true);
+                    }
+                });
+            });
+
+            //INICIO PROCESO DE GENERACIÓN FACTURAS
+            $(document).on('click', '#btnFacturarLeasing', function (event) {
+                if ($("#formFacturacion").valid()) {//validamos el form
+                    continuar = true;
+                    $(this).resetSummary();
+                    $("#formFacturacion").submit();
+                }else{
+                    $('#rowValidationSummary').show();
+                }
+            });
+
+            $("#formFacturacion").submit(function (e) {
+                e.preventDefault();
+                if ($("#btnFacturarLeasing").is(":visible")){
+                    //$("#rowValidationSummary").attr("style", "visibility: visible");
+                    if ($("#formFacturacion").valid()) {//validamos el form
+                        LimpiaValidationSummary();
+                        if (continuar){
+                            $("#rowValidationSummary").hide();
+                            $('#rowProgress').show();
+
+                            var formData = new FormData(this);
+                            $.ajax({
+                                type: "POST",
+                                url: uRl,
+                                dataType: 'json',
+                                //async: false,
+                                data: formData,
+                                contentType: false,
+                                processData: false,
+
+                                success: function (data) {
+                                    if (data == 'OK') {
+                                        ajaxSuccessFacturacion();
+                                        $('#btnFacturarLeasing').hide();
+                                        reloadtableResGeneracionFacturas();
+                                    }
+                                    else if (data == 'EMPTY'){
+                                        ajaxSuccessEmptyFacturacion();
+                                    }
+                                    else {
+                                        ajaxErrorFacturacion();
+                                        $('#btnFacturarLeasing').hide();
+                                        reloadtableResumenImpErrores();
+                                    }
+                                },
+                                error: function (error) {
+                                    ajaxErrorFacturacion();
+                                    $('#btnFacturarLeasing').hide();
+                                    reloadtableResumenImpErrores();
+                                }
+                            });
+                        }
+                    }else{
+                        $('#rowValidationSummary').show();
+                    }
+                }
+            });
+        });
+
+        $('#F_Facturacion').datepicker().on('changeDate', function (ev) {
+            $('#FechaFacturacion').val("1/" + $(this).val());
+        });
+
+        function reloadtableResumenImp() {
+            @*$("#TituloResumen").html('@resourceView.TK_ECAR_Resource.titleResumenFacturacion' + '  (CARGANDO)');
+            tableResumenImp.ajax.reload(null, false);
+            $("#TituloResumen").html('@resourceView.TK_ECAR_Resource.titleResumenFacturacion');
+            showResumen();*@
+        }
+
+        function reloadtableResumenImpErrores() {
+            $("#TituloResumen").html('@resourceView.TK_ECAR_Resource.titleResumenFacturacion' + '  (CARGANDO)');
+            tableResumenImp.ajax.reload(null, false);
+            $("#TituloResumen").html('@resourceView.TK_ECAR_Resource.titleResumenFacturacion');
+            showResumen();
+            }
+
+        function reloadtableResGeneracionFacturas() {
+            $("#TituloResGeneracionFacturas").html('@resourceView.TK_ECAR_Resource.titleResumenFacturacion' + '  (CARGANDO)');
+            tableResGeneracionFacturas.ajax.reload(null, false);
+            $("#TituloResGeneracionFacturas").html('@resourceView.TK_ECAR_Resource.titleResumenGeneracionFacturas');
+            showResumenGeneracionFacturas();
+        }
+        
+        function hideProgress_Resumen(){
+            $('#rowProgress').hide();
+            $('#rowResumen').hide();
+            $('#rowResGeneracionFacturas').hide();
+        }
+
+        function showResumen(){
+            $('#rowResumen').show();
+            //$('#rowResGeneracionFacturas').show();
+        }
+
+        function showResumenGeneracionFacturas(){
+            $('#rowResGeneracionFacturas').show();
+        }
+        
+        function ajaxSuccessFacturacion() {
+            notify('@resourceView.TK_ECAR_Resource.toastrInfFacturacionCorrecta', 'i');
+        }
+                
+        function ajaxSuccessEmptyFacturacion() {
+            notify('@resourceView.TK_ECAR_Resource.toastrInfFacturacionEmpty', 'i');
+        }
+        
+        function ajaxErrorFacturacion(message) {
+            notify('@resourceView.TK_ECAR_Resource.toastrInfFacturacionError', 'e');
+        }
+        //FIN PROCESO DE GENERACIÓN FACTURAS
+
+        //INICIO PROCESO DE GENERACIÓN DE ARCHIVOS FACTURACIÓN
+        $(document).on('click', '#btnGenerarFacturas', function (event) {
+            var uRlGenera = '@Html.Raw(@Url.Action("GeneraArchivosFacturacion", "Facturacion"))'; //GENERA LOS ARCHIVOS Y LOS GUARDA EN EL SERVIDOR.
+            var uRLdownLoadArchivos = '@Html.Raw(@Url.Action("DescargaArchivosFacturacion", "Facturacion"))'; //DESCARGA LOS ARCHIVOS GUARDADOS EN EL SERVIDOR.
+            //var formData = $('#formFacturacion').serialize();
+            $.ajax({
+                type: "POST",
+                "url": uRlGenera,
+                dataType: 'json',
+                async: false,
+                //data: formData,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    if (data == 'OK') {
+                        window.location = uRLdownLoadArchivos;
+                        ajaxSuccessGeneraArchivosFacturacion();
+                    }
+                    else if (data == 'SESSIONEMPTY') {
+                        ajaxErrorGeneraArchivosFacturacionSessionEmpty();
+                    }
+                    else{
+                        ajaxErrorGeneraArchivosFacturacion(data.replace("ERROR", ""));
+                    }
+                },
+                error: function (error) {
+                    ajaxErrorGeneraArchivosFacturacion(error);
+                }
+            });
+        });
+
+        function ajaxSuccessGeneraArchivosFacturacion() {
+            notify('@resourceView.TK_ECAR_Resource.toastrInfGeneracionFacturacionCorrecta', 'i');
+        }
+
+        function ajaxErrorGeneraArchivosFacturacion(message) {
+            notify('@resourceView.TK_ECAR_Resource.toastrInfGeneracionFacturacionError' + '<br />' + message, 'e');
+        }
+
+        function ajaxErrorGeneraArchivosFacturacionSessionEmpty() {
+            notify('@resourceView.TK_ECAR_Resource.toastrInfGeneracionFacturacionSessionEmptyError', 'e');
+            $('#btnFacturarLeasing').show();
+            $('#rowResGeneracionFacturas').hide();
+        }
+        //FIN PROCESO DE GENERACIÓN DE ARCHIVOS FACTURACIÓN
+
+    </script>
+}

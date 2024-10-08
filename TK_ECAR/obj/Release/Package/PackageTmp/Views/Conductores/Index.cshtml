@@ -1,0 +1,290 @@
+﻿@using resourceView = TK_ECAR.Content.resources
+@*@model IEnumerable<TK_ECAR.Models.CategoriasDataTableModel>*@
+@using System.Configuration;
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="infoMtoConductores">
+            @{
+                var actionLink = Ajax.ActionLink("JSTITLEMODAL", "NuevoConductor", "Conductores", new { },
+                new AjaxOptions
+                {
+                    UpdateTargetId = "modalbodyConductor",
+                    OnSuccess = "showModalConductor();",
+                    OnComplete = "completeModal()",
+                    InsertionMode = InsertionMode.Replace,
+                    OnBegin = "setTitleModal('JSTITLEMODAL')"
+                }, new { @title = "tooltip", @class = "tk-icon-med icon-tk-plus", @style = "float: right;" }).ToString();
+            }
+            <h3>@resourceView.TK_ECAR_Resource.TitleConductores
+                <span id="linkuser" style="float: right;">@resourceView.TK_ECAR_Resource.LAñadir</span> 
+                @Html.Raw(actionLink.Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.LNuevoConductor).Replace("tooltip", @resourceView.TK_ECAR_Resource.LNuevoConductor))
+            </h3>
+            <p>@resourceView.TK_ECAR_Resource.TitleConductoresInf</p>
+        </div>
+    </div>
+</div>
+
+<table id="tableConductor" class="display responsive" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>Cod_Conductor</th>
+            <th>@resourceView.ModelsResources.lblCECO</th>
+            <th>@resourceView.ModelsResources.lblNombre</th>
+            <th>@resourceView.ModelsResources.lblTelefono</th>
+            <th>@resourceView.ModelsResources.lblPendienteDefinir</th>
+            <th>@resourceView.TK_ECAR_Resource.DataTableCabAccion</th>
+            <th>DescEmpresa</th>
+            <th>NumEmpleado</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+@Html.Partial("_ModalConductores")
+
+<style>
+    .export-btn {
+        margin: 10px;
+        padding: 5px;
+    }
+</style>
+
+@section Scripts {
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecss")'>
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecssResponsive")'>
+    
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/choosenCSS")'>
+
+
+    <script src='@Scripts.Url("~/bundles/datatable")'> </script>
+    <script src='@Scripts.Url("~/bundles/dtresponsive")'> </script>
+
+    <script src='@Scripts.Url("~/bundles/choosenJqJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/choosenAjaxJs")'> </script>
+
+    <script src='@Scripts.Url("~/bundles/DataTablesButtonJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsFlashJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsHtml5Js")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesjszipJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesVfsFontsJs")'> </script>
+
+    <script src="~/Content/scripts/Application/DNI_NIF_CIF_Utilities.js"></script>
+    <script src="~/Content/scripts/Application/FilterUtilities.js"></script>
+
+    <script type="text/javascript">
+        var _tableConductor;
+
+        var actionEditarConductor = '@Ajax.RawActionLink("textoQuitarPorVacio", "EditarConductor", "Conductores", new { idConductor = "valordelidaccion" },
+        new AjaxOptions { UpdateTargetId = "modalbodyConductor",
+            OnSuccess = "showModalConductor();",
+            OnComplete = "completeModal()",
+            OnBegin = "setTitleModal('JSTITLEMODAL')",
+            InsertionMode = InsertionMode.Replace },
+        new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" })';
+        actionEditarConductor = actionEditarConductor.replace("textoQuitarPorVacio", "").replace('JSTITLEMODAL', '@resourceView.TK_ECAR_Resource.AccionEditar');
+
+        var actionConsultarConductor = '@Ajax.RawActionLink("textoQuitarPorVacio", "ConsultarConductor", "Conductores", new { idConductor = "valordelidaccion" },
+        new AjaxOptions { UpdateTargetId = "modalbodyConductor",
+            OnSuccess = "showModalConductor();",
+            OnComplete = "completeModal()",
+            OnBegin = "setTitleModal('JSTITLEMODAL')",
+            InsertionMode = InsertionMode.Replace },
+        new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" })';
+        actionConsultarConductor = actionConsultarConductor.replace("textoQuitarPorVacio", "").replace('JSTITLEMODAL', '@resourceView.TK_ECAR_Resource.AccionConsultar');
+
+
+        $(document).ready(function () {
+            _tableConductor = $('#tableConductor').DataTable(
+                {
+                    "dom": 'Blfrtip',
+                    "ordering": true,
+                    "processing": true,
+                    "paginate": true,
+                    //"serverSide": true,
+                    "pageLength": 10,
+                    "order": [[2, "asc"]],
+                    "buttons": [{
+                        text: '@resourceView.TK_ECAR_Resource.btnExportarExcel',
+                        extend: 'excel',
+                        className: 'btn btn-default export-btn',
+                        title: '@Html.Raw(@resourceView.TK_ECAR_Resource.TitleConductores)',
+                        exportOptions: {
+                            columns: [1, 2, 3, 6, 7]
+                        }
+                    }],
+                    "ajax": {         
+                        "url": '@Url.Action("ConductoresJson", "Conductores")',
+                        "datatype": "json",
+                        "type": "POST",
+                        //"data": function (d) { //Carga de DataTable Server-Side//Carga de DataTable Server-Side
+                        //    var orderColumn = "";
+                        //    var orderDir = "";
+                        //    d._search = d.search.value;
+                        //    d._start = d.start;
+                        //    d._length = d.length;
+                        //    if (d.order.length > 0) {
+                        //        orderColumn = d.columns[d.order[0].column].data;
+                        //        orderDir = d.order[0].dir;
+                        //    }
+                        //    d._orderColumnName = orderColumn;
+                        //    d._orderDirection = orderDir;
+                        //    d._draw = d.draw;
+                        //},
+                    },
+                    "columns": [
+                        { "data": "Cod_Conductor" },
+                        { "data": "CECO" },
+                        { "data": "NombreCompleto" },
+                        { "data": "Tlfn" },
+                        { "data": "PendienteDefinir" },
+                        { "data": "AccionDatatable" },
+                        { "data": "DescCECO" },
+                        { "data": "DescEmpresa" },
+                        { "data": "NumEmpleado" },
+                    ],
+                    "language": {
+                        "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.TK_ECAR_Resource.ArchivoIdiomaDataTable )'
+                    },
+                    "drawCallback": function () {
+                        $('[data-toggle="popover"]').popover({ html: true });
+                    },
+                    "columnDefs": [
+                    {
+                        "targets": [0],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": 1,
+                        "width": "2%", //"10%",
+                        "render": function (data, type, row) {
+                            if (data == null) {
+                                return '';
+                            }
+                            else {
+                                return "<a data-placement='right' data-toggle='popover' data-trigger='hover' data-content='"
+                                        + row.DescCECO + '<br/> <div style="float:left; margin: 6px; border-bottom: 1px solid #ddd;" class="col-sm-12" width="100%"></div>'
+                                        + row.DescEmpresa + "' >" + row.CECO + "</a>";
+                            }
+                        }
+
+                    },
+                    {
+                        "targets": 2,
+                        "width": "50%", //"70%",
+                    },
+                    {
+                        "targets": 3,
+                        "width": "20%",
+                    },
+                    {
+                        "targets": 4,
+                        "className": "dt-center",
+                        "visible": false, //Se lo pongo por no borrar la columna.
+                        "searchable": false,
+                        "width": "10%",
+                        "render": function (data, type, row) {
+                            if (row.PendienteDeDefinir) {
+                                return '@resourceView.TK_ECAR_Resource.ValorYES';
+                            }
+                            else {
+                                return '@resourceView.TK_ECAR_Resource.ValorNO';
+                            }
+                        }
+                    },
+                    {
+                        "targets": 5,
+                        "orderable": false,
+                        "searchable": false,
+                        "className": "dt-center",
+                        "type": "html",
+                        "render": function (data, type, row) {
+                            var menuAcciones = "";
+                            menuAcciones = menuAcciones + "<a class='tk-icon-med icon-tk-search tk-icon-bold ' "
+                                            + actionConsultarConductor.replace("valordelidaccion", row.Cod_Conductor)
+                                            .replace("TITTLEACCION", '@resourceView.TK_ECAR_Resource.AccionConsultar')
+                                            .replace("accionmenu", "@resourceView.TK_ECAR_Resource.AccionConsultar") + " </a>";
+                            menuAcciones = menuAcciones + "<a class='tk-icon-med icon-tk-edit tk-icon-bold ' "
+                                            + actionEditarConductor.replace("valordelidaccion", row.Cod_Conductor)
+                                            .replace("TITTLEACCION", '@resourceView.TK_ECAR_Resource.AccionEditar')
+                                            .replace("accionmenu", "@resourceView.TK_ECAR_Resource.AccionEditar") + " </a>";
+                            @*menuAcciones = menuAcciones + "<a class='tk-icon-med icon-tk-delete tk-icon-bold tk-icon-red ' "
+                                            + "href='#' onclick='return clickBorrar(event," + row.Cod_Conductor + ");' "
+                                            + " data-toggle = 'popover', data-placement = 'top', data-trigger = 'hover' "
+                                            + "data-content = '@Html.Raw(@resourceView.TK_ECAR_Resource.AccionBorrar)'>"
+                                            + "</a>";*@
+                            return menuAcciones;
+                        }
+                    },
+                    {
+                        "targets": [6, 7, 8],
+                        "visible": false,
+                        "type": "html",
+                    },
+                    ]
+                });
+        });
+
+        function syntaxLinkBaja(data, row) {
+            return "<a class='tk-icon icon-tk-delete tk-icon-bold tk-icon-red' href='#' onclick='return clickBorrar(event," + row.Cod_Conductor + ");'></a>";
+        }
+
+        function clickBorrar(e, numConductor) {
+            e.preventDefault();
+
+            confirm('@resourceView.TK_ECAR_Resource.msgBorrarConductor', '@resourceView.TK_ECAR_Resource.msgPreguntaBorrarConductor',
+                function (result) {
+                    if (result) {
+                        var link = '@Html.Raw(Url.Action("BorraConductor", "Conductores", new { idConductor = "idborrar" }))';
+                        link = link.replace("idborrar", numConductor);
+                        $.ajax({
+                            "url": link,
+                            "dataType": 'json',
+                            "success": function (data, t, x) {
+                                reloadTableConductor();
+                            }
+                        });
+                    }
+                });
+        }
+
+        function reloadTableConductor() {
+            _tableConductor.ajax.reload(null, false);
+        }
+
+        function showModalConductor() {
+            $('#modalConductor').modal('show');
+        }
+        function setTitleModal(title) {
+            $('#modaltitleConductor').text(title);
+        }
+
+        //function completeModal() {
+        //    //para que funcione los validadores a la viewpartial recien creada.
+        //    //reconstruye el DOM con los validadores de los campos nuevos
+        //    $("form").removeData("validator");
+        //    $("form").removeData("unobtrusiveValidation");
+        //    $.validator.unobtrusive.parse("form");
+        //    $("form").validate();
+        //}
+
+        //Controlar eventos de DataTable-> cuando empieza a cargar los datos y cuando termina de cargarlos.
+        $('#tableConductor')
+            .on('init.dt', function () {
+                $('#loaderWorking').hide();
+                //alert( 'Table alertas init.dt' );
+                //console.log( 'Redraw took at: '+(new Date().getTime()-startTime)+'mS' );
+            });
+
+        $('#tableConductor')
+            .on('preInit.dt', function () {
+                $('#loaderWorking').show();
+                //alert( 'Table alertas preInit.dt' );
+                //console.log( 'Redraw took at: '+(new Date().getTime()-startTime)+'mS' );
+            });
+
+    </script>
+}
+

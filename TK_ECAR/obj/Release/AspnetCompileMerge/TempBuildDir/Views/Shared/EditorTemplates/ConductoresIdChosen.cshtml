@@ -1,0 +1,74 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@Html.Hidden(ViewData.TemplateInfo.FormattedModelValue.ToString())
+<select id="miConductor" title="Seleccionar un empleado" search class="form-control" data-placeholder=@resourceView.placeholderChosen puedeDeshabilitarse = "SI">
+    <option></option>
+</select> 
+<style type="text/css">
+    #miConductor_chosen {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+<script type="text/javascript">
+    if ($("#IDConductor").val() != '') {
+        SeleccionaConductor();
+    }
+
+    function SeleccionaConductor() {
+        var uRl = '@Html.Raw(@Url.Action("GetConductorByID_Chosen", "MiFlota", new { ID = "idchosen" }))'
+        uRl = uRl.replace("idchosen", $("#IDConductor").val());
+
+        $.ajax({
+            "url": uRl,
+            "dataType": 'json',
+            "async": false,
+            "success": function (data, t, x) {
+                $.each(data, function (i, val) {
+                    var $opt = $('<option value="' + val.value + '" selected="selected">').html(val.text);
+                    $('#miConductor').append($opt);
+                });
+
+                $("#miConductor").trigger("chosen:updated");
+            }
+        });
+
+    }
+
+    chosenConductor();
+
+    function chosenConductor() {
+        var link = '@Html.Raw(Url.Action("GetConductores_Chosen", "MiFlota"))';
+        $('#miConductor').prepend($('<option></option>').html('@resourceView.msgCargando'));
+        $("#miConductor").ajaxChosen({
+            type: 'GET',
+            url: link,
+            async: true,
+            beforeSend: function (data, textStatus, jqXHR) {
+                $("#miConductor_chosen span").addClass('loading-Chosen')
+            },
+            complete: function (data, textStatus, jqXHR) {
+                $("#miConductor_chosen span").removeClass('loading-Chosen');
+            },
+            minTermLength: 0,
+            dataType: 'json'
+            }, function (data) {
+                var terms = [];
+                $.each(data, function (i, val) {
+                    terms[i] = val;
+                });
+                return terms;
+
+            },
+
+
+            {
+                //options
+                disable_search_threshold: -1,
+                allow_single_deselect: true,
+            });
+    }
+
+    $('#miConductor').on('change', function () {
+        $("#IDConductor").val(this.value);
+    });
+</script>

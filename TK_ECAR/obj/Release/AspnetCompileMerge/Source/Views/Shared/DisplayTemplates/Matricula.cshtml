@@ -1,0 +1,19 @@
+﻿
+@Html.Hidden(ViewData.TemplateInfo.FormattedModelValue.ToString())
+<select id="miMatricula" title="Seleccionar una matrícula" search class="form-control" >
+    <option value="' + @ViewData.TemplateInfo.FormattedModelValue.ToString() + '" selected="selected">@ViewData.TemplateInfo.FormattedModelValue.ToString()</option>
+</select> 
+<style type="text/css">
+    #miMatricula_chosen {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+ <script type="text/javascript">
+     //https://github.com/meltingice/ajax-chosen
+    
+     $("#miMatricula").ajaxChosen( );
+     $("#miMatricula_chosen .chosen-drop").remove();
+     $("#miMatricula_chosen .chosen-single div").remove();
+    
+</script>

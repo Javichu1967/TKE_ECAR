@@ -1,0 +1,124 @@
+2017-07-24 09:13:21,079 [13] ERROR <CargaLEASEPLANfromExcel> <FICHERO> C:\Workspaces\Projects\TK_ECAR\TK_ECAR\App_Data\ImportFiles\RENTING\THYSSENKRUPP ELEVADORES_VW_07_Julio17.xlsx, FILA 2. 
+La clave proporcionada no se encontró en el diccionario. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-24 09:13:44,803 [13] ERROR <CargaLEASEPLANfromExcel> <FICHERO> C:\Workspaces\Projects\TK_ECAR\TK_ECAR\App_Data\ImportFiles\RENTING\THYSSENKRUPP ELEVADORES_VW_07_Julio17.xlsx, FILA 3. 
+La clave proporcionada no se encontró en el diccionario. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-24 09:15:33,784 [13] ERROR <CargaLEASEPLANfromExcel> <FICHERO> C:\Workspaces\Projects\TK_ECAR\TK_ECAR\App_Data\ImportFiles\RENTING\THYSSENKRUPP ELEVADORES_VW_07_Julio17.xlsx, FILA 4. 
+Referencia a objeto no establecida como instancia de un objeto. - [:0]
+2017-07-24 09:15:38,624 [13] ERROR <CargaLEASEPLANfromExcel> <FICHERO> C:\Workspaces\Projects\TK_ECAR\TK_ECAR\App_Data\ImportFiles\RENTING\THYSSENKRUPP ELEVADORES_VW_07_Julio17.xlsx, PASO PROCESANDO FILA 4. 
+Referencia a objeto no establecida como instancia de un objeto. - [:0]
+2017-07-24 09:15:45,619 [13] ERROR <AñadeLEASEPLAN> ACTUALIZANDO DATOS EN BBDD, Referencia a objeto no establecida como instancia de un objeto. - [:0]
+2017-07-24 09:25:49,029 [7] ERROR <CargaLEASINGfromExcel> <FICHERO> C:\Workspaces\Projects\TK_ECAR\TK_ECAR\App_Data\ImportFiles\RENTING\THYSSENKRUPP ELEVADORES_VW_07_Julio17.xlsx, FILA 2. 
+Referencia a objeto no establecida como instancia de un objeto. - [:0]
+2017-07-24 09:25:56,767 [7] ERROR <CargaLEASINGfromExcel> <FICHERO> C:\Workspaces\Projects\TK_ECAR\TK_ECAR\App_Data\ImportFiles\RENTING\THYSSENKRUPP ELEVADORES_VW_07_Julio17.xlsx, PASO PROCESANDO FILA 2. 
+Referencia a objeto no establecida como instancia de un objeto. - [:0]
+2017-07-24 13:06:48,648 [8] ERROR System.Web.HttpCompileException (0x80004005): C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Views\Shared\_LayoutMenu.cshtml(153): error CS0117: 'TK_ECAR_Resource' does not contain a definition for 'btnImportarGALP'
+   en System.Web.Compilation.AssemblyBuilder.Compile()
+   en System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   en System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   en System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   en System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   en System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   en System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   en System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   en System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   en System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   en System.Web.Mvc.HtmlHelper.RenderPartialInternal(String partialViewName, ViewDataDictionary viewData, Object model, TextWriter writer, ViewEngineCollection viewEngineCollection)
+   en System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   en System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName)
+   en ASP._Page_Views_Shared__Layout_cshtml.Execute() en C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Views\Shared\_Layout.cshtml:línea 217
+   en System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   en System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   en System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   en System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   en System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   en System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   en System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   en System.Web.WebPages.WebPageBase.PopContext()
+   en System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   en System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   en System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   en System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult) - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Filters\HandleCustomException.cs:24]
+2017-07-24 13:07:46,066 [8] ERROR System.Web.HttpCompileException (0x80004005): C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Views\ImportarTarjetasCombustible\Index.cshtml(73): error CS0117: 'TK_ECAR_Resource' does not contain a definition for 'TitleImportarCombustible'
+   en System.Web.Compilation.AssemblyBuilder.Compile()
+   en System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   en System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   en System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   en System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   en System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   en System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   en System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   en System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   en System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   en System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult) - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Filters\HandleCustomException.cs:24]
+2017-07-24 13:11:21,012 [11] ERROR System.ArgumentException: El diccionario de parámetros contiene una entrada NULL para el parámetro 'ID' del tipo que no acepta valores NULL 'System.Int32' del método 'System.Web.Mvc.JsonResult GetEmpresaEmisoraTarjetaByID_Chosen(Int32)' en 'TK_ECAR.Controllers.TarjetasCombustibleController'. Un parámetro opcional debe ser un tipo de referencia, un tipo que acepte valores NULL o debe declararse como parámetro opcional.
+Nombre del parámetro: parameters
+   en System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   en System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult) - [:0]
+2017-07-24 13:11:28,749 [11] ERROR System.ArgumentException: El diccionario de parámetros contiene una entrada NULL para el parámetro 'ID' del tipo que no acepta valores NULL 'System.Int32' del método 'System.Web.Mvc.JsonResult GetEmpresaEmisoraTarjetaByID_Chosen(Int32)' en 'TK_ECAR.Controllers.TarjetasCombustibleController'. Un parámetro opcional debe ser un tipo de referencia, un tipo que acepte valores NULL o debe declararse como parámetro opcional.
+Nombre del parámetro: parameters
+   en System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   en System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult) - [:0]
+2017-07-24 13:13:30,180 [6] ERROR System.ArgumentException: El diccionario de parámetros contiene una entrada NULL para el parámetro 'ID' del tipo que no acepta valores NULL 'System.Int32' del método 'System.Web.Mvc.JsonResult GetEmpresaEmisoraTarjetaByID_Chosen(Int32)' en 'TK_ECAR.Controllers.TarjetasCombustibleController'. Un parámetro opcional debe ser un tipo de referencia, un tipo que acepte valores NULL o debe declararse como parámetro opcional.
+Nombre del parámetro: parameters
+   en System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   en System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult) - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Filters\HandleCustomException.cs:24]
+2017-07-24 15:18:37,486 [8] ERROR <ImportaDatosTarjetaCombustible> <FICHERO> C:\Workspaces\Projects\TK_ECAR\TK_ECAR\App_Data\ImportFiles\GALP\Operaciones SOLRED Junio-17.xls, PASO ABRIENDO ARCHIVO C:\Workspaces\Projects\TK_ECAR\TK_ECAR\App_Data\ImportFiles\GALP\Operaciones SOLRED Junio-17.xls, Error de disco durante una operación de escritura. (Excepción de HRESULT: 0x8003001D (STG_E_WRITEFAULT)) - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-24 15:26:17,579 [14] ERROR <ImportaDatosTarjetaCombustible> <FICHERO> , FILA 2, PASO ESTABLECIENDO DATO, Referencia a objeto no establecida como instancia de un objeto. - [:0]
+2017-07-24 15:26:30,135 [14] ERROR <ImportaDatosTarjetaCombustible> <FICHERO> , PASO ESTABLECIENDO DATO, Referencia a objeto no establecida como instancia de un objeto. - [:0]
+2017-07-24 15:29:06,922 [10] ERROR <ImportaDatosTarjetaCombustible> <FICHERO> C:\Workspaces\Projects\TK_ECAR\TK_ECAR\App_Data\ImportFiles\GALP\Operaciones SOLRED Junio-17.xlsx, FILA 2, PASO IMPORTANDO DATOS TARJETA 0007078830198110308, No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]

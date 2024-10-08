@@ -1,0 +1,46 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Models
+
+@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Error Autorizacion";
+
+    var listaUsuariosPeticion = ViewData["usuariosPeticion"] as List<UsuarioSapPeticionAcceso>;
+}
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="info">
+            <h1 class="text-danger">@resourceView.MessageErrorAutorizaciónTitle</h1>
+            <h2 class="text-danger">@resourceView.MessageErrorAutorizaciónInfo</h2>
+        </div>
+    </div>
+</div>
+<div class="row">
+    @foreach (var item in listaUsuariosPeticion)
+    {
+        <div class="row col-sm-12">
+            <div class="notice notice-Lightgreen sublinks col-sm-12" style="margin-left: 15px;">
+                <div class="sublinks col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-4 pull-center">
+                            <div class="form-group">
+                                @item.Nombre
+                            </div>
+                        </div>
+                        <div class="col-sm-8 pull-center">
+                            <div class="form-group">
+                                @TK_ECAR.Content.resources.ModelsResources.lblEmail
+                                <div>
+                                    @item.Email
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }    
+</div>

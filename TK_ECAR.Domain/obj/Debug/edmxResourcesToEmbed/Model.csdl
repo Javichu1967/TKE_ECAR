@@ -1,0 +1,1917 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TKE_CARModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="ModelEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="T_G_ALERTAS" EntityType="TKE_CARModel.T_G_ALERTAS" />
+    <EntitySet Name="T_G_ALERTAS_RENOVACION_CARNET" EntityType="TKE_CARModel.T_G_ALERTAS_RENOVACION_CARNET" />
+    <EntitySet Name="T_G_ALERTAS_RENOVACION_ITV" EntityType="TKE_CARModel.T_G_ALERTAS_RENOVACION_ITV" />
+    <EntitySet Name="T_G_ALERTAS_ROBO" EntityType="TKE_CARModel.T_G_ALERTAS_ROBO" />
+    <EntitySet Name="T_G_ALERTAS_SOLICITUD_SOLRED" EntityType="TKE_CARModel.T_G_ALERTAS_SOLICITUD_SOLRED" />
+    <EntitySet Name="T_G_DOCUMENTACION" EntityType="TKE_CARModel.T_G_DOCUMENTACION" />
+    <EntitySet Name="T_G_DOCUMENTACION_VEHICULO" EntityType="TKE_CARModel.T_G_DOCUMENTACION_VEHICULO" />
+    <EntitySet Name="T_G_HIST_ALERTAS" EntityType="TKE_CARModel.T_G_HIST_ALERTAS" />
+    <EntitySet Name="T_G_HIST_CAMBIOS_CONDUCTOR" EntityType="TKE_CARModel.T_G_HIST_CAMBIOS_CONDUCTOR" />
+    <EntitySet Name="T_G_MENUS" EntityType="TKE_CARModel.T_G_MENUS" />
+    <EntitySet Name="T_G_USUARIOS" EntityType="TKE_CARModel.T_G_USUARIOS" />
+    <EntitySet Name="T_G_USUARIOS_CECO" EntityType="TKE_CARModel.T_G_USUARIOS_CECO" />
+    <EntitySet Name="T_G_USUARIOS_DELEGACION" EntityType="TKE_CARModel.T_G_USUARIOS_DELEGACION" />
+    <EntitySet Name="T_G_USUARIOS_DIR_TERRITORIAL" EntityType="TKE_CARModel.T_G_USUARIOS_DIR_TERRITORIAL" />
+    <EntitySet Name="T_G_USUARIOS_EMPRESAS" EntityType="TKE_CARModel.T_G_USUARIOS_EMPRESAS" />
+    <EntitySet Name="T_M_ACCIONES" EntityType="TKE_CARModel.T_M_ACCIONES" />
+    <EntitySet Name="T_M_CATEGORIAS" EntityType="TKE_CARModel.T_M_CATEGORIAS" />
+    <EntitySet Name="T_M_ESTADOS" EntityType="TKE_CARModel.T_M_ESTADOS" />
+    <EntitySet Name="T_M_PERFILES" EntityType="TKE_CARModel.T_M_PERFILES" />
+    <EntitySet Name="T_M_TIPOS_ALERTAS" EntityType="TKE_CARModel.T_M_TIPOS_ALERTAS" />
+    <EntitySet Name="T_M_TIPOS_SOLICITUD_SOLRED" EntityType="TKE_CARModel.T_M_TIPOS_SOLICITUD_SOLRED" />
+    <EntitySet Name="T_R_PERFILES_MENU" EntityType="TKE_CARModel.T_R_PERFILES_MENU" />
+    <AssociationSet Name="FK_T_G_ALERTAS_RENOVACION_CARNET_T_G_ALERTAS" Association="TKE_CARModel.FK_T_G_ALERTAS_RENOVACION_CARNET_T_G_ALERTAS">
+      <End Role="T_G_ALERTAS" EntitySet="T_G_ALERTAS" />
+      <End Role="T_G_ALERTAS_RENOVACION_CARNET" EntitySet="T_G_ALERTAS_RENOVACION_CARNET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_ALERTAS_RENOVACION_ITV_T_G_ALERTAS" Association="TKE_CARModel.FK_T_G_ALERTAS_RENOVACION_ITV_T_G_ALERTAS">
+      <End Role="T_G_ALERTAS" EntitySet="T_G_ALERTAS" />
+      <End Role="T_G_ALERTAS_RENOVACION_ITV" EntitySet="T_G_ALERTAS_RENOVACION_ITV" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_ALERTAS_T_M_ACCIONES" Association="TKE_CARModel.FK_T_G_ALERTAS_T_M_ACCIONES">
+      <End Role="T_M_ACCIONES" EntitySet="T_M_ACCIONES" />
+      <End Role="T_G_ALERTAS" EntitySet="T_G_ALERTAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_ALERTAS_T_M_ESTADOS" Association="TKE_CARModel.FK_T_G_ALERTAS_T_M_ESTADOS">
+      <End Role="T_M_ESTADOS" EntitySet="T_M_ESTADOS" />
+      <End Role="T_G_ALERTAS" EntitySet="T_G_ALERTAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_ALERTAS_T_M_TIPOS_ALERTAS" Association="TKE_CARModel.FK_T_G_ALERTAS_T_M_TIPOS_ALERTAS">
+      <End Role="T_M_TIPOS_ALERTAS" EntitySet="T_M_TIPOS_ALERTAS" />
+      <End Role="T_G_ALERTAS" EntitySet="T_G_ALERTAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_HIST_ALERTAS_T_G_ALERTAS" Association="TKE_CARModel.FK_T_G_HIST_ALERTAS_T_G_ALERTAS">
+      <End Role="T_G_ALERTAS" EntitySet="T_G_ALERTAS" />
+      <End Role="T_G_HIST_ALERTAS" EntitySet="T_G_HIST_ALERTAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_ROBOS_T_G_ALERTAS" Association="TKE_CARModel.FK_T_G_ROBOS_T_G_ALERTAS">
+      <End Role="T_G_ALERTAS" EntitySet="T_G_ALERTAS" />
+      <End Role="T_G_ALERTAS_ROBO" EntitySet="T_G_ALERTAS_ROBO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_SOLICITUDES_SOLRED_T_G_ALERTAS" Association="TKE_CARModel.FK_T_G_SOLICITUDES_SOLRED_T_G_ALERTAS">
+      <End Role="T_G_ALERTAS" EntitySet="T_G_ALERTAS" />
+      <End Role="T_G_ALERTAS_SOLICITUD_SOLRED" EntitySet="T_G_ALERTAS_SOLICITUD_SOLRED" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_SOLICITUDES_SOLRED_T_M_TIPOS_SOLICITUD_SOLRED" Association="TKE_CARModel.FK_T_G_SOLICITUDES_SOLRED_T_M_TIPOS_SOLICITUD_SOLRED">
+      <End Role="T_M_TIPOS_SOLICITUD_SOLRED" EntitySet="T_M_TIPOS_SOLICITUD_SOLRED" />
+      <End Role="T_G_ALERTAS_SOLICITUD_SOLRED" EntitySet="T_G_ALERTAS_SOLICITUD_SOLRED" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_DOCUMENTACION_T_M_CATEGORIAS" Association="TKE_CARModel.FK_T_G_DOCUMENTACION_T_M_CATEGORIAS">
+      <End Role="T_M_CATEGORIAS" EntitySet="T_M_CATEGORIAS" />
+      <End Role="T_G_DOCUMENTACION" EntitySet="T_G_DOCUMENTACION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_DOCUMENTACION_VEHICULO_T_M_TIPOS_ALERTAS" Association="TKE_CARModel.FK_T_G_DOCUMENTACION_VEHICULO_T_M_TIPOS_ALERTAS">
+      <End Role="T_M_TIPOS_ALERTAS" EntitySet="T_M_TIPOS_ALERTAS" />
+      <End Role="T_G_DOCUMENTACION_VEHICULO" EntitySet="T_G_DOCUMENTACION_VEHICULO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_HIST_ALERTAS_T_M_ACCIONES" Association="TKE_CARModel.FK_T_G_HIST_ALERTAS_T_M_ACCIONES">
+      <End Role="T_M_ACCIONES" EntitySet="T_M_ACCIONES" />
+      <End Role="T_G_HIST_ALERTAS" EntitySet="T_G_HIST_ALERTAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_HIST_ALERTAS_T_R_ESTADOS_ACCION" Association="TKE_CARModel.FK_T_G_HIST_ALERTAS_T_R_ESTADOS_ACCION">
+      <End Role="T_M_ESTADOS" EntitySet="T_M_ESTADOS" />
+      <End Role="T_G_HIST_ALERTAS" EntitySet="T_G_HIST_ALERTAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_MENUS_T_G_MENUS" Association="TKE_CARModel.FK_T_G_MENUS_T_G_MENUS">
+      <End Role="T_G_MENUS" EntitySet="T_G_MENUS" />
+      <End Role="T_G_MENUS1" EntitySet="T_G_MENUS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_R_PERFILES_MENU_T_G_MENUS" Association="TKE_CARModel.FK_T_R_PERFILES_MENU_T_G_MENUS">
+      <End Role="T_G_MENUS" EntitySet="T_G_MENUS" />
+      <End Role="T_R_PERFILES_MENU" EntitySet="T_R_PERFILES_MENU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_USUARIOS_CECO_T_G_USUARIOS" Association="TKE_CARModel.FK_T_G_USUARIOS_CECO_T_G_USUARIOS">
+      <End Role="T_G_USUARIOS" EntitySet="T_G_USUARIOS" />
+      <End Role="T_G_USUARIOS_CECO" EntitySet="T_G_USUARIOS_CECO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_USUARIOS_DELEGACION_T_G_USUARIOS" Association="TKE_CARModel.FK_T_G_USUARIOS_DELEGACION_T_G_USUARIOS">
+      <End Role="T_G_USUARIOS" EntitySet="T_G_USUARIOS" />
+      <End Role="T_G_USUARIOS_DELEGACION" EntitySet="T_G_USUARIOS_DELEGACION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_USUARIOS_DIR_TERRITORIAL_T_G_USUARIOS" Association="TKE_CARModel.FK_T_G_USUARIOS_DIR_TERRITORIAL_T_G_USUARIOS">
+      <End Role="T_G_USUARIOS" EntitySet="T_G_USUARIOS" />
+      <End Role="T_G_USUARIOS_DIR_TERRITORIAL" EntitySet="T_G_USUARIOS_DIR_TERRITORIAL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_USUARIOS_EMPRESAS_T_G_USUARIOS" Association="TKE_CARModel.FK_T_G_USUARIOS_EMPRESAS_T_G_USUARIOS">
+      <End Role="T_G_USUARIOS" EntitySet="T_G_USUARIOS" />
+      <End Role="T_G_USUARIOS_EMPRESAS" EntitySet="T_G_USUARIOS_EMPRESAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_USUARIOS_T_M_PERFILES" Association="TKE_CARModel.FK_T_G_USUARIOS_T_M_PERFILES">
+      <End Role="T_M_PERFILES" EntitySet="T_M_PERFILES" />
+      <End Role="T_G_USUARIOS" EntitySet="T_G_USUARIOS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_R_PERFILES_MENU_T_M_PERFILES" Association="TKE_CARModel.FK_T_R_PERFILES_MENU_T_M_PERFILES">
+      <End Role="T_M_PERFILES" EntitySet="T_M_PERFILES" />
+      <End Role="T_R_PERFILES_MENU" EntitySet="T_R_PERFILES_MENU" />
+    </AssociationSet>
+    <EntitySet Name="T_G_ALERTAS_OTRAS_NOTIFICACIONES" EntityType="TKE_CARModel.T_G_ALERTAS_OTRAS_NOTIFICACIONES" />
+    <EntitySet Name="T_M_TIPOS_CLASIFICACION" EntityType="TKE_CARModel.T_M_TIPOS_CLASIFICACION" />
+    <AssociationSet Name="FK_T_G_ALERTAS_OTRAS_NOTIFICACIONES_T_G_ALERTAS" Association="TKE_CARModel.FK_T_G_ALERTAS_OTRAS_NOTIFICACIONES_T_G_ALERTAS">
+      <End Role="T_G_ALERTAS" EntitySet="T_G_ALERTAS" />
+      <End Role="T_G_ALERTAS_OTRAS_NOTIFICACIONES" EntitySet="T_G_ALERTAS_OTRAS_NOTIFICACIONES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_ALERTAS_OTRAS_NOTIFICACIONES_T_M_TIPOS_CLASIFICACION" Association="TKE_CARModel.FK_T_G_ALERTAS_OTRAS_NOTIFICACIONES_T_M_TIPOS_CLASIFICACION">
+      <End Role="T_M_TIPOS_CLASIFICACION" EntitySet="T_M_TIPOS_CLASIFICACION" />
+      <End Role="T_G_ALERTAS_OTRAS_NOTIFICACIONES" EntitySet="T_G_ALERTAS_OTRAS_NOTIFICACIONES" />
+    </AssociationSet>
+    <EntitySet Name="T_G_GESTORES_FLOTA" EntityType="TKE_CARModel.T_G_GESTORES_FLOTA" />
+    <EntitySet Name="T_R_ESTADOS_ACCION" EntityType="TKE_CARModel.T_R_ESTADOS_ACCION" />
+    <AssociationSet Name="FK_T_R_ESTADOS_ACCION_T_M_ACCIONES" Association="TKE_CARModel.FK_T_R_ESTADOS_ACCION_T_M_ACCIONES">
+      <End Role="T_M_ACCIONES" EntitySet="T_M_ACCIONES" />
+      <End Role="T_R_ESTADOS_ACCION" EntitySet="T_R_ESTADOS_ACCION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_R_ESTADOS_ACCION_T_M_ESTADOS" Association="TKE_CARModel.FK_T_R_ESTADOS_ACCION_T_M_ESTADOS">
+      <End Role="T_M_ESTADOS" EntitySet="T_M_ESTADOS" />
+      <End Role="T_R_ESTADOS_ACCION" EntitySet="T_R_ESTADOS_ACCION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_R_ESTADOS_ACCION_T_M_ESTADOS1" Association="TKE_CARModel.FK_T_R_ESTADOS_ACCION_T_M_ESTADOS1">
+      <End Role="T_M_ESTADOS" EntitySet="T_M_ESTADOS" />
+      <End Role="T_R_ESTADOS_ACCION" EntitySet="T_R_ESTADOS_ACCION" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_R_ESTADOS_ACCION_T_M_TIPOS_ALERTAS" Association="TKE_CARModel.FK_T_R_ESTADOS_ACCION_T_M_TIPOS_ALERTAS">
+      <End Role="T_M_TIPOS_ALERTAS" EntitySet="T_M_TIPOS_ALERTAS" />
+      <End Role="T_R_ESTADOS_ACCION" EntitySet="T_R_ESTADOS_ACCION" />
+    </AssociationSet>
+    <EntitySet Name="T_G_VIA_VERDE_EXTRACTOS" EntityType="TKE_CARModel.T_G_VIA_VERDE_EXTRACTOS" />
+    <EntitySet Name="T_G_VIA_VERDE_IDENTIFICADORES" EntityType="TKE_CARModel.T_G_VIA_VERDE_IDENTIFICADORES" />
+    <EntitySet Name="T_M_CLIENTES" EntityType="TKE_CARModel.T_M_CLIENTES" />
+    <AssociationSet Name="FK_T_G_VIA_VERDE_EXTRACTOS_T_M_CLIENTES" Association="TKE_CARModel.FK_T_G_VIA_VERDE_EXTRACTOS_T_M_CLIENTES">
+      <End Role="T_M_CLIENTES" EntitySet="T_M_CLIENTES" />
+      <End Role="T_G_VIA_VERDE_EXTRACTOS" EntitySet="T_G_VIA_VERDE_EXTRACTOS" />
+    </AssociationSet>
+    <EntitySet Name="T_G_VIA_VERDE_TRANSACCIONES" EntityType="TKE_CARModel.T_G_VIA_VERDE_TRANSACCIONES" />
+    <AssociationSet Name="FK_T_G_VIA_VERDE_TRANSACCIONES_T_G_VIA_VERDE_IDENTIFICADORES" Association="TKE_CARModel.FK_T_G_VIA_VERDE_TRANSACCIONES_T_G_VIA_VERDE_IDENTIFICADORES">
+      <End Role="T_G_VIA_VERDE_IDENTIFICADORES" EntitySet="T_G_VIA_VERDE_IDENTIFICADORES" />
+      <End Role="T_G_VIA_VERDE_TRANSACCIONES" EntitySet="T_G_VIA_VERDE_TRANSACCIONES" />
+    </AssociationSet>
+    <EntitySet Name="T_G_TELEFONOS_FRECUENTES" EntityType="TKE_CARModel.T_G_TELEFONOS_FRECUENTES" />
+    <EntitySet Name="T_M_CATEGORIA_PREGUNTAS" EntityType="TKE_CARModel.T_M_CATEGORIA_PREGUNTAS" />
+    <EntitySet Name="T_G_PREGUNTAS_FRECUENTES" EntityType="TKE_CARModel.T_G_PREGUNTAS_FRECUENTES" />
+    <EntitySet Name="T_M_MARCA_VEHICULOS" EntityType="TKE_CARModel.T_M_MARCA_VEHICULOS" />
+    <EntitySet Name="T_M_MODELOS_VEHICULO" EntityType="TKE_CARModel.T_M_MODELOS_VEHICULO" />
+    <EntitySet Name="T_M_RUTA_VEHICULOS" EntityType="TKE_CARModel.T_M_RUTA_VEHICULOS" />
+    <EntitySet Name="T_M_TIPOS_CARBURANTE" EntityType="TKE_CARModel.T_M_TIPOS_CARBURANTE" />
+    <EntitySet Name="T_M_TIPOS_VEHICULO" EntityType="TKE_CARModel.T_M_TIPOS_VEHICULO" />
+    <EntitySet Name="T_M_UBICACIONES" EntityType="TKE_CARModel.T_M_UBICACIONES" />
+    <AssociationSet Name="FK_T_M_MODELOS_VEHICULO_T_M_MARCA_VEHICULOS" Association="TKE_CARModel.FK_T_M_MODELOS_VEHICULO_T_M_MARCA_VEHICULOS">
+      <End Role="T_M_MARCA_VEHICULOS" EntitySet="T_M_MARCA_VEHICULOS" />
+      <End Role="T_M_MODELOS_VEHICULO" EntitySet="T_M_MODELOS_VEHICULO" />
+    </AssociationSet>
+    <EntitySet Name="T_M_TIPO_SEGURO_VEHICULO" EntityType="TKE_CARModel.T_M_TIPO_SEGURO_VEHICULO" />
+    <EntitySet Name="T_M_TIPO_TARJETA_COMBUSTIBLE" EntityType="TKE_CARModel.T_M_TIPO_TARJETA_COMBUSTIBLE" />
+    <EntitySet Name="V_ALERTAS_CECOS_DELEGACION" EntityType="TKE_CARModel.V_ALERTAS_CECOS_DELEGACION" />
+    <EntitySet Name="V_TARJETAS_COMBUSTIBLE_EMPRESAS" EntityType="TKE_CARModel.V_TARJETAS_COMBUSTIBLE_EMPRESAS" />
+    <EntitySet Name="ECAR_Datos_Conductor" EntityType="TKE_CARModel.ECAR_Datos_Conductor" />
+    <EntitySet Name="ECAR_Tipo_Liquidacion" EntityType="TKE_CARModel.ECAR_Tipo_Liquidacion" />
+    <EntitySet Name="ECAR_Datos_Vehiculo" EntityType="TKE_CARModel.ECAR_Datos_Vehiculo" />
+    <AssociationSet Name="FK_ECAR_Datos_Vehiculo_ECAR_Datos_Conductor" Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_ECAR_Datos_Conductor">
+      <End Role="ECAR_Datos_Conductor" EntitySet="ECAR_Datos_Conductor" />
+      <End Role="ECAR_Datos_Vehiculo" EntitySet="ECAR_Datos_Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ECAR_Datos_Vehiculo_ECAR_Tipo_Liquidacion" Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_ECAR_Tipo_Liquidacion">
+      <End Role="ECAR_Tipo_Liquidacion" EntitySet="ECAR_Tipo_Liquidacion" />
+      <End Role="ECAR_Datos_Vehiculo" EntitySet="ECAR_Datos_Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ECAR_Datos_Vehiculo_T_M_MARCA_VEHICULOS" Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_MARCA_VEHICULOS">
+      <End Role="T_M_MARCA_VEHICULOS" EntitySet="T_M_MARCA_VEHICULOS" />
+      <End Role="ECAR_Datos_Vehiculo" EntitySet="ECAR_Datos_Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ECAR_Datos_Vehiculo_T_M_MODELOS_VEHICULO" Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_MODELOS_VEHICULO">
+      <End Role="T_M_MODELOS_VEHICULO" EntitySet="T_M_MODELOS_VEHICULO" />
+      <End Role="ECAR_Datos_Vehiculo" EntitySet="ECAR_Datos_Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ECAR_Datos_Vehiculo_T_M_RUTA_VEHICULOS" Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_RUTA_VEHICULOS">
+      <End Role="T_M_RUTA_VEHICULOS" EntitySet="T_M_RUTA_VEHICULOS" />
+      <End Role="ECAR_Datos_Vehiculo" EntitySet="ECAR_Datos_Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ECAR_Datos_Vehiculo_T_M_TIPO_SEGURO_VEHICULO" Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_TIPO_SEGURO_VEHICULO">
+      <End Role="T_M_TIPO_SEGURO_VEHICULO" EntitySet="T_M_TIPO_SEGURO_VEHICULO" />
+      <End Role="ECAR_Datos_Vehiculo" EntitySet="ECAR_Datos_Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ECAR_Datos_Vehiculo_T_M_TIPOS_CARBURANTE" Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_TIPOS_CARBURANTE">
+      <End Role="T_M_TIPOS_CARBURANTE" EntitySet="T_M_TIPOS_CARBURANTE" />
+      <End Role="ECAR_Datos_Vehiculo" EntitySet="ECAR_Datos_Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ECAR_Datos_Vehiculo_T_M_TIPOS_VEHICULO" Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_TIPOS_VEHICULO">
+      <End Role="T_M_TIPOS_VEHICULO" EntitySet="T_M_TIPOS_VEHICULO" />
+      <End Role="ECAR_Datos_Vehiculo" EntitySet="ECAR_Datos_Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ECAR_Datos_Vehiculo_T_M_UBICACIONES" Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_UBICACIONES">
+      <End Role="T_M_UBICACIONES" EntitySet="T_M_UBICACIONES" />
+      <End Role="ECAR_Datos_Vehiculo" EntitySet="ECAR_Datos_Vehiculo" />
+    </AssociationSet>
+    <EntitySet Name="ECAR_Datos_ITV" EntityType="TKE_CARModel.ECAR_Datos_ITV" />
+    <AssociationSet Name="FK_ECAR_Datos_ITV_ECAR_Datos_Vehiculo" Association="TKE_CARModel.FK_ECAR_Datos_ITV_ECAR_Datos_Vehiculo">
+      <End Role="ECAR_Datos_Vehiculo" EntitySet="ECAR_Datos_Vehiculo" />
+      <End Role="ECAR_Datos_ITV" EntitySet="ECAR_Datos_ITV" />
+    </AssociationSet>
+    <EntitySet Name="TMP_RENOVACION_ITV" EntityType="TKE_CARModel.TMP_RENOVACION_ITV" />
+    <EntitySet Name="T_G_HIST_CAMBIOS_TARJETA" EntityType="TKE_CARModel.T_G_HIST_CAMBIOS_TARJETA" />
+    <EntitySet Name="T_G_HIST_CAMBIOS_CENTRO_COSTE" EntityType="TKE_CARModel.T_G_HIST_CAMBIOS_CENTRO_COSTE" />
+    <EntitySet Name="ECAR_Datos_SolRed" EntityType="TKE_CARModel.ECAR_Datos_SolRed" />
+    <EntitySet Name="T_G_ALERTAS_CAMBIO_CONDUCTOR" EntityType="TKE_CARModel.T_G_ALERTAS_CAMBIO_CONDUCTOR" />
+    <EntitySet Name="T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR" EntityType="TKE_CARModel.T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR" />
+    <EntitySet Name="T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR" EntityType="TKE_CARModel.T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR" />
+    <AssociationSet Name="FK_T_G_ALERTAS_CAMBIO_CONDUCTOR_T_G_ALERTAS" Association="TKE_CARModel.FK_T_G_ALERTAS_CAMBIO_CONDUCTOR_T_G_ALERTAS">
+      <End Role="T_G_ALERTAS" EntitySet="T_G_ALERTAS" />
+      <End Role="T_G_ALERTAS_CAMBIO_CONDUCTOR" EntitySet="T_G_ALERTAS_CAMBIO_CONDUCTOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR_T_G_ALERTAS" Association="TKE_CARModel.FK_T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR_T_G_ALERTAS">
+      <End Role="T_G_ALERTAS" EntitySet="T_G_ALERTAS" />
+      <End Role="T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR" EntitySet="T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR_T_G_ALERTAS" Association="TKE_CARModel.FK_T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR_T_G_ALERTAS">
+      <End Role="T_G_ALERTAS" EntitySet="T_G_ALERTAS" />
+      <End Role="T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR" EntitySet="T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR" />
+    </AssociationSet>
+    <EntitySet Name="T_G_DATOS_LEASING" EntityType="TKE_CARModel.T_G_DATOS_LEASING" />
+    <EntitySet Name="T_M_CORRESPONDENCIA_COD_CLI_EMPRESA_TKE" EntityType="TKE_CARModel.T_M_CORRESPONDENCIA_COD_CLI_EMPRESA_TKE" />
+    <EntitySet Name="T_G_TARJETA_COMBUSTIBLE" EntityType="TKE_CARModel.T_G_TARJETA_COMBUSTIBLE" />
+    <AssociationSet Name="FK_T_G_DATOS_LEASING_ECAR_Datos_Vehiculo" Association="TKE_CARModel.FK_T_G_DATOS_LEASING_ECAR_Datos_Vehiculo">
+      <End Role="ECAR_Datos_Vehiculo" EntitySet="ECAR_Datos_Vehiculo" />
+      <End Role="T_G_DATOS_LEASING" EntitySet="T_G_DATOS_LEASING" />
+    </AssociationSet>
+    <EntitySet Name="T_M_CUENTAS_CONTABLES" EntityType="TKE_CARModel.T_M_CUENTAS_CONTABLES" />
+    <EntitySet Name="T_M_TIPOS_COSTE" EntityType="TKE_CARModel.T_M_TIPOS_COSTE" />
+    <EntitySet Name="T_R_TIPOSCOSTE_CUENTA_CONTABLE" EntityType="TKE_CARModel.T_R_TIPOSCOSTE_CUENTA_CONTABLE" />
+    <AssociationSet Name="FK_T_R_TIPOSCOSTE_CUENTA_CONTABLE_T_M_CUENTAS_CONTABLES" Association="TKE_CARModel.FK_T_R_TIPOSCOSTE_CUENTA_CONTABLE_T_M_CUENTAS_CONTABLES">
+      <End Role="T_M_CUENTAS_CONTABLES" EntitySet="T_M_CUENTAS_CONTABLES" />
+      <End Role="T_R_TIPOSCOSTE_CUENTA_CONTABLE" EntitySet="T_R_TIPOSCOSTE_CUENTA_CONTABLE" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_R_TIPOSCOSTE_CUENTA_CONTABLE_T_M_TIPOS_COSTE" Association="TKE_CARModel.FK_T_R_TIPOSCOSTE_CUENTA_CONTABLE_T_M_TIPOS_COSTE">
+      <End Role="T_M_TIPOS_COSTE" EntitySet="T_M_TIPOS_COSTE" />
+      <End Role="T_R_TIPOSCOSTE_CUENTA_CONTABLE" EntitySet="T_R_TIPOSCOSTE_CUENTA_CONTABLE" />
+    </AssociationSet>
+    <EntitySet Name="T_M_EMPRESAS_VEHICULOS" EntityType="TKE_CARModel.T_M_EMPRESAS_VEHICULOS" />
+    <AssociationSet Name="FK_ECAR_Datos_Vehiculo_T_M_EMPRESAS_VEHICULOS" Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_EMPRESAS_VEHICULOS">
+      <End Role="T_M_EMPRESAS_VEHICULOS" EntitySet="T_M_EMPRESAS_VEHICULOS" />
+      <End Role="ECAR_Datos_Vehiculo" EntitySet="ECAR_Datos_Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_G_DATOS_LEASING_T_M_EMPRESAS_VEHICULOS" Association="TKE_CARModel.FK_T_G_DATOS_LEASING_T_M_EMPRESAS_VEHICULOS">
+      <End Role="T_M_EMPRESAS_VEHICULOS" EntitySet="T_M_EMPRESAS_VEHICULOS" />
+      <End Role="T_G_DATOS_LEASING" EntitySet="T_G_DATOS_LEASING" />
+    </AssociationSet>
+    <EntitySet Name="T_M_TARJETAS_CONBUSTIBLE" EntityType="TKE_CARModel.T_M_TARJETAS_CONBUSTIBLE" />
+    <AssociationSet Name="FK_ECAR_Datos_Vehiculo_T_M_TARJETAS_COMBUSTIBLE" Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_TARJETAS_COMBUSTIBLE">
+      <End Role="T_M_TARJETAS_CONBUSTIBLE" EntitySet="T_M_TARJETAS_CONBUSTIBLE" />
+      <End Role="ECAR_Datos_Vehiculo" EntitySet="ECAR_Datos_Vehiculo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_T_M_TARJETAS_CONBUSTIBLE_T_M_TIPO_TARJETA_COMBUSTIBLE" Association="TKE_CARModel.FK_T_M_TARJETAS_CONBUSTIBLE_T_M_TIPO_TARJETA_COMBUSTIBLE">
+      <End Role="T_M_TIPO_TARJETA_COMBUSTIBLE" EntitySet="T_M_TIPO_TARJETA_COMBUSTIBLE" />
+      <End Role="T_M_TARJETAS_CONBUSTIBLE" EntitySet="T_M_TARJETAS_CONBUSTIBLE" />
+    </AssociationSet>
+    <EntitySet Name="T_G_ALERTAS_MULTA" EntityType="TKE_CARModel.T_G_ALERTAS_MULTA" />
+    <AssociationSet Name="FK_T_G_MULTAS_T_G_ALERTAS" Association="TKE_CARModel.FK_T_G_MULTAS_T_G_ALERTAS">
+      <End Role="T_G_ALERTAS" EntitySet="T_G_ALERTAS" />
+      <End Role="T_G_ALERTAS_MULTA" EntitySet="T_G_ALERTAS_MULTA" />
+    </AssociationSet>
+    <EntitySet Name="T_G_HIST_CAMBIOS_EMPRESA" EntityType="TKE_CARModel.T_G_HIST_CAMBIOS_EMPRESA" />
+    <AssociationSet Name="FK_T_G_ALERTAS_ECAR_Datos_Vehiculo" Association="TKE_CARModel.FK_T_G_ALERTAS_ECAR_Datos_Vehiculo">
+      <End Role="ECAR_Datos_Vehiculo" EntitySet="ECAR_Datos_Vehiculo" />
+      <End Role="T_G_ALERTAS" EntitySet="T_G_ALERTAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ECAR_Datos_SolRed_ECAR_Datos_Vehiculo" Association="TKE_CARModel.FK_ECAR_Datos_SolRed_ECAR_Datos_Vehiculo">
+      <End Role="ECAR_Datos_Vehiculo" EntitySet="ECAR_Datos_Vehiculo" />
+      <End Role="ECAR_Datos_SolRed" EntitySet="ECAR_Datos_SolRed" />
+    </AssociationSet>
+    <EntitySet Name="ECAR_Datos_Multas" EntityType="TKE_CARModel.ECAR_Datos_Multas" />
+    <AssociationSet Name="FK_ECAR_Datos_Multas_ECAR_Datos_Vehiculo" Association="TKE_CARModel.FK_ECAR_Datos_Multas_ECAR_Datos_Vehiculo">
+      <End Role="ECAR_Datos_Vehiculo" EntitySet="ECAR_Datos_Vehiculo" />
+      <End Role="ECAR_Datos_Multas" EntitySet="ECAR_Datos_Multas" />
+    </AssociationSet>
+    <EntitySet Name="V_CONDUCTORES_USUARIOS_SAP" EntityType="TKE_CARModel.V_CONDUCTORES_USUARIOS_SAP" />
+  </EntityContainer>
+  <EntityType Name="T_G_ALERTAS">
+    <Key>
+      <PropertyRef Name="ID_ALERTA" />
+    </Key>
+    <Property Name="ID_ALERTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_TIPO_ALERTA" Type="Int32" Nullable="false" />
+    <Property Name="ID_ESTADO" Type="Int32" Nullable="false" />
+    <Property Name="ID_ACCION" Type="Int32" />
+    <Property Name="MATRICULA" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="FICHERO" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="OBSERVACIONES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="USUARIO_CREACION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="T_G_ALERTAS_RENOVACION_CARNET" Relationship="TKE_CARModel.FK_T_G_ALERTAS_RENOVACION_CARNET_T_G_ALERTAS" FromRole="T_G_ALERTAS" ToRole="T_G_ALERTAS_RENOVACION_CARNET" />
+    <NavigationProperty Name="T_G_ALERTAS_RENOVACION_ITV" Relationship="TKE_CARModel.FK_T_G_ALERTAS_RENOVACION_ITV_T_G_ALERTAS" FromRole="T_G_ALERTAS" ToRole="T_G_ALERTAS_RENOVACION_ITV" />
+    <NavigationProperty Name="T_M_ACCIONES" Relationship="TKE_CARModel.FK_T_G_ALERTAS_T_M_ACCIONES" FromRole="T_G_ALERTAS" ToRole="T_M_ACCIONES" />
+    <NavigationProperty Name="T_M_ESTADOS" Relationship="TKE_CARModel.FK_T_G_ALERTAS_T_M_ESTADOS" FromRole="T_G_ALERTAS" ToRole="T_M_ESTADOS" />
+    <NavigationProperty Name="T_M_TIPOS_ALERTAS" Relationship="TKE_CARModel.FK_T_G_ALERTAS_T_M_TIPOS_ALERTAS" FromRole="T_G_ALERTAS" ToRole="T_M_TIPOS_ALERTAS" />
+    <NavigationProperty Name="T_G_HIST_ALERTAS" Relationship="TKE_CARModel.FK_T_G_HIST_ALERTAS_T_G_ALERTAS" FromRole="T_G_ALERTAS" ToRole="T_G_HIST_ALERTAS" />
+    <NavigationProperty Name="T_G_ALERTAS_ROBO" Relationship="TKE_CARModel.FK_T_G_ROBOS_T_G_ALERTAS" FromRole="T_G_ALERTAS" ToRole="T_G_ALERTAS_ROBO" />
+    <NavigationProperty Name="T_G_ALERTAS_SOLICITUD_SOLRED" Relationship="TKE_CARModel.FK_T_G_SOLICITUDES_SOLRED_T_G_ALERTAS" FromRole="T_G_ALERTAS" ToRole="T_G_ALERTAS_SOLICITUD_SOLRED" />
+    <Property Name="ID_CECO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_VENCIMIENTO" Type="DateTime" Precision="0" />
+    <Property Name="MODELO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="T_G_ALERTAS_OTRAS_NOTIFICACIONES" Relationship="TKE_CARModel.FK_T_G_ALERTAS_OTRAS_NOTIFICACIONES_T_G_ALERTAS" FromRole="T_G_ALERTAS" ToRole="T_G_ALERTAS_OTRAS_NOTIFICACIONES" />
+    <NavigationProperty Name="T_G_ALERTAS_CAMBIO_CONDUCTOR" Relationship="TKE_CARModel.FK_T_G_ALERTAS_CAMBIO_CONDUCTOR_T_G_ALERTAS" FromRole="T_G_ALERTAS" ToRole="T_G_ALERTAS_CAMBIO_CONDUCTOR" />
+    <NavigationProperty Name="T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR" Relationship="TKE_CARModel.FK_T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR_T_G_ALERTAS" FromRole="T_G_ALERTAS" ToRole="T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR" />
+    <NavigationProperty Name="T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR" Relationship="TKE_CARModel.FK_T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR_T_G_ALERTAS" FromRole="T_G_ALERTAS" ToRole="T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR" />
+    <NavigationProperty Name="T_G_ALERTAS_MULTA" Relationship="TKE_CARModel.FK_T_G_MULTAS_T_G_ALERTAS" FromRole="T_G_ALERTAS" ToRole="T_G_ALERTAS_MULTA" />
+    <NavigationProperty Name="ECAR_Datos_Vehiculo" Relationship="TKE_CARModel.FK_T_G_ALERTAS_ECAR_Datos_Vehiculo" FromRole="T_G_ALERTAS" ToRole="ECAR_Datos_Vehiculo" />
+  </EntityType>
+  <EntityType Name="T_G_ALERTAS_RENOVACION_CARNET">
+    <Key>
+      <PropertyRef Name="ID_ALERTA" />
+    </Key>
+    <Property Name="ID_ALERTA" Type="Int32" Nullable="false" />
+    <Property Name="FECHA_CADUCIDAD_CARNET" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="COD_CONDUCTOR" Type="Int32" Nullable="false" />
+    <Property Name="CONDUCTOR" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DNI" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="FICHERO_CARNET" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_G_ALERTAS" Relationship="TKE_CARModel.FK_T_G_ALERTAS_RENOVACION_CARNET_T_G_ALERTAS" FromRole="T_G_ALERTAS_RENOVACION_CARNET" ToRole="T_G_ALERTAS" />
+  </EntityType>
+  <EntityType Name="T_G_ALERTAS_RENOVACION_ITV">
+    <Key>
+      <PropertyRef Name="ID_ALERTA" />
+    </Key>
+    <Property Name="ID_ALERTA" Type="Int32" Nullable="false" />
+    <Property Name="FECHA_ITV" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FECHA_CADUCIDAD_ITV" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="T_G_ALERTAS" Relationship="TKE_CARModel.FK_T_G_ALERTAS_RENOVACION_ITV_T_G_ALERTAS" FromRole="T_G_ALERTAS_RENOVACION_ITV" ToRole="T_G_ALERTAS" />
+    <Property Name="FICHERO_ITV" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="T_G_ALERTAS_ROBO">
+    <Key>
+      <PropertyRef Name="ID_ALERTA" />
+    </Key>
+    <Property Name="ID_ALERTA" Type="Int32" Nullable="false" />
+    <Property Name="FECHA_ROBO" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="T_G_ALERTAS" Relationship="TKE_CARModel.FK_T_G_ROBOS_T_G_ALERTAS" FromRole="T_G_ALERTAS_ROBO" ToRole="T_G_ALERTAS" />
+  </EntityType>
+  <EntityType Name="T_G_ALERTAS_SOLICITUD_SOLRED">
+    <Key>
+      <PropertyRef Name="ID_ALERTA" />
+    </Key>
+    <Property Name="ID_ALERTA" Type="Int32" Nullable="false" />
+    <Property Name="FECHA_SOLICITUD" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="ID_TIPO_SOLICITUD_SOLRED" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="T_G_ALERTAS" Relationship="TKE_CARModel.FK_T_G_SOLICITUDES_SOLRED_T_G_ALERTAS" FromRole="T_G_ALERTAS_SOLICITUD_SOLRED" ToRole="T_G_ALERTAS" />
+    <NavigationProperty Name="T_M_TIPOS_SOLICITUD_SOLRED" Relationship="TKE_CARModel.FK_T_G_SOLICITUDES_SOLRED_T_M_TIPOS_SOLICITUD_SOLRED" FromRole="T_G_ALERTAS_SOLICITUD_SOLRED" ToRole="T_M_TIPOS_SOLICITUD_SOLRED" />
+  </EntityType>
+  <EntityType Name="T_G_DOCUMENTACION">
+    <Key>
+      <PropertyRef Name="ID_DOCUMENTO" />
+    </Key>
+    <Property Name="ID_DOCUMENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_CATEGORIA" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+    <Property Name="FICHERO" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="FECHAALTA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TIPO_ARCHIVO" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_M_CATEGORIAS" Relationship="TKE_CARModel.FK_T_G_DOCUMENTACION_T_M_CATEGORIAS" FromRole="T_G_DOCUMENTACION" ToRole="T_M_CATEGORIAS" />
+  </EntityType>
+  <EntityType Name="T_G_DOCUMENTACION_VEHICULO">
+    <Key>
+      <PropertyRef Name="ID_DOCUMENTO" />
+      <PropertyRef Name="MATRICULA" />
+    </Key>
+    <Property Name="ID_DOCUMENTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MATRICULA" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+    <Property Name="FICHERO" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="FECHA_ALTA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ID_TIPO_ALERTA" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="T_M_TIPOS_ALERTAS" Relationship="TKE_CARModel.FK_T_G_DOCUMENTACION_VEHICULO_T_M_TIPOS_ALERTAS" FromRole="T_G_DOCUMENTACION_VEHICULO" ToRole="T_M_TIPOS_ALERTAS" />
+  </EntityType>
+  <EntityType Name="T_G_HIST_ALERTAS">
+    <Key>
+      <PropertyRef Name="ID_HIST_ALERTA" />
+    </Key>
+    <Property Name="ID_HIST_ALERTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_ALERTA" Type="Int32" Nullable="false" />
+    <Property Name="ID_ESTADO" Type="Int32" Nullable="false" />
+    <Property Name="ID_ACCION" Type="Int32" />
+    <Property Name="USUARIO_CREACION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Computed" Precision="3" />
+    <NavigationProperty Name="T_G_ALERTAS" Relationship="TKE_CARModel.FK_T_G_HIST_ALERTAS_T_G_ALERTAS" FromRole="T_G_HIST_ALERTAS" ToRole="T_G_ALERTAS" />
+    <NavigationProperty Name="T_M_ACCIONES" Relationship="TKE_CARModel.FK_T_G_HIST_ALERTAS_T_M_ACCIONES" FromRole="T_G_HIST_ALERTAS" ToRole="T_M_ACCIONES" />
+    <NavigationProperty Name="T_M_ESTADOS" Relationship="TKE_CARModel.FK_T_G_HIST_ALERTAS_T_R_ESTADOS_ACCION" FromRole="T_G_HIST_ALERTAS" ToRole="T_M_ESTADOS" />
+  </EntityType>
+  <EntityType Name="T_G_HIST_CAMBIOS_CONDUCTOR">
+    <Key>
+      <PropertyRef Name="ID_HIST_CAMBIOS_CONDUCTOR" />
+    </Key>
+    <Property Name="ID_HIST_CAMBIOS_CONDUCTOR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_CONDUCTOR_ANT" Type="Int32" />
+    <Property Name="ID_CONDUCTOR_NUEVO" Type="Int32" />
+    <Property Name="MATRICULA" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="USUARIO_CREACION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_ALTA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ID_ESTADO" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_G_MENUS">
+    <Key>
+      <PropertyRef Name="ID_MENU" />
+    </Key>
+    <Property Name="ID_MENU" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ORDEN" Type="Int32" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ID_MENU_PARENT" Type="Int32" />
+    <Property Name="B_ACTIVO" Type="Boolean" Nullable="false" />
+    <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Computed" Precision="3" />
+    <NavigationProperty Name="T_G_MENUS1" Relationship="TKE_CARModel.FK_T_G_MENUS_T_G_MENUS" FromRole="T_G_MENUS" ToRole="T_G_MENUS1" />
+    <NavigationProperty Name="T_G_MENUS2" Relationship="TKE_CARModel.FK_T_G_MENUS_T_G_MENUS" FromRole="T_G_MENUS1" ToRole="T_G_MENUS" />
+    <NavigationProperty Name="T_R_PERFILES_MENU" Relationship="TKE_CARModel.FK_T_R_PERFILES_MENU_T_G_MENUS" FromRole="T_G_MENUS" ToRole="T_R_PERFILES_MENU" />
+  </EntityType>
+  <EntityType Name="T_G_USUARIOS">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LOGIN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NOMBRE" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ID_PERFIL" Type="Int32" Nullable="false" />
+    <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="B_RECIBIR_ALERTA_EMAIL" Type="Boolean" />
+    <Property Name="B_ACTIVO" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="T_G_USUARIOS_CECO" Relationship="TKE_CARModel.FK_T_G_USUARIOS_CECO_T_G_USUARIOS" FromRole="T_G_USUARIOS" ToRole="T_G_USUARIOS_CECO" />
+    <NavigationProperty Name="T_G_USUARIOS_DELEGACION" Relationship="TKE_CARModel.FK_T_G_USUARIOS_DELEGACION_T_G_USUARIOS" FromRole="T_G_USUARIOS" ToRole="T_G_USUARIOS_DELEGACION" />
+    <NavigationProperty Name="T_G_USUARIOS_DIR_TERRITORIAL" Relationship="TKE_CARModel.FK_T_G_USUARIOS_DIR_TERRITORIAL_T_G_USUARIOS" FromRole="T_G_USUARIOS" ToRole="T_G_USUARIOS_DIR_TERRITORIAL" />
+    <NavigationProperty Name="T_G_USUARIOS_EMPRESAS" Relationship="TKE_CARModel.FK_T_G_USUARIOS_EMPRESAS_T_G_USUARIOS" FromRole="T_G_USUARIOS" ToRole="T_G_USUARIOS_EMPRESAS" />
+    <NavigationProperty Name="T_M_PERFILES" Relationship="TKE_CARModel.FK_T_G_USUARIOS_T_M_PERFILES" FromRole="T_G_USUARIOS" ToRole="T_M_PERFILES" />
+  </EntityType>
+  <EntityType Name="T_G_USUARIOS_CECO">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+      <PropertyRef Name="ID_CECO" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
+    <Property Name="ID_CECO" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_G_USUARIOS" Relationship="TKE_CARModel.FK_T_G_USUARIOS_CECO_T_G_USUARIOS" FromRole="T_G_USUARIOS_CECO" ToRole="T_G_USUARIOS" />
+  </EntityType>
+  <EntityType Name="T_G_USUARIOS_DELEGACION">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+      <PropertyRef Name="ID_DELEGACION" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
+    <Property Name="ID_DELEGACION" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_G_USUARIOS" Relationship="TKE_CARModel.FK_T_G_USUARIOS_DELEGACION_T_G_USUARIOS" FromRole="T_G_USUARIOS_DELEGACION" ToRole="T_G_USUARIOS" />
+  </EntityType>
+  <EntityType Name="T_G_USUARIOS_DIR_TERRITORIAL">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+      <PropertyRef Name="ID_DT" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
+    <Property Name="ID_DT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_G_USUARIOS" Relationship="TKE_CARModel.FK_T_G_USUARIOS_DIR_TERRITORIAL_T_G_USUARIOS" FromRole="T_G_USUARIOS_DIR_TERRITORIAL" ToRole="T_G_USUARIOS" />
+  </EntityType>
+  <EntityType Name="T_G_USUARIOS_EMPRESAS">
+    <Key>
+      <PropertyRef Name="ID_USUARIO" />
+      <PropertyRef Name="ID_EMPRESA" />
+    </Key>
+    <Property Name="ID_USUARIO" Type="Int32" Nullable="false" />
+    <Property Name="ID_EMPRESA" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="T_G_USUARIOS" Relationship="TKE_CARModel.FK_T_G_USUARIOS_EMPRESAS_T_G_USUARIOS" FromRole="T_G_USUARIOS_EMPRESAS" ToRole="T_G_USUARIOS" />
+  </EntityType>
+  <EntityType Name="T_M_ACCIONES">
+    <Key>
+      <PropertyRef Name="ID_ACCION" />
+    </Key>
+    <Property Name="ID_ACCION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_G_ALERTAS" Relationship="TKE_CARModel.FK_T_G_ALERTAS_T_M_ACCIONES" FromRole="T_M_ACCIONES" ToRole="T_G_ALERTAS" />
+    <NavigationProperty Name="T_G_HIST_ALERTAS" Relationship="TKE_CARModel.FK_T_G_HIST_ALERTAS_T_M_ACCIONES" FromRole="T_M_ACCIONES" ToRole="T_G_HIST_ALERTAS" />
+    <NavigationProperty Name="T_R_ESTADOS_ACCION" Relationship="TKE_CARModel.FK_T_R_ESTADOS_ACCION_T_M_ACCIONES" FromRole="T_M_ACCIONES" ToRole="T_R_ESTADOS_ACCION" />
+  </EntityType>
+  <EntityType Name="T_M_CATEGORIAS">
+    <Key>
+      <PropertyRef Name="ID_CATEGORIA" />
+    </Key>
+    <Property Name="ID_CATEGORIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ORDENACION" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="T_G_DOCUMENTACION" Relationship="TKE_CARModel.FK_T_G_DOCUMENTACION_T_M_CATEGORIAS" FromRole="T_M_CATEGORIAS" ToRole="T_G_DOCUMENTACION" />
+    <Property Name="BAJA" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_M_ESTADOS">
+    <Key>
+      <PropertyRef Name="ID_ESTADO" />
+    </Key>
+    <Property Name="ID_ESTADO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_G_ALERTAS" Relationship="TKE_CARModel.FK_T_G_ALERTAS_T_M_ESTADOS" FromRole="T_M_ESTADOS" ToRole="T_G_ALERTAS" />
+    <NavigationProperty Name="T_G_HIST_ALERTAS" Relationship="TKE_CARModel.FK_T_G_HIST_ALERTAS_T_R_ESTADOS_ACCION" FromRole="T_M_ESTADOS" ToRole="T_G_HIST_ALERTAS" />
+    <NavigationProperty Name="T_R_ESTADOS_ACCION" Relationship="TKE_CARModel.FK_T_R_ESTADOS_ACCION_T_M_ESTADOS" FromRole="T_M_ESTADOS" ToRole="T_R_ESTADOS_ACCION" />
+    <NavigationProperty Name="T_R_ESTADOS_ACCION1" Relationship="TKE_CARModel.FK_T_R_ESTADOS_ACCION_T_M_ESTADOS1" FromRole="T_M_ESTADOS" ToRole="T_R_ESTADOS_ACCION" />
+  </EntityType>
+  <EntityType Name="T_M_PERFILES">
+    <Key>
+      <PropertyRef Name="ID_PERFIL" />
+    </Key>
+    <Property Name="ID_PERFIL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="B_ACTIVO" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="T_G_USUARIOS" Relationship="TKE_CARModel.FK_T_G_USUARIOS_T_M_PERFILES" FromRole="T_M_PERFILES" ToRole="T_G_USUARIOS" />
+    <NavigationProperty Name="T_R_PERFILES_MENU" Relationship="TKE_CARModel.FK_T_R_PERFILES_MENU_T_M_PERFILES" FromRole="T_M_PERFILES" ToRole="T_R_PERFILES_MENU" />
+  </EntityType>
+  <EntityType Name="T_M_TIPOS_ALERTAS">
+    <Key>
+      <PropertyRef Name="ID_TIPO_ALERTA" />
+    </Key>
+    <Property Name="ID_TIPO_ALERTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PRIORIDAD" Type="Int32" Nullable="false" />
+    <Property Name="B_AUTOMATICA" Type="Boolean" Nullable="false" />
+    <Property Name="DIAS_PREAVISO" Type="Int32" />
+    <NavigationProperty Name="T_G_ALERTAS" Relationship="TKE_CARModel.FK_T_G_ALERTAS_T_M_TIPOS_ALERTAS" FromRole="T_M_TIPOS_ALERTAS" ToRole="T_G_ALERTAS" />
+    <NavigationProperty Name="T_G_DOCUMENTACION_VEHICULO" Relationship="TKE_CARModel.FK_T_G_DOCUMENTACION_VEHICULO_T_M_TIPOS_ALERTAS" FromRole="T_M_TIPOS_ALERTAS" ToRole="T_G_DOCUMENTACION_VEHICULO" />
+    <NavigationProperty Name="T_R_ESTADOS_ACCION" Relationship="TKE_CARModel.FK_T_R_ESTADOS_ACCION_T_M_TIPOS_ALERTAS" FromRole="T_M_TIPOS_ALERTAS" ToRole="T_R_ESTADOS_ACCION" />
+  </EntityType>
+  <EntityType Name="T_M_TIPOS_SOLICITUD_SOLRED">
+    <Key>
+      <PropertyRef Name="ID_TIPO_SOLICITUD_SOLRED" />
+    </Key>
+    <Property Name="ID_TIPO_SOLICITUD_SOLRED" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_G_ALERTAS_SOLICITUD_SOLRED" Relationship="TKE_CARModel.FK_T_G_SOLICITUDES_SOLRED_T_M_TIPOS_SOLICITUD_SOLRED" FromRole="T_M_TIPOS_SOLICITUD_SOLRED" ToRole="T_G_ALERTAS_SOLICITUD_SOLRED" />
+  </EntityType>
+  <EntityType Name="T_R_PERFILES_MENU">
+    <Key>
+      <PropertyRef Name="ID_PERFIL" />
+      <PropertyRef Name="ID_MENU" />
+    </Key>
+    <Property Name="ID_PERFIL" Type="Int32" Nullable="false" />
+    <Property Name="ID_MENU" Type="Int32" Nullable="false" />
+    <Property Name="B_ACTIVO" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="T_G_MENUS" Relationship="TKE_CARModel.FK_T_R_PERFILES_MENU_T_G_MENUS" FromRole="T_R_PERFILES_MENU" ToRole="T_G_MENUS" />
+    <NavigationProperty Name="T_M_PERFILES" Relationship="TKE_CARModel.FK_T_R_PERFILES_MENU_T_M_PERFILES" FromRole="T_R_PERFILES_MENU" ToRole="T_M_PERFILES" />
+  </EntityType>
+  <Association Name="FK_T_G_ALERTAS_RENOVACION_CARNET_T_G_ALERTAS">
+    <End Type="TKE_CARModel.T_G_ALERTAS" Role="T_G_ALERTAS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_ALERTAS_RENOVACION_CARNET" Role="T_G_ALERTAS_RENOVACION_CARNET" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="T_G_ALERTAS">
+        <PropertyRef Name="ID_ALERTA" />
+      </Principal>
+      <Dependent Role="T_G_ALERTAS_RENOVACION_CARNET">
+        <PropertyRef Name="ID_ALERTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_ALERTAS_RENOVACION_ITV_T_G_ALERTAS">
+    <End Type="TKE_CARModel.T_G_ALERTAS" Role="T_G_ALERTAS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_ALERTAS_RENOVACION_ITV" Role="T_G_ALERTAS_RENOVACION_ITV" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="T_G_ALERTAS">
+        <PropertyRef Name="ID_ALERTA" />
+      </Principal>
+      <Dependent Role="T_G_ALERTAS_RENOVACION_ITV">
+        <PropertyRef Name="ID_ALERTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_ALERTAS_T_M_ACCIONES">
+    <End Type="TKE_CARModel.T_M_ACCIONES" Role="T_M_ACCIONES" Multiplicity="0..1" />
+    <End Type="TKE_CARModel.T_G_ALERTAS" Role="T_G_ALERTAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_ACCIONES">
+        <PropertyRef Name="ID_ACCION" />
+      </Principal>
+      <Dependent Role="T_G_ALERTAS">
+        <PropertyRef Name="ID_ACCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_ALERTAS_T_M_ESTADOS">
+    <End Type="TKE_CARModel.T_M_ESTADOS" Role="T_M_ESTADOS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_ALERTAS" Role="T_G_ALERTAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_ESTADOS">
+        <PropertyRef Name="ID_ESTADO" />
+      </Principal>
+      <Dependent Role="T_G_ALERTAS">
+        <PropertyRef Name="ID_ESTADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_ALERTAS_T_M_TIPOS_ALERTAS">
+    <End Type="TKE_CARModel.T_M_TIPOS_ALERTAS" Role="T_M_TIPOS_ALERTAS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_ALERTAS" Role="T_G_ALERTAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_TIPOS_ALERTAS">
+        <PropertyRef Name="ID_TIPO_ALERTA" />
+      </Principal>
+      <Dependent Role="T_G_ALERTAS">
+        <PropertyRef Name="ID_TIPO_ALERTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_HIST_ALERTAS_T_G_ALERTAS">
+    <End Type="TKE_CARModel.T_G_ALERTAS" Role="T_G_ALERTAS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_HIST_ALERTAS" Role="T_G_HIST_ALERTAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_G_ALERTAS">
+        <PropertyRef Name="ID_ALERTA" />
+      </Principal>
+      <Dependent Role="T_G_HIST_ALERTAS">
+        <PropertyRef Name="ID_ALERTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_ROBOS_T_G_ALERTAS">
+    <End Type="TKE_CARModel.T_G_ALERTAS" Role="T_G_ALERTAS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_ALERTAS_ROBO" Role="T_G_ALERTAS_ROBO" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="T_G_ALERTAS">
+        <PropertyRef Name="ID_ALERTA" />
+      </Principal>
+      <Dependent Role="T_G_ALERTAS_ROBO">
+        <PropertyRef Name="ID_ALERTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_SOLICITUDES_SOLRED_T_G_ALERTAS">
+    <End Type="TKE_CARModel.T_G_ALERTAS" Role="T_G_ALERTAS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_ALERTAS_SOLICITUD_SOLRED" Role="T_G_ALERTAS_SOLICITUD_SOLRED" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="T_G_ALERTAS">
+        <PropertyRef Name="ID_ALERTA" />
+      </Principal>
+      <Dependent Role="T_G_ALERTAS_SOLICITUD_SOLRED">
+        <PropertyRef Name="ID_ALERTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_SOLICITUDES_SOLRED_T_M_TIPOS_SOLICITUD_SOLRED">
+    <End Type="TKE_CARModel.T_M_TIPOS_SOLICITUD_SOLRED" Role="T_M_TIPOS_SOLICITUD_SOLRED" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_ALERTAS_SOLICITUD_SOLRED" Role="T_G_ALERTAS_SOLICITUD_SOLRED" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_TIPOS_SOLICITUD_SOLRED">
+        <PropertyRef Name="ID_TIPO_SOLICITUD_SOLRED" />
+      </Principal>
+      <Dependent Role="T_G_ALERTAS_SOLICITUD_SOLRED">
+        <PropertyRef Name="ID_TIPO_SOLICITUD_SOLRED" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_DOCUMENTACION_T_M_CATEGORIAS">
+    <End Type="TKE_CARModel.T_M_CATEGORIAS" Role="T_M_CATEGORIAS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_DOCUMENTACION" Role="T_G_DOCUMENTACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_CATEGORIAS">
+        <PropertyRef Name="ID_CATEGORIA" />
+      </Principal>
+      <Dependent Role="T_G_DOCUMENTACION">
+        <PropertyRef Name="ID_CATEGORIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_DOCUMENTACION_VEHICULO_T_M_TIPOS_ALERTAS">
+    <End Type="TKE_CARModel.T_M_TIPOS_ALERTAS" Role="T_M_TIPOS_ALERTAS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_DOCUMENTACION_VEHICULO" Role="T_G_DOCUMENTACION_VEHICULO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_TIPOS_ALERTAS">
+        <PropertyRef Name="ID_TIPO_ALERTA" />
+      </Principal>
+      <Dependent Role="T_G_DOCUMENTACION_VEHICULO">
+        <PropertyRef Name="ID_TIPO_ALERTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_HIST_ALERTAS_T_M_ACCIONES">
+    <End Type="TKE_CARModel.T_M_ACCIONES" Role="T_M_ACCIONES" Multiplicity="0..1" />
+    <End Type="TKE_CARModel.T_G_HIST_ALERTAS" Role="T_G_HIST_ALERTAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_ACCIONES">
+        <PropertyRef Name="ID_ACCION" />
+      </Principal>
+      <Dependent Role="T_G_HIST_ALERTAS">
+        <PropertyRef Name="ID_ACCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_HIST_ALERTAS_T_R_ESTADOS_ACCION">
+    <End Type="TKE_CARModel.T_M_ESTADOS" Role="T_M_ESTADOS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_HIST_ALERTAS" Role="T_G_HIST_ALERTAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_ESTADOS">
+        <PropertyRef Name="ID_ESTADO" />
+      </Principal>
+      <Dependent Role="T_G_HIST_ALERTAS">
+        <PropertyRef Name="ID_ESTADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_MENUS_T_G_MENUS">
+    <End Type="TKE_CARModel.T_G_MENUS" Role="T_G_MENUS" Multiplicity="0..1" />
+    <End Type="TKE_CARModel.T_G_MENUS" Role="T_G_MENUS1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_G_MENUS">
+        <PropertyRef Name="ID_MENU" />
+      </Principal>
+      <Dependent Role="T_G_MENUS1">
+        <PropertyRef Name="ID_MENU_PARENT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_R_PERFILES_MENU_T_G_MENUS">
+    <End Type="TKE_CARModel.T_G_MENUS" Role="T_G_MENUS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_R_PERFILES_MENU" Role="T_R_PERFILES_MENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_G_MENUS">
+        <PropertyRef Name="ID_MENU" />
+      </Principal>
+      <Dependent Role="T_R_PERFILES_MENU">
+        <PropertyRef Name="ID_MENU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_USUARIOS_CECO_T_G_USUARIOS">
+    <End Type="TKE_CARModel.T_G_USUARIOS" Role="T_G_USUARIOS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_USUARIOS_CECO" Role="T_G_USUARIOS_CECO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_G_USUARIOS">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="T_G_USUARIOS_CECO">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_USUARIOS_DELEGACION_T_G_USUARIOS">
+    <End Type="TKE_CARModel.T_G_USUARIOS" Role="T_G_USUARIOS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_USUARIOS_DELEGACION" Role="T_G_USUARIOS_DELEGACION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_G_USUARIOS">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="T_G_USUARIOS_DELEGACION">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_USUARIOS_DIR_TERRITORIAL_T_G_USUARIOS">
+    <End Type="TKE_CARModel.T_G_USUARIOS" Role="T_G_USUARIOS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_USUARIOS_DIR_TERRITORIAL" Role="T_G_USUARIOS_DIR_TERRITORIAL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_G_USUARIOS">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="T_G_USUARIOS_DIR_TERRITORIAL">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_USUARIOS_EMPRESAS_T_G_USUARIOS">
+    <End Type="TKE_CARModel.T_G_USUARIOS" Role="T_G_USUARIOS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_USUARIOS_EMPRESAS" Role="T_G_USUARIOS_EMPRESAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_G_USUARIOS">
+        <PropertyRef Name="ID_USUARIO" />
+      </Principal>
+      <Dependent Role="T_G_USUARIOS_EMPRESAS">
+        <PropertyRef Name="ID_USUARIO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_USUARIOS_T_M_PERFILES">
+    <End Type="TKE_CARModel.T_M_PERFILES" Role="T_M_PERFILES" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_USUARIOS" Role="T_G_USUARIOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_PERFILES">
+        <PropertyRef Name="ID_PERFIL" />
+      </Principal>
+      <Dependent Role="T_G_USUARIOS">
+        <PropertyRef Name="ID_PERFIL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_R_PERFILES_MENU_T_M_PERFILES">
+    <End Type="TKE_CARModel.T_M_PERFILES" Role="T_M_PERFILES" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_R_PERFILES_MENU" Role="T_R_PERFILES_MENU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_PERFILES">
+        <PropertyRef Name="ID_PERFIL" />
+      </Principal>
+      <Dependent Role="T_R_PERFILES_MENU">
+        <PropertyRef Name="ID_PERFIL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="T_G_ALERTAS_OTRAS_NOTIFICACIONES">
+    <Key>
+      <PropertyRef Name="ID_ALERTA" />
+    </Key>
+    <Property Name="ID_ALERTA" Type="Int32" Nullable="false" />
+    <Property Name="ID_TIPO_CLASIFICACION" Type="Int32" Nullable="false" />
+    <Property Name="FICHERO" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="OBSERVACIONES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_G_ALERTAS" Relationship="TKE_CARModel.FK_T_G_ALERTAS_OTRAS_NOTIFICACIONES_T_G_ALERTAS" FromRole="T_G_ALERTAS_OTRAS_NOTIFICACIONES" ToRole="T_G_ALERTAS" />
+    <NavigationProperty Name="T_M_TIPOS_CLASIFICACION" Relationship="TKE_CARModel.FK_T_G_ALERTAS_OTRAS_NOTIFICACIONES_T_M_TIPOS_CLASIFICACION" FromRole="T_G_ALERTAS_OTRAS_NOTIFICACIONES" ToRole="T_M_TIPOS_CLASIFICACION" />
+  </EntityType>
+  <EntityType Name="T_M_TIPOS_CLASIFICACION">
+    <Key>
+      <PropertyRef Name="ID_TIPO_CLASIFICACION" />
+    </Key>
+    <Property Name="ID_TIPO_CLASIFICACION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_G_ALERTAS_OTRAS_NOTIFICACIONES" Relationship="TKE_CARModel.FK_T_G_ALERTAS_OTRAS_NOTIFICACIONES_T_M_TIPOS_CLASIFICACION" FromRole="T_M_TIPOS_CLASIFICACION" ToRole="T_G_ALERTAS_OTRAS_NOTIFICACIONES" />
+  </EntityType>
+  <Association Name="FK_T_G_ALERTAS_OTRAS_NOTIFICACIONES_T_G_ALERTAS">
+    <End Type="TKE_CARModel.T_G_ALERTAS" Role="T_G_ALERTAS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_ALERTAS_OTRAS_NOTIFICACIONES" Role="T_G_ALERTAS_OTRAS_NOTIFICACIONES" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="T_G_ALERTAS">
+        <PropertyRef Name="ID_ALERTA" />
+      </Principal>
+      <Dependent Role="T_G_ALERTAS_OTRAS_NOTIFICACIONES">
+        <PropertyRef Name="ID_ALERTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_ALERTAS_OTRAS_NOTIFICACIONES_T_M_TIPOS_CLASIFICACION">
+    <End Type="TKE_CARModel.T_M_TIPOS_CLASIFICACION" Role="T_M_TIPOS_CLASIFICACION" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_ALERTAS_OTRAS_NOTIFICACIONES" Role="T_G_ALERTAS_OTRAS_NOTIFICACIONES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_TIPOS_CLASIFICACION">
+        <PropertyRef Name="ID_TIPO_CLASIFICACION" />
+      </Principal>
+      <Dependent Role="T_G_ALERTAS_OTRAS_NOTIFICACIONES">
+        <PropertyRef Name="ID_TIPO_CLASIFICACION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="T_G_GESTORES_FLOTA">
+    <Key>
+      <PropertyRef Name="NUMEROEMPLEADO" />
+    </Key>
+    <Property Name="NUMEROEMPLEADO" Type="Int32" Nullable="false" />
+    <Property Name="PUESTO" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TELEFONO1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TELEFONO2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FOTO" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_ALTA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FECHA_MODIFICACION" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="T_R_ESTADOS_ACCION">
+    <Key>
+      <PropertyRef Name="ID_ESTADO_ACCION" />
+    </Key>
+    <Property Name="ID_ESTADO_ACCION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_TIPO_ALERTA" Type="Int32" Nullable="false" />
+    <Property Name="ID_ESTADO" Type="Int32" Nullable="false" />
+    <Property Name="ID_ACCION" Type="Int32" />
+    <Property Name="ID_ESTADO_ANTERIOR" Type="Int32" />
+    <Property Name="ID_PERFIL" Type="Int32" />
+    <NavigationProperty Name="T_M_ACCIONES" Relationship="TKE_CARModel.FK_T_R_ESTADOS_ACCION_T_M_ACCIONES" FromRole="T_R_ESTADOS_ACCION" ToRole="T_M_ACCIONES" />
+    <NavigationProperty Name="T_M_ESTADOS" Relationship="TKE_CARModel.FK_T_R_ESTADOS_ACCION_T_M_ESTADOS" FromRole="T_R_ESTADOS_ACCION" ToRole="T_M_ESTADOS" />
+    <NavigationProperty Name="T_M_ESTADOS1" Relationship="TKE_CARModel.FK_T_R_ESTADOS_ACCION_T_M_ESTADOS1" FromRole="T_R_ESTADOS_ACCION" ToRole="T_M_ESTADOS" />
+    <NavigationProperty Name="T_M_TIPOS_ALERTAS" Relationship="TKE_CARModel.FK_T_R_ESTADOS_ACCION_T_M_TIPOS_ALERTAS" FromRole="T_R_ESTADOS_ACCION" ToRole="T_M_TIPOS_ALERTAS" />
+  </EntityType>
+  <Association Name="FK_T_R_ESTADOS_ACCION_T_M_ACCIONES">
+    <End Type="TKE_CARModel.T_M_ACCIONES" Role="T_M_ACCIONES" Multiplicity="0..1" />
+    <End Type="TKE_CARModel.T_R_ESTADOS_ACCION" Role="T_R_ESTADOS_ACCION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_ACCIONES">
+        <PropertyRef Name="ID_ACCION" />
+      </Principal>
+      <Dependent Role="T_R_ESTADOS_ACCION">
+        <PropertyRef Name="ID_ACCION" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_R_ESTADOS_ACCION_T_M_ESTADOS">
+    <End Type="TKE_CARModel.T_M_ESTADOS" Role="T_M_ESTADOS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_R_ESTADOS_ACCION" Role="T_R_ESTADOS_ACCION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_ESTADOS">
+        <PropertyRef Name="ID_ESTADO" />
+      </Principal>
+      <Dependent Role="T_R_ESTADOS_ACCION">
+        <PropertyRef Name="ID_ESTADO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_R_ESTADOS_ACCION_T_M_ESTADOS1">
+    <End Type="TKE_CARModel.T_M_ESTADOS" Role="T_M_ESTADOS" Multiplicity="0..1" />
+    <End Type="TKE_CARModel.T_R_ESTADOS_ACCION" Role="T_R_ESTADOS_ACCION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_ESTADOS">
+        <PropertyRef Name="ID_ESTADO" />
+      </Principal>
+      <Dependent Role="T_R_ESTADOS_ACCION">
+        <PropertyRef Name="ID_ESTADO_ANTERIOR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_R_ESTADOS_ACCION_T_M_TIPOS_ALERTAS">
+    <End Type="TKE_CARModel.T_M_TIPOS_ALERTAS" Role="T_M_TIPOS_ALERTAS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_R_ESTADOS_ACCION" Role="T_R_ESTADOS_ACCION" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_TIPOS_ALERTAS">
+        <PropertyRef Name="ID_TIPO_ALERTA" />
+      </Principal>
+      <Dependent Role="T_R_ESTADOS_ACCION">
+        <PropertyRef Name="ID_TIPO_ALERTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="T_G_VIA_VERDE_EXTRACTOS">
+    <Key>
+      <PropertyRef Name="ID_EXTRACTO" />
+    </Key>
+    <Property Name="ID_EXTRACTO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MES_EMISION" Type="Int32" Nullable="false" />
+    <Property Name="AÑO_EMISION" Type="Int32" Nullable="false" />
+    <Property Name="ID_CLIENTE" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="TOTAL" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="TOTAL_IVA" Type="Decimal" Precision="12" Scale="2" />
+    <NavigationProperty Name="T_M_CLIENTES" Relationship="TKE_CARModel.FK_T_G_VIA_VERDE_EXTRACTOS_T_M_CLIENTES" FromRole="T_G_VIA_VERDE_EXTRACTOS" ToRole="T_M_CLIENTES" />
+    <Property Name="NOMBRE_ARCHIVO_IMPORTACION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="T_G_VIA_VERDE_IDENTIFICADORES">
+    <Key>
+      <PropertyRef Name="ID_IDENTIFICADOR" />
+    </Key>
+    <Property Name="ID_IDENTIFICADOR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDENTIFICADOR" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ID_EXTRACTO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MATRICULA" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="REF_PAGO" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="TOTAL" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+    <NavigationProperty Name="T_G_VIA_VERDE_TRANSACCIONES" Relationship="TKE_CARModel.FK_T_G_VIA_VERDE_TRANSACCIONES_T_G_VIA_VERDE_IDENTIFICADORES" FromRole="T_G_VIA_VERDE_IDENTIFICADORES" ToRole="T_G_VIA_VERDE_TRANSACCIONES" />
+  </EntityType>
+  <EntityType Name="T_M_CLIENTES">
+    <Key>
+      <PropertyRef Name="ID_CLIENTE" />
+    </Key>
+    <Property Name="ID_CLIENTE" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="NIF" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DIRECCION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LOCALIDAD" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CODIGO_POSTAL" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_G_VIA_VERDE_EXTRACTOS" Relationship="TKE_CARModel.FK_T_G_VIA_VERDE_EXTRACTOS_T_M_CLIENTES" FromRole="T_M_CLIENTES" ToRole="T_G_VIA_VERDE_EXTRACTOS" />
+  </EntityType>
+  <Association Name="FK_T_G_VIA_VERDE_EXTRACTOS_T_M_CLIENTES">
+    <End Type="TKE_CARModel.T_M_CLIENTES" Role="T_M_CLIENTES" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_VIA_VERDE_EXTRACTOS" Role="T_G_VIA_VERDE_EXTRACTOS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_CLIENTES">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Principal>
+      <Dependent Role="T_G_VIA_VERDE_EXTRACTOS">
+        <PropertyRef Name="ID_CLIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="T_G_VIA_VERDE_TRANSACCIONES">
+    <Key>
+      <PropertyRef Name="ID_TRANSACCION" />
+    </Key>
+    <Property Name="ID_TRANSACCION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_IDENTIFICADOR" Type="Int32" Nullable="false" />
+    <Property Name="FECHA_ENTRADA" Type="DateTime" Precision="3" />
+    <Property Name="LUGAR_ENTRADA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_SALIDA" Type="DateTime" Precision="3" />
+    <Property Name="LUGAR_SALIDA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IMPORTE" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="DECUENTO" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="PORCENTAJE_IMPUESTO" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="OPERADOR" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TIPO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_TARJETA" Type="DateTime" Precision="3" />
+    <Property Name="NUM_TARJETA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_G_VIA_VERDE_IDENTIFICADORES" Relationship="TKE_CARModel.FK_T_G_VIA_VERDE_TRANSACCIONES_T_G_VIA_VERDE_IDENTIFICADORES" FromRole="T_G_VIA_VERDE_TRANSACCIONES" ToRole="T_G_VIA_VERDE_IDENTIFICADORES" />
+  </EntityType>
+  <Association Name="FK_T_G_VIA_VERDE_TRANSACCIONES_T_G_VIA_VERDE_IDENTIFICADORES">
+    <End Type="TKE_CARModel.T_G_VIA_VERDE_IDENTIFICADORES" Role="T_G_VIA_VERDE_IDENTIFICADORES" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_VIA_VERDE_TRANSACCIONES" Role="T_G_VIA_VERDE_TRANSACCIONES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_G_VIA_VERDE_IDENTIFICADORES">
+        <PropertyRef Name="ID_IDENTIFICADOR" />
+      </Principal>
+      <Dependent Role="T_G_VIA_VERDE_TRANSACCIONES">
+        <PropertyRef Name="ID_IDENTIFICADOR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="T_G_TELEFONOS_FRECUENTES">
+    <Key>
+      <PropertyRef Name="NUMERO_TELEFONO" />
+    </Key>
+    <Property Name="NUMERO_TELEFONO" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ID_EMPRESA" Type="Int32" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="T_M_CATEGORIA_PREGUNTAS">
+    <Key>
+      <PropertyRef Name="ID_CATEGORIA" />
+    </Key>
+    <Property Name="ID_CATEGORIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_EMPRESA" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ORDENACION" Type="Int32" Nullable="false" />
+    <Property Name="BAJA" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_G_PREGUNTAS_FRECUENTES">
+    <Key>
+      <PropertyRef Name="ID_PREGUNTA" />
+    </Key>
+    <Property Name="ID_PREGUNTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_CATEGORIA" Type="Int32" Nullable="false" />
+    <Property Name="PREGUNTA" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RESPUESTA" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BAJA" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_M_MARCA_VEHICULOS">
+    <Key>
+      <PropertyRef Name="ID_MARCA" />
+    </Key>
+    <Property Name="ID_MARCA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BAJA" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="T_M_MODELOS_VEHICULO" Relationship="TKE_CARModel.FK_T_M_MODELOS_VEHICULO_T_M_MARCA_VEHICULOS" FromRole="T_M_MARCA_VEHICULOS" ToRole="T_M_MODELOS_VEHICULO" />
+    <NavigationProperty Name="ECAR_Datos_Vehiculo" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_MARCA_VEHICULOS" FromRole="T_M_MARCA_VEHICULOS" ToRole="ECAR_Datos_Vehiculo" />
+  </EntityType>
+  <EntityType Name="T_M_MODELOS_VEHICULO">
+    <Key>
+      <PropertyRef Name="ID_MODELO" />
+    </Key>
+    <Property Name="ID_MODELO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_MARCA" Type="Int32" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BAJA" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="T_M_MARCA_VEHICULOS" Relationship="TKE_CARModel.FK_T_M_MODELOS_VEHICULO_T_M_MARCA_VEHICULOS" FromRole="T_M_MODELOS_VEHICULO" ToRole="T_M_MARCA_VEHICULOS" />
+    <NavigationProperty Name="ECAR_Datos_Vehiculo" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_MODELOS_VEHICULO" FromRole="T_M_MODELOS_VEHICULO" ToRole="ECAR_Datos_Vehiculo" />
+  </EntityType>
+  <EntityType Name="T_M_RUTA_VEHICULOS">
+    <Key>
+      <PropertyRef Name="ID_RUTA_VEHICULO" />
+    </Key>
+    <Property Name="ID_RUTA_VEHICULO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BAJA" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ECAR_Datos_Vehiculo" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_RUTA_VEHICULOS" FromRole="T_M_RUTA_VEHICULOS" ToRole="ECAR_Datos_Vehiculo" />
+  </EntityType>
+  <EntityType Name="T_M_TIPOS_CARBURANTE">
+    <Key>
+      <PropertyRef Name="ID_CARBURANTE" />
+    </Key>
+    <Property Name="ID_CARBURANTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BAJA" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ECAR_Datos_Vehiculo" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_TIPOS_CARBURANTE" FromRole="T_M_TIPOS_CARBURANTE" ToRole="ECAR_Datos_Vehiculo" />
+  </EntityType>
+  <EntityType Name="T_M_TIPOS_VEHICULO">
+    <Key>
+      <PropertyRef Name="ID_TIPO_VEHICULO" />
+    </Key>
+    <Property Name="ID_TIPO_VEHICULO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BAJA" Type="Boolean" Nullable="false" />
+    <Property Name="TIENE_ITV" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ECAR_Datos_Vehiculo" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_TIPOS_VEHICULO" FromRole="T_M_TIPOS_VEHICULO" ToRole="ECAR_Datos_Vehiculo" />
+  </EntityType>
+  <EntityType Name="T_M_UBICACIONES">
+    <Key>
+      <PropertyRef Name="ID_UBICACION" />
+    </Key>
+    <Property Name="ID_UBICACION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BAJA" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ECAR_Datos_Vehiculo" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_UBICACIONES" FromRole="T_M_UBICACIONES" ToRole="ECAR_Datos_Vehiculo" />
+  </EntityType>
+  <Association Name="FK_T_M_MODELOS_VEHICULO_T_M_MARCA_VEHICULOS">
+    <End Type="TKE_CARModel.T_M_MARCA_VEHICULOS" Role="T_M_MARCA_VEHICULOS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_M_MODELOS_VEHICULO" Role="T_M_MODELOS_VEHICULO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_MARCA_VEHICULOS">
+        <PropertyRef Name="ID_MARCA" />
+      </Principal>
+      <Dependent Role="T_M_MODELOS_VEHICULO">
+        <PropertyRef Name="ID_MARCA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="T_M_TIPO_SEGURO_VEHICULO">
+    <Key>
+      <PropertyRef Name="ID_SEGURO_VEHICULO" />
+    </Key>
+    <Property Name="ID_SEGURO_VEHICULO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BAJA" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ECAR_Datos_Vehiculo" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_TIPO_SEGURO_VEHICULO" FromRole="T_M_TIPO_SEGURO_VEHICULO" ToRole="ECAR_Datos_Vehiculo" />
+  </EntityType>
+  <EntityType Name="T_M_TIPO_TARJETA_COMBUSTIBLE">
+    <Key>
+      <PropertyRef Name="ID_TARJETA_COMBUSTIBLE" />
+    </Key>
+    <Property Name="ID_TARJETA_COMBUSTIBLE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="BAJA" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="T_M_TARJETAS_CONBUSTIBLE" Relationship="TKE_CARModel.FK_T_M_TARJETAS_CONBUSTIBLE_T_M_TIPO_TARJETA_COMBUSTIBLE" FromRole="T_M_TIPO_TARJETA_COMBUSTIBLE" ToRole="T_M_TARJETAS_CONBUSTIBLE" />
+  </EntityType>
+  <EntityType Name="V_ALERTAS_CECOS_DELEGACION">
+    <Key>
+      <PropertyRef Name="ID_ALERTA" />
+    </Key>
+    <Property Name="ID_ALERTA" Type="Int32" Nullable="false" />
+    <Property Name="ID_CECO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NUM_DEL" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NOMBRE_DELEGACION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="V_TARJETAS_COMBUSTIBLE_EMPRESAS">
+    <Key>
+      <PropertyRef Name="ID_TARJETA" />
+      <PropertyRef Name="COD_TARJETA" />
+      <PropertyRef Name="ID_EMPRESA" />
+      <PropertyRef Name="ID_EMPRESA_EMISORA" />
+      <PropertyRef Name="NOMBRE_EMPRESA" />
+      <PropertyRef Name="FECHA_CADUCIDAD" />
+      <PropertyRef Name="PIN" />
+      <PropertyRef Name="BAJA" />
+      <PropertyRef Name="NOMBRE_EMPRESA_EMISORA" />
+    </Key>
+    <Property Name="ID_TARJETA" Type="Int32" Nullable="false" />
+    <Property Name="COD_TARJETA" Type="String" Nullable="false" MaxLength="19" FixedLength="false" Unicode="true" />
+    <Property Name="ID_EMPRESA" Type="Int32" Nullable="false" />
+    <Property Name="ID_EMPRESA_EMISORA" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE_EMPRESA" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_CADUCIDAD" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PIN" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="BAJA" Type="Boolean" Nullable="false" />
+    <Property Name="NOMBRE_EMPRESA_EMISORA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ECAR_Datos_Conductor">
+    <Key>
+      <PropertyRef Name="Cod_Conductor" />
+    </Key>
+    <Property Name="Cod_Conductor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DNI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Cod_Postal" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Poblacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Provincia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tlf" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Movil" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha_Nacimiento" Type="DateTime" Precision="3" />
+    <Property Name="Fecha_Carnet" Type="DateTime" Precision="3" />
+    <Property Name="Num_Empleado" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha_Vencimiento_Carnet" Type="DateTime" Precision="3" />
+    <Property Name="CodCeco" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha_Alta_Empresa" Type="DateTime" Precision="0" />
+    <Property Name="E_Mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+    <Property Name="Personal_Interno" Type="Boolean" />
+    <Property Name="Baja" Type="Boolean" />
+    <NavigationProperty Name="ECAR_Datos_Vehiculo" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_ECAR_Datos_Conductor" FromRole="ECAR_Datos_Conductor" ToRole="ECAR_Datos_Vehiculo" />
+    <Property Name="PendienteDefinir" Type="Boolean" />
+    <Property Name="IDTipoDocIdentificacion" Type="Int32" />
+    <Property Name="NumeroCarnetConducir" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ECAR_Tipo_Liquidacion">
+    <Key>
+      <PropertyRef Name="Cod_tipo" />
+    </Key>
+    <Property Name="Cod_tipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Baja" Type="Boolean" />
+    <NavigationProperty Name="ECAR_Datos_Vehiculo" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_ECAR_Tipo_Liquidacion" FromRole="ECAR_Tipo_Liquidacion" ToRole="ECAR_Datos_Vehiculo" />
+  </EntityType>
+  <EntityType Name="ECAR_Datos_Vehiculo">
+    <Key>
+      <PropertyRef Name="Matricula" />
+    </Key>
+    <Property Name="Sociedad" Type="Int32" Nullable="false" />
+    <Property Name="Matricula" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Marca" Type="Int32" />
+    <Property Name="Modelo" Type="Int32" />
+    <Property Name="Extras" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Tipo_Vehiculo" Type="Int32" />
+    <Property Name="Num_Bastidor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Departamento" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Delegacion" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="F_D" Type="Boolean" />
+    <Property Name="Directivo" Type="Int32" />
+    <Property Name="EmpresaLeasing" Type="Int32" />
+    <Property Name="Conductor" Type="Int32" />
+    <Property Name="Tipo_Seguro" Type="Int32" />
+    <Property Name="Cia_Seguro" Type="Int32" />
+    <Property Name="Poliza_Seguro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Importe_Seguro" Type="Double" />
+    <Property Name="Vto_Seguro" Type="DateTime" Precision="3" />
+    <Property Name="Veh_sustituido" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Num_Contrato" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha_Alta" Type="DateTime" Precision="3" />
+    <Property Name="Baja" Type="Boolean" />
+    <Property Name="Fecha_Baja" Type="DateTime" Precision="3" />
+    <Property Name="Fecha_Recibidos" Type="DateTime" Precision="3" />
+    <Property Name="Fecha_Devolucion" Type="DateTime" Precision="3" />
+    <Property Name="Fecha_Incorporacion" Type="DateTime" Precision="3" />
+    <Property Name="Cuotas" Type="Int32" />
+    <Property Name="Km_Totales" Type="Int32" />
+    <Property Name="IDTipoLiquidacion" Type="Int32" />
+    <Property Name="Exceso_ajuste" Type="Int32" />
+    <Property Name="Coef_exceso" Type="Int32" />
+    <Property Name="Km_Exentos" Type="Int32" />
+    <Property Name="Abono" Type="Double" />
+    <Property Name="Cargo" Type="Double" />
+    <Property Name="IDCarburante" Type="Int32" />
+    <Property Name="Orden" Type="Boolean" />
+    <Property Name="Ubicacion" Type="Int32" />
+    <Property Name="Observaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Falta" Type="DateTime" Precision="0" />
+    <Property Name="IDTipoRuta" Type="Int32" />
+    <Property Name="IDTarjetaCombustible" Type="Int32" />
+    <Property Name="LugarEntrega" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="FechaRenovacion" Type="DateTime" Precision="3" />
+    <Property Name="Equipamiento" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="0" />
+    <Property Name="UsuarioAlta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ECAR_Datos_Conductor" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_ECAR_Datos_Conductor" FromRole="ECAR_Datos_Vehiculo" ToRole="ECAR_Datos_Conductor" />
+    <NavigationProperty Name="ECAR_Tipo_Liquidacion" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_ECAR_Tipo_Liquidacion" FromRole="ECAR_Datos_Vehiculo" ToRole="ECAR_Tipo_Liquidacion" />
+    <NavigationProperty Name="T_M_MARCA_VEHICULOS" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_MARCA_VEHICULOS" FromRole="ECAR_Datos_Vehiculo" ToRole="T_M_MARCA_VEHICULOS" />
+    <NavigationProperty Name="T_M_MODELOS_VEHICULO" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_MODELOS_VEHICULO" FromRole="ECAR_Datos_Vehiculo" ToRole="T_M_MODELOS_VEHICULO" />
+    <NavigationProperty Name="T_M_RUTA_VEHICULOS" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_RUTA_VEHICULOS" FromRole="ECAR_Datos_Vehiculo" ToRole="T_M_RUTA_VEHICULOS" />
+    <NavigationProperty Name="T_M_TIPO_SEGURO_VEHICULO" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_TIPO_SEGURO_VEHICULO" FromRole="ECAR_Datos_Vehiculo" ToRole="T_M_TIPO_SEGURO_VEHICULO" />
+    <NavigationProperty Name="T_M_TIPOS_CARBURANTE" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_TIPOS_CARBURANTE" FromRole="ECAR_Datos_Vehiculo" ToRole="T_M_TIPOS_CARBURANTE" />
+    <NavigationProperty Name="T_M_TIPOS_VEHICULO" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_TIPOS_VEHICULO" FromRole="ECAR_Datos_Vehiculo" ToRole="T_M_TIPOS_VEHICULO" />
+    <NavigationProperty Name="T_M_UBICACIONES" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_UBICACIONES" FromRole="ECAR_Datos_Vehiculo" ToRole="T_M_UBICACIONES" />
+    <NavigationProperty Name="ECAR_Datos_ITV" Relationship="TKE_CARModel.FK_ECAR_Datos_ITV_ECAR_Datos_Vehiculo" FromRole="ECAR_Datos_Vehiculo" ToRole="ECAR_Datos_ITV" />
+    <Property Name="Responsable" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PrioridadEntrega" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdentificadorImportacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FechaImportacion" Type="DateTime" Precision="0" />
+    <Property Name="FechaMatriculacion" Type="DateTime" Precision="0" />
+    <Property Name="UsuarioImportacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FechaPrevistaEntrega" Type="DateTime" Precision="0" />
+    <Property Name="NOMBRE_ARCHIVO_IMPORTACION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_G_DATOS_LEASING" Relationship="TKE_CARModel.FK_T_G_DATOS_LEASING_ECAR_Datos_Vehiculo" FromRole="ECAR_Datos_Vehiculo" ToRole="T_G_DATOS_LEASING" />
+    <Property Name="Fecha_Vto_Contrato" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="T_M_EMPRESAS_VEHICULOS" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_EMPRESAS_VEHICULOS" FromRole="ECAR_Datos_Vehiculo" ToRole="T_M_EMPRESAS_VEHICULOS" />
+    <NavigationProperty Name="T_M_TARJETAS_CONBUSTIBLE" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_TARJETAS_COMBUSTIBLE" FromRole="ECAR_Datos_Vehiculo" ToRole="T_M_TARJETAS_CONBUSTIBLE" />
+    <NavigationProperty Name="T_G_ALERTAS" Relationship="TKE_CARModel.FK_T_G_ALERTAS_ECAR_Datos_Vehiculo" FromRole="ECAR_Datos_Vehiculo" ToRole="T_G_ALERTAS" />
+    <NavigationProperty Name="ECAR_Datos_SolRed" Relationship="TKE_CARModel.FK_ECAR_Datos_SolRed_ECAR_Datos_Vehiculo" FromRole="ECAR_Datos_Vehiculo" ToRole="ECAR_Datos_SolRed" />
+    <NavigationProperty Name="ECAR_Datos_Multas" Relationship="TKE_CARModel.FK_ECAR_Datos_Multas_ECAR_Datos_Vehiculo" FromRole="ECAR_Datos_Vehiculo" ToRole="ECAR_Datos_Multas" />
+  </EntityType>
+  <Association Name="FK_ECAR_Datos_Vehiculo_ECAR_Datos_Conductor">
+    <End Type="TKE_CARModel.ECAR_Datos_Conductor" Role="ECAR_Datos_Conductor" Multiplicity="0..1" />
+    <End Type="TKE_CARModel.ECAR_Datos_Vehiculo" Role="ECAR_Datos_Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ECAR_Datos_Conductor">
+        <PropertyRef Name="Cod_Conductor" />
+      </Principal>
+      <Dependent Role="ECAR_Datos_Vehiculo">
+        <PropertyRef Name="Conductor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ECAR_Datos_Vehiculo_ECAR_Tipo_Liquidacion">
+    <End Type="TKE_CARModel.ECAR_Tipo_Liquidacion" Role="ECAR_Tipo_Liquidacion" Multiplicity="0..1" />
+    <End Type="TKE_CARModel.ECAR_Datos_Vehiculo" Role="ECAR_Datos_Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ECAR_Tipo_Liquidacion">
+        <PropertyRef Name="Cod_tipo" />
+      </Principal>
+      <Dependent Role="ECAR_Datos_Vehiculo">
+        <PropertyRef Name="IDTipoLiquidacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ECAR_Datos_Vehiculo_T_M_MARCA_VEHICULOS">
+    <End Type="TKE_CARModel.T_M_MARCA_VEHICULOS" Role="T_M_MARCA_VEHICULOS" Multiplicity="0..1" />
+    <End Type="TKE_CARModel.ECAR_Datos_Vehiculo" Role="ECAR_Datos_Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_MARCA_VEHICULOS">
+        <PropertyRef Name="ID_MARCA" />
+      </Principal>
+      <Dependent Role="ECAR_Datos_Vehiculo">
+        <PropertyRef Name="Marca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ECAR_Datos_Vehiculo_T_M_MODELOS_VEHICULO">
+    <End Type="TKE_CARModel.T_M_MODELOS_VEHICULO" Role="T_M_MODELOS_VEHICULO" Multiplicity="0..1" />
+    <End Type="TKE_CARModel.ECAR_Datos_Vehiculo" Role="ECAR_Datos_Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_MODELOS_VEHICULO">
+        <PropertyRef Name="ID_MODELO" />
+      </Principal>
+      <Dependent Role="ECAR_Datos_Vehiculo">
+        <PropertyRef Name="Modelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ECAR_Datos_Vehiculo_T_M_RUTA_VEHICULOS">
+    <End Type="TKE_CARModel.T_M_RUTA_VEHICULOS" Role="T_M_RUTA_VEHICULOS" Multiplicity="0..1" />
+    <End Type="TKE_CARModel.ECAR_Datos_Vehiculo" Role="ECAR_Datos_Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_RUTA_VEHICULOS">
+        <PropertyRef Name="ID_RUTA_VEHICULO" />
+      </Principal>
+      <Dependent Role="ECAR_Datos_Vehiculo">
+        <PropertyRef Name="IDTipoRuta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ECAR_Datos_Vehiculo_T_M_TIPO_SEGURO_VEHICULO">
+    <End Type="TKE_CARModel.T_M_TIPO_SEGURO_VEHICULO" Role="T_M_TIPO_SEGURO_VEHICULO" Multiplicity="0..1" />
+    <End Type="TKE_CARModel.ECAR_Datos_Vehiculo" Role="ECAR_Datos_Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_TIPO_SEGURO_VEHICULO">
+        <PropertyRef Name="ID_SEGURO_VEHICULO" />
+      </Principal>
+      <Dependent Role="ECAR_Datos_Vehiculo">
+        <PropertyRef Name="Tipo_Seguro" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ECAR_Datos_Vehiculo_T_M_TIPOS_CARBURANTE">
+    <End Type="TKE_CARModel.T_M_TIPOS_CARBURANTE" Role="T_M_TIPOS_CARBURANTE" Multiplicity="0..1" />
+    <End Type="TKE_CARModel.ECAR_Datos_Vehiculo" Role="ECAR_Datos_Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_TIPOS_CARBURANTE">
+        <PropertyRef Name="ID_CARBURANTE" />
+      </Principal>
+      <Dependent Role="ECAR_Datos_Vehiculo">
+        <PropertyRef Name="IDCarburante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ECAR_Datos_Vehiculo_T_M_TIPOS_VEHICULO">
+    <End Type="TKE_CARModel.T_M_TIPOS_VEHICULO" Role="T_M_TIPOS_VEHICULO" Multiplicity="0..1" />
+    <End Type="TKE_CARModel.ECAR_Datos_Vehiculo" Role="ECAR_Datos_Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_TIPOS_VEHICULO">
+        <PropertyRef Name="ID_TIPO_VEHICULO" />
+      </Principal>
+      <Dependent Role="ECAR_Datos_Vehiculo">
+        <PropertyRef Name="Tipo_Vehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ECAR_Datos_Vehiculo_T_M_UBICACIONES">
+    <End Type="TKE_CARModel.T_M_UBICACIONES" Role="T_M_UBICACIONES" Multiplicity="0..1" />
+    <End Type="TKE_CARModel.ECAR_Datos_Vehiculo" Role="ECAR_Datos_Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_UBICACIONES">
+        <PropertyRef Name="ID_UBICACION" />
+      </Principal>
+      <Dependent Role="ECAR_Datos_Vehiculo">
+        <PropertyRef Name="Ubicacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ECAR_Datos_ITV">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Matricula" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Ultima_ITV" Type="DateTime" Precision="3" />
+    <Property Name="Vto_ITV" Type="DateTime" Precision="3" />
+    <Property Name="Tarifa" Type="Double" />
+    <Property Name="Tasa" Type="Double" />
+    <Property Name="Importe" Type="Double" />
+    <Property Name="Impuesto_Circulacion" Type="Double" />
+    <Property Name="Pr_Conservacion" Type="Double" />
+    <Property Name="Otros" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Falta" Type="DateTime" Precision="3" />
+    <Property Name="Fichero" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TipoArchivo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="FechaModificacion" Type="DateTime" Precision="0" />
+    <Property Name="UsuarioAlta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UsuarioModificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ECAR_Datos_Vehiculo" Relationship="TKE_CARModel.FK_ECAR_Datos_ITV_ECAR_Datos_Vehiculo" FromRole="ECAR_Datos_ITV" ToRole="ECAR_Datos_Vehiculo" />
+    <Property Name="ITV_PASADA" Type="Boolean" />
+  </EntityType>
+  <Association Name="FK_ECAR_Datos_ITV_ECAR_Datos_Vehiculo">
+    <End Type="TKE_CARModel.ECAR_Datos_Vehiculo" Role="ECAR_Datos_Vehiculo" Multiplicity="0..1" />
+    <End Type="TKE_CARModel.ECAR_Datos_ITV" Role="ECAR_Datos_ITV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ECAR_Datos_Vehiculo">
+        <PropertyRef Name="Matricula" />
+      </Principal>
+      <Dependent Role="ECAR_Datos_ITV">
+        <PropertyRef Name="Matricula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TMP_RENOVACION_ITV">
+    <Key>
+      <PropertyRef Name="NUM_LINEA" />
+      <PropertyRef Name="LOGIN" />
+    </Key>
+    <Property Name="NUM_LINEA" Type="Int32" Nullable="false" />
+    <Property Name="LOGIN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="MATRICULA" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_ITV" Type="DateTime" Precision="0" />
+    <Property Name="FECHA_CADUCIDAD_ITV" Type="DateTime" Precision="0" />
+    <Property Name="FICHERO_ITV" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="TIPO_ARCHIVO" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="LINEA_NUEVA" Type="Boolean" Nullable="false" />
+    <Property Name="IMPORTE" Type="Double" />
+    <Property Name="TARIFA" Type="Double" />
+    <Property Name="TASA" Type="Double" />
+    <Property Name="IMPUESTO_CIRCULACIÓN" Type="Double" />
+    <Property Name="PR_CONSERVACION" Type="Double" />
+    <Property Name="OBSERVACIONES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ITV_PASADA" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="T_G_HIST_CAMBIOS_TARJETA">
+    <Key>
+      <PropertyRef Name="ID_HIST_CAMBIO_TARJETA" />
+    </Key>
+    <Property Name="ID_HIST_CAMBIO_TARJETA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_TARJETA_ANT" Type="Int32" />
+    <Property Name="ID_TARJETA_NUEVA" Type="Int32" />
+    <Property Name="MATRICULA" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="USUARIO_CREACION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_ALTA" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="T_G_HIST_CAMBIOS_CENTRO_COSTE">
+    <Key>
+      <PropertyRef Name="ID_HIST_CAMBIO_CENTRO_COSTE" />
+    </Key>
+    <Property Name="ID_HIST_CAMBIO_CENTRO_COSTE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_CENTRO_COSTE_NUEVO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ID_CENTRO_COSTE_ANT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="MATRICULA" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="USUARIO_CREACION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_ALTA" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="ECAR_Datos_SolRed">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sociedad" Type="Int32" Nullable="false" />
+    <Property Name="EJERCICIO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TRIMESTRE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_FACTURA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_OPERACION" Type="DateTime" Precision="3" />
+    <Property Name="MATRICULA" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="DES_PRODU" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="COD_PRODU" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="KILOMETROS" Type="Double" />
+    <Property Name="NUM_LITROS" Type="Double" />
+    <Property Name="IMPORTE" Type="Double" />
+    <Property Name="BONIF_TOTAL" Type="Double" />
+    <Property Name="IVA" Type="Double" />
+    <Property Name="IMP_TOTAL" Type="Double" />
+    <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+    <Property Name="KmsCiclo" Type="Double" />
+    <NavigationProperty Name="ECAR_Datos_Vehiculo" Relationship="TKE_CARModel.FK_ECAR_Datos_SolRed_ECAR_Datos_Vehiculo" FromRole="ECAR_Datos_SolRed" ToRole="ECAR_Datos_Vehiculo" />
+  </EntityType>
+  <EntityType Name="T_G_ALERTAS_CAMBIO_CONDUCTOR">
+    <Key>
+      <PropertyRef Name="ID_ALERTA" />
+    </Key>
+    <Property Name="ID_ALERTA" Type="Int32" Nullable="false" />
+    <Property Name="NUM_EMPLEADO" Type="Int32" Nullable="false" />
+    <Property Name="DNI" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="NOMBRE" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DOMICILIO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CP" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="PROVINCIA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="POBLACION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_NACIMIENTO" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_VENCIMIENTO_CARNET" Type="DateTime" Precision="3" />
+    <Property Name="MOTIVO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FICHERO_RENTING" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="OBSERVACIONES" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_EFECTO" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="T_G_ALERTAS" Relationship="TKE_CARModel.FK_T_G_ALERTAS_CAMBIO_CONDUCTOR_T_G_ALERTAS" FromRole="T_G_ALERTAS_CAMBIO_CONDUCTOR" ToRole="T_G_ALERTAS" />
+  </EntityType>
+  <EntityType Name="T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR">
+    <Key>
+      <PropertyRef Name="ID_ALERTA" />
+    </Key>
+    <Property Name="ID_ALERTA" Type="Int32" Nullable="false" />
+    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="NUM_PERMISO_CONDUCIR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NACIONALIDAD_PERMISO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="B_VALIDEZ_PERMISO" Type="Boolean" />
+    <Property Name="PAIS" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PROVINCIA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="POBLACION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DOMICILIO" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COD_POSTAL" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="B_AUTORIZACION_PERMISO" Type="Boolean" />
+    <Property Name="FICHERO_CARNET" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_G_ALERTAS" Relationship="TKE_CARModel.FK_T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR_T_G_ALERTAS" FromRole="T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR" ToRole="T_G_ALERTAS" />
+    <Property Name="DNI" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR">
+    <Key>
+      <PropertyRef Name="ID_ALERTA" />
+    </Key>
+    <Property Name="ID_ALERTA" Type="Int32" Nullable="false" />
+    <Property Name="COD_CONDUCTOR" Type="Int32" Nullable="false" />
+    <Property Name="DNI" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="NOMBRE" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DIRECCION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CP" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="PROVINCIA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="POBLACION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_NACIMIENTO" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_VENCIMIENTO_CARNET" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="T_G_ALERTAS" Relationship="TKE_CARModel.FK_T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR_T_G_ALERTAS" FromRole="T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR" ToRole="T_G_ALERTAS" />
+  </EntityType>
+  <Association Name="FK_T_G_ALERTAS_CAMBIO_CONDUCTOR_T_G_ALERTAS">
+    <End Type="TKE_CARModel.T_G_ALERTAS" Role="T_G_ALERTAS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_ALERTAS_CAMBIO_CONDUCTOR" Role="T_G_ALERTAS_CAMBIO_CONDUCTOR" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="T_G_ALERTAS">
+        <PropertyRef Name="ID_ALERTA" />
+      </Principal>
+      <Dependent Role="T_G_ALERTAS_CAMBIO_CONDUCTOR">
+        <PropertyRef Name="ID_ALERTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR_T_G_ALERTAS">
+    <End Type="TKE_CARModel.T_G_ALERTAS" Role="T_G_ALERTAS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR" Role="T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="T_G_ALERTAS">
+        <PropertyRef Name="ID_ALERTA" />
+      </Principal>
+      <Dependent Role="T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR">
+        <PropertyRef Name="ID_ALERTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR_T_G_ALERTAS">
+    <End Type="TKE_CARModel.T_G_ALERTAS" Role="T_G_ALERTAS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR" Role="T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="T_G_ALERTAS">
+        <PropertyRef Name="ID_ALERTA" />
+      </Principal>
+      <Dependent Role="T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR">
+        <PropertyRef Name="ID_ALERTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="T_G_DATOS_LEASING">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpresaLeasing" Type="Int32" />
+    <Property Name="Fecha_Factura" Type="DateTime" Precision="3" />
+    <Property Name="Num_Factura" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Matricula" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Ejercicio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trimestre" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Imp_Circulacion" Type="Double" />
+    <Property Name="Imp_Circulacion_IVA" Type="Double" />
+    <Property Name="Imp_Matriculacion" Type="Double" />
+    <Property Name="Imp_Matriculacion_IVA" Type="Double" />
+    <Property Name="Alquiler" Type="Double" />
+    <Property Name="Alquiler_IVA" Type="Double" />
+    <Property Name="Mantenimiento" Type="Double" />
+    <Property Name="Mantenimiento_IVA" Type="Double" />
+    <Property Name="Neumaticos" Type="Double" />
+    <Property Name="Neumaticos_IVA" Type="Double" />
+    <Property Name="Administracion" Type="Double" />
+    <Property Name="Administracion_IVA" Type="Double" />
+    <Property Name="Seguro" Type="Double" />
+    <Property Name="Seguro_IVA" Type="Double" />
+    <Property Name="Asistencia_Carretera" Type="Double" />
+    <Property Name="Asistencia_Carretera_IVA" Type="Double" />
+    <Property Name="Intereses_Prepagados" Type="Double" />
+    <Property Name="Intereses_Prepagados_IVA" Type="Double" />
+    <Property Name="Canarias" Type="Boolean" Nullable="false" />
+    <Property Name="Directivo" Type="Boolean" Nullable="false" />
+    <Property Name="Fecha_Servicio" Type="DateTime" Precision="3" />
+    <Property Name="Fecha_Importacion" Type="DateTime" Precision="3" />
+    <Property Name="ITV" Type="Double" />
+    <Property Name="ITV_IVA" Type="Double" />
+    <Property Name="Impuesto" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Sociedad" Type="Int32" />
+    <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+    <Property Name="NOMBRE_ARCHIVO_IMPORTACION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ECAR_Datos_Vehiculo" Relationship="TKE_CARModel.FK_T_G_DATOS_LEASING_ECAR_Datos_Vehiculo" FromRole="T_G_DATOS_LEASING" ToRole="ECAR_Datos_Vehiculo" />
+    <NavigationProperty Name="T_M_EMPRESAS_VEHICULOS" Relationship="TKE_CARModel.FK_T_G_DATOS_LEASING_T_M_EMPRESAS_VEHICULOS" FromRole="T_G_DATOS_LEASING" ToRole="T_M_EMPRESAS_VEHICULOS" />
+  </EntityType>
+  <EntityType Name="T_M_CORRESPONDENCIA_COD_CLI_EMPRESA_TKE">
+    <Key>
+      <PropertyRef Name="CODIGO_CLIENTE" />
+      <PropertyRef Name="CODIGO_EMPRESA_TKE" />
+    </Key>
+    <Property Name="CODIGO_CLIENTE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CODIGO_EMPRESA_TKE" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="T_G_TARJETA_COMBUSTIBLE">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sociedad" Type="Int32" />
+    <Property Name="EJERCICIO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TRIMESTRE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NUM_DOCUMENTO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_FACTURA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_OPERACION" Type="DateTime" Precision="3" />
+    <Property Name="COD_TARJETA" Type="String" MaxLength="19" FixedLength="false" Unicode="true" />
+    <Property Name="MATRICULA" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DES_PRODU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="COD_PRODU" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="KILOMETROS" Type="Double" />
+    <Property Name="NUM_LITROS" Type="Double" />
+    <Property Name="IMPORTE" Type="Double" />
+    <Property Name="BONIF_TOTAL" Type="Double" />
+    <Property Name="IVA" Type="Double" />
+    <Property Name="IMP_TOTAL" Type="Double" />
+    <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+    <Property Name="KmsCiclo" Type="Double" />
+    <Property Name="NOMBRE_ARCHIVO_IMPORTACION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ID_EMPRESA_TARJETA_COMBUSTIBLE" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_T_G_DATOS_LEASING_ECAR_Datos_Vehiculo">
+    <End Type="TKE_CARModel.ECAR_Datos_Vehiculo" Role="ECAR_Datos_Vehiculo" Multiplicity="0..1" />
+    <End Type="TKE_CARModel.T_G_DATOS_LEASING" Role="T_G_DATOS_LEASING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ECAR_Datos_Vehiculo">
+        <PropertyRef Name="Matricula" />
+      </Principal>
+      <Dependent Role="T_G_DATOS_LEASING">
+        <PropertyRef Name="Matricula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="T_M_CUENTAS_CONTABLES">
+    <Key>
+      <PropertyRef Name="CUENTA_CONTABLE" />
+    </Key>
+    <Property Name="CUENTA_CONTABLE" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NOMBRE_CUENTA" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_R_TIPOSCOSTE_CUENTA_CONTABLE" Relationship="TKE_CARModel.FK_T_R_TIPOSCOSTE_CUENTA_CONTABLE_T_M_CUENTAS_CONTABLES" FromRole="T_M_CUENTAS_CONTABLES" ToRole="T_R_TIPOSCOSTE_CUENTA_CONTABLE" />
+  </EntityType>
+  <EntityType Name="T_M_TIPOS_COSTE">
+    <Key>
+      <PropertyRef Name="ID_TIPOCOSTE" />
+    </Key>
+    <Property Name="ID_TIPOCOSTE" Type="Int32" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_R_TIPOSCOSTE_CUENTA_CONTABLE" Relationship="TKE_CARModel.FK_T_R_TIPOSCOSTE_CUENTA_CONTABLE_T_M_TIPOS_COSTE" FromRole="T_M_TIPOS_COSTE" ToRole="T_R_TIPOSCOSTE_CUENTA_CONTABLE" />
+  </EntityType>
+  <EntityType Name="T_R_TIPOSCOSTE_CUENTA_CONTABLE">
+    <Key>
+      <PropertyRef Name="IDEMPRESA" />
+      <PropertyRef Name="ID_TIPOCOSTE" />
+    </Key>
+    <Property Name="IDEMPRESA" Type="Int32" Nullable="false" />
+    <Property Name="ID_TIPOCOSTE" Type="Int32" Nullable="false" />
+    <Property Name="CUENTA_CONTABLE" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="T_M_CUENTAS_CONTABLES" Relationship="TKE_CARModel.FK_T_R_TIPOSCOSTE_CUENTA_CONTABLE_T_M_CUENTAS_CONTABLES" FromRole="T_R_TIPOSCOSTE_CUENTA_CONTABLE" ToRole="T_M_CUENTAS_CONTABLES" />
+    <NavigationProperty Name="T_M_TIPOS_COSTE" Relationship="TKE_CARModel.FK_T_R_TIPOSCOSTE_CUENTA_CONTABLE_T_M_TIPOS_COSTE" FromRole="T_R_TIPOSCOSTE_CUENTA_CONTABLE" ToRole="T_M_TIPOS_COSTE" />
+  </EntityType>
+  <Association Name="FK_T_R_TIPOSCOSTE_CUENTA_CONTABLE_T_M_CUENTAS_CONTABLES">
+    <End Type="TKE_CARModel.T_M_CUENTAS_CONTABLES" Role="T_M_CUENTAS_CONTABLES" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_R_TIPOSCOSTE_CUENTA_CONTABLE" Role="T_R_TIPOSCOSTE_CUENTA_CONTABLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_CUENTAS_CONTABLES">
+        <PropertyRef Name="CUENTA_CONTABLE" />
+      </Principal>
+      <Dependent Role="T_R_TIPOSCOSTE_CUENTA_CONTABLE">
+        <PropertyRef Name="CUENTA_CONTABLE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_R_TIPOSCOSTE_CUENTA_CONTABLE_T_M_TIPOS_COSTE">
+    <End Type="TKE_CARModel.T_M_TIPOS_COSTE" Role="T_M_TIPOS_COSTE" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_R_TIPOSCOSTE_CUENTA_CONTABLE" Role="T_R_TIPOSCOSTE_CUENTA_CONTABLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_TIPOS_COSTE">
+        <PropertyRef Name="ID_TIPOCOSTE" />
+      </Principal>
+      <Dependent Role="T_R_TIPOSCOSTE_CUENTA_CONTABLE">
+        <PropertyRef Name="ID_TIPOCOSTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="T_M_EMPRESAS_VEHICULOS">
+    <Key>
+      <PropertyRef Name="ID_EMPRESA" />
+    </Key>
+    <Property Name="ID_EMPRESA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMBRE" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NUM_DOCUMENTO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIRECCION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="POBLACION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CODPOSTAL" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="PERSONA_CONTACTO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TELEFONO1" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="TELEFONO2" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RENTING" Type="Boolean" Nullable="false" />
+    <Property Name="ASEGURADORA" Type="Boolean" Nullable="false" />
+    <Property Name="BAJA" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ECAR_Datos_Vehiculo" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_EMPRESAS_VEHICULOS" FromRole="T_M_EMPRESAS_VEHICULOS" ToRole="ECAR_Datos_Vehiculo" />
+    <NavigationProperty Name="T_G_DATOS_LEASING" Relationship="TKE_CARModel.FK_T_G_DATOS_LEASING_T_M_EMPRESAS_VEHICULOS" FromRole="T_M_EMPRESAS_VEHICULOS" ToRole="T_G_DATOS_LEASING" />
+  </EntityType>
+  <Association Name="FK_ECAR_Datos_Vehiculo_T_M_EMPRESAS_VEHICULOS">
+    <End Type="TKE_CARModel.T_M_EMPRESAS_VEHICULOS" Role="T_M_EMPRESAS_VEHICULOS" Multiplicity="0..1" />
+    <End Type="TKE_CARModel.ECAR_Datos_Vehiculo" Role="ECAR_Datos_Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_EMPRESAS_VEHICULOS">
+        <PropertyRef Name="ID_EMPRESA" />
+      </Principal>
+      <Dependent Role="ECAR_Datos_Vehiculo">
+        <PropertyRef Name="EmpresaLeasing" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_G_DATOS_LEASING_T_M_EMPRESAS_VEHICULOS">
+    <End Type="TKE_CARModel.T_M_EMPRESAS_VEHICULOS" Role="T_M_EMPRESAS_VEHICULOS" Multiplicity="0..1" />
+    <End Type="TKE_CARModel.T_G_DATOS_LEASING" Role="T_G_DATOS_LEASING" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_EMPRESAS_VEHICULOS">
+        <PropertyRef Name="ID_EMPRESA" />
+      </Principal>
+      <Dependent Role="T_G_DATOS_LEASING">
+        <PropertyRef Name="EmpresaLeasing" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="T_M_TARJETAS_CONBUSTIBLE">
+    <Key>
+      <PropertyRef Name="ID_TARJETA" />
+    </Key>
+    <Property Name="ID_TARJETA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COD_TARJETA" Type="String" Nullable="false" MaxLength="19" FixedLength="false" Unicode="true" />
+    <Property Name="ID_EMPRESA" Type="Int32" Nullable="false" />
+    <Property Name="ID_EMPRESA_EMISORA" Type="Int32" Nullable="false" />
+    <Property Name="FECHA_CADUCIDAD" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="PIN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="BAJA" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ECAR_Datos_Vehiculo" Relationship="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_TARJETAS_COMBUSTIBLE" FromRole="T_M_TARJETAS_CONBUSTIBLE" ToRole="ECAR_Datos_Vehiculo" />
+    <NavigationProperty Name="T_M_TIPO_TARJETA_COMBUSTIBLE" Relationship="TKE_CARModel.FK_T_M_TARJETAS_CONBUSTIBLE_T_M_TIPO_TARJETA_COMBUSTIBLE" FromRole="T_M_TARJETAS_CONBUSTIBLE" ToRole="T_M_TIPO_TARJETA_COMBUSTIBLE" />
+  </EntityType>
+  <Association Name="FK_ECAR_Datos_Vehiculo_T_M_TARJETAS_COMBUSTIBLE">
+    <End Type="TKE_CARModel.T_M_TARJETAS_CONBUSTIBLE" Role="T_M_TARJETAS_CONBUSTIBLE" Multiplicity="0..1" />
+    <End Type="TKE_CARModel.ECAR_Datos_Vehiculo" Role="ECAR_Datos_Vehiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_TARJETAS_CONBUSTIBLE">
+        <PropertyRef Name="ID_TARJETA" />
+      </Principal>
+      <Dependent Role="ECAR_Datos_Vehiculo">
+        <PropertyRef Name="IDTarjetaCombustible" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_T_M_TARJETAS_CONBUSTIBLE_T_M_TIPO_TARJETA_COMBUSTIBLE">
+    <End Type="TKE_CARModel.T_M_TIPO_TARJETA_COMBUSTIBLE" Role="T_M_TIPO_TARJETA_COMBUSTIBLE" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_M_TARJETAS_CONBUSTIBLE" Role="T_M_TARJETAS_CONBUSTIBLE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="T_M_TIPO_TARJETA_COMBUSTIBLE">
+        <PropertyRef Name="ID_TARJETA_COMBUSTIBLE" />
+      </Principal>
+      <Dependent Role="T_M_TARJETAS_CONBUSTIBLE">
+        <PropertyRef Name="ID_EMPRESA_EMISORA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="T_G_ALERTAS_MULTA">
+    <Key>
+      <PropertyRef Name="ID_ALERTA" />
+    </Key>
+    <Property Name="ID_ALERTA" Type="Int32" Nullable="false" />
+    <Property Name="FECHA_DENUNCIA" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EXPEDIENTE" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="INFRACCION" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="LUGAR" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="IMPORTE" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="HORA_DENUNCIA" Type="Int16" Nullable="false" />
+    <Property Name="MINUTOS_DENUNCIA" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="T_G_ALERTAS" Relationship="TKE_CARModel.FK_T_G_MULTAS_T_G_ALERTAS" FromRole="T_G_ALERTAS_MULTA" ToRole="T_G_ALERTAS" />
+  </EntityType>
+  <Association Name="FK_T_G_MULTAS_T_G_ALERTAS">
+    <End Type="TKE_CARModel.T_G_ALERTAS" Role="T_G_ALERTAS" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_ALERTAS_MULTA" Role="T_G_ALERTAS_MULTA" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="T_G_ALERTAS">
+        <PropertyRef Name="ID_ALERTA" />
+      </Principal>
+      <Dependent Role="T_G_ALERTAS_MULTA">
+        <PropertyRef Name="ID_ALERTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="T_G_HIST_CAMBIOS_EMPRESA">
+    <Key>
+      <PropertyRef Name="ID_HIST_CAMBIOS_EMPRESA" />
+    </Key>
+    <Property Name="ID_HIST_CAMBIOS_EMPRESA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_EMPRESA_ANT" Type="Int32" />
+    <Property Name="ID_EMPRESA_NUEVA" Type="Int32" />
+    <Property Name="MATRICULA" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="USUARIO_CREACION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_ALTA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ID_ESTADO" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_T_G_ALERTAS_ECAR_Datos_Vehiculo">
+    <End Type="TKE_CARModel.ECAR_Datos_Vehiculo" Role="ECAR_Datos_Vehiculo" Multiplicity="1" />
+    <End Type="TKE_CARModel.T_G_ALERTAS" Role="T_G_ALERTAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ECAR_Datos_Vehiculo">
+        <PropertyRef Name="Matricula" />
+      </Principal>
+      <Dependent Role="T_G_ALERTAS">
+        <PropertyRef Name="MATRICULA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ECAR_Datos_SolRed_ECAR_Datos_Vehiculo">
+    <End Type="TKE_CARModel.ECAR_Datos_Vehiculo" Role="ECAR_Datos_Vehiculo" Multiplicity="1" />
+    <End Type="TKE_CARModel.ECAR_Datos_SolRed" Role="ECAR_Datos_SolRed" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ECAR_Datos_Vehiculo">
+        <PropertyRef Name="Matricula" />
+      </Principal>
+      <Dependent Role="ECAR_Datos_SolRed">
+        <PropertyRef Name="MATRICULA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ECAR_Datos_Multas">
+    <Key>
+      <PropertyRef Name="Matricula" />
+    </Key>
+    <Property Name="Matricula" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="Conductor" Type="Int32" />
+    <Property Name="Importe" Type="Double" />
+    <Property Name="Motivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Contrario" Type="Boolean" />
+    <Property Name="Cobertura" Type="Boolean" />
+    <Property Name="EmitidaAlerta" Type="Boolean" />
+    <Property Name="FAlta" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ECAR_Datos_Vehiculo" Relationship="TKE_CARModel.FK_ECAR_Datos_Multas_ECAR_Datos_Vehiculo" FromRole="ECAR_Datos_Multas" ToRole="ECAR_Datos_Vehiculo" />
+  </EntityType>
+  <Association Name="FK_ECAR_Datos_Multas_ECAR_Datos_Vehiculo">
+    <End Type="TKE_CARModel.ECAR_Datos_Vehiculo" Role="ECAR_Datos_Vehiculo" Multiplicity="1" />
+    <End Type="TKE_CARModel.ECAR_Datos_Multas" Role="ECAR_Datos_Multas" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ECAR_Datos_Vehiculo">
+        <PropertyRef Name="Matricula" />
+      </Principal>
+      <Dependent Role="ECAR_Datos_Multas">
+        <PropertyRef Name="Matricula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="V_CONDUCTORES_USUARIOS_SAP">
+    <Key>
+      <PropertyRef Name="Cod_Conductor" />
+    </Key>
+    <Property Name="Cod_Conductor" Type="Int32" Nullable="false" />
+    <Property Name="Fecha_Vencimiento_Carnet" Type="DateTime" Precision="3" />
+    <Property Name="Personal_Interno" Type="Boolean" />
+    <Property Name="Tlf" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Movil" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha_Carnet" Type="DateTime" Precision="3" />
+    <Property Name="Num_Empleado" Type="Int32" />
+    <Property Name="Num_Empleado_SAP" Type="Int32" />
+    <Property Name="CentroCoste" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CentroCoste_SAP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ID_EMPRESA_SAP" Type="Int32" />
+    <Property Name="NombreEmpresa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Direccion_SAP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha_Nacimiento" Type="DateTime" Precision="3" />
+    <Property Name="Fecha_Nacimiento_SAP" Type="DateTime" Precision="0" />
+    <Property Name="Cod_Postal" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="Cod_Postal_SAP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Poblacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Poblacion_SAP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Provincia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Provincia_SAP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nombre_SAP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Apellidos_SAP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DNI_CONDUCTOR" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DNI_SAP" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Email_SAP" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+    <Property Name="Baja" Type="Boolean" />
+    <Property Name="PendienteDefinir" Type="Boolean" />
+    <Property Name="NombreCECO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IDTipoDocIdentificacion" Type="Int32" />
+    <Property Name="NumeroCarnetConducir" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

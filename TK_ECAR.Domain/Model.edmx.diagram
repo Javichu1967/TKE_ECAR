@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="26a9c30929e049bf830ec4536cc7a9d3" Name="Diagram1" ZoomLevel="70">
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_ALERTAS" Width="1.5" PointX="6" PointY="16" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_ALERTAS_RENOVACION_CARNET" Width="1.5" PointX="8.25" PointY="11.125" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_ALERTAS_RENOVACION_ITV" Width="1.5" PointX="8.25" PointY="17" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_ALERTAS_ROBO" Width="1.5" PointX="8.25" PointY="34.375" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_ALERTAS_SOLICITUD_SOLRED" Width="1.5" PointX="11.25" PointY="17.5" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_DOCUMENTACION" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_DOCUMENTACION_VEHICULO" Width="1.5" PointX="6" PointY="22.625" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_HIST_ALERTAS" Width="1.5" PointX="11.25" PointY="13.125" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_HIST_CAMBIOS_CONDUCTOR" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_MENUS" Width="1.5" PointX="13.75" PointY="1.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_USUARIOS" Width="1.5" PointX="16" PointY="8.125" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_USUARIOS_CECO" Width="1.5" PointX="18.25" PointY="12.5" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_USUARIOS_DELEGACION" Width="1.5" PointX="18.25" PointY="7.875" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_USUARIOS_DIR_TERRITORIAL" Width="1.5" PointX="18.25" PointY="10.125" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_USUARIOS_EMPRESAS" Width="1.5" PointX="18.25" PointY="5.5" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_ACCIONES" Width="1.5" PointX="3.75" PointY="13.875" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_CATEGORIAS" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_ESTADOS" Width="1.5" PointX="0.75" PointY="17.375" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_PERFILES" Width="1.5" PointX="13.75" PointY="6.125" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_TIPOS_ALERTAS" Width="1.5" PointX="3.75" PointY="21.625" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_TIPOS_SOLICITUD_SOLRED" Width="1.5" PointX="9" PointY="19.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_R_PERFILES_MENU" Width="1.5" PointX="16" PointY="5.125" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_ALERTAS_RENOVACION_CARNET_T_G_ALERTAS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_ALERTAS_RENOVACION_ITV_T_G_ALERTAS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_ALERTAS_T_M_ACCIONES" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_ALERTAS_T_M_ESTADOS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_ALERTAS_T_M_TIPOS_ALERTAS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_HIST_ALERTAS_T_G_ALERTAS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_ROBOS_T_G_ALERTAS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_SOLICITUDES_SOLRED_T_G_ALERTAS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_SOLICITUDES_SOLRED_T_M_TIPOS_SOLICITUD_SOLRED" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_DOCUMENTACION_T_M_CATEGORIAS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_DOCUMENTACION_VEHICULO_T_M_TIPOS_ALERTAS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_HIST_ALERTAS_T_M_ACCIONES" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_HIST_ALERTAS_T_R_ESTADOS_ACCION" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_MENUS_T_G_MENUS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_R_PERFILES_MENU_T_G_MENUS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_USUARIOS_CECO_T_G_USUARIOS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_USUARIOS_DELEGACION_T_G_USUARIOS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_USUARIOS_DIR_TERRITORIAL_T_G_USUARIOS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_USUARIOS_EMPRESAS_T_G_USUARIOS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_USUARIOS_T_M_PERFILES" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_R_PERFILES_MENU_T_M_PERFILES" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_ALERTAS_OTRAS_NOTIFICACIONES" Width="1.5" PointX="11.25" PointY="21" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_TIPOS_CLASIFICACION" Width="1.5" PointX="9" PointY="14.25" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_ALERTAS_OTRAS_NOTIFICACIONES_T_G_ALERTAS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_ALERTAS_OTRAS_NOTIFICACIONES_T_M_TIPOS_CLASIFICACION" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_GESTORES_FLOTA" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_R_ESTADOS_ACCION" Width="1.5" PointX="6" PointY="11.5" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_R_ESTADOS_ACCION_T_M_ACCIONES" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_R_ESTADOS_ACCION_T_M_ESTADOS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_R_ESTADOS_ACCION_T_M_ESTADOS1" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_R_ESTADOS_ACCION_T_M_TIPOS_ALERTAS" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_VIA_VERDE_EXTRACTOS" Width="1.5" PointX="3" PointY="9" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_VIA_VERDE_IDENTIFICADORES" Width="1.5" PointX="13.75" PointY="16.625" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_CLIENTES" Width="1.5" PointX="0.75" PointY="9" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_VIA_VERDE_EXTRACTOS_T_M_CLIENTES" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_VIA_VERDE_TRANSACCIONES" Width="1.5" PointX="16" PointY="16" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_VIA_VERDE_TRANSACCIONES_T_G_VIA_VERDE_IDENTIFICADORES" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_TELEFONOS_FRECUENTES" Width="1.5" PointX="5.375" PointY="4.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_CATEGORIA_PREGUNTAS" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_PREGUNTAS_FRECUENTES" Width="1.5" PointX="10.375" PointY="6.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_MARCA_VEHICULOS" Width="1.5" PointX="10.75" PointY="10" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_MODELOS_VEHICULO" Width="1.5" PointX="13" PointY="9.875" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_RUTA_VEHICULOS" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_TIPOS_CARBURANTE" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_TIPOS_VEHICULO" Width="1.5" PointX="18.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_UBICACIONES" Width="1.5" PointX="20.75" PointY="0.75" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_M_MODELOS_VEHICULO_T_M_MARCA_VEHICULOS" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_TIPO_SEGURO_VEHICULO" Width="1.5" PointX="13.375" PointY="12.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_TIPO_TARJETA_COMBUSTIBLE" Width="1.5" PointX="15.375" PointY="12.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.V_ALERTAS_CECOS_DELEGACION" Width="1.5" PointX="20.375" PointY="11.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.V_TARJETAS_COMBUSTIBLE_EMPRESAS" Width="1.5" PointX="20.375" PointY="14.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.ECAR_Datos_Conductor" Width="1.5" PointX="0.75" PointY="20.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.ECAR_Tipo_Liquidacion" Width="1.5" PointX="15.375" PointY="20.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.ECAR_Datos_Vehiculo" Width="1.5" PointX="23" PointY="7.75" />
+        <AssociationConnector Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_ECAR_Datos_Conductor" />
+        <AssociationConnector Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_ECAR_Tipo_Liquidacion" />
+        <AssociationConnector Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_MARCA_VEHICULOS" />
+        <AssociationConnector Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_MODELOS_VEHICULO" />
+        <AssociationConnector Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_RUTA_VEHICULOS" />
+        <AssociationConnector Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_TIPO_SEGURO_VEHICULO" />
+        <AssociationConnector Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_TIPOS_CARBURANTE" />
+        <AssociationConnector Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_TIPOS_VEHICULO" />
+        <AssociationConnector Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_UBICACIONES" />
+        <EntityTypeShape EntityType="TKE_CARModel.ECAR_Datos_ITV" Width="1.5" PointX="25.25" PointY="11.875" />
+        <AssociationConnector Association="TKE_CARModel.FK_ECAR_Datos_ITV_ECAR_Datos_Vehiculo" />
+        <EntityTypeShape EntityType="TKE_CARModel.TMP_RENOVACION_ITV" Width="1.5" PointX="20.375" PointY="21.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_HIST_CAMBIOS_TARJETA" Width="1.5" PointX="22.375" PointY="3.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_HIST_CAMBIOS_CENTRO_COSTE" Width="1.5" PointX="22.375" PointY="21.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.ECAR_Datos_SolRed" Width="1.5" PointX="24.375" PointY="0.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_ALERTAS_CAMBIO_CONDUCTOR" Width="1.5" PointX="8.25" PointY="37.125" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR" Width="1.5" PointX="8.25" PointY="41.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR" Width="1.5" PointX="8.25" PointY="46" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_ALERTAS_CAMBIO_CONDUCTOR_T_G_ALERTAS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR_T_G_ALERTAS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR_T_G_ALERTAS" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_DATOS_LEASING" Width="1.5" PointX="22.375" PointY="24.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_CORRESPONDENCIA_COD_CLI_EMPRESA_TKE" Width="1.5" PointX="7.375" PointY="6.75" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_TARJETA_COMBUSTIBLE" Width="1.5" PointX="8.875" PointY="0.75" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_DATOS_LEASING_ECAR_Datos_Vehiculo" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_CUENTAS_CONTABLES" Width="1.5" PointX="24.375" PointY="24.125" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_TIPOS_COSTE" Width="1.5" PointX="24.375" PointY="34.125" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_R_TIPOSCOSTE_CUENTA_CONTABLE" Width="1.5" PointX="26.625" PointY="23.875" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_R_TIPOSCOSTE_CUENTA_CONTABLE_T_M_CUENTAS_CONTABLES" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_R_TIPOSCOSTE_CUENTA_CONTABLE_T_M_TIPOS_COSTE" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_EMPRESAS_VEHICULOS" Width="1.5" PointX="13.375" PointY="24" />
+        <AssociationConnector Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_EMPRESAS_VEHICULOS" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_DATOS_LEASING_T_M_EMPRESAS_VEHICULOS" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_M_TARJETAS_CONBUSTIBLE" Width="1.5" PointX="17.625" PointY="21.25" />
+        <AssociationConnector Association="TKE_CARModel.FK_ECAR_Datos_Vehiculo_T_M_TARJETAS_COMBUSTIBLE" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_M_TARJETAS_CONBUSTIBLE_T_M_TIPO_TARJETA_COMBUSTIBLE" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_ALERTAS_MULTA" Width="1.5" PointX="8.25" PointY="50.75" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_MULTAS_T_G_ALERTAS" />
+        <EntityTypeShape EntityType="TKE_CARModel.T_G_HIST_CAMBIOS_EMPRESA" Width="1.5" PointX="15.375" PointY="24.75" />
+        <AssociationConnector Association="TKE_CARModel.FK_T_G_ALERTAS_ECAR_Datos_Vehiculo" />
+        <AssociationConnector Association="TKE_CARModel.FK_ECAR_Datos_SolRed_ECAR_Datos_Vehiculo" />
+        <EntityTypeShape EntityType="TKE_CARModel.ECAR_Datos_Multas" Width="1.5" PointX="25.25" PointY="17.75" />
+        <AssociationConnector Association="TKE_CARModel.FK_ECAR_Datos_Multas_ECAR_Datos_Vehiculo" />
+        <EntityTypeShape EntityType="TKE_CARModel.V_CONDUCTORES_USUARIOS_SAP" Width="1.5" PointX="8.375" PointY="22.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

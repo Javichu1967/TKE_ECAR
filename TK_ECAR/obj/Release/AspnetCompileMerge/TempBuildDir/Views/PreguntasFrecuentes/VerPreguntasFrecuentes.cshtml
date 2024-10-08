@@ -1,0 +1,110 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="infoFaq">
+            <h3>@resourceView.TitlePreguntasFrecuentes</h3>
+            <p>@resourceView.TitlePreguntasFrecuentesInf</p>
+        </div>
+    </div>
+  
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="form-group">
+            <label for="input-search" class="sr-only">Buscar:</label>
+            <input type="input" class="form-control" id="input-search" placeholder=@resourceView.placeholderPreguntasFrecuentes value="">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-8">
+        <div class="form-group">
+            <button type="submit" id="cerrarTodosLosNodos" class="btn btn-default">@resourceView.btnCerrarNodos</button>
+            <button type="submit" id="abrirTodosLosNodos" class="btn btn-default">@resourceView.btnAbrirNodos</button>
+        </div>
+    </div>
+</div>
+
+<div id="tree">
+
+</div>
+  
+
+
+@section Scripts {
+
+<link rel="stylesheet" type="text/css" href='@Styles.Url("~/bootstrapTreeviewCSSCdnPath")'>
+<script src='@Scripts.Url("~/bootstrapTreeviewCdnPath")'> </script>
+
+    <script type="text/javascript">
+
+
+        //https://github.com/jonmiles/bootstrap-treeview
+        $(document).ready(function () {
+
+      
+            var _Data;
+
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("GetJsonDataTreeviewPreguntas", "PreguntasFrecuentes")',
+                async: false,             
+                success: function (data) {                 
+                    _Data = jQuery.parseJSON(JSON.stringify(data));
+                 }
+            });
+
+           
+            $('#tree').treeview({
+                data: _Data, //data,         // data is not optional
+                showTags: true,
+            });
+
+            $('#tree').treeview('collapseAll', { silent: true });
+
+            //******** Acciones en treeView
+            //Buscar en treeView
+            var search = function (e) {
+                var pattern = $('#input-search').val();
+                var options = {
+                    ignoreCase: true,
+                    exactMatch: false,
+                    revealResults: true
+                };
+                var results = $('#tree').treeview('search', [pattern, options]);
+
+                //var output = '<p>' + results.length + ' matches found</p>';
+                //$.each(results, function (index, result) {
+                //    output += '<p>- ' + result.text + '</p>';
+                //});
+                //$('#search-output').html(output);
+            }
+
+            $('#btn-search').on('click', search);
+            $('#input-search').on('keyup', search);
+
+            $('#btn-clear-search').on('click', function (e) {
+                $('#tree').treeview('clearSearch');
+                $('#input-search').val('');
+                $('#search-output').html('');
+            });
+
+            //Cerrar todos los nodos
+            $('#cerrarTodosLosNodos').on('click', function (e) {
+                $('#tree').treeview('collapseAll', { silent: true });
+            });
+
+            //Abrir todos los nodos
+            $('#abrirTodosLosNodos').on('click', function (e) {
+                var levels = $('#select-expand-all-levels').val();
+                $('#tree').treeview('expandAll', { levels: levels, silent: true });
+            });
+
+        });
+
+     
+
+    </script>
+}

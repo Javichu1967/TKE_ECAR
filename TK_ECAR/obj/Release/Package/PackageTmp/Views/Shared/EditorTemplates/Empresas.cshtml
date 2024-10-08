@@ -1,0 +1,50 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<select id="Empresa" title=@resourceView.LSelectCompany multiple="multiple" class="form-control">
+    <option></option>
+</select>
+<style type="text/css">
+    #Empresa {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+<script type="text/javascript">
+    $(function () {
+        chosenEmpresa();
+    });
+
+    function chosenEmpresa() {
+        $("#Empresa").ajaxChosen({
+            type: 'GET',
+            url: '@Url.Action("GetEmpresas", "Filter")',
+            minTermLength: 0,
+            dataType: 'json'
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+
+        },
+            {
+                //options
+                disable_search_threshold: -1
+            });
+    }
+    //Pasar como parámetro a chosen el filtro de lo que se quiere.
+    $('#Empresa').change(function () {
+
+        LimpiaFiltroChosen("DireccionTerritorial");
+        LimpiaFiltroChosen("Delegacion");
+        LimpiaFiltroChosen("CentroCoste");
+
+        chosenDirTerritorial();
+        chosenDelegacion();
+        chosenCentroCoste();
+
+    });
+
+
+</script>

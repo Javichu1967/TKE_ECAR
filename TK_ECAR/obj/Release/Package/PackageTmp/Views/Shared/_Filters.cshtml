@@ -1,0 +1,217 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Controllers
+@using TK_ECAR.Framework
+@using TK_ECAR.Models
+ 
+@model FilterModel
+
+<script src="~/Content/scripts/Application/FilterUtilities.js"></script>
+
+    @Html.HiddenFor(m => m.EstadoVehiculo)
+    @Html.HiddenFor(m => m.AccionFiltroActiva)
+    <div class="col-sm-12 pull-center">
+        <a class="linktke" data-toggle="collapse" data-target="#collapseBusqueda" href="#">
+            @* Filtro normal *@
+            @resourceView.TitleFilter
+        </a>
+        <div id="collapseBusqueda" class="collapse in">
+            <ul id="tab_Buscar" class="nav nav-tabs">
+                <li><a href="#busquedaAvanzada" data-toggle="tab">@resourceView.TitleFilterAdvanced</a></li>
+                <li><a href="#busquedaAgrupada" data-toggle="tab">@resourceView.TitleFiltersGroup</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="busquedaAvanzada" class="tab-pane fade in active">
+                    <div class="row">
+                        @* EMPRESA *@
+                        <div class="col-sm-3 pull-center">
+                            <div class="form-group">
+                                <span id="deleteEmpresas" class="tk-icon-med icon-tk-delete buttonClear"> </span>
+                                @Html.LabelFor(m => m.Empresa, new { @class = "control-label" })
+                                <div>
+                                    @Html.EditorFor(m => m.Empresa)
+                                </div>
+                            </div>
+                            @Html.HiddenFor(m => m.EmpresasSeleccionadas)
+                        </div>
+
+                        @* DIV TR *@
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <span id="deleteDireccionTerritorial" class="tk-icon-med icon-tk-delete buttonClear"> </span>
+                                @Html.LabelFor(m => m.DireccionTerritorial, new { @class = "control-label" })
+                                <div>
+                                    @Html.EditorFor(m => m.DireccionTerritorial)
+                                </div>
+                            </div>
+                            @Html.HiddenFor(m => m.DireccionesTerritorialesSeleccionadas)
+                        </div>
+                        @* DELEG *@
+                        <div class="col-sm-3 form-group">
+                            <div class="form-group">
+                                <span id="deleteDelegacion" class="tk-icon-med icon-tk-delete buttonClear"> </span>
+                                @Html.LabelFor(m => m.Delegacion, new { @class = "control-label" })
+                                <div>
+                                    @Html.EditorFor(m => m.Delegacion)
+                                </div>
+                            </div>
+                            @Html.HiddenFor(m => m.DelegacionesSeleccionadas)
+                        </div>
+                        @* Centro de Coste *@
+                        <div class="col-sm-3  form-group">
+                            <div class="form-group">
+                                <span id="deleteCentroCoste" class="tk-icon-med icon-tk-delete buttonClear"> </span>
+                                @Html.LabelFor(m => m.CentroCoste, new { @class = "control-label" })
+                                <div>
+                                    @Html.EditorFor(m => m.CentroCoste)
+                                </div>
+                            </div>
+                            @Html.HiddenFor(m => m.CentrosCosteSeleccionados)
+                        </div>
+                    </div>
+                </div>
+                <div id="busquedaAgrupada" class="tab-pane fade">
+                    <div class="row">
+                        @* AGRUPACIÓN 1 *@
+                        <div class="col-sm-3 pull-center">
+                            <div class="form-group">
+                                <span id="deleteAgrupacionesFiltro" class="tk-icon-med icon-tk-delete buttonClear"> </span>
+                                @Html.LabelFor(m => m.AgrupacionesFiltro, new { @class = "control-label" })
+                                <div>
+                                    @Html.ListBoxAgrupaciones("AgrupacionesFiltro", new { @class = "form-control" },string.Empty)
+                                </div>
+                            </div>
+                            @Html.HiddenFor(m => m.AgrupacionesFiltroSeleccionadas)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                    @*<div class="col-xs-2 left">
+                        @Html.Label(@resourceView.LSelectEstadoVehiculo)
+                    </div>
+                    <div class="col-sm-2 left">
+                        @Html.ListBoxEstadoVehiculo("EstadoVehiculoFiltro", new { @class = "form-control" }, string.Empty)
+                    </div>*@
+                    <div class="col-sm-12">
+                        <div class="pull-right" id="divButtonBuscar">
+                            <button type="submit" id="btnFilterBuscar" class="btn btn-default">@resourceView.btnFiltroBuscar</button>
+                        </div>
+                    </div>
+            </div>
+            <div style="float:left; margin: 6px; border-bottom: 1px solid #ddd;" class="col-sm-12" width="100%"></div>
+        </div>
+   </div>
+
+        @*<link href="~/Content/styles/chosen.css" rel="stylesheet" />
+            <script src="~/Content/scripts/chosen.jquery.js"></script>*@
+
+    <script type="text/javascript">
+
+        var primeraVez = true;
+
+        $(document).ready(function () {
+            //$("#EstadoVehiculoFiltro").chosen();
+            $("#EstadoVehiculo").attr("value", @((int)EnumAltasBajasAmbas.Todas));
+
+            chosenEmpresa();
+            chosenDirTerritorial();
+            chosenDelegacion();
+            chosenCentroCoste();
+
+            $("#AccionFiltroActiva").val("Avanzada");
+
+            $('#tab_Buscar a[href="#busquedaAvanzada"]').trigger('click');
+
+            //Limpiar seleccionados**************
+            $(document).on('click', '#deleteEmpresas', function (event) {
+                LimpiaFiltroChosen("Empresa");
+                chosenEmpresa();
+            });
+            $(document).on('click', '#deleteDireccionTerritorial', function (event) {
+                LimpiaFiltroChosen("DireccionTerritorial");
+                chosenDirTerritorial();
+            });
+            $(document).on('click', '#deleteDelegacion', function (event) {
+                LimpiaFiltroChosen("Delegacion");
+                chosenDelegacion();
+            });
+            $(document).on('click', '#deleteCentroCoste', function (event) {
+                LimpiaFiltroChosen("CentroCoste");
+                chosenCentroCoste();
+            });
+            $(document).on('click', '#deleteAgrupacionesFiltro', function (event) {
+                $('#AgrupacionesFiltro').val('').trigger('chosen:updated');
+            });
+            //**************Limpiar seleccionados
+
+            $(document).on('click', '#btnFilterBuscar', function (event) {
+                
+                if ($("#AccionFiltroActiva").val() == "Avanzada") {
+                    $('#EmpresasSeleccionadas').val($('#Empresa').val());
+                    $('#DireccionesTerritorialesSeleccionadas').val($('#DireccionTerritorial').val());
+                    $('#DelegacionesSeleccionadas').val($('#Delegacion').val());
+                    $('#CentrosCosteSeleccionados').val($('#CentroCoste').val());
+
+                    $('#AgrupacionesFiltroSeleccionadas').val("");
+
+                    $('#AgrupacionesFiltro').val('').trigger('chosen:updated');
+
+                }
+                else {
+                    $('#AgrupacionesFiltroSeleccionadas').val($('#AgrupacionesFiltro').val());
+
+                    $('#EmpresasSeleccionadas').val("");
+                    $('#DireccionesTerritorialesSeleccionadas').val("");
+                    $('#DelegacionesSeleccionadas').val("");
+                    $('#CentrosCosteSeleccionados').val("");
+
+                    LimpiaFiltroChosen("Empresa");
+                    LimpiaFiltroChosen("DireccionTerritorial");
+                    LimpiaFiltroChosen("Delegacion");
+                    LimpiaFiltroChosen("CentroCoste");
+                }
+                //$('#EstadoVehiculo').val($('#EstadoVehiculoFiltro').val());
+                primeraVez = true;
+            });
+
+
+        });
+
+        $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+            var target = $(e.target).attr("href") // activated tab
+            //        alert(target);
+
+            if (target == "#busquedaAgrupada") {
+                if (primeraVez) {
+                    $('#AgrupacionesFiltro').val('').trigger('chosen:updated');
+                }
+                $("#AgrupacionesFiltro").chosen();
+
+                if ($("#AccionFiltroActiva").val() == "Avanzada") {
+                    primeraVez = false;
+                }
+
+                $("#AccionFiltroActiva").val("Agrupada");
+            }
+            else if (target == "#busquedaAvanzada") {
+                if (primeraVez) {
+                    LimpiaFiltroChosen("Empresa");
+                    LimpiaFiltroChosen("DireccionTerritorial");
+                    LimpiaFiltroChosen("Delegacion");
+                    LimpiaFiltroChosen("CentroCoste");
+                }
+                chosenEmpresa();
+                chosenDirTerritorial();
+                chosenDelegacion();
+                chosenCentroCoste();
+
+                if ($("#AccionFiltroActiva").val() == "Agrupada") {
+                    primeraVez = false;
+                }
+
+                $("#AccionFiltroActiva").val("Avanzada");
+            }
+        });
+
+    </script>

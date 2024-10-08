@@ -1,0 +1,133 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Models
+@model ConductoresVehiculoModel
+
+@{ 
+    //var imagePathCarnetVacio = "img/Application/CarnetConducirVacio.jpg";
+    var VerFichaConductor = false;
+    if (ViewBag.FichaConductor != null)
+    {
+        VerFichaConductor = ViewBag.FichaConductor;
+    }
+
+}
+
+<br>
+@*<ul id="tab_Conductor" class="nav nav-tabs">
+    <li><a href="#fichaConductor" data-toggle="tab">@resourceView.TabDatosConductor</a></li>
+    <li><a href="#carnet" data-toggle="tab">@resourceView.TabCarnet</a></li>
+</ul>*@
+
+@*<div class="tab-content">
+    <div id="fichaConductor" class="tab-pane fade in active">*@
+<div class="notice notice-Lightgreen">
+    <div class="row">
+        <div class="col-sm-3">
+            <strong>@Html.LabelFor(model => model.NumEmpleado)</strong>
+            <p>@Html.DisplayFor(model => model.NumEmpleado)</p>
+        </div>
+        <div class="col-sm-3">
+            <strong>@Html.LabelFor(model => model.NombreCompleto)</strong>
+            <p>@Html.DisplayFor(model => model.NombreCompleto)</p>
+        </div>
+
+        <div class="col-sm-3">
+            <strong>@Html.LabelFor(model => model.DNI)</strong>
+            <p>@Html.DisplayFor(model => model.DNI)</p>
+        </div>
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.FechaVtoCarnet)</strong>
+            <p>@Html.DisplayFor(model => model.FechaVtoCarnet)</p>
+        </div>
+    </div>
+
+
+
+        @*<div class="col-sm-3">
+                <strong>@Html.LabelFor(model => model.Direccion)</strong>
+                <p>@Html.DisplayFor(model => model.Direccion)</p>
+            </div>
+            <div class="col-sm-2">
+                <strong>@Html.LabelFor(model => model.CodPostal)</strong>
+                <p>@Html.DisplayFor(model => model.CodPostal)</p>
+            </div>
+            <div class="col-sm-2">
+                <strong>@Html.LabelFor(model => model.Poblacion)</strong>
+                <p>@Html.DisplayFor(model => model.Poblacion)</p>
+            </div>
+            <div class="col-sm-2">
+                <strong>@Html.LabelFor(model => model.Provincia)</strong>
+                <p>@Html.DisplayFor(model => model.Provincia)</p>
+            </div>*@
+</div>
+
+    @*<div class="row">
+                <div class="col-sm-2">
+                    <strong>@Html.LabelFor(model => model.CECO)</strong>
+                    <p>@Html.DisplayFor(model => model.CECO)</p>
+                </div>
+                <div class="col-sm-2">
+                    <strong>@Html.LabelFor(model => model.Telefono)</strong>
+                    <p>@Html.DisplayFor(model => model.Telefono)</p>
+                </div>
+                <div class="col-sm-2">
+                    <strong>@Html.LabelFor(model => model.Movil)</strong>
+                    <p>@Html.DisplayFor(model => model.Movil)</p>
+                </div>
+
+                <div class="col-sm-2">
+                    <strong>@Html.LabelFor(model => model.FechaNacimiento)</strong>
+                    <p>@Html.DisplayFor(model => model.FechaNacimiento)</p>
+                </div>
+                <div class="col-sm-2">
+                    <strong>@Html.LabelFor(model => model.FechaVtoCarnet)</strong>
+                    <p>@Html.DisplayFor(model => model.FechaVtoCarnet)</p>
+                </div>
+            </div>
+        </div>*@
+
+    @*<div id="carnet" class="tab-pane fade">
+                <div class="row">
+                    <div class="col-sm-5">
+                            <div id="divcarnetConducir" class="embed-responsive embed-responsive-4by3">
+                                <iframe  id="carnetConducir" class="embedly-embed"
+                                        src='@Url.Action("GetImgCarnetConducir", "MiVehiculo", new { nombreArchivo = Model.CarnetConducir, idAlerta = Model.idAlertaCarnet })'
+                                        scrolling="no" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+    @if (!VerFichaConductor)
+    {
+        <h2>Historial de conductores</h2>
+        <table id="tableconductores" class="display responsive" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>@TK_ECAR.Content.resources.ModelsResources.lblConductor</th>
+                    <th>@TK_ECAR.Content.resources.ModelsResources.lblFecha</th>
+
+                </tr>
+            </thead>
+
+            @*<tbody>
+                    @foreach (var item in Model.ListaConductores)
+                        {
+                        <tr>
+                            <td>@item.Conductor</td>
+                            <td>@Html.DisplayFor(modelItem => item.Fecha)</td>
+                        </tr>
+                    }
+
+                </tbody>*@
+        </table>
+    }
+
+    <script type="text/javascript">
+
+        //$(document).ready(function () {
+        //    $('#tab_Conductor a[href="#fichaConductor"]').trigger('click');
+        //});
+
+    </script>

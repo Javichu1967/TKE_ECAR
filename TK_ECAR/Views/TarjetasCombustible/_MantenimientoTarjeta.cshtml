@@ -1,0 +1,119 @@
+﻿@using resourceView = TK_ECAR.Content.resources
+@using TK_ECAR.Models
+@using TK_ECAR.Utils
+@using TK_ECAR.Framework
+@model TarjetasCombustibleModels
+
+@{
+    var codigoPortugal = Constants.CODIGO_EMPRESA_PORTUGAL.ToString();
+    UserModel user = (UserModel)HttpContext.Current.Session["userProfile"];
+    var perfilUsuario = user.IdPerfil;
+    var PonerTarjetaYeExistente = Model.IdAlerta > 0 ? "SI" : "NO";
+}
+
+
+@Html.HiddenFor(m => m.IDEmpresa)
+@Html.HiddenFor(m => m.Accion)
+@Html.HiddenFor(m => m.IDTarjeta)
+@Html.HiddenFor(m => m.IDEmpresaEmisora)
+@Html.HiddenFor(m => m.Baja)
+@Html.HiddenFor(m => m.IdAlerta)
+@Html.HiddenFor(m => m.IdEstado)
+@Html.HiddenFor(m => m.MatriculaAsociadaTarjeta)
+
+<div class="form-horizontal">
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.Empresa, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.EditorFor(m => m.Empresa)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.EmpresaEmisora, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.EditorFor(m => m.EmpresaEmisora)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.CodTarjeta, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.TextBoxFor(m => m.CodTarjeta, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.FechaCaducidad, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.EditorFor(m => m.FechaCaducidad)
+        </div>
+    </div>
+
+    @if (Convert.ToInt32(perfilUsuario) == (int)EnumTipoPerfil.SuperUsuario)
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.PIN, new { @class = "control-label col-sm-3", @id = "labelPIN" })
+            <div class="col-md-8">
+                @Html.TextBoxFor(m => m.PIN, "", new { @class = "form-control", @type = "password", @id = "PIN" })
+            </div>
+            <div class="material-switch pull-right col-xm-2" data-toggle="tooltip" title='@resourceView.TK_ECAR_Resource.TitleVeOcultarcaracteres'>
+                <input id = "verPIN" name="verPIN" type="checkbox" />
+                <label for="verPIN" class="label-primary"></label> @*label-default, label-primary, label-success, label-info, label-warning, label-danger*@
+            </div>
+        </div>
+    }
+
+    @if (PonerTarjetaYeExistente == "SI")
+    {
+        <div class="modal-footer">
+            <button type="button" id="btnTarjetaExistente" class="btn btn-success">@resourceView.TK_ECAR_Resource.btnTarjetaYaExistente</button>
+        </div>
+    }
+    <div class="form-group">
+        <div class="col-sm-12">
+            @Html.Partial("_CustomValidationSummary", ViewData.ModelState)
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#CodPIN").val($("#CodTarjeta").val());
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+
+    $("#verPIN").click(function () {
+        if ($("#verPIN").is(':checked')) {
+            var obj = document.getElementById('PIN');
+            obj.type = "text";
+        }
+        else {
+            var obj = document.getElementById('PIN');
+            obj.type = "password";
+        }
+    });
+
+    $('#miEmpresa').change(function () {
+        var labelPIN = $("label[id='labelPIN']").text().replace('*', '');
+        var valorEmpresa = $('#IDEmpresa').val();
+        var valorEmpresaPortugal = @codigoPortugal;
+        var texto = labelPIN;
+        if (valorEmpresaPortugal == valorEmpresa) {
+            labelPIN = labelPIN + '*';
+        }
+        $("label[id='labelPIN']").text(labelPIN);
+    });
+
+    //jQuery('#CodPIN').on('input', function () {
+    //    $("#CodTarjeta").val($("#CodPIN").val());
+    //});
+
+    //jQuery('#CodPIN').on('input propertychange paste', function () {
+    //    $("#CodTarjeta").val($("#CodPIN").val());
+    //});
+</script>
+
+ 

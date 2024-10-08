@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbols LinesOfCode="9905" PostSharpLinesOfCode="0" EnhancedTypesCount="2" xmlns="http://schemas.postsharp.org/2.0/symbols">
+  <Class Class="#1=T:[PostSharp]PostSharp.Serialization.PSerializableAttribute">
+    <Instance Declaration="#2=T:[TK_ECAR]TK_ECAR.Aspects.SendEmailAlertaAttribute" Id="545ca72d74f726b7">
+      <Target />
+    </Instance>
+  </Class>
+  <Class Class="#2">
+    <Instance Declaration="#3=M:[TK_ECAR]TK_ECAR.Application_Services.AlertasService::AddAlerta([TK_ECAR]TK_ECAR.Models.AlertaModel)" Id="545ca72df919e7e6">
+      <Target>
+        <JoinPoint Description="#4=Wrapped by advice(s) OnSuccess" Ordinal="0" />
+      </Target>
+    </Instance>
+  </Class>
+  <Annotation Target="#5=M:[TK_ECAR]TK_ECAR.Aspects.SendEmailAlertaAttribute::OnSuccess(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#6=2" Description="#7=PostSharp estimates that 2 line(s) of code are saved every time this advice is applied. Use the [LinesOfCodeAvoided] attribute on the aspect or specify the LinesOfCodeAvoided property on the advice attribute to override this value." />
+</Symbols>

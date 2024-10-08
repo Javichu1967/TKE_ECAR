@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK_ECAR", "TK_ECAR\TK_ECAR.csproj", "{E631E0D1-95C4-41F7-B964-E1CB06371EDA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK_ECAR.Infraestructure", "TK_ECAR.Infraestructure\TK_ECAR.Infraestructure.csproj", "{38E5C2EA-89C2-4C40-BB5B-A29C4C7EC928}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK_ECAR.Domain", "TK_ECAR.Domain\TK_ECAR.Domain.csproj", "{1CA5867C-7DEB-4585-8B80-C615A50EEABD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK_ECAR.Framework", "TK_ECAR.Framework\TK_ECAR.Framework.csproj", "{D55B7430-80EF-4A83-BDB5-B73D86897E81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK_ECAR.Monitorizacion", "TK_ECAR.Monitorizacion\TK_ECAR.Monitorizacion.csproj", "{05EF1CC9-7CB2-4CFD-8D17-6BCFE7E04F14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK_ECAR.PortugalImportacion", "TK_ECAR.PortugalImportacion\TK_ECAR.PortugalImportacion.csproj", "{798CDB7C-2AAC-413D-A059-298DE9F92428}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK_ECAR.CoreaToECAR", "TK_CoreaToECAR\TK_ECAR.CoreaToECAR.csproj", "{C1623A43-D830-4628-B515-A50D58D41EFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TK_ECAR.ImportacionFlota", "TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota.csproj", "{9F5BD5FC-899A-48EF-9FF6-D2413178E11B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E631E0D1-95C4-41F7-B964-E1CB06371EDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E631E0D1-95C4-41F7-B964-E1CB06371EDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E631E0D1-95C4-41F7-B964-E1CB06371EDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E631E0D1-95C4-41F7-B964-E1CB06371EDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38E5C2EA-89C2-4C40-BB5B-A29C4C7EC928}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38E5C2EA-89C2-4C40-BB5B-A29C4C7EC928}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38E5C2EA-89C2-4C40-BB5B-A29C4C7EC928}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38E5C2EA-89C2-4C40-BB5B-A29C4C7EC928}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CA5867C-7DEB-4585-8B80-C615A50EEABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CA5867C-7DEB-4585-8B80-C615A50EEABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CA5867C-7DEB-4585-8B80-C615A50EEABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CA5867C-7DEB-4585-8B80-C615A50EEABD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D55B7430-80EF-4A83-BDB5-B73D86897E81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D55B7430-80EF-4A83-BDB5-B73D86897E81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D55B7430-80EF-4A83-BDB5-B73D86897E81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D55B7430-80EF-4A83-BDB5-B73D86897E81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05EF1CC9-7CB2-4CFD-8D17-6BCFE7E04F14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05EF1CC9-7CB2-4CFD-8D17-6BCFE7E04F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05EF1CC9-7CB2-4CFD-8D17-6BCFE7E04F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05EF1CC9-7CB2-4CFD-8D17-6BCFE7E04F14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{798CDB7C-2AAC-413D-A059-298DE9F92428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{798CDB7C-2AAC-413D-A059-298DE9F92428}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{798CDB7C-2AAC-413D-A059-298DE9F92428}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{798CDB7C-2AAC-413D-A059-298DE9F92428}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1623A43-D830-4628-B515-A50D58D41EFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1623A43-D830-4628-B515-A50D58D41EFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1623A43-D830-4628-B515-A50D58D41EFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1623A43-D830-4628-B515-A50D58D41EFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F5BD5FC-899A-48EF-9FF6-D2413178E11B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F5BD5FC-899A-48EF-9FF6-D2413178E11B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F5BD5FC-899A-48EF-9FF6-D2413178E11B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F5BD5FC-899A-48EF-9FF6-D2413178E11B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tkevillvr003.thyssenkrupp.gtk.local:8080/tfs/itwebprojects
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = TK_ECAR\\TK_ECAR.csproj
+		SccProjectName1 = TK_ECAR
+		SccLocalPath1 = TK_ECAR
+		SccProjectUniqueName2 = TK_ECAR.Infraestructure\\TK_ECAR.Infraestructure.csproj
+		SccProjectName2 = TK_ECAR.Infraestructure
+		SccLocalPath2 = TK_ECAR.Infraestructure
+		SccProjectUniqueName3 = TK_ECAR.Domain\\TK_ECAR.Domain.csproj
+		SccProjectName3 = TK_ECAR.Domain
+		SccLocalPath3 = TK_ECAR.Domain
+		SccProjectUniqueName4 = TK_ECAR.Framework\\TK_ECAR.Framework.csproj
+		SccProjectName4 = TK_ECAR.Framework
+		SccLocalPath4 = TK_ECAR.Framework
+		SccProjectUniqueName5 = TK_ECAR.Monitorizacion\\TK_ECAR.Monitorizacion.csproj
+		SccProjectName5 = TK_ECAR.Monitorizacion
+		SccLocalPath5 = TK_ECAR.Monitorizacion
+		SccProjectUniqueName6 = TK_ECAR.PortugalImportacion\\TK_ECAR.PortugalImportacion.csproj
+		SccProjectName6 = TK_ECAR.PortugalImportacion
+		SccLocalPath6 = TK_ECAR.PortugalImportacion
+		SccProjectUniqueName7 = TK_CoreaToECAR\\TK_ECAR.CoreaToECAR.csproj
+		SccProjectName7 = TK_CoreaToECAR
+		SccLocalPath7 = TK_CoreaToECAR
+		SccProjectUniqueName8 = TK_ECAR.ImportacionFlota\\TK_ECAR.ImportacionFlota\\TK_ECAR.ImportacionFlota.csproj
+		SccProjectName8 = TK_ECAR.ImportacionFlota/TK_ECAR.ImportacionFlota
+		SccLocalPath8 = TK_ECAR.ImportacionFlota\\TK_ECAR.ImportacionFlota
+	EndGlobalSection
+EndGlobal

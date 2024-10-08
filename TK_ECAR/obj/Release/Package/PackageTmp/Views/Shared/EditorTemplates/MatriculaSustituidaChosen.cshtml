@@ -1,0 +1,77 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<select id="miVeh_sustituido" title="Seleccionar un empleado" search class="form-control" data-placeholder=@resourceView.placeholderChosen puedeDeshabilitarse = "SI">
+    <option></option>
+</select>
+<style type="text/css">
+    #miVeh_sustituido_chosen {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+
+<script type="text/javascript">
+
+    if ($("#MatriculaSustituida").val() != '') {
+        chosenMatriculaSustituidaSeleccionada();
+    }
+
+    chosenMatriculaSustituida();
+
+    function chosenMatriculaSustituidaSeleccionada() {
+        var $opt = $('<option value="' + $("#MatriculaSustituida").val() + '" selected="selected">').html($("#MatriculaSustituida").val());
+        $('#miVeh_sustituido').append($opt);
+
+        $("#miVeh_sustituido").trigger("chosen:updated");
+    }
+
+
+    function chosenMatriculaSustituida() {
+        var link = '@Html.Raw(Url.Action("GetMatriculas_Chosen", "Home", new { empresasSel = "empresaseleccionada", delegacionSel = "delegacionseleccionada" }))';
+        if ($("#IDEmpresa").val() != undefined) {
+            link = link.replace("empresaseleccionada", $("#IDEmpresa").val());
+        }
+        else {
+            link = link.replace("empresaseleccionada", '');
+        }
+        if ($("#IDDelegacion").val() != undefined) {
+            link = link.replace("delegacionseleccionada", $("#IDDelegacion").val());
+        }
+        else {
+            link = link.replace("delegacionseleccionada", '');
+        }
+        $('#miVeh_sustituido').prepend($('<option></option>').html('@resourceView.msgCargando'));
+        $("#miVeh_sustituido").ajaxChosen({
+            type: 'GET',
+            url: link,
+            async: true,
+            beforeSend: function (data, textStatus, jqXHR) {
+                $("#miVeh_sustituido_chosen span").addClass('loading-Chosen')
+            },
+            complete: function (data, textStatus, jqXHR) {
+                $("#miVeh_sustituido_chosen span").removeClass('loading-Chosen');
+            },
+            minTermLength: 0,
+            dataType: 'json'
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+
+        },
+            {
+                //options
+                disable_search_threshold: -1,
+                allow_single_deselect: true,
+
+            });
+    }
+
+    //******* PONERLO EN LA VISTA QUE TENGA ESTE CHOSEN, CON EL CAMPO DEL MODELO ADECUADO *****************
+    //$('#miVeh_sustituido').on('change', function () {
+    //    $('#Veh_sustituido').val(this.value);
+    // });
+
+</script>

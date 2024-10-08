@@ -1,0 +1,17 @@
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\bin\Release\TK_ECAR.Infraestructure.dll.config
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\bin\Release\TK_ECAR.Infraestructure.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\bin\Release\TK_ECAR.Infraestructure.pdb
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\bin\Release\EntityFramework.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\bin\Release\EntityFramework.SqlServer.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\bin\Release\PostSharp.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\bin\Release\TK_ECAR.Domain.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\bin\Release\TK_ECAR.Domain.pdb
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\bin\Release\EntityFramework.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\bin\Release\EntityFramework.SqlServer.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\bin\Release\PostSharp.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\bin\Release\TK_ECAR.Infraestructure.pssym
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\obj\Release\TK_ECAR.Infraestructure.csprojResolveAssemblyReference.cache
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\obj\Release\TK_ECAR.Infraestructure.dll.postsharp
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\obj\Release\TK_ECAR.Infraestructure.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\obj\Release\TK_ECAR.Infraestructure.pdb
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\obj\Release\PostSharpHost.config

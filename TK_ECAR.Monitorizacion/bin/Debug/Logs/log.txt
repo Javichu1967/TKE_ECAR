@@ -1,0 +1,110 @@
+2017-06-27 11:25:47,740 [9] INFO  Comienza del proceso generación de alertas... 27/06/2017 11:25 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\Global\GlobalApp.cs:29]
+2017-06-27 12:37:44,980 [10] INFO  Comienza del proceso generación de alertas... 27/06/2017 12:37 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\Global\GlobalApp.cs:29]
+2017-06-27 12:40:34,186 [10] ERROR System.NotSupportedException: The specified method 'Boolean Max[Datos_ITV,Boolean](System.Collections.Generic.IEnumerable`1[TK_ECAR.Domain.Datos_ITV], System.Func`2[TK_ECAR.Domain.Datos_ITV,System.Boolean])' on the type 'System.Linq.Enumerable' cannot be translated into a LINQ to Entities store expression because no overload matches the passed arguments.
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.ThrowUnresolvableFunctionOverload(Expression Expression, Boolean isAmbiguous)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.FindFunction(String namespaceName, String functionName, IList`1 argumentTypes, Boolean isGroupAggregateFunction, Expression Expression)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.AggregateTranslator.FindFunction(ExpressionConverter parent, MethodCallExpression call, TypeUsage argumentType)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.AggregateTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.JoinTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SelectTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   en System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   en System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   en System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   en TK_ECAR.Infraestructure.RepositoryDatos_ITV.GetITVFechaVencida(DateTime fechaVto, IUnitOfWork unitOfWork) en C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\RepositoryDatos_ITVPartial.cs:línea 45
+   en TK_ECAR.Monitorizacion.ApplicationServices.ProcessMonitorizacion.RunAlertasITV() en C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\ApplicationServices\ProcessMonitorizacion.cs:línea 143
+   en TK_ECAR.Monitorizacion.ApplicationServices.ProcessMonitorizacion.Run() en C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\ApplicationServices\ProcessMonitorizacion.cs:línea 84 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\LogExceptionAttribute.cs:24]
+2017-06-27 12:42:20,935 [10] ERROR System.NotSupportedException: The specified method 'Boolean Max[Datos_ITV,Boolean](System.Collections.Generic.IEnumerable`1[TK_ECAR.Domain.Datos_ITV], System.Func`2[TK_ECAR.Domain.Datos_ITV,System.Boolean])' on the type 'System.Linq.Enumerable' cannot be translated into a LINQ to Entities store expression because no overload matches the passed arguments.
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.ThrowUnresolvableFunctionOverload(Expression Expression, Boolean isAmbiguous)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.FindFunction(String namespaceName, String functionName, IList`1 argumentTypes, Boolean isGroupAggregateFunction, Expression Expression)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.AggregateTranslator.FindFunction(ExpressionConverter parent, MethodCallExpression call, TypeUsage argumentType)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.AggregateTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input, DbExpressionBinding& binding)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.JoinTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SelectTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   en System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   en System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   en System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   en System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   en TK_ECAR.Infraestructure.RepositoryDatos_ITV.GetITVFechaVencida(DateTime fechaVto, IUnitOfWork unitOfWork) en C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\RepositoryDatos_ITVPartial.cs:línea 45
+   en TK_ECAR.Monitorizacion.ApplicationServices.ProcessMonitorizacion.RunAlertasITV() en C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\ApplicationServices\ProcessMonitorizacion.cs:línea 143
+   en TK_ECAR.Monitorizacion.ApplicationServices.ProcessMonitorizacion.Run() en C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\ApplicationServices\ProcessMonitorizacion.cs:línea 84 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\LogExceptionAttribute.cs:24]
+2017-06-27 12:45:01,946 [8] INFO  Comienza del proceso generación de alertas... 27/06/2017 12:45 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\Global\GlobalApp.cs:29]
+2017-06-27 12:50:37,681 [8] INFO  Comienza del proceso generación de alertas... 27/06/2017 12:50 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\Global\GlobalApp.cs:29]
+2017-06-27 13:07:12,850 [10] INFO  Comienza del proceso generación de alertas... 27/06/2017 01:07 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\Global\GlobalApp.cs:29]
+2017-06-27 13:07:24,766 [10] INFO  Generación de alertas renting... 27/06/2017 01:07 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\Global\GlobalApp.cs:29]
+2017-06-27 13:11:25,217 [10] INFO  Comienza del proceso generación de alertas... 27/06/2017 01:11 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\Global\GlobalApp.cs:29]
+2017-06-27 13:11:30,761 [10] INFO  Generación de alertas renting... 27/06/2017 01:11 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\Global\GlobalApp.cs:29]
+2017-06-27 13:12:38,190 [9] INFO  Comienza del proceso generación de alertas... 27/06/2017 01:12 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\Global\GlobalApp.cs:29]
+2017-06-27 13:12:45,214 [9] INFO  Generación de alertas renting... 27/06/2017 01:12 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\Global\GlobalApp.cs:29]
+2017-06-27 13:15:02,665 [8] INFO  Comienza del proceso generación de alertas... 27/06/2017 01:15 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\Global\GlobalApp.cs:29]
+2017-06-27 13:16:25,263 [10] INFO  Comienza del proceso generación de alertas... 27/06/2017 01:16 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\Global\GlobalApp.cs:29]
+2017-06-27 13:23:49,311 [9] INFO  Comienza del proceso generación de alertas... 27/06/2017 01:23 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\Global\GlobalApp.cs:29]
+2017-06-27 13:42:23,895 [9] INFO  Comienza del proceso generación de alertas... 27/06/2017 01:42 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\Global\GlobalApp.cs:29]

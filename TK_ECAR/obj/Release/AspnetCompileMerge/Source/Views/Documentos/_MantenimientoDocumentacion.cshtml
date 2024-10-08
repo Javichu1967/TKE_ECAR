@@ -1,0 +1,89 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Models
+@model DocumentacionModel
+
+
+@Html.HiddenFor(m => m.ID_Documento)
+@Html.HiddenFor(m => m.Accion)
+@Html.HiddenFor(m => m.FileUploadDocumentacion_download)
+<div class="form-horizontal">
+    <div class="form-group">       
+        @Html.RequiredLabelFor(m => m.ID_Categoria, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">       
+            @Html.DropDownListTiposCategorias("ID_Categoria", new { @class = "form-control" }, Model.ID_Categoria)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.Nombre, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+            @Html.TextBoxFor(m=>m.Nombre, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Descripcion, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+            @Html.TextAreaFor(m => m.Descripcion, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.FileUploadDocumentacion, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+            @Html.EditorFor(m => m.FileUploadDocumentacion)
+            @Html.TextBoxFor(m => m.Documento, new { style = "display: none;" })
+        </div>
+    </div>
+    <div class="form-group" id="existente">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-8">
+            <div class="info">
+                <h3>@Html.Raw(@resourceView.LDocumentoExistente)</h3>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12">
+            @Html.Partial("_CustomValidationSummary", ViewData.ModelState)
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#existente').hide();
+
+        //CompruebaArchivo
+        $("#FileUpload").on('change', function (evt) {
+            
+            var _archivo = $("#FileUpload").val();
+            var _accion = $("#Accion").val();
+            var _idDocumento = $("#ID_Documento").val();
+            if (_archivo != "") {
+                $("#Documento").val(document.getElementById("FileUpload").files[0].name);
+                _data = "{nombreArchivo:" + JSON.stringify(document.getElementById("FileUpload").files[0].name) + ", idDocumento:" + JSON.stringify(_idDocumento) + ", accion:" + JSON.stringify(_accion) + "}";
+                $.ajax({
+                    type: "POST",
+                    async: false,
+                    url: '@Url.Action("CompruebaArchivo", "Documentos")',
+                    data: _data,
+                    dataType: "json",
+                    contentType: "application/json",
+                    success: function (res) {
+                        if (res) {
+                            $('#existente').show();
+                        }
+                        else {
+                            $('#existente').hide();
+                        }
+                    }
+                });
+            }
+        });
+    });
+
+</script>
+
+ 

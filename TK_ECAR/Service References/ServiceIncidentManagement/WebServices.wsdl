@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="https://dm.thyssenkrupp-elevator-euraf.com/IncidentManagement/WebServices.asmx" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="https://dm.thyssenkrupp-elevator-euraf.com/IncidentManagement/WebServices.asmx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="https://dm.thyssenkrupp-elevator-euraf.com/IncidentManagement/WebServices.asmx">
+      <s:element name="GetInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="App" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInfoResult" type="tns:DatosUsuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DatosUsuario">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PuedePonerIncidencias" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="URLNuevaIncidencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="URLGestionIncidencias" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DatosUsuario" nillable="true" type="tns:DatosUsuario" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoHttpGetIn">
+    <wsdl:part name="App" type="s:string" />
+    <wsdl:part name="Key" type="s:string" />
+    <wsdl:part name="EMail" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DatosUsuario" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoHttpPostIn">
+    <wsdl:part name="App" type="s:string" />
+    <wsdl:part name="Key" type="s:string" />
+    <wsdl:part name="EMail" type="s:string" />
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DatosUsuario" />
+  </wsdl:message>
+  <wsdl:portType name="WSIncidentManagementSoap">
+    <wsdl:operation name="GetInfo">
+      <wsdl:input message="tns:GetInfoSoapIn" />
+      <wsdl:output message="tns:GetInfoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WSIncidentManagementHttpGet">
+    <wsdl:operation name="GetInfo">
+      <wsdl:input message="tns:GetInfoHttpGetIn" />
+      <wsdl:output message="tns:GetInfoHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WSIncidentManagementHttpPost">
+    <wsdl:operation name="GetInfo">
+      <wsdl:input message="tns:GetInfoHttpPostIn" />
+      <wsdl:output message="tns:GetInfoHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSIncidentManagementSoap" type="tns:WSIncidentManagementSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetInfo">
+      <soap:operation soapAction="https://dm.thyssenkrupp-elevator-euraf.com/IncidentManagement/WebServices.asmx/GetInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSIncidentManagementSoap12" type="tns:WSIncidentManagementSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetInfo">
+      <soap12:operation soapAction="https://dm.thyssenkrupp-elevator-euraf.com/IncidentManagement/WebServices.asmx/GetInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSIncidentManagementHttpGet" type="tns:WSIncidentManagementHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetInfo">
+      <http:operation location="/GetInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSIncidentManagementHttpPost" type="tns:WSIncidentManagementHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetInfo">
+      <http:operation location="/GetInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSIncidentManagement">
+    <wsdl:port name="WSIncidentManagementSoap" binding="tns:WSIncidentManagementSoap">
+      <soap:address location="https://www.tke-iberia.com/GestionIncidencias/WebServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSIncidentManagementSoap12" binding="tns:WSIncidentManagementSoap12">
+      <soap12:address location="https://www.tke-iberia.com/GestionIncidencias/WebServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSIncidentManagementHttpGet" binding="tns:WSIncidentManagementHttpGet">
+      <http:address location="https://www.tke-iberia.com/GestionIncidencias/WebServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSIncidentManagementHttpPost" binding="tns:WSIncidentManagementHttpPost">
+      <http:address location="https://www.tke-iberia.com/GestionIncidencias/WebServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

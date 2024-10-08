@@ -1,0 +1,702 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CoreaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Compañias_Seguro">
+          <Key>
+            <PropertyRef Name="Cod_Cia" />
+          </Key>
+          <Property Name="Cod_Cia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CIA" Type="nvarchar" MaxLength="50" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="100" />
+          <Property Name="Cod_Postal" Type="nvarchar" MaxLength="5" />
+          <Property Name="Poblacion" Type="nvarchar" MaxLength="50" />
+          <Property Name="Persona_Contacto" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tlf_Contacto" Type="nvarchar" MaxLength="9" />
+          <Property Name="FAlta" Type="date" />
+        </EntityType>
+        <EntityType Name="Datos SolRed">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sociedad" Type="int" />
+          <Property Name="EJERCICIO" Type="nvarchar" MaxLength="10" />
+          <Property Name="TRIMESTRE" Type="nvarchar" MaxLength="10" />
+          <Property Name="FECHA_FACTURA" Type="datetime" />
+          <Property Name="FECHA_OPERACION" Type="datetime" />
+          <Property Name="MATRICULA" Type="nvarchar" MaxLength="10" />
+          <Property Name="DES_PRODU" Type="nvarchar" MaxLength="10" />
+          <Property Name="COD_PRODU" Type="nvarchar" MaxLength="5" />
+          <Property Name="KILOMETROS" Type="float" />
+          <Property Name="NUM_LITROS" Type="float" />
+          <Property Name="IMPORTE" Type="float" />
+          <Property Name="BONIF_TOTAL" Type="float" />
+          <Property Name="IVA" Type="float" />
+          <Property Name="IMP_TOTAL" Type="float" />
+          <Property Name="FechaAlta" Type="datetime2" Precision="7" />
+          <Property Name="KmsCiclo" Type="float" />
+        </EntityType>
+        <EntityType Name="Datos_Conductor">
+          <Key>
+            <PropertyRef Name="Cod_Conductor" />
+          </Key>
+          <Property Name="Cod_Conductor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DNI" Type="nvarchar" MaxLength="15" />
+          <Property Name="Apellidos" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="100" />
+          <Property Name="Cod_Postal" Type="nvarchar" MaxLength="5" />
+          <Property Name="Poblacion" Type="nvarchar" MaxLength="50" />
+          <Property Name="Provincia" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tlf" Type="nvarchar" MaxLength="15" />
+          <Property Name="Movil" Type="nvarchar" MaxLength="15" />
+          <Property Name="Fecha_Nacimiento" Type="datetime" />
+          <Property Name="Fecha_Carnet" Type="datetime" />
+          <Property Name="FechaAlta" Type="datetime" />
+          <Property Name="Num_Empleado" Type="nvarchar" MaxLength="20" />
+          <Property Name="Fecha_Vencimiento_Carnet" Type="datetime" />
+          <Property Name="CodCeco" Type="nvarchar" MaxLength="20" />
+          <Property Name="Fecha_Alta_Empresa" Type="date" />
+        </EntityType>
+        <EntityType Name="Datos_ITV">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Matricula" Type="nvarchar" MaxLength="20" />
+          <Property Name="Ultima_ITV" Type="date" />
+          <Property Name="Vto_ITV" Type="date" />
+          <Property Name="Tarifa" Type="float" />
+          <Property Name="Tasa" Type="float" />
+          <Property Name="Importe" Type="float" />
+          <Property Name="Impuesto_Circulacion" Type="float" />
+          <Property Name="Pr_Conservacion" Type="float" />
+          <Property Name="Otros" Type="nvarchar(max)" />
+          <Property Name="Falta" Type="date" />
+        </EntityType>
+        <EntityType Name="Datos_LeasePlan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmpresaLeasing" Type="int" />
+          <Property Name="Fecha_Factura" Type="datetime" />
+          <Property Name="Num_Factura" Type="nvarchar" MaxLength="50" />
+          <Property Name="Matricula" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ejercicio" Type="nvarchar" MaxLength="50" />
+          <Property Name="Trimestre" Type="nvarchar" MaxLength="10" />
+          <Property Name="Imp_Circulacion" Type="float" />
+          <Property Name="Imp_Circulacion_IVA" Type="float" />
+          <Property Name="Imp_Matriculacion" Type="float" />
+          <Property Name="Imp_Matriculacion_IVA" Type="float" />
+          <Property Name="Alquiler" Type="float" />
+          <Property Name="Alquiler_IVA" Type="float" />
+          <Property Name="Mantenimiento" Type="float" />
+          <Property Name="Mantenimiento_IVA" Type="float" />
+          <Property Name="Neumaticos" Type="float" />
+          <Property Name="Neumaticos_IVA" Type="float" />
+          <Property Name="Administracion" Type="float" />
+          <Property Name="Administracion_IVA" Type="float" />
+          <Property Name="Seguro" Type="float" />
+          <Property Name="Seguro_IVA" Type="float" />
+          <Property Name="Asistencia_Carretera" Type="float" />
+          <Property Name="Asistencia_Carretera_IVA" Type="float" />
+          <Property Name="Intereses_Prepagados" Type="float" />
+          <Property Name="Intereses_Prepagados_IVA" Type="float" />
+          <Property Name="Canarias" Type="bit" Nullable="false" />
+          <Property Name="Directivo" Type="bit" Nullable="false" />
+          <Property Name="Fecha_Servicio" Type="datetime" />
+          <Property Name="Fecha_Importacion" Type="datetime" />
+          <Property Name="ITV" Type="float" />
+          <Property Name="ITV_IVA" Type="float" />
+          <Property Name="Impuesto" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="Sociedad" Type="nchar" MaxLength="10" />
+          <Property Name="FechaAlta" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Datos_Multas">
+          <Key>
+            <PropertyRef Name="Matricula" />
+          </Key>
+          <Property Name="Matricula" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="Conductor" Type="int" />
+          <Property Name="Importe" Type="float" />
+          <Property Name="Motivo" Type="nvarchar(max)" />
+          <Property Name="Contrario" Type="bit" />
+          <Property Name="Cobertura" Type="bit" />
+          <Property Name="EmitidaAlerta" Type="bit" />
+          <Property Name="FAlta" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Datos_Vehiculo">
+          <Key>
+            <PropertyRef Name="Sociedad" />
+            <PropertyRef Name="Matricula" />
+          </Key>
+          <Property Name="Sociedad" Type="int" Nullable="false" />
+          <Property Name="Matricula" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Nuevo" Type="tinyint" />
+          <Property Name="Marca" Type="nvarchar" MaxLength="50" />
+          <Property Name="Modelo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tipo_Vehiculo" Type="int" />
+          <Property Name="Num_Bastidor" Type="nvarchar" MaxLength="50" />
+          <Property Name="CC" Type="nvarchar" MaxLength="10" />
+          <Property Name="Departamento" Type="int" />
+          <Property Name="Delegacion" Type="nvarchar" MaxLength="50" />
+          <Property Name="F_D" Type="bit" />
+          <Property Name="Directivo" Type="int" />
+          <Property Name="EmpresaLeasing" Type="int" />
+          <Property Name="Conductor" Type="int" />
+          <Property Name="Tipo_Seguro" Type="int" />
+          <Property Name="Cia_Seguro" Type="int" />
+          <Property Name="Poliza_Seguro" Type="nvarchar" MaxLength="50" />
+          <Property Name="Importe_Seguro" Type="float" />
+          <Property Name="Vto_Seguro" Type="datetime" />
+          <Property Name="Veh_sustituido" Type="nvarchar" MaxLength="15" />
+          <Property Name="Num_Contrato" Type="nvarchar" MaxLength="25" />
+          <Property Name="Fecha_Alta" Type="datetime" />
+          <Property Name="Baja" Type="bit" />
+          <Property Name="Fecha_Baja" Type="datetime" />
+          <Property Name="Fecha_Recibidos" Type="datetime" />
+          <Property Name="Fecha_Devolucion" Type="datetime" />
+          <Property Name="Fecha_Incorporacion" Type="datetime" />
+          <Property Name="Cuotas" Type="int" />
+          <Property Name="Km_Totales" Type="int" />
+          <Property Name="Tipo_Liquidacion" Type="int" />
+          <Property Name="Exceso_ajuste" Type="int" />
+          <Property Name="Coef_exceso" Type="int" />
+          <Property Name="Km_Exentos" Type="int" />
+          <Property Name="Abono" Type="float" />
+          <Property Name="Cargo" Type="int" />
+          <Property Name="Carburante" Type="nvarchar" MaxLength="1" />
+          <Property Name="Orden" Type="bit" />
+          <Property Name="Ubicacion" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Observaciones" Type="nvarchar(max)" />
+          <Property Name="Falta" Type="date" />
+        </EntityType>
+        <EntityType Name="Empresas_Leasing">
+          <Key>
+            <PropertyRef Name="Cod_Empresa" />
+          </Key>
+          <Property Name="Cod_Empresa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="100" />
+          <Property Name="Cod_Postal" Type="nvarchar" MaxLength="5" />
+          <Property Name="Poblacion" Type="nvarchar" MaxLength="50" />
+          <Property Name="Domiciliacion" Type="nvarchar" MaxLength="50" />
+          <Property Name="Persona_Contacto" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tlf_Contacto" Type="nvarchar" MaxLength="9" />
+          <Property Name="POA" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tipo_Liquidacion">
+          <Key>
+            <PropertyRef Name="Cod_tipo" />
+          </Key>
+          <Property Name="Cod_tipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tipo_Seguro">
+          <Key>
+            <PropertyRef Name="Cod_Tipo" />
+          </Key>
+          <Property Name="Cod_Tipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tipo" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Tipo_Vehiculo">
+          <Key>
+            <PropertyRef Name="Cod_Tipo" />
+          </Key>
+          <Property Name="Cod_Tipo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tipo" Type="nvarchar" MaxLength="25" />
+          <Property Name="ITV" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="CoreaModelStoreContainer">
+          <EntitySet Name="Compañias_Seguro" EntityType="Self.Compañias_Seguro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Datos SolRed" EntityType="Self.Datos SolRed" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Datos_Conductor" EntityType="Self.Datos_Conductor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Datos_ITV" EntityType="Self.Datos_ITV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Datos_LeasePlan" EntityType="Self.Datos_LeasePlan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Datos_Multas" EntityType="Self.Datos_Multas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Datos_Vehiculo" EntityType="Self.Datos_Vehiculo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empresas_Leasing" EntityType="Self.Empresas_Leasing" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipo_Liquidacion" EntityType="Self.Tipo_Liquidacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipo_Seguro" EntityType="Self.Tipo_Seguro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tipo_Vehiculo" EntityType="Self.Tipo_Vehiculo" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CoreaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Compañias_Seguro">
+          <Key>
+            <PropertyRef Name="Cod_Cia" />
+          </Key>
+          <Property Name="Cod_Cia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CIA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Cod_Postal" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Poblacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Persona_Contacto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tlf_Contacto" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="FAlta" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Datos_SolRed">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sociedad" Type="Int32" />
+          <Property Name="EJERCICIO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="TRIMESTRE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FECHA_FACTURA" Type="DateTime" Precision="3" />
+          <Property Name="FECHA_OPERACION" Type="DateTime" Precision="3" />
+          <Property Name="MATRICULA" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DES_PRODU" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="COD_PRODU" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="KILOMETROS" Type="Double" />
+          <Property Name="NUM_LITROS" Type="Double" />
+          <Property Name="IMPORTE" Type="Double" />
+          <Property Name="BONIF_TOTAL" Type="Double" />
+          <Property Name="IVA" Type="Double" />
+          <Property Name="IMP_TOTAL" Type="Double" />
+          <Property Name="FechaAlta" Type="DateTime" Precision="7" />
+          <Property Name="KmsCiclo" Type="Double" />
+        </EntityType>
+        <EntityType Name="Datos_Conductor">
+          <Key>
+            <PropertyRef Name="Cod_Conductor" />
+          </Key>
+          <Property Name="Cod_Conductor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DNI" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Cod_Postal" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Poblacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Provincia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tlf" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Movil" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha_Nacimiento" Type="DateTime" Precision="3" />
+          <Property Name="Fecha_Carnet" Type="DateTime" Precision="3" />
+          <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+          <Property Name="Num_Empleado" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha_Vencimiento_Carnet" Type="DateTime" Precision="3" />
+          <Property Name="CodCeco" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha_Alta_Empresa" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Datos_ITV">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Matricula" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Ultima_ITV" Type="DateTime" Precision="0" />
+          <Property Name="Vto_ITV" Type="DateTime" Precision="0" />
+          <Property Name="Tarifa" Type="Double" />
+          <Property Name="Tasa" Type="Double" />
+          <Property Name="Importe" Type="Double" />
+          <Property Name="Impuesto_Circulacion" Type="Double" />
+          <Property Name="Pr_Conservacion" Type="Double" />
+          <Property Name="Otros" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Falta" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Datos_LeasePlan">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpresaLeasing" Type="Int32" />
+          <Property Name="Fecha_Factura" Type="DateTime" Precision="3" />
+          <Property Name="Num_Factura" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Matricula" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Ejercicio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Trimestre" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Imp_Circulacion" Type="Double" />
+          <Property Name="Imp_Circulacion_IVA" Type="Double" />
+          <Property Name="Imp_Matriculacion" Type="Double" />
+          <Property Name="Imp_Matriculacion_IVA" Type="Double" />
+          <Property Name="Alquiler" Type="Double" />
+          <Property Name="Alquiler_IVA" Type="Double" />
+          <Property Name="Mantenimiento" Type="Double" />
+          <Property Name="Mantenimiento_IVA" Type="Double" />
+          <Property Name="Neumaticos" Type="Double" />
+          <Property Name="Neumaticos_IVA" Type="Double" />
+          <Property Name="Administracion" Type="Double" />
+          <Property Name="Administracion_IVA" Type="Double" />
+          <Property Name="Seguro" Type="Double" />
+          <Property Name="Seguro_IVA" Type="Double" />
+          <Property Name="Asistencia_Carretera" Type="Double" />
+          <Property Name="Asistencia_Carretera_IVA" Type="Double" />
+          <Property Name="Intereses_Prepagados" Type="Double" />
+          <Property Name="Intereses_Prepagados_IVA" Type="Double" />
+          <Property Name="Canarias" Type="Boolean" Nullable="false" />
+          <Property Name="Directivo" Type="Boolean" Nullable="false" />
+          <Property Name="Fecha_Servicio" Type="DateTime" Precision="3" />
+          <Property Name="Fecha_Importacion" Type="DateTime" Precision="3" />
+          <Property Name="ITV" Type="Double" />
+          <Property Name="ITV_IVA" Type="Double" />
+          <Property Name="Impuesto" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="Sociedad" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Datos_Multas">
+          <Key>
+            <PropertyRef Name="Matricula" />
+          </Key>
+          <Property Name="Matricula" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="Conductor" Type="Int32" />
+          <Property Name="Importe" Type="Double" />
+          <Property Name="Motivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Contrario" Type="Boolean" />
+          <Property Name="Cobertura" Type="Boolean" />
+          <Property Name="EmitidaAlerta" Type="Boolean" />
+          <Property Name="FAlta" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Datos_Vehiculo">
+          <Key>
+            <PropertyRef Name="Sociedad" />
+            <PropertyRef Name="Matricula" />
+          </Key>
+          <Property Name="Sociedad" Type="Int32" Nullable="false" />
+          <Property Name="Matricula" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nuevo" Type="Byte" />
+          <Property Name="Marca" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tipo_Vehiculo" Type="Int32" />
+          <Property Name="Num_Bastidor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Departamento" Type="Int32" />
+          <Property Name="Delegacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="F_D" Type="Boolean" />
+          <Property Name="Directivo" Type="Int32" />
+          <Property Name="EmpresaLeasing" Type="Int32" />
+          <Property Name="Conductor" Type="Int32" />
+          <Property Name="Tipo_Seguro" Type="Int32" />
+          <Property Name="Cia_Seguro" Type="Int32" />
+          <Property Name="Poliza_Seguro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Importe_Seguro" Type="Double" />
+          <Property Name="Vto_Seguro" Type="DateTime" Precision="3" />
+          <Property Name="Veh_sustituido" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Num_Contrato" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha_Alta" Type="DateTime" Precision="3" />
+          <Property Name="Baja" Type="Boolean" />
+          <Property Name="Fecha_Baja" Type="DateTime" Precision="3" />
+          <Property Name="Fecha_Recibidos" Type="DateTime" Precision="3" />
+          <Property Name="Fecha_Devolucion" Type="DateTime" Precision="3" />
+          <Property Name="Fecha_Incorporacion" Type="DateTime" Precision="3" />
+          <Property Name="Cuotas" Type="Int32" />
+          <Property Name="Km_Totales" Type="Int32" />
+          <Property Name="Tipo_Liquidacion" Type="Int32" />
+          <Property Name="Exceso_ajuste" Type="Int32" />
+          <Property Name="Coef_exceso" Type="Int32" />
+          <Property Name="Km_Exentos" Type="Int32" />
+          <Property Name="Abono" Type="Double" />
+          <Property Name="Cargo" Type="Int32" />
+          <Property Name="Carburante" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="Orden" Type="Boolean" />
+          <Property Name="Ubicacion" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Observaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Falta" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Empresas_Leasing">
+          <Key>
+            <PropertyRef Name="Cod_Empresa" />
+          </Key>
+          <Property Name="Cod_Empresa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Cod_Postal" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="Poblacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Domiciliacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Persona_Contacto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tlf_Contacto" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="POA" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tipo_Liquidacion">
+          <Key>
+            <PropertyRef Name="Cod_tipo" />
+          </Key>
+          <Property Name="Cod_tipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tipo_Seguro">
+          <Key>
+            <PropertyRef Name="Cod_Tipo" />
+          </Key>
+          <Property Name="Cod_Tipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tipo_Vehiculo">
+          <Key>
+            <PropertyRef Name="Cod_Tipo" />
+          </Key>
+          <Property Name="Cod_Tipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="ITV" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="CoreaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Compañias_Seguro" EntityType="Self.Compañias_Seguro" />
+          <EntitySet Name="Datos_SolRed" EntityType="Self.Datos_SolRed" />
+          <EntitySet Name="Datos_Conductor" EntityType="Self.Datos_Conductor" />
+          <EntitySet Name="Datos_ITV" EntityType="Self.Datos_ITV" />
+          <EntitySet Name="Datos_LeasePlan" EntityType="Self.Datos_LeasePlan" />
+          <EntitySet Name="Datos_Multas" EntityType="Self.Datos_Multas" />
+          <EntitySet Name="Datos_Vehiculo" EntityType="Self.Datos_Vehiculo" />
+          <EntitySet Name="Empresas_Leasing" EntityType="Self.Empresas_Leasing" />
+          <EntitySet Name="Tipo_Liquidacion" EntityType="Self.Tipo_Liquidacion" />
+          <EntitySet Name="Tipo_Seguro" EntityType="Self.Tipo_Seguro" />
+          <EntitySet Name="Tipo_Vehiculo" EntityType="Self.Tipo_Vehiculo" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CoreaModelStoreContainer" CdmEntityContainer="CoreaEntities">
+          <EntitySetMapping Name="Compañias_Seguro">
+            <EntityTypeMapping TypeName="CoreaModel.Compañias_Seguro">
+              <MappingFragment StoreEntitySet="Compañias_Seguro">
+                <ScalarProperty Name="Cod_Cia" ColumnName="Cod_Cia" />
+                <ScalarProperty Name="CIA" ColumnName="CIA" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Cod_Postal" ColumnName="Cod_Postal" />
+                <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
+                <ScalarProperty Name="Persona_Contacto" ColumnName="Persona_Contacto" />
+                <ScalarProperty Name="Tlf_Contacto" ColumnName="Tlf_Contacto" />
+                <ScalarProperty Name="FAlta" ColumnName="FAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Datos_SolRed">
+            <EntityTypeMapping TypeName="CoreaModel.Datos_SolRed">
+              <MappingFragment StoreEntitySet="Datos SolRed">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Sociedad" ColumnName="Sociedad" />
+                <ScalarProperty Name="EJERCICIO" ColumnName="EJERCICIO" />
+                <ScalarProperty Name="TRIMESTRE" ColumnName="TRIMESTRE" />
+                <ScalarProperty Name="FECHA_FACTURA" ColumnName="FECHA_FACTURA" />
+                <ScalarProperty Name="FECHA_OPERACION" ColumnName="FECHA_OPERACION" />
+                <ScalarProperty Name="MATRICULA" ColumnName="MATRICULA" />
+                <ScalarProperty Name="DES_PRODU" ColumnName="DES_PRODU" />
+                <ScalarProperty Name="COD_PRODU" ColumnName="COD_PRODU" />
+                <ScalarProperty Name="KILOMETROS" ColumnName="KILOMETROS" />
+                <ScalarProperty Name="NUM_LITROS" ColumnName="NUM_LITROS" />
+                <ScalarProperty Name="IMPORTE" ColumnName="IMPORTE" />
+                <ScalarProperty Name="BONIF_TOTAL" ColumnName="BONIF_TOTAL" />
+                <ScalarProperty Name="IVA" ColumnName="IVA" />
+                <ScalarProperty Name="IMP_TOTAL" ColumnName="IMP_TOTAL" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="KmsCiclo" ColumnName="KmsCiclo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Datos_Conductor">
+            <EntityTypeMapping TypeName="CoreaModel.Datos_Conductor">
+              <MappingFragment StoreEntitySet="Datos_Conductor">
+                <ScalarProperty Name="Cod_Conductor" ColumnName="Cod_Conductor" />
+                <ScalarProperty Name="DNI" ColumnName="DNI" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Cod_Postal" ColumnName="Cod_Postal" />
+                <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Tlf" ColumnName="Tlf" />
+                <ScalarProperty Name="Movil" ColumnName="Movil" />
+                <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+                <ScalarProperty Name="Fecha_Carnet" ColumnName="Fecha_Carnet" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="Num_Empleado" ColumnName="Num_Empleado" />
+                <ScalarProperty Name="Fecha_Vencimiento_Carnet" ColumnName="Fecha_Vencimiento_Carnet" />
+                <ScalarProperty Name="CodCeco" ColumnName="CodCeco" />
+                <ScalarProperty Name="Fecha_Alta_Empresa" ColumnName="Fecha_Alta_Empresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Datos_ITV">
+            <EntityTypeMapping TypeName="CoreaModel.Datos_ITV">
+              <MappingFragment StoreEntitySet="Datos_ITV">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+                <ScalarProperty Name="Ultima_ITV" ColumnName="Ultima_ITV" />
+                <ScalarProperty Name="Vto_ITV" ColumnName="Vto_ITV" />
+                <ScalarProperty Name="Tarifa" ColumnName="Tarifa" />
+                <ScalarProperty Name="Tasa" ColumnName="Tasa" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Impuesto_Circulacion" ColumnName="Impuesto_Circulacion" />
+                <ScalarProperty Name="Pr_Conservacion" ColumnName="Pr_Conservacion" />
+                <ScalarProperty Name="Otros" ColumnName="Otros" />
+                <ScalarProperty Name="Falta" ColumnName="Falta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Datos_LeasePlan">
+            <EntityTypeMapping TypeName="CoreaModel.Datos_LeasePlan">
+              <MappingFragment StoreEntitySet="Datos_LeasePlan">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EmpresaLeasing" ColumnName="EmpresaLeasing" />
+                <ScalarProperty Name="Fecha_Factura" ColumnName="Fecha_Factura" />
+                <ScalarProperty Name="Num_Factura" ColumnName="Num_Factura" />
+                <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+                <ScalarProperty Name="Ejercicio" ColumnName="Ejercicio" />
+                <ScalarProperty Name="Trimestre" ColumnName="Trimestre" />
+                <ScalarProperty Name="Imp_Circulacion" ColumnName="Imp_Circulacion" />
+                <ScalarProperty Name="Imp_Circulacion_IVA" ColumnName="Imp_Circulacion_IVA" />
+                <ScalarProperty Name="Imp_Matriculacion" ColumnName="Imp_Matriculacion" />
+                <ScalarProperty Name="Imp_Matriculacion_IVA" ColumnName="Imp_Matriculacion_IVA" />
+                <ScalarProperty Name="Alquiler" ColumnName="Alquiler" />
+                <ScalarProperty Name="Alquiler_IVA" ColumnName="Alquiler_IVA" />
+                <ScalarProperty Name="Mantenimiento" ColumnName="Mantenimiento" />
+                <ScalarProperty Name="Mantenimiento_IVA" ColumnName="Mantenimiento_IVA" />
+                <ScalarProperty Name="Neumaticos" ColumnName="Neumaticos" />
+                <ScalarProperty Name="Neumaticos_IVA" ColumnName="Neumaticos_IVA" />
+                <ScalarProperty Name="Administracion" ColumnName="Administracion" />
+                <ScalarProperty Name="Administracion_IVA" ColumnName="Administracion_IVA" />
+                <ScalarProperty Name="Seguro" ColumnName="Seguro" />
+                <ScalarProperty Name="Seguro_IVA" ColumnName="Seguro_IVA" />
+                <ScalarProperty Name="Asistencia_Carretera" ColumnName="Asistencia_Carretera" />
+                <ScalarProperty Name="Asistencia_Carretera_IVA" ColumnName="Asistencia_Carretera_IVA" />
+                <ScalarProperty Name="Intereses_Prepagados" ColumnName="Intereses_Prepagados" />
+                <ScalarProperty Name="Intereses_Prepagados_IVA" ColumnName="Intereses_Prepagados_IVA" />
+                <ScalarProperty Name="Canarias" ColumnName="Canarias" />
+                <ScalarProperty Name="Directivo" ColumnName="Directivo" />
+                <ScalarProperty Name="Fecha_Servicio" ColumnName="Fecha_Servicio" />
+                <ScalarProperty Name="Fecha_Importacion" ColumnName="Fecha_Importacion" />
+                <ScalarProperty Name="ITV" ColumnName="ITV" />
+                <ScalarProperty Name="ITV_IVA" ColumnName="ITV_IVA" />
+                <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
+                <ScalarProperty Name="Sociedad" ColumnName="Sociedad" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Datos_Multas">
+            <EntityTypeMapping TypeName="CoreaModel.Datos_Multas">
+              <MappingFragment StoreEntitySet="Datos_Multas">
+                <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Conductor" ColumnName="Conductor" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+                <ScalarProperty Name="Contrario" ColumnName="Contrario" />
+                <ScalarProperty Name="Cobertura" ColumnName="Cobertura" />
+                <ScalarProperty Name="EmitidaAlerta" ColumnName="EmitidaAlerta" />
+                <ScalarProperty Name="FAlta" ColumnName="FAlta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Datos_Vehiculo">
+            <EntityTypeMapping TypeName="CoreaModel.Datos_Vehiculo">
+              <MappingFragment StoreEntitySet="Datos_Vehiculo">
+                <ScalarProperty Name="Sociedad" ColumnName="Sociedad" />
+                <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+                <ScalarProperty Name="Nuevo" ColumnName="Nuevo" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Tipo_Vehiculo" ColumnName="Tipo_Vehiculo" />
+                <ScalarProperty Name="Num_Bastidor" ColumnName="Num_Bastidor" />
+                <ScalarProperty Name="CC" ColumnName="CC" />
+                <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+                <ScalarProperty Name="Delegacion" ColumnName="Delegacion" />
+                <ScalarProperty Name="F_D" ColumnName="F_D" />
+                <ScalarProperty Name="Directivo" ColumnName="Directivo" />
+                <ScalarProperty Name="EmpresaLeasing" ColumnName="EmpresaLeasing" />
+                <ScalarProperty Name="Conductor" ColumnName="Conductor" />
+                <ScalarProperty Name="Tipo_Seguro" ColumnName="Tipo_Seguro" />
+                <ScalarProperty Name="Cia_Seguro" ColumnName="Cia_Seguro" />
+                <ScalarProperty Name="Poliza_Seguro" ColumnName="Poliza_Seguro" />
+                <ScalarProperty Name="Importe_Seguro" ColumnName="Importe_Seguro" />
+                <ScalarProperty Name="Vto_Seguro" ColumnName="Vto_Seguro" />
+                <ScalarProperty Name="Veh_sustituido" ColumnName="Veh_sustituido" />
+                <ScalarProperty Name="Num_Contrato" ColumnName="Num_Contrato" />
+                <ScalarProperty Name="Fecha_Alta" ColumnName="Fecha_Alta" />
+                <ScalarProperty Name="Baja" ColumnName="Baja" />
+                <ScalarProperty Name="Fecha_Baja" ColumnName="Fecha_Baja" />
+                <ScalarProperty Name="Fecha_Recibidos" ColumnName="Fecha_Recibidos" />
+                <ScalarProperty Name="Fecha_Devolucion" ColumnName="Fecha_Devolucion" />
+                <ScalarProperty Name="Fecha_Incorporacion" ColumnName="Fecha_Incorporacion" />
+                <ScalarProperty Name="Cuotas" ColumnName="Cuotas" />
+                <ScalarProperty Name="Km_Totales" ColumnName="Km_Totales" />
+                <ScalarProperty Name="Tipo_Liquidacion" ColumnName="Tipo_Liquidacion" />
+                <ScalarProperty Name="Exceso_ajuste" ColumnName="Exceso_ajuste" />
+                <ScalarProperty Name="Coef_exceso" ColumnName="Coef_exceso" />
+                <ScalarProperty Name="Km_Exentos" ColumnName="Km_Exentos" />
+                <ScalarProperty Name="Abono" ColumnName="Abono" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+                <ScalarProperty Name="Carburante" ColumnName="Carburante" />
+                <ScalarProperty Name="Orden" ColumnName="Orden" />
+                <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="Falta" ColumnName="Falta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empresas_Leasing">
+            <EntityTypeMapping TypeName="CoreaModel.Empresas_Leasing">
+              <MappingFragment StoreEntitySet="Empresas_Leasing">
+                <ScalarProperty Name="Cod_Empresa" ColumnName="Cod_Empresa" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Cod_Postal" ColumnName="Cod_Postal" />
+                <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
+                <ScalarProperty Name="Domiciliacion" ColumnName="Domiciliacion" />
+                <ScalarProperty Name="Persona_Contacto" ColumnName="Persona_Contacto" />
+                <ScalarProperty Name="Tlf_Contacto" ColumnName="Tlf_Contacto" />
+                <ScalarProperty Name="POA" ColumnName="POA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipo_Liquidacion">
+            <EntityTypeMapping TypeName="CoreaModel.Tipo_Liquidacion">
+              <MappingFragment StoreEntitySet="Tipo_Liquidacion">
+                <ScalarProperty Name="Cod_tipo" ColumnName="Cod_tipo" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipo_Seguro">
+            <EntityTypeMapping TypeName="CoreaModel.Tipo_Seguro">
+              <MappingFragment StoreEntitySet="Tipo_Seguro">
+                <ScalarProperty Name="Cod_Tipo" ColumnName="Cod_Tipo" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tipo_Vehiculo">
+            <EntityTypeMapping TypeName="CoreaModel.Tipo_Vehiculo">
+              <MappingFragment StoreEntitySet="Tipo_Vehiculo">
+                <ScalarProperty Name="Cod_Tipo" ColumnName="Cod_Tipo" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="ITV" ColumnName="ITV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

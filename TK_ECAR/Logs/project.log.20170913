@@ -1,0 +1,30 @@
+2017-09-13 09:35:44,763 [10] ERROR <GetFacturaLeasing> <PASO> Añadiendo ConceptoFacturacion Administracion en factura 13378323, La clave proporcionada no se encontró en el diccionario. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:165]
+2017-09-13 09:35:49,507 [9] ERROR System.Collections.Generic.KeyNotFoundException: La clave proporcionada no se encontró en el diccionario.
+   en System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   en TK_ECAR.Framework.Utils.GlobalCostes.GetCodigoCuentaContableAsociada(Int32 empresaFacturada, TipoObjetoCoste tipoCoste) en C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Framework\Utils\GlobalCostes.cs:línea 50
+   en TK_ECAR.Framework.Models.FacturaModels.get_Base() en C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Framework\Models\FacturaModels.cs:línea 97
+   en TK_ECAR.Controllers.FacturacionController.DatosResumenFacturasJson() en C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Controllers\FacturacionController.cs:línea 194
+   en lambda_method(Closure , ControllerBase , Object[] )
+   en System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   en System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult) - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Filters\HandleCustomException.cs:24]
+2017-09-13 16:30:14,173 [11] ERROR <GetFacturaLeasing> <PASO> Asignando total factura , Referencia a objeto no establecida como instancia de un objeto. - [:0]
+2017-09-13 16:30:56,793 [5] ERROR <GetFacturaLeasing> <PASO> Añadiendo ConceptoFacturacion ITV en factura 08223642, The ObjectContext instance has been disposed and can no longer be used for operations that require a connection. - [:0]
+2017-09-13 16:32:06,201 [11] ERROR <GetFacturaLeasing> <PASO> Añadiendo ConceptoFacturacion ITV en factura 08223642, The ObjectContext instance has been disposed and can no longer be used for operations that require a connection. - [:0]
+2017-09-13 16:33:33,418 [17] ERROR <GetFacturaLeasing> <PASO> Añadiendo ConceptoFacturacion ITV en factura 08223642, The ObjectContext instance has been disposed and can no longer be used for operations that require a connection. - [:0]
+2017-09-13 16:57:47,957 [7] ERROR <GetFacturaLeasing> <PASO> Añadiendo ConceptoFacturacion ITV en factura 08223642, Referencia a objeto no establecida como instancia de un objeto. - [:0]
+2017-09-13 17:01:59,893 [20] ERROR <GetFacturaLeasing> <PASO> Asignando total factura 08223642, El valor no puede ser nulo.
+Nombre del parámetro: key - [:0]

@@ -1,0 +1,219 @@
+﻿@using TK_ECAR.Framework
+@model ConfirmarConductorMultaModel
+ 
+ 
+@Html.HiddenFor(m => m.IdAlerta)
+@Html.HiddenFor(m => m.IdEstado)
+@Html.HiddenFor(m => m.FileDownloadCarnet)
+@Html.HiddenFor(m => m.ValidezPermisoESP)
+@Html.HiddenFor(m => m.AutorizacionPermiso)
+
+@{
+    bool edicion = !(Model.IdEstado == (int)EnumEstadoAlerta.Notificado || Model.IdEstado == (int)EnumEstadoAlerta.Atendida);
+}
+<div class="form-horizontal">
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.Nombre, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @if(edicion)
+            {
+                @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control" })
+            }
+            else
+                { @Html.DisplayFor(m => m.Nombre) }
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.DNI, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @if (edicion)
+            {
+                @Html.TextBoxFor(m => m.DNI, new { @class = "form-control" })
+            }
+            else
+            { @Html.DisplayFor(m => m.DNI) }
+        </div>
+    </div>    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.NumPermisoConducir, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @if(edicion)
+            {
+                @Html.TextBoxFor(m => m.NumPermisoConducir, new { @class = "form-control" })
+            }
+            else
+                { @Html.DisplayFor(m => m.NumPermisoConducir) }
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.NacionalidadPermiso, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @if(edicion)
+            {
+                @Html.TextBoxFor(m => m.NacionalidadPermiso, new { @class = "form-control" })
+            }
+            else
+                { @Html.DisplayFor(m => m.NacionalidadPermiso) }
+        </div>
+    </div>
+
+    @*<div class="form-group">        
+        @Html.LabelFor(m => m.ValidezPermisoESP, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">          
+            @if (edicion)
+            {
+                @Html.EditorFor(m => m.ValidezPermisoESP)
+            }
+            else
+            { @Html.DisplayFor(m => m.ValidezPermisoESP) }
+        </div>
+    </div>*@
+    <div class="form-group">         
+        @Html.LabelFor(m => m.Pais, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @if (edicion)
+            {
+                @Html.TextBoxFor(m => m.Pais, new { @class = "form-control" })
+            }
+            else
+            { @Html.DisplayFor(m => m.Pais) }
+        </div>
+    </div>
+    <div class="form-group">        
+        @Html.RequiredLabelFor(m => m.Provincia, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @if (edicion)
+            {
+                @Html.TextBoxFor(m => m.Provincia, new { @class = "form-control" })
+            }
+            else
+            { @Html.DisplayFor(m => m.Provincia) }
+        </div>
+    </div>
+    <div class="form-group">        
+        @Html.RequiredLabelFor(m => m.Poblacion, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @if (edicion)
+            {
+                @Html.TextBoxFor(m => m.Poblacion, new { @class = "form-control" })
+            }
+            else
+            { @Html.DisplayFor(m => m.Poblacion) }
+        </div>
+    </div>
+
+    <div class="form-group">         
+        @Html.RequiredLabelFor(m => m.Domicilio, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @if (edicion)
+            {
+                @Html.TextBoxFor(m => m.Domicilio, new { @class = "form-control" })
+            }
+            else
+            { @Html.DisplayFor(m => m.Domicilio) }
+        </div>
+    </div>
+    <div class="form-group">        
+        @Html.LabelFor(m => m.CodigoPostal, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @if (edicion)
+            {
+                @Html.TextBoxFor(m => m.CodigoPostal, new { @class = "form-control" })
+            }
+            else
+            { @Html.DisplayFor(m => m.CodigoPostal) }
+        </div>
+    </div>
+    @*<div class="form-group">  
+        
+        @Html.LabelFor(m => m.AutorizacionPermiso, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">           
+           
+            @if (edicion)
+            {
+                @Html.EditorFor(m => m.AutorizacionPermiso)
+            }
+            else
+            { @Html.DisplayFor(m => m.AutorizacionPermiso) }
+        </div>
+    </div>*@
+    <div class="form-group">
+        @Html.LabelFor(m => m.FileUploadCarnet, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @if (edicion)
+            {
+                if (!string.IsNullOrEmpty(Model.FileDownloadCarnet))
+                {
+                    @Html.TextBoxFor(m => m.FileUploadCarnet, new { type = "file", @style = "display:none" })
+                    
+                    <div class="input-group" > 
+                        <div id="updatefilediv">
+                            <a href="@Url.Action("DownloadFile", "Alertas", new { idAlerta = Model.IdAlerta, fichero = Model.FileDownloadCarnet })" >
+                                
+                                @Html.TextBox("NombreFichero", Model.FileDownloadCarnet, new { @class = "form-control", @readonly = "readonly",@style="color:#00A0F5" })
+                            </a>
+                        </div>
+                      
+                        <span class="input-group-addon">                           
+                            <a id="btnchangefile" style="cursor:pointer">
+                                <span class="tk-icon icon-tk-download"></span>
+                            </a>
+                        </span>
+                    </div>
+                }
+                else
+                {
+                    @Html.EditorFor(m => m.FileUploadCarnet)
+                }
+            }
+            else if (!string.IsNullOrEmpty(Model.FileDownloadCarnet))
+            {
+
+                <a href="@Url.Action("DownloadFile", "Alertas", new { idAlerta = Model.IdAlerta, fichero = Model.FileDownloadCarnet })">
+                    @Html.DisplayFor(m => m.FileDownloadCarnet)
+                </a>
+
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12">
+            @Html.Partial("_CustomValidationSummary", ViewData.ModelState)
+        </div>
+    </div>
+</div>
+<script>
+    var noeditar = '@(Model.IdEstado == (int)EnumEstadoAlerta.Notificado || Model.IdEstado == (int)EnumEstadoAlerta.Atendida)';
+
+    if (noeditar == 'True') {
+        $("#confirmarConductor").addClass("ocultar");
+    }
+
+
+    $("#btnchangefile").click(function () {
+        $("#FileUploadCarnet").click();
+    });
+
+
+    $("#FileUploadCarnet").on('change', function (evt) {
+
+        var files = evt.target.files; // FileList object
+        var inputfile = '@(Html.TextBox("NombreFichero", "JSVALUE", new { @class = "form-control", @readonly = "readonly" }))';
+        $("#updatefilediv").empty();
+        if (files.length > 0) {
+            $("#updatefilediv").empty();
+
+            $("#FileDownloadCarnet").val(files[0].name); 
+
+            $("#updatefilediv").html(inputfile.replace("JSVALUE", files[0].name));
+
+
+        }
+        else {
+
+           
+            $("#FileDownloadCarnet").val('');
+            $("#updatefilediv").html(inputfile.replace("JSVALUE", ''));
+        }
+    });
+</script>

@@ -1,0 +1,78 @@
+2017-07-11 12:21:15,003 [7] DEBUG Desde 10/7/2017 12:00:00 AM - Hasta  - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:161]
+2017-07-11 12:30:59,526 [6] DEBUG Desde 10/7/2017 12:00:00 AM - Hasta  - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:161]
+2017-07-11 12:32:55,099 [15] DEBUG Desde 10/7/2017 12:00:00 AM - Hasta  - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:161]
+2017-07-11 12:33:11,879 [14] DEBUG Desde 7/7/2017 12:00:00 AM - Hasta  - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:161]
+2017-07-11 13:29:05,147 [10] DEBUG Desde 12/7/2017 12:00:00 AM - Hasta  - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:161]
+2017-07-11 13:30:20,264 [10] DEBUG Desde 10/7/2017 12:00:00 AM - Hasta  - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:161]
+2017-07-11 13:40:29,917 [15] DEBUG Desde 10/7/2017 12:00:00 AM - Hasta  - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:161]
+2017-07-11 13:49:30,466 [17] DEBUG Desde 10/7/2017 12:00:00 AM - Hasta  - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:161]
+2017-07-11 13:59:04,509 [7] DEBUG Desde 07/10/2017 0:00:00 - Hasta  - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:165]
+2017-07-11 14:03:38,757 [9] DEBUG Desde  - Hasta 01/01/0001 0:00:00 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:165]
+2017-07-11 14:18:29,038 [16] DEBUG Desde 07/10/2017 0:00:00 - Hasta  - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:165]
+2017-07-11 14:29:07,057 [6] DEBUG Desde 10/07/2017 0:00:00 - Hasta 21/07/2017 0:00:00 - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:165]
+2017-07-11 15:58:54,586 [13] ERROR System.FormatException: Input string was not in a correct format.
+   at System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.Format(IFormatProvider provider, String format, Object[] args)
+   at System.Web.Mvc.ViewDataDictionary.FormatValueInternal(Object value, String format)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBox(HtmlHelper htmlHelper, String name, Object value, String format, Object htmlAttributes)
+   at ASP._Page_Views_Shared_EditorTemplates_Date_cshtml.Execute() in C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Views\Shared\EditorTemplates\Date.cshtml:line 8
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.TemplateHelpers.ExecuteTemplate(HtmlHelper html, ViewDataDictionary viewData, String templateName, DataBoundControlMode mode, GetViewNamesDelegate getViewNames, GetDefaultActionsDelegate getDefaultActions)
+   at System.Web.Mvc.Html.TemplateHelpers.TemplateHelper(HtmlHelper html, ModelMetadata metadata, String htmlFieldName, String templateName, DataBoundControlMode mode, Object additionalViewData, ExecuteTemplateDelegate executeTemplate)
+   at System.Web.Mvc.Html.TemplateHelpers.TemplateHelper(HtmlHelper html, ModelMetadata metadata, String htmlFieldName, String templateName, DataBoundControlMode mode, Object additionalViewData)
+   at System.Web.Mvc.Html.TemplateHelpers.TemplateFor[TContainer,TValue](HtmlHelper`1 html, Expression`1 expression, String templateName, String htmlFieldName, DataBoundControlMode mode, Object additionalViewData, TemplateHelperDelegate templateHelper)
+   at System.Web.Mvc.Html.TemplateHelpers.TemplateFor[TContainer,TValue](HtmlHelper`1 html, Expression`1 expression, String templateName, String htmlFieldName, DataBoundControlMode mode, Object additionalViewData)
+   at System.Web.Mvc.Html.EditorExtensions.EditorFor[TModel,TValue](HtmlHelper`1 html, Expression`1 expression)
+   at ASP._Page_Views_Shared__FilterAlertas_cshtml.Execute() in C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Views\Shared\_FilterAlertas.cshtml:line 126
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.HtmlHelper.RenderPartialInternal(String partialViewName, ViewDataDictionary viewData, Object model, TextWriter writer, ViewEngineCollection viewEngineCollection)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName)
+   at ASP._Page_Views_Alertas_Index_cshtml.Execute() in C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Views\Alertas\Index.cshtml:line 82
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.RunPage()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult) - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Filters\HandleCustomException.cs:24]
+2017-07-11 16:03:21,886 [6] ERROR System.Web.HttpException (0x80004005): Path '/Views/Shared/EditorTemplates/Date.cshtml' was not found.
+   at System.Web.HttpNotFoundHandler.ProcessRequest(HttpContext context)
+   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Global.asax.cs:34]
+2017-07-11 16:03:24,310 [7] ERROR System.InvalidOperationException: The view 'Error404' or its master was not found or no view engine supports the searched locations. The following locations were searched:
+~/Views/Error/Error404.aspx
+~/Views/Error/Error404.ascx
+~/Views/Shared/Error404.aspx
+~/Views/Shared/Error404.ascx
+~/Views/Error/Error404.cshtml
+~/Views/Error/Error404.vbhtml
+~/Views/Shared/Error404.cshtml
+~/Views/Shared/Error404.vbhtml
+   at System.Web.Mvc.ViewResult.FindView(ControllerContext context)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult) - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Filters\HandleCustomException.cs:24]

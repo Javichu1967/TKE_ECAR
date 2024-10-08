@@ -1,0 +1,4 @@
+2017-07-14 11:24:20,064 [6] ERROR System.Web.HttpException (0x80004005): No se encuentra la ruta de acceso '/Views/Shared/EditorTemplates/Matricula.cshtml'.
+   en System.Web.HttpNotFoundHandler.ProcessRequest(HttpContext context)
+   en System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   en System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously) - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Global.asax.cs:35]

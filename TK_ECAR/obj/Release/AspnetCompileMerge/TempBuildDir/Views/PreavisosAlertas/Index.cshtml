@@ -1,0 +1,141 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@model IEnumerable<TK_ECAR.Models.PreavisosAlertasModel>
+@using System.Configuration;
+
+@{ 
+    var class_prioridad = "";
+    var _preavisoGuardado = Session["PreavisoActualizado"].ToString();
+    Session["PreavisoActualizado"] = false;
+}
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="infoFaqGestion">
+            <h3>@resourceView.TitlePreavisoAlertas</h3>
+            <p>@resourceView.TitlePreavisoAlertasInf</p>
+        </div>
+    </div>
+</div>
+
+@{
+    var actionLinkEdit = Ajax.ActionLink("JSTITLEACTION", "EditarPreaviso", "PreavisosAlertas", new { idPreaviso = "JSVARTIPO" },
+    new AjaxOptions
+    {
+        UpdateTargetId = "modalbodyPreaviso",
+        OnSuccess = "showModalPreaviso();",
+        OnComplete = "completeModal()",
+        InsertionMode = InsertionMode.Replace,
+        OnBegin = "setTitleModal('JSTITLEMODAL')"
+    }, new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" }).ToString();
+    actionLinkEdit = "<a class='tk-icon-med icon-tk-edit tk-icon-bold ' "
+                + actionLinkEdit.Replace("textoQuitarPorVacio", "").Replace("accionmenu", @resourceView.AccionEditar)
+                 + " </a>";
+
+}
+
+<table id="tablePreaviso" class="display responsive" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>idTipoAlerta</th>
+            <td>Automatica</td>
+            <th>@resourceView.lblPrioridad</th>
+            <th>@resourceView.PreavisoCabTipoAlerta</th>
+            <th>@resourceView.PreavisoCabDiasPreaviso</th>
+            <th>@resourceView.DataTableCabAccion</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            class_prioridad = "label label-danger label-priority-" + @item.Prioridad;
+            <tr>
+                <td>@item.idTipoAlerta</td>
+                <td>@item.Automatica</td>
+                <td><span class='@class_prioridad'> @item.Prioridad </span></td>
+                <td>@item.DescTipoAlerta</td>
+                <td>@item.DiasPreaviso</td>
+                <td>
+                    <span></span> @Html.Raw(actionLinkEdit.Replace("JSVARTIPO", (item.idTipoAlerta).ToString()).Replace("JSTITLEACTION", @resourceView.AccionEditar).Replace("JSTITLEMODAL", @resourceView.TitlePreavisosEditar + " para el tipo de alerta " + @item.DescTipoAlerta))
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@Html.Partial("_ModalPreaviso")
+
+
+@section Scripts {
+
+
+
+<link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecss")'>
+<link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecssResponsive")'>
+
+<script src='@Scripts.Url("~/bundles/datatable")'> </script>
+<script src='@Scripts.Url("~/bundles/dtresponsive")'> </script>
+
+    <script type="text/javascript">
+        var _tablePreaviso;
+
+        $(document).ready(function () {
+            var PreavisoGuardado = '@_preavisoGuardado';
+            if (PreavisoGuardado == "True") {
+                @*toastr["info"]("@resourceView.toastrInfPreavisoCorrecto");*@
+                notify('@resourceView.toastrInfAccionOK', 'i');
+            }
+
+            _tablePreaviso = $('#tablePreaviso').DataTable(
+                {
+                    responsive: {
+                        details: {
+                            type: 'column',
+                            target: 'tr'
+                        }
+                    },
+                    "ordering": true,
+                    "processing": true,
+                    "paginate": true,
+                    "order": [[2, "asc"]],
+                    "language": {
+                        "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.ArchivoIdiomaDataTable )'
+                    },
+                    "drawCallback": function () {
+                        $('[data-toggle="popover"]').popover({ html: true });
+                    },
+                    "columnDefs": [
+                    {
+                        "targets": [0, 1],
+                        "visible": false,
+                        "orderable": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": 5,
+                        "className": "dt-center",
+                    }
+                    ]
+                });
+        });
+
+        function showModalPreaviso() {
+            $('#modalPreaviso').modal('show');
+        }
+        function setTitleModal(title) {
+            $('#modaltitlePreaviso').text(title);
+        }
+
+        //function completeModal() {
+        //    //para que funcione los validadores a la viewpartial recien creada.
+        //    //reconstruye el DOM con los validadores de los campos nuevos
+        //    $("form").removeData("validator");
+        //    $("form").removeData("unobtrusiveValidation");
+        //    $.validator.unobtrusive.parse("form");
+        //    $("form").validate();
+        //}
+
+</script>
+}
+

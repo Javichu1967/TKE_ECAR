@@ -1,0 +1,162 @@
+﻿ @*<table id="tabledatoscontrato" cellspacing="0" width="100%">
+
+    <tbody>
+        <tr><td colspan="5"><h2>Datos Contrato</h2></td></tr>
+        <tr>
+            <td><strong>Número de contrato</strong></td>
+            <td><strong>Fecha de alta</strong></td>
+            <td><strong>Fecha de recogida</strong></td>
+            <td><strong>¿Dado de baja?</strong></td>
+            <td><strong>¿Renovación?</strong></td>
+        </tr>
+        <tr>
+            <td>3092422</td>
+            <td>30/06/2009</td>
+            <td>30/04/2008</td>
+            <td>NO</td>
+            <td>SI</td>
+        </tr>
+        <tr>
+            <td><strong>Cuotas</strong></td>
+            <td><strong>Fecha finalización</strong></td>
+            <td><strong>Fecha devolución</strong></td>
+            <td><strong>Fecha baja</strong></td>
+
+
+        </tr>
+        <tr>
+            <td>84</td>
+            <td>30/06/2016</td>
+            <td>30/06/2016</td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr><td colspan="5"><h2>Condiciones kilometraje</h2></td></tr>
+        <tr>
+            <td><strong>Km totales</strong></td>
+            <td><strong>Tipo liquidacion</strong></td>
+            <td><strong>Exceso ajuste</strong></td>
+            <td><strong>Coef. exceso</strong></td>
+
+        </tr>
+        <tr>
+            <td>0</td>
+            <td></td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td><strong>Km exentos</strong></td>
+            <td><strong>Abono</strong></td>
+            <td><strong>Cargo</strong></td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0,00 €</td>
+            <td>0</td>
+
+        </tr>
+    </tbody>
+</table>*@
+
+@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Models
+@model DatosContratoModel
+
+<style>
+    p {
+        width: 100%;
+        padding-right: 2px;
+    }
+</style>
+
+<div class="notice notice-Lightgreen">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>@resourceView.TabDatosContrato</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.NumContrato)</strong>
+            <p>@Html.DisplayFor(model => model.NumContrato)</p>
+        </div>
+        <div class="col-sm-3">
+            <strong>@Html.LabelFor(model => model.FechaAlta)</strong>
+            <p>@Html.DisplayFor(model => model.FechaAlta)</p>
+        </div>
+        <div class="col-sm-3">
+            <strong>@Html.LabelFor(model => model.FechaRecogida)</strong>
+            <p>@Html.DisplayFor(model => model.FechaRecogida)</p>
+        </div>
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.Baja)</strong>
+            <p>@Html.DisplayFor(model => model.Baja)</p>
+        </div>
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.Renovacion)</strong>
+            <p>@Html.DisplayFor(model => model.Renovacion)</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.Cuotas)</strong>
+            <p>@Html.DisplayFor(model => model.Cuotas)</p>
+        </div>
+        <div class="col-sm-3">
+            <strong>@Html.LabelFor(model => model.FechaFinalizacion)</strong>
+            <p>@Html.DisplayFor(model => model.FechaFinalizacion)</p>
+        </div>
+        <div class="col-sm-3">
+            <strong>@Html.LabelFor(model => model.FechaDevolucion)</strong>
+            <p>@Html.DisplayFor(model => model.FechaDevolucion)</p>
+        </div>
+        <div class="col-sm-3">
+            <strong>@Html.LabelFor(model => model.FechaBaja)</strong>
+            <p>@Html.DisplayFor(model => model.FechaBaja)</p>
+        </div>
+    </div>
+</div>
+
+<div class="notice notice-Lightgreen">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>Condiciones kilometraje</h2>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.KMTotales)</strong>
+            <p>@Html.DisplayFor(model => model.KMTotales)</p>
+        </div>
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.TipoLiquidacion)</strong>
+            <p>@Html.DisplayFor(model => model.TipoLiquidacion)</p>
+        </div>
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.ExcesoAjuste)</strong>
+            <p>@Html.DisplayFor(model => model.ExcesoAjuste)</p>
+        </div>
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.CoefExceso)</strong>
+            <p>@Html.DisplayFor(model => model.CoefExceso)</p>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.KMExentos)</strong>
+            <p>@Html.DisplayFor(model => model.KMExentos)</p>
+        </div>
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.Abono)</strong>
+            <p>@Html.DisplayFor(model => model.Abono)</p>
+        </div>
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.Cargo)</strong>
+            <p>@Html.DisplayFor(model => model.Cargo)</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+
+@using (Html.BeginForm("GuardarCategorias", "Categorias", null, FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "stripHtml('formCategorias')", @id= "formCategorias" }))
+{ @Html.AntiForgeryToken()
+    
+        <div class="modal fade" id="modalCategorias" role="dialog">
+            <div class="vertical-alignment-helper">
+                <div class="modal-dialog  vertical-align-center">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                <span class="modal-header-logo"></span>
+                            </button>
+                            <h4 class="modal-title" id="modaltitleCategorias"> </h4>
+                        </div>
+                         
+                        <div class="modal-body"> 
+                            @*<div id="toast-container"></div>*@              
+                            <div id="modalbodyCategorias"></div> 
+                            
+                        </div>                             
+                        <div class="modal-footer">
+                            <button type="submit" id="aceptarCategorias" class="btn btn-default">@resourceView.AccionAceptar</button>
+                            <button type="button" class="btn btn-cancel" data-dismiss="modal">@resourceView.AccionCerrar</button>
+                         </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+}
+
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+            $("#formCategorias").submit(function (e) {
+
+
+                if ($("#formCategorias").valid()) {//validamos el form
+                    var formData = new FormData(this);
+                    @*var uRl = '@Url.Action("Index", "Categorias")';*@
+                    $.ajax({
+                        type: this.method,
+                        url: this.action ,
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+
+                        success: function (data) {
+                            ajaxSuccessCategorias();
+                            reloadTablecategorias();
+                            //setTimeout(function () { window.location.replace(uRl) }, 1000);
+                            
+                        },
+                        error: function (error) {
+                            ajaxErrorCategorias();
+                        }
+                    });
+                }
+
+                e.preventDefault();
+
+            });
+        });
+
+        function ajaxSuccessCategorias() {
+
+            notify('@resourceView.toastrInfCategoriaCorrecta', 'i');
+            @*toastr["info"]("@resourceView.toastrInfCategoriaCorrecta");*@
+            $('#modalCategorias').modal('hide');
+        }
+        function ajaxErrorCategorias() {
+
+            notify('@resourceView.toastrInfCategoriaError', 'e');
+            @*toastr["error"]("@resourceView.toastrInfCategoriaError");*@
+
+        }
+
+
+    </script>

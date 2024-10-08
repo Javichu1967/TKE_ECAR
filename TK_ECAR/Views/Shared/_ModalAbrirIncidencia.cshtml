@@ -1,0 +1,123 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+@using (Html.BeginForm("ComprobarDatosIncidencia", "Home", null, FormMethod.Post, new { @enctype = "multipart/form-data", @id = "formAbrirIncidencia" }))
+{
+    <div class="modal fade" id="modalIncidencia" role="dialog">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog  vertical-align-center">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="modal-header-logo"></span>
+                        </button>
+                        <h3 class="modal-title" id="modalTitleIncidencia" style="color:white"></h3>
+                    </div>
+                    <div class="modal-body" id="modalBodyIncidencia">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btnAceptarIncidencia" class="btn btn-default">@resourceView.btnAceptIncidencia</button>
+                        <button type="button" class="btn btn-cancel" data-dismiss="modal">@resourceView.btnCancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<style type="text/css">
+    .nombre {
+        font-size: 13px;
+    }
+
+    .nombre1 {
+        font-size: 14px;
+        color: #00a0f5;
+        font-weight: bold;
+    }
+
+    .nombre2 {
+        font-size: 13px;
+        color: #00a0f5;
+        font-weight: bold;
+    }
+</style>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $.fn.resetSummary = function () {
+
+            var $form = this.closest('form');
+
+            //reset unobtrusive validation summary, if it exists
+            $form.find("[data-valmsg-summary=true]")
+                .removeClass("validation-summary-errors")
+                .addClass("validation-summary-valid")
+                .find("ul").empty();
+
+            return $form;
+        };
+    });
+
+    $(document).on('click', '#btnAceptarIncidencia', function (event) {
+        if ($("#formAbrirIncidencia").valid())
+        {
+            $(this).resetSummary();
+            $("#formAbrirIncidencia").submit();
+        }
+    });
+
+    $("#formAbrirIncidencia").submit(function (e) {
+        e.preventDefault();
+
+        if ($("#formAbrirIncidencia").valid())
+        {
+            var formData = new FormData(this);
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("ComprobarDatosIncidencia", "Home")',
+                dataType: 'json',
+                data: formData,
+                contentType: false,
+                processData: false,
+
+                success: function (data) {
+                    comprobarDatos(data);
+                },
+                error: function (error) {
+                    notify('@resourceView.lblError', 'e');
+                }
+            });
+        }
+        else
+        {
+            $('#rowValidationSummary').show();
+        }
+    });
+
+    function comprobarDatos(data) {
+        if (data == "Success")
+        {
+            $('#modalIncidencia').modal('hide');
+            notify('@resourceView.CorreoEnviado', 'i');
+        }
+        else if (data == "Error")
+        {
+            notify('@resourceView.ErrorEnvioCorreo', 'e');
+        }
+        else if (data == "FaltaComentario")
+        {
+            notify('@resourceView.FaltaComentario', 'e');
+        }
+        else
+        {
+            notify('@resourceView.lblError.', 'e');
+        }
+    }
+
+</script>
+
+

@@ -1,0 +1,133 @@
+﻿@using TK_ECAR.Models
+@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Framework
+@using TK_ECAR.Utils
+@using TKUtilidades;
+
+@{
+    UserModel user = (UserModel)HttpContext.Current.Session["userProfile"];
+    string manual = @System.Configuration.ConfigurationManager.AppSettings["userManual"];
+
+    var idioma = "";
+    if (HttpContext.Current.Session[Constants.LANG] != null)
+        idioma = HttpContext.Current.Session[Constants.LANG].ToString();
+    else
+        idioma = @Global.IdiomaPorDefecto();
+
+    var TextoPerfil = Util.GetItemFromMemory("TextoPerfil"); //ViewData["TextoPerfil"].ToString();
+}
+
+@if (user != null)
+{
+    <div class="header" id="header">
+        <div class="container-fluid">
+            <div id="user">
+                @{
+                    var actionLinkInicio = Html.ActionLink("textoasustituirporblanco", "Index", "Home", null, new { @class = "tk-icon icon-tk-home tk-iconbold tk-icon-font25", @title = @resourceView.LHome }).ToString();
+
+                    var actionLinkAyuda = Html.ActionLink("textoasustituirporblanco", "DescargarPDF", "Home", null, new { @class = "tk-icon icon-tk-help tk-iconbold tk-icon-font25", @title = @resourceView.LHelp }).ToString();
+                }
+                @* Link Inicio *@
+                @Html.Raw(actionLinkInicio.Replace("textoasustituirporblanco", ""))
+                @Html.ActionLink(@resourceView.LHome, "Index", "Home", null, new { @id = "linkuser" })
+
+                @* Link Lenguaje *@
+                <span class="tk-icon icon-tk-language tk-iconbold tk-icon-font25"> </span>
+                @*@Html.DropDownListIdiomas("Idiomas", new { @class= "btn btn-primary", style = "font-size: 13px; margin-left: -10px; margin-right: 10px;" }, @idioma)*@
+                @Html.DropDownListIdiomas("Idiomas", new { @class = "header_lang_ECAR", @style = "font: 13px;"}, @idioma)
+
+                @* Link Ayuda *@
+                @Html.Raw(actionLinkAyuda.Replace("textoasustituirporblanco", ""))
+                @Html.ActionLink(@resourceView.LHelp, "DescargarPDF", "Home", null, new { @id = "linkuser" })
+
+                @* Link Incidencia *@
+                @{
+                    var actionLink = Ajax.ActionLink("JSTITLEMODAL", "AbrirIncidencia", "Home", new { },
+                    new AjaxOptions
+                    {
+                        UpdateTargetId = "modalBodyIncidencia",
+                        OnSuccess = "showModalIncidencia();",
+                        OnComplete = "completeModal()",
+                        InsertionMode = InsertionMode.Replace,
+                        OnBegin = "setTitleModalIncidencia('JSTITLEMODAL')"
+                    }, new { @title = "tooltip", @class = "tk-icon-med icon-tk-message-info", @style = "color:#e60050" }).ToString();
+                }
+
+                @Html.Raw(actionLink.Replace("JSTITLEMODAL", @System.Configuration.ConfigurationManager.AppSettings["appName"] + " - " + @System.Configuration.ConfigurationManager.AppSettings["appCode"]).Replace("tooltip", @resourceView.DescAbrirIncidencia))
+
+
+                @{
+                    var actionLink2 = Ajax.ActionLink(@resourceView.lblAbrirIncidencia, "AbrirIncidencia", "Home", new { },
+                    new AjaxOptions
+                    {
+                        UpdateTargetId = "modalBodyIncidencia",
+                        OnSuccess = "showModalIncidencia();",
+                        OnComplete = "completeModal()",
+                        InsertionMode = InsertionMode.Replace,
+                        OnBegin = "setTitleModalIncidencia('JSTITLEMODAL')"
+                    }, new { @title = "tooltip", @style = "color:#e60050", @id = "linkuser" }).ToString();
+                }
+
+                @Html.Raw(actionLink2.Replace("JSTITLEMODAL", @System.Configuration.ConfigurationManager.AppSettings["appName"] + " - " + @System.Configuration.ConfigurationManager.AppSettings["appCode"]).Replace("tooltip", @resourceView.DescAbrirIncidencia))
+
+
+                @* Link User *@
+                <span class="tk-icon icon-tk-profil tk-icon-font25"> </span>
+                <span>@user.Nombre.ToUpper() (@TextoPerfil)</span> @*(@user.DescripcionPerfil)*@
+            </div>
+            <div id="title">
+                @System.Configuration.ConfigurationManager.AppSettings["appname"]
+            </div>
+            <div id="logo"><a href="#">&nbsp;</a></div>
+        </div>
+    </div>
+    @Html.Partial("_ModalAbrirIncidencia")
+}
+
+
+<script type="text/javascript">
+    //// Control lenguaje
+    $(document).ready(function () {
+        var urlIdioma = '@Url.Action("CambiaIdioma", "Home", new { idioma = "idiomaseleccionado"})';
+
+        $("#Idiomas").change(function () {
+            var select = document.getElementById('Idiomas');
+            var value = select.options[select.selectedIndex].value; // Second
+            urlIdioma = urlIdioma.replace("idiomaseleccionado", value);
+            $.ajax(
+            {
+                cache: false,
+                url: urlIdioma,
+                type: "POST",
+                contentType: false,
+                processData: false,
+                success: function (xhr, data) {
+                    window.open("@Url.Action("Index")?culture=" + value, "_self");
+                }
+                ,
+                error: function (xhr) {
+                }
+            });
+            event.preventDefault();
+        });
+    })
+
+    function showModalIncidencia()
+    {
+        $('#modalIncidencia').modal('show');
+    }
+
+    function completeModal() {
+        //para que funcione los validadores a la viewpartial recien creada.
+        //reconstruye el DOM con los validadores de los campos nuevos
+        $("form").removeData("validator");
+        $("form").removeData("unobtrusiveValidation");
+        $.validator.unobtrusive.parse("form");
+        $("form").validate();
+    }
+
+    function setTitleModalIncidencia(title) {
+        $('#modalTitleIncidencia').text(title);
+    }
+
+</script>

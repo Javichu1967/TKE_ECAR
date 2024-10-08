@@ -1,0 +1,234 @@
+﻿@using resourceView = TK_ECAR.Content.resources
+@using System.Configuration;
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="infoMtoEmpresasVehiculos">
+            @{
+                var actionLink = Ajax.ActionLink("JSTITLEMODAL", "NuevaEmpresa", "EmpresasVehiculos", new { },
+                new AjaxOptions
+                {
+                    UpdateTargetId = "modalbodyEmpresa",
+                    OnSuccess = "showModalEmpresa();",
+                    OnComplete = "completeModal()",
+                    InsertionMode = InsertionMode.Replace,
+                    OnBegin = "setTitleModal('JSTITLEMODAL')"
+                }, new { @title = "tooltip", @class = "tk-icon-med icon-tk-plus", @style = "float: right;" }).ToString();
+            }
+            <h3>@resourceView.TK_ECAR_Resource.TitleEmpAseguradoras_Renting
+                <span id="linkuser" style="float: right;">@resourceView.TK_ECAR_Resource.LAñadir</span> 
+                @Html.Raw(actionLink.Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.lblNuevaEmpresa).Replace("tooltip", @resourceView.TK_ECAR_Resource.lblNuevaEmpresa))
+            </h3>
+            <p>@resourceView.TK_ECAR_Resource.TitleEmpAseguradoras_RentingInf</p>
+        </div>
+    </div>
+</div>
+
+<table id="tableEmpresa" class="display responsive" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>IDEmpresa</th>
+            <th>@resourceView.ModelsResources.lblEmpresa</th>
+            <th>@resourceView.ModelsResources.lblNIF</th>
+            <th>@resourceView.ModelsResources.lblDireccion</th>
+            <th>@resourceView.ModelsResources.lblTelefono_1</th>
+            <th>@resourceView.TK_ECAR_Resource.CabRenting</th>
+            <th>@resourceView.TK_ECAR_Resource.CabAseguradora</th>
+            <th>@resourceView.TK_ECAR_Resource.DataTableCabAccion</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+@Html.Partial("_ModalEmpresa")
+
+<style>
+    .export-btn {
+        margin: 10px;
+        padding: 5px;
+    }
+</style>
+
+@section Scripts {
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecss")'>
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecssResponsive")'>
+    
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/choosenCSS")'>
+
+
+    <script src='@Scripts.Url("~/bundles/datatable")'> </script>
+    <script src='@Scripts.Url("~/bundles/dtresponsive")'> </script>
+
+    <script src='@Scripts.Url("~/bundles/choosenJqJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/choosenAjaxJs")'> </script>
+
+    <script src='@Scripts.Url("~/bundles/DataTablesButtonJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsFlashJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsHtml5Js")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesjszipJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesVfsFontsJs")'> </script>
+
+    <script src="~/Content/scripts/Application/DNI_NIF_CIF_Utilities.js"></script>
+
+    <script type="text/javascript">
+        var _tableEmpresa;
+
+        var actionEmpresa = '@Ajax.RawActionLink("textoQuitarPorVacio", "EditarEmpresa", "EmpresasVehiculos", new { idEmpresa = "valordelidaccion" },
+        new AjaxOptions { UpdateTargetId = "modalbodyEmpresa", OnSuccess = "showModalEmpresa();", OnComplete = "completeModal()", InsertionMode = InsertionMode.Replace },
+        new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" })';
+        actionEmpresa = actionEmpresa.replace("textoQuitarPorVacio", "");
+
+        $(document).ready(function () {
+            _tableEmpresa = $('#tableEmpresa').DataTable(
+                {
+                    "dom": 'Blfrtip',
+                    "ordering": true,
+                    "processing": true,
+                    "paginate": true,
+                    "order": [[1, "asc"]],
+                    "buttons": [{
+                        text: '@resourceView.TK_ECAR_Resource.btnExportarExcel',
+                        extend: 'excel',
+                        className: 'btn btn-default export-btn',
+                        title: '@Html.Raw(@resourceView.TK_ECAR_Resource.TitleEmpAseguradoras_Renting.Replace('/', '_'))',
+                        exportOptions: {
+                            columns: [1, 2, 3, 4, 5, 6]
+                        }
+                    }],
+                    "ajax": {
+                        "url": '@Url.Action("EmpresasJson", "EmpresasVehiculos")',
+                        "datatype": "json",
+                        "type": "POST"
+
+                    },
+                    "columns": [
+                        { "data": "IDEmpresa" },
+                        { "data": "Nombre" },
+                        { "data": "NIF" },
+                        { "data": "Direccion" },
+                        { "data": "Telefono1" },
+                        { "data": "Renting" },
+                        { "data": "Aseguradora" },
+                        { "data": "AccionDatatable" },
+                    ],
+                    "language": {
+                        "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.TK_ECAR_Resource.ArchivoIdiomaDataTable )'
+                    },
+                    "drawCallback": function () {
+                        $('[data-toggle="popover"]').popover({ html: true });
+                    },
+                    "columnDefs": [
+                    {
+                        "targets": [0],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": 1,
+                        "width": "30%",
+                    },
+                    {
+                        "targets": 2,
+                        "width": "30%",
+                    },
+                    {
+                        "targets": 3,
+                        "width": "30%",
+                    },
+                    {
+                        "targets": 4,
+                        "width": "10%",
+                    },
+                    {
+                        "targets": 5,
+                        "width": "5%",
+                        "className": "dt-center",
+                        "render": function (data, type, row) {
+                            if (data) {
+                                return '@resourceView.TK_ECAR_Resource.ValorYES';
+                            }
+                            else {
+                                return '@resourceView.TK_ECAR_Resource.ValorNO';
+                            }
+                        }
+                    },
+                    {
+                        "targets": 6,
+                        "width": "5%",
+                        "className": "dt-center",
+                        "render": function (data, type, row) {
+                            if (data) {
+                                return '@resourceView.TK_ECAR_Resource.ValorYES';
+                            }
+                            else {
+                                return '@resourceView.TK_ECAR_Resource.ValorNO';
+                            }
+                        }
+                    },
+                    {
+                        "targets": 7,
+                        "orderable": false,
+                        "searchable": false,
+                        "className": "dt-center",
+                        "type": "html",
+                        "render": function (data, type, row) {
+                            var menuAcciones = "";
+                            menuAcciones = menuAcciones + "<a class='tk-icon-med icon-tk-edit tk-icon-bold ' "
+                                            + actionEmpresa.replace("valordelidaccion", row.IDEmpresa)
+                                            .replace("TITTLEACCION", '@resourceView.TK_ECAR_Resource.AccionEditar')
+                                            .replace("accionmenu", "@resourceView.TK_ECAR_Resource.AccionEditar") + " </a>";
+                            menuAcciones = menuAcciones + '<a class="tk-icon-med icon-tk-delete tk-icon-bold tk-icon-red " '
+                                            + 'href="#" onclick="return clickBorrar(event,' + row.IDEmpresa + ',\'' + escape(row.Nombre) + '\');" '
+                                            + " data-toggle = 'popover', data-placement = 'top', data-trigger = 'hover' "
+                                            + "data-content = '@Html.Raw(@resourceView.TK_ECAR_Resource.AccionBorrar)'>"
+                                            + "</a>";
+                            return menuAcciones;    // + ',\'' + row.Matricula + '\'
+                        }
+                    },
+                    ]
+                });
+        });
+
+        function clickBorrar(e, id, nombre) {
+            e.preventDefault();
+            var title = "@resourceView.TK_ECAR_Resource.msgBorrarEmpresa" + "  - " + nombre + " -";
+            confirm(title, '@resourceView.TK_ECAR_Resource.msgPreguntaBorrarEmpresa',
+                function (result) {
+                    if (result) {
+                        var link = '@Html.Raw(Url.Action("BorraEmpresa", "EmpresasVehiculos", new { idEmpresa = "idborrar" }))';
+                        link = link.replace("idborrar", id);
+                        $.ajax({
+                            "url": link,
+                            "dataType": 'json',
+                            "success": function (data, t, x) {
+                                reloadTableEmpVehiculos();
+                            }
+                        });
+                    }
+                });
+        }
+
+        function reloadTableEmpVehiculos() {
+            _tableEmpresa.ajax.reload(null, false);
+        }
+
+        function showModalEmpresa() {
+            $('#modalEmpresa').modal('show');
+        }
+        function setTitleModal(title) {
+            $('#modaltitleEmpresa').text(title);
+        }
+
+        //function completeModal() {
+        //    //para que funcione los validadores a la viewpartial recien creada.
+        //    //reconstruye el DOM con los validadores de los campos nuevos
+        //    $("form").removeData("validator");
+        //    $("form").removeData("unobtrusiveValidation");
+        //    $.validator.unobtrusive.parse("form");
+        //    $("form").validate();
+        //}
+
+    </script>
+}
+

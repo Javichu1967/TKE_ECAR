@@ -1,0 +1,256 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Framework
+
+@{
+    string pathfavicon = @System.Configuration.ConfigurationManager.AppSettings["baseUrl"] +
+                         @System.Configuration.ConfigurationManager.AppSettings["baseImg"] +
+                         @System.Configuration.ConfigurationManager.AppSettings["favicon"];
+
+    //para comprobar el tamaño de los archivos
+    var section = System.Configuration.ConfigurationManager.GetSection("system.web/httpRuntime") as System.Web.Configuration.HttpRuntimeSection;
+    int sizeRequestFiles = section.MaxRequestLength;
+}
+
+
+<!DOCTYPE html>
+@*<html lang="@System.Globalization.CultureInfo.CurrentUICulture.Name">*@
+
+<html lang="es-ES">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@System.Configuration.ConfigurationManager.AppSettings["appname"]</title>
+
+    @{
+        int lAppType = Convert.ToSByte(
+            System.Configuration.ConfigurationManager.AppSettings["apptype"]);
+    }
+
+
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/cssbootstrap")'>
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/cssdropdowns")'>
+
+    @if (lAppType == 1)
+    {
+        <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/cssIntra")'>
+    }
+    else
+    {
+        <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/cssExtra")'>
+    }
+
+
+    @*<link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecss")'>
+        <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecssResponsive")'>
+        <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/datepicker")'>*@
+
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/fontawesome")'>
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/datepicker")'>
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/toastrCSS")'>
+
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/bootstrapDialogCSSCdnPath")'>
+
+    <script src='@Scripts.Url("~/bundles/modernizr")'> </script>
+    <script src='@Scripts.Url("~/bundles/jquery")'> </script>
+    <script src='@Scripts.Url("~/bundles/globalize")'> </script>
+    <script src='@Scripts.Url("~/bundles/globalizeculture")'> </script>
+    <script src='@Scripts.Url("~/bundles/bootstrap")'> </script>
+    <script src='@Scripts.Url("~/bundles/respond")'> </script>
+    <script src='@Scripts.Url("~/bundles/bootstrapDialog")'> </script>
+    <script src='@Scripts.Url("~/bundles/dropdown")'> </script>
+
+    <script src='@Scripts.Url("~/bundles/moment")'> </script>
+
+
+    <script src='@Scripts.Url("~/bundles/datepicker")'> </script>
+    <script src='@Scripts.Url("~/bundles/datepickerLocaleES")'> </script>
+
+
+    <script src='@Scripts.Url("~/bundles/jqueryUnobtrusiveAjax")'> </script>
+    <script src='@Scripts.Url("~/bundles/jQueryValidate")'> </script>
+    <script src='@Scripts.Url("~/bundles/jQueryValidateGlobal")'> </script>
+    <script src='@Scripts.Url("~/bundles/jQueryValidateUnotrusive")'> </script>
+
+    <script src='@Scripts.Url("~/bundles/toastrJs")'> </script>
+
+    @*Load TK LOCAL RESOURCES*@
+    <link href="~/Content/styles/Application/Application.css" rel="stylesheet" />
+    @Styles.Render("~/Content/cssLocal")
+    <script src="~/Content/scripts/Application/toastrUtilities.js"></script>
+    <script src="~/Content/scripts/Application/Global.js"></script>
+    <script src="~/Content/scripts/Application/resetValidation.js"></script>
+    @Scripts.Render("~/bundles/customannotation")
+
+    <!-- For IE 9 and below. ICO should be 32x32 pixels in size -->
+    <!--[if IE]><link rel="shortcut icon" href=@pathfavicon type="image/vnd.microsoft.icon"><![endif]-->
+    <!-- Touch Icons - iOS and Android 2.1+ 180x180 pixels in size. -->
+    <link rel="apple-touch-icon-precomposed" href=@pathfavicon>
+
+    <!-- Firefox, Chrome, Safari, IE 11+ and Opera. 196x196 pixels in size. -->
+    <link rel="icon" type="image/png" href=@pathfavicon>
+
+
+    <script type="text/javascript">
+        var sizeRequest = @sizeRequestFiles;
+
+        $(document).ready(function () {
+            $('#loader').fadeOut(2000);
+
+            //$(document).ajaxSetup({
+            //    beforeSend: function () {
+
+            //        $('#loaderAjax').show();
+            //    },
+            //    complete: function () {
+
+            //        $('#loaderAjax').hide();
+            //    }
+            //});
+
+
+            $(document).ajaxComplete(function (e, request, options) {
+                $('#loaderAjax').hide();
+            });
+
+            $(document).ajaxSend(function (e, request, options) {
+                if (e.target.activeElement != null) {
+                    if (e.target.activeElement.offsetParent == null || e.target.activeElement.offsetParent.className.indexOf('chosen') == -1) {
+                        $('#loaderAjax').show();
+                    }
+                }
+            });
+
+            // Set Globalize to the current culture driven by the html lang property
+            var currentCulture = $("html").prop("lang");
+            if (currentCulture) {
+                Globalize.culture(currentCulture);
+            }
+
+            //Set datepicker to ES
+            $.fn.datepicker.defaults.language = 'es';
+
+        })
+        function confirm(title, message, callback) {
+            var dialog = new
+            BootstrapDialog.confirm({
+                title: title,
+                message: message,
+                cssClass: 'vertical-alignment-helper',
+                btnCancelClass: 'btn btn-cancel',
+                btnCancelLabel: 'Cancelar',
+                btnOKLabel: 'Aceptar',
+                btnsOrder: BootstrapDialog.BUTTONS_ORDER_OK_CANCEL,
+                btnOKClass: 'btn btn-default',
+
+                callback: callback
+            });
+
+            dialog.getModalDialog().addClass("vertical-align-center");
+
+            dialog.open();
+        }
+
+
+        function close_window() {
+            confirm('@resourceView.LCerrarSesion', '@resourceView.LMsgCerrarSesion',
+                    function (result) {
+                        if (result) {
+                            setTimeout(function () {
+                                window.close();
+                            }, 1500);
+
+                        }
+                    });
+        }
+
+
+        function gestionIncidencia() {
+            var url = sessionStorage.urlIncidencia;
+            if (typeof url !== "undefined") {
+                //se  ha recuperado anteriormente la url para el usuario
+                window.open(url);
+            } else {
+
+                $.ajax({
+
+                    url: '@Url.Action("OpenInc", "Home")',
+                    type: 'POST',
+                    dataType: "json",
+                    contentType: "application/json"
+
+                }).done(function (data) {
+
+                    if (data !== '') {
+                        window.open(data);
+                        sessionStorage.urlIncidencia = data;
+                    } else {
+                        confirm('@resourceView.LMsgTitleIncidencias', '@resourceView.LMsgTxtIncidencias', "");
+                    }
+                }).fail(function () {
+                    confirm('@resourceView.LMsgTitleIncidencias', '@resourceView.LMsgTxtIncidenciasError', "");
+
+                });
+            }
+
+        }
+
+
+        function completeModal() {
+            //para que funcione los validadores a la viewpartial recien creada.
+            //reconstruye el DOM con los validadores de los campos nuevos
+            $("form").removeData("validator");
+            $("form").removeData("unobtrusiveValidation");
+            $.validator.unobtrusive.parse("form");
+            $("form").validate();
+        }
+
+    </script>
+
+
+
+
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="loading" id="loader"></div>
+        <div class="loading-transparent" id="loaderAjax"></div>
+        <div class="loading-transparent" id="loaderWorking"></div>
+
+        <header>
+            @Html.Partial("_Header")
+
+            @Html.Partial("_LayoutMenu")
+
+            @*<div id="gestincidencia">
+                    <a href="#" onclick="gestionIncidencia();">
+                        <p >@resourceView.TitleAbriIncidencia</p>
+                    </a>
+                </div>*@
+        </header>
+
+        <div class="container">
+            @RenderBody()
+        </div>
+        <div class="push"></div>
+    </div>
+
+    <footer class="footer">
+        @Html.Partial("_Footer")
+
+        @*<p>&copy; @DateTime.Now.Year - ECAR 1.0</p>*@
+    </footer>
+
+
+    @RenderSection("scripts", required: false)
+
+</body>
+
+
+
+</html>

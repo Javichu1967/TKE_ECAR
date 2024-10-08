@@ -1,0 +1,432 @@
+﻿@using resourceView = TK_ECAR.Content.resources
+@using TK_ECAR.Framework
+@using System.Configuration;
+@model TK_ECAR.Models.ImportacionLeasingModels
+
+<script src='@Scripts.Url("~/bundles/choosenJqJs")'> </script>
+<script src='@Scripts.Url("~/bundles/choosenAjaxJs")'> </script>
+
+<script type="text/javascript">
+    $.validator.setDefaults({ ignore: null }); //para validar campos ocultos
+</script>
+
+<section>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="infoImportar">
+                <h3>@resourceView.TK_ECAR_Resource.TitleImportarFacturacion</h3>
+                <p>@resourceView.TK_ECAR_Resource.TitleImportarFacturacionInf</p>
+            </div>
+            <div style="float:left; margin: 6px; border-bottom: 1px solid #ddd;" class="col-sm-12" width="100%"></div>
+        </div>
+    </div>
+
+    @using (Html.BeginForm("ImportarFacturacion", "ImportarLeasing", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "stripHtml('formImportarLeasing')", id = "formImportarLeasing" }))
+    {
+        @Html.AntiForgeryToken()
+
+
+        @Html.HiddenFor(model => model.FileToImport_download)
+        @Html.HiddenFor(model => model.DescEmpresa)
+        @Html.HiddenFor(model => model.IDEmpresa)
+        @Html.HiddenFor(model => model.IDEmpresaLeasing)
+        <!-- File Upload Row -->
+        <div class="row">
+            <div class="form-horizontal">
+                <div class="notice notice-gray col-md-12">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.RequiredLabelFor(model => model.Empresa, new { @class = "control-label col-md-2" })
+                            <div class="col-md-6">
+                                @Html.EditorFor(model => model.Empresa)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.RequiredLabelFor(model => model.EmpresaLeasing, new { @class = "control-label col-md-2" })
+                            <div class="col-md-6">
+                                @Html.EditorFor(model => model.EmpresaLeasing)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.RequiredLabelFor(model => model.FileToImport, new { @class = "control-label col-md-2" })
+                            <div class="col-md-6">
+                                @Html.EditorFor(model => model.FileToImport)
+                            </div>
+                            <div class="col-md-4 text-left">
+                                <button id="btnImportar" type="button" class="btn btn-default form-control"><i class="fa fa-download"></i>&nbsp;@resourceView.TK_ECAR_Resource.btnImportarLeasing</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="rowValidationSummary">
+            <div class="form-group" id="divValidationSummary">
+                <div class="col-lg-12">
+                    @Html.Partial("_CustomValidationSummary", ViewData.ModelState)
+                </div>
+            </div>
+        </div>
+    }
+
+    <div style="float:left; margin: 6px; border-bottom: 1px solid #ddd;" class="col-sm-12" width="100%"></div>
+
+    <div class="row" id="rowProgress">
+        @Html.Partial("_Progress", @resourceView.TK_ECAR_Resource.TitleImportarFacturacion)
+    </div>
+    <div class="row" id="rowResumen">
+
+        <h4 id="TituloResumen">
+            @resourceView.TK_ECAR_Resource.titleResumenImportacion
+        </h4>
+
+        <table id="tableResumenImp" class="responsive compact stripe" cellspacing="0" width="100%" style="font-size: 12px;">
+            <thead>
+                <tr>
+                    <th>TipoLinea</th>
+                    <th>@resourceView.TK_ECAR_Resource.TitleResumen</th>
+                </tr>
+            </thead>
+        </table>
+
+    </div>
+
+</section>
+
+<style>
+    .export-btn {
+        margin: 10px;
+        padding: 5px;
+    }
+    .dataTables_wrapper table thead{
+        display:none;
+    }
+
+    /*.table th, .table td { 
+     border-top: none !important; 
+    }*/
+
+
+
+    /*.dataTables_paginate,*/  
+    /*.dataTables_wrapper,  
+    .dataTables_info, 
+    .dataTables_length,
+    .dataTables_filter, 
+    .paginate_button {
+        color: white !important;
+    }
+
+    .paginate_button,
+    .paginate_button previous disabled, 
+    .paginate_button next disabled,
+    .paginate_button.disabled, 
+    .paginate_button.disabled:hover, 
+    .paginate_button.disabled:active {
+        color: #dcdcdc !important;
+    }
+    
+    table.dataTable.display tbody {
+        color: black !important;
+    }*/ 
+</style>
+
+@section Scripts {
+    <link href="~/Content/styles/Site.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecss")'>
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecssResponsive")'>
+
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/choosenCSS")'>
+
+    @*<script src="~/Content/scripts/signalR/jquery.signalR-2.2.2.js"></script>
+    <script src="~/signalr/hubs"></script> Hay que crear este directorio*@
+
+    <script src='@Scripts.Url("~/bundles/datatable")'> </script>
+    <script src='@Scripts.Url("~/bundles/dtresponsive")'> </script>
+
+    <script src='@Scripts.Url("~/bundles/DataTablesButtonJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsFlashJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsHtml5Js")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesjszipJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesVfsFontsJs")'> </script>
+
+    <script src="~/Content/scripts/Application/Global.js"></script>
+    <script src="~/Content/scripts/Application/DataTableUtilities.js"></script>
+
+    <script type="text/javascript" language="javascript">
+        var tableResumenImp = null;
+        var uRl = '@Url.Action("ImportarFacturacion", "ImportarLeasing")';
+        var conexionEstablecida = false;
+        var backColorIncidencia = '#ffb400';
+        var backColorVehiculoExistente = '#ffb400';
+        var backColorError = '#e60050';
+        var backColorConductorNuevo = '#73c3f0';
+        var backColorResumen = '#eee';
+        var nombreArchivoImportar = '';
+        var continuar = true;
+
+        $(document).ready(function () {
+            //$('.progress').hide();
+            $('#btnImportar').hide();
+            $('#rowProgress').hide();
+            $('#rowResumen').hide();
+
+            tableResumenImp = $('#tableResumenImp').DataTable({
+                "dom": 'Blfrtip',
+                "bInfo" : false,
+                "ordering": false,
+                "processing": true,
+                "paginate": true,
+                "pageLength": 25,
+                "buttons": [
+                    {
+                        text: '@resourceView.TK_ECAR_Resource.btnExportarExcel',
+                        extend: 'excel',
+                        className: 'btn btn-default export-btn',
+                        title: '@Html.Raw(@resourceView.TK_ECAR_Resource.titleResumenImportacion + "_" + @resourceView.TK_ECAR_Resource.TitleFacturacion + "_")' + GetCurrentDateFormatYYYYMMDD(),
+                        exportOptions: {
+                            columns: [1]
+                        }
+                    }
+                ],
+                "ajax": {
+                    "url": '@Url.Action("DatosImportacionJson", "ImportarLeasing")',
+                    "datatype": "json",
+                    "type": "POST",
+                },
+                "rowCallback": function (row, data, index) { //Cambiar formato de la línbea.
+                    switch (data.TipoLinea)
+                    {
+                        case @((int)EnumTipoLineaImportacion.ConductorNuevo):
+                            $(row).css('background-color', backColorConductorNuevo);
+                            break;
+                        case @((int)EnumTipoLineaImportacion.MatriculaVacia):
+                            $(row).css('background-color', backColorIncidencia);
+                            break;
+                        case @((int)EnumTipoLineaImportacion.NoHayConductor):
+                            $(row).css('background-color', backColorIncidencia);
+                            break;
+                        case @((int)EnumTipoLineaImportacion.SinFechaMatriculacion):
+                            $(row).css('background-color', backColorIncidencia);
+                            break;
+                        case @((int)EnumTipoLineaImportacion.SinTipoDeVehiculo):
+                            $(row).css('background-color', backColorIncidencia);
+                            break;
+                        case @((int)EnumTipoLineaImportacion.MatriculaInexistente):
+                            $(row).css('background-color', backColorIncidencia);
+                            break;
+                        case @((int)EnumTipoLineaImportacion.ConceptoLeasinNoContemplado):
+                            $(row).css('background-color', backColorIncidencia);
+                            break;
+                        case @((int)EnumTipoLineaImportacion.VehiculoExistente):
+                            $(row).css('background-color', backColorVehiculoExistente);
+                            $(row).css('color', '#ffffff');
+                            break;
+                        case @((int)EnumTipoLineaImportacion.Error):
+                            $(row).css('background-color', backColorError);
+                            $(row).css('color', '#ffffff');
+                            break;
+                        case @((int)EnumTipoLineaImportacion.Resumen):
+                            $(row).css('font-weight', 'bold');
+                            $(row).css('font-size', '15px');
+                            $(row).css('background-color', backColorResumen);
+                            break;
+                        case @((int)EnumTipoLineaImportacion.Normal):
+                            $(row).css('background-color', backColorResumen);
+                            break;
+                    }
+                    @*switch(data[0]){
+                        case '@((int)EnumTipoLineaImportacion.ConductorNuevo)':
+                            $(Row).css('color', 'red')
+                            break;
+                    }*@
+                },
+                "columns": [
+                        { "data": "TipoLinea" },
+                        { "data": "Texto" }
+                ],
+                "language": {
+                    "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.TK_ECAR_Resource.ArchivoIdiomaDataTable )'
+                },
+                //"data": respuesta.data,
+                "columnDefs": [
+                {
+                    "targets": 0,
+                    "visible": false,
+                    "searchable": false,
+                },
+                {
+                    "targets": 1,
+                    "searchable": true,
+                },
+                ]
+            });
+
+            $(document).on('click', '#btnImportar', function (event) {
+                if ($("#formImportarLeasing").valid()) {//validamos el form
+                    if (archivoProcesadoAnteriormente()) {
+                        confirm('@resourceView.TK_ECAR_Resource.msgCabFicheroYaProcesado', '@resourceView.TK_ECAR_Resource.msgFicheroYaProcesado',
+                            function (result) {
+                                if (result) {
+                                    continuar = true;
+                                    $(this).resetSummary();
+                                    $("#formImportarLeasing").submit();
+                                } else {
+                                    continuar = false;
+                                }
+                            });
+                    } else {
+                        continuar = true;
+                        $(this).resetSummary();
+                        $("#formImportarLeasing").submit();
+                    }
+                }else{
+                    $('#rowValidationSummary').show();
+                }
+            });
+
+            $("#formImportarLeasing").submit(function (e) {
+                e.preventDefault();
+                if ($("#btnImportar").is(":visible")){
+                    //$("#rowValidationSummary").attr("style", "visibility: visible");
+                    if ($("#formImportarLeasing").valid()) {//validamos el form
+                        LimpiaValidationSummary();
+                        if (continuar){
+                            if (!ExcededFilesSizeUpload('formImportarLeasing')){
+                                //$("#rowValidationSummary").attr("style", "visibility: hidden");
+                                $("#rowValidationSummary").hide();
+                                $('#rowProgress').show();
+
+                                var formData = new FormData(this);
+                                $.ajax({
+                                    type: "POST",
+                                    url: uRl,
+                                    dataType: 'json',
+                                    //async: false,
+                                    data: formData,
+                                    contentType: false,
+                                    processData: false,
+
+                                    success: function (data) {
+                                        if (data == 'OK') {
+                                            ajaxSuccessImportacion();
+                                            $('#btnImportar').hide();
+                                        }
+                                        else {
+                                            ajaxErrorImportacion();
+                                            $('#btnImportar').hide();
+
+                                        }
+                                    },
+                                    error: function (error) {
+                                        ajaxErrorImportacion();
+                                        $('#btnImportar').hide();
+                                    }
+                                });
+                            }
+                            else{
+                                var mensaje = '@Html.Raw(@resourceView.TK_ECAR_Resource.toastrInfTamañoArchivosError)'.replace('#', (sizeRequest / 1024))
+                                notify(mensaje, 'e');
+                            }
+                        }
+                    }else{
+                        $('#rowValidationSummary').show();
+                    }
+                }
+            });
+        });
+
+        $('#miEmpresa').on('chosen:hiding_dropdown', function (evt, params) {
+            $("#DescEmpresa").val($("#miEmpresa").val());
+        });
+
+
+        $("#FileToImport").on('change', function (evt) {
+            $('#rowResumen').hide();
+
+            hideProgress_Resumen();
+
+            var files = evt.target.files; // FileList object
+
+            if (files.length > 0 && conexionEstablecida) {
+                nombreArchivoImportar = files[0].name;
+                $('#btnImportar').show();
+            }
+            else {
+                nombreArchivoImportar = '';
+                $('#btnImportar').hide();
+            }
+        });
+
+
+        function reloadtableResumenImp() {
+            $("#TituloResumen").html('@resourceView.TK_ECAR_Resource.titleResumenImportacion' + '  (CARGANDO)');
+            tableResumenImp.ajax.reload(null, false);
+            $("#TituloResumen").html('@resourceView.TK_ECAR_Resource.titleResumenImportacion');
+            showResumen();
+        }
+
+        function hideProgress_Resumen(){
+            $('#rowProgress').hide();
+            $('#rowResumen').hide();
+        }
+        function showResumen(){
+            $('#rowResumen').show();
+            //$("#TituloResumen").attr("style", "visibility: visible");
+            //$("#tableResumenImp_wrapper").attr("style", "visibility: visible");
+            //$("#tableResumenImp").attr("style", "visibility: visible");
+        }
+
+        $("#FileToImport").on('change', function (evt) {
+            //$("#rowValidationSummary").attr("style", "visibility: hidden");
+            $("#rowValidationSummary").hide();
+            $(this).resetSummary();
+            InicializaProgress();
+
+            var files = evt.target.files; // FileList object
+
+            if (files.length > 0 && conexionEstablecida) {
+                //$("#NombreFichero").val(files[0].name);
+                $('#btnImportar').show();
+            }
+            else {
+                //$("#NombreFichero").val('');
+                $('#btnImportar').hide();
+            }
+        });
+
+        function ajaxSuccessImportacion() {
+            notify('@resourceView.TK_ECAR_Resource.toastrInfImportCorrecto', 'i');
+            //cerrarVentanaMtoITV();
+        }
+
+        function ajaxErrorImportacion() {
+            notify('@resourceView.TK_ECAR_Resource.toastrInfImportError', 'e');
+        }
+
+        function archivoProcesadoAnteriormente() {
+            var valorReturn = false;
+            var idempresa = $("#IDEmpresa").val();
+            var uRlImportado = '@Html.Raw(@Url.Action("ArchivoYaProcesado", "ImportarLeasing", new { archivo = "valorarchivo", empresa = "valorempresa" }))';
+            uRlImportado = uRlImportado.replace("valorarchivo", nombreArchivoImportar).replace("valorempresa", idempresa);
+            $.ajax({
+                "url": uRlImportado,
+                "dataType": "json",
+                "async": false,
+                "success": function (res) {
+                    if (res == "SI") {
+                        valorReturn = true;
+                    }
+                }
+            });
+
+            return valorReturn;
+        }
+
+    </script>
+}

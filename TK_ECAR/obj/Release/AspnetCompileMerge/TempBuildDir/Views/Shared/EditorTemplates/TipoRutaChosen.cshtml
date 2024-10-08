@@ -1,0 +1,60 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<select id="miTipoRuta" title=@resourceView.LSelectCompany search class="form-control" data-placeholder=@resourceView.placeholderChosen puedeDeshabilitarse = "SI">
+    <option></option>
+</select>
+<style type="text/css">
+    #miTipoRuta_chosen {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+<script type="text/javascript">
+
+    if ($("#IDTipoRuta").val() != '') {
+        var uRl = '@Html.Raw(@Url.Action("GetTipoRutaByID_Chosen", "MiFlota", new { ID = "idchosen" }))'
+        uRl = uRl.replace("idchosen", $("#IDTipoRuta").val());
+        $.ajax({
+            "url": uRl,
+            "dataType": 'json',
+            //"async": false,
+            "success": function (data, t, x) {
+                $.each(data, function (i, val) {
+                    var $opt = $('<option value="' + val.value + '" selected="selected">').html(val.text);
+                    $('#miTipoRuta').append($opt);
+                });
+
+                $("#miTipoRuta").trigger("chosen:updated");
+            }
+        });
+    }
+
+    TipoRutaChosen();
+
+    function TipoRutaChosen() {
+        $("#miTipoRuta").ajaxChosen({
+            type: 'GET',
+            url: '@Url.Action("GetTiposDeRuta_Chosen", "MiFlota")',
+            minTermLength: 0,
+            dataType: 'json'
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+
+        },
+            {
+                //options
+                disable_search_threshold: -1,
+                allow_single_deselect: true,
+            });
+    }
+    //Pasar como parámetro a chosen el filtro de lo que se quiere.
+    $('#miTipoRuta').change(function () {
+        $("#IDTipoRuta").val(this.value);
+    });
+
+
+</script>

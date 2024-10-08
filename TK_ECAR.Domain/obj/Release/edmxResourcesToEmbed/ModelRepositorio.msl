@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TKRepositorioModelStoreContainer" CdmEntityContainer="TKRepositorioEntities">
+    <EntitySetMapping Name="MERSY_USERS_ZONAS">
+      <EntityTypeMapping TypeName="TKRepositorioModel.MERSY_USERS_ZONAS">
+        <MappingFragment StoreEntitySet="MERSY_USERS_ZONAS">
+          <ScalarProperty Name="FechaHoraAlta" ColumnName="FechaHoraAlta" />
+          <ScalarProperty Name="IDZona" ColumnName="IDZona" />
+          <ScalarProperty Name="User_Logon" ColumnName="User_Logon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MERSY_ZONAS">
+      <EntityTypeMapping TypeName="TKRepositorioModel.MERSY_ZONAS">
+        <MappingFragment StoreEntitySet="MERSY_ZONAS">
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IDZona" ColumnName="IDZona" />
+          <ScalarProperty Name="Sociedad" ColumnName="Sociedad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAPHR_Delegaciones">
+      <EntityTypeMapping TypeName="TKRepositorioModel.SAPHR_Delegaciones">
+        <MappingFragment StoreEntitySet="SAPHR_Delegaciones">
+          <ScalarProperty Name="IdDistrito" ColumnName="IdDistrito" />
+          <ScalarProperty Name="IdZona" ColumnName="IdZona" />
+          <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+          <ScalarProperty Name="Baja" ColumnName="Baja" />
+          <ScalarProperty Name="IdDT" ColumnName="IdDT" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdDelegacion" ColumnName="IdDelegacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAPHR_DireccionesArea">
+      <EntityTypeMapping TypeName="TKRepositorioModel.SAPHR_DireccionesArea">
+        <MappingFragment StoreEntitySet="SAPHR_DireccionesArea">
+          <ScalarProperty Name="idDT" ColumnName="idDT" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="DA" ColumnName="DA" />
+          <ScalarProperty Name="ID_DA" ColumnName="ID_DA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAPHR_DireccionesTerritoriales">
+      <EntityTypeMapping TypeName="TKRepositorioModel.SAPHR_DireccionesTerritoriales">
+        <MappingFragment StoreEntitySet="SAPHR_DireccionesTerritoriales">
+          <ScalarProperty Name="IdEmpresa_Medea" ColumnName="IdEmpresa_Medea" />
+          <ScalarProperty Name="IdDT_Medea" ColumnName="IdDT_Medea" />
+          <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+          <ScalarProperty Name="Baja" ColumnName="Baja" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdDT" ColumnName="IdDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAPHR_Empresas">
+      <EntityTypeMapping TypeName="TKRepositorioModel.SAPHR_Empresas">
+        <MappingFragment StoreEntitySet="SAPHR_Empresas">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="CodigoEmpresa" ColumnName="CodigoEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAPHR_FiltroSeleccionCentrosCoste">
+      <EntityTypeMapping TypeName="TKRepositorioModel.SAPHR_FiltroSeleccionCentrosCoste">
+        <MappingFragment StoreEntitySet="SAPHR_FiltroSeleccionCentrosCoste">
+          <ScalarProperty Name="Agrupacion2" ColumnName="Agrupacion2" />
+          <ScalarProperty Name="Agrupacion1" ColumnName="Agrupacion1" />
+          <ScalarProperty Name="FiltroCentroCoste" ColumnName="FiltroCentroCoste" />
+          <ScalarProperty Name="IDSeleccion" ColumnName="IDSeleccion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAPHR_UsuariosSAP">
+      <EntityTypeMapping TypeName="TKRepositorioModel.SAPHR_UsuariosSAP">
+        <MappingFragment StoreEntitySet="SAPHR_UsuariosSAP">
+          <ScalarProperty Name="FechaVolcado" ColumnName="FechaVolcado" />
+          <ScalarProperty Name="IdProvincia" ColumnName="IdProvincia" />
+          <ScalarProperty Name="NacionalidadNac" ColumnName="NacionalidadNac" />
+          <ScalarProperty Name="ProvinciaNac" ColumnName="ProvinciaNac" />
+          <ScalarProperty Name="LugarNac" ColumnName="LugarNac" />
+          <ScalarProperty Name="PaisNac" ColumnName="PaisNac" />
+          <ScalarProperty Name="FecNacimiento" ColumnName="FecNacimiento" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
+          <ScalarProperty Name="CodPostal" ColumnName="CodPostal" />
+          <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+          <ScalarProperty Name="Dni" ColumnName="Dni" />
+          <ScalarProperty Name="Baja" ColumnName="Baja" />
+          <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+          <ScalarProperty Name="RelaLaboral" ColumnName="RelaLaboral" />
+          <ScalarProperty Name="IdRelaLaboral" ColumnName="IdRelaLaboral" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="CodigoEmpresa" ColumnName="CodigoEmpresa" />
+          <ScalarProperty Name="CategoriaProfesional" ColumnName="CategoriaProfesional" />
+          <ScalarProperty Name="IdCategoriaProfesional" ColumnName="IdCategoriaProfesional" />
+          <ScalarProperty Name="Funcion" ColumnName="Funcion" />
+          <ScalarProperty Name="IdFuncion" ColumnName="IdFuncion" />
+          <ScalarProperty Name="DirArea" ColumnName="DirArea" />
+          <ScalarProperty Name="IdDirArea" ColumnName="IdDirArea" />
+          <ScalarProperty Name="DT" ColumnName="DT" />
+          <ScalarProperty Name="IdDT" ColumnName="IdDT" />
+          <ScalarProperty Name="Delegacion" ColumnName="Delegacion" />
+          <ScalarProperty Name="IdDelegacion" ColumnName="IdDelegacion" />
+          <ScalarProperty Name="CentroCoste" ColumnName="CentroCoste" />
+          <ScalarProperty Name="IdCeco" ColumnName="IdCeco" />
+          <ScalarProperty Name="UniOrganizativa" ColumnName="UniOrganizativa" />
+          <ScalarProperty Name="IdUniOrganizativa" ColumnName="IdUniOrganizativa" />
+          <ScalarProperty Name="SubDivision" ColumnName="SubDivision" />
+          <ScalarProperty Name="IdSubdivision" ColumnName="IdSubdivision" />
+          <ScalarProperty Name="Division" ColumnName="Division" />
+          <ScalarProperty Name="IdDivision" ColumnName="IdDivision" />
+          <ScalarProperty Name="Puesto" ColumnName="Puesto" />
+          <ScalarProperty Name="IdPuesto" ColumnName="IdPuesto" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+          <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Logon" ColumnName="Logon" />
+          <ScalarProperty Name="NumeroEmpleado" ColumnName="NumeroEmpleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAPHR_CentrosCoste">
+      <EntityTypeMapping TypeName="TKRepositorioModel.SAPHR_CentrosCoste">
+        <MappingFragment StoreEntitySet="SAPHR_CentrosCoste">
+          <ScalarProperty Name="IdDT" ColumnName="IdDT" />
+          <ScalarProperty Name="IdDelegacion" ColumnName="IdDelegacion" />
+          <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+          <ScalarProperty Name="Baja" ColumnName="Baja" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdCeco" ColumnName="IdCeco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAPHR_UnidadesOrganizativas">
+      <EntityTypeMapping TypeName="TKRepositorioModel.SAPHR_UnidadesOrganizativas">
+        <MappingFragment StoreEntitySet="SAPHR_UnidadesOrganizativas">
+          <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+          <ScalarProperty Name="Baja" ColumnName="Baja" />
+          <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IdUniOrganizativa" ColumnName="IdUniOrganizativa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GENERAL_PARAMETROS_APLICACIONES">
+      <EntityTypeMapping TypeName="TKRepositorioModel.GENERAL_PARAMETROS_APLICACIONES">
+        <MappingFragment StoreEntitySet="GENERAL_PARAMETROS_APLICACIONES">
+          <ScalarProperty Name="BAJA" ColumnName="BAJA" />
+          <ScalarProperty Name="NUM_ORDEN" ColumnName="NUM_ORDEN" />
+          <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+          <ScalarProperty Name="PARAMETRO" ColumnName="PARAMETRO" />
+          <ScalarProperty Name="AGRUPACION" ColumnName="AGRUPACION" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GENERAL_IDIOMAS">
+      <EntityTypeMapping TypeName="TKRepositorioModel.GENERAL_IDIOMAS">
+        <MappingFragment StoreEntitySet="GENERAL_IDIOMAS">
+          <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="IDIOMA" ColumnName="IDIOMA" />
+          <ScalarProperty Name="ID_APLICACION" ColumnName="ID_APLICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

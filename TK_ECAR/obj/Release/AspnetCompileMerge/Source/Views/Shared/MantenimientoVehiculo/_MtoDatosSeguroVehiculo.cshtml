@@ -1,0 +1,58 @@
+﻿@using resourceView = TK_ECAR.Content.resources.ModelsResources
+@model DatosGeneralesModel
+
+@Html.HiddenFor(m => m.IDTipoSeguro)
+@Html.HiddenFor(m => m.IDCia_Seguro)
+
+<div class="col-md-12">
+    <div class="notice notice-Lightgreen" style="width: 52%; margin: 0px auto;">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Cia_Seguro, new { @class = "control-label col-md-3" })
+            <div class="col-md-7">
+                @Html.EditorFor(m => m.Cia_Seguro, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Seguro_Poliza, new { @class = "control-label col-md-3" })
+            <div class="col-sm-7">
+                @Html.TextBoxFor(model => model.Seguro_Poliza, new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Seguro_Tipo, new { @class = "control-label col-md-3" })
+            <div class="col-md-7">
+                @Html.EditorFor(m => m.Seguro_Tipo)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Seguro_Importe, new { @class = "control-label col-md-3" })
+            <div class="col-sm-7">
+                @Html.TextBoxFor(model => model.Seguro_Importe, new { @class = "form-control", @marca="EsDouble", @puedeDeshabilitarse = "SI" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Seguro_FechaVencimiento, new { @class = "control-label col-md-3" })
+            <div class="col-md-7">
+                @Html.EditorFor(m => m.Seguro_FechaVencimiento)
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    //$("#Seguro_Importe").focus(function () {
+    //    var imp = DevuelveConPuntoDecimal($("#Seguro_Importe").val());
+    //    if ($.isNumeric(imp)) {
+    //        $("#Seguro_Importe").val(imp.replace('.', ','));
+    //    }
+    //});
+
+    //$('#Seguro_Importe').blur(function () {
+    //    var imp = DevuelveConPuntoDecimal($("#Seguro_Importe").val());
+    //    if ($.isNumeric(imp)) {
+    //        $("#Seguro_Importe").val(formateaTextoNumerico(imp.replace('.', ','), 2));
+    //    }
+    //});
+
+</script>

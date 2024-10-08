@@ -1,0 +1,78 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+
+@using (Html.BeginForm("GuardarMtoGenerico", "MtoGenericoTipos", null, FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "stripHtml('formMtoGenerico')", @id= "formMtoGenerico" }))
+{ @Html.AntiForgeryToken()
+    
+        <div class="modal fade" id="modalMtoGenerico" role="dialog">
+            <div class="vertical-alignment-helper">
+                <div class="modal-dialog modal-md vertical-align-center">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                <span class="modal-header-logo"></span>
+                            </button>
+                            <h4 class="modal-title" id="modaltitleMtoGenerico"> </h4>
+                        </div>
+                         
+                        <div class="modal-body"> 
+                            @*<div id="toast-container"></div>*@              
+                            <div id="modalbodyMtoGenerico"></div> 
+                            
+                        </div>                             
+                        <div class="modal-footer">
+                            <button type="submit" id="aceptarMtoGenerico" class="btn btn-default">@resourceView.AccionAceptar</button>
+                            <button type="button" class="btn btn-cancel" data-dismiss="modal">@resourceView.AccionCerrar</button>
+                         </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#formMtoGenerico").submit(function (e) {
+            if ($("#formMtoGenerico").valid()) {//validamos el form
+                var formData = new FormData(this);
+                @*var uRl = '@Url.Action("Index", "MtoGenericoTipos")';*@
+                $.ajax({
+                    type: this.method,
+                    url: this.action,
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+
+                    success: function (data) {
+                        ajaxSuccessMtoGenericoTipos();
+                        reloadTableMtoGenerico()
+                        //setTimeout(function () { window.location.replace(uRl) }, 1000);
+
+                    },
+                    error: function (error) {
+                        ajaxErrorMtoGenericoTipos();
+                    }
+                });
+            }
+
+            e.preventDefault();
+
+        });
+
+    });
+
+    function ajaxSuccessMtoGenericoTipos() {
+
+        notify('@resourceView.toastrInfMtoGenericoCorrecto', 'i');
+        $('#modalMtoGenerico').modal('hide');
+    }
+
+    function ajaxErrorMtoGenericoTipos() {
+
+        notify('@resourceView.toastrInfMtoGenericoError', 'e');
+    }
+
+
+</script>

@@ -1,0 +1,307 @@
+﻿@using resourceView = TK_ECAR.Content.resources
+@model DatosGeneralesModel
+@using TK_ECAR.Framework;
+
+
+@Html.HiddenFor(m => m.IDEmpresa)
+@Html.HiddenFor(m => m.IDEmpresaInicial)
+@Html.HiddenFor(m => m.MatriculaInicial)
+@Html.HiddenFor(m => m.MatriculaSustituida)
+@Html.HiddenFor(m => m.IDDelegacion)
+@Html.HiddenFor(m => m.IDCarburante)
+@Html.HiddenFor(m => m.IDModelo)
+@Html.HiddenFor(m => m.IDMarca)
+@Html.HiddenFor(m => m.IDTipoVehiculo)
+@Html.HiddenFor(m => m.IDUbicacion)
+@Html.HiddenFor(m => m.IDTarjetaCombustible)
+@Html.HiddenFor(m => m.IDTarjetaCombustibleInicial)
+@Html.HiddenFor(m => m.IDTipoRuta)
+@Html.HiddenFor(m => m.IDConductor)
+@Html.HiddenFor(m => m.IDConductorInicial)
+@Html.HiddenFor(m => m.IDCentroCoste)
+@Html.HiddenFor(m => m.IDCentroCosteInicial)
+@Html.HiddenFor(m => m.IDDepartamento)
+@Html.HiddenFor(m => m.IDEmpresaLeasing)
+@Html.HiddenFor(m => m.EsVehiculoDeSustitucion)
+@Html.HiddenFor(m => m.IdentificadorImportacion)
+@Html.HiddenFor(m => m.UsuarioImportacion)
+@Html.HiddenFor(m => m.Accion)
+
+<div class="col-md-6">
+    <div class="notice notice-Lightgreen">
+        <div class="form-group">
+            @Html.RequiredLabelFor(model => model.Empresa, new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.Empresa)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.RequiredLabelFor(model => model.Matricula, new { @class = "control-label col-md-4" })
+            <div class="col-md-4">
+                @Html.TextBoxFor(model => model.Matricula, new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Veh_sustituido, new { @class = "control-label col-md-4" })
+            <div class="col-md-7">
+                @Html.EditorFor(model => model.Veh_sustituido)
+            </div>
+            <div class="material-switch pull-right col-xm-2" data-toggle="tooltip" title="Marcar si el vehículo sustituye a otro">
+                <input id="vehiculoRenovado" name="vehiculoRenovado" type="checkbox" puedeDeshabilitarse = "SI"/>
+                <label for="vehiculoRenovado" class="label-primary"></label> @*label-default, label-primary, label-success, label-info, label-warning, label-danger*@
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.MarcaVehiculo, new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.MarcaVehiculo)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDModelo, new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.IDModelo)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Extras, new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.TextAreaFor(model => model.Extras, new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Equipamiento, new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.TextAreaFor(model => model.Equipamiento, new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDTipoVehiculo, new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.TipoVehiculo, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Bastidor, new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.TextBoxFor(model => model.Bastidor, new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Carburante, new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.Carburante, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.TipoRuta, new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.TipoRuta, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="notice notice-Lightgreen">
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDDelegacion, new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.Delegacion, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CentroCoste, new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.CentroCoste, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Departamento, new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.Departamento, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Ubicacion, new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.Ubicacion, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Conductor, new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.Conductor, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmpresaLeasing, new { @class = "control-label col-md-4" })
+            <div class="col-md-8">
+                @Html.EditorFor(model => model.EmpresaLeasing, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+    <div class="notice notice-warning">
+        <div class="form-group">
+            @Html.LabelFor(model => model.TarjetaCombustible, new { @class = "control-label col-md-4" })
+            <div class="col-md-7">
+                @Html.EditorFor(model => model.TarjetaCombustible, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+                @Html.Label("Código PIN", new { @class = "control-label col-md-4" })
+                <div class="col-md-7">
+                    @*@Html.TextBox("CodigoPin", "", new { @class = "form-control", @type = "password", @id = "CodigoPin", @readonly = "readonly" })*@
+                    @Html.TextBoxFor(model => model.PIN_Tarjeta, new { @class = "form-control", @type = "password", @id = "CodigoPin", @readonly = "readonly" })
+                </div>
+                <div class="material-switch pull-right col-xm-2" data-toggle="tooltip" title="Ver/Ocultar caracteres del PIN">
+                    <input id="verPIN" name="verPIN" type="checkbox" />
+                    <label for="verPIN" class="label-primary"></label>
+                </div>
+            </div>
+    </div>
+
+</div>
+
+
+
+<script type="text/javascript">
+
+    //$(function () {
+    //    $('.chosen-select').chosen();
+    //    $('.chosen-select-deselect').chosen({ allow_single_deselect: true });
+    //    $('.chosen-container').width('100%');
+    //    $('#MatriculaRenovada').prop('disabled', true).trigger("chosen:updated");
+    //});
+
+    $(document).ready(function () {
+        if ($("#EsVehiculoDeSustitucion").val() == "True") {
+            $("#vehiculoRenovado").prop('checked', true);
+        }
+
+        Activa_DesActivaVehiculoSustituido();
+
+        if ($("#Accion").val() == '@EnumAccionEntity.Consulta') {
+            disableControlsVehiculo();
+        }
+        if ($("#Accion").val() == '@EnumAccionEntity.Modificacion') {
+            $('#Matricula').prop('readonly', 'readonly');
+            //$('#miMatricula').prop('disabled', true).trigger("chosen:updated");
+        }
+    });
+
+    $("#vehiculoRenovado").click(function () {
+        Activa_DesActivaVehiculoSustituido();
+    });
+
+    function Activa_DesActivaVehiculoSustituido() {
+        if ($("#vehiculoRenovado").is(':checked')) {
+            $("#EsVehiculoDeSustitucion").val("True");
+            $('#miVeh_sustituido').prop('disabled', false).trigger("chosen:updated");
+        }
+        else {
+            $("#EsVehiculoDeSustitucion").val("False");
+            $('#miVeh_sustituido').prop('disabled', true).trigger("chosen:updated");
+            $('#miVeh_sustituido').val('').trigger('chosen:updated');
+            $('#Veh_sustituido').val('');
+            $('#MatriculaSustituida').val('');
+        }
+    }
+
+    $('#miVeh_sustituido').on('change', function (evt, params) {
+        $('#MatriculaSustituida').val(this.value);
+        if (evt.target.selectedIndex != 0) 
+        {
+            var uRl = '@Html.Raw(@Url.Action("GetDatosVehiculoMatriculaSustituida", "MiFlota", new { MatriculaSustituida = "idmatricula" }))'
+            uRl = uRl.replace("idmatricula", this.value);
+            $.ajax({
+                "url": uRl,
+                "async": false,
+                "dataType": 'json',
+                "success": function (data) {
+                    if (data != null) {
+                        EstableceValoresMatriculaSustituida(data);
+                    }
+                }
+            });
+        }
+        else
+        {
+            $('#MatriculaSustituida').val("");
+        }
+    });
+
+    $('#miTarjetaCombustible').on('change', function (evt, params) {
+        if (evt.target.selectedIndex != 0) {
+            var uRl = '@Html.Raw(@Url.Action("GetPIN_Tarjeta", "MiFlota", new { idTarjeta = "idtarjeta" }))'
+            uRl = uRl.replace("idtarjeta", this.value);
+            $.ajax({
+                "url": uRl,
+                "async": false,
+                "dataType": 'json',
+                "success": function (data) {
+                    if (data != null) {
+                        $('#CodigoPin').val(data);
+                    }
+                    else {
+                        $('#CodigoPin').val('');
+                    }
+                }
+            });
+        }
+        else {
+            $('#CodigoPin').val('');
+        }
+    });
+
+    $("#verPIN").click(function () {
+        if ($("#verPIN").is(':checked')) {
+            var obj = document.getElementById('CodigoPin');
+            obj.type = "text";
+        }
+        else {
+            var obj = document.getElementById('CodigoPin');
+            obj.type = "password";
+        }
+    });
+
+    function EstableceValoresMatriculaSustituida(data) {
+        if (data.Delegacion != null) {
+            $("#IDDelegacion").val(data.Delegacion);
+            SeleccionaDelegacion();
+        }
+        if (data.Ceco != null) {
+            $("#IDCentroCoste").val(data.Ceco);
+            chosenCentroCosteChosenSeleccionado();
+        }
+        if (data.conductor != null) {
+            $("#IDConductor").val(data.conductor)
+            SeleccionaConductor();
+        }
+        if (data.Departamento != null) {
+            $("#IDDepartamento").val(data.Departamento);
+            SeleccionaDepartamento();
+        }
+        if (data.TarjetaCombustible != null) {
+            $("#IDTarjetaCombustible").val(data.TarjetaCombustible);
+            SeleccionaTarjetaCombustible();
+        }
+        if (data.Ubicacion != null) {
+            $("#IDUbicacion").val(data.Ubicacion);
+            SeleccionaUbicacion();
+        }
+    }
+
+
+    function disableControlsVehiculo() {
+        $("[puedeDeshabilitarse=SI]").each(function () {
+            $(this).prop('disabled', true);
+            if (this.nextElementSibling != null) {
+                if (this.nextElementSibling.id.replace("_chosen", "") == this.id) {
+                    $('#' + this.id).prop('disabled', true).trigger("chosen:updated");
+                }
+            }
+        });
+    }
+
+</script>

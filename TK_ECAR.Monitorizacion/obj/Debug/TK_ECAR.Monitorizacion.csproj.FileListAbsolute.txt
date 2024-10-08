@@ -1,0 +1,96 @@
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Monitorizacion.exe.config
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Monitorizacion.exe
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Monitorizacion.pdb
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\EntityFramework.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\EntityFramework.SqlServer.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\log4net.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\PostSharp.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Domain.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Framework.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Infraestructure.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\itextsharp.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\System.Net.Http.Formatting.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\Newtonsoft.Json.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Domain.pdb
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Framework.pdb
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Infraestructure.pdb
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\EntityFramework.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\EntityFramework.SqlServer.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\log4net.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\PostSharp.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\Newtonsoft.Json.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Monitorizacion.pssym
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.csprojResolveAssemblyReference.cache
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.Properties.Resources.resources
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.csproj.GenerateResource.Cache
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.exe.postsharp
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.exe
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.pdb
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\PostSharpHost.config
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Monitorizacion.exe.config
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Monitorizacion.exe
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Monitorizacion.pdb
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\EntityFramework.dll
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\EntityFramework.SqlServer.dll
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\log4net.dll
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\PostSharp.dll
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Domain.dll
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Framework.dll
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Infraestructure.dll
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\itextsharp.dll
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\System.Net.Http.Formatting.dll
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\Newtonsoft.Json.dll
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Domain.pdb
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Domain.dll.config
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Framework.pdb
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Infraestructure.pdb
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Infraestructure.dll.config
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\EntityFramework.xml
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\EntityFramework.SqlServer.xml
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\log4net.xml
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\PostSharp.xml
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\Newtonsoft.Json.xml
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Monitorizacion.pssym
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.csprojAssemblyReference.cache
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.Properties.Resources.resources
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.csproj.GenerateResource.cache
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.csproj.CoreCompileInputs.cache
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.csproj.CopyComplete
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.exe.postsharp
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.exe
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.pdb
+C:\TRABAJO\JAVIER\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\PostSharpHost.config
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Monitorizacion.exe.config
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Monitorizacion.exe
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Monitorizacion.pdb
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\EntityFramework.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\EntityFramework.SqlServer.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\log4net.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\PostSharp.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Domain.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Framework.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Infraestructure.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\itextsharp.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\System.Net.Http.Formatting.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\Newtonsoft.Json.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Domain.pdb
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Domain.dll.config
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Framework.pdb
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Infraestructure.pdb
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Infraestructure.dll.config
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\EntityFramework.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\EntityFramework.SqlServer.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\log4net.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\PostSharp.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\Newtonsoft.Json.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\bin\Debug\TK_ECAR.Monitorizacion.pssym
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.csproj.AssemblyReference.cache
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.csproj.SuggestedBindingRedirects.cache
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.Properties.Resources.resources
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.csproj.GenerateResource.cache
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.csproj.CoreCompileInputs.cache
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.csproj.CopyComplete
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.exe.postsharp
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.exe
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\TK_ECAR.Monitorizacion.pdb
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.Monitorizacion\obj\Debug\PostSharpHost.config

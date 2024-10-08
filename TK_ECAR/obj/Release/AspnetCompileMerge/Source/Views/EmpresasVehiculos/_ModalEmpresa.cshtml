@@ -1,0 +1,99 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+
+@using (Html.BeginForm("GuardarEmpresa", "EmpresasVehiculos", null, FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "stripHtml('formEmpVehiculos')", @id= "formEmpVehiculos" }))
+{ @Html.AntiForgeryToken()
+    
+        <div class="modal fade" id="modalEmpresa" role="dialog">
+            <div class="vertical-alignment-helper">
+                <div class="modal-dialog  vertical-align-center">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                <span class="modal-header-logo"></span>
+                            </button>
+                            <h4 class="modal-title" id="modaltitleEmpresa"> </h4>
+                        </div>
+                         
+                        <div class="modal-body"> 
+                            @*<div id="toast-container"></div>*@              
+                            <div id="modalbodyEmpresa"></div> 
+                            
+                        </div>                             
+                        <div class="modal-footer">
+                            <button type="submit" id="aceptarEmpresa" class="btn btn-default">@resourceView.AccionAceptar</button>
+                            <button type="button" class="btn btn-cancel" data-dismiss="modal">@resourceView.AccionCerrar</button>
+                         </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+}
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#formEmpVehiculos").submit(function (e) {
+                if ($("#formEmpVehiculos").valid()) {//validamos el form
+                    LimpiaValidationSummary();
+                    if (validaDatos()) {
+                        var formData = new FormData(this);
+                        $.ajax({
+                            type: this.method,
+                            url: this.action,
+                            data: formData,
+                            contentType: false,
+                            processData: false,
+
+                            success: function (data) {
+                                ajaxSuccessEmpresa();
+                                reloadTableEmpVehiculos()
+                                //setTimeout(function () { window.location.replace(uRl) }, 1000);
+
+                            },
+                            error: function (error) {
+                                ajaxErrorEmpresa();
+                            }
+                        });
+                    }
+                    else {
+                        $('#divValidationSummary').addClass("validation-summary-errors").removeClass("validation-summary-valid");
+                        $("#divValidationSummary").show();
+                    }
+                }
+                else {
+                    validaDatos();
+                }
+                e.preventDefault();
+            });
+
+        });
+
+        function ajaxSuccessEmpresa() {
+            notify('@resourceView.toastrInfEmpresaOK', 'i');
+            $('#modalEmpresa').modal('hide');
+        }
+
+        function ajaxErrorEmpresa() {
+            notify('@resourceView.toastrInfEmpresaError', 'e');
+        }
+
+        function validaDatos() {
+            var valorReturn = true;
+            var textError = '<li>texto</li>';
+            if ($("#Renting").val().toLowerCase() == "false" && $("#Aseguradora").val().toLowerCase() == "false") {
+                $("#divValidationSummaryPanel_body ul").append(textError.replace("texto", '@Html.Raw(@resourceView.msgErrEmpRenting_Aseguradora)'));
+                valorReturn = false;
+            }
+
+
+            return valorReturn;
+        }
+
+        function LimpiaValidationSummary() {
+            $("#divValidationSummaryPanel_body ul").empty();
+        }
+
+</script>

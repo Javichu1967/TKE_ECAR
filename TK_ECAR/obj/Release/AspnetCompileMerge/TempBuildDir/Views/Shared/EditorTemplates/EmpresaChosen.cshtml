@@ -1,0 +1,84 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<select id="miEmpresa" title=@resourceView.LSelectCompany search class="form-control" data-placeholder=@resourceView.placeholderChosen puedeDeshabilitarse = "SI">
+    <option></option>
+</select>
+<style type="text/css">
+    #miEmpresa_chosen {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+<script type="text/javascript">
+    if ($("#IDEmpresa").val() != '' && $("#IDEmpresa").val() != null) {
+        var uRl = '@Html.Raw(@Url.Action("GetEmpresaByID_Chosen", "Filter", new { id = "idchosen" }))'
+        uRl = uRl.replace("idchosen", $("#IDEmpresa").val());
+        $.ajax({
+            "url": uRl,
+            "dataType": 'json',
+            //"async": false,
+            "success": function (data, t, x) {
+                $.each(data, function (i, val) {
+                    var $opt = $('<option value="' + val.value + '" selected="selected">').html(val.text);
+                    $('#miEmpresa').append($opt);
+                });
+
+                $("#miEmpresa").trigger("chosen:updated");
+            }
+        });
+    }
+
+    EmpresaChosen();
+
+    function EmpresaChosen() {
+        $('#miEmpresa').prepend($('<option></option>').html('@resourceView.msgCargando'));
+        $("#miEmpresa").ajaxChosen({
+            type: 'GET',
+            url: '@Url.Action("GetEmpresas", "Filter")',
+            minTermLength: 0,
+            dataType: 'json'
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+
+        },
+            {
+                //options
+                disable_search_threshold: -1
+            });
+    }
+    //Pasar como parámetro a chosen el filtro de lo que se quiere.
+    $('#miEmpresa').on('chosen:hiding_dropdown', function (evt, params) {
+        var empAnt = $("#IDEmpresa").val();
+        if (empAnt != this.value) {
+            $("#IDEmpresa").val(this.value);
+
+            if ($("#IDDelegacion").val() != undefined) {
+                $("#IDDelegacion").val('');
+                $('#CentroCoste').val('');
+                $("#IDDepartamento").val('');
+                $("#IDCentroCoste").val('');
+                $("#IDTarjetaCombustible").val('');
+
+                LimpiaFiltroChosen("miDelegacion");
+                DelegacionChosen(true);
+
+                LimpiaFiltroChosen("miCentroCoste");
+                chosenCentroCosteChosen(true);
+
+                LimpiaFiltroChosen("miDepartamento");
+                DepartamentoChosen(true);
+
+                //LimpiaFiltroChosen("miConductor");
+                //chosenConductor();
+                LimpiaFiltroChosen("miTarjetaCombustible");
+                TarjetaCombustibleChosen(true);
+            }
+        }
+    });
+
+
+</script>

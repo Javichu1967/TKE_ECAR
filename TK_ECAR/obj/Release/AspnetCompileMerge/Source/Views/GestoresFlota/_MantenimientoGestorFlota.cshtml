@@ -1,0 +1,156 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Models
+@model GestoresFlotaModel
+
+@{
+    bool editar = (Model.Accion == TK_ECAR.Framework.EnumAccionEntity.Modificacion);
+}
+
+
+@Html.HiddenFor(m => m.Accion)
+<div class="form-horizontal">
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.Nombre, new { @class = "control-label col-sm-4", @readonly = "readonly" })
+        <div class="col-sm-8">
+            @if (editar)
+            {
+                @Html.TextBoxFor(m => m.Nombre, new { @class = "form-control", @readonly = "readonly" })
+            }
+            else
+            {
+                @Html.EditorFor(m => m.Nombre)
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.NumeroEmpleado, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+            @Html.TextBoxFor(m => m.NumeroEmpleado, new { Value = (Model.NumeroEmpleado != 0 ? Model.NumeroEmpleado.ToString() : ""), @class = "form-control", @readonly = "readonly" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.Puesto, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+            @Html.TextBoxFor(m => m.Puesto, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.Telefono1, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+            @Html.TextBoxFor(m => m.Telefono1, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Telefono2, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+            @Html.TextBoxFor(m => m.Telefono2, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.FicheroFoto, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+            <span id="deleteFoto" class="tk-icon-med icon-tk-delete buttonClear"> </span>
+            @Html.EditorFor(m => m.FicheroFoto)
+            @Html.TextBoxFor(m => m.Foto, new { style = "display: none;" })
+        </div>
+    </div>
+
+    <div class="form-group" id="divFoto">
+        @Html.Label(@resourceView.lblFotoSeleccionada, new { @id = "fotoseleccionada", @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+            @*<div id="divFoto" class="embed-responsive embed-responsive-4by3">
+                <iframe id="fotoGestor" class="embedly-embed"
+                        src='@Url.Action("GetImgGestorFlota", "GestoresFlota", new { numEmpleado = Model.NumeroEmpleado })'
+                        scrolling="no" frameborder="0" allowfullscreen></iframe>
+            </div>*@
+            <div class="media-right" style="margin-top: 12px;">
+                <img class="userPhoto" id="fotoGestor" src='@Url.Action("GetImgGestorFlota", "GestoresFlota", new { numEmpleado = Model.NumeroEmpleado })' alt="" style="width:96px; height:106px;">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-sm-12">
+            @Html.Partial("_CustomValidationSummary", ViewData.ModelState)
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        if ($("#Foto").val() == "")
+        {
+            //$("#deleteFoto").hide();
+            //$("#divFoto").hide();
+            $("#fotoGestor").attr("src", '@Url.Content("~/Content/img/Application/sinImagen.jpg")');
+        }
+        else {
+            $("#FicheroFoto_NombreFichero").val($("#Foto").val());
+        }
+
+        //CompruebaArchivo
+        $("#FicheroFoto").on('change', function (evt) {
+            //Mostrar la foto cuando la seleccionan.
+            var files = evt.target.files; // FileList object
+            if (files.length > 0) {
+                $("#Foto").val(files[0].name);
+
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    // get loaded data and render thumbnail.
+                    document.getElementById("fotoGestor").src = e.target.result;
+                };
+
+                // read the image file as a data URL.
+                reader.readAsDataURL(this.files[0]);
+
+                $("#deleteFoto").show();
+                //$("#fotoseleccionada").show();
+                //$("#divFoto").show();
+            }
+            else {
+
+                $("#Foto").val('');
+                $("#fotoGestor").attr("src", '@Url.Content("~/Content/img/Application/sinImagen.jpg")');
+                //$("#divFoto").hide();
+                //$("#fotoseleccionada").hide();
+            }
+        });
+
+        $(document).on('click', '#deleteFoto', function (event) {
+            $("#FicheroFoto_NombreFichero").val('')
+            $("#deleteFoto").hide();
+            $("#Foto").val('');
+            $("#fotoGestor").attr("src", '@Url.Content("~/Content/img/Application/sinImagen.jpg")');
+            //$("#divfoto").hide();
+            //$("#fotoseleccionada").hide();
+        });
+    });
+
+
+    $('#miEmpleado').on('change', function () {
+        $.ajax({
+            url: '@Url.Action("GetNombreEmpleado", "Home")',
+            type: "POST",
+            data: {
+
+                nombreEmpleado: $('#miEmpleado').val(),
+            }
+        }).done(function (data) {
+            $('#NumeroEmpleado').val(data.NumeroEmpleado);
+            $('#Nombre').val(data.Nombre);
+        });
+    });
+
+
+</script>
+
+ 

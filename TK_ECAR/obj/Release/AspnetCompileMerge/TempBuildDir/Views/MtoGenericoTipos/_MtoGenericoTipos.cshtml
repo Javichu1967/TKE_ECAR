@@ -1,0 +1,80 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Models
+@using TK_ECAR.Framework
+@model MtoGenericoTiposModels
+
+@{
+    var tipoMantenimiento = Convert.ToInt32(ViewData["TipoMtoGenerico"].ToString());
+    var textoCabecera = ViewData["CabeceraMtoGenerico"].ToString() + "*";
+}
+
+@Html.HiddenFor(m => m.ID_Tipo)
+@Html.HiddenFor(m => m.Accion)
+@Html.HiddenFor(m => m.TipoMtoGenerico)
+@Html.HiddenFor(m => m.TieneITV)
+<div class="form-horizontal">
+    @if (tipoMantenimiento == (int)EnumMtoTiposGenerales.Modelos)
+    {
+        <div class="form-group">
+            @Html.RequiredLabelFor(m => m.ID_Tipo_FOREIGN, new { @class = "control-label col-sm-3" })
+            <div class="col-sm-8">
+                @Html.DropDownListMarcasVehiculo("ID_Tipo_FOREIGN", new { @class = "chosen-select" }, Model.ID_Tipo_FOREIGN)
+            </div>
+        </div>
+    }
+    else
+    {
+        @Html.HiddenFor(m => m.ID_Tipo_FOREIGN)
+    }
+    <div class="form-group">
+        @Html.LabelFor(m => m.Descripcion, @textoCabecera, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.TextBoxFor(m => m.Descripcion, new { @class = "form-control" })
+        </div>
+    </div>    
+    @if (tipoMantenimiento == (int)EnumMtoTiposGenerales.Vehiculos)
+    {
+        <div class="form-group">
+            @Html.RequiredLabelFor(m => m.TieneITV, new { @class = "control-label col-sm-3" })
+            <div class="col-sm-2" style="margin-left: -27px;">
+                <div class="material-switch pull-right col-xm-2">
+                    <input id="marcaITV" name="marcaITV" type="checkbox" />
+                    <label for="marcaITV" class="label-primary"></label> @*label-default, label-primary, label-success, label-info, label-warning, label-danger*@
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="form-group">
+        <div class="col-sm-12">
+            @Html.Partial("_CustomValidationSummary", ViewData.ModelState)
+        </div>
+    </div>
+
+</div>
+
+ <script type="text/javascript">
+     $(document).ready(function () {
+         if ($("#TieneITV").val() == "True") {
+             $("#marcaITV").prop('checked', true);
+         }
+     });
+
+     $(function () {
+         var _tipoMto = @((int)@EnumMtoTiposGenerales.Modelos);
+         if (@tipoMantenimiento == _tipoMto){
+             $('.chosen-select').chosen();
+             $('.chosen-select-deselect').chosen({ allow_single_deselect: true });
+             $('.chosen-container').width('100%');
+         }
+     });
+
+     $("#marcaITV").click(function () {
+         if ($("#marcaITV").is(':checked')) {
+             $("#TieneITV").val(true);
+         }
+         else {
+             $("#TieneITV").val(false);
+         }
+     });
+</script>

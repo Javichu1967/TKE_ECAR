@@ -1,0 +1,144 @@
+﻿@using resourceView = TK_ECAR.Content.resources
+@model RenovarRentingModel
+@using System.Configuration 
+ 
+@{
+    bool edicion = !(Model.ExisteRenovacion);
+ 
+}
+
+@Html.HiddenFor(m => m.IdAlerta)
+@Html.HiddenFor(m => m.CodConductor)
+@Html.HiddenFor(m => m.IdTipoAlerta)
+@Html.HiddenFor(m => m.IdEstado)
+
+   
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(m => m.Renovar, new { @class = "control-label col-sm-6" })
+            <div class="col-sm-6">
+                @if (edicion)
+                {
+                    @Html.EditorFor(m => m.Renovar)
+                }
+                else
+                {
+                    @Html.DisplayFor(m => m.Renovar)
+                }
+            </div>
+        </div>
+    </div>
+    
+
+    <div id="tableconductoresdiv" class="@(Model.Renovar ? "" : "ocultar")"   >
+        <div class="form-group">
+            <div class="col-sm-12">
+                <h3 style="color:#696969;font-size:24px" id="mostrarNombre"></h3>
+            </div>
+        </div>
+        <table id="tableConductores" class="display compact responsive" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nombre</th>
+                    <th>DNI</th>
+                    <th>Dirección</th>
+                    <th>Cod. Postal</th>
+                    <th>Población</th>
+                    <th>Provincia</th>
+                    <th>F. Nacimiento</th>
+                    <th>F. Vencimiento carnet</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+
+    @Html.Partial("_CustomValidationSummary", ViewData.ModelState)
+
+    <script type="text/javascript">
+
+        var isReadOnly = !'@(!Model.ExisteRenovacion)';
+
+        if (isReadOnly) {
+
+            $("#confirmarRenting").addClass("ocultar");
+        }
+
+        var tableConductores = $('#tableConductores').DataTable({
+            "dom": '<"top"f>r<"bottom"tp><"clear">',
+            "ServerSide": false,
+            "ordering": true,
+            "columns": [{ "data": "Cod_Conductor" },
+                        { "data": "Nombre" },
+                        { "data": "DNI" },
+                        { "data": "Direccion" },
+                        { "data": "Cod_Postal" },
+                        { "data": "Poblacion" },
+                        { "data": "Provincia" },
+                        { "data": "Fecha_Nacimiento" },
+                        { "data": "Fecha_Vencimiento_Carnet" }],
+            "language": {
+                "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.TK_ECAR_Resource.ArchivoIdiomaDataTable )'
+            },
+            "order": [[1, "asc"]],
+            "columnDefs": [{
+                "targets": [0,3,4,5,6,7],
+                "visible": false,
+                "searchable": false
+            },
+            {
+                "targets": [7, 8],
+                "render": function (data, type, full, meta) {
+                    return formatJSONDate(data);
+                }
+            }],
+            "initComplete": function (settings, json) {
+                if ('@Model.CodConductor' != '') {
+
+                    $("#tableconductoresdiv .dataTables_filter").remove() ;
+                    $("#tableconductoresdiv .dataTables_paginate").remove();
+                }
+            }
+
+
+        });
+
+        var urlRenting = '@Url.Action("ConductoresJSON", "Alertas", new { IdAlerta = "JSVAR" })';
+        if ('@Model.CodConductor' == '') {
+            urlRenting = urlRenting.replace("JSVAR", null);
+        }
+        else {
+            urlRenting = urlRenting.replace("JSVAR", '@Model.IdAlerta');
+        }
+        tableConductores.ajax.url(urlRenting);
+
+        $('#tableConductores tbody').on('click', 'tr', function () {
+
+            if ($(this).hasClass('selected')) {
+                $(this).removeClass('selected');
+            }
+            else {
+                tableConductores.$('tr.selected').removeClass('selected');
+                $(this).addClass('selected');
+                var conductor = tableConductores.row(this).data();
+
+                $('#CodConductor').val(conductor.Cod_Conductor);
+                $('#Nombre').val(conductor.Nombre);
+                $('#mostrarNombre').html(conductor.Nombre);
+            }
+        });
+
+        $("[name='Renovar']").on('change', function () {
+
+            if ($('#tableconductoresdiv').hasClass("ocultar")) {
+                $('#tableconductoresdiv').removeClass("ocultar");
+            }
+            else {
+                $('#tableconductoresdiv').addClass("ocultar");
+
+            }
+        });
+
+    </script>
+ 
+

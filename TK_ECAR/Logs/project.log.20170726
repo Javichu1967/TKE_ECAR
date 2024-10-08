@@ -1,0 +1,708 @@
+2017-07-26 10:41:20,878 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 2, PASO <ESTABLECIENDO DATO> FILA -> 2. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:20,953 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 3, PASO <ESTABLECIENDO DATO> FILA -> 3. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:20,966 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 4, PASO <ESTABLECIENDO DATO> FILA -> 4. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:20,990 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 5, PASO <ESTABLECIENDO DATO> FILA -> 5. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,006 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 6, PASO <ESTABLECIENDO DATO> FILA -> 6. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,017 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 7, PASO <ESTABLECIENDO DATO> FILA -> 7. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,030 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 8, PASO <ESTABLECIENDO DATO> FILA -> 8. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,045 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 9, PASO <ESTABLECIENDO DATO> FILA -> 9. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,060 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 10, PASO <ESTABLECIENDO DATO> FILA -> 10. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,075 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 11, PASO <ESTABLECIENDO DATO> FILA -> 11. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,087 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 12, PASO <ESTABLECIENDO DATO> FILA -> 12. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,101 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 13, PASO <ESTABLECIENDO DATO> FILA -> 13. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,112 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 14, PASO <ESTABLECIENDO DATO> FILA -> 14. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,125 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 15, PASO <ESTABLECIENDO DATO> FILA -> 15. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,137 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 16, PASO <ESTABLECIENDO DATO> FILA -> 16. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,148 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 17, PASO <ESTABLECIENDO DATO> FILA -> 17. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,161 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 18, PASO <ESTABLECIENDO DATO> FILA -> 18. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,174 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 19, PASO <ESTABLECIENDO DATO> FILA -> 19. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,187 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 20, PASO <ESTABLECIENDO DATO> FILA -> 20. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,202 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 21, PASO <ESTABLECIENDO DATO> FILA -> 21. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,212 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 22, PASO <ESTABLECIENDO DATO> FILA -> 22. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,224 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 23, PASO <ESTABLECIENDO DATO> FILA -> 23. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,235 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 24, PASO <ESTABLECIENDO DATO> FILA -> 24. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,244 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 25, PASO <ESTABLECIENDO DATO> FILA -> 25. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,257 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 26, PASO <ESTABLECIENDO DATO> FILA -> 26. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,270 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 27, PASO <ESTABLECIENDO DATO> FILA -> 27. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,281 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 28, PASO <ESTABLECIENDO DATO> FILA -> 28. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,295 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 29, PASO <ESTABLECIENDO DATO> FILA -> 29. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,307 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 30, PASO <ESTABLECIENDO DATO> FILA -> 30. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,337 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 31, PASO <ESTABLECIENDO DATO> FILA -> 31. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,346 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 32, PASO <ESTABLECIENDO DATO> FILA -> 32. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,364 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 33, PASO <ESTABLECIENDO DATO> FILA -> 33. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,380 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 34, PASO <ESTABLECIENDO DATO> FILA -> 34. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,394 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 35, PASO <ESTABLECIENDO DATO> FILA -> 35. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,412 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 36, PASO <ESTABLECIENDO DATO> FILA -> 36. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,428 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 37, PASO <ESTABLECIENDO DATO> FILA -> 37. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,451 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 38, PASO <ESTABLECIENDO DATO> FILA -> 38. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,461 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 39, PASO <ESTABLECIENDO DATO> FILA -> 39. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,473 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 40, PASO <ESTABLECIENDO DATO> FILA -> 40. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,484 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 41, PASO <ESTABLECIENDO DATO> FILA -> 41. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,497 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 42, PASO <ESTABLECIENDO DATO> FILA -> 42. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,509 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 43, PASO <ESTABLECIENDO DATO> FILA -> 43. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,520 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 44, PASO <ESTABLECIENDO DATO> FILA -> 44. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,528 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 45, PASO <ESTABLECIENDO DATO> FILA -> 45. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,538 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 46, PASO <ESTABLECIENDO DATO> FILA -> 46. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,546 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 47, PASO <ESTABLECIENDO DATO> FILA -> 47. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,556 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 48, PASO <ESTABLECIENDO DATO> FILA -> 48. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,566 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 49, PASO <ESTABLECIENDO DATO> FILA -> 49. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,576 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 50, PASO <ESTABLECIENDO DATO> FILA -> 50. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,586 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 51, PASO <ESTABLECIENDO DATO> FILA -> 51. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,596 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 52, PASO <ESTABLECIENDO DATO> FILA -> 52. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,607 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 53, PASO <ESTABLECIENDO DATO> FILA -> 53. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,617 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 54, PASO <ESTABLECIENDO DATO> FILA -> 54. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,628 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 55, PASO <ESTABLECIENDO DATO> FILA -> 55. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,638 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 56, PASO <ESTABLECIENDO DATO> FILA -> 56. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,647 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 57, PASO <ESTABLECIENDO DATO> FILA -> 57. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,657 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 58, PASO <ESTABLECIENDO DATO> FILA -> 58. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,668 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 59, PASO <ESTABLECIENDO DATO> FILA -> 59. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,678 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 60, PASO <ESTABLECIENDO DATO> FILA -> 60. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,689 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 61, PASO <ESTABLECIENDO DATO> FILA -> 61. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,704 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 62, PASO <ESTABLECIENDO DATO> FILA -> 62. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,713 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 63, PASO <ESTABLECIENDO DATO> FILA -> 63. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,727 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 64, PASO <ESTABLECIENDO DATO> FILA -> 64. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,738 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 65, PASO <ESTABLECIENDO DATO> FILA -> 65. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,748 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 66, PASO <ESTABLECIENDO DATO> FILA -> 66. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,758 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 67, PASO <ESTABLECIENDO DATO> FILA -> 67. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,768 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 68, PASO <ESTABLECIENDO DATO> FILA -> 68. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,778 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 69, PASO <ESTABLECIENDO DATO> FILA -> 69. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,791 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 70, PASO <ESTABLECIENDO DATO> FILA -> 70. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,802 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 71, PASO <ESTABLECIENDO DATO> FILA -> 71. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,811 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 72, PASO <ESTABLECIENDO DATO> FILA -> 72. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,822 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 73, PASO <ESTABLECIENDO DATO> FILA -> 73. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,830 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 74, PASO <ESTABLECIENDO DATO> FILA -> 74. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,853 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 75, PASO <ESTABLECIENDO DATO> FILA -> 75. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,863 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 76, PASO <ESTABLECIENDO DATO> FILA -> 76. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,877 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 77, PASO <ESTABLECIENDO DATO> FILA -> 77. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,891 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 78, PASO <ESTABLECIENDO DATO> FILA -> 78. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,913 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 79, PASO <ESTABLECIENDO DATO> FILA -> 79. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,926 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 80, PASO <ESTABLECIENDO DATO> FILA -> 80. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,939 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 81, PASO <ESTABLECIENDO DATO> FILA -> 81. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,951 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 82, PASO <ESTABLECIENDO DATO> FILA -> 82. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,962 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 83, PASO <ESTABLECIENDO DATO> FILA -> 83. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,974 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 84, PASO <ESTABLECIENDO DATO> FILA -> 84. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,984 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 85, PASO <ESTABLECIENDO DATO> FILA -> 85. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:21,996 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 86, PASO <ESTABLECIENDO DATO> FILA -> 86. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,008 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 87, PASO <ESTABLECIENDO DATO> FILA -> 87. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,019 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 88, PASO <ESTABLECIENDO DATO> FILA -> 88. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,028 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 89, PASO <ESTABLECIENDO DATO> FILA -> 89. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,039 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 90, PASO <ESTABLECIENDO DATO> FILA -> 90. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,069 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 91, PASO <ESTABLECIENDO DATO> FILA -> 91. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,080 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 92, PASO <ESTABLECIENDO DATO> FILA -> 92. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,096 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 93, PASO <ESTABLECIENDO DATO> FILA -> 93. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,111 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 94, PASO <ESTABLECIENDO DATO> FILA -> 94. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,127 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 95, PASO <ESTABLECIENDO DATO> FILA -> 95. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,138 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 96, PASO <ESTABLECIENDO DATO> FILA -> 96. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,146 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 97, PASO <ESTABLECIENDO DATO> FILA -> 97. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,158 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 98, PASO <ESTABLECIENDO DATO> FILA -> 98. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,169 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 99, PASO <ESTABLECIENDO DATO> FILA -> 99. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,181 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 100, PASO <ESTABLECIENDO DATO> FILA -> 100. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,211 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 101, PASO <ESTABLECIENDO DATO> FILA -> 101. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,223 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 102, PASO <ESTABLECIENDO DATO> FILA -> 102. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,233 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 103, PASO <ESTABLECIENDO DATO> FILA -> 103. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,243 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 104, PASO <ESTABLECIENDO DATO> FILA -> 104. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,253 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 105, PASO <ESTABLECIENDO DATO> FILA -> 105. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,262 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 106, PASO <ESTABLECIENDO DATO> FILA -> 106. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,276 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 107, PASO <ESTABLECIENDO DATO> FILA -> 107. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,291 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 108, PASO <ESTABLECIENDO DATO> FILA -> 108. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,310 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 109, PASO <ESTABLECIENDO DATO> FILA -> 109. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,334 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 110, PASO <ESTABLECIENDO DATO> FILA -> 110. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,351 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 111, PASO <ESTABLECIENDO DATO> FILA -> 111. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,365 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 112, PASO <ESTABLECIENDO DATO> FILA -> 112. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,381 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 113, PASO <ESTABLECIENDO DATO> FILA -> 113. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,397 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 114, PASO <ESTABLECIENDO DATO> FILA -> 114. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,418 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 115, PASO <ESTABLECIENDO DATO> FILA -> 115. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,432 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 116, PASO <ESTABLECIENDO DATO> FILA -> 116. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,444 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 117, PASO <ESTABLECIENDO DATO> FILA -> 117. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,458 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 118, PASO <ESTABLECIENDO DATO> FILA -> 118. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,469 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 119, PASO <ESTABLECIENDO DATO> FILA -> 119. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,484 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 120, PASO <ESTABLECIENDO DATO> FILA -> 120. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,503 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 121, PASO <ESTABLECIENDO DATO> FILA -> 121. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,514 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 122, PASO <ESTABLECIENDO DATO> FILA -> 122. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,527 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 123, PASO <ESTABLECIENDO DATO> FILA -> 123. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,540 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 124, PASO <ESTABLECIENDO DATO> FILA -> 124. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,554 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 125, PASO <ESTABLECIENDO DATO> FILA -> 125. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,565 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 126, PASO <ESTABLECIENDO DATO> FILA -> 126. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,579 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 127, PASO <ESTABLECIENDO DATO> FILA -> 127. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,605 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 128, PASO <ESTABLECIENDO DATO> FILA -> 128. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,617 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 129, PASO <ESTABLECIENDO DATO> FILA -> 129. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,628 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 130, PASO <ESTABLECIENDO DATO> FILA -> 130. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,639 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 131, PASO <ESTABLECIENDO DATO> FILA -> 131. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,651 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 132, PASO <ESTABLECIENDO DATO> FILA -> 132. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,661 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 133, PASO <ESTABLECIENDO DATO> FILA -> 133. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,675 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 134, PASO <ESTABLECIENDO DATO> FILA -> 134. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,688 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 135, PASO <ESTABLECIENDO DATO> FILA -> 135. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,703 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 136, PASO <ESTABLECIENDO DATO> FILA -> 136. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,717 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 137, PASO <ESTABLECIENDO DATO> FILA -> 137. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,730 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 138, PASO <ESTABLECIENDO DATO> FILA -> 138. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,742 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 139, PASO <ESTABLECIENDO DATO> FILA -> 139. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,755 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 140, PASO <ESTABLECIENDO DATO> FILA -> 140. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,764 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 141, PASO <ESTABLECIENDO DATO> FILA -> 141. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,776 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 142, PASO <ESTABLECIENDO DATO> FILA -> 142. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,788 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 143, PASO <ESTABLECIENDO DATO> FILA -> 143. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,801 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 144, PASO <ESTABLECIENDO DATO> FILA -> 144. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,811 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 145, PASO <ESTABLECIENDO DATO> FILA -> 145. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,823 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 146, PASO <ESTABLECIENDO DATO> FILA -> 146. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,833 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 147, PASO <ESTABLECIENDO DATO> FILA -> 147. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,844 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 148, PASO <ESTABLECIENDO DATO> FILA -> 148. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,854 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 149, PASO <ESTABLECIENDO DATO> FILA -> 149. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,863 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 150, PASO <ESTABLECIENDO DATO> FILA -> 150. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,876 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 151, PASO <ESTABLECIENDO DATO> FILA -> 151. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,891 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 152, PASO <ESTABLECIENDO DATO> FILA -> 152. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,937 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 153, PASO <ESTABLECIENDO DATO> FILA -> 153. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,957 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 154, PASO <ESTABLECIENDO DATO> FILA -> 154. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,974 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 155, PASO <ESTABLECIENDO DATO> FILA -> 155. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:22,995 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 156, PASO <ESTABLECIENDO DATO> FILA -> 156. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,010 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 157, PASO <ESTABLECIENDO DATO> FILA -> 157. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,033 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 158, PASO <ESTABLECIENDO DATO> FILA -> 158. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,050 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 159, PASO <ESTABLECIENDO DATO> FILA -> 159. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,065 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 160, PASO <ESTABLECIENDO DATO> FILA -> 160. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,080 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 161, PASO <ESTABLECIENDO DATO> FILA -> 161. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,094 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 162, PASO <ESTABLECIENDO DATO> FILA -> 162. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,109 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 163, PASO <ESTABLECIENDO DATO> FILA -> 163. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,123 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 164, PASO <ESTABLECIENDO DATO> FILA -> 164. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,135 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 165, PASO <ESTABLECIENDO DATO> FILA -> 165. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,144 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 166, PASO <ESTABLECIENDO DATO> FILA -> 166. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,156 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 167, PASO <ESTABLECIENDO DATO> FILA -> 167. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,171 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 168, PASO <ESTABLECIENDO DATO> FILA -> 168. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,185 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 169, PASO <ESTABLECIENDO DATO> FILA -> 169. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,210 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 170, PASO <ESTABLECIENDO DATO> FILA -> 170. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,225 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 171, PASO <ESTABLECIENDO DATO> FILA -> 171. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,239 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 172, PASO <ESTABLECIENDO DATO> FILA -> 172. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,252 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 173, PASO <ESTABLECIENDO DATO> FILA -> 173. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,263 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 174, PASO <ESTABLECIENDO DATO> FILA -> 174. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,280 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 175, PASO <ESTABLECIENDO DATO> FILA -> 175. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,293 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 176, PASO <ESTABLECIENDO DATO> FILA -> 176. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:41:23,305 [42] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 177, PASO <ESTABLECIENDO DATO> FILA -> 177. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:43:41,523 [47] ERROR <startImport> <FICHERO> , FILA 0, PASO . 
+Referencia a objeto no establecida como instancia de un objeto. - [:0]
+2017-07-26 10:43:43,065 [47] ERROR <startImport> <FICHERO> , INICIO. 
+Referencia a objeto no establecida como instancia de un objeto. - [:0]
+2017-07-26 10:55:10,189 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 2, PASO <ESTABLECIENDO DATO> FILA -> 2. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,502 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 3, PASO <ESTABLECIENDO DATO> FILA -> 3. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,517 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 4, PASO <ESTABLECIENDO DATO> FILA -> 4. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,527 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 5, PASO <ESTABLECIENDO DATO> FILA -> 5. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,538 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 6, PASO <ESTABLECIENDO DATO> FILA -> 6. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,549 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 7, PASO <ESTABLECIENDO DATO> FILA -> 7. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,560 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 8, PASO <ESTABLECIENDO DATO> FILA -> 8. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,569 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 9, PASO <ESTABLECIENDO DATO> FILA -> 9. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,580 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 10, PASO <ESTABLECIENDO DATO> FILA -> 10. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,589 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 11, PASO <ESTABLECIENDO DATO> FILA -> 11. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,598 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 12, PASO <ESTABLECIENDO DATO> FILA -> 12. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,608 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 13, PASO <ESTABLECIENDO DATO> FILA -> 13. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,619 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 14, PASO <ESTABLECIENDO DATO> FILA -> 14. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,630 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 15, PASO <ESTABLECIENDO DATO> FILA -> 15. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,644 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 16, PASO <ESTABLECIENDO DATO> FILA -> 16. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,653 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 17, PASO <ESTABLECIENDO DATO> FILA -> 17. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,666 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 18, PASO <ESTABLECIENDO DATO> FILA -> 18. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,677 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 19, PASO <ESTABLECIENDO DATO> FILA -> 19. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,688 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 20, PASO <ESTABLECIENDO DATO> FILA -> 20. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,700 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 21, PASO <ESTABLECIENDO DATO> FILA -> 21. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,710 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 22, PASO <ESTABLECIENDO DATO> FILA -> 22. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,740 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 23, PASO <ESTABLECIENDO DATO> FILA -> 23. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,751 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 24, PASO <ESTABLECIENDO DATO> FILA -> 24. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,760 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 25, PASO <ESTABLECIENDO DATO> FILA -> 25. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,769 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 26, PASO <ESTABLECIENDO DATO> FILA -> 26. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,778 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 27, PASO <ESTABLECIENDO DATO> FILA -> 27. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,786 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 28, PASO <ESTABLECIENDO DATO> FILA -> 28. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,795 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 29, PASO <ESTABLECIENDO DATO> FILA -> 29. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,803 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 30, PASO <ESTABLECIENDO DATO> FILA -> 30. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,811 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 31, PASO <ESTABLECIENDO DATO> FILA -> 31. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,822 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 32, PASO <ESTABLECIENDO DATO> FILA -> 32. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,832 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 33, PASO <ESTABLECIENDO DATO> FILA -> 33. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,841 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 34, PASO <ESTABLECIENDO DATO> FILA -> 34. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,850 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 35, PASO <ESTABLECIENDO DATO> FILA -> 35. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,858 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 36, PASO <ESTABLECIENDO DATO> FILA -> 36. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,867 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 37, PASO <ESTABLECIENDO DATO> FILA -> 37. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,876 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 38, PASO <ESTABLECIENDO DATO> FILA -> 38. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,886 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 39, PASO <ESTABLECIENDO DATO> FILA -> 39. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,894 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 40, PASO <ESTABLECIENDO DATO> FILA -> 40. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,905 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 41, PASO <ESTABLECIENDO DATO> FILA -> 41. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,917 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 42, PASO <ESTABLECIENDO DATO> FILA -> 42. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,931 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 43, PASO <ESTABLECIENDO DATO> FILA -> 43. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,942 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 44, PASO <ESTABLECIENDO DATO> FILA -> 44. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,951 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 45, PASO <ESTABLECIENDO DATO> FILA -> 45. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,962 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 46, PASO <ESTABLECIENDO DATO> FILA -> 46. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,971 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 47, PASO <ESTABLECIENDO DATO> FILA -> 47. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,982 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 48, PASO <ESTABLECIENDO DATO> FILA -> 48. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:14,992 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 49, PASO <ESTABLECIENDO DATO> FILA -> 49. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,002 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 50, PASO <ESTABLECIENDO DATO> FILA -> 50. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,012 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 51, PASO <ESTABLECIENDO DATO> FILA -> 51. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,025 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 52, PASO <ESTABLECIENDO DATO> FILA -> 52. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,034 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 53, PASO <ESTABLECIENDO DATO> FILA -> 53. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,044 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 54, PASO <ESTABLECIENDO DATO> FILA -> 54. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,055 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 55, PASO <ESTABLECIENDO DATO> FILA -> 55. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,066 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 56, PASO <ESTABLECIENDO DATO> FILA -> 56. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,077 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 57, PASO <ESTABLECIENDO DATO> FILA -> 57. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,088 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 58, PASO <ESTABLECIENDO DATO> FILA -> 58. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,099 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 59, PASO <ESTABLECIENDO DATO> FILA -> 59. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,110 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 60, PASO <ESTABLECIENDO DATO> FILA -> 60. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,122 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 61, PASO <ESTABLECIENDO DATO> FILA -> 61. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,145 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 62, PASO <ESTABLECIENDO DATO> FILA -> 62. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,158 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 63, PASO <ESTABLECIENDO DATO> FILA -> 63. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,168 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 64, PASO <ESTABLECIENDO DATO> FILA -> 64. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,178 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 65, PASO <ESTABLECIENDO DATO> FILA -> 65. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,188 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 66, PASO <ESTABLECIENDO DATO> FILA -> 66. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,199 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 67, PASO <ESTABLECIENDO DATO> FILA -> 67. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,209 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 68, PASO <ESTABLECIENDO DATO> FILA -> 68. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,223 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 69, PASO <ESTABLECIENDO DATO> FILA -> 69. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,234 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 70, PASO <ESTABLECIENDO DATO> FILA -> 70. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,245 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 71, PASO <ESTABLECIENDO DATO> FILA -> 71. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,255 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 72, PASO <ESTABLECIENDO DATO> FILA -> 72. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,265 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 73, PASO <ESTABLECIENDO DATO> FILA -> 73. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,274 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 74, PASO <ESTABLECIENDO DATO> FILA -> 74. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,283 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 75, PASO <ESTABLECIENDO DATO> FILA -> 75. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,294 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 76, PASO <ESTABLECIENDO DATO> FILA -> 76. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,303 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 77, PASO <ESTABLECIENDO DATO> FILA -> 77. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,312 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 78, PASO <ESTABLECIENDO DATO> FILA -> 78. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,321 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 79, PASO <ESTABLECIENDO DATO> FILA -> 79. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,332 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 80, PASO <ESTABLECIENDO DATO> FILA -> 80. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,342 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 81, PASO <ESTABLECIENDO DATO> FILA -> 81. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,353 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 82, PASO <ESTABLECIENDO DATO> FILA -> 82. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,362 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 83, PASO <ESTABLECIENDO DATO> FILA -> 83. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,370 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 84, PASO <ESTABLECIENDO DATO> FILA -> 84. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,378 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 85, PASO <ESTABLECIENDO DATO> FILA -> 85. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,387 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 86, PASO <ESTABLECIENDO DATO> FILA -> 86. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,395 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 87, PASO <ESTABLECIENDO DATO> FILA -> 87. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,403 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 88, PASO <ESTABLECIENDO DATO> FILA -> 88. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,413 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 89, PASO <ESTABLECIENDO DATO> FILA -> 89. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,423 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 90, PASO <ESTABLECIENDO DATO> FILA -> 90. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,433 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 91, PASO <ESTABLECIENDO DATO> FILA -> 91. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,442 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 92, PASO <ESTABLECIENDO DATO> FILA -> 92. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,455 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 93, PASO <ESTABLECIENDO DATO> FILA -> 93. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,465 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 94, PASO <ESTABLECIENDO DATO> FILA -> 94. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,475 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 95, PASO <ESTABLECIENDO DATO> FILA -> 95. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,493 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 96, PASO <ESTABLECIENDO DATO> FILA -> 96. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,513 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 97, PASO <ESTABLECIENDO DATO> FILA -> 97. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,529 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 98, PASO <ESTABLECIENDO DATO> FILA -> 98. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,545 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 99, PASO <ESTABLECIENDO DATO> FILA -> 99. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,560 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 100, PASO <ESTABLECIENDO DATO> FILA -> 100. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,572 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 101, PASO <ESTABLECIENDO DATO> FILA -> 101. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,584 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 102, PASO <ESTABLECIENDO DATO> FILA -> 102. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,595 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 103, PASO <ESTABLECIENDO DATO> FILA -> 103. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,604 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 104, PASO <ESTABLECIENDO DATO> FILA -> 104. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,616 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 105, PASO <ESTABLECIENDO DATO> FILA -> 105. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,628 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 106, PASO <ESTABLECIENDO DATO> FILA -> 106. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,640 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 107, PASO <ESTABLECIENDO DATO> FILA -> 107. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,653 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 108, PASO <ESTABLECIENDO DATO> FILA -> 108. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,664 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 109, PASO <ESTABLECIENDO DATO> FILA -> 109. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,675 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 110, PASO <ESTABLECIENDO DATO> FILA -> 110. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,685 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 111, PASO <ESTABLECIENDO DATO> FILA -> 111. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,699 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 112, PASO <ESTABLECIENDO DATO> FILA -> 112. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,708 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 113, PASO <ESTABLECIENDO DATO> FILA -> 113. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,721 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 114, PASO <ESTABLECIENDO DATO> FILA -> 114. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,732 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 115, PASO <ESTABLECIENDO DATO> FILA -> 115. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,754 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 116, PASO <ESTABLECIENDO DATO> FILA -> 116. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,763 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 117, PASO <ESTABLECIENDO DATO> FILA -> 117. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,774 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 118, PASO <ESTABLECIENDO DATO> FILA -> 118. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,785 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 119, PASO <ESTABLECIENDO DATO> FILA -> 119. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,797 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 120, PASO <ESTABLECIENDO DATO> FILA -> 120. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,806 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 121, PASO <ESTABLECIENDO DATO> FILA -> 121. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,817 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 122, PASO <ESTABLECIENDO DATO> FILA -> 122. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,829 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 123, PASO <ESTABLECIENDO DATO> FILA -> 123. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,842 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 124, PASO <ESTABLECIENDO DATO> FILA -> 124. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,851 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 125, PASO <ESTABLECIENDO DATO> FILA -> 125. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,861 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 126, PASO <ESTABLECIENDO DATO> FILA -> 126. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,869 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 127, PASO <ESTABLECIENDO DATO> FILA -> 127. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,877 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 128, PASO <ESTABLECIENDO DATO> FILA -> 128. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,886 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 129, PASO <ESTABLECIENDO DATO> FILA -> 129. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,894 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 130, PASO <ESTABLECIENDO DATO> FILA -> 130. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,903 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 131, PASO <ESTABLECIENDO DATO> FILA -> 131. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,913 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 132, PASO <ESTABLECIENDO DATO> FILA -> 132. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,924 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 133, PASO <ESTABLECIENDO DATO> FILA -> 133. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,934 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 134, PASO <ESTABLECIENDO DATO> FILA -> 134. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,944 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 135, PASO <ESTABLECIENDO DATO> FILA -> 135. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,956 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 136, PASO <ESTABLECIENDO DATO> FILA -> 136. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,964 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 137, PASO <ESTABLECIENDO DATO> FILA -> 137. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,978 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 138, PASO <ESTABLECIENDO DATO> FILA -> 138. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,987 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 139, PASO <ESTABLECIENDO DATO> FILA -> 139. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:15,999 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 140, PASO <ESTABLECIENDO DATO> FILA -> 140. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,012 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 141, PASO <ESTABLECIENDO DATO> FILA -> 141. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,026 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 142, PASO <ESTABLECIENDO DATO> FILA -> 142. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,042 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 143, PASO <ESTABLECIENDO DATO> FILA -> 143. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,054 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 144, PASO <ESTABLECIENDO DATO> FILA -> 144. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,064 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 145, PASO <ESTABLECIENDO DATO> FILA -> 145. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,073 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 146, PASO <ESTABLECIENDO DATO> FILA -> 146. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,082 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 147, PASO <ESTABLECIENDO DATO> FILA -> 147. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,092 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 148, PASO <ESTABLECIENDO DATO> FILA -> 148. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,102 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 149, PASO <ESTABLECIENDO DATO> FILA -> 149. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,111 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 150, PASO <ESTABLECIENDO DATO> FILA -> 150. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,123 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 151, PASO <ESTABLECIENDO DATO> FILA -> 151. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,133 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 152, PASO <ESTABLECIENDO DATO> FILA -> 152. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,144 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 153, PASO <ESTABLECIENDO DATO> FILA -> 153. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,154 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 154, PASO <ESTABLECIENDO DATO> FILA -> 154. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,165 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 155, PASO <ESTABLECIENDO DATO> FILA -> 155. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,176 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 156, PASO <ESTABLECIENDO DATO> FILA -> 156. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,193 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 157, PASO <ESTABLECIENDO DATO> FILA -> 157. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,203 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 158, PASO <ESTABLECIENDO DATO> FILA -> 158. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,215 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 159, PASO <ESTABLECIENDO DATO> FILA -> 159. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,236 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 160, PASO <ESTABLECIENDO DATO> FILA -> 160. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,269 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 161, PASO <ESTABLECIENDO DATO> FILA -> 161. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,280 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 162, PASO <ESTABLECIENDO DATO> FILA -> 162. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,289 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 163, PASO <ESTABLECIENDO DATO> FILA -> 163. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,300 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 164, PASO <ESTABLECIENDO DATO> FILA -> 164. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,311 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 165, PASO <ESTABLECIENDO DATO> FILA -> 165. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,323 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 166, PASO <ESTABLECIENDO DATO> FILA -> 166. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,335 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 167, PASO <ESTABLECIENDO DATO> FILA -> 167. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,346 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 168, PASO <ESTABLECIENDO DATO> FILA -> 168. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,355 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 169, PASO <ESTABLECIENDO DATO> FILA -> 169. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,364 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 170, PASO <ESTABLECIENDO DATO> FILA -> 170. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,374 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 171, PASO <ESTABLECIENDO DATO> FILA -> 171. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,382 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 172, PASO <ESTABLECIENDO DATO> FILA -> 172. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,390 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 173, PASO <ESTABLECIENDO DATO> FILA -> 173. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,401 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 174, PASO <ESTABLECIENDO DATO> FILA -> 174. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,410 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 175, PASO <ESTABLECIENDO DATO> FILA -> 175. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,421 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 176, PASO <ESTABLECIENDO DATO> FILA -> 176. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]
+2017-07-26 10:55:16,432 [45] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 220617V1.xlsx, FILA 177, PASO <ESTABLECIENDO DATO> FILA -> 177. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 0. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:153]

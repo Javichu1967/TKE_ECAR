@@ -1,0 +1,13 @@
+﻿@using resourceView = TK_ECAR.Content.resources
+@model DatosGeneralesModel
+
+<div class="col-md-12">
+    <div class="notice notice-Lightgreen">
+        <div class="form-group">
+            @Html.LabelFor(model => model.Observaciones, new { @class = "control-label col-md-1" })
+            <div class="col-md-11">
+                @Html.TextAreaFor(model => model.Observaciones, new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+            </div>
+        </div>
+    </div>
+</div>

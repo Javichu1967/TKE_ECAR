@@ -1,0 +1,304 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Framework
+
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="navbar-collapse collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.Gestion))
+                        {
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@resourceView.TitleGestion<span class="caret"></span></a>
+                            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoCategoriasPreguntas))
+                                {
+                                    <li class="dropdown-submenu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">@resourceView.TitlePreguntasFrecuentes</a>
+                                        <ul class="dropdown-menu">
+                                            @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoCategoriasPreguntas))
+                                            {
+                                                <li @Html.IsActive("Index", "CategoriasPreguntas", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleCategoriasPreguntas, "Index", "CategoriasPreguntas")</li>}
+                                            @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoPreguntasFrecuentes))
+                                            {
+                                                <li @Html.IsActive("Index", "PreguntasFrecuentes", "class=\"active\"")>@Html.ActionLink(@resourceView.TitlePreguntasFrecuentes, "Index", "PreguntasFrecuentes")</li>}
+                                        </ul>
+                                    </li>
+                                    <li class="divider"></li>
+                                }
+                                @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoCategorias))
+                                {
+                                    <li class="dropdown-submenu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">@resourceView.TitleDocumentos</a>
+                                        <ul class="dropdown-menu">
+                                            @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoCategorias))
+                                            {
+                                                <li @Html.IsActive("Index", "Categorias", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleCategorias, "Index", "Categorias")</li>}
+                                            @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoDocumentacion))
+                                            {
+                                                <li @Html.IsActive("Index", "Documentos", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleDocumentos, "Index", "Documentos")</li>}
+                                        </ul>
+                                    </li>
+                                    <li class="divider"></li>
+                                }
+                                @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoDiasPreavisoTipoAlerta))
+                                {
+                                    <li @Html.IsActive("Index", "PreavisosAlertas", "class=\"active\"")>@Html.ActionLink(@resourceView.TitlePreavisoAlertas, "Index", "PreavisosAlertas")</li>}
+                                @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoTelefonosFrecuentes))
+                                {
+                                    <li @Html.IsActive("Index", "TelefonosFrecuentes", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleTelefonosFrecuentes, "Index", "TelefonosFrecuentes")</li>}
+                                @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoGestoresFlota))
+                                {
+                                    <li @Html.IsActive("Index", "GestoresFlota", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleGestoresFlota, "Index", "GestoresFlota")</li>}
+
+                                @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoConductores))
+                                {
+                                <li class="divider"></li>
+                                <li @Html.IsActive("Index", "Conductores", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleConductores, "Index", "Conductores")</li>
+                                }
+
+                                @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoTarjetasCombustible) ||
+                                    @Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoTiposTarjetasCombustible))
+                                {
+                                    <li class="divider"></li>
+                                    <li class="dropdown-submenu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">@resourceView.TitleTarjetasCombustible</a>
+                                        <ul class="dropdown-menu">
+                                            @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoTiposTarjetasCombustible))
+                                            {
+                                                <li @Html.IsActive("TarjetaCombustible", "MtoGenericoTipos", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleTipoTarjetaCombustible, "TarjetaCombustible", "MtoGenericoTipos", new { tipoMantenimiento = (int)EnumMtoTiposGenerales.TarjetaCombustible }, null)</li>}
+                                            @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoTarjetasCombustible))
+                                            {
+                                                <li @Html.IsActive("Index", "TarjetasCombustible", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleTarjetasCombustible, "Index", "TarjetasCombustible")</li>}
+                                        </ul>
+                                    </li>
+                                }
+
+                                @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoEmpVehiculos))
+                                {
+                                    <li class="divider"></li>
+                                    <li @Html.IsActive("Index", "EmpresasVehiculos", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleEmpAseguradoras_Renting, "Index", "EmpresasVehiculos")</li>
+                                }
+
+                                @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoCarburante) ||
+                                    @Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoMarcasVehiculo) ||
+                                    @Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoModelosVehiculo) ||
+                                    @Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoRutasVehiculo) ||
+                                    @Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoTiposSeguroVehiculo) ||
+                                    @Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoUbicaciones) ||
+                                    @Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoTiposVehiculo) ||
+                                    @Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoTipoLiquidacionSeguro))
+                                {
+                                    <li class="divider"></li>
+                                    <li class="dropdown-submenu">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">@resourceView.TitleVehiculo</a>
+                                        <ul class="dropdown-menu">
+                                            @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoMarcasVehiculo))
+                                            {
+                                                <li @Html.IsActive("Marcas", "MtoGenericoTipos", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleMarcaVehiculo, "Marcas", "MtoGenericoTipos", new { tipoMantenimiento = (int)EnumMtoTiposGenerales.Marcas }, null)</li>}
+                                            @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoModelosVehiculo))
+                                            {
+                                                <li @Html.IsActive("Modelos", "MtoGenericoTipos", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleModeloVehiculo, "Modelos", "MtoGenericoTipos", new { tipoMantenimiento = (int)EnumMtoTiposGenerales.Modelos }, null)</li>}
+                                            @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoTiposVehiculo))
+                                            {
+                                                <li @Html.IsActive("Vehiculos", "MtoGenericoTipos", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleTipoVehiculo, "Vehiculos", "MtoGenericoTipos", new { tipoMantenimiento = (int)EnumMtoTiposGenerales.Vehiculos }, null)</li>}
+                                            @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoRutasVehiculo))
+                                            {
+                                                <li @Html.IsActive("Ruta", "MtoGenericoTipos", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleTipoRuta, "Ruta", "MtoGenericoTipos", new { tipoMantenimiento = (int)EnumMtoTiposGenerales.Ruta }, null)</li>}
+                                            @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoCarburante))
+                                            {
+                                                <li @Html.IsActive("Carburante", "MtoGenericoTipos", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleCarburante, "Carburante", "MtoGenericoTipos", new { tipoMantenimiento = (int)EnumMtoTiposGenerales.Carburante }, null)</li>}
+                                            @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoTiposSeguroVehiculo))
+                                            {
+                                                <li @Html.IsActive("Seguro", "MtoGenericoTipos", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleTipoSeguro, "Seguro", "MtoGenericoTipos", new { tipoMantenimiento = (int)EnumMtoTiposGenerales.Seguro }, null)</li>}
+                                            @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoTipoLiquidacionSeguro))
+                                            {
+                                                <li @Html.IsActive("TipoLiquidacion", "MtoGenericoTipos", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleTipoLiquidacionSeguro, "TipoLiquidacion", "MtoGenericoTipos", new { tipoMantenimiento = (int)EnumMtoTiposGenerales.TipoLiquidacionSeguro }, null)</li>}
+                                            @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MtoUbicaciones))
+                                            {
+                                                <li @Html.IsActive("Ubicaciones", "MtoGenericoTipos", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleUbicacion, "Ubicaciones", "MtoGenericoTipos", new { tipoMantenimiento = (int)EnumMtoTiposGenerales.Ubicaciones }, null)</li>}
+                                        </ul>
+                                    </li>
+                                }
+                            </ul>
+                        }
+                    </li>
+
+
+                    @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.ImportarFlota) ||
+                        @Html.OptionMenuIsVisible(EnumOpcionesMenu.ImportarViaVerde) ||
+                        @Html.OptionMenuIsVisible(EnumOpcionesMenu.ImportarConsumoCombustible) ||
+                        @Html.OptionMenuIsVisible(EnumOpcionesMenu.ImportarLEASING))
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@resourceView.TitleImportacion<span class="caret"></span></a>
+                            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">@resourceView.TitleFlota</a>
+                                    <ul class="dropdown-menu">
+                                        @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.ImportarFlota))
+                                        {
+                                            <li @Html.IsActive("Index", "ImportarFlota", "class=\"active\"")>@Html.ActionLink(resourceView.TitleImportacion, "Index", "ImportarFlota")</li>}
+                                        @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.BorrarImportacion))
+                                        {
+                                            <li class="divider"></li>
+                                            <li @Html.IsActive("BorrarImportacionFlota", "BorrarImportacion", "class=\"active\"")>@Html.ActionLink(@resourceView.btnBorrarImportacion, "BorrarImportacionFlota", "BorrarImportacion", new { tipoBorrado = (int)EnumTipoBorradoImportacion.BorrarImportacionFlota }, null)</li>}
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">@resourceView.TitleFacturacion</a>
+                                    <ul class="dropdown-menu">
+                                        @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.ImportarLEASING))
+                                        {
+                                            <li @Html.IsActive("Index", "ImportarLeasing", "class=\"active\"")>@Html.ActionLink(resourceView.TitleImportacion, "Index", "ImportarLeasing")</li>}
+                                        @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.BorrarImportacion))
+                                        {
+                                            <li class="divider"></li>
+                                            <li @Html.IsActive("BorrarImportacionFacturacion", "BorrarImportacion", "class=\"active\"")>@Html.ActionLink(resourceView.btnBorrarImportacion, "BorrarImportacionFacturacion", "BorrarImportacion", new { tipoBorrado = (int)EnumTipoBorradoImportacion.BorrarImportacionFacuracion }, null)</li>}
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">@resourceView.TitleViaVerde</a>
+                                    <ul class="dropdown-menu">
+                                        @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.ImportarViaVerde))
+                                        {
+                                            <li @Html.IsActive("Index", "ImportarViaVerde", "class=\"active\"")>@Html.ActionLink(resourceView.TitleImportacion, "Index", "ImportarViaVerde")</li>}
+                                        @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.BorrarImportacion))
+                                        {
+                                            <li class="divider"></li>
+                                            <li @Html.IsActive("BorrarImportacionViaVerde", "BorrarImportacion", "class=\"active\"")>@Html.ActionLink(resourceView.btnBorrarImportacion, "BorrarImportacionViaVerde", "BorrarImportacion", new { tipoBorrado = (int)EnumTipoBorradoImportacion.BorrarImportacionViaVerde }, null)</li>}
+                                    </ul>
+                                </li>
+                                <li class="dropdown-submenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">@resourceView.TitleCombustible</a>
+                                    <ul class="dropdown-menu">
+                                        @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.ImportarConsumoCombustible))
+                                        {
+                                            <li @Html.IsActive("Index", "ImportarConsumoCombustible", "class=\"active\"")>@Html.ActionLink(resourceView.TitleImportacion, "Index", "ImportarConsumoCombustible")</li>}
+                                        @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.BorrarImportacion))
+                                        {
+                                            <li class="divider"></li>
+                                            <li @Html.IsActive("BorrarImportacionCombustible", "BorrarImportacion", "class=\"active\"")>@Html.ActionLink(resourceView.btnBorrarImportacion, "BorrarImportacionCombustible", "BorrarImportacion", new { tipoBorrado = (int)EnumTipoBorradoImportacion.BorrarImportacionCombustible }, null)</li>}
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    }
+
+                    @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.Facturacion))
+                    {
+                    <li @Html.IsActive("Index", "Facturacion", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleFacturacion, "Index", "Facturacion")</li>}
+
+                    @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.Alertas))
+                    {<li @Html.IsActive("Index", "Alertas", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleAlertas, "Index", "Alertas")</li>}
+
+                    @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MiVehiculo))
+                    {<li @Html.IsActive("Index", "MiVehiculo", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleMiVehiculo, "Index", "MiVehiculo")</li>}
+
+                    @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.MiFlota))
+                    {<li @Html.IsActive("Index", "MiFlota", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleMiFlota, "Index", "MiFlota")</li>}
+
+                    @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.PreguntasFrecuentes))
+                    {<li @Html.IsActive("VerPreguntasFrecuentes", "PreguntasFrecuentes", "class=\"active\"")>@Html.ActionLink(@resourceView.TitlePreguntasFrecuentes, "VerPreguntasFrecuentes", "PreguntasFrecuentes")</li>}
+
+                    @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.Documentacion))
+                    {<li @Html.IsActive("VerDocumentacion", "Documentos", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleDocumentos, "VerDocumentacion", "Documentos")</li>}
+
+                    @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.InfAltaBajaFechaContrato))
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@resourceView.TitleInformes <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.InfAltaBajaFechaContrato))
+                                {<li @Html.IsActive("InfAltaBajaFechaContrato", "Informes", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleInfAltaBajaFechaContrato, "InfAltaBajaFechaContrato", "Informes")</li>}
+                            </ul>
+                        </li>
+                    }
+
+                    @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.AplicacionesExternas))
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@resourceView.TitleAplicacionesExternas <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.InformesConsumos))
+                                {<li><a target="_blank" href="http://webapps.thyssenkrupp.gtk.local/TKEES_INTRANET_FLOTA/">@resourceView.TitleInformeConsumos</a></li>}
+                                @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.PlataformaPresupuestos))
+                                {<li><a target="_blank" href="http://jupiter.thyssenkrupp.gtk.local/1617/">@resourceView.TitlePlataformaPresupuestos</a></li>}
+                            </ul>
+                        </li>
+                    }
+                    @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.GestoresFlota))
+                    {
+                    <li @Html.IsActive("VerGestorFlota", "GestoresFlota", "class=\"active\"")>@Html.ActionLink(@resourceView.TitleGestoresFlota, "VerGestorFlota", "GestoresFlota")</li>}
+                        
+                    @if (@Html.OptionMenuIsVisible(EnumOpcionesMenu.TelefonoFrecuentes))
+                    {
+                        <li class="dropdown" id="telefonosfrecuentes">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@resourceView.TitleTelefonosFrecuentes <span class="caret"></span></a>
+                            <ul class="dropdown-menu" id="dropdownTelefonosfrecuentes">
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<script>
+    $(document).ready(function () {
+
+        rellenaTelefonosFrecuentes();
+
+        $('#telefonosfrecuentes').data('open', false);
+
+        //Borrar lista de Teléfonos frecuentes para recargarla.
+        $("#telefonosfrecuentes").click(function () {
+             
+            var menu = $("#dropdownTelefonosfrecuentes");
+            if (!$('#telefonosfrecuentes').data('open')) {
+                $('#telefonosfrecuentes').data('open', true);
+                //menu.children("li").eq(0).remove();
+                //menu.closest('li').remove();
+                menu.children("li").each(function () {
+                    $(this).remove();
+                });
+                rellenaTelefonosFrecuentes();
+            }
+            else {
+                $('#telefonosfrecuentes').data('open', false);
+            }
+        })
+
+        $(document).click(function () {
+            if ($('#telefonosfrecuentes').data('open')) {
+                $('#telefonosfrecuentes').data('open', false);
+            }
+        });
+    });
+
+    //Añadir teéfonos frecuentes al menú
+    function rellenaTelefonosFrecuentes() {
+       
+        $.ajax({
+            type: "POST",
+            async: false,
+            url: '@Url.Action("GetTelefonosFrecuentes", "Home")',
+            dataType: "json",
+            contentType: "application/json",
+            success: function (data) {
+                 
+                $.each(data, function (i, item) {
+                    $("#telefonosfrecuentes ul").append('<li><a href="#"> ' + item.DESCRIPCION + '  ' + item.NUMERO_TELEFONO + '</a></li>');
+                }); 
+            }
+        });
+    }
+
+</script>

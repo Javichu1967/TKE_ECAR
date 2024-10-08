@@ -1,0 +1,39 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Models
+@using TK_ECAR.Utils
+@model IEnumerable<DatosVehiculoSOLREDModel>
+
+@{ 
+    var tituloDatosCombustible = ViewData["Sociedad"].ToString() != Constants.CODIGO_EMPRESA_PORTUGAL.ToString() ? @resourceView.TitleListadoDatosSolRed : @resourceView.TitleListadoDatosGALP;
+}
+
+<h2> @tituloDatosCombustible </h2>
+<table id="tabledatosSOLRED" class="display responsive" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblEjercicio</th>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblFechaFactura</th>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblFechaOperacion</th>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblProducto</th>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblKilometros</th>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblNumLitros</th>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblImporteSinIVA</th>
+        </tr>
+    </thead>
+
+    @*<tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.Ejercicio</td>
+                <td>@Html.DisplayFor(modelItem => item.FechaFactura)</td>
+                <td>@Html.DisplayFor(modelItem => item.FechaOperacion)</td>
+                <td>@item.DescProducto</td>
+                <td>@Html.DisplayFor(modelItem => item.Kilometros)</td>
+                <td>@Html.DisplayFor(modelItem => item.Litros)</td>
+                <td>@Html.DisplayFor(modelItem => item.Importe)</td>
+            </tr>
+        }
+    </tbody>*@
+</table>
+ 

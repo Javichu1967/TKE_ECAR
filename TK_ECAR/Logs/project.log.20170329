@@ -1,0 +1,2 @@
+2017-03-29 15:57:01,543 [13] ERROR Validation failed for one or more entities. See 'EntityValidationErrors' property for more details. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:106]
+2017-03-29 15:58:40,449 [12] ERROR Validation failed for one or more entities. See 'EntityValidationErrors' property for more details. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:106]

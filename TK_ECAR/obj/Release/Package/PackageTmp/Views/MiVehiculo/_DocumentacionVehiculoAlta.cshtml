@@ -1,0 +1,82 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Models
+@model DatosVehiculoDocumentacionModel
+
+
+@Html.HiddenFor(m => m.idDocumento)
+@Html.HiddenFor(m => m.Matricula)
+@Html.HiddenFor(m => m.Documento)
+@Html.HiddenFor(m => m.Accion)
+<div class="form-horizontal">
+    <div class="form-group">       
+        @Html.RequiredLabelFor(m => m.idCategoria, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">       
+            @Html.DropDownListTiposAlertas("idCategoria", new { @class = "form-control" }, Model.idCategoria)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.DescDocumento, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+            @Html.TextAreaFor(m => m.DescDocumento, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.FileUploadDocumentacion, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+            @Html.EditorFor(m => m.FileUploadDocumentacion)
+            @*@Html.TextBoxFor(m => m.Documento, new { style = "display: none;" })*@
+        </div>
+    </div>
+    <div class="form-group" id="existente">
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-8">
+            <div class="info">
+                <h3>@Html.Raw(@resourceView.LDocumentoExistente)</h3>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12">
+            @Html.Partial("_CustomValidationSummary", ViewData.ModelState)
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#existente').hide();
+
+        //CompruebaArchivo
+        $("#FileUploadDocumentacion").on('change', function (evt) {
+            var _archivo = $("#FileUploadDocumentacion").val();
+            var _matricula = $("#Matricula").val();
+            if (_archivo != "") {
+                $("#Documento").val(document.getElementById("FileUploadDocumentacion").files[0].name);
+                _data = "{nombreArchivo:" + JSON.stringify(document.getElementById("FileUploadDocumentacion").files[0].name) + ", matricula:" + JSON.stringify(_matricula) + "}";
+                $.ajax({
+                    type: "POST",
+                    async: false,
+                    url: '@Url.Action("CompruebaDocumentoVehiculo", "MiVehiculo")',
+                    data: _data,
+                    dataType: "json",
+                    contentType: "application/json",
+                    success: function (res) {
+                        if (res) {
+                            $('#existente').show();
+                        }
+                        else {
+                            $('#existente').hide();
+                        }
+                    }
+                });
+            }
+        });
+    });
+
+</script>
+
+ 

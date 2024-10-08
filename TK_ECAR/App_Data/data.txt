@@ -1,0 +1,25 @@
+
+      { "data": "prioridad" },
+                { "data": "alerta" },
+                { "data": "matricula" },
+                { "data": "ceco" },
+                { "data": "modelo" },
+                { "data": "fechaven" },
+                { "data": "estado" },
+                { "data": "accion" }
+
+
+{
+  "data": [
+    {
+      "prioridad": "1",
+      "alerta": "Multa",
+      "matricula": "216013988",
+      "ceco": "109022",
+      "modelo": "RX20-20",
+      "fechaven": "29/07/2016",
+	  "estado": "Notificada",
+	  "accion": "Confirmar conductor"
+    }
+  ]
+}

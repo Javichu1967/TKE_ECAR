@@ -1,0 +1,356 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using System.Configuration;
+@using TK_ECAR.Models
+@using TK_ECAR.Utils
+@model DatosVehiculoModel
+
+@{
+    var empresa = 8100.ToString(); //ViewData["Sociedad"].ToString();
+    var codigoPortugal = Constants.CODIGO_EMPRESA_PORTUGAL.ToString();
+}
+
+<ul id="tab_Vehiculo" class="nav nav-tabs">
+    <li><a href="#datosgenerales" data-toggle="tab">@resourceView.TabDatosGenerales</a></li>
+    <li><a href="#conductor" data-toggle="tab">@resourceView.TabDatosConductor</a></li>
+    <li><a href="#datositv" data-toggle="tab">@resourceView.TabDatosITV</a></li>
+    <li><a href="#datoscontrato" data-toggle="tab">@resourceView.TabDatosContrato</a></li>
+    <li><a href="#datosmulta" data-toggle="tab">@resourceView.TabDatosMulta</a></li>
+    <li><a href="#datosSOLRED" data-toggle="tab">@resourceView.TabDatosSolRed</a></li>
+    @if (empresa == Constants.CODIGO_EMPRESA_PORTUGAL.ToString())
+    {
+        <li><a href="#datosViaVerde" data-toggle="tab">@resourceView.TabDatosViaVerde</a></li>
+    }
+    <li><a href="#datosRenting" data-toggle="tab">@resourceView.TabFacturacionRenting</a></li>
+    <li><a href="#datosDocumentacion" data-toggle="tab">@resourceView.TabDocumentacion</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="datosgenerales" class="tab-pane fade in active">        
+        
+        @Html.Partial("_DatosGenerales", @Model.DatosGenerales_Vehiculo)
+
+    </div>
+
+    <div id="conductor" class="tab-pane fade">
+        @Html.Partial("_Conductor", @Model.DatosConductor_Vehiculo)
+    </div>
+
+    <div id="datositv" class="tab-pane fade">
+        @Html.Partial("_DatosITV", @Model.DatosITV_Vehiculo)
+    </div>
+
+    <div id="datoscontrato" class="tab-pane fade">
+        @Html.Partial("_DatosContrato", @Model.DatosContrato_Vehiculo)
+    </div>
+
+    <div id="datosmulta" class="tab-pane fade">
+        @Html.Partial("_DatosMulta", @Model.DatosMultas_Vehiculo)
+       
+    </div>
+
+    <div id="datosSOLRED" class="tab-pane fade">
+        @Html.Partial("_DatosSOLRED",@Model.DatosSOLRED_Vehiculo)
+    </div>
+
+    @if (empresa == Constants.CODIGO_EMPRESA_PORTUGAL.ToString())
+    {
+        <div id="datosViaVerde" class="tab-pane fade">
+            @Html.Partial("_DatosViaVerde", @Model.DatosVia_VerdeDataTable_Vehiculo)
+        </div>
+    }
+
+    <div id="datosRenting" class="tab-pane fade"> 
+        @Html.Partial("_DatosRenting", @Model.DatosLeasePlan_Vehiculo)
+      
+        @*@{ Html.RenderPartial("_DatosRenting"); }*@
+    </div>
+
+    <div id="datosDocumentacion" class="tab-pane fade">
+        @Html.Partial("_Documentacion")
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var urlSOLRED = '@Html.Raw(@Url.Action("SOLREDJson", "MiVehiculo", new { matricula = "matriculaVehiculo" }))';
+        urlSOLRED = urlSOLRED.replace("matriculaVehiculo", '@Model.DatosGenerales_Vehiculo.Matricula');
+        var urlMulta = '@Html.Raw(@Url.Action("MultasJson", "MiVehiculo", new { matricula = "matriculaVehiculo" }))';
+        urlMulta = urlMulta.replace("matriculaVehiculo", '@Model.DatosGenerales_Vehiculo.Matricula');
+        var urlRenting = '@Html.Raw(@Url.Action("RentingJson", "MiVehiculo", new { matricula = "matriculaVehiculo" }))';
+        urlRenting = urlRenting.replace("matriculaVehiculo", '@Model.DatosGenerales_Vehiculo.Matricula');
+        var urlConductor = '@Html.Raw(@Url.Action("ConductorJson", "MiVehiculo", new { matricula = "matriculaVehiculo" }))';
+        urlConductor = urlConductor.replace("matriculaVehiculo", '@Model.DatosGenerales_Vehiculo.Matricula');
+        var urlViaVerde = '@Html.Raw(@Url.Action("ViaVerdeJson", "MiVehiculo", new { matricula = "matriculaVehiculo" }))';
+        urlViaVerde = urlViaVerde.replace("matriculaVehiculo", '@Model.DatosGenerales_Vehiculo.Matricula');
+
+        var valorEmpresaPortugal = @codigoPortugal;
+
+        //$.fn.dataTable.moment('DD/MM/YYYY');
+
+        $('#tab_Vehiculo a[href="#datosgenerales"]').trigger('click');
+
+        $('#tableconductores').DataTable({
+            "ordering": true,
+            "processing": true,
+            "paginate": true,
+            "ajax": {
+                "url": urlConductor,
+                "datatype": "json",
+                "type": "POST"
+
+            },
+            "columns": [
+                { "data": "Conductor" },
+                { "data": "Fecha" }
+            ],
+            "language": {
+                "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.ArchivoIdiomaDataTable )'
+            },
+            "columnDefs": [
+            {
+                "targets": 1,
+                "render": function (data, type, full, meta) {
+                    return formatJSONDate(data);
+                }
+            }
+            ]
+        });
+
+        $('#tabledatosmulta').DataTable({
+            "ordering": true,
+            "processing": true,
+            "paginate": true,
+            "ajax": {
+                "url": urlMulta,
+                "datatype": "json",
+                "type": "POST"
+
+            },
+            "columns": [
+                { "data": "Fecha" },
+                { "data": "Importe" },
+                { "data": "Motivo" }
+            ],
+            "language": {
+                "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.ArchivoIdiomaDataTable )'
+            },
+            "order": [[0, "desc"]],
+            "columnDefs": [
+            {
+                "targets": 0,
+                "render": function (data, type, full, meta) {
+                    return formatJSONDate(data);
+                }
+            },
+                {
+                    "targets": 1,
+                    "render": function (data, type, full, meta) {
+                        var valorReturn = 0;
+                        if ($.isNumeric(data)) {
+                            valorReturn = formateaNumero(data, 2);
+                        }
+                        return valorReturn;
+                    }
+                }
+            ]
+        });
+
+        $('#tabledatosSOLRED').DataTable({
+            "dom": 'Blfrtip',
+            "ordering": true,
+            "processing": true,
+            "paginate": true,
+            "ajax": {
+                "url": urlSOLRED,
+                "datatype": "json",
+                "type": "POST"
+
+            },
+            "buttons": [
+                {
+                    text: '@resourceView.btnExportarExcel',
+                    extend: 'excel',
+                    className: 'btn btn-default export-btn',
+                    exportOptions: {
+                        columns: [0, 1, 2, 3, 4, 5, 6]
+                    }
+                }
+            ],
+            "columns": [
+                { "data": "Ejercicio" },
+                { "data": "FechaFactura" },
+                { "data": "FechaOperacion" },
+                { "data": "DescProducto" },
+                { "data": "Kilometros" },
+                { "data": "Litros" },
+                { "data": "Importe" }
+            ],
+            "language": {
+                "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.ArchivoIdiomaDataTable )'
+            },
+            "order": [[0, "desc"], [1, "desc"], [2, "desc"]],
+            "columnDefs": [
+            {
+                "targets": [1, 2],
+                "render": function (data, type, full, meta) {
+                    return formatJSONDate(data);
+                }
+            },
+            {
+                "targets": 4,
+                "render": function (data, type, full, meta) {
+                    var valorReturn = 0;
+                    if ($.isNumeric(data)) {
+                        valorReturn = formateaNumero(data, 0);
+                    }
+                    return valorReturn;
+                }
+            },
+            {
+                "targets": [5, 6],
+                "render": function (data, type, full, meta) {
+                    var valorReturn = 0;
+                    if ($.isNumeric(data)) {
+                        valorReturn = formateaNumero(data, 2);
+                    }
+                    return valorReturn;
+                }
+            }
+            ]
+        });
+
+        $('#tabledatosRenting').DataTable({
+            "ordering": true,
+            "processing": true,
+            "paginate": true,
+            "ajax": {
+                "url": urlRenting,
+                "datatype": "json",
+                "type": "POST"
+
+            },
+            "columns": [
+                { "data": "Ejercicio" },
+                { "data": "Trimestre" },
+                { "data": "FechaFactura" },
+                { "data": "NumFactura" },
+                { "data": "ImpRenting" },
+                { "data": "ImpMantenimiento" },
+                { "data": "ImpAdministracion" },
+                { "data": "ImpSeguro" },
+                { "data": "ImpITV" },
+                { "data": "ImpTotal" }
+            ],
+            "language": {
+                "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.ArchivoIdiomaDataTable )'
+            },
+            "order": [[0, "desc"], [1, "desc"], [2, "desc"], [3, "desc"]],
+            "columnDefs": [
+                {
+                    "targets": 2,
+                    "render": function (data, type, full, meta) {
+                        return formatJSONDateVehiculo(data);
+                    }
+                },
+            {
+                "targets": [4, 5, 6, 7, 8, 9],
+                "render": function (data, type, full, meta) {
+                    var valorReturn = 0;
+                    if ($.isNumeric(data)) {
+                        valorReturn = formateaNumero(data, 2);
+                    }
+                    return valorReturn;
+                }
+            }
+            ]
+        });
+
+        //dataTable.columns.adjust().responsive.recalc();
+
+        $('#tabledocumentacion').DataTable({
+            "ordering": true,
+            "processing": true,
+            "paginate": true,
+            "columns": [
+                { "data": "NumDocumento" },
+                { "data": "Sociedad" },
+                { "data": "Matricula" },
+                { "data": "Categoria" },
+                { "data": "DescDocumento" },
+                { "data": "Accion" }
+            ],
+            "language": {
+                "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.ArchivoIdiomaDataTable )'
+            },
+            "columnDefs": [
+            {
+                "targets": [0, 1, 2],
+                "visible": false,
+                "searchable": false
+            }]
+        });
+
+        $('#tabledatosViaVerde').DataTable({
+            "ordering": true,
+            "processing": true,
+            "paginate": true,
+            "ajax": {
+                "url": urlViaVerde,
+                "datatype": "json",
+                "type": "POST"
+            },
+            "columns": [
+                { "data": "FECHA_ENTRADA" },
+                { "data": "LUGAR_ENTRADA" },
+                { "data": "FECHA_SALIDA" },
+                { "data": "LUGAR_SALIDA" },
+                { "data": "REF_PAGO" },
+                { "data": "OPERADOR" },
+                { "data": "IMPORTE" },
+                { "data": "DECUENTO" },
+            ],
+            "language": {
+                "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.ArchivoIdiomaDataTable )'
+            },
+            "order": [[0, "desc"], [2, "desc"]],
+            "columnDefs": [
+                {
+                    "targets": [0, 2],
+                    "render": function (data, type, full, meta) {
+                        if(@empresa == valorEmpresaPortugal){
+                            return formatJSONDateVehiculoHour(data);
+                        }
+                        else{
+                            return formatJSONDateVehiculo(data);
+                        }
+                }
+                },
+                {
+                    "targets": [6, 7],
+                    "render": function (data, type, full, meta) {
+                        var valorReturn = 0;
+                        if ($.isNumeric(data)) {
+                            valorReturn = formateaNumero(data, 2);
+                        }
+                        return valorReturn;
+                    }
+                }
+            ]
+        });
+
+    });
+
+    function formatJSONDateVehiculo(jsonDate) {
+        $.fn.dataTable.moment('DD/MM/YYYY');
+        var resul = moment(jsonDate);
+        return (resul && resul.isValid()) ? resul.format("DD/MM/YYYY") : "";
+    }
+
+    function formatJSONDateVehiculoHour(jsonDate) {
+        $.fn.dataTable.moment('DD/MM/YYYY hh:mm:ss');
+        var resul = moment(jsonDate);
+        return (resul && resul.isValid()) ? resul.format("DD/MM/YYYY hh:mm:ss") : "";
+    }
+
+</script>

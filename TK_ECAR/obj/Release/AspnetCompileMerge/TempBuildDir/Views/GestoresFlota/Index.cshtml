@@ -1,0 +1,203 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@model IEnumerable<TK_ECAR.Models.GestoresFlotaModel>
+@using System.Configuration;
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="infoGestFlota">
+            @{
+                var actionLink = Ajax.ActionLink("JSTITLEMODAL", "NuevoGestorFlota", "GestoresFlota", new { },
+                    new AjaxOptions
+                    {
+                        UpdateTargetId = "modalbodyGestorFlota",
+                        OnSuccess = "showModalGestorFlota();",
+                        OnComplete = "completeModal()",
+                        InsertionMode = InsertionMode.Replace,
+                        OnBegin = "setTitleModal('JSTITLEMODAL')"
+                    }, new { @title = "tooltip", @class = "tk-icon-med icon-tk-plus", @style = "float: right;" }).ToString();
+            }
+            <h3>@resourceView.TitleGestoresFlota    
+                <span id="linkuser" style="float: right;">@resourceView.LAñadir</span> 
+                @Html.Raw(actionLink.Replace("JSTITLEMODAL", @resourceView.LNuevoGestorFlota).Replace("tooltip", @resourceView.LNuevoGestorFlota))
+            </h3>
+            <p>@resourceView.TitleGestorFlotaInf</p>
+        </div>
+    </div>
+</div>
+
+@{
+    var actionLinkEdit = Ajax.ActionLink("JSTITLEACTION", "EditarGestorFlota", "GestoresFlota", new { numEmpleado = "JSVARTIPO" },
+    new AjaxOptions
+    {
+        UpdateTargetId = "modalbodyGestorFlota",
+        OnSuccess = "showModalGestorFlota();",
+        OnComplete = "completeModal()",
+        InsertionMode = InsertionMode.Replace,
+        OnBegin = "setTitleModal('JSTITLEMODAL')"
+    }, new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" }).ToString();
+    actionLinkEdit = "<a class='tk-icon-med icon-tk-edit tk-icon-bold ' "
+                + actionLinkEdit.Replace("textoQuitarPorVacio", "").Replace("accionmenu", @resourceView.AccionEditar)
+                 + " </a>";
+
+    var actionLinkDelete = Ajax.ActionLink("JSTITLEACTION", "BorrarGestorFlota", "GestoresFlota", new { numEmpleado = "JSVARTIPO" },
+    new AjaxOptions
+    {
+        UpdateTargetId = "modalbodyGestorFlota",
+        OnSuccess = "showModalGestorFlota();",
+        OnComplete = "completeModal()",
+        InsertionMode = InsertionMode.Replace,
+        OnBegin = "setTitleModal('JSTITLEMODAL')"
+    }, new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" }).ToString();
+    actionLinkDelete = "<a class='tk-icon-med icon-tk-delete tk-icon-bold tk-icon-red ' "
+                + actionLinkDelete.Replace("textoQuitarPorVacio", "").Replace("accionmenu", @resourceView.AccionBorrar)
+                 + " </a>";
+
+    }
+
+<table id="tableGestorFlota" class="display responsive" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>foto</th>
+            <th>@resourceView.GestorFlotaCabNombre</th>
+            <th>@resourceView.GestorFlotaCabNumEmp</th>
+            <th>@resourceView.GestorFlotaCabPuesto</th>
+            <th>@resourceView.DataTableCabAccion</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.Foto</td>
+                <td>@item.Nombre</td>
+                <td>@item.NumeroEmpleado</td>
+                <td>@item.Puesto</td>
+                <td>
+                    <span></span> @Html.Raw(actionLinkEdit.Replace("JSVARTIPO", (item.NumeroEmpleado).ToString()).Replace("JSTITLEACTION", @resourceView.AccionEditar).Replace("JSTITLEMODAL", @resourceView.TitleGestorFlotaEditar))
+                    @Html.Raw(actionLinkDelete.Replace("JSVARTIPO", (item.NumeroEmpleado).ToString()).Replace("JSTITLEACTION", @resourceView.AccionBorrar).Replace("JSTITLEMODAL", @resourceView.TitleGestorFlotaBorrar))
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@Html.Partial("_ModalGestorFlota")
+
+<style>
+    .export-btn {
+        margin: 10px;
+        padding: 5px;
+    }
+</style>
+
+@section Scripts {
+
+<link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecss")'>
+<link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecssResponsive")'>
+<link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/choosenCSS")'>
+
+<script src='@Scripts.Url("~/bundles/datatable")'> </script>
+<script src='@Scripts.Url("~/bundles/dtresponsive")'> </script>
+
+<script src='@Scripts.Url("~/bundles/choosenJqJs")'> </script>
+<script src='@Scripts.Url("~/bundles/choosenAjaxJs")'> </script>
+
+<script src='@Scripts.Url("~/bundles/DataTablesButtonJs")'> </script>
+<script src='@Scripts.Url("~/bundles/DataTablesbuttonsFlashJs")'> </script>
+<script src='@Scripts.Url("~/bundles/DataTablesbuttonsHtml5Js")'> </script>
+<script src='@Scripts.Url("~/bundles/DataTablesjszipJs")'> </script>
+<script src='@Scripts.Url("~/bundles/DataTablesVfsFontsJs")'> </script>
+
+
+    <script type="text/javascript">
+        var _tableGestorFlota;
+
+        $(document).ready(function () {
+            _tableGestorFlota = $('#tableGestorFlota').DataTable(
+                {
+                responsive: {
+                    details: {
+                        type: 'column',
+                        target: 'tr'
+                    }
+                },
+                "dom": 'Blfrtip',
+                "ordering": true,
+                "processing": true,
+                "paginate": true,
+                "order": [[1, "asc"]],
+                "buttons": [{
+                    text: '@resourceView.btnExportarExcel',
+                    extend: 'excel',
+                    className: 'btn btn-default export-btn',
+                    title: '@Html.Raw(@resourceView.TitleGestoresFlota)',
+                    exportOptions: {
+                        columns: [1, 2, 3]
+                    }
+                }],
+                "language": {
+                    "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.ArchivoIdiomaDataTable )'
+                },
+                "drawCallback": function () {
+                    $('[data-toggle="popover"]').popover({ html: true });
+                },
+                "columnDefs": [
+                {
+                    "targets": 0,
+                    "orderable": false,
+                    "searchable": false,
+                    "visible": false,
+                    //,
+                    //"mRender": function ( data, type, row ) {
+                    //    return '<img src="/Content/img/Application/details_open.png" rel="' + row.Respuesta + '" alt="expand/collapse">';}
+                },
+                {
+                    "targets": [4],
+                    "orderable": false,
+                    "searchable": false
+                }
+                ]
+            });
+
+
+            //$('#tableGestorFlota tbody td img').click(function () {
+            //    var nTr = $(this).parents('tr')[0];
+            //    if (this.src.match('details_close')) {
+            //        this.src = "Content/img/Application/details_open.png";
+            //        _tablePreguntas.fnClose(nTr);
+            //    }
+            //    else {
+            //        this.src = "Content/img/Application/details_close.png";
+            //        var respuesta = $(this).attr("rel");
+            //        _tablePreguntas.fnOpen(nTr, fnFormatDetails(respuesta, nTr), 'details');
+            //    }
+            //});
+        });
+
+        @*function fnFormatDetails(respuesta) {
+            var sOut = '<table class="display responsive" cellpadding="5" class border="0" style="padding-left:50px;">';
+            sOut += '<tr><td><span class="label label-success">@resourceView.PreguntasCabRespuesta:</span></td><td>' + respuesta + '</td></tr>';
+            sOut += '</table>';
+            return sOut;
+        }*@
+
+        function showModalGestorFlota() {
+            $('#modalGestorFlota').modal('show');
+        }
+        function setTitleModal(title) {
+            $('#modaltitleGestorFlota').text(title);
+        }
+
+        //function completeModal() {
+        //    //para que funcione los validadores a la viewpartial recien creada.
+        //    //reconstruye el DOM con los validadores de los campos nuevos
+        //    $("form").removeData("validator");
+        //    $("form").removeData("unobtrusiveValidation");
+        //    $.validator.unobtrusive.parse("form");
+        //    $("form").validate();
+        }
+
+</script>
+}
+

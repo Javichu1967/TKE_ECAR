@@ -1,0 +1,79 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+@using (Html.BeginForm("GuardarRenovacion", "Alertas",null, FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "stripHtml('formRenovacion')", @id="formRenovacion" }))
+{ 
+    @Html.AntiForgeryToken()
+    
+    <div class="modal fade" id="modalRenovacion" role="dialog">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog  vertical-align-center">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="modal-header-logo"></span>
+                        </button>
+                        <h4 class="modal-title" id="modaltitleRenovacion"> </h4>
+                    </div>
+                         
+                    <div class="modal-body" id="modalbodyRenovacion">                               
+                                           
+                    </div>                             
+                    <div class="modal-footer">
+                        <button type="submit" id="aceptarRenovacion" class="btn btn-default">@resourceView.AccionAceptar</button>
+                        <button type="button" class="btn btn-cancel" data-dismiss="modal">@resourceView.AccionCerrar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+      
+}
+
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+            $("#formRenovacion").submit(function (e) {
+
+
+                if ($("#formRenovacion").valid()) {//validamos el form
+                    var formData = new FormData(this);
+
+                    $.ajax({
+                        type: this.method,
+                        url: this.action,
+                        data: formData,
+                        contentType: false,
+                        processData: false
+                    }).done(function (data) {
+                        ajaxDoneRenovacion(data);
+                    });
+                }
+
+                e.preventDefault();
+
+            });
+        });
+
+
+        function ajaxDoneRenovacion(data)
+        {
+            if (data == 'Success') {
+                tableAlertas.ajax.reload(null, false);
+
+                //toastr["info"]("La renovación se ha guardado satisfactoriamente.");
+                notify("La renovación se ha guardado satisfactoriamente.", 'i');
+
+                $('#modalRenovacion').modal('hide');
+            }
+            else {
+                //toastr["error"]("Se ha producido un error al procesar la renovación.");
+                notify("Se ha producido un error al procesar la renovación.", 'e');
+            }
+        }
+
+
+
+    </script>

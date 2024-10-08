@@ -1,0 +1,3 @@
+2017-07-20 13:46:07,202 [266] ERROR <ImportaDatosLEASEPLAN> <FICHERO> C:\Workspaces\Projects\TK_ECAR\TK_ECAR\App_Data\ImportFiles\RENTING\5HFA1707.TXT, <PASO> CARGA DATOS, No se pudo encontrar el archivo 'C:\Program Files (x86)\IIS Express\5HFA1707.TXT'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:159]
+2017-07-20 14:27:40,822 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Datos Furgonetas Arval (corea) 130717V1.xls, INICIO. 
+Error de disco durante una operación de escritura. (Excepción de HRESULT: 0x8003001D (STG_E_WRITEFAULT)) - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:159]

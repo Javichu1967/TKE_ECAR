@@ -1,0 +1,43 @@
+﻿
+@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Models
+@model IEnumerable<DatosVehiculoMultaModel>
+
+<h2>@resourceView.TitleListadoMultas</h2>
+<table id="tabledatosmulta" class="display responsive" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblFecha</th>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblImporte</th>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblMotivo</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Fecha)</td>
+                <td>@Html.DisplayFor(modelItem => item.Importe)</td>
+                <td>@item.Motivo</td>
+            </tr>
+        }
+
+    </tbody>
+
+    @*<tbody>
+            <tr>
+                <td>01/01/2015</td>
+                <td>10</td>
+                <td>wdnflwñleñdñwed</td>
+            </tr>
+        }*@
+
+    </tbody>
+
+</table>
+
+
+
+
+

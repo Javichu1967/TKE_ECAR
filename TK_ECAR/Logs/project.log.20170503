@@ -1,0 +1,30 @@
+2017-05-03 16:37:09,005 [47] ERROR (<SaveVehiculoECAR (MATRICULA001)> Referencia a objeto no establecida como instancia de un objeto.) - [:0]
+2017-05-03 17:05:03,823 [35] ERROR (<SaveDatosITV (JGONZALEZFE)> . Referencia a objeto no establecida como instancia de un objeto.) - [:0]
+2017-05-03 17:05:03,908 [35] ERROR (<SaveVehiculoECAR (MATRICULA001)> TransactionScope se anidó incorrectamente.) - [:0]
+2017-05-03 17:38:17,200 [9] ERROR (<SaveDatosITV (JGONZALEZFE)> . Referencia a objeto no establecida como instancia de un objeto.) - [:0]
+2017-05-03 17:38:17,303 [9] ERROR (<SaveVehiculoECAR (MATRICULA001)> TransactionScope se anidó incorrectamente.) - [:0]
+2017-05-03 17:44:42,820 [6] ERROR (<SaveDatosITV (JGONZALEZFE)> RECORRIENDO DATOS TMP MOVER ARCHIVO (CarnetConducirVacio001.jpg). An error occurred while updating the entries. See the inner exception for details.) - [:0]
+2017-05-03 17:44:42,899 [6] ERROR (<SaveVehiculoECAR (MATRICULA001)> The underlying provider failed on Open.) - [:0]
+2017-05-03 17:46:14,593 [8] ERROR System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en TK_ECAR.Application_Services.VehiculoService.SaveVehiculoECAR(DatosVehiculoModel modelo, String login)
+   en TK_ECAR.Controllers.MiFlotaController.GuardarVehiculo(FormCollection collection)
+   en lambda_method(Closure , ControllerBase , Object[] )
+   en System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   en System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult) - [:0]
+2017-05-03 17:47:08,102 [34] ERROR (<SaveDatosITV (JGONZALEZFE)> RECORRIENDO DATOS TMP MOVER ARCHIVO (CarnetConducirVacio001.jpg). No se pudo encontrar el archivo 'C:\Workspaces\Projects\TK_ECAR\TK_ECAR\App_Data\Global_Documentos\ITV_TMP\JGONZALEZFE\CarnetConducirVacio001.jpg'.) - [:0]
+2017-05-03 17:47:08,125 [34] ERROR (<SaveVehiculoECAR (MATRICULA001)> Se anuló la transacción.) - [:0]
+2017-05-03 17:48:53,896 [31] ERROR (<SaveDatosITV (JGONZALEZFE)> RECORRIENDO DATOS TMP LINEA NUEVA. An error occurred while updating the entries. See the inner exception for details.) - [:0]

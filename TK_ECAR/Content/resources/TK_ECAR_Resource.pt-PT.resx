@@ -1,0 +1,1413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AccionAceptar" xml:space="preserve">
+    <value>Aceitar</value>
+  </data>
+  <data name="AccionBorrar" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="AccionCancelar" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="AccionCerrar" xml:space="preserve">
+    <value>Fechar</value>
+  </data>
+  <data name="AccionEditar" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="btnAbrirNodos" xml:space="preserve">
+    <value>Nós abertos</value>
+  </data>
+  <data name="btnAñadirDoc" xml:space="preserve">
+    <value>Adicionar documento</value>
+  </data>
+  <data name="btnBuscarDoc" xml:space="preserve">
+    <value>Pesquisar documento</value>
+  </data>
+  <data name="btnCerrarNodos" xml:space="preserve">
+    <value>Fechar os nós</value>
+  </data>
+  <data name="btnFiltroBuscar" xml:space="preserve">
+    <value>Procurar</value>
+  </data>
+  <data name="btnVerDoc" xml:space="preserve">
+    <value>Ver documento</value>
+  </data>
+  <data name="CategoriasCabOrdenacion" xml:space="preserve">
+    <value>Ordem</value>
+  </data>
+  <data name="CheckVehiculosAlta" xml:space="preserve">
+    <value>Ver viaturas ativas</value>
+  </data>
+  <data name="CheckVehiculosBaja" xml:space="preserve">
+    <value>Ver viatura terminadas</value>
+  </data>
+  <data name="CheckVehiculosTodos" xml:space="preserve">
+    <value>Ver todos</value>
+  </data>
+  <data name="DataTableBaja" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+  <data name="DataTableCabAccion" xml:space="preserve">
+    <value>Ação</value>
+  </data>
+  <data name="DataTableCabTelefono" xml:space="preserve">
+    <value>Telefone</value>
+  </data>
+  <data name="DescDocumentoAsociado" xml:space="preserve">
+    <value>Documento relacionado com o tipo de alerta </value>
+  </data>
+  <data name="DocumentacionBorrar" xml:space="preserve">
+    <value>Tem a certeza que deseja eliminar o documento?</value>
+  </data>
+  <data name="DocumentoCabDescripcion" xml:space="preserve">
+    <value>Descrição do documento</value>
+  </data>
+  <data name="DocumentoCabNombreDoc" xml:space="preserve">
+    <value>Nome documento</value>
+  </data>
+  <data name="GeneralCabCategoria" xml:space="preserve">
+    <value>Categoría</value>
+  </data>
+  <data name="GeneralCabDescripcion" xml:space="preserve">
+    <value>Descrição</value>
+  </data>
+  <data name="GestorFlotaCabNombre" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="GestorFlotaCabNumEmp" xml:space="preserve">
+    <value>Número Trabalhador</value>
+  </data>
+  <data name="LAñadir" xml:space="preserve">
+    <value>Adicionar</value>
+  </data>
+  <data name="lblAccion" xml:space="preserve">
+    <value>Ação</value>
+  </data>
+  <data name="lblAlerta" xml:space="preserve">
+    <value>Alerta</value>
+  </data>
+  <data name="lblCeco" xml:space="preserve">
+    <value>Ceco</value>
+  </data>
+  <data name="lblEstado" xml:space="preserve">
+    <value>Estado</value>
+  </data>
+  <data name="lblFecVencimiento" xml:space="preserve">
+    <value>Data de validade</value>
+  </data>
+  <data name="lblFotoSeleccionada" xml:space="preserve">
+    <value>Foto selecionada</value>
+  </data>
+  <data name="lblMatricula" xml:space="preserve">
+    <value>Matricula</value>
+  </data>
+  <data name="lblModelo" xml:space="preserve">
+    <value>Modelo</value>
+  </data>
+  <data name="lblPrioridad" xml:space="preserve">
+    <value>Prioridade</value>
+  </data>
+  <data name="lblTKE" xml:space="preserve">
+    <value>thyssenKrupp Elevator</value>
+  </data>
+  <data name="LCerrarSesion" xml:space="preserve">
+    <value>Fechar Sessão</value>
+  </data>
+  <data name="LCountry" xml:space="preserve">
+    <value>Portugal</value>
+  </data>
+  <data name="LDocumentoExistente" xml:space="preserve">
+    <value>O arquivo já existe. Ele será substituído</value>
+  </data>
+  <data name="LHelp" xml:space="preserve">
+    <value>Ajuda</value>
+  </data>
+  <data name="LHome" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="LMsgCerrarSesion" xml:space="preserve">
+    <value>Encerrar aplicação?</value>
+  </data>
+  <data name="LMsgTitleIncidencias" xml:space="preserve">
+    <value>E-CAR Gerenciamento de Incidentes</value>
+  </data>
+  <data name="LMsgTxtIncidencias" xml:space="preserve">
+    <value>Para abrir um incidente entre em contato com o Coordenador (a) dos testes.</value>
+  </data>
+  <data name="LMsgTxtIncidenciasError" xml:space="preserve">
+    <value>o Serviço de Gerenciamento de Incidentes falhou, por favor tente novamente mais tarde.</value>
+  </data>
+  <data name="LNoHayVehiculoAsociado" xml:space="preserve">
+    <value>Você não tem qualquer veículo associado</value>
+  </data>
+  <data name="LNotCarnet" xml:space="preserve">
+    <value>Renovar carta de condução</value>
+  </data>
+  <data name="LNotCombustible" xml:space="preserve">
+    <value>Solicitar cartão combustível</value>
+  </data>
+  <data name="LNotCond" xml:space="preserve">
+    <value>Notificar alteração de condutor</value>
+  </data>
+  <data name="LNotITV" xml:space="preserve">
+    <value>Renovar IPO</value>
+  </data>
+  <data name="LNotMulta" xml:space="preserve">
+    <value>Notificar uma multa</value>
+  </data>
+  <data name="LNotOtras" xml:space="preserve">
+    <value>Notificar outro pedido</value>
+  </data>
+  <data name="LNotRenting" xml:space="preserve">
+    <value>Notificar aluguer</value>
+  </data>
+  <data name="LNotRobo" xml:space="preserve">
+    <value>Notificar roubo</value>
+  </data>
+  <data name="LNotSeguro" xml:space="preserve">
+    <value>Renovar Seguro</value>
+  </data>
+  <data name="LNuevaCategoria" xml:space="preserve">
+    <value>Adicionar uma categoria</value>
+  </data>
+  <data name="LNuevaPregunta" xml:space="preserve">
+    <value>Adicionar perguntas frequentes</value>
+  </data>
+  <data name="LNuevoDocumento" xml:space="preserve">
+    <value>Adicionar novo documento</value>
+  </data>
+  <data name="LNuevoGestorFlota" xml:space="preserve">
+    <value>Adicionar Gestor de Frota</value>
+  </data>
+  <data name="LNuevoTelefono" xml:space="preserve">
+    <value>Adicionar telefone de contacto</value>
+  </data>
+  <data name="LSeleccionar" xml:space="preserve">
+    <value>Selecionar</value>
+  </data>
+  <data name="LSelectAgrupacion" xml:space="preserve">
+    <value>Grupo</value>
+  </data>
+  <data name="LSelectCC" xml:space="preserve">
+    <value>Centro de custo:</value>
+  </data>
+  <data name="LSelectCompany" xml:space="preserve">
+    <value>Empresas:</value>
+  </data>
+  <data name="LSelectDel" xml:space="preserve">
+    <value>Delegações:</value>
+  </data>
+  <data name="LSelectDT" xml:space="preserve">
+    <value>Dir Territorial:</value>
+  </data>
+  <data name="LSelectEstadoVehiculo" xml:space="preserve">
+    <value>Estado da viatura</value>
+  </data>
+  <data name="MessageCancelarSolicitud" xml:space="preserve">
+    <value>Vai proceder ao cancelamento do pedido. Deseja continuar?</value>
+  </data>
+  <data name="MessageError404Info" xml:space="preserve">
+    <value>Desculpe, mas a página que procura não existe ou não pode ser encontrada.</value>
+  </data>
+  <data name="MessageError404Title" xml:space="preserve">
+    <value>Página não encontrada.</value>
+  </data>
+  <data name="MessageErrorAutorizaciónInfo" xml:space="preserve">
+    <value>Não tem autorização para ver esta página. Por favor, entre em contacto com o gestor/s e solicitação de acesso para a aplicação. </value>
+  </data>
+  <data name="MessageErrorAutorizaciónTitle" xml:space="preserve">
+    <value>Acesso negado.</value>
+  </data>
+  <data name="MessageErrorEntityInfo" xml:space="preserve">
+    <value>Houve um erro na base de dados enquanto se establecia a ligação ao servidor SQL Server. Por favor, verifique se está ligado à Internet.</value>
+  </data>
+  <data name="MessageErrorEntityTitle" xml:space="preserve">
+    <value>Erro na base de dados</value>
+  </data>
+  <data name="MessageErrorGeneral" xml:space="preserve">
+    <value>Erro.</value>
+  </data>
+  <data name="MessageErrorGeneralInf" xml:space="preserve">
+    <value>Erro ao inserir o pedido.</value>
+  </data>
+  <data name="msgAccionPendienteDe" xml:space="preserve">
+    <value>Ação pendente o </value>
+  </data>
+  <data name="msgBorrarCategoria" xml:space="preserve">
+    <value>Eliminar categoria</value>
+  </data>
+  <data name="msgPreguntaBorrarCategoria" xml:space="preserve">
+    <value>Tem a certeza que deseja eliminar o categoria?</value>
+  </data>
+  <data name="placeholderPreguntasFrecuentes" xml:space="preserve">
+    <value>Pesquisar pergunta / resposta ...</value>
+  </data>
+  <data name="PreavisoCabDiasPreaviso" xml:space="preserve">
+    <value>Dias de antecedência</value>
+  </data>
+  <data name="PreavisoCabTipoAlerta" xml:space="preserve">
+    <value>Tipo alertas</value>
+  </data>
+  <data name="PreguntaBorrar" xml:space="preserve">
+    <value>Tem a certeza que deseja eliminar a perqunta?</value>
+  </data>
+  <data name="PreguntasCabPregunta" xml:space="preserve">
+    <value>Pergunta</value>
+  </data>
+  <data name="PreguntasCabRespuesta" xml:space="preserve">
+    <value>Resposta</value>
+  </data>
+  <data name="SelectTodosLosVehiculos" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="SelectVehiculosAlta" xml:space="preserve">
+    <value>Alta</value>
+  </data>
+  <data name="SelectVehiculosBaja" xml:space="preserve">
+    <value>Terminados</value>
+  </data>
+  <data name="TabCarnet" xml:space="preserve">
+    <value>Carta condução</value>
+  </data>
+  <data name="TabConductor" xml:space="preserve">
+    <value>Condutor</value>
+  </data>
+  <data name="TabDatosConductor" xml:space="preserve">
+    <value>Condutor</value>
+  </data>
+  <data name="TabDatosContrato" xml:space="preserve">
+    <value>Dados do contrato</value>
+  </data>
+  <data name="TabDatosGenerales" xml:space="preserve">
+    <value>Dados gerais</value>
+  </data>
+  <data name="TabDatosITV" xml:space="preserve">
+    <value>Dados IPO</value>
+  </data>
+  <data name="TabDatosMulta" xml:space="preserve">
+    <value>Dados da multa</value>
+  </data>
+  <data name="TabDatosSeguro" xml:space="preserve">
+    <value>Informação de seguro</value>
+  </data>
+  <data name="TabDatosSolRed" xml:space="preserve">
+    <value>Dados do cartão de combustível</value>
+  </data>
+  <data name="TabDatosViaVerde" xml:space="preserve">
+    <value>Dados Via Verde</value>
+  </data>
+  <data name="TabDocumentacion" xml:space="preserve">
+    <value>Documentação</value>
+  </data>
+  <data name="TabFacturacionRenting" xml:space="preserve">
+    <value>Faturação renting</value>
+  </data>
+  <data name="TitleAbriIncidencia" xml:space="preserve">
+    <value>Abrir incidência</value>
+  </data>
+  <data name="TitleAlertas" xml:space="preserve">
+    <value>Alertas</value>
+  </data>
+  <data name="TitleAplicacionesExternas" xml:space="preserve">
+    <value>Aplicações externas</value>
+  </data>
+  <data name="TitleCancelarAlerta" xml:space="preserve">
+    <value>Anular alerta</value>
+  </data>
+  <data name="TitleCancelarSolicitud" xml:space="preserve">
+    <value>Anular alerta pedido</value>
+  </data>
+  <data name="TitleCategorias" xml:space="preserve">
+    <value>Categorias de documentos</value>
+  </data>
+  <data name="TitleCategoriasEditar" xml:space="preserve">
+    <value>Editar categoria</value>
+  </data>
+  <data name="TitleCategoriasInf" xml:space="preserve">
+    <value>Informação de categorias</value>
+  </data>
+  <data name="TitleCategoriasPreguntas" xml:space="preserve">
+    <value>Categorias FAQs</value>
+  </data>
+  <data name="TitleConductorConfirmado" xml:space="preserve">
+    <value>Condutor confirmado</value>
+  </data>
+  <data name="TitleDarRespuesta" xml:space="preserve">
+    <value>Responder</value>
+  </data>
+  <data name="TitleDocumentacionBorrar" xml:space="preserve">
+    <value>Eliminar documento</value>
+  </data>
+  <data name="TitleDocumentacionEditar" xml:space="preserve">
+    <value>Editar documento</value>
+  </data>
+  <data name="TitleDocumentos" xml:space="preserve">
+    <value>Documentação</value>
+  </data>
+  <data name="TitleDocumentosInf" xml:space="preserve">
+    <value>Informações sobre a documentação agrupadas por categorias</value>
+  </data>
+  <data name="TitleEnviarMail" xml:space="preserve">
+    <value>Enviar e-mail</value>
+  </data>
+  <data name="TitleFilter" xml:space="preserve">
+    <value>Opções dos critérios da procura</value>
+  </data>
+  <data name="TitleFilterAdvanced" xml:space="preserve">
+    <value>Avançado</value>
+  </data>
+  <data name="TitleFiltersGroup" xml:space="preserve">
+    <value>Agrupados</value>
+  </data>
+  <data name="TitleGestion" xml:space="preserve">
+    <value>Gestão</value>
+  </data>
+  <data name="TitleGestoresFlota" xml:space="preserve">
+    <value>Gestores de Frota</value>
+  </data>
+  <data name="TitleGestoresFlotaLista" xml:space="preserve">
+    <value>Dados de contacto:</value>
+  </data>
+  <data name="TitleGestorFlotaBorrar" xml:space="preserve">
+    <value>Eliminar Gestor Frota</value>
+  </data>
+  <data name="TitleGestorFlotaEditar" xml:space="preserve">
+    <value>Editar gestor de frota</value>
+  </data>
+  <data name="TitleGestorFlotaInf" xml:space="preserve">
+    <value>Informação gestores de frota</value>
+  </data>
+  <data name="TitleIdioma" xml:space="preserve">
+    <value>Idioma</value>
+  </data>
+  <data name="TitleInfAlertas" xml:space="preserve">
+    <value>Informação de alertas</value>
+  </data>
+  <data name="TitleInfDatosGenerales" xml:space="preserve">
+    <value>Informação dados gerais</value>
+  </data>
+  <data name="TitleInformeConsumos" xml:space="preserve">
+    <value>relatórios de consumos</value>
+  </data>
+  <data name="TitleListadoDatosGALP" xml:space="preserve">
+    <value>Dados GALP</value>
+  </data>
+  <data name="TitleListadoDatosSolRed" xml:space="preserve">
+    <value>Dados GALP</value>
+  </data>
+  <data name="TitleListadoDatosViaVerde" xml:space="preserve">
+    <value>Dados Via Verde</value>
+  </data>
+  <data name="TitleListadoMultas" xml:space="preserve">
+    <value>Dados da lista de multas</value>
+  </data>
+  <data name="TitleMaintenance" xml:space="preserve">
+    <value>A aplicação está em manutenção</value>
+  </data>
+  <data name="TitleMaintenanceInf" xml:space="preserve">
+    <value>Você não pode entrar. Desculpe o transtorno.</value>
+  </data>
+  <data name="TitleMiFlota" xml:space="preserve">
+    <value>A minha Frota</value>
+  </data>
+  <data name="TitleMiFlotaInf" xml:space="preserve">
+    <value>Informação da frota</value>
+  </data>
+  <data name="TitleMiVehiculo" xml:space="preserve">
+    <value>O meu veículo </value>
+  </data>
+  <data name="TitleMiVehiculoInf" xml:space="preserve">
+    <value>Informações do veículo</value>
+  </data>
+  <data name="TitleModalConfirmarConductor" xml:space="preserve">
+    <value>Confirmar condutor da multa</value>
+  </data>
+  <data name="TitleNotif" xml:space="preserve">
+    <value>Criar uma notificação</value>
+  </data>
+  <data name="TitleNuevoDoc" xml:space="preserve">
+    <value>Novo documento</value>
+  </data>
+  <data name="TitleNuevoVehiculo" xml:space="preserve">
+    <value>Novo veículo</value>
+  </data>
+  <data name="TitlePerfinSinDefinir" xml:space="preserve">
+    <value>O seu perfil é indefinido</value>
+  </data>
+  <data name="TitlePerfinSinDefinirInf" xml:space="preserve">
+    <value>Não tem nenhum veículo associado</value>
+  </data>
+  <data name="TitlePlataformaPresupuestos" xml:space="preserve">
+    <value>Plataforma de Orçamentos</value>
+  </data>
+  <data name="TitlePreavisoAlertas" xml:space="preserve">
+    <value>Pré-aviso alertas automáticos</value>
+  </data>
+  <data name="TitlePreavisoAlertasInf" xml:space="preserve">
+    <value>Definição de número de dias de antecedência de alertas automáticos</value>
+  </data>
+  <data name="TitlePreavisosEditar" xml:space="preserve">
+    <value>Editar dias de antecedência</value>
+  </data>
+  <data name="TitlePreguntasBorrar" xml:space="preserve">
+    <value>Eliminar pergunta</value>
+  </data>
+  <data name="TitlePreguntasEditar" xml:space="preserve">
+    <value>Editar questão</value>
+  </data>
+  <data name="TitlePreguntasFrecuentes" xml:space="preserve">
+    <value>Perguntas frequentes</value>
+  </data>
+  <data name="TitlePreguntasFrecuentesInf" xml:space="preserve">
+    <value>Informação perguntas frequentes</value>
+  </data>
+  <data name="TitleTelefonosBorrar" xml:space="preserve">
+    <value>Eliminar telefone sde contacto</value>
+  </data>
+  <data name="TitleTelefonosEditar" xml:space="preserve">
+    <value>Editar telefone de contacto</value>
+  </data>
+  <data name="TitleTelefonosFrecuentes" xml:space="preserve">
+    <value>Telefones de emergência</value>
+  </data>
+  <data name="TitleTelefonosFrecuentesInf" xml:space="preserve">
+    <value>informações de telefone de contacto</value>
+  </data>
+  <data name="TitleTotalAlertas" xml:space="preserve">
+    <value>Total Alertas</value>
+  </data>
+  <data name="TitleTotalAlertasInf" xml:space="preserve">
+    <value>Gerir alertas</value>
+  </data>
+  <data name="TitleValidarSolicitud" xml:space="preserve">
+    <value>Validar pedido</value>
+  </data>
+  <data name="toastrInfAccionOK" xml:space="preserve">
+    <value>A ação foi executada com sucesso.</value>
+  </data>
+  <data name="toastrInfCategoriaCorrecta" xml:space="preserve">
+    <value>A categoria foi guardada com sucesso</value>
+  </data>
+  <data name="toastrInfCategoriaError" xml:space="preserve">
+    <value>Houve um erro ao inserir a categoria</value>
+  </data>
+  <data name="toastrInfConfirmarConductorOK" xml:space="preserve">
+    <value>A confirmação do condutor foi guardada com sucesso</value>
+  </data>
+  <data name="toastrInfDocumentoBorradoCorrecto" xml:space="preserve">
+    <value>O documento foi eliminado com sucesso.</value>
+  </data>
+  <data name="toastrInfDocumentoError" xml:space="preserve">
+    <value>Houve um erro ao inserir o documento</value>
+  </data>
+  <data name="toastrInfEnviarCorreo" xml:space="preserve">
+    <value>Mail foi enviado</value>
+  </data>
+  <data name="toastrInfGestorFlotaCorrecto" xml:space="preserve">
+    <value>O gestor de frota foi guardado com sucesso.</value>
+  </data>
+  <data name="toastrInfGestorFlotaError" xml:space="preserve">
+    <value>Houve um erro ao inserir o gestor de frota</value>
+  </data>
+  <data name="toastrInfGuardarSolicitudOK" xml:space="preserve">
+    <value>O pedido foi guardado com sucesso.</value>
+  </data>
+  <data name="toastrInfPreavisoError" xml:space="preserve">
+    <value>Houve um erro ao inserir os dias de pré-aviso</value>
+  </data>
+  <data name="toastrInfPreguntaError" xml:space="preserve">
+    <value>Houve um erro ao inserir a pergunta</value>
+  </data>
+  <data name="toastrInfTelefonoError" xml:space="preserve">
+    <value>Houve um erro ao inserir o nº telefone</value>
+  </data>
+  <data name="ValorNO" xml:space="preserve">
+    <value>NO</value>
+  </data>
+  <data name="ValorYES" xml:space="preserve">
+    <value>SIM</value>
+  </data>
+  <data name="GestorFlotaCabPuesto" xml:space="preserve">
+    <value>Posto</value>
+  </data>
+  <data name="NombreAlertaCambio_de_conductor" xml:space="preserve">
+    <value>Alteração de condutor</value>
+  </data>
+  <data name="NombreAlertaCarnet_de_conducir" xml:space="preserve">
+    <value>Carta de condução</value>
+  </data>
+  <data name="NombreAlertaITV" xml:space="preserve">
+    <value>IPO</value>
+  </data>
+  <data name="NombreAlertaMulta" xml:space="preserve">
+    <value>Multa</value>
+  </data>
+  <data name="NombreAlertaOtras_notificaciones" xml:space="preserve">
+    <value>Outras notificações</value>
+  </data>
+  <data name="NombreAlertaRenting" xml:space="preserve">
+    <value>Aluguel</value>
+  </data>
+  <data name="NombreAlertaRobos" xml:space="preserve">
+    <value>Furtos</value>
+  </data>
+  <data name="NombreAlertaSeguro" xml:space="preserve">
+    <value>Seguro</value>
+  </data>
+  <data name="NombreAlertaTarjeta_combustible" xml:space="preserve">
+    <value>Cartão de combustível</value>
+  </data>
+  <data name="lblVer" xml:space="preserve">
+    <value>Consulte</value>
+  </data>
+  <data name="CabCarburante" xml:space="preserve">
+    <value>Carburante</value>
+  </data>
+  <data name="CabMarcaVehiculo" xml:space="preserve">
+    <value>Marca de veículo</value>
+  </data>
+  <data name="CabTipoRuta" xml:space="preserve">
+    <value>Tipo de rota</value>
+  </data>
+  <data name="CabTipoSeguro" xml:space="preserve">
+    <value>Tipo de seguro</value>
+  </data>
+  <data name="CabTipoTarjetaCombustible" xml:space="preserve">
+    <value>Cartõn de combustível</value>
+  </data>
+  <data name="CabTipoVehiculo" xml:space="preserve">
+    <value>Tipo de vehículo</value>
+  </data>
+  <data name="CabUbicacion" xml:space="preserve">
+    <value>Localizações</value>
+  </data>
+  <data name="LBorrarCarburante" xml:space="preserve">
+    <value>o carburante</value>
+  </data>
+  <data name="LBorrarMarca" xml:space="preserve">
+    <value>a marca</value>
+  </data>
+  <data name="LBorrarTarjetaCombustible" xml:space="preserve">
+    <value>o cartõn de combustível</value>
+  </data>
+  <data name="LBorrarTipoRuta" xml:space="preserve">
+    <value>a rota</value>
+  </data>
+  <data name="LBorrarTipoSeguro" xml:space="preserve">
+    <value>o tipo seguro</value>
+  </data>
+  <data name="LBorrarTipoVehiculo" xml:space="preserve">
+    <value>o tipo vehículo</value>
+  </data>
+  <data name="LBorrarUbicacion" xml:space="preserve">
+    <value>a localização</value>
+  </data>
+  <data name="LNuevaMarcaVehiculo" xml:space="preserve">
+    <value>Adicionar marca de veículo</value>
+  </data>
+  <data name="LNuevaUbicacion" xml:space="preserve">
+    <value>Adicionar localizações</value>
+  </data>
+  <data name="LNuevoCarburante" xml:space="preserve">
+    <value>Adicionar tipo de combustível</value>
+  </data>
+  <data name="LNuevoTipoRuta" xml:space="preserve">
+    <value>Adicionar tipo de rota</value>
+  </data>
+  <data name="LNuevoTipoSeguro" xml:space="preserve">
+    <value>Adicionar tipo de seguro</value>
+  </data>
+  <data name="LNuevoTipoTarjetaCombustible" xml:space="preserve">
+    <value>Adicionar tipo cartão de combustível</value>
+  </data>
+  <data name="LNuevoTipoVehiculo" xml:space="preserve">
+    <value>Adicionar tipo de veículo</value>
+  </data>
+  <data name="msgBorrarMtoGenerico" xml:space="preserve">
+    <value>Eliminar ####</value>
+  </data>
+  <data name="msgPreguntaBorrarMtoGenerico" xml:space="preserve">
+    <value>¿Você quer eliminar ####?</value>
+  </data>
+  <data name="TitleCarburante" xml:space="preserve">
+    <value>Carburantes</value>
+  </data>
+  <data name="TitleCarburanteInf" xml:space="preserve">
+    <value>Informações sobre o tipo de combustível</value>
+  </data>
+  <data name="TitleMarcaVehiculo" xml:space="preserve">
+    <value>Marcas de veículos</value>
+  </data>
+  <data name="TitleMarcaVehiculoInf" xml:space="preserve">
+    <value>Marcas de veículos informações</value>
+  </data>
+  <data name="TitleTipoRuta" xml:space="preserve">
+    <value>Tipos de rota</value>
+  </data>
+  <data name="TitleTipoRutaInf" xml:space="preserve">
+    <value>Informações tipos de rota</value>
+  </data>
+  <data name="TitleTipoSeguro" xml:space="preserve">
+    <value>Tipos de Seguros</value>
+  </data>
+  <data name="TitleTipoSeguroInf" xml:space="preserve">
+    <value>Tipos de informação de seguro</value>
+  </data>
+  <data name="TitleTipoTarjetaCombustible" xml:space="preserve">
+    <value>Tipos cartões de combustível</value>
+  </data>
+  <data name="TitleTipoTarjetaCombustibleInf" xml:space="preserve">
+    <value>Informação de Tipos de cartões de combustível</value>
+  </data>
+  <data name="TitleTipoVehiculo" xml:space="preserve">
+    <value>Tipos de veículos</value>
+  </data>
+  <data name="TitleTipoVehiculoInf" xml:space="preserve">
+    <value>Informações sobre o tipo de veículo</value>
+  </data>
+  <data name="TitleUbicacion" xml:space="preserve">
+    <value>Localizações</value>
+  </data>
+  <data name="TitleUbicacionInf" xml:space="preserve">
+    <value>Informação de localizações</value>
+  </data>
+  <data name="toastrInfMtoGenericoCorrecto" xml:space="preserve">
+    <value>Ela foi salva com sucesso</value>
+  </data>
+  <data name="toastrInfMtoGenericoError" xml:space="preserve">
+    <value>Ocorreu um erro ao salvar o item</value>
+  </data>
+  <data name="CabModeloVehiculo" xml:space="preserve">
+    <value>Modelo do veículo</value>
+  </data>
+  <data name="TitleModeloVehiculoInf" xml:space="preserve">
+    <value>Informação de modelos do vehículo</value>
+  </data>
+  <data name="TitleModeloVehiculo" xml:space="preserve">
+    <value>Modelos do veículo</value>
+  </data>
+  <data name="LBorrarModelo" xml:space="preserve">
+    <value>el modelo</value>
+  </data>
+  <data name="LAlertaAutomatica" xml:space="preserve">
+    <value>Alerta automatico</value>
+  </data>
+  <data name="LAlertaCreadaPor" xml:space="preserve">
+    <value>Alerta criado por</value>
+  </data>
+  <data name="LNuevoConductor" xml:space="preserve">
+    <value>Novo Conductor</value>
+  </data>
+  <data name="TitleConductores" xml:space="preserve">
+    <value>Condutores</value>
+  </data>
+  <data name="TitleConductoresInf" xml:space="preserve">
+    <value>Dados Condutores</value>
+  </data>
+  <data name="msgBorrarConductor" xml:space="preserve">
+    <value>Borrar condutor</value>
+  </data>
+  <data name="msgPreguntaBorrarConductor" xml:space="preserve">
+    <value>Tem a certeza que deseja eliminar o condutor?</value>
+  </data>
+  <data name="toastrInfConductorCorrecto" xml:space="preserve">
+    <value>O condutor foi salva com sucesso</value>
+  </data>
+  <data name="toastrInfConductorError" xml:space="preserve">
+    <value>Houve um erro ao processar o condutor</value>
+  </data>
+  <data name="placeholderChosen" xml:space="preserve">
+    <value>Selecione um valor ...</value>
+  </data>
+  <data name="msgValidationSumary" xml:space="preserve">
+    <value>Corrija os seguintes erros:</value>
+  </data>
+  <data name="msgErrFechaCarnetNacimiento" xml:space="preserve">
+    <value>A data do cartão não está correto sobre a data de nascimento</value>
+  </data>
+  <data name="msgErrFechaCarnetVto" xml:space="preserve">
+    <value>A data do cartão não está correta em relação à data de vencimento</value>
+  </data>
+  <data name="msgErrFechaVtoCarnetNacimiento" xml:space="preserve">
+    <value>A data de expiração do cartão não está correto sobre a data de nascimento</value>
+  </data>
+  <data name="msgErrDNI" xml:space="preserve">
+    <value>O DNI não é correto</value>
+  </data>
+  <data name="btnExportarExcel" xml:space="preserve">
+    <value>Exportação para Excel</value>
+  </data>
+  <data name="Perfil_1" xml:space="preserve">
+    <value>Gestor de rede</value>
+  </data>
+  <data name="Perfil_2" xml:space="preserve">
+    <value>Controlador</value>
+  </data>
+  <data name="Perfil_3" xml:space="preserve">
+    <value>Director Regional</value>
+  </data>
+  <data name="Perfil_4" xml:space="preserve">
+    <value>Gestor de frota</value>
+  </data>
+  <data name="Perfil_5" xml:space="preserve">
+    <value>Delegado do zona</value>
+  </data>
+  <data name="Perfil_6" xml:space="preserve">
+    <value>Indefinido</value>
+  </data>
+  <data name="lblDelegacion" xml:space="preserve">
+    <value>Delegação</value>
+  </data>
+  <data name="TitlePendientes" xml:space="preserve">
+    <value>Pendente</value>
+  </data>
+  <data name="TitleVehiculo" xml:space="preserve">
+    <value>Veículo</value>
+  </data>
+  <data name="lblNuevaEmpresa" xml:space="preserve">
+    <value>Adicionar companhia</value>
+  </data>
+  <data name="msgBorrarEmpresa" xml:space="preserve">
+    <value>Eliminar companhia</value>
+  </data>
+  <data name="msgPreguntaBorrarEmpresa" xml:space="preserve">
+    <value>Tem a certeza que deseja eliminar a companhia?</value>
+  </data>
+  <data name="TitleEmpAseguradoras_Renting" xml:space="preserve">
+    <value>Companhia  Seguros/Aluguel</value>
+  </data>
+  <data name="toastrInfEmpresaBorradoCorrecto" xml:space="preserve">
+    <value>A Companhia  foi eliminado com sucesso.</value>
+  </data>
+  <data name="toastrInfEmpresaError" xml:space="preserve">
+    <value>Houve um erro ao inserir a companhia</value>
+  </data>
+  <data name="toastrInfEmpresaOK" xml:space="preserve">
+    <value>A Companhia foi executada com sucesso.</value>
+  </data>
+  <data name="msgErrEmpRenting_Aseguradora" xml:space="preserve">
+    <value>Você deve colocar a empresa como Renting, seguro ou ambos.</value>
+  </data>
+  <data name="CabAseguradora" xml:space="preserve">
+    <value>Seguro</value>
+  </data>
+  <data name="CabRenting" xml:space="preserve">
+    <value>Aluguel</value>
+  </data>
+  <data name="lblNuevaTarjeta" xml:space="preserve">
+    <value>Adicionar cartão</value>
+  </data>
+  <data name="msgBorrarTarjeta" xml:space="preserve">
+    <value>Apagar cartão de combustível</value>
+  </data>
+  <data name="msgPreguntaBorrarTarjeta" xml:space="preserve">
+    <value>Tem certeza que deseja excluir o cartão de combustível?</value>
+  </data>
+  <data name="TitleTarjetasCombustible" xml:space="preserve">
+    <value>cartões de combustível</value>
+  </data>
+  <data name="TitleTarjetasCombustibleInf" xml:space="preserve">
+    <value>Informações de cartão de combustível</value>
+  </data>
+  <data name="TitleVeOcultarcaracteres" xml:space="preserve">
+    <value>Ver / Esconder caracteres PIN</value>
+  </data>
+  <data name="toastrInfTarjetaCorrecta" xml:space="preserve">
+    <value>Cartão de combustível foi salva com sucesso</value>
+  </data>
+  <data name="toastrInfTarjetaError" xml:space="preserve">
+    <value>Havia uma poupança de erro de cartão de combustível</value>
+  </data>
+  <data name="CabTipoLiquidacionSeguro" xml:space="preserve">
+    <value>Tipo de assentamento seguro</value>
+  </data>
+  <data name="LBorrarTipoLiquidacionSeguro" xml:space="preserve">
+    <value>o tipo de assentamento</value>
+  </data>
+  <data name="TitleTipoLiquidacionSeguro" xml:space="preserve">
+    <value>Liquidação tipos de seguros</value>
+  </data>
+  <data name="TitleTipoLiquidacionSeguroInf" xml:space="preserve">
+    <value>Informações sobre liquidação de tipo de seguro </value>
+  </data>
+  <data name="toastrInfConductorExistente" xml:space="preserve">
+    <value>O condutor já existe</value>
+  </data>
+  <data name="LIr_a_Pagina" xml:space="preserve">
+    <value>Vá para a página...</value>
+  </data>
+  <data name="ArchivoIdiomaDataTable" xml:space="preserve">
+    <value>Portuguese.json</value>
+  </data>
+  <data name="toastrInfMtoVehiculoCorrecto" xml:space="preserve">
+    <value>Dados do veículo foram gravadas correctamente</value>
+  </data>
+  <data name="toastrInfMtoVehiculoError" xml:space="preserve">
+    <value>Houve um erro ao salvar dados do veículo</value>
+  </data>
+  <data name="CabVehiculoAsociadoTarjeta" xml:space="preserve">
+    <value>Veículo associado</value>
+  </data>
+  <data name="TabDatosObservaciones" xml:space="preserve">
+    <value>Observações</value>
+  </data>
+  <data name="toastrInfErrorFecVtoITV" xml:space="preserve">
+    <value>Data VTO. IPO deve ser maior do que o último IPO</value>
+  </data>
+  <data name="toastrInfMtoITVError" xml:space="preserve">
+    <value>Houve um erro ao processar dados IPO</value>
+  </data>
+  <data name="msgPreguntaBorrarLineaITV" xml:space="preserve">
+    <value>Tem a certeza que deseja eliminar a  ITV?</value>
+  </data>
+  <data name="msgBorrarLineaITV" xml:space="preserve">
+    <value>Eliminar ITV</value>
+  </data>
+  <data name="AccionConsultar" xml:space="preserve">
+    <value>Consultar</value>
+  </data>
+  <data name="DescDocumentoITV" xml:space="preserve">
+    <value>Documento associada com IPO</value>
+  </data>
+  <data name="LNuevaITV" xml:space="preserve">
+    <value>Novo IPO</value>
+  </data>
+  <data name="MessageRechazlarSolicitud" xml:space="preserve">
+    <value>Ele vai continuar a rejeitar o pedido. Você deseja continuar?</value>
+  </data>
+  <data name="TextoDialogoTextAreaRechazo" xml:space="preserve">
+    <value>Entre com um motivo para a rejeição</value>
+  </data>
+  <data name="TextoDialogoTextAreaRechazoRequired" xml:space="preserve">
+    <value>O motivo para a rejeição é obrigatório.</value>
+  </data>
+  <data name="TitleRechazarAlerta" xml:space="preserve">
+    <value>Rejeitar pedido</value>
+  </data>
+  <data name="TextoBotonLimpiarFooterDataTable" xml:space="preserve">
+    <value>Filtro limpo</value>
+  </data>
+  <data name="TitleImportacionFlota" xml:space="preserve">
+    <value>Importação de veículos</value>
+  </data>
+  <data name="TitleImportacionFlotaInf" xml:space="preserve">
+    <value>Informação de importação de Veículos da frota</value>
+  </data>
+  <data name="toastrInfImportFlotaCorrecto" xml:space="preserve">
+    <value>Eles foram importados frota de veículos</value>
+  </data>
+  <data name="toastrInfImportFlotaError" xml:space="preserve">
+    <value>Houve um erro ao importação veículos da frota</value>
+  </data>
+  <data name="btnImportarFlota" xml:space="preserve">
+    <value>Importação de frota</value>
+  </data>
+  <data name="titleIniciandoImportacion" xml:space="preserve">
+    <value>Importadores ...</value>
+  </data>
+  <data name="titleResumenImportacion" xml:space="preserve">
+    <value>Resumo de importação</value>
+  </data>
+  <data name="msgIniciandoImportacion" xml:space="preserve">
+    <value>Começando importação de dados...</value>
+  </data>
+  <data name="msgImportacion_ErrorGeneral" xml:space="preserve">
+    <value>Erro na importação de frota de veículos</value>
+  </data>
+  <data name="msgImportacion_ErrorVehiculo" xml:space="preserve">
+    <value>Erro na linha </value>
+  </data>
+  <data name="msgImportacion_EstableciendoDatoVehiculo" xml:space="preserve">
+    <value>Configuração de dados do veículo ...</value>
+  </data>
+  <data name="msgImportacion_IncidenciaConductor" xml:space="preserve">
+    <value>Ele cria um novo driver</value>
+  </data>
+  <data name="msgImportacion_ProcesandoFila" xml:space="preserve">
+    <value>Processado linha...</value>
+  </data>
+  <data name="msgImportacion_VehiculoImportadoOK" xml:space="preserve">
+    <value>Veículo importado com êxito</value>
+  </data>
+  <data name="msgImportación_Cabecera" xml:space="preserve">
+    <value>Importação de arquivo @@</value>
+  </data>
+  <data name="msgImportación_FechaImportacion" xml:space="preserve">
+    <value>Data de importação</value>
+  </data>
+  <data name="msgImportacion_TotalERROR" xml:space="preserve">
+    <value>total de dados erro</value>
+  </data>
+  <data name="msgImportacion_TotalOK" xml:space="preserve">
+    <value>Total de dados importados corretamente</value>
+  </data>
+  <data name="msgImportacion_Total" xml:space="preserve">
+    <value>Total de dados importados</value>
+  </data>
+  <data name="TitleResumen" xml:space="preserve">
+    <value>Resumo</value>
+  </data>
+  <data name="msgImportacion_ProcesoFinalizado" xml:space="preserve">
+    <value>Processo de importação concluído</value>
+  </data>
+  <data name="msgImportacion_IncidenciaConductorNuevo" xml:space="preserve">
+    <value>O veículo que pretende importar terá um novo driver</value>
+  </data>
+  <data name="msgImportacion_IncidenciaMatriculaVacia" xml:space="preserve">
+    <value>O veículo que pretende importar não tem registro</value>
+  </data>
+  <data name="msgImportacion_IncidenciaSinConductor" xml:space="preserve">
+    <value>O veículo que pretende importar não tem condutor</value>
+  </data>
+  <data name="msgImportacion_IncidenciaSinFechaMatriculacion" xml:space="preserve">
+    <value>O veículo que pretende importar não há data de registro. Não pode gerar IPO</value>
+  </data>
+  <data name="msgImportacion_IncidenciaSinTipoDeVehiculo" xml:space="preserve">
+    <value>O veículo que pretende importar não há tipo de veículo. Não pode gerar IPO</value>
+  </data>
+  <data name="msgImportacion_IncidenciaVehiculoExistente" xml:space="preserve">
+    <value>O veículo que pretende importar já existe</value>
+  </data>
+  <data name="TitleLinea" xml:space="preserve">
+    <value>Linha</value>
+  </data>
+  <data name="msgImportación_FinalizaImportacion" xml:space="preserve">
+    <value>Fins de importação</value>
+  </data>
+  <data name="msgImportacion_TotalIncidencia" xml:space="preserve">
+    <value>Total dados com incidência</value>
+  </data>
+  <data name="msgImportacion_Error" xml:space="preserve">
+    <value>[Erro]</value>
+  </data>
+  <data name="msgImportacion_Incidencia" xml:space="preserve">
+    <value>[Incidência]</value>
+  </data>
+  <data name="infSinModeloAsociado" xml:space="preserve">
+    <value>sem modelos associados</value>
+  </data>
+  <data name="TitleImportacion" xml:space="preserve">
+    <value>Importação</value>
+  </data>
+  <data name="preguntaBorrarCategoriaDocumento1" xml:space="preserve">
+    <value>Tem numerodocumentos documentos nesta categoria.</value>
+  </data>
+  <data name="preguntaBorrarCategoriaDocumento2" xml:space="preserve">
+    <value>Estes serão excluídos.</value>
+  </data>
+  <data name="preguntaBorrarCategoriaPregunta1" xml:space="preserve">
+    <value>Tem numeropreguntas perguntas nesta categoria.</value>
+  </data>
+  <data name="preguntaBorrarCategoriaPregunta2" xml:space="preserve">
+    <value>Estes serão excluídos.</value>
+  </data>
+  <data name="preguntaBorrarEmpresasEmisoras1" xml:space="preserve">
+    <value>Tem numerotarjetas cartões associados a este tipo de cartão.</value>
+  </data>
+  <data name="preguntaBorrarEmpresasEmisoras2" xml:space="preserve">
+    <value>Estas se borrarán también.</value>
+  </data>
+  <data name="titleDatosImportacion" xml:space="preserve">
+    <value>Dados Importação</value>
+  </data>
+  <data name="titleDatosEntrega" xml:space="preserve">
+    <value>Dados entrega</value>
+  </data>
+  <data name="ImportacionProcesandoLínea" xml:space="preserve">
+    <value>Linha de processamento...</value>
+  </data>
+  <data name="ImportacionComienzaSerialize" xml:space="preserve">
+    <value>Começa a ler arquivo XML</value>
+  </data>
+  <data name="ImportacionFinalizaImportacion" xml:space="preserve">
+    <value>Fins de importação</value>
+  </data>
+  <data name="ImportacionFinalizaSerialize" xml:space="preserve">
+    <value>Termina leitura de arquivo XML</value>
+  </data>
+  <data name="ImportacionComienzaActualizacionBBDD" xml:space="preserve">
+    <value>A atualização começa em BBDD</value>
+  </data>
+  <data name="ImportacionActualizando" xml:space="preserve">
+    <value>Atualização ...</value>
+  </data>
+  <data name="btnImportarViaVerde" xml:space="preserve">
+    <value>Importar Via Verde</value>
+  </data>
+  <data name="TitleImportarViaVerde" xml:space="preserve">
+    <value>Importar dados Via Verde</value>
+  </data>
+  <data name="TitleImportarViaVerdeInf" xml:space="preserve">
+    <value>Informação importação dados Via Verde</value>
+  </data>
+  <data name="msgErrorFileSize" xml:space="preserve">
+    <value>O tamanho do arquivo é muito grande</value>
+  </data>
+  <data name="toastrInfTamañoArchivosError" xml:space="preserve">
+    <value>O tamanho do arquivo de carregamento excede set # Mb</value>
+  </data>
+  <data name="toastrInfImportCorrecto" xml:space="preserve">
+    <value>Eles foram importados dados</value>
+  </data>
+  <data name="toastrInfImportError" xml:space="preserve">
+    <value>Houve um erro ao importar</value>
+  </data>
+  <data name="btnImportarCombustible" xml:space="preserve">
+    <value>Importar dados combustível</value>
+  </data>
+  <data name="TitleImportarTarjetaCombustible" xml:space="preserve">
+    <value>Importar dados de combustível</value>
+  </data>
+  <data name="TitleImportarTarjetaCombustibleInf" xml:space="preserve">
+    <value>Informação importação dados combustível</value>
+  </data>
+  <data name="TitleFlota" xml:space="preserve">
+    <value>Frota</value>
+  </data>
+  <data name="msgCabFicheroYaProcesado" xml:space="preserve">
+    <value>Arquivo previamente processados</value>
+  </data>
+  <data name="msgFicheroYaProcesado" xml:space="preserve">
+    <value>O arquivo já foi processado anteriormente. Se você re-importação, os dados anteriores serão eliminados e serão substituídos por esses novos. Continuar?</value>
+  </data>
+  <data name="ImportacionBorrandoDatosAnteriores" xml:space="preserve">
+    <value>Exclusão de dados importados anteriormente o arquivo</value>
+  </data>
+  <data name="msgFicheroYaProcesadoFlota" xml:space="preserve">
+    <value>O arquivo já foi processado anteriormente. Se você re-importação só serão adicionados novos veículos. Continuar?</value>
+  </data>
+  <data name="btnImportarLeasing" xml:space="preserve">
+    <value>Importar faturamento</value>
+  </data>
+  <data name="TitleFacturacion" xml:space="preserve">
+    <value>Faturamento</value>
+  </data>
+  <data name="TitleImportarFacturacion" xml:space="preserve">
+    <value>Importar dados de faturamento</value>
+  </data>
+  <data name="TitleImportarFacturacionInf" xml:space="preserve">
+    <value>Informações de dados de importação de faturamento</value>
+  </data>
+  <data name="ImportacionLeyendoArchivo" xml:space="preserve">
+    <value>A leitura do arquivo</value>
+  </data>
+  <data name="ImportacionMatriculaInexistente" xml:space="preserve">
+    <value>O registro não existe </value>
+  </data>
+  <data name="msgCargando" xml:space="preserve">
+    <value>Carregando ...</value>
+  </data>
+  <data name="msgImportacion_IncidenciaConductorNoEncontrado" xml:space="preserve">
+    <value>Não encontrou o motorista com número de empregados associado com a inscrição</value>
+  </data>
+  <data name="LNotMultaVehiculoBaja" xml:space="preserve">
+    <value>Notificar uma Multa veículo desativado</value>
+  </data>
+  <data name="LNotOtrasVehiculoBaja" xml:space="preserve">
+    <value>Notificar otra petición  veículo desativado</value>
+  </data>
+  <data name="titleID_MarcaECAR" xml:space="preserve">
+    <value>Id Marca Ecar</value>
+  </data>
+  <data name="titleID_ModeloECAR" xml:space="preserve">
+    <value>Id Modelo Ecar</value>
+  </data>
+  <data name="msgImportacion_IncidenciaConceptoLeasinNoContemplado" xml:space="preserve">
+    <value>O conceito que deseja importar Não incluído na importação</value>
+  </data>
+  <data name="TitleFacturacionInf" xml:space="preserve">
+    <value>Geração faturas Leasing</value>
+  </data>
+  <data name="TitleGenerarFacturacion" xml:space="preserve">
+    <value>Geração de dados de faturamento</value>
+  </data>
+  <data name="titleResumenFacturacion" xml:space="preserve">
+    <value>Resumo do faturamento</value>
+  </data>
+  <data name="toastrInfFacturacionCorrecta" xml:space="preserve">
+    <value>O faturamento foi gerado corretamente</value>
+  </data>
+  <data name="toastrInfFacturacionError" xml:space="preserve">
+    <value>Ocorreram erros na geração de faturas</value>
+  </data>
+  <data name="btnFacturarLeasing" xml:space="preserve">
+    <value>Processo de faturamento</value>
+  </data>
+  <data name="btnFinalizarFacturasLeasing" xml:space="preserve">
+    <value>Gerar arquivos de faturamento</value>
+  </data>
+  <data name="cabBaseFactura" xml:space="preserve">
+    <value>Base</value>
+  </data>
+  <data name="cabEmpresaFactura" xml:space="preserve">
+    <value>Empresa faturada</value>
+  </data>
+  <data name="cabEmpresaLeasing" xml:space="preserve">
+    <value>Empresa leasing</value>
+  </data>
+  <data name="cabImpuestoFactura" xml:space="preserve">
+    <value>Impostos</value>
+  </data>
+  <data name="cabNumFactura" xml:space="preserve">
+    <value>Fatura</value>
+  </data>
+  <data name="cabTotal" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="titleResumenGeneracionFacturas" xml:space="preserve">
+    <value>Controle de faturas leasing</value>
+  </data>
+  <data name="cabFechaFactura" xml:space="preserve">
+    <value>Data fatura</value>
+  </data>
+  <data name="toastrInfGeneracionFacturacionCorrecta" xml:space="preserve">
+    <value>Arquivos de faturamento são gerados corretamente</value>
+  </data>
+  <data name="toastrInfGeneracionFacturacionError" xml:space="preserve">
+    <value>Houve um erro ao gerar os arquivos de faturamento</value>
+  </data>
+  <data name="msgIniciandoGeneracionFacturas" xml:space="preserve">
+    <value>Iniciando a geração de faturamento ...</value>
+  </data>
+  <data name="msgImportación_FechaProcesamientoFacturas" xml:space="preserve">
+    <value>Data do processo</value>
+  </data>
+  <data name="toastrInfGeneracionFacturacionSessionEmptyError" xml:space="preserve">
+    <value>Você deve re-fazer o processo de faturamento. A sessão expirou.</value>
+  </data>
+  <data name="toastrInfFacturacionEmpty" xml:space="preserve">
+    <value>Nenhum resultado foi obtido com os dados selecionados.</value>
+  </data>
+  <data name="btnBorrarImportacion" xml:space="preserve">
+    <value>Excluir importação</value>
+  </data>
+  <data name="TitleCombustible" xml:space="preserve">
+    <value>Combustibel</value>
+  </data>
+  <data name="TitleFacturación" xml:space="preserve">
+    <value>Facturação</value>
+  </data>
+  <data name="TitleViaVerde" xml:space="preserve">
+    <value>Via Verde</value>
+  </data>
+  <data name="toastrInfBorradoImportacionCorrecto" xml:space="preserve">
+    <value>Os dados foram apagados corretamente.</value>
+  </data>
+  <data name="toastrInfBorradoImportacionError" xml:space="preserve">
+    <value>Ocorreram erros ao apagar os dados.</value>
+  </data>
+  <data name="TitleBorradoImportacionInf" xml:space="preserve">
+    <value>Informação de importação excluídas</value>
+  </data>
+  <data name="msgDatoActualizadoDesdeAlerta" xml:space="preserve">
+    <value>Informação atualizada de alerta</value>
+  </data>
+  <data name="btnTarjetaYaExistente" xml:space="preserve">
+    <value>Cartão de combustível existente</value>
+  </data>
+  <data name="TitleBrowserNotSupported" xml:space="preserve">
+    <value>A versão do navegador que você está usando não é compatível com o aplicativo.</value>
+  </data>
+  <data name="TitleBrowserNotSupportedInf" xml:space="preserve">
+    <value>Você deve usar um navegador compatível (Chrome, IE 9 ou superior, ...)</value>
+  </data>
+  <data name="TitleInfAltaBajaFechaContrato" xml:space="preserve">
+    <value>Relatório da frota por data de Alto/Baixo e contrato de aluguel.</value>
+  </data>
+  <data name="TitleInfAltaBajaFechaContratoInf" xml:space="preserve">
+    <value>Informação da frota por data de Alto/Baixo e contrato de aluguel.</value>
+  </data>
+  <data name="TitleInformes" xml:space="preserve">
+    <value>Relatórios</value>
+  </data>
+  <data name="TitleInformeFlotaFechaContrato" xml:space="preserve">
+    <value>Relatório da frota por data do contrato do período</value>
+  </data>
+  <data name="TitleInformeFlotaFechaContratoInf" xml:space="preserve">
+    <value>Informação da frota por período da data do contrato</value>
+  </data>
+  <data name="TitleInfFiltroCecos" xml:space="preserve">
+    <value>Centros Coste</value>
+  </data>
+  <data name="TitleInfFiltroDelegaciones" xml:space="preserve">
+    <value>Delegações</value>
+  </data>
+  <data name="TitleInfFiltroDTs" xml:space="preserve">
+    <value>Dir. Territoriales</value>
+  </data>
+  <data name="TitleInfFiltroEmpLeasing" xml:space="preserve">
+    <value>Emp. Leasing</value>
+  </data>
+  <data name="TitleInfFiltroEmpresas" xml:space="preserve">
+    <value>Empresas</value>
+  </data>
+  <data name="TitleInfFiltroMarcas" xml:space="preserve">
+    <value>Marcas</value>
+  </data>
+  <data name="TitleInfFiltroModelos" xml:space="preserve">
+    <value>Modelos</value>
+  </data>
+  <data name="TitleInfFiltroUtilizado" xml:space="preserve">
+    <value>Filtro de dados usado</value>
+  </data>
+  <data name="toastrInfGeneracionInformeCorrecta" xml:space="preserve">
+    <value>O relatório foi gerado corretamente.</value>
+  </data>
+  <data name="toastrInfGeneracionInformeEmpty" xml:space="preserve">
+    <value>Não há dados para o relatório.</value>
+  </data>
+  <data name="toastrInfGeneracionInformeError" xml:space="preserve">
+    <value>Ocorreu um erro ao gerar o relatório.</value>
+  </data>
+  <data name="titleID_TipoVehiculoECAR" xml:space="preserve">
+    <value>ID Tipo veículo</value>
+  </data>
+  <data name="btnAceptIncidencia" xml:space="preserve">
+    <value>Enviar e-mail para CAU</value>
+  </data>
+  <data name="btnCancelar" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="CorreoEnviado" xml:space="preserve">
+    <value>Correio enviado para a CAU.</value>
+  </data>
+  <data name="DescAbrirIncidencia" xml:space="preserve">
+    <value>Envie um e-mail para a CAU sobre qualquer tipo de incidente relacionado ao aplicativo</value>
+  </data>
+  <data name="ErrorEnvioCorreo" xml:space="preserve">
+    <value>Erro ao enviar o correio. Por favor, tente novamente mais tarde.</value>
+  </data>
+  <data name="FaltaComentario" xml:space="preserve">
+    <value>Comentário faltando</value>
+  </data>
+  <data name="lblAbrirIncidencia" xml:space="preserve">
+    <value>Incidência aberta</value>
+  </data>
+  <data name="lblDescripcionIncidencia" xml:space="preserve">
+    <value>Insira uma descrição do incidente</value>
+  </data>
+  <data name="lblError" xml:space="preserve">
+    <value>ocorreu um erro</value>
+  </data>
+  <data name="lblTextoAdjunto" xml:space="preserve">
+    <value>Recomenda-se anexar uma captura de tela ou um arquivo anexado</value>
+  </data>
+</root>

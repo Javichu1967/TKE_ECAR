@@ -1,0 +1,67 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+
+@using (Html.BeginForm("ValidarSolicitud", "Alertas", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "stripHtml('formvalsolicitud')", @id = "formvalsolicitud" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="modal fade" id="modalValidarSolicitud" role="dialog">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog  vertical-align-center">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="modal-header-logo"></span>
+                        </button>
+                        <h4 class="modal-title" id="modaltitleValidarSolicitud"> </h4>
+                    </div>
+                         
+                    <div class="modal-body" id="modalbodyValidarSolicitud"> 
+                        @*<div id="toast-container"></div>*@      
+                    </div>                             
+                    <div class="modal-footer">
+                        <button type="submit" id="aceptarValidarSolicitud" class="btn btn-default">@resourceView.AccionAceptar</button>
+                        <button type="button" class="btn btn-cancel" data-dismiss="modal">@resourceView.AccionCerrar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+      
+}
+
+    <script type="text/javascript">
+
+        $("#formvalsolicitud").submit(function (e) {
+
+            if ($("#formvalsolicitud").valid()) {//validamos el form
+                var formData = new FormData(this);
+
+                $.ajax({
+                    type: this.method,
+                    url: this.action,
+                    data: formData,
+                    contentType: false,
+                    processData: false
+
+                }).done(function (data, textStatus, jqXHR) {
+                    if (data == 'Success') {
+
+                        tableAlertas.ajax.reload(null, false);
+
+                        notify('@resourceView.toastrInfAccionOK', 'i');
+
+                        $('#modalValidarSolicitud').modal('hide');
+
+                    }
+                    else {
+                        notify(data, 'e');
+
+                    }
+                });
+            }
+            e.preventDefault();
+        });
+
+    </script>

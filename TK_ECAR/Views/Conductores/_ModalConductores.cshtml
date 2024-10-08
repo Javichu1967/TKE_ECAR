@@ -1,0 +1,128 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+
+@using (Html.BeginForm("GuardarConductor", "Conductores", null, FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "stripHtml('formConductor')", @id= "formConductor" }))
+{ @Html.AntiForgeryToken()
+    
+        <div class="modal fade" id="modalConductor" role="dialog">
+            <div class="vertical-alignment-helper">
+                <div class="modal-dialog  vertical-align-center">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                <span class="modal-header-logo"></span>
+                            </button>
+                            <h4 class="modal-title" id="modaltitleConductor"> </h4>
+                        </div>
+                         
+                        <div class="modal-body"> 
+                            @*<div id="toast-container"></div>*@              
+                            <div id="modalbodyConductor"></div> 
+                            
+                        </div>                             
+                        <div class="modal-footer">
+                            <button type="submit" id="aceptarConductor" class="btn btn-default">@resourceView.AccionAceptar</button>
+                            <button type="button" class="btn btn-cancel" data-dismiss="modal">@resourceView.AccionCerrar</button>
+                         </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+}
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#formConductor").submit(function (e) {
+                if ($("#formConductor").valid()) {//validamos el form
+                    LimpiaValidationSummary();
+                    if (validaDatosConductor()){
+                        var formData = new FormData(this);
+                        @*var uRl = '@Url.Action("Index", "Conductor")';*@
+                        $.ajax({
+                            type: this.method,
+                            url: this.action,
+                            data: formData,
+                            contentType: false,
+                            processData: false,
+
+                            success: function (data) {
+                                ajaxSuccessConductores();
+                                reloadTableConductor()
+                                //setTimeout(function () { window.location.replace(uRl) }, 1000);
+
+                            },
+                            error: function (error) {
+                                ajaxErrorConductores();
+                            }
+                        });
+                    }
+                    else {
+                        $('#divValidationSummary').addClass("validation-summary-errors").removeClass("validation-summary-valid");
+                        $("#divValidationSummary").show();
+                    }
+                }
+                else{
+                    validaDatosConductor();
+                }
+                e.preventDefault();
+
+            });
+        });
+
+        function ajaxSuccessConductores() {
+            notify('@resourceView.toastrInfConductorCorrecto', 'i');
+            $('#modalConductor').modal('hide');
+        }
+
+        function ajaxErrorConductores() {
+            notify('@resourceView.toastrInfConductorError', 'e');
+        }
+
+        function validaDatosConductor() {
+            var valorReturn = true;
+            var textError = '<li>texto</li>';
+
+            if (isValidDate("#Fecha_Nacimiento", "dd/MM/yyyy") && isValidDate("Fecha_Carnet", "dd/MM/yyyy")) {
+                if (dayDiff("#Fecha_Nacimiento", "#Fecha_Carnet") <= 17) {
+                    $("#divValidationSummaryPanel_body ul").append(textError.replace("texto", '@Html.Raw(@resourceView.msgErrFechaCarnetNacimiento)'));
+                    valorReturn = false;
+                }
+            }
+            if (isValidDate("#Fecha_Nacimiento", "dd/MM/yyyy") && isValidDate("Fecha_Vencimiento_Carnet", "dd/MM/yyyy")) {
+                if (dayDiff("#Fecha_Nacimiento", "#Fecha_Vencimiento_Carnet") <= 17) {
+                    $("#divValidationSummaryPanel_body ul").append(textError.replace("texto", '@Html.Raw(@resourceView.msgErrFechaVtoCarnetNacimiento)'));
+                    valorReturn = false;
+                }
+            }
+            if (isValidDate("#Fecha_Carnet", "dd/MM/yyyy") && isValidDate("Fecha_Vencimiento_Carnet", "dd/MM/yyyy")) {
+                if (dayDiff("#Fecha_Carnet", "#Fecha_Vencimiento_Carnet") <= 0) {
+                    $("#divValidationSummaryPanel_body ul").append(textError.replace("texto", '@Html.Raw(@resourceView.msgErrFechaCarnetVto)'));
+                    valorReturn = false;
+                }
+            }
+
+            if ($("#PersonalInterno").val().toLowerCase() == "false") {
+                var _dni = $('#DNI').val().trim();
+                if (_dni != '') {
+                    if (!fCalcularNIF_España(_dni)) {
+                        if (!fCalcularNIE_España(_dni)) {
+                            if (!fvalidaDNI_Portugal(_dni)) {
+                                $("#divValidationSummaryPanel_body ul").append(textError.replace("texto", '@Html.Raw(@resourceView.msgErrDNI)'));
+                                valorReturn = false;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            return valorReturn;
+        }
+
+        //$("#divValidationSummaryPanel ul").append('<li>texto</li>')
+
+
+    </script>

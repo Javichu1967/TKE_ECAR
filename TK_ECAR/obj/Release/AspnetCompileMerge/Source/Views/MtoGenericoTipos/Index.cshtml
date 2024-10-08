@@ -1,0 +1,319 @@
+﻿@using resourceView = TK_ECAR.Content.resources;
+@using System.Configuration
+@using TK_ECAR.Framework
+@*@using TK_ECAR.Models
+@model MtoGenericoTiposModels*@
+
+@{ 
+    var textoMtoGenerico = ViewData["MtoGenerico"].ToString();
+    var textoMtoGenericoInf = ViewData["MtoGenericoInf"].ToString();
+    var textoCabecera = ViewData["CabeceraMtoGenerico"].ToString();
+    var textoBorrar = ViewData["BorrarMtoGenerico"].ToString();
+    var tipoMantenimiento = ViewData["TipoMtoGenerico"].ToString();
+    var textoCabeceraForeign = ViewData["CabeceraMtoGenericoForeign"].ToString();
+    var textoID_Foreign = @resourceView.TK_ECAR_Resource.titleID_MarcaECAR;
+    var textoID_Tipo = "";
+    if (Convert.ToInt32(tipoMantenimiento) == (int)EnumMtoTiposGenerales.Marcas)
+        textoID_Tipo = @resourceView.TK_ECAR_Resource.titleID_MarcaECAR;
+    if (Convert.ToInt32(tipoMantenimiento) == (int)EnumMtoTiposGenerales.Modelos)
+        textoID_Tipo = @resourceView.TK_ECAR_Resource.titleID_ModeloECAR;
+    if (Convert.ToInt32(tipoMantenimiento) == (int)EnumMtoTiposGenerales.Vehiculos)
+        textoID_Tipo = @resourceView.TK_ECAR_Resource.titleID_TipoVehiculoECAR;
+
+}
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="infoMtoGenericoTipos">
+            @{
+                var actionLink = Ajax.ActionLink("JSTITLEMODAL", "NuevoTipoGenerico", "MtoGenericoTipos", new { tipoMantenimiento = "valordeltipomantenimiento" },
+                                    new AjaxOptions
+                                    {
+                                        UpdateTargetId = "modalbodyMtoGenerico",
+                                        OnSuccess = "showModalMtoGenerico();",
+                                        OnComplete = "completeModalMtoGenerico()",
+                                        InsertionMode = InsertionMode.Replace,
+                                        OnBegin = "setTitleModal('JSTITLEMODAL')"
+                                    }, new { @title = "tooltip", @class = "tk-icon-med icon-tk-plus", @style = "float: right;" }).ToString();
+            }
+            <h3>@textoMtoGenerico
+                <span id="linkuser" style="float: right;">@resourceView.TK_ECAR_Resource.LAñadir</span> 
+                @Html.Raw(actionLink.Replace("JSTITLEMODAL", @textoMtoGenerico).Replace("tooltip", @textoMtoGenerico).Replace("valordeltipomantenimiento", @tipoMantenimiento))
+            </h3>
+            <p>@textoMtoGenericoInf</p>
+        </div>
+    </div>
+</div>
+
+<table id="tableMtoGenericoTipos" class="display responsive" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>@textoCabeceraForeign</th>
+            <th>@textoID_Foreign</th>
+            <th>@textoCabecera</th>
+            <th>@textoID_Tipo</th>
+            <th>@resourceView.ModelsResources.lblTieneITV</th>
+            <th>@resourceView.TK_ECAR_Resource.DataTableCabAccion</th>
+            <th>TipoMtoGenerico</th>
+            <th>PermiteBorrado</th>
+        </tr>
+    </thead>
+</table>
+
+@Html.Partial("_ModalMtoGenericoTipos")
+
+<style>
+    .export-btn {
+        margin: 10px;
+        padding: 5px;
+    }
+</style>
+
+@section Scripts {
+
+
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecss")'>
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecssResponsive")'>
+
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/choosenCSS")'>
+
+    <script src='@Scripts.Url("~/bundles/datatable")'> </script>
+    <script src='@Scripts.Url("~/bundles/dtresponsive")'> </script>
+
+    <script src='@Scripts.Url("~/bundles/choosenJqJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/choosenAjaxJs")'> </script>
+
+    <script src='@Scripts.Url("~/bundles/DataTablesButtonJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsFlashJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsHtml5Js")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesjszipJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesVfsFontsJs")'> </script>
+
+
+    <script type="text/javascript">
+        var _tableMtoGenericoTipos;
+        var _tipoMtoModelo = @((int)@EnumMtoTiposGenerales.Modelos);
+        var _tipoMtoVehiculo = @((int)@EnumMtoTiposGenerales.Vehiculos);
+        var _tipoMtoMarcas = @((int)@EnumMtoTiposGenerales.Marcas);
+        var _tipoMtoTarjetaCombustible = @((int)@EnumMtoTiposGenerales.TarjetaCombustible);
+        var _tipoMtoTiposVehiculo = @((int)@EnumMtoTiposGenerales.Vehiculos);
+        var textToolTip = '';
+
+        var actionMtoGenerico = '@Ajax.RawActionLink("textoQuitarPorVacio", "EditarMtoGenerico", "MtoGenericoTipos", new { id = "valordelidaccion", tipoMantenimiento = "valordeltipodemantenimiento" },
+        new AjaxOptions { UpdateTargetId = "modalbodyMtoGenerico", OnSuccess = "showModalMtoGenerico();", OnComplete = "completeModalMtoGenerico()", InsertionMode = InsertionMode.Replace, OnBegin = "setTitleModal('JSTITLEMODAL')" },
+        new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" })';
+        actionMtoGenerico = actionMtoGenerico.replace("textoQuitarPorVacio", "").replace("valordeltipodemantenimiento", @tipoMantenimiento);
+
+        var uRlDataTable = '@Url.Action("MtoGenericoJson", "MtoGenericoTipos", new { tipoMantenimiento = "valordeltipomantenimiento" })';
+        uRlDataTable = uRlDataTable.replace("valordeltipomantenimiento", @tipoMantenimiento);
+
+        $(document).ready(function () {
+            _tableMtoGenericoTipos = $('#tableMtoGenericoTipos').DataTable(
+                {
+                    "dom": 'Blfrtip',
+                    "ordering": true,
+                    "ordering": true,
+                    "processing": true,
+                    "paginate": true,
+                    "order": [[0, "asc"], [2, "asc"]],
+                    "fixedColumns": false,
+                    "buttons": [{
+                        text: '@resourceView.TK_ECAR_Resource.btnExportarExcel',
+                        extend: 'excel',
+                        className: 'btn btn-default export-btn',
+                        title: '@Html.Raw(@textoMtoGenerico)',
+                        exportOptions: {
+                            columns: [23]
+                        }
+                    }],
+                    "ajax": {
+                        "url": uRlDataTable,
+                        "datatype": "json",
+                        "type": "POST"
+
+                    },
+                    "columns": [
+                        { "data": "Descripcion_FOREIGN" },
+                        { "data": "ID_Tipo_FOREIGN" },
+                        { "data": "Descripcion" },
+                        { "data": "ID_Tipo" },
+                        { "data": "TieneITV" },
+                        { "data": "AccionDatatable" },
+                        { "data": "TipoMtoGenerico" },
+                        { "data": "PermiteBorrado" },
+                    ],
+                    "language": {
+                        "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.TK_ECAR_Resource.ArchivoIdiomaDataTable )'
+                    },
+                    "drawCallback": function () {
+                        $('[data-toggle="popover"]').popover({ html: true });
+                    },
+                    "columnDefs": [
+                    {
+                        "targets": 0,
+                        //"searchable": true,
+                    },
+                    {
+                        "targets": 1,
+                    },
+                    {
+                        "targets": 2,
+                    },
+                    {
+                        "targets": [3],
+                        //"visible": false,
+                        //"searchable": false,
+                        "render": function (data, type, row) {
+                            if (row.TipoMtoGenerico == _tipoMtoMarcas){
+                                textToolTip = '- @Html.Raw(@resourceView.TK_ECAR_Resource.infSinModeloAsociado)';
+                            }
+                            else{
+                                textToolTip = '';
+                            }
+                            return row.ID_Tipo;
+                        }
+                    },
+
+                    {
+                        "targets": [6,7],
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": 4,
+                        "width": "20%",
+                        "orderable": false,
+                        //"searchable": false,
+                        "className": "dt-center",
+                        "render": function (data, type, row) {
+                            if (row.TieneITV){
+                                return '@resourceView.TK_ECAR_Resource.ValorYES';
+                            }
+                            else{
+                                return '@resourceView.TK_ECAR_Resource.ValorNO';
+                            }
+                        }
+                    },
+                    {
+                        "targets": 5,
+                        "width": "20%",
+                        "orderable": false,
+                        "searchable": false,
+                        //"className": "dt-center",
+                        "type": "html",
+                        "render": function (data, type, row) {
+                            var menuAcciones = "";
+                            menuAcciones = menuAcciones + "<a class='tk-icon-med icon-tk-edit tk-icon-bold ' "
+                                            + actionMtoGenerico.replace("valordelidaccion", row.ID_Tipo)
+                                            .replace("TITTLEACCION", '@resourceView.TK_ECAR_Resource.AccionEditar')
+                                            .replace("accionmenu", '@resourceView.TK_ECAR_Resource.AccionEditar')
+                                            .replace("JSTITLEMODAL", '@resourceView.TK_ECAR_Resource.AccionEditar' + ' - ' + escape(row.Descripcion) + ' - ')
+                                            + " </a>";
+                            if (row.PermiteBorrado){
+                                menuAcciones = menuAcciones + '<a class="tk-icon-med icon-tk-delete tk-icon-bold tk-icon-red " '
+                                                + 'href="#" onclick="return clickBorrar(event,' + row.ID_Tipo + ',\'' + escape(row.Descripcion) + '\',' + @tipoMantenimiento + ');" '
+                                                + ' data-toggle = "popover", data-placement = "top", data-trigger = "hover" '
+                                                + 'data-content = "@Html.Raw(@resourceView.TK_ECAR_Resource.AccionBorrar)' + textToolTip + '">'
+                                                + '</a>';
+                            }
+                            return menuAcciones;
+                        }
+                    },
+                    ]
+                });
+
+            if (@tipoMantenimiento != parseInt(_tipoMtoModelo) && @tipoMantenimiento != parseInt(_tipoMtoMarcas)){
+                var column = _tableMtoGenericoTipos.column(0);
+                column.visible(!column.visible());
+                column = _tableMtoGenericoTipos.column(1);
+                column.visible(!column.visible());
+                if (@tipoMantenimiento != parseInt(_tipoMtoTiposVehiculo)){
+                    column = _tableMtoGenericoTipos.column(3);
+                    column.visible(!column.visible());
+                }
+                //$('#tableMtoGenericoTipos thead th:eq(2)').width("1%");
+                //$('#tableMtoGenericoTipos thead th:eq(3)').width("80%");
+            }
+            else if (@tipoMantenimiento == parseInt(_tipoMtoMarcas)){
+                var column = _tableMtoGenericoTipos.column(0);
+                column.visible(!column.visible());
+                column = _tableMtoGenericoTipos.column(1);
+                column.visible(!column.visible());
+            }
+
+            if (@tipoMantenimiento != parseInt(_tipoMtoVehiculo)){
+                var column = _tableMtoGenericoTipos.column(4);
+                column.visible(!column.visible());
+            }
+        });
+
+        function syntaxLinkBaja(data, row) {
+            return "<a class='tk-icon icon-tk-delete' href='#' onclick='return clickBorrar(event," + row.ID_Tipo + ");'></a>";
+        }
+
+        function clickBorrar(e, IdMto, descMto, tipoMto) {
+            e.preventDefault();
+
+            var numTarjetasInEmpresa = 0;
+            var pregunta = '@resourceView.TK_ECAR_Resource.msgPreguntaBorrarMtoGenerico.Replace("####", @textoBorrar)';
+
+            if (tipoMto ==_tipoMtoTarjetaCombustible){
+                var linkTarjetas = '@Html.Raw(Url.Action("GetTarjetasByEmpresaEmisoraJson", "TarjetasCombustible", new { empresa = "idborrar" }))';
+                linkTarjetas = linkTarjetas.replace("idborrar", IdMto);
+                $.ajax({
+                    "url": linkTarjetas,
+                    "async": false,
+                    "dataType": 'json',
+                    "success": function (data, t, x) {
+                        numTarjetasInEmpresa = data.data.length;
+                    }
+                });
+
+                if (numTarjetasInEmpresa > 0) {
+                    pregunta = pregunta + '</br></br>'
+                    pregunta = pregunta + '<p>' + '@resourceView.TK_ECAR_Resource.preguntaBorrarEmpresasEmisoras1' + " </p>";
+                    pregunta = pregunta + '<p>' + '@resourceView.TK_ECAR_Resource.preguntaBorrarEmpresasEmisoras2' + "</p>";
+                    pregunta = pregunta.replace("numerotarjetas", numTarjetasInEmpresa);
+                }
+            }
+
+            confirm('@resourceView.TK_ECAR_Resource.msgBorrarMtoGenerico.Replace("####", @textoBorrar)' + ' - ' + descMto + ' - ', pregunta,
+                function (result) {
+                    if (result) {
+                        var link = '@Html.Raw(Url.Action("BorraMtoGenerico", "MtoGenericoTipos", new { id = "idborrar", tipoMantenimiento = "tipomantenimientogenerico" }))';
+                        link = link.replace("idborrar", IdMto).replace("tipomantenimientogenerico", tipoMto);
+                        $.ajax({
+                            "url": link,
+                            "dataType": 'json',
+                            "success": function (data, t, x) {
+                                reloadTableMtoGenerico();
+                            }
+                        });
+                        //_tableCategorias.rows.draw();
+                    }
+                });
+        }
+
+        function reloadTableMtoGenerico() {
+            _tableMtoGenericoTipos.ajax.reload(null, false);
+        }
+
+        function showModalMtoGenerico() {
+            $('#modalMtoGenerico').modal('show');
+        }
+        function setTitleModal(title) {
+            $('#modaltitleMtoGenerico').text(title);
+        }
+
+        function completeModalMtoGenerico() {
+            //para que funcione los validadores a la viewpartial recien creada.
+            //reconstruye el DOM con los validadores de los campos nuevos
+            $("form").removeData("validator");
+            $("form").removeData("unobtrusiveValidation");
+            $.validator.unobtrusive.parse("form");
+            $("form").validate();
+        }
+
+    </script>
+}
+

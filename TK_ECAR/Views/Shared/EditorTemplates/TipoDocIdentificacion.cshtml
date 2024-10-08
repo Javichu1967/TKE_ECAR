@@ -1,0 +1,83 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+@Html.Hidden(ViewData.TemplateInfo.FormattedModelValue.ToString())
+<select id="miTipoDocIdentificacion" class="form-control" data-placeholder=@resourceView.placeholderChosen puedeDeshabilitarse = "SI" >
+    <option></option>
+</select>
+<style type="text/css">
+    #miTipoDocIdentificacion_chosen {
+        width: 115px !important;
+        display: block;
+    }
+</style>
+
+<script type="text/javascript">
+
+    TipoDocIdentificacionSeleccionado();
+
+    function TipoDocIdentificacionSeleccionado() {
+        if ($("#TipoDocumentoIdentificacion").val() != '') {
+            var link = '@Html.Raw(Url.Action("GetTiposDocumentoIdentificacionByVal", "Conductores", new { idDoc = "idchosen" }))';
+            link = link.replace("idchosen", $("#TipoDocumentoIdentificacion").val());
+            $.ajax({
+                "url": link,
+                "dataType": 'json',
+                //"async": false,
+                "success": function (data, t, x) {
+                    $.each(data, function (i, val) {
+                        var $opt = $('<option value="' + val.value + '" selected="selected">').html(val.text);
+                        $('#miTipoDocIdentificacion').append($opt);
+                    });
+
+                    $("#miTipoDocIdentificacion").trigger("chosen:updated");
+                }
+            });
+        }
+    }
+
+    chosenTipoDocIdentificacion();
+
+    function chosenTipoDocIdentificacion() {
+        var link = '@Html.Raw(Url.Action("GetTiposDocumentoIdentificacion", "Conductores"))';
+
+        $("#miTipoDocIdentificacion").ajaxChosen({
+            type: 'GET',
+            url: link,
+            async: false,
+            beforeSend: function (data, textStatus, jqXHR) {
+                $('#loaderAjax').removeClass('loading-transparent');
+            },
+            complete: function (data, textStatus, jqXHR) {
+                $('#loaderAjax').addClass('loading-transparent');
+            },
+            minTermLength: 0,
+            dataType: 'json'
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+
+        },
+
+
+            {
+                //options
+                disable_search_threshold: -1,
+                allow_single_deselect: true,
+            });
+    }
+
+    $('#miTipoDocIdentificacion').on('change', function () {
+        $('#TipoDocumentoIdentificacion').val(this.value);
+        ValidaDocumentoIdentificacion();
+    });
+
+    //$('#miTipoDocPresidente').on('chosen:hiding_dropdown', function (evt, params) {
+    //    setFocusToElement("DNI_PRESIDENTE");
+    //});
+
+</script>
+
+

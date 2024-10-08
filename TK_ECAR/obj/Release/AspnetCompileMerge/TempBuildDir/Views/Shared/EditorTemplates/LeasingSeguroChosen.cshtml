@@ -1,0 +1,113 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Framework;
+
+@{ 
+    var idChosen = "";
+    if (ViewData.ModelMetadata.PropertyName == "Cia_Seguro")
+    {
+        idChosen = "miEmpSeguro";
+    }
+    else
+    {
+        idChosen = "miEmpLeasing";
+    }
+}
+<select id=@idChosen title=@resourceView.LSelectCompany search class="form-control" data-placeholder=@resourceView.placeholderChosen puedeDeshabilitarse = "SI">
+    <option></option>
+</select>
+
+
+@if (idChosen == "miEmpLeasing")
+{
+    <style type="text/css">
+        #miEmpLeasing_chosen {
+                width: 100% !important;
+                display: block;
+        }
+    </style>
+}
+@if (idChosen == "miEmpSeguro")
+{
+    <style type="text/css">
+        #miEmpSeguro_chosen {
+                width: 100% !important;
+                display: block;
+        }
+    </style>
+}
+
+<script type="text/javascript">
+    var idChosenJquery = "";
+    if ('@ViewData.ModelMetadata.PropertyName' == 'Cia_Seguro') {
+        idChosenJquery = "#miEmpSeguro";
+    }
+    else {
+        idChosenJquery = "#miEmpLeasing";
+    }
+
+    if (('@ViewData.ModelMetadata.PropertyName' == 'Cia_Seguro' && $("#IDCia_Seguro").val() != '') ||
+                ('@ViewData.ModelMetadata.PropertyName' == 'EmpresaLeasing' && $("#IDEmpresaLeasing").val() != '')) {
+
+        var uRl = '@Html.Raw(@Url.Action("GetEmpresaVehiculoByID_Chosen", "MiFlota", new { id = "idchosen" }))'
+        if ('@ViewData.ModelMetadata.PropertyName' == 'Cia_Seguro') {
+            uRl = uRl.replace("idchosen", $("#IDCia_Seguro").val());
+        }
+        else {
+            uRl = uRl.replace("idchosen", $("#IDEmpresaLeasing").val());
+        }
+        $.ajax({
+            "url": uRl,
+            "dataType": 'json',
+            "async": false,
+            "success": function (data, t, x) {
+                $.each(data, function (i, val) {
+                    var $opt = $('<option value="' + val.value + '" selected="selected">').html(val.text);
+                    $(idChosenJquery).append($opt);
+                });
+
+                $(idChosenJquery).trigger("chosen:updated");
+            }
+        });
+    }
+
+    EmpresaVehiculoChosen();
+
+    function EmpresaVehiculoChosen() {
+        var Url =  '@Html.Raw(@Url.Action("GetEmpresaVehiculo_chosen", "MiFlota", new { TipoEmpresa = "idTipo" }))'
+        if ('@ViewData.ModelMetadata.PropertyName' == 'EmpresaLeasing') {
+            Url = Url.replace("idTipo", @((int)@EnumTipoEmpresaVehiculo.Leasing));
+        }
+        else {
+            Url = Url.replace("idTipo", @((int)@EnumTipoEmpresaVehiculo.Seguros));
+        }
+        $(idChosenJquery).ajaxChosen({
+            type: 'GET',
+            url: Url,
+            minTermLength: 0,
+            dataType: 'json',
+            "async": false,
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+        },
+            {
+                //options
+                disable_search_threshold: -1,
+                allow_single_deselect: true,
+            });
+    }
+    //Pasar como parámetro a chosen el filtro de lo que se quiere.
+    $(idChosenJquery).change(function () {
+        if ('@ViewData.ModelMetadata.PropertyName' == 'Cia_Seguro') {
+            $("#IDCia_Seguro").val(this.value);
+        }
+        else {
+            $("#IDEmpresaLeasing").val(this.value);
+        }
+    });
+
+
+</script>

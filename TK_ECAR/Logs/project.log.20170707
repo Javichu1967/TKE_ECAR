@@ -1,0 +1,65 @@
+2017-07-07 12:13:54,710 [7] ERROR System.NullReferenceException: Referencia a objeto no establecida como instancia de un objeto.
+   en TK_ECAR.Infraestructure.RepositoryBase`1.Where(ISpecification`1 specfication) en C:\Workspaces\Projects\TK_ECAR\TK_ECAR.Infraestructure\RepositoryBase.cs:línea 99
+   en TK_ECAR.Application_Services.ConductoresECARService.AllConductoresDataTable_ECAR(List`1 empresas)
+   en TK_ECAR.Controllers.ConductoresController.ConductoresJson()
+   en lambda_method(Closure , ControllerBase , Object[] )
+   en System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   en System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult) - [:0]
+2017-07-07 13:49:12,229 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 93, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 93. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:12,416 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 97, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 97. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:13,903 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 141, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 141. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 3. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:14,124 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 148, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 148. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:14,365 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 154, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 154. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:16,505 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 220, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 220. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:18,179 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 267, PASO <GENERANDO CONDUCTOR> FILA -> 267. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:18,365 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 272, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 272. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:19,334 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 299, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 299. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:20,059 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 322, PASO <GENERANDO CONDUCTOR> FILA -> 322. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:20,948 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 349, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 349. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:22,927 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 403, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 403. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:22,961 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 404, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 404. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:22,995 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 405, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 405. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:31,588 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 467, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 467. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:32,416 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 474, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 474. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:33,470 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 478, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 478. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:37,371 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 511, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 511. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:39,388 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 541, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 541. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:39,414 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 542, PASO <GENERANDO CONDUCTOR> FILA -> 542. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:39,489 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 544, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 544. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]
+2017-07-07 13:49:40,233 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/FLOTA/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 566, PASO <GENERANDO CONDUCTOR> FILA -> 566. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:155]

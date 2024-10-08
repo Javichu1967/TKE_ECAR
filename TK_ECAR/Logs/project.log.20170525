@@ -1,0 +1,566 @@
+2017-05-25 08:47:24,890 [10] ERROR System.InvalidOperationException: No se encuentra la vista parcial '_ModalMtoVehiculo' o no hay un motor de búsqueda que admita las ubicaciones de búsqueda. Se buscó en las siguientes ubicaciones: 
+~/Views/ImportarFlota/_ModalMtoVehiculo.aspx
+~/Views/ImportarFlota/_ModalMtoVehiculo.ascx
+~/Views/Shared/_ModalMtoVehiculo.aspx
+~/Views/Shared/_ModalMtoVehiculo.ascx
+~/Views/ImportarFlota/_ModalMtoVehiculo.cshtml
+~/Views/ImportarFlota/_ModalMtoVehiculo.vbhtml
+~/Views/Shared/_ModalMtoVehiculo.cshtml
+~/Views/Shared/_ModalMtoVehiculo.vbhtml
+   en System.Web.Mvc.HtmlHelper.FindPartialView(ViewContext viewContext, String partialViewName, ViewEngineCollection viewEngineCollection)
+   en System.Web.Mvc.HtmlHelper.RenderPartialInternal(String partialViewName, ViewDataDictionary viewData, Object model, TextWriter writer, ViewEngineCollection viewEngineCollection)
+   en System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   en System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model)
+   en ASP._Page_Views_ImportarFlota_Index_cshtml.Execute() en C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Views\ImportarFlota\Index.cshtml:línea 71
+   en System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   en System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   en System.Web.WebPages.StartPage.RunPage()
+   en System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   en System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   en System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   en System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   en System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   en System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   en System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult) - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Filters\HandleCustomException.cs:24]
+2017-05-25 09:09:05,076 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 2, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 2. 
+An error occurred while updating the entries. See the inner exception for details. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:05,103 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 3, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 3. 
+An error occurred while updating the entries. See the inner exception for details. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:05,135 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 4, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 4. 
+An error occurred while updating the entries. See the inner exception for details. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:05,155 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 5, PASO <GENERANDO CONDUCTOR> FILA -> 5. 
+An error occurred while updating the entries. See the inner exception for details. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:05,180 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 6, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 6. 
+An error occurred while updating the entries. See the inner exception for details. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:05,200 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 7, PASO <GENERANDO CONDUCTOR> FILA -> 7. 
+An error occurred while updating the entries. See the inner exception for details. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:05,227 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 8, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 8. 
+An error occurred while updating the entries. See the inner exception for details. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:05,360 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 12, PASO <GENERANDO CONDUCTOR> FILA -> 12. 
+An error occurred while updating the entries. See the inner exception for details. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:06,897 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 93, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 93. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:06,969 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 97, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 97. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:07,736 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 141, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 141. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 3. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:07,866 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 148, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 148. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:07,980 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 154, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 154. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:09,073 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 220, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 220. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:09,868 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 267, PASO <GENERANDO CONDUCTOR> FILA -> 267. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:09,963 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 272, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 272. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:10,448 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 299, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 299. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:10,815 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 322, PASO <GENERANDO CONDUCTOR> FILA -> 322. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:11,259 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 349, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 349. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:12,193 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 403, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 403. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:12,219 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 404, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 404. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:12,243 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 405, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 405. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:13,293 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 467, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 467. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:13,400 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 474, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 474. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:13,463 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 478, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 478. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:13,977 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 511, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 511. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:14,510 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 541, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 541. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:14,526 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 542, PASO <GENERANDO CONDUCTOR> FILA -> 542. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:14,564 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 544, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 544. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:09:14,928 [11] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 566, PASO <GENERANDO CONDUCTOR> FILA -> 566. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:26:40,013 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 2, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 2. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5327).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:40:41,391 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 3, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 3. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5329).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:37,975 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 4, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 4. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5331).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:41,256 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 5, PASO <GENERANDO CONDUCTOR> FILA -> 5. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5332).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:45,282 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 6, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 6. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5333).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:45,301 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 7, PASO <GENERANDO CONDUCTOR> FILA -> 7. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5334).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:45,324 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 8, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 8. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5335).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:45,354 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 12, PASO <GENERANDO CONDUCTOR> FILA -> 12. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5336).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:45,713 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 93, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 93. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:45,744 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 97, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 97. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:45,932 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 141, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 141. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 3. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:45,975 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 148, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 148. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:46,017 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 154, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 154. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:46,321 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 220, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 220. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:46,523 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 267, PASO <GENERANDO CONDUCTOR> FILA -> 267. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:46,556 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 272, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 272. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:46,672 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 299, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 299. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:46,767 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 322, PASO <GENERANDO CONDUCTOR> FILA -> 322. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:46,896 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 349, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 349. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:47,111 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 403, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 403. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:47,130 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 404, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 404. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:47,149 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 405, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 405. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:47,397 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 467, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 467. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:47,438 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 474, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 474. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:47,469 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 478, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 478. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:47,613 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 511, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 511. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:47,733 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 541, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 541. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:47,746 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 542, PASO <GENERANDO CONDUCTOR> FILA -> 542. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:47,770 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 544, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 544. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:53:47,856 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 566, PASO <GENERANDO CONDUCTOR> FILA -> 566. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:16,214 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 2, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 2. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5337).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:16,239 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 3, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 3. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5338).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:16,262 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 4, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 4. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5339).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:16,277 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 5, PASO <GENERANDO CONDUCTOR> FILA -> 5. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5340).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:16,298 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 6, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 6. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5341).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:16,314 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 7, PASO <GENERANDO CONDUCTOR> FILA -> 7. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5342).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:16,341 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 8, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 8. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5343).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:16,374 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 12, PASO <GENERANDO CONDUCTOR> FILA -> 12. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5344).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:16,747 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 93, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 93. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:16,779 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 97, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 97. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:16,993 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 141, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 141. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 3. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:17,043 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 148, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 148. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:17,095 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 154, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 154. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:17,405 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 220, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 220. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:17,605 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 267, PASO <GENERANDO CONDUCTOR> FILA -> 267. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:17,637 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 272, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 272. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:17,763 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 299, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 299. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:17,861 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 322, PASO <GENERANDO CONDUCTOR> FILA -> 322. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:17,992 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 349, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 349. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:18,247 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 403, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 403. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:18,266 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 404, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 404. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:18,287 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 405, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 405. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:18,555 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 467, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 467. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:18,594 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 474, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 474. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:18,626 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 478, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 478. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:18,798 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 511, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 511. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:18,932 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 541, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 541. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:18,948 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 542, PASO <GENERANDO CONDUCTOR> FILA -> 542. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:18,975 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 544, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 544. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 09:54:19,079 [10] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 566, PASO <GENERANDO CONDUCTOR> FILA -> 566. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:28,961 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 2, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 2. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5346).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:29,009 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 3, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 3. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5347).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:29,037 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 4, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 4. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5348).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:29,057 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 5, PASO <GENERANDO CONDUCTOR> FILA -> 5. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5349).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:29,080 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 6, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 6. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5350).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:29,104 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 7, PASO <GENERANDO CONDUCTOR> FILA -> 7. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5351).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:29,146 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 8, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 8. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5352).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:29,221 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 12, PASO <GENERANDO CONDUCTOR> FILA -> 12. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5353).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:29,797 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 93, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 93. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:29,835 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 97, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 97. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:30,085 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 141, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 141. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 3. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:30,135 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 148, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 148. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:30,181 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 154, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 154. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:30,557 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 220, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 220. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:30,781 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 267, PASO <GENERANDO CONDUCTOR> FILA -> 267. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:30,818 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 272, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 272. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:30,969 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 299, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 299. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:31,100 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 322, PASO <GENERANDO CONDUCTOR> FILA -> 322. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:31,252 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 349, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 349. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:31,542 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 403, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 403. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:31,562 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 404, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 404. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:31,583 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 405, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 405. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:31,898 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 467, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 467. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:31,950 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 474, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 474. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:31,981 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 478, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 478. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:32,185 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 511, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 511. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:32,351 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 541, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 541. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:32,364 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 542, PASO <GENERANDO CONDUCTOR> FILA -> 542. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:32,390 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 544, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 544. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:01:32,501 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 566, PASO <GENERANDO CONDUCTOR> FILA -> 566. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:22,157 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 2, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 2. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5354).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:22,181 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 3, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 3. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5355).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:22,205 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 4, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 4. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5356).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:22,223 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 5, PASO <GENERANDO CONDUCTOR> FILA -> 5. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5357).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:22,247 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 6, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 6. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5358).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:22,267 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 7, PASO <GENERANDO CONDUCTOR> FILA -> 7. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5359).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:22,293 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 8, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 8. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5360).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:22,323 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 12, PASO <GENERANDO CONDUCTOR> FILA -> 12. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5361).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:22,728 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 93, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 93. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:22,761 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 97, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 97. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:23,025 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 141, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 141. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 3. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:23,084 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 148, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 148. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:23,125 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 154, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 154. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:23,540 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 220, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 220. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:23,840 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 267, PASO <GENERANDO CONDUCTOR> FILA -> 267. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:23,896 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 272, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 272. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:24,075 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 299, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 299. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:24,200 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 322, PASO <GENERANDO CONDUCTOR> FILA -> 322. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:24,342 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 349, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 349. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:24,618 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 403, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 403. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:24,637 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 404, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 404. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:24,659 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 405, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 405. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:24,971 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 467, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 467. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:25,018 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 474, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 474. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:25,051 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 478, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 478. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:25,223 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 511, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 511. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:25,391 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 541, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 541. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:25,404 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 542, PASO <GENERANDO CONDUCTOR> FILA -> 542. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:25,426 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 544, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 544. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:05:25,539 [18] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 566, PASO <GENERANDO CONDUCTOR> FILA -> 566. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:37,097 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 2, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 2. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5362).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:37,145 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 3, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 3. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5363).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:37,170 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 4, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 4. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5364).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:37,188 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 5, PASO <GENERANDO CONDUCTOR> FILA -> 5. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5365).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:37,214 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 6, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 6. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5366).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:37,236 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 7, PASO <GENERANDO CONDUCTOR> FILA -> 7. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5367).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:37,286 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 8, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 8. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5368).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:37,338 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 12, PASO <GENERANDO CONDUCTOR> FILA -> 12. 
+Violation of PRIMARY KEY constraint 'PK_DATOS_CONDUCTOR'. Cannot insert duplicate key in object 'dbo.ECAR_Datos_Conductor'. The duplicate key value is (5369).
+The statement has been terminated. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:37,764 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 93, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 93. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:37,798 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 97, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 97. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:38,018 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 141, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 141. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 3. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:38,064 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 148, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 148. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:38,105 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 154, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 154. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:38,435 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 220, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 220. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:38,659 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 267, PASO <GENERANDO CONDUCTOR> FILA -> 267. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:38,694 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 272, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 272. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:38,834 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 299, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 299. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:38,953 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 322, PASO <GENERANDO CONDUCTOR> FILA -> 322. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:39,099 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 349, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 349. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:39,355 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 403, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 403. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:39,374 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 404, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 404. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:39,398 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 405, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 405. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:39,714 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 467, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 467. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:39,758 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 474, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 474. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:39,794 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 478, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 478. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:39,961 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 511, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 511. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:40,120 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 541, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 541. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:40,134 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 542, PASO <GENERANDO CONDUCTOR> FILA -> 542. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:40,157 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 544, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 544. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:12:40,270 [6] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 566, PASO <GENERANDO CONDUCTOR> FILA -> 566. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:21:34,289 [25] ERROR An error occurred while updating the entries. See the inner exception for details. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:52,653 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 93, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 93. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:52,690 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 97, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 97. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:52,928 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 141, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 141. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 3. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:52,987 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 148, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 148. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:53,033 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 154, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 154. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:53,376 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 220, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 220. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:53,604 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 267, PASO <GENERANDO CONDUCTOR> FILA -> 267. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:53,643 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 272, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 272. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:53,793 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 299, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 299. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:53,910 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 322, PASO <GENERANDO CONDUCTOR> FILA -> 322. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:54,051 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 349, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 349. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:54,322 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 403, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 403. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:54,344 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 404, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 404. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:54,369 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 405, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 405. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:54,680 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 467, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 467. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:54,727 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 474, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 474. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:54,760 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 478, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 478. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:54,932 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 511, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 511. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:55,086 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 541, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 541. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:55,100 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 542, PASO <GENERANDO CONDUCTOR> FILA -> 542. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:55,127 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 544, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 544. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 10:26:55,241 [34] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 566, PASO <GENERANDO CONDUCTOR> FILA -> 566. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:30,617 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 93, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 93. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:30,731 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 97, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 97. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:30,963 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 141, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 141. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 3. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:31,012 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 148, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 148. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:31,062 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 154, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 154. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:31,417 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 220, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 220. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:31,658 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 267, PASO <GENERANDO CONDUCTOR> FILA -> 267. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:31,693 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 272, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 272. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:31,839 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 299, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 299. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:31,957 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 322, PASO <GENERANDO CONDUCTOR> FILA -> 322. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:32,097 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 349, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 349. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:32,373 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 403, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 403. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:32,392 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 404, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 404. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:32,412 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 405, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 405. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:32,720 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 467, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 467. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:32,772 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 474, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 474. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:32,805 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 478, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 478. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:32,974 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 511, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 511. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:33,127 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 541, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 541. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:33,147 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 542, PASO <GENERANDO CONDUCTOR> FILA -> 542. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:33,173 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 544, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 544. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:13:33,285 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 566, PASO <GENERANDO CONDUCTOR> FILA -> 566. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:20:17,198 [5] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 93, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 93. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [:0]
+2017-05-25 18:20:19,319 [5] ERROR <startImport> <FICHERO> , INICIO. 
+Referencia a objeto no establecida como instancia de un objeto. - [:0]
+2017-05-25 18:22:13,593 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 93, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 93. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:13,680 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 97, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 97. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:13,913 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 141, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 141. 
+No se reconoce la cadena como un valor de DateTime válido. Hay una palabra desconocida a partir del índice 3. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:13,963 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 148, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 148. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:14,004 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 154, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 154. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:14,333 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 220, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 220. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:14,559 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 267, PASO <GENERANDO CONDUCTOR> FILA -> 267. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:14,606 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 272, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 272. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:14,775 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 299, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 299. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:14,899 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 322, PASO <GENERANDO CONDUCTOR> FILA -> 322. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:15,052 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 349, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 349. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:15,325 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 403, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 403. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:15,347 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 404, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 404. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:15,366 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 405, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 405. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:15,682 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 467, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 467. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:15,732 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 474, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 474. 
+No se puede reconocer la cadena como valor DateTime válido. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:15,766 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 478, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 478. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:15,932 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 511, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 511. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:16,094 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 541, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 541. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:16,109 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 542, PASO <GENERANDO CONDUCTOR> FILA -> 542. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:16,133 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 544, PASO <GENERANDO CONDUCTOR POR Nº EMPLEADO ERRÓNEO> FILA -> 544. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]
+2017-05-25 18:22:16,247 [9] ERROR <startImport> <FICHERO> ~/App_Data/ImportFiles/Flota/Planificacion(Arval) MODIFICADO FORMATO BUENO.xlsx, FILA 566, PASO <GENERANDO CONDUCTOR> FILA -> 566. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:130]

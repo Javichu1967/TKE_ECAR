@@ -1,0 +1,234 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="infoDoc">
+            <h3>@resourceView.TitleDocumentos</h3>
+            <p>@resourceView.TitleDocumentosInf</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="form-group">
+            <label for="input-search" class="sr-only">@resourceView.btnFiltroBuscar:</label>
+            <input type="input" class="form-control" id="input-search" placeholder=@resourceView.btnBuscarDoc value="">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-9">
+        <div class="form-group">
+            <button type="submit" id="cerrarTodosLosNodos" class="btn btn-default">@resourceView.btnCerrarNodos</button>
+            <button type="submit" id="abrirTodosLosNodos" class="btn btn-default">@resourceView.btnAbrirNodos</button>
+        </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="form-group" style="float: right;">
+            <button type="submit" id="verDocumento" class="btn btn-default">@resourceView.btnVerDoc</button>
+        </div>
+    </div>
+</div>
+
+
+<div id="tree">
+
+</div>
+  
+
+
+@section Scripts {
+
+
+<link rel="stylesheet" type="text/css" href='@Styles.Url("~/bootstrapTreeviewCSSCdnPath")'>
+<script src='@Scripts.Url("~/bootstrapTreeviewCdnPath")'> </script>
+
+    <script type="text/javascript">
+        //{
+        //    text: "Node 1",
+        //    icon: "glyphicon glyphicon-stop",
+        //    selectedIcon: "glyphicon glyphicon-stop",
+        //    color: "#000000",
+        //    backColor: "#FFFFFF",
+        //    href: "#node-1",
+        //    selectable: true,
+        //    state: {
+        //        checked: true,
+        //        disabled: true,
+        //        expanded: true,
+        //        selected: true
+        //    },
+        //    tags: ['available'],
+        //    nodes: [
+        //      {},
+        //      ...
+        //      ]
+        //}
+
+        //var data = [
+        //  {
+        //      text: "Categoria 1",
+        //      tags: ['2'],
+        //      nodes: [
+        //        {
+        //            text: "Documento 1",
+        //            icon: "tk-icon icon-tk-document",
+        //        },
+        //        {
+        //            text: "Documento 2",
+        //            icon: "tk-icon icon-tk-document",
+        //            href: "Documento2",
+        //        }
+        //      ]
+        //  }, {
+        //      text: "Categoria 2",
+        //      tags: ['3'],
+        //        nodes: [
+        //        {
+        //            text: "Documento 3",
+        //            icon: "tk-icon icon-tk-document",
+        //        },
+        //        {
+        //            text: "Documento 4",
+        //            icon: "tk-icon icon-tk-document",
+        //        }, {
+        //            text: "Documento 5",
+        //            icon: "tk-icon icon-tk-document",
+        //        },
+        //        ]
+        //  },
+        //    {
+        //        text: "Categoria 3",
+        //        tags: ['1'],
+        //      nodes: [
+        //      {
+        //          text: "Documento 6",
+        //          icon: "tk-icon icon-tk-document",
+        //      }]
+        //    },
+        //    {
+        //        text: "Categoria 4",
+        //        tags: ['1'],
+        //        nodes: [
+        //        {
+        //            text: "Documento 7",
+        //            icon: "tk-icon icon-tk-document",
+        //        }]
+        //    },
+        //    {
+        //        text: "Categoria 5",
+        //        tags: ['1'],
+        //        nodes: [
+        //        {
+        //            text: "Documento 8",
+        //            icon: "tk-icon icon-tk-document",
+        //        }]
+        //    }
+        //];
+
+
+        var _Data;
+        var TreeViewDocumentos;
+        var documento;
+
+        //https://github.com/jonmiles/bootstrap-treeview
+        $(document).ready(function () {
+            loadUrl = '@Url.Action("GetJsonDataTreeviewDocumentacion", "Documentos")';
+            verDocumentodUrl = '@Url.Action("VerDocumento", "Documentos", new { idDocumento = "valoriddocumento" })';
+
+            $('#verDocumento').hide("fast");
+
+            $.ajax({
+                type: 'GET',
+                url: loadUrl,
+                async: false,
+                dataType: 'json',
+                success: function (data) {
+                    _Data = jQuery.parseJSON(JSON.stringify(data));
+                }
+            });
+
+            $TreeViewDocumentos = $('#tree').treeview({
+            });
+
+            $TreeViewDocumentos.treeview({
+                data: _Data,
+                showTags: true,
+                multiSelect: false,
+                onNodeSelected: function (event, node) {
+                    if (node.parentId != null)
+                    {
+                        if (node.id != 0) {
+                            $('#verDocumento').show("fast");
+                            documento = node.id;
+                        }
+                        else {
+                            $('#verDocumento').hide("fast");
+                            documento = "";
+                        }
+                    }
+                },
+                onNodeUnselected: function (event, node) {
+                    $('#verDocumento').hide("fast");
+                    documento = "";
+                }
+            });
+
+
+            $TreeViewDocumentos.treeview('collapseAll');
+
+        });
+
+        //******** Acciones en treeView
+        //Buscar en treeView
+        var search = function (e) {
+            var pattern = $('#input-search').val();
+            var options = {
+                ignoreCase: true,
+                exactMatch: false,
+                revealResults: true
+            };
+            var results = $TreeViewDocumentos.treeview('search', [pattern, options]);
+
+            //var output = '<p>' + results.length + ' matches found</p>';
+            //$.each(results, function (index, result) {
+            //    output += '<p>- ' + result.text + '</p>';
+            //});
+            //$('#search-output').html(output);
+        }
+
+        $('#btn-search').on('click', search);
+        $('#input-search').on('keyup', search);
+
+        $('#btn-clear-search').on('click', function (e) {
+            $TreeViewDocumentos.treeview('clearSearch');
+            $('#input-search').val('');
+            $('#search-output').html('');
+        });
+
+        //Cerrar todos los nodos
+        $('#cerrarTodosLosNodos').on('click', function (e) {
+            $TreeViewDocumentos.treeview('collapseAll', { silent: true });
+        });
+
+        //Abrir todos los nodos
+        $('#abrirTodosLosNodos').on('click', function (e) {
+            var levels = $('#select-expand-all-levels').val();
+            $TreeViewDocumentos.treeview('expandAll', { levels: levels, silent: true });
+        });
+
+        $('#verDocumento').on('click', function (e) {
+            //$.ajax({
+            //    type: 'POST',
+            //    url: verDocumentodUrl.replace("valoriddocumento", documento),
+            //    async: false,
+            //    success: function (data) {
+                    window.location = verDocumentodUrl.replace("valoriddocumento", documento);
+            //    }
+            //});
+        });
+
+
+    </script>
+}

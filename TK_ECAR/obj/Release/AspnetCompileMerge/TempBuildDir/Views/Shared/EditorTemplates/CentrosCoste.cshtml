@@ -1,0 +1,43 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<select id="CentroCoste" title=@resourceView.LSelectCC multiple="multiple" class="form-control">
+    <option></option>
+</select>
+<style type="text/css">
+    #CentroCoste {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+<script type="text/javascript">
+
+    $(function () {
+        chosenCentroCoste();
+    });
+
+    function chosenCentroCoste(parametro) {
+        var link = '@Html.Raw(Url.Action("GetCentrosCoste", "Filter", new { empresasSel = "empSel", dirTerritorialSel = "dtSel", delegacionSel = "delSel" }))';
+        link = link.replace("empSel", ConcatenaValoresChosen("Empresa")).replace("dtSel", ConcatenaValoresChosen("DireccionTerritorial")).replace("delSel", ConcatenaValoresChosen("Delegacion"));
+        $('#CentroCoste').prepend($('<option></option>').html('@resourceView.msgCargando'));
+        $("#CentroCoste").ajaxChosen({
+            type: 'GET',
+            url: link,
+            minTermLength: 0,
+            dataType: 'json'
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+
+        },
+            {
+                //options
+                disable_search_threshold: -1,
+
+            });
+
+    }
+
+</script>

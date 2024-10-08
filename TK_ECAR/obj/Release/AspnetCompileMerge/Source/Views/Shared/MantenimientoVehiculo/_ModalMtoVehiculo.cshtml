@@ -1,0 +1,143 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Models
+@using System.Configuration;
+@using TK_ECAR.Framework;
+
+<style>
+    .modal-lg {
+        width: 90% !important;
+    }
+</style>
+
+<style>
+    .tooltip .tooltiptext {
+        background-color: #0055be !important;
+        color: #fff !important;
+    }
+</style>
+
+@*Poner los chosen del mismo tamaño que los editores*@
+<style>
+    .chosen-container-single .chosen-single {
+        height: 34px !important;
+    }
+</style>
+
+
+
+<script type="text/javascript">
+    $.validator.setDefaults({ ignore: null }); //para validar campos ocultos
+</script>
+
+
+@using (Html.BeginForm("GuardarVehiculo", "MiFlota", null, FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "stripHtml('formVehiculo')", @id = "formVehiculo" }))
+{ @Html.AntiForgeryToken()
+
+    <div class="modal fade" id="modalMtoVehiculo" role="dialog">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog modal-lg vertical-align-center">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="modal-header-logo"></span>
+                        </button>
+                        <h4 class="modal-title" id="modaltitleMtoVehiculo"> </h4>
+                    </div>
+
+                    <div id="modal_body_MtoVehiculo" class="modal-body">
+                        <div id="modalbodyMtoVehiculo"></div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="btnAceptarMtoVehiculo" class="btn btn-default">@resourceView.AccionAceptar</button>
+                        <button type="button" class="btn btn-cancel" data-dismiss="modal">@resourceView.AccionCerrar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+@Html.Partial("~/Views/Shared/MantenimientoVehiculo/_ModalMtoITV.cshtml")
+
+<script type="text/javascript">
+    //Variables para customannotation.js********************
+        var uRl_TarjetaCombustible = '@Html.Raw(@Url.Action("GetMatriculaAsociadaTarjeta", "MiFlota", new { idTarjeta = "idtarjetaseleccionada" }))'
+        var uRl_MatriculaExistente = '@Html.Raw(@Url.Action("VerificaMatricula", "MiFlota", new { matricula = "matriculaNueva" }))';
+        @*var error_MatriculasIguales = '@resourceView.msgMatriculaSustituida';
+        var error_MatriculaExistente = '@resourceView.msgVehiculoExistente';*@
+        var AccionAlta = '@EnumAccionEntity.Alta';
+    //******************************************************
+
+    var textError = '<li>texto</li>';
+
+    $(document).on('click', '#btnAceptarMtoVehiculo', function (event) {
+        PonerComoNumericoLosImportes();
+    });
+
+    $(document).ready(function () {
+        $("#formVehiculo").submit(function (e) {
+            e.preventDefault();
+            if ($("#formVehiculo").valid()) {//validamos el form
+                LimpiaValidationSummary();
+                $("#MatriculaInicial").val($("#Matricula").val());
+                var formData = new FormData(this);
+                $.ajax({
+                    type: this.method,
+                    url: this.action,
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+
+                    success: function (data) {
+                        if (data == 'OK') {
+                            ajaxSuccessMtoVehiculo();
+                            if ($('#tableflota').val() != undefined) {
+                                reloadTableFlota();
+                            }
+                        }
+                        else {
+                            ajaxErrorMtoVehiculo();
+                        }
+                        //setTimeout(function () { window.location.replace(uRl) }, 1000);
+
+                    },
+                    error: function (error) {
+                        ajaxErrorMtoVehiculo();
+                    }
+                });
+            }
+            else {
+                $("#collapseListaErrores").collapse('show');
+                return false;
+            }
+        });
+    });
+
+    function ajaxSuccessMtoVehiculo() {
+        notify('@resourceView.toastrInfMtoVehiculoCorrecto', 'i');
+        $('#modalMtoVehiculo').modal('hide');
+    }
+
+    function ajaxErrorMtoVehiculo() {
+        notify('@resourceView.toastrInfMtoVehiculoError', 'e');
+    }
+
+
+    function PonerComoNumericoLosImportes() {
+        var elID = '';
+        $("[marca=EsDouble]").each(function () {
+            QuitaFormatoNumericoDouble(this.id);
+        });
+        $("[marca=EsInt]").each(function () {
+            var elID = '#' + this.id;
+            var imp = DevuelveValorInt($(elID).val());
+            if ($.isNumeric(imp)) {
+                $(elID).val(imp);
+            }
+        });
+    }
+
+
+</script>

@@ -1,0 +1,318 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using System.Configuration;
+@using TK_ECAR.Models
+@using TK_ECAR.Framework
+@model DatosVehiculoModel
+
+@{ 
+    var Accion = (int)Model.DatosGenerales_Vehiculo.Accion;
+    var AccionEntity = Model.DatosGenerales_Vehiculo.Accion;
+}
+
+<div class="form-horizontal">
+    <ul id="tab_MtoVehiculo" class="nav nav-tabs">
+        <li><a href="#mtoDatosGeneralesVehiculo" data-toggle="tab">@resourceView.TabDatosGenerales</a></li>
+        <li><a href="#mtoDatosContratoVehiculo" data-toggle="tab">@resourceView.TabDatosContrato</a></li>
+        <li><a href="#mtoDatosSeguroVehiculo" data-toggle="tab">@resourceView.TabDatosSeguro</a></li>
+        <li><a href="#mtoDatosITV_Vehiculo" data-toggle="tab">@resourceView.TabDatosITV</a></li>
+        <li><a href="#mtoObservacionVehiculo" data-toggle="tab">@resourceView.TabDatosObservaciones</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="mtoDatosGeneralesVehiculo" class="tab-pane fade in active">
+            <br />
+            @Html.Partial("~/Views/Shared/MantenimientoVehiculo/_MtoDatosGeneralesVehiculo.cshtml", @Model.DatosGenerales_Vehiculo)
+        </div>
+
+        <div id="mtoDatosContratoVehiculo" class="tab-pane fade">
+            <br />
+            @Html.Partial("~/Views/Shared/MantenimientoVehiculo/_MtoDatosContratoVehiculo.cshtml", @Model.DatosContrato_Vehiculo)
+        </div>
+
+        <div id="mtoDatosSeguroVehiculo" class="tab-pane fade">
+            <br />
+            @Html.Partial("~/Views/Shared/MantenimientoVehiculo/_MtoDatosSeguroVehiculo.cshtml", @Model.DatosGenerales_Vehiculo)
+        </div>
+
+        <div id="mtoDatosITV_Vehiculo" class="tab-pane fade">
+            <br />
+            @*@Html.Partial("_MtoDatosITV_Vehiculo", @Model.DatosITV_Vehiculo)*@
+            @Html.Partial("~/Views/Shared/MantenimientoVehiculo/_MtoDatosITV_Vehiculo.cshtml")
+        </div>
+
+        <div id="mtoObservacionVehiculo" class="tab-pane fade">
+            <br />
+            @Html.Partial("~/Views/Shared/MantenimientoVehiculo/_MtoDatosObservacionVehiculo.cshtml", @Model.DatosGenerales_Vehiculo)
+        </div>
+   </div>
+
+    <div class="form-group">
+        <div class="col-lg-12">
+            @Html.Partial("_CustomValidationSummary", ViewData.ModelState)
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var tableMtoITV = null;
+
+    var ajaxActionLinkAccionEditar = '@Ajax.ActionLink("textoQuitarPorVacio", "EditarLineaTMP_ITV", "MiFlota", new { linea = "lineaeditaritv", login = "logineditaritv", accion = "accionlinea" },
+    new AjaxOptions
+    {
+        UpdateTargetId = "modalbodyMtoITV",
+        OnSuccess = "showModalMtoITV();",
+        OnComplete = "completeModal()",
+        InsertionMode = InsertionMode.Replace,
+        OnBegin = "setTitleModalMtoITV('JSTITLEMODAL')",
+        HttpMethod = "POST"
+    }, new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" })';
+    ajaxActionLinkAccionEditar = ajaxActionLinkAccionEditar.replace('JSTITLEMODAL','@resourceView.AccionEditar').replace("textoQuitarPorVacio","");
+
+    var actionlinkAnular = '@Ajax.ActionLink("textoQuitarPorVacio", "BorrarITV", "MiFlota", new { idITV = "IDITV", accionITV = "ACCIONBORRARITV" },
+    new AjaxOptions
+    {
+        UpdateTargetId = "modalbodyMtoITV",
+        OnSuccess = "showModalMtoITV();",
+        OnComplete = "completeModal()",
+        InsertionMode = InsertionMode.Replace,
+        OnBegin = "setTitleModalMtoITV('JSTITLEMODAL')",
+        //Confirm = "alert('Hola'); return true;",
+        HttpMethod = "POST"
+    }, new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" })';
+    actionlinkAnular = actionlinkAnular.replace("textoQuitarPorVacio","");
+
+
+    $(document).ready(function () {
+
+        //Seleccionar todo el texto cuando coje el foco
+        $("input:text").focus(function () { $(this).select(); });
+
+        $('[data-toggle="tooltip"]').tooltip();
+
+        $('#tab_MtoVehiculo a[href="#mtodatosgenerales"]').trigger('click');
+
+        $('#FechaFinalizacion').prop('disabled', true);
+
+        //Matricula = datoITV.Matricula,
+        //FechaUltimaITV = datoITV.Ultima_ITV,
+        //FechaVtoITV = datoITV.Vto_ITV,
+        //Login = login,
+        //Linea = 0,
+        //LineaNueva = false,
+        //Documento = datoITV.Fichero,
+        //TipoArchivo = datoITV.TipoArchivo,
+
+
+        tableMtoITV = $('#tableMtoITV').DataTable({
+            //"dom": 'Blfrtip',
+            "ordering": false,
+            "processing": true,
+            "paginate": true,
+            "ajax": {
+                "url": '@Url.Action("DatosITV_TMPJson", "MiFlota")',
+                "datatype": "json",
+                "type": "POST",
+            },
+            "columns": [
+                    { "data": "FechaUltimaITV" },
+                    { "data": "FechaVtoITV" },
+                    { "data": "ITV_Pasada" },
+                    { "data": "AccionDataTable" },
+                    { "data": "Matricula" },
+                    { "data": "Login" },
+                    { "data": "Linea" },
+                    { "data": "LineaNueva" },
+                    { "data": "Documento" },
+                    { "data": "TipoArchivo" },
+            ],
+            "language": {
+                "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.ArchivoIdiomaDataTable )'
+            },
+            "drawCallback": function () {
+                $('[data-toggle="popover"]').popover({html:true});
+            },
+            //"data": respuesta.data,
+            "columnDefs": [
+            {
+                "targets": [0, 1],
+                "render": function (data, type, full, meta) {
+                    return formatJSONDate(data);
+                }
+            },
+            {
+                "targets": 2,
+                "orderable": true,
+                "searchable": true,
+                "mRender": function (data, type, row) {
+                    var valorReturn = "";
+                    if (row.ITV_Pasada) {
+                        valorReturn = '@resourceView.ValorYES';
+                    }
+                    else {
+                        valorReturn = '@resourceView.ValorNO';
+                    }
+                    return valorReturn;
+                }
+            },
+            {
+                "targets": 3,
+                "type": "html",
+                "render": function (data, type, row) {
+                    //var idITV = 1;
+                    var menuAcciones = "";
+                    if (@Accion != '@((int)EnumAccionEntity.Consulta)'){
+                        menuAcciones = menuAcciones + "<a class='tk-icon-med icon-tk-edit tk-icon-bold ' "
+                        + ajaxActionLinkAccionEditar.replace("lineaeditaritv", row.Linea)
+                                .replace("logineditaritv", row.Login)
+                                .replace("accionlinea", @Accion)
+                                .replace('JSTITLEMODAL', '@Html.Raw(@resourceView.AccionEditar)')
+                                .replace('ACCIONEDITARITV', @((int)@EnumAccionEntity.Modificacion))
+                                .replace("accionmenu", "@Html.Raw(@resourceView.AccionEditar)") + " </a>";
+
+                        if(row.LineaNueva){
+                            @*menuAcciones = menuAcciones + "<a class='tk-icon-med icon-tk-delete tk-icon-bold tk-icon-red ' "
+                            + actionlinkAnular.replace("IDITV", idITV)
+                            .replace('JSTITLEMODAL', '@Html.Raw(@resourceView.AccionBorrar)')
+                            .replace('ACCIONBORRARITV', @((int)@EnumAccionEntity.Baja))
+                            .replace("accionmenu", "@Html.Raw(@resourceView.AccionBorrar)") + " </a>";*@
+                            var fITV = formatJSONDate(row.FechaUltimaITV);
+                            var fVTO = formatJSONDate(row.FechaVtoITV);
+                            menuAcciones = menuAcciones + '<a class="tk-icon-med icon-tk-delete tk-icon-bold tk-icon-red " '
+                                        + 'href="#" onclick="return clickBorrarLineaITV(event,' + row.Linea + ',\'' + row.Login + '\',\'' + fITV + '\',\'' + fVTO + '\',\'' + row.Documento + '\'' + ');" '
+                                        + ' data-toggle = "popover", data-placement = "top", data-trigger = "hover" '
+                                        + 'data-content = "@Html.Raw(@resourceView.AccionBorrar)">'
+                                        + '</a>';
+                        }
+                    }
+
+                    menuAcciones = menuAcciones + "<a class='tk-icon-med icon-tk-search tk-icon-bold ' "
+                    + ajaxActionLinkAccionEditar.replace("lineaeditaritv", row.Linea)
+                            .replace("logineditaritv", row.Login)
+                            .replace("accionlinea", '@((int)EnumAccionEntity.Consulta)')
+                            .replace('JSTITLEMODAL', '@Html.Raw(@resourceView.AccionConsultar)')
+                            .replace('ACCIONEDITARITV', @((int)@EnumAccionEntity.Consulta))
+                            .replace("accionmenu", "@Html.Raw(@resourceView.AccionConsultar)") + " </a>";
+
+                    return menuAcciones;
+                }
+            },
+            {
+                "targets": [4, 5, 6, 7, 8, 9],
+                "visible": false,
+                "searchable": false
+            }
+            ]
+        });
+
+        $("[marca=EsDouble]").each(function () {
+            var elID = '#' + this.id;
+            var imp = DevuelveConPuntoDecimal($(elID).val());
+            if ($.isNumeric(imp)) {
+                $(elID).val(formateaNumero(imp.replace('.', ','), 2));
+            }
+        });
+
+        $("[marca=EsInt]").each(function () {
+            var elID = '#' + this.id;
+            var imp = DevuelveValorInt($(elID).val());
+            if ($.isNumeric(imp)) {
+                $(elID).val(formateaNumero(imp.replace('.', ','), 0));
+            }
+        });
+
+    });
+
+
+    function clickBorrarLineaITV(e, linea, login, fITV, fVTO, documento) {
+        e.preventDefault();
+        var texto = '</br> </br> F. ITV      : ' + fITV
+                    + '</br> F. VTO    : ' + fVTO
+                    + '</br> Archivo : ' + (documento == 'null' ? '' : documento);
+
+        confirm('@resourceView.msgBorrarLineaITV', '@resourceView.msgPreguntaBorrarLineaITV' + texto,
+            function (result) {
+                if (result) {
+                    var link = '@Html.Raw(Url.Action("BorraLineaTMP_ITV", "MiFlota", new { linea = "lineaborrar", login = "loginborrar" }))';
+                    link = link.replace("lineaborrar", linea).replace("loginborrar", login);
+                    $.ajax({
+                        "url": link,
+                        "dataType": 'json',
+                        "success": function (data, t, x) {
+                            reloadtableMtoITV();
+                        }
+                    });
+                }
+            });
+    }
+
+    //$(function () {
+    //    $('.chosen-select').chosen();
+    //    $('.chosen-select-deselect').chosen({ allow_single_deselect: true });
+    //    $('.chosen-container').width('100%');
+    //    $('#MatriculaRenovada').prop('disabled', true).trigger("chosen:updated");
+    //});
+
+    //$('.marcaFecha').datepicker({
+    //    showToday: true,
+    //    weekStart: 1,
+    //    format: "dd/mm/yyyy",
+    //    autoclose: true,
+    //    orientation: "bottom auto"
+    //});
+
+    function reloadtableMtoITV() {
+        tableMtoITV.ajax.reload(null, false);
+    }
+
+
+    /*Nuevo-EditarITV**************************/
+    function showModalMtoITV() {
+        $('#modalMtoITV').modal('show');
+    }
+    function setTitleModalMtoITV(title) {
+        $('#modaltitleMtoITV').text(title);
+    }
+
+    $("#modalMtoITV").on('hidden.bs.modal', function () {
+        $(this).data('bs.modal', null);
+    });
+    /**************************Nuevo-EditarITV*/
+
+
+    //Zona cosas comunes a las vistas***************
+    //Formatear valores numericos***********
+    $("[marca=EsDouble]").focus(function () {
+        var elID = '#' + this.id;
+        var imp = DevuelveConPuntoDecimal($(elID).val());
+        if ($.isNumeric(imp)) {
+            $(elID).val(imp.replace('.', ','));
+        }
+    });
+
+    $("[marca=EsDouble]").blur(function () {
+        var elID = '#' + this.id;
+        var imp = DevuelveConPuntoDecimal($(elID).val());
+        if ($.isNumeric(imp)) {
+            $(elID).val(formateaNumero(imp.replace('.', ','), 2));
+        }
+    });
+
+    $("[marca=EsInt]").focus(function () {
+        var elID = '#' + this.id;
+        var imp = DevuelveValorInt($(elID).val());
+        if ($.isNumeric(imp)) {
+            $(elID).val(imp);
+        }
+    });
+
+    $("[marca=EsInt]").blur(function () {
+        var elID = '#' + this.id;
+        var imp = DevuelveValorInt($(elID).val());
+        if ($.isNumeric(imp)) {
+            $(elID).val(formateaNumero(imp.replace('.', ','), 0));
+        }
+    });
+    //***********Formatear valores numericos
+    //***************Zona cosas comunes a las vistas
+
+</script>

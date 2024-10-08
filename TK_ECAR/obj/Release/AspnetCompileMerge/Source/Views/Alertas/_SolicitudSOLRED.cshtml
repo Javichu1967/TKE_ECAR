@@ -1,0 +1,82 @@
+﻿@model DatosSOLREDModel
+
+@Html.HiddenFor(m => m.IdTipoAlerta)
+@{
+    bool alta = (Model.IdAlerta == 0);
+}
+<div class="form-horizontal">
+    <div class="form-group">
+        @Html.RequiredLabelFor(m=>m.Matricula, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+            @if (alta)
+            {
+                @Html.EditorFor(m => m.Matricula)
+            }
+            else
+            { @Html.DisplayFor(m => m.Matricula) }
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.FechaSolicitud, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+            
+            @if (alta)
+            {
+                @Html.EditorFor(m => m.FechaSolicitud)
+            }
+            else
+            { @Html.DisplayFor(m => m.FechaSolicitud)} 
+            
+        </div>        
+    </div>
+    <div class="form-group">       
+        @Html.RequiredLabelFor(m => m.IdMotivoSolicitud, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">      
+            @if (alta)
+            {
+                @Html.DropDownListMotivoSolicitudSOLRED("IdMotivoSolicitud", new { @class = "form-control" }, Model.IdMotivoSolicitud)
+            }
+            else
+            {
+                @Html.DropDownListMotivoSolicitudSOLRED("IdMotivoSolicitud", new { @class = "form-control", @disabled = "disabled" }, Model.IdMotivoSolicitud)
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Observaciones, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+            @if (alta)
+            {
+                @Html.TextAreaFor(m => m.Observaciones, new { @class = "form-control" })
+            }
+            else
+            { @Html.DisplayFor(m => m.Observaciones) }
+        </div>
+    </div>
+                       
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.FileUpload, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+            @if (alta)
+            {
+                @Html.EditorFor(m => m.FileUpload)
+            }
+            else if (!string.IsNullOrEmpty(Model.FileDownload))
+            {
+
+                <a href="@Url.Action("DownloadFile", "Alertas", new { idAlerta = Model.IdAlerta, fichero = Model.FileDownload })">
+                    @Html.DisplayFor(m => m.FileDownload)
+                </a>
+
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12">
+            @Html.Partial("_CustomValidationSummary", ViewData.ModelState)
+        </div>
+    </div>
+</div>
+
+ 

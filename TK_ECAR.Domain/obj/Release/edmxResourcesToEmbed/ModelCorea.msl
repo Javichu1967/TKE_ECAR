@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CoreaModelStoreContainer" CdmEntityContainer="CoreaEntities">
+    <EntitySetMapping Name="Compañias_Seguro">
+      <EntityTypeMapping TypeName="CoreaModel.Compañias_Seguro">
+        <MappingFragment StoreEntitySet="Compañias_Seguro">
+          <ScalarProperty Name="Cod_Cia" ColumnName="Cod_Cia" />
+          <ScalarProperty Name="CIA" ColumnName="CIA" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Cod_Postal" ColumnName="Cod_Postal" />
+          <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
+          <ScalarProperty Name="Persona_Contacto" ColumnName="Persona_Contacto" />
+          <ScalarProperty Name="Tlf_Contacto" ColumnName="Tlf_Contacto" />
+          <ScalarProperty Name="FAlta" ColumnName="FAlta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Datos_SolRed">
+      <EntityTypeMapping TypeName="CoreaModel.Datos_SolRed">
+        <MappingFragment StoreEntitySet="Datos SolRed">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Sociedad" ColumnName="Sociedad" />
+          <ScalarProperty Name="EJERCICIO" ColumnName="EJERCICIO" />
+          <ScalarProperty Name="TRIMESTRE" ColumnName="TRIMESTRE" />
+          <ScalarProperty Name="FECHA_FACTURA" ColumnName="FECHA_FACTURA" />
+          <ScalarProperty Name="FECHA_OPERACION" ColumnName="FECHA_OPERACION" />
+          <ScalarProperty Name="MATRICULA" ColumnName="MATRICULA" />
+          <ScalarProperty Name="DES_PRODU" ColumnName="DES_PRODU" />
+          <ScalarProperty Name="COD_PRODU" ColumnName="COD_PRODU" />
+          <ScalarProperty Name="KILOMETROS" ColumnName="KILOMETROS" />
+          <ScalarProperty Name="NUM_LITROS" ColumnName="NUM_LITROS" />
+          <ScalarProperty Name="IMPORTE" ColumnName="IMPORTE" />
+          <ScalarProperty Name="BONIF_TOTAL" ColumnName="BONIF_TOTAL" />
+          <ScalarProperty Name="IVA" ColumnName="IVA" />
+          <ScalarProperty Name="IMP_TOTAL" ColumnName="IMP_TOTAL" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+          <ScalarProperty Name="KmsCiclo" ColumnName="KmsCiclo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Datos_Conductor">
+      <EntityTypeMapping TypeName="CoreaModel.Datos_Conductor">
+        <MappingFragment StoreEntitySet="Datos_Conductor">
+          <ScalarProperty Name="Cod_Conductor" ColumnName="Cod_Conductor" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Cod_Postal" ColumnName="Cod_Postal" />
+          <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Tlf" ColumnName="Tlf" />
+          <ScalarProperty Name="Movil" ColumnName="Movil" />
+          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+          <ScalarProperty Name="Fecha_Carnet" ColumnName="Fecha_Carnet" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+          <ScalarProperty Name="Num_Empleado" ColumnName="Num_Empleado" />
+          <ScalarProperty Name="Fecha_Vencimiento_Carnet" ColumnName="Fecha_Vencimiento_Carnet" />
+          <ScalarProperty Name="CodCeco" ColumnName="CodCeco" />
+          <ScalarProperty Name="Fecha_Alta_Empresa" ColumnName="Fecha_Alta_Empresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Datos_ITV">
+      <EntityTypeMapping TypeName="CoreaModel.Datos_ITV">
+        <MappingFragment StoreEntitySet="Datos_ITV">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+          <ScalarProperty Name="Ultima_ITV" ColumnName="Ultima_ITV" />
+          <ScalarProperty Name="Vto_ITV" ColumnName="Vto_ITV" />
+          <ScalarProperty Name="Tarifa" ColumnName="Tarifa" />
+          <ScalarProperty Name="Tasa" ColumnName="Tasa" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+          <ScalarProperty Name="Impuesto_Circulacion" ColumnName="Impuesto_Circulacion" />
+          <ScalarProperty Name="Pr_Conservacion" ColumnName="Pr_Conservacion" />
+          <ScalarProperty Name="Otros" ColumnName="Otros" />
+          <ScalarProperty Name="Falta" ColumnName="Falta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Datos_LeasePlan">
+      <EntityTypeMapping TypeName="CoreaModel.Datos_LeasePlan">
+        <MappingFragment StoreEntitySet="Datos_LeasePlan">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="EmpresaLeasing" ColumnName="EmpresaLeasing" />
+          <ScalarProperty Name="Fecha_Factura" ColumnName="Fecha_Factura" />
+          <ScalarProperty Name="Num_Factura" ColumnName="Num_Factura" />
+          <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+          <ScalarProperty Name="Ejercicio" ColumnName="Ejercicio" />
+          <ScalarProperty Name="Trimestre" ColumnName="Trimestre" />
+          <ScalarProperty Name="Imp_Circulacion" ColumnName="Imp_Circulacion" />
+          <ScalarProperty Name="Imp_Circulacion_IVA" ColumnName="Imp_Circulacion_IVA" />
+          <ScalarProperty Name="Imp_Matriculacion" ColumnName="Imp_Matriculacion" />
+          <ScalarProperty Name="Imp_Matriculacion_IVA" ColumnName="Imp_Matriculacion_IVA" />
+          <ScalarProperty Name="Alquiler" ColumnName="Alquiler" />
+          <ScalarProperty Name="Alquiler_IVA" ColumnName="Alquiler_IVA" />
+          <ScalarProperty Name="Mantenimiento" ColumnName="Mantenimiento" />
+          <ScalarProperty Name="Mantenimiento_IVA" ColumnName="Mantenimiento_IVA" />
+          <ScalarProperty Name="Neumaticos" ColumnName="Neumaticos" />
+          <ScalarProperty Name="Neumaticos_IVA" ColumnName="Neumaticos_IVA" />
+          <ScalarProperty Name="Administracion" ColumnName="Administracion" />
+          <ScalarProperty Name="Administracion_IVA" ColumnName="Administracion_IVA" />
+          <ScalarProperty Name="Seguro" ColumnName="Seguro" />
+          <ScalarProperty Name="Seguro_IVA" ColumnName="Seguro_IVA" />
+          <ScalarProperty Name="Asistencia_Carretera" ColumnName="Asistencia_Carretera" />
+          <ScalarProperty Name="Asistencia_Carretera_IVA" ColumnName="Asistencia_Carretera_IVA" />
+          <ScalarProperty Name="Intereses_Prepagados" ColumnName="Intereses_Prepagados" />
+          <ScalarProperty Name="Intereses_Prepagados_IVA" ColumnName="Intereses_Prepagados_IVA" />
+          <ScalarProperty Name="Canarias" ColumnName="Canarias" />
+          <ScalarProperty Name="Directivo" ColumnName="Directivo" />
+          <ScalarProperty Name="Fecha_Servicio" ColumnName="Fecha_Servicio" />
+          <ScalarProperty Name="Fecha_Importacion" ColumnName="Fecha_Importacion" />
+          <ScalarProperty Name="ITV" ColumnName="ITV" />
+          <ScalarProperty Name="ITV_IVA" ColumnName="ITV_IVA" />
+          <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
+          <ScalarProperty Name="Sociedad" ColumnName="Sociedad" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Datos_Multas">
+      <EntityTypeMapping TypeName="CoreaModel.Datos_Multas">
+        <MappingFragment StoreEntitySet="Datos_Multas">
+          <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Conductor" ColumnName="Conductor" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          <ScalarProperty Name="Contrario" ColumnName="Contrario" />
+          <ScalarProperty Name="Cobertura" ColumnName="Cobertura" />
+          <ScalarProperty Name="EmitidaAlerta" ColumnName="EmitidaAlerta" />
+          <ScalarProperty Name="FAlta" ColumnName="FAlta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Datos_Vehiculo">
+      <EntityTypeMapping TypeName="CoreaModel.Datos_Vehiculo">
+        <MappingFragment StoreEntitySet="Datos_Vehiculo">
+          <ScalarProperty Name="Sociedad" ColumnName="Sociedad" />
+          <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+          <ScalarProperty Name="Nuevo" ColumnName="Nuevo" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Tipo_Vehiculo" ColumnName="Tipo_Vehiculo" />
+          <ScalarProperty Name="Num_Bastidor" ColumnName="Num_Bastidor" />
+          <ScalarProperty Name="CC" ColumnName="CC" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="Delegacion" ColumnName="Delegacion" />
+          <ScalarProperty Name="F_D" ColumnName="F_D" />
+          <ScalarProperty Name="Directivo" ColumnName="Directivo" />
+          <ScalarProperty Name="EmpresaLeasing" ColumnName="EmpresaLeasing" />
+          <ScalarProperty Name="Conductor" ColumnName="Conductor" />
+          <ScalarProperty Name="Tipo_Seguro" ColumnName="Tipo_Seguro" />
+          <ScalarProperty Name="Cia_Seguro" ColumnName="Cia_Seguro" />
+          <ScalarProperty Name="Poliza_Seguro" ColumnName="Poliza_Seguro" />
+          <ScalarProperty Name="Importe_Seguro" ColumnName="Importe_Seguro" />
+          <ScalarProperty Name="Vto_Seguro" ColumnName="Vto_Seguro" />
+          <ScalarProperty Name="Veh_sustituido" ColumnName="Veh_sustituido" />
+          <ScalarProperty Name="Num_Contrato" ColumnName="Num_Contrato" />
+          <ScalarProperty Name="Fecha_Alta" ColumnName="Fecha_Alta" />
+          <ScalarProperty Name="Baja" ColumnName="Baja" />
+          <ScalarProperty Name="Fecha_Baja" ColumnName="Fecha_Baja" />
+          <ScalarProperty Name="Fecha_Recibidos" ColumnName="Fecha_Recibidos" />
+          <ScalarProperty Name="Fecha_Devolucion" ColumnName="Fecha_Devolucion" />
+          <ScalarProperty Name="Fecha_Incorporacion" ColumnName="Fecha_Incorporacion" />
+          <ScalarProperty Name="Cuotas" ColumnName="Cuotas" />
+          <ScalarProperty Name="Km_Totales" ColumnName="Km_Totales" />
+          <ScalarProperty Name="Tipo_Liquidacion" ColumnName="Tipo_Liquidacion" />
+          <ScalarProperty Name="Exceso_ajuste" ColumnName="Exceso_ajuste" />
+          <ScalarProperty Name="Coef_exceso" ColumnName="Coef_exceso" />
+          <ScalarProperty Name="Km_Exentos" ColumnName="Km_Exentos" />
+          <ScalarProperty Name="Abono" ColumnName="Abono" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="Carburante" ColumnName="Carburante" />
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+          <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Falta" ColumnName="Falta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Empresas_Leasing">
+      <EntityTypeMapping TypeName="CoreaModel.Empresas_Leasing">
+        <MappingFragment StoreEntitySet="Empresas_Leasing">
+          <ScalarProperty Name="Cod_Empresa" ColumnName="Cod_Empresa" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Cod_Postal" ColumnName="Cod_Postal" />
+          <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
+          <ScalarProperty Name="Domiciliacion" ColumnName="Domiciliacion" />
+          <ScalarProperty Name="Persona_Contacto" ColumnName="Persona_Contacto" />
+          <ScalarProperty Name="Tlf_Contacto" ColumnName="Tlf_Contacto" />
+          <ScalarProperty Name="POA" ColumnName="POA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_Liquidacion">
+      <EntityTypeMapping TypeName="CoreaModel.Tipo_Liquidacion">
+        <MappingFragment StoreEntitySet="Tipo_Liquidacion">
+          <ScalarProperty Name="Cod_tipo" ColumnName="Cod_tipo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_Seguro">
+      <EntityTypeMapping TypeName="CoreaModel.Tipo_Seguro">
+        <MappingFragment StoreEntitySet="Tipo_Seguro">
+          <ScalarProperty Name="Cod_Tipo" ColumnName="Cod_Tipo" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipo_Vehiculo">
+      <EntityTypeMapping TypeName="CoreaModel.Tipo_Vehiculo">
+        <MappingFragment StoreEntitySet="Tipo_Vehiculo">
+          <ScalarProperty Name="Cod_Tipo" ColumnName="Cod_Tipo" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="ITV" ColumnName="ITV" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

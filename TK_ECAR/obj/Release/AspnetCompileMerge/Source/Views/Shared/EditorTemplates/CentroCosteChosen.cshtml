@@ -1,0 +1,126 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<select id="miCentroCoste" title="Seleccionar un empleado" search class="form-control" data-placeholder=@resourceView.placeholderChosen puedeDeshabilitarse = "SI">
+    <option></option>
+</select>
+<style type="text/css">
+    #miCentroCoste_chosen {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+
+<script type="text/javascript">
+    if ($("#IDCentroCoste").val() != '') {
+        chosenCentroCosteChosenSeleccionado();
+    }
+
+    chosenCentroCosteChosen();
+
+    function chosenCentroCosteChosenSeleccionado() {
+        var uRl = '@Html.Raw(@Url.Action("GetCentrosCosteID", "Base", new { ID = "idchosen" }))'
+        uRl = uRl.replace("idchosen", $("#IDCentroCoste").val());
+        $.ajax({
+            "url": uRl,
+            "dataType": 'json',
+            "async": false,
+            "success": function (data, t, x) {
+                $.each(data, function (i, val) {
+                    var $opt = $('<option value="' + val.value + '" selected="selected">').html(val.textFormated);
+                    $('#miCentroCoste').append($opt);
+                });
+
+                $("#miCentroCoste").trigger("chosen:updated");
+            }
+        });
+    }
+
+
+    function chosenCentroCosteChosen(DespuesDeBorrado) {
+        var link = '@Html.Raw(Url.Action("GetCentrosCoste", "Filter", new { empresasSel = "empresaseleccionada", dirTerritorialSel = "", delegacionSel = "delegacionseleccionada" }))';
+        if ($("#IDEmpresa").val() != undefined){
+            link = link.replace("empresaseleccionada", $("#IDEmpresa").val());
+        }
+        else {
+            link = link.replace("empresaseleccionada", '');
+        }
+        if ($("#IDDelegacion").val() != undefined) {
+            link = link.replace("delegacionseleccionada", $("#IDDelegacion").val());
+        }
+        else {
+            link = link.replace("delegacionseleccionada", '');
+        }
+
+        if (DespuesDeBorrado == undefined || DespuesDeBorrado == false) {
+            $('#miCentroCoste').prepend($('<option></option>').html('@resourceView.msgCargando'));
+        }
+
+        $("#miCentroCoste").ajaxChosen({
+            type: 'GET',
+            url: link,
+            minTermLength: 0,
+            dataType: 'json'
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+
+        },
+            {
+                //options
+                disable_search_threshold: -1,
+                allow_single_deselect: true,
+
+            });
+    }
+
+    //******* PONERLO EN LA VISTA QUE TENGA ESTE CHOSEN, CON EL CAMPO DEL MODELO ADECUADO *****************
+    $('#miCentroCoste').on('chosen:hiding_dropdown', function (evt, params) {
+        if ($('#IDCentroCoste').val() != this.value && $('#miCentroCoste_chosen').find('.chosen-default').length == 0) {
+            $('#IDCentroCoste').val(this.value);
+            PonerDeleteEnChosen('miCentroCoste');
+            if ($("#IDDelegacion").val() == '') {
+                DevuelveDelegacionSegunCECO(this.value);
+            }
+        }
+        if ($('#miCentroCoste_chosen').find('.chosen-default').length !== 0) {
+            $('#IDCentroCoste').val('');
+        }
+    });
+
+    $('#miCentroCoste').on('change', function (evt, params) {
+        if ($('#IDCentroCoste').val() != this.value && $('#miCentroCoste_chosen').find('.chosen-default').length == 0) {
+            $('#IDCentroCoste').val(this.value);
+            PonerDeleteEnChosen('miCentroCoste');
+            if ($("#IDDelegacion").val() == '') {
+                DevuelveDelegacionSegunCECO(this.value);
+            }
+        }
+        if ($('#miCentroCoste_chosen').find('.chosen-default').length !== 0) {
+            $('#IDCentroCoste').val('');
+        }
+    });
+
+    function DevuelveDelegacionSegunCECO(ceco) {
+        var delega = "";
+        var uRl = '@Html.Raw(@Url.Action("GetDelegacionByCecos_Chosen", "Filter", new { idCeco = "idcecochosen" }))';
+        uRl = uRl.replace("idcecochosen", ceco);
+        $.ajax({
+            "url": uRl,
+            "dataType": 'json',
+            //"async": false,
+            "success": function (data, t, x) {
+                $.each(data, function (i, val) {
+                    delega = val.value;
+                });
+                if (delega != '' && delega != null) {
+                    $('#IDDelegacion').val(delega);
+                    SeleccionaDelegacion();
+                }
+            }
+        });
+    }
+
+</script>

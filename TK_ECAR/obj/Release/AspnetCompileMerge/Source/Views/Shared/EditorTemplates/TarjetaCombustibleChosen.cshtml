@@ -1,0 +1,66 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<select id="miTarjetaCombustible" title=@resourceView.LSelectCompany search class="form-control" data-placeholder=@resourceView.placeholderChosen puedeDeshabilitarse = "SI">
+    <option></option>
+</select>
+<style type="text/css">
+    #miTarjetaCombustible_chosen {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+<script type="text/javascript">
+
+    if ($("#IDTarjetaCombustible").val() != '') {
+        SeleccionaTarjetaCombustible();
+    }
+
+    function SeleccionaTarjetaCombustible() {
+        var uRl = '@Html.Raw(@Url.Action("GetTarjetaCombustibleByID_Chosen", "MiFlota", new { ID = "idchosen" }))';
+        uRl = uRl.replace("idchosen", $("#IDTarjetaCombustible").val());
+        $.ajax({
+            "url": uRl,
+            "dataType": 'json',
+            "async": false,
+            "success": function (data, t, x) {
+                $.each(data, function (i, val) {
+                    var $opt = $('<option value="' + val.value + '" selected="selected">').html(val.text);
+                    $('#miTarjetaCombustible').append($opt);
+                });
+
+                $("#miTarjetaCombustible").trigger("chosen:updated");
+            }
+        });
+    }
+
+    TarjetaCombustibleChosen();
+
+    function TarjetaCombustibleChosen() {
+        var uRl = '@Html.Raw(@Url.Action("GetTarjetasCombustible_Chosen", "MiFlota", new { idEmpresa = "idempresachosen" }))';
+        uRl = uRl.replace("idempresachosen", $("#IDEmpresa").val());
+        $("#miTarjetaCombustible").ajaxChosen({
+            type: 'GET',
+            url: uRl,
+            minTermLength: 0,
+            dataType: 'json'
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+
+        },
+            {
+                //options
+                disable_search_threshold: -1,
+                allow_single_deselect: true,
+            });
+    }
+    //Pasar como parámetro a chosen el filtro de lo que se quiere.
+    $('#miTarjetaCombustible').change(function () {
+        $("#IDTarjetaCombustible").val(this.value);
+    });
+
+
+</script>

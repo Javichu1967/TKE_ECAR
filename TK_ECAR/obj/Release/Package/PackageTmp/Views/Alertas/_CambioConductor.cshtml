@@ -1,0 +1,367 @@
+﻿@model DatosCambioConductorModel
+
+@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@{
+    bool alta = (Model.IdAlerta == 0);
+    bool edicionValidarSolicitud = (ViewBag.ModoEdicion ?? false);
+}
+@Html.HiddenFor(m => m.IdTipoAlerta)
+@Html.HiddenFor(m => m.Domicilio)
+@Html.HiddenFor(m => m.CodigoPostal)
+@Html.HiddenFor(m => m.Provincia)
+@Html.HiddenFor(m => m.Poblacion)
+@Html.HiddenFor(m => m.FechaNacimiento)
+
+<div class="form-horizontal">
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.Matricula, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+            @if (alta)
+            {
+                @Html.EditorFor(m => m.Matricula)
+            }
+            else
+            { @Html.DisplayFor(m => m.Matricula) }
+        </div>
+    </div>
+
+    @*<div class="form-group">
+        @Html.RequiredLabelFor(m => m.NumEmpleado, new { @class = "control-label col-sm-4", @readonly= "readonly" })
+        <div class="col-sm-8">
+            @if (alta)
+            {
+                @Html.EditorFor(m => m.NumEmpleado)
+            }
+            else
+            { @Html.DisplayFor(m => m.NumEmpleado) }
+        </div>
+    </div>*@
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.Empleado, new { @class = "control-label col-sm-4", @readonly = "readonly" })
+        <div class="col-sm-8">
+            @if (alta)
+            {
+                @Html.EditorFor(m => m.Empleado)
+            }
+            else
+            { @Html.DisplayFor(m => m.Empleado) }
+        </div>
+    </div>
+    @if (alta)
+    {
+        <div class="form-group">
+            @Html.Label("Conductor del vehículo", new { @class = "control-label col-sm-4" })
+            <div class="col-sm-8">
+          
+                @Html.TextBox("ConductorVehiculo", null, new { @class = "form-control compareConductor", @readonly = "readonly", @id = "conductorVehiculo" })
+            </div>
+        </div>
+    }
+    <div class="form-group">
+        @Html.LabelFor(m => m.NumEmpleado, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+            @*@if (alta)
+            {*@
+                @Html.TextBoxFor(m => m.NumEmpleado, new { @class = "form-control", @readonly = "readonly" })
+            @*}
+            else
+            { @Html.DisplayFor(m => m.NumEmpleado) }*@
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Dni, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+            
+            @if (alta)
+            {
+                @Html.TextBoxFor(m => m.Dni, new { @class = "form-control", @readonly = "readonly" })
+                
+            }
+            else
+            { @Html.DisplayFor(m => m.Dni) }
+        </div>
+    </div>    
+    @*<div class="form-group">
+        @Html.LabelFor(m => m.Domicilio, new { @class = "control-label col-sm-4"  })
+        <div class="col-sm-8">
+
+            @if (alta)
+            {
+                @Html.TextBoxFor(m => m.Domicilio, new { @class = "form-control", @readonly = "readonly" })
+            }
+            else
+            { @Html.DisplayFor(m => m.Domicilio) }
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.CodigoPostal, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+
+            @if (alta)
+            {
+                @Html.TextBoxFor(m => m.CodigoPostal, new { @class = "form-control", @readonly = "readonly" })
+            }
+            else
+            { @Html.DisplayFor(m => m.CodigoPostal) }
+        </div>
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(m => m.Poblacion, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+         
+            @if (alta)
+            {
+                @Html.TextBoxFor(m => m.Poblacion, new { @class = "form-control", @readonly = "readonly" })
+            }
+            else
+            { @Html.DisplayFor(m => m.Poblacion) }
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Provincia, new { @class = "control-label col-sm-4" })
+        <div class="col-sm-8">
+
+
+            @if (alta)
+            {
+                @Html.TextBoxFor(m => m.Provincia, new { @class = "form-control", @readonly = "readonly" })
+            }
+            else
+            { @Html.DisplayFor(m => m.Provincia) }
+        </div>
+    </div>
+   
+    <div class="form-group">
+        @Html.LabelFor(m => m.FechaNacimiento, new { @class = "control-label col-sm-4" })
+
+        <div class="col-sm-8">
+
+        
+            @if (alta)
+            {
+                @Html.EditorFor(m => m.FechaNacimiento)
+            }
+            else
+            { @Html.DisplayFor(m => m.FechaNacimiento) }
+            
+        </div>
+    </div>*@
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.FechaEfecto, new { @class = "control-label col-sm-4" })
+
+        <div class="col-sm-8">
+
+            @if (alta)
+            {
+                @Html.EditorFor(m => m.FechaEfecto)
+            }
+            else
+            { @Html.DisplayFor(m => m.FechaEfecto) }
+        </div>
+    </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.FechaVencimientoCarnet, new { @class = "control-label col-sm-4" })
+
+            <div class="col-sm-8">
+
+                @if (alta)
+                {
+                    @Html.EditorFor(m => m.FechaVencimientoCarnet)
+                }
+                else
+                { @Html.DisplayFor(m => m.FechaVencimientoCarnet) }
+            </div>
+        </div>
+        <div class="form-group">
+                @Html.LabelFor(m => m.Motivo, new { @class = "control-label col-sm-4"  })
+                <div class="col-sm-8">
+
+                    @if (alta)
+                    {
+                        @Html.TextAreaFor(m => m.Motivo, new { @class = "form-control" })
+                    }
+                    else
+                    { @Html.DisplayFor(m => m.Motivo) }
+                </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.FileUpload, new { @class = "control-label col-sm-4" })
+            <div class="col-sm-8">
+                @if (alta)
+                {
+                    @Html.EditorFor(m => m.FileUpload)
+                }
+                else if (!string.IsNullOrEmpty(Model.FileDownload))
+                {
+
+                    <a href="@Url.Action("DownloadFile", "Alertas", new { idAlerta = Model.IdAlerta, fichero = Model.FileDownload })">
+                        @Html.DisplayFor(m => m.FileDownload)
+                    </a>
+
+                }
+            </div>
+        </div>
+        @*@using (Html.BeginForm("ValidarSolicitud", "Alertas", FormMethod.Post, new { enctype = "multipart/form-data", @id = "formvalsolicitud" }))
+        {*@
+
+            @Html.HiddenFor(m => m.IdAlerta)
+
+            @*@Html.AntiForgeryToken()*@
+            @if (!alta)
+            {
+
+                <h2>@resourceView.TitleValidarSolicitud</h2>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ObservacionesValidarSolicitud, new { @class = "control-label col-sm-4" })
+                                <div class="col-sm-8">
+                                    @if (edicionValidarSolicitud)
+                                    {
+                                        @Html.TextAreaFor(m => m.ObservacionesValidarSolicitud, new { @class = "form-control" })
+                                    }
+                                    else
+                                    { @Html.DisplayFor(m => m.ObservacionesValidarSolicitud) }
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.FileUploadEmiteRenting, new { @class = "control-label col-sm-4" })
+                                <div class="col-sm-8">
+
+
+                                    @if (edicionValidarSolicitud)
+                                    {
+                                        @Html.EditorFor(m => m.FileUploadEmiteRenting)
+                                    }
+                                    else if (!string.IsNullOrEmpty(Model.FileDownloadEmiteRenting))
+                                    {
+
+                                        <a href="@Url.Action("DownloadFile", "Alertas", new { idAlerta = Model.IdAlerta, fichero = Model.FileDownloadEmiteRenting })">
+                                            @Html.DisplayFor(m => m.FileDownloadEmiteRenting)
+                                        </a>
+
+                                    }
+
+                                </div>
+                            </div>
+                            @if (edicionValidarSolicitud)
+                            {
+                                <div class="form-group">
+                                    <div class="col-sm-12 ">
+                                        <button type="submit" id="btnvalidarsolicitud" class="btn btn-default pull-right">@resourceView.AccionAceptar</button>
+                                    </div>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+            }
+
+        @*}*@
+        <div class="form-group">
+            <div class="col-sm-12">
+                @Html.Partial("_CustomValidationSummary", ViewData.ModelState)
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+
+        @*$('#miNumEmpleado').on('change', function () {
+
+              $.ajax({
+                    url: '@Url.Action("GetEmpleado", "Home")',
+                    type: "POST",
+                    data: {
+
+                        numEmpleado: $('#NumEmpleado').val(),
+                    }
+              }).done(function (data) {
+                    $('#Nombre').val(data.Nombre);
+                    $('#Dni').val(data.Dni);
+                    $('#CodigoPostal').val(data.CodPostal);
+                    $('#Domicilio').val(data.Domicilio);
+                    $('#Poblacion').val(data.Poblacion);
+                    $('#Provincia').val(data.Provincia);
+                    $('#FechaNacimiento').val(data.FechaNacimiento);
+                });
+         });*@
+
+        jQuery.validator.addMethod("notEqual", function (value, element, param) {
+            return this.optional(element) || value != $(param).val();
+        }, '@TK_ECAR.Content.resources.ModelsResources.NotEqualConductor');
+
+        jQuery.validator.addClassRules("compareConductor", {
+            notEqual: "#miEmpleado",
+
+
+        });
+
+        $('#miEmpleado').on('change', function () {
+
+            $.ajax({
+                url: '@Url.Action("GetNombreEmpleado", "Home")',
+                type: "POST",
+                data: {
+
+                    nombreEmpleado: $('#Empleado').val(),
+                }
+            }).done(function (data) {
+                $('#NumEmpleado').val(data.NumeroEmpleado);
+                $('#Dni').val(data.Dni);
+                $('#CodigoPostal').val(data.CodPostal);
+                $('#Domicilio').val(data.Domicilio);
+                $('#Poblacion').val(data.Poblacion);
+                $('#Provincia').val(data.Provincia);
+                $('#FechaNacimiento').val(data.FechaNacimiento);
+            });
+        });
+
+        $('#miMatricula').on('change', function () {
+
+            $.ajax({
+                url: '@Url.Action("GetConductor", "Home")',
+                type: "POST",
+                data: {
+
+                    matricula: $('#Matricula').val(),
+                }
+            }).done(function (data) {
+                $('#conductorVehiculo').val(data.Nombre);
+
+            });
+        });
+
+        @*$("#formvalsolicitud").submit(function (e) {
+
+            if ($("#formvalsolicitud").valid()) {//validamos el form
+                var formData = new FormData(this);
+
+                $.ajax({
+                    type: this.method,
+                    url: this.action,
+                    data: formData,
+                    contentType: false,
+                    processData: false
+
+                }).done(function (data, textStatus, jqXHR) {
+                    if (data == 'Success') {
+
+                        tableAlertas.ajax.reload(null, false);
+
+                        notify('@resourceView.toastrInfAccionOK', 'i');
+
+                        $('#modalSolicitud').modal('hide');
+
+                    }
+                    else {
+                        notify(data, 'e');
+
+                    }
+                });
+            }
+            e.preventDefault();
+        });*@
+</script>
+ 

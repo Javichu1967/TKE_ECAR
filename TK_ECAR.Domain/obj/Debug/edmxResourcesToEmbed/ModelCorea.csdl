@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CoreaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Compañias_Seguro">
+    <Key>
+      <PropertyRef Name="Cod_Cia" />
+    </Key>
+    <Property Name="Cod_Cia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CIA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Cod_Postal" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Poblacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Persona_Contacto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tlf_Contacto" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="FAlta" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Datos_SolRed">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sociedad" Type="Int32" />
+    <Property Name="EJERCICIO" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TRIMESTRE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="FECHA_FACTURA" Type="DateTime" Precision="3" />
+    <Property Name="FECHA_OPERACION" Type="DateTime" Precision="3" />
+    <Property Name="MATRICULA" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DES_PRODU" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="COD_PRODU" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="KILOMETROS" Type="Double" />
+    <Property Name="NUM_LITROS" Type="Double" />
+    <Property Name="IMPORTE" Type="Double" />
+    <Property Name="BONIF_TOTAL" Type="Double" />
+    <Property Name="IVA" Type="Double" />
+    <Property Name="IMP_TOTAL" Type="Double" />
+    <Property Name="FechaAlta" Type="DateTime" Precision="7" />
+    <Property Name="KmsCiclo" Type="Double" />
+  </EntityType>
+  <EntityType Name="Datos_Conductor">
+    <Key>
+      <PropertyRef Name="Cod_Conductor" />
+    </Key>
+    <Property Name="Cod_Conductor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DNI" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Apellidos" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Cod_Postal" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Poblacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Provincia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tlf" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Movil" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha_Nacimiento" Type="DateTime" Precision="3" />
+    <Property Name="Fecha_Carnet" Type="DateTime" Precision="3" />
+    <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+    <Property Name="Num_Empleado" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha_Vencimiento_Carnet" Type="DateTime" Precision="3" />
+    <Property Name="CodCeco" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha_Alta_Empresa" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Datos_ITV">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Matricula" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Ultima_ITV" Type="DateTime" Precision="0" />
+    <Property Name="Vto_ITV" Type="DateTime" Precision="0" />
+    <Property Name="Tarifa" Type="Double" />
+    <Property Name="Tasa" Type="Double" />
+    <Property Name="Importe" Type="Double" />
+    <Property Name="Impuesto_Circulacion" Type="Double" />
+    <Property Name="Pr_Conservacion" Type="Double" />
+    <Property Name="Otros" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Falta" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Datos_LeasePlan">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpresaLeasing" Type="Int32" />
+    <Property Name="Fecha_Factura" Type="DateTime" Precision="3" />
+    <Property Name="Num_Factura" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Matricula" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Ejercicio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Trimestre" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Imp_Circulacion" Type="Double" />
+    <Property Name="Imp_Circulacion_IVA" Type="Double" />
+    <Property Name="Imp_Matriculacion" Type="Double" />
+    <Property Name="Imp_Matriculacion_IVA" Type="Double" />
+    <Property Name="Alquiler" Type="Double" />
+    <Property Name="Alquiler_IVA" Type="Double" />
+    <Property Name="Mantenimiento" Type="Double" />
+    <Property Name="Mantenimiento_IVA" Type="Double" />
+    <Property Name="Neumaticos" Type="Double" />
+    <Property Name="Neumaticos_IVA" Type="Double" />
+    <Property Name="Administracion" Type="Double" />
+    <Property Name="Administracion_IVA" Type="Double" />
+    <Property Name="Seguro" Type="Double" />
+    <Property Name="Seguro_IVA" Type="Double" />
+    <Property Name="Asistencia_Carretera" Type="Double" />
+    <Property Name="Asistencia_Carretera_IVA" Type="Double" />
+    <Property Name="Intereses_Prepagados" Type="Double" />
+    <Property Name="Intereses_Prepagados_IVA" Type="Double" />
+    <Property Name="Canarias" Type="Boolean" Nullable="false" />
+    <Property Name="Directivo" Type="Boolean" Nullable="false" />
+    <Property Name="Fecha_Servicio" Type="DateTime" Precision="3" />
+    <Property Name="Fecha_Importacion" Type="DateTime" Precision="3" />
+    <Property Name="ITV" Type="Double" />
+    <Property Name="ITV_IVA" Type="Double" />
+    <Property Name="Impuesto" Type="Decimal" Precision="5" Scale="2" />
+    <Property Name="Sociedad" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="FechaAlta" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Datos_Multas">
+    <Key>
+      <PropertyRef Name="Matricula" />
+    </Key>
+    <Property Name="Matricula" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Precision="3" />
+    <Property Name="Conductor" Type="Int32" />
+    <Property Name="Importe" Type="Double" />
+    <Property Name="Motivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Contrario" Type="Boolean" />
+    <Property Name="Cobertura" Type="Boolean" />
+    <Property Name="EmitidaAlerta" Type="Boolean" />
+    <Property Name="FAlta" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Datos_Vehiculo">
+    <Key>
+      <PropertyRef Name="Sociedad" />
+      <PropertyRef Name="Matricula" />
+    </Key>
+    <Property Name="Sociedad" Type="Int32" Nullable="false" />
+    <Property Name="Matricula" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Nuevo" Type="Byte" />
+    <Property Name="Marca" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Modelo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tipo_Vehiculo" Type="Int32" />
+    <Property Name="Num_Bastidor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Departamento" Type="Int32" />
+    <Property Name="Delegacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="F_D" Type="Boolean" />
+    <Property Name="Directivo" Type="Int32" />
+    <Property Name="EmpresaLeasing" Type="Int32" />
+    <Property Name="Conductor" Type="Int32" />
+    <Property Name="Tipo_Seguro" Type="Int32" />
+    <Property Name="Cia_Seguro" Type="Int32" />
+    <Property Name="Poliza_Seguro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Importe_Seguro" Type="Double" />
+    <Property Name="Vto_Seguro" Type="DateTime" Precision="3" />
+    <Property Name="Veh_sustituido" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Num_Contrato" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha_Alta" Type="DateTime" Precision="3" />
+    <Property Name="Baja" Type="Boolean" />
+    <Property Name="Fecha_Baja" Type="DateTime" Precision="3" />
+    <Property Name="Fecha_Recibidos" Type="DateTime" Precision="3" />
+    <Property Name="Fecha_Devolucion" Type="DateTime" Precision="3" />
+    <Property Name="Fecha_Incorporacion" Type="DateTime" Precision="3" />
+    <Property Name="Cuotas" Type="Int32" />
+    <Property Name="Km_Totales" Type="Int32" />
+    <Property Name="Tipo_Liquidacion" Type="Int32" />
+    <Property Name="Exceso_ajuste" Type="Int32" />
+    <Property Name="Coef_exceso" Type="Int32" />
+    <Property Name="Km_Exentos" Type="Int32" />
+    <Property Name="Abono" Type="Double" />
+    <Property Name="Cargo" Type="Int32" />
+    <Property Name="Carburante" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="Orden" Type="Boolean" />
+    <Property Name="Ubicacion" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Observaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Falta" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Empresas_Leasing">
+    <Key>
+      <PropertyRef Name="Cod_Empresa" />
+    </Key>
+    <Property Name="Cod_Empresa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Direccion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Cod_Postal" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Poblacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Domiciliacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Persona_Contacto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Tlf_Contacto" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="POA" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tipo_Liquidacion">
+    <Key>
+      <PropertyRef Name="Cod_tipo" />
+    </Key>
+    <Property Name="Cod_tipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Tipo_Seguro">
+    <Key>
+      <PropertyRef Name="Cod_Tipo" />
+    </Key>
+    <Property Name="Cod_Tipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tipo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Tipo_Vehiculo">
+    <Key>
+      <PropertyRef Name="Cod_Tipo" />
+    </Key>
+    <Property Name="Cod_Tipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tipo" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="ITV" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="CoreaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Compañias_Seguro" EntityType="Self.Compañias_Seguro" />
+    <EntitySet Name="Datos_SolRed" EntityType="Self.Datos_SolRed" />
+    <EntitySet Name="Datos_Conductor" EntityType="Self.Datos_Conductor" />
+    <EntitySet Name="Datos_ITV" EntityType="Self.Datos_ITV" />
+    <EntitySet Name="Datos_LeasePlan" EntityType="Self.Datos_LeasePlan" />
+    <EntitySet Name="Datos_Multas" EntityType="Self.Datos_Multas" />
+    <EntitySet Name="Datos_Vehiculo" EntityType="Self.Datos_Vehiculo" />
+    <EntitySet Name="Empresas_Leasing" EntityType="Self.Empresas_Leasing" />
+    <EntitySet Name="Tipo_Liquidacion" EntityType="Self.Tipo_Liquidacion" />
+    <EntitySet Name="Tipo_Seguro" EntityType="Self.Tipo_Seguro" />
+    <EntitySet Name="Tipo_Vehiculo" EntityType="Self.Tipo_Vehiculo" />
+  </EntityContainer>
+</Schema>

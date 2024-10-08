@@ -1,0 +1,43 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<select id="miModelos" title=@resourceView.LSelectCompany multiple="multiple" class="form-control">
+    <option></option>
+</select>
+<style type="text/css">
+    #miIDModelos_chosen {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+
+<script type="text/javascript">
+
+    $(function () {
+        ChosenModelosVehiculo();
+    }); 
+
+    function ChosenModelosVehiculo() {
+        var uRl = '@Html.Raw(@Url.Action("GetModelosVehiculoByMarcas_Chosen", "MiFlota", new { marcasSeleccionadas = "idchosen" }))'
+        uRl = uRl.replace("idchosen", ConcatenaValoresChosen("miMarcas"))
+        $("#miModelos").ajaxChosen({
+            type: 'GET',
+            url: uRl,
+            "async": false,
+            minTermLength: 0,
+            dataType: 'json'
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+
+        },
+            {
+                //options
+                disable_search_threshold: -1,
+                allow_single_deselect: true,
+            });
+    }
+
+</script>

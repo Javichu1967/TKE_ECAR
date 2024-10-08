@@ -1,0 +1,60 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<select id="miCarburante" title=@resourceView.LSelectCompany search class="form-control" data-placeholder=@resourceView.placeholderChosen puedeDeshabilitarse = "SI">
+    <option></option>
+</select>
+<style type="text/css">
+    #miCarburante_chosen {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+<script type="text/javascript">
+
+    if ($("#IDCarburante").val() != '') {
+        var uRl = '@Html.Raw(@Url.Action("GetCarburanteByID_Chosen", "MiFlota", new { ID = "idchosen" }))'
+        uRl = uRl.replace("idchosen", $("#IDCarburante").val());
+        $.ajax({
+            "url": uRl,
+            "dataType": 'json',
+            //"async": false,
+            "success": function (data, t, x) {
+                $.each(data, function (i, val) {
+                    var $opt = $('<option value="' + val.value + '" selected="selected">').html(val.text);
+                    $('#miCarburante').append($opt);
+                });
+
+                $("#miCarburante").trigger("chosen:updated");
+            }
+        });
+    }
+
+    CarburanteChosen();
+
+    function CarburanteChosen() {
+        $("#miCarburante").ajaxChosen({
+            type: 'GET',
+            url: '@Url.Action("GetCarburante_Chosen", "MiFlota")',
+            minTermLength: 0,
+            dataType: 'json'
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+
+        },
+            {
+                //options
+                disable_search_threshold: -1,
+                allow_single_deselect: true,
+            });
+    }
+    //Pasar como parámetro a chosen el filtro de lo que se quiere.
+    $('#miCarburante').change(function () {
+        $("#IDCarburante").val(this.value);
+    });
+
+
+</script>

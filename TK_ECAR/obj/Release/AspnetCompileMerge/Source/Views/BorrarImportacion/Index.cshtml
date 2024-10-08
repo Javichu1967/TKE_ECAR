@@ -1,0 +1,190 @@
+﻿@using resourceView = TK_ECAR.Content.resources
+@using TK_ECAR.Framework
+@using System.Configuration;
+@model TK_ECAR.Models.BorrarImportacionModels
+
+@{ 
+    var textoBorrar = string.Empty;
+    //var MostrarEmpresa = true;
+    switch (Model.TipoBorrado)
+    {
+        case EnumTipoBorradoImportacion.BorrarImportacionFlota:
+            textoBorrar = resourceView.TK_ECAR_Resource.TitleFlota;
+            break;
+        case EnumTipoBorradoImportacion.BorrarImportacionFacuracion:
+            textoBorrar = resourceView.TK_ECAR_Resource.TitleFacturacion;
+            break;
+        case EnumTipoBorradoImportacion.BorrarImportacionViaVerde:
+            textoBorrar = resourceView.TK_ECAR_Resource.TitleViaVerde;
+            //MostrarEmpresa = false;
+            break;
+        case EnumTipoBorradoImportacion.BorrarImportacionCombustible:
+            textoBorrar = resourceView.TK_ECAR_Resource.TitleCombustible;
+            break;
+    }
+}
+
+<script src='@Scripts.Url("~/bundles/choosenJqJs")'> </script>
+<script src='@Scripts.Url("~/bundles/choosenAjaxJs")'> </script>
+<script src="~/Content/scripts/Application/FilterUtilities.js"></script>
+
+<script type="text/javascript">
+    $.validator.setDefaults({ ignore: null }); //para validar campos ocultos
+</script>
+
+<section>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="infoImportar">
+                <h3>@resourceView.TK_ECAR_Resource.btnBorrarImportacion @textoBorrar</h3>
+                <p>@resourceView.TK_ECAR_Resource.TitleBorradoImportacionInf</p>
+            </div>
+            <div style="float:left; margin: 6px; border-bottom: 1px solid #ddd;" class="col-sm-12" width="100%"></div>
+        </div>
+    </div>
+
+    @using (Html.BeginForm("BorrarImportacionArchivo", "BorrarImportacion", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "stripHtml('formBorrarImportacion')", id = "formBorrarImportacion" }))
+    {
+        @Html.HiddenFor(model => model.TipoBorrado)
+        @*@Html.HiddenFor(model => model.IDEmpresa)*@
+        <!-- File Upload Row -->
+        <div class="row">
+            <div class="form-horizontal">
+                <div class="notice notice-gray col-md-12">
+                    @*@if (MostrarEmpresa)
+                    {
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @Html.RequiredLabelFor(model => model.Empresa, new { @class = "control-label col-md-2" })
+                                <div class="col-md-6">
+                                    @Html.EditorFor(model => model.Empresa)
+                                </div>
+                            </div>
+                        </div>
+                    }*@
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.RequiredLabelFor(model => model.NombreArchivoParaBorrar, new { @class = "control-label col-md-2" })
+                            <div class="col-md-6">
+                                @Html.EditorFor(model => model.NombreArchivoParaBorrar)
+                            </div>
+                            <div class="col-md-4 text-left">
+                                <button id="btnBorrar" type="button" class="btn btn-default form-control"><i class="fa fa-download"></i>&nbsp;@resourceView.TK_ECAR_Resource.btnBorrarImportacion</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="rowValidationSummary">
+            <div class="form-group" id="divValidationSummary">
+                <div class="col-lg-12">
+                    @Html.Partial("_CustomValidationSummary", ViewData.ModelState)
+                </div>
+            </div>
+        </div>
+    }
+
+    <div style="float:left; margin: 6px; border-bottom: 1px solid #ddd;" class="col-sm-12" width="100%"></div>
+
+</section>
+
+@section Scripts {
+    <link href="~/Content/styles/Site.css" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/choosenCSS")'>
+
+    <script type="text/javascript" language="javascript">
+        var tableResumenImp = null;
+        var uRl = '@Url.Action("BorrarImportacionArchivo", "BorrarImportacion")';
+        var continuar = true;
+
+        $(document).ready(function () {
+            //$('.progress').hide();
+            //$('#btnBorrar').hide();
+
+            //$('#IDEmpresa').val('0');
+
+            @*var ponerValorEmpresa = '@MostrarEmpresa';
+            if (!ponerValorEmpresa){
+                $('#IDEmpresa').val('8100');
+            }*@
+
+            $(document).on('click', '#btnBorrar', function (event) {
+                if ($("#formBorrarImportacion").valid()) {//validamos el form
+                    $(this).resetSummary();
+                    $("#formBorrarImportacion").submit();
+                }
+                else {
+                    $("#rowValidationSummary").show();
+                }
+            });
+
+            $("#formBorrarImportacion").submit(function (e) {
+                e.preventDefault();
+                //if ($("#btnBorrar").is(":visible")) {
+                    if ($("#formBorrarImportacion").valid()) {//validamos el form
+                        LimpiaValidationSummary();
+                        $("#rowValidationSummary").hide();
+
+                        var formData = new FormData(this);
+                        $.ajax({
+                            type: "POST",
+                            url: uRl,
+                            dataType: 'json',
+                            //async: false,
+                            data: formData,
+                            contentType: false,
+                            processData: false,
+
+                            success: function (data) {
+                                if (data == 'OK') {
+                                    ajaxSuccessBorrado();
+                                }
+                                else {
+                                    ajaxErrorBorrado();
+                                }
+                            },
+                            error: function (error) {
+                                ajaxErrorBorrado();
+                            }
+                        });
+                    }
+                //}
+            });
+        });
+
+        $('#miNombreArchivoParaBorrar').on('chosen:hiding_dropdown', function (evt, params) {
+            if (this.value != "") {
+                $("#NombreArchivoParaBorrar").val(this.value);
+            }
+            else{
+                $("#NombreArchivoParaBorrar").val('');
+            }
+        //$('#miNombreArchivoParaBorrar').on('change', function () {
+            //$("#NombreArchivoParaBorrar").val($("#miNombreArchivoParaBorrar").val());
+            //$('#btnBorrar').show();
+        });
+
+        ////$('#miEmpresa').on('chosen:hiding_dropdown', function (evt, params) {
+        //$('#miEmpresa').on('change', function () {
+        //    $('#IDEmpresa').val($("#miEmpresa").val());
+        //    LimpiaFiltroChosen("miNombreArchivoParaBorrar");
+        //    NombreArchivoParaBorrarChosen();
+        //});
+
+        function ajaxSuccessBorrado() {
+            notify('@resourceView.TK_ECAR_Resource.toastrInfBorradoImportacionCorrecto', 'i');
+            LimpiaFiltroChosen("miNombreArchivoParaBorrar");
+            NombreArchivoParaBorrarChosen();
+            $("#NombreArchivoParaBorrar").val("");
+            //$('#btnBorrar').hide();
+        }
+
+        function ajaxErrorBorrado() {
+            notify('@resourceView.TK_ECAR_Resource.toastrInfBorradoImportacionError', 'e');
+        }
+
+    </script>
+}

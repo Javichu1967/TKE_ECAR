@@ -1,0 +1,55 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+@using (Ajax.BeginForm("Confirmar", "Alertas", null, new AjaxOptions { OnSuccess = "onConfirmadoConductor",  HttpMethod = "Post" }, new { @id = "formConductor" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="modal fade" id="modalConductores" role="dialog">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog  modal-lg  vertical-align-center">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="modal-header-logo"></span>
+                        </button>
+                        <h4 class="modal-title">@resourceView.LNotRenting</h4>
+                    </div>
+
+                    <div class="modal-body" id="modalbodyConductores">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="confirmarRenting" class="btn btn-default">@resourceView.AccionAceptar</button>
+                        <button type="button" class="btn btn-cancel" data-dismiss="modal">@resourceView.AccionCerrar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script type="text/javascript">
+
+
+    $(document).ready(function () {
+
+
+    });
+    function onConfirmadoConductor(data) {
+
+        if (data == 'Success') {
+
+            tableAlertas.ajax.reload(null, false);
+
+
+            $('#modalConductores').modal('hide');
+
+            @*toastr["info"]('@resourceView.toastrInfAccionOK');*@
+            notify('@resourceView.toastrInfAccionOK', 'i');
+        }
+        else {
+            notify( data, 'e');
+            //toastr["error"](data);
+        }
+    }
+
+</script>

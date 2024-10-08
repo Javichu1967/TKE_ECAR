@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'TKTypeRegularRegular';
+    src: url('tktyperegular.eot');
+    src: url('tktyperegular.eot') format('embedded-opentype'),
+         url('tktyperegular.woff') format('woff'),
+         url('tktyperegular.ttf') format('truetype'),
+         url('tktyperegular.svg#TKTypeRegularRegular') format('svg');
+}

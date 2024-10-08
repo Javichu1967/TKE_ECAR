@@ -1,0 +1,32 @@
+﻿<div class="input-group date">  
+    @if (ViewData.ModelMetadata.IsReadOnly) //this will be looking at the actual property not the complete model
+    {
+        @Html.TextBox("", ViewData.TemplateInfo.FormattedModelValue.ToString(), "{0:dd/MM/yyyy}", new { @class = "form-control", @readonly="readonly" })
+    }
+    else
+    {
+        @Html.TextBox("", ViewData.TemplateInfo.FormattedModelValue.ToString(), "{0:dd/MM/yyyy}", new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+    }
+
+    <span class="input-group-addon"><i class="tk-icon icon-tk-calendar"></i></span>
+</div>
+<script type="text/javascript">
+    var isreadonly =   '@ViewData.ModelMetadata.IsReadOnly' ;
+    var propertymodel = '@ViewData.ModelMetadata.PropertyName';
+     
+    $("#" + propertymodel).datepicker.defaults.language = 'es';
+
+    //if (isreadonly =='False') {
+        $("#" + propertymodel).datepicker({
+            showToday: true,
+            weekStart: 1,
+            format: "dd/mm/yyyy",
+            autoclose: true,
+            orientation: "bottom auto"
+        });
+    //}
+
+
+
+
+</script>

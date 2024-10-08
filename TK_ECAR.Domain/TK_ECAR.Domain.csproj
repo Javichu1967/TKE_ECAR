@@ -1,0 +1,1041 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CA5867C-7DEB-4585-8B80-C615A50EEABD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TK_ECAR.Domain</RootNamespace>
+    <AssemblyName>TK_ECAR.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Compañias_Seguro.cs">
+      <DependentUpon>ModelCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos_Conductor.cs">
+      <DependentUpon>ModelCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos_ITV.cs">
+      <DependentUpon>ModelCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos_LeasePlan.cs">
+      <DependentUpon>ModelCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos_Multas.cs">
+      <DependentUpon>ModelCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos_SolRed.cs">
+      <DependentUpon>ModelCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Datos_Vehiculo.cs">
+      <DependentUpon>ModelCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DomainModel\Evaluator.cs" />
+    <Compile Include="DomainModel\Extensions.Expression.cs" />
+    <Compile Include="DomainModel\ParameterRebinder.cs" />
+    <Compile Include="ECAR_Datos_Conductor.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ECAR_Datos_ITV.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ECAR_Datos_Multas.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ECAR_Datos_SolRed.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ECAR_Datos_Vehiculo.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ECAR_Tipo_Liquidacion.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFUnitOfWork.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Empresas_Leasing.cs">
+      <DependentUpon>ModelCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GENERAL_IDIOMAS.cs">
+      <DependentUpon>ModelRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GENERAL_PARAMETROS_APLICACIONES.cs">
+      <DependentUpon>ModelRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryBase.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryCompañias_Seguro.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryDatos_Conductor.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryECAR_Datos_ITVPartial.cs" />
+    <Compile Include="IRepositoryECARDatos_VehiculoPartial.cs" />
+    <Compile Include="IRepositoryECAR_Datos_ConductorPartial.cs" />
+    <Compile Include="IRepositoryDatos_ConductorPartial.cs" />
+    <Compile Include="IRepositoryDatos_ITV.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryDatos_LeasePlan.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryDatos_Multas.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryDatos_SolRed.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryDatos_Vehiculo.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryDatos_ITVPartial.cs" />
+    <Compile Include="IRepositoryECAR_Datos_Conductor.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryECAR_Datos_ITV.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryECAR_Datos_Multas.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryECAR_Datos_SolRed.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryECAR_Datos_Vehiculo.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryECAR_Tipo_Liquidacion.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryEmpresas_Leasing.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryGENERAL_IDIOMAS.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryGENERAL_PARAMETROS_APLICACIONES.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryMERSY_USERS_ZONAS.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryMERSY_ZONAS.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositorySAPHR_CentrosCoste.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositorySAPHR_CentrosCostePartial.cs" />
+    <Compile Include="IRepositorySAPHR_Delegaciones.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositorySAPHR_DelegacionesPartial.cs" />
+    <Compile Include="IRepositorySAPHR_DireccionesArea.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositorySAPHR_DireccionesTerritoriales.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositorySAPHR_DireccionesTerritorialesPartial.cs" />
+    <Compile Include="IRepositorySAPHR_Empresas.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositorySAPHR_FiltroSeleccionCentrosCoste.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositorySAPHR_UnidadesOrganizativas.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositorySAPHR_UsuariosSAP.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryTipo_Liquidacion.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryTipo_Seguro.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryTipo_Vehiculo.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryTMP_RENOVACION_ITV.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_ALERTAS.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_ALERTAS_CAMBIO_CONDUCTOR.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_ALERTAS_MULTA.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_ALERTAS_OTRAS_NOTIFICACIONES.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_ALERTAS_RENOVACION_CARNET.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_ALERTAS_RENOVACION_ITV.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_ALERTAS_ROBO.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_ALERTAS_SOLICITUD_SOLRED.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_DATOS_LEASING.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_DOCUMENTACION.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_DOCUMENTACION_VEHICULO.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_GESTORES_FLOTA.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_HIST_ALERTAS.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_HIST_CAMBIOS_CENTRO_COSTE.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_HIST_CAMBIOS_CONDUCTOR.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_HIST_CAMBIOS_EMPRESA.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_HIST_CAMBIOS_TARJETA.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_MENUS.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_PREGUNTAS_FRECUENTES.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_TARJETA_COMBUSTIBLE.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_TELEFONOS_FRECUENTES.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_USUARIOS.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_USUARIOSPartial.cs" />
+    <Compile Include="IRepositoryDatos_VehiculoPartial.cs" />
+    <Compile Include="IRepositorySAPHR_UsuariosSAPPartial.cs" />
+    <Compile Include="IRepositoryT_G_USUARIOS_CECO.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_USUARIOS_DELEGACION.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_USUARIOS_DIR_TERRITORIAL.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_USUARIOS_EMPRESAS.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_VIA_VERDE_EXTRACTOS.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_VIA_VERDE_IDENTIFICADORES.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_VIA_VERDE_TRANSACCIONES.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_ACCIONES.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_CATEGORIAS.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_CATEGORIA_PREGUNTAS.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_CLIENTES.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_CORRESPONDENCIA_COD_CLI_EMPRESA_TKE.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_CUENTAS_CONTABLES.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_EMPRESAS_VEHICULOS.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_ESTADOS.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_MARCA_VEHICULOS.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_MODELOS_VEHICULO.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_PERFILES.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_RUTA_VEHICULOS.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_TARJETAS_CONBUSTIBLE.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_TIPOS_ALERTAS.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_TIPOS_CARBURANTE.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_TIPOS_CLASIFICACION.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_TIPOS_COSTE.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_TIPOS_SOLICITUD_SOLRED.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_TIPOS_VEHICULO.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_TIPO_SEGURO_VEHICULO.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_TIPO_TARJETA_COMBUSTIBLE.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_M_UBICACIONES.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_R_ESTADOS_ACCION.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_G_ALERTASPartial.cs" />
+    <Compile Include="IRepositoryT_M_TIPOS_ALERTASPartial.cs" />
+    <Compile Include="IRepositoryT_R_ESTADOS_ACCIONPartial.cs" />
+    <Compile Include="IRepositoryT_R_PERFILES_MENU.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryT_R_TIPOSCOSTE_CUENTA_CONTABLE.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryV_ALERTAS_CECOS_DELEGACION.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryV_CONDUCTORES_USUARIOS_SAP.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositoryV_TARJETAS_COMBUSTIBLE_EMPRESAS.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IUnitOfWork.cs">
+      <DependentUpon>EFUnitOfWork.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MERSY_USERS_ZONAS.cs">
+      <DependentUpon>ModelRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MERSY_ZONAS.cs">
+      <DependentUpon>ModelRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelCorea.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCorea.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelCorea.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelCorea.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelCorea.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ModelEntitiesPartial.cs" />
+    <Compile Include="ModelRepositorio.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelRepositorio.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelRepositorio.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelRepositorio.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelRepositorio.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="SAPHR_CentrosCoste.cs">
+      <DependentUpon>ModelRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAPHR_Delegaciones.cs">
+      <DependentUpon>ModelRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAPHR_DireccionesArea.cs">
+      <DependentUpon>ModelRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAPHR_DireccionesTerritoriales.cs">
+      <DependentUpon>ModelRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAPHR_Empresas.cs">
+      <DependentUpon>ModelRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAPHR_FiltroSeleccionCentrosCoste.cs">
+      <DependentUpon>ModelRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAPHR_UnidadesOrganizativas.cs">
+      <DependentUpon>ModelRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SAPHR_UsuariosSAP.cs">
+      <DependentUpon>ModelRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\Compañias_SeguroSpecification.cs">
+      <DependentUpon>ModelSpecificationCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\Datos_ConductorSpecification.cs">
+      <DependentUpon>ModelSpecificationCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\Datos_ITVSpecification.cs">
+      <DependentUpon>ModelSpecificationCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\Datos_LeasePlanSpecification.cs">
+      <DependentUpon>ModelSpecificationCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\Datos_MultasSpecification.cs">
+      <DependentUpon>ModelSpecificationCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\Datos_SolRedSpecification.cs">
+      <DependentUpon>ModelSpecificationCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\Datos_VehiculoSpecification.cs">
+      <DependentUpon>ModelSpecificationCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\ECAR_Datos_ConductorSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\ECAR_Datos_ITVSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\ECAR_Datos_MultasSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\ECAR_Datos_SolRedSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\ECAR_Datos_VehiculoSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\ECAR_Tipo_LiquidacionSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\Empresas_LeasingSpecification.cs">
+      <DependentUpon>ModelSpecificationCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\GENERAL_IDIOMASSpecification.cs">
+      <DependentUpon>ModelSpecificationRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\GENERAL_PARAMETROS_APLICACIONESSpecification.cs">
+      <DependentUpon>ModelSpecificationRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\ISpecification.cs" />
+    <Compile Include="Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Specifications\MERSY_USERS_ZONASSpecification.cs">
+      <DependentUpon>ModelSpecificationRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\MERSY_ZONASSpecification.cs">
+      <DependentUpon>ModelSpecificationRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\ModelSpecification.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\ModelSpecificationRepositorio.cs">
+      <DependentUpon>ModelSpecificationRepositorio.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Specifications\ModelSpecificationCorea.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelSpecificationCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\SAPHR_CentrosCosteSpecification.cs">
+      <DependentUpon>ModelSpecificationRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\SAPHR_DelegacionesSpecification.cs">
+      <DependentUpon>ModelSpecificationRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\SAPHR_DireccionesAreaSpecification.cs">
+      <DependentUpon>ModelSpecificationRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\SAPHR_DireccionesTerritorialesSpecification.cs">
+      <DependentUpon>ModelSpecificationRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\SAPHR_EmpresasSpecification.cs">
+      <DependentUpon>ModelSpecificationRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\SAPHR_FiltroSeleccionCentrosCosteSpecification.cs">
+      <DependentUpon>ModelSpecificationRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\SAPHR_UnidadesOrganizativasSpecification.cs">
+      <DependentUpon>ModelSpecificationRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\SAPHR_UsuariosSAPSpecification.cs">
+      <DependentUpon>ModelSpecificationRepositorio.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\Specification.cs" />
+    <Compile Include="Specifications\Specification.Extensions.cs" />
+    <Compile Include="Specifications\Tipo_LiquidacionSpecification.cs">
+      <DependentUpon>ModelSpecificationCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\Tipo_SeguroSpecification.cs">
+      <DependentUpon>ModelSpecificationCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\Tipo_VehiculoSpecification.cs">
+      <DependentUpon>ModelSpecificationCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\TMP_RENOVACION_ITVSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_ALERTASSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_ALERTAS_CAMBIO_CONDUCTORSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_ALERTAS_MULTASpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTORSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_ALERTAS_OTRAS_NOTIFICACIONESSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_ALERTAS_RENOVACION_CARNETSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_ALERTAS_RENOVACION_ITVSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTORSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_ALERTAS_ROBOSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_ALERTAS_SOLICITUD_SOLREDSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_DATOS_LEASINGSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_DOCUMENTACIONSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_DOCUMENTACION_VEHICULOSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_GESTORES_FLOTASpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_HIST_ALERTASSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_HIST_CAMBIOS_CENTRO_COSTESpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_HIST_CAMBIOS_CONDUCTORSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_HIST_CAMBIOS_EMPRESASpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_HIST_CAMBIOS_TARJETASpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_MENUSSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_PREGUNTAS_FRECUENTESSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_TARJETA_COMBUSTIBLESpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_TELEFONOS_FRECUENTESSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_USUARIOSSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_USUARIOS_CECOSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_USUARIOS_DELEGACIONSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_USUARIOS_DIR_TERRITORIALSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_USUARIOS_EMPRESASSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_VIA_VERDE_EXTRACTOSSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_VIA_VERDE_IDENTIFICADORESSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_G_VIA_VERDE_TRANSACCIONESSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_ACCIONESSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_CATEGORIASSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_CATEGORIA_PREGUNTASSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_CLIENTESSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_CORRESPONDENCIA_COD_CLI_EMPRESA_TKESpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_CUENTAS_CONTABLESSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_EMPRESAS_VEHICULOSSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_ESTADOSSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_MARCA_VEHICULOSSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_MODELOS_VEHICULOSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_PERFILESSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_RUTA_VEHICULOSSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_TARJETAS_CONBUSTIBLESpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_TIPOS_ALERTASSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_TIPOS_CARBURANTESpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_TIPOS_CLASIFICACIONSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_TIPOS_COSTESpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_TIPOS_SOLICITUD_SOLREDSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_TIPOS_VEHICULOSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_TIPO_SEGURO_VEHICULOSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_TIPO_TARJETA_COMBUSTIBLESpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_M_UBICACIONESSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_R_ESTADOS_ACCIONSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_R_PERFILES_MENUSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\T_R_TIPOSCOSTE_CUENTA_CONTABLESpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\V_ALERTAS_CECOS_DELEGACIONSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\V_CONDUCTORES_USUARIOS_SAPSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Specifications\V_TARJETAS_COMBUSTIBLE_EMPRESASSpecification.cs">
+      <DependentUpon>ModelSpecification.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tipo_Liquidacion.cs">
+      <DependentUpon>ModelCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tipo_Seguro.cs">
+      <DependentUpon>ModelCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tipo_Vehiculo.cs">
+      <DependentUpon>ModelCorea.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TMP_RENOVACION_ITV.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_ALERTAS.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_ALERTAS_CAMBIO_CONDUCTOR.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_ALERTAS_MULTA.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_ALERTAS_OTRAS_NOTIFICACIONES.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_ALERTAS_RENOVACION_CARNET.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_ALERTAS_RENOVACION_ITV.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_ALERTAS_ROBO.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_ALERTAS_SOLICITUD_SOLRED.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_DATOS_LEASING.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_DOCUMENTACION.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_DOCUMENTACION_VEHICULO.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_GESTORES_FLOTA.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_HIST_ALERTAS.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_HIST_CAMBIOS_CENTRO_COSTE.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_HIST_CAMBIOS_CONDUCTOR.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_HIST_CAMBIOS_EMPRESA.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_HIST_CAMBIOS_TARJETA.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_MENUS.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_PREGUNTAS_FRECUENTES.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_TARJETA_COMBUSTIBLE.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_TELEFONOS_FRECUENTES.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_USUARIOS.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_USUARIOS_CECO.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_USUARIOS_DELEGACION.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_USUARIOS_DIR_TERRITORIAL.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_USUARIOS_EMPRESAS.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_VIA_VERDE_EXTRACTOS.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_VIA_VERDE_IDENTIFICADORES.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_G_VIA_VERDE_TRANSACCIONES.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_ACCIONES.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_CATEGORIAS.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_CATEGORIA_PREGUNTAS.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_CLIENTES.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_CORRESPONDENCIA_COD_CLI_EMPRESA_TKE.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_CUENTAS_CONTABLES.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_EMPRESAS_VEHICULOS.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_ESTADOS.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_MARCA_VEHICULOS.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_MODELOS_VEHICULO.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_PERFILES.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_RUTA_VEHICULOS.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_TARJETAS_CONBUSTIBLE.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_TIPOS_ALERTAS.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_TIPOS_CARBURANTE.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_TIPOS_CLASIFICACION.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_TIPOS_COSTE.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_TIPOS_SOLICITUD_SOLRED.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_TIPOS_VEHICULO.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_TIPO_SEGURO_VEHICULO.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_TIPO_TARJETA_COMBUSTIBLE.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_M_UBICACIONES.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_R_ESTADOS_ACCION.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_R_PERFILES_MENU.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T_R_TIPOSCOSTE_CUENTA_CONTABLE.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_ALERTAS_CECOS_DELEGACION.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_CONDUCTORES_USUARIOS_SAP.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="V_TARJETAS_COMBUSTIBLE_EMPRESAS.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="ModelRepositorio.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelRepositorio.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="ModelCorea.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelCorea.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelCorea.edmx.diagram">
+      <DependentUpon>ModelCorea.edmx</DependentUpon>
+    </None>
+    <None Include="ModelRepositorio.edmx.diagram">
+      <DependentUpon>ModelRepositorio.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EFUnitOfWork.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EFUnitOfWork.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelCorea.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelCorea.edmx</DependentUpon>
+      <LastGenOutput>ModelCorea.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelCorea.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelCorea.edmx</DependentUpon>
+      <LastGenOutput>ModelCorea.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelRepositorio.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelRepositorio.edmx</DependentUpon>
+      <LastGenOutput>ModelRepositorio.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ModelRepositorio.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelRepositorio.edmx</DependentUpon>
+      <LastGenOutput>ModelRepositorio.cs</LastGenOutput>
+    </Content>
+    <Content Include="Specifications\ModelSpecificationRepositorio.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelSpecificationRepositorio.cs</LastGenOutput>
+    </Content>
+    <Content Include="Specifications\ModelSpecificationCorea.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelSpecificationCorea.cs</LastGenOutput>
+    </Content>
+    <Content Include="Specifications\ModelSpecification.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelSpecification.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,149 @@
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\csc.exe
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\System.Collections.Immutable.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\System.Reflection.Metadata.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\vbc.exe
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\VBCSCompiler.exe
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\VBCSCompiler.exe.config
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.ImportacionFlota.exe.config
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.ImportacionFlota.exe
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.ImportacionFlota.pdb
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\EntityFramework.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\EntityFramework.SqlServer.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\EPPlus.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\log4net.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.Domain.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.Framework.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.Infraestructure.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\itextsharp.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Net.Http.Formatting.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Newtonsoft.Json.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.Mvc.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.Optimization.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Owin.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.WebPages.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\PostSharp.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Microsoft.Owin.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TKSeguridad.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TKUtilidades.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.Razor.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\WebGrease.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Microsoft.Owin.Security.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Antlr3.Runtime.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.Domain.pdb
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.Framework.pdb
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.Infraestructure.pdb
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.pdb
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\EntityFramework.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\EntityFramework.SqlServer.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\EPPlus.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\log4net.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Newtonsoft.Json.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.Mvc.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.Optimization.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Microsoft.AspNet.SignalR.Core.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.WebPages.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\PostSharp.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Microsoft.Owin.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.Razor.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Microsoft.Owin.Security.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Antlr3.Runtime.pdb
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\pt-PT\TK_ECAR.resources.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\es\System.Web.Mvc.resources.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\es\System.Web.Optimization.resources.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\es\System.Web.WebPages.resources.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\es\System.Web.Razor.resources.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\es\System.Web.WebPages.Razor.resources.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\es\System.Web.WebPages.Deployment.resources.dll
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\obj\Debug\TK_ECAR.ImportacionFlota.csprojResolveAssemblyReference.cache
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\obj\Debug\TK_ECAR.ImportacionFlota.exe
+C:\Workspaces\Projects\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\obj\Debug\TK_ECAR.ImportacionFlota.pdb
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\csc.exe
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\Microsoft.CodeAnalysis.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\Microsoft.CSharp.Core.targets
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\Microsoft.VisualBasic.Core.targets
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\System.Collections.Immutable.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\System.Reflection.Metadata.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\vbc.exe
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\VBCSCompiler.exe
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\roslyn\VBCSCompiler.exe.config
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.ImportacionFlota.exe.config
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.ImportacionFlota.exe
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.ImportacionFlota.pdb
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\EntityFramework.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\EntityFramework.SqlServer.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\log4net.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.Domain.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.Framework.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.Infraestructure.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\itextsharp.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Net.Http.Formatting.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Newtonsoft.Json.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.Mvc.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.Optimization.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Owin.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.WebPages.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\PostSharp.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Microsoft.Owin.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TKSeguridad.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TKUtilidades.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.Razor.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.WebPages.Razor.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\WebGrease.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Microsoft.Owin.Security.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Antlr3.Runtime.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.Domain.pdb
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.Domain.dll.config
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.Framework.pdb
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.Infraestructure.pdb
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.Infraestructure.dll.config
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.pdb
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\TK_ECAR.dll.config
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\EntityFramework.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\EntityFramework.SqlServer.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\EPPlus.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\log4net.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Newtonsoft.Json.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.Mvc.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.Optimization.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Microsoft.AspNet.SignalR.Core.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.WebPages.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\PostSharp.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Microsoft.Owin.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.Razor.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.WebPages.Razor.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Microsoft.Owin.Security.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\Antlr3.Runtime.pdb
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\pt-PT\TK_ECAR.resources.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\es\System.Web.Mvc.resources.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\es\System.Web.Optimization.resources.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\es\System.Web.WebPages.resources.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\es\System.Web.Razor.resources.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\es\System.Web.WebPages.Razor.resources.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\bin\Debug\es\System.Web.WebPages.Deployment.resources.dll
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\obj\Debug\TK_ECAR.ImportacionFlota.csproj.AssemblyReference.cache
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\obj\Debug\TK_ECAR.ImportacionFlota.csproj.SuggestedBindingRedirects.cache
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\obj\Debug\TK_ECAR.ImportacionFlota.csproj.CoreCompileInputs.cache
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\obj\Debug\TK_ECAR.ImportacionFlota.csproj.CopyComplete
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\obj\Debug\TK_ECAR.ImportacionFlota.exe
+C:\TRABAJO\NET BUENO\TKE\BORRAR\TK_ECAR\TK_ECAR.ImportacionFlota\TK_ECAR.ImportacionFlota\obj\Debug\TK_ECAR.ImportacionFlota.pdb

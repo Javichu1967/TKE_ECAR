@@ -1,0 +1,4 @@
+2017-07-04 10:01:48,089 [13] ERROR <CargaLEASEPLANfromExcel> <FICHERO> C:\Workspaces\Projects\TK_ECAR\TK_ECAR\App_Data\ImportFiles\RENTING\ARVAL Informe facturación Renting Junio'17.xlsx, FILA 2. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [:0]
+2017-07-04 10:02:04,838 [13] ERROR <CargaLEASEPLANfromExcel> <FICHERO> C:\Workspaces\Projects\TK_ECAR\TK_ECAR\App_Data\ImportFiles\RENTING\ARVAL Informe facturación Renting Junio'17.xlsx, FILA 3. 
+Conversión no válida desde 'Double' hasta 'DateTime'. - [:0]

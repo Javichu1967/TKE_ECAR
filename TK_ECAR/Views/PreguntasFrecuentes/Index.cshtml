@@ -1,0 +1,284 @@
+﻿@using resourceView = TK_ECAR.Content.resources
+@model IEnumerable<TK_ECAR.Models.PreguntasDataTableModel>
+@using System.Configuration;
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="infoFaqGestion">
+            @{
+                //var actionLink = Ajax.ActionLink("JSTITLEMODAL", "NuevaPregunta", "PreguntasFrecuentes", new { },
+                //new AjaxOptions
+                //{
+                //    UpdateTargetId = "modalbodyPregunta",
+                //    OnSuccess = "showModalPregunta();",
+                //    OnComplete = "completeModal()",
+                //    InsertionMode = InsertionMode.Replace,
+                //    OnBegin = "setTitleModal('JSTITLEMODAL')"
+                //}, new { @class = "tk-icon icon-tk-plus2" }).ToString();
+
+
+                var actionLink = Ajax.ActionLink("JSTITLEMODAL", "NuevaPregunta", "PreguntasFrecuentes", new { },
+                    new AjaxOptions
+                    {
+                        UpdateTargetId = "modalbodyPregunta",
+                        OnSuccess = "showModalPregunta();",
+                        OnComplete = "completeModal()",
+                        InsertionMode = InsertionMode.Replace,
+                        OnBegin = "setTitleModal('JSTITLEMODAL')"
+                    }, new { @title = "tooltip", @class = "tk-icon-med icon-tk-plus", @style = "float: right;" }).ToString();
+            }
+            @*<h3>@resourceView.TK_ECAR_Resource.TitlePreguntasFrecuentes    @Html.Raw(actionLink.Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.LNuevaPregunta))</h3>*@
+            <h3>@resourceView.TK_ECAR_Resource.TitlePreguntasFrecuentes    
+                <span id="linkuser" style="float: right;">@resourceView.TK_ECAR_Resource.LAñadir</span> 
+                @Html.Raw(actionLink.Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.LNuevaPregunta).Replace("tooltip", @resourceView.TK_ECAR_Resource.LNuevaPregunta))
+            </h3>
+            <p>@resourceView.TK_ECAR_Resource.TitlePreguntasFrecuentesInf</p>
+        </div>
+    </div>
+    @*<div class="col-sm-4 left">
+        <div class="info">
+            @Html.Raw(actionLink.Replace("JSTITLEMODAL", @resourceView.LNuevaPregunta))
+        </div>
+    </div>*@
+
+
+        @*<div class="col-xs-12 col-md-8">
+        <div class="pull-right notifica">
+
+            @{
+                var actionLink = Ajax.ActionLink("JSTITLEMODAL", "NuevaPregunta", "PreguntasFrecuentes", new { },
+                new AjaxOptions
+                {
+                    UpdateTargetId = "modalbodyPregunta",
+                    OnSuccess = "showModalPregunta();",
+                    OnComplete = "completeModal()",
+                    InsertionMode = InsertionMode.Replace,
+                    OnBegin = "setTitleModal('JSTITLEMODAL')"
+                }).ToString();
+            }
+
+
+            <ul class="list-unstyled list-inline">
+                <li class="dropdown" id="menuPregunta">
+                    <a data-toggle="dropdown" href="#"><i class="fa fa-bars"></i> @resourceView.TK_ECAR_Resource.TitlePreguntasFrecuentes</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            @Html.Raw(actionLink.Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.LNuevaPregunta))
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>*@
+</div>
+
+@{
+    var actionLinkAcciones = Ajax.ActionLink("textoQuitarPorVacio", "EditarPregunta", "PreguntasFrecuentes", new { idPregunta = "JSVARTIPO" },
+    new AjaxOptions
+    {
+        UpdateTargetId = "modalbodyPregunta",
+        OnSuccess = "showModalPregunta();",
+        OnComplete = "completeModal()",
+        InsertionMode = InsertionMode.Replace,
+        OnBegin = "setTitleModal('JSTITLEMODAL')"
+    }, new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" }).ToString();
+    actionLinkAcciones = "<a class='tk-icon-med icon-tk-edit tk-icon-bold ' "
+                        + actionLinkAcciones.Replace("textoQuitarPorVacio", "").Replace("accionmenu", @resourceView.TK_ECAR_Resource.AccionEditar)
+                         + " </a>"; 
+
+    var actionLinkDelete = Ajax.ActionLink("JSTITLEACTION", "BorrarPregunta", "PreguntasFrecuentes", new { idPregunta = "JSVARTIPO" },
+    new AjaxOptions
+    {
+        UpdateTargetId = "modalbodyPregunta",
+        OnSuccess = "showModalPregunta();",
+        OnComplete = "completeModal()",
+        InsertionMode = InsertionMode.Replace,
+        OnBegin = "setTitleModal('JSTITLEMODAL')"
+    }, new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" }).ToString();
+    actionLinkDelete = "<a class='tk-icon-med icon-tk-delete tk-icon-bold tk-icon-red ' "
+                + actionLinkDelete.Replace("textoQuitarPorVacio", "").Replace("accionmenu", @resourceView.TK_ECAR_Resource.AccionBorrar)
+                 + " </a>"; 
+
+}
+
+<table id="tablePreguntas" class="display responsive" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th></th>
+            <th>idCategoria</th>
+            <th>idPregunta</th>
+            <th>@resourceView.ModelsResources.lblEmpresa</th>
+            <th>@resourceView.TK_ECAR_Resource.GeneralCabCategoria</th>
+            <th>@resourceView.TK_ECAR_Resource.PreguntasCabPregunta</th>
+            <th>@resourceView.TK_ECAR_Resource.PreguntasCabRespuesta</th>
+            <th>@resourceView.TK_ECAR_Resource.DataTableCabAccion</th>
+            <th>DescEmpresa</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td><img src="Content/img/Application/details_open.png" rel="@item.Respuesta" alt="expand/collapse"></td>
+                <td>@item.idCategoria</td>
+                <td>@item.idPregunta</td>
+                <td>@item.ID_Empresa</td>
+                <td>@item.Categoria</td>
+                <td>@item.Pregunta</td>
+                <td>@item.Respuesta</td>
+                <td>
+                    <span></span> @Html.Raw(actionLinkAcciones.Replace("JSVARTIPO", (item.idPregunta).ToString()).Replace("JSTITLEACTION", @resourceView.TK_ECAR_Resource.AccionEditar).Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.TitlePreguntasEditar))
+                    @Html.Raw(actionLinkDelete.Replace("JSVARTIPO", (item.idPregunta).ToString()).Replace("JSTITLEACTION", @resourceView.TK_ECAR_Resource.AccionBorrar).Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.TitlePreguntasBorrar))
+                </td>
+                <td>@item.DescEmpresa</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@Html.Partial("_ModalPreguntas")
+
+<style>
+    .export-btn {
+        margin: 10px;
+        padding: 5px;
+    }
+</style>
+
+@section Scripts {
+
+
+
+<link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecss")'>
+<link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecssResponsive")'>
+
+<script src='@Scripts.Url("~/bundles/datatable")'> </script>
+<script src='@Scripts.Url("~/bundles/dtresponsive")'> </script>
+
+<script src='@Scripts.Url("~/bundles/DataTablesButtonJs")'> </script>
+<script src='@Scripts.Url("~/bundles/DataTablesbuttonsFlashJs")'> </script>
+<script src='@Scripts.Url("~/bundles/DataTablesbuttonsHtml5Js")'> </script>
+<script src='@Scripts.Url("~/bundles/DataTablesjszipJs")'> </script>
+<script src='@Scripts.Url("~/bundles/DataTablesVfsFontsJs")'> </script>
+
+
+    <script type="text/javascript">
+        var _tablePreguntas;
+
+        $(document).ready(function () {
+            _tablePreguntas = $('#tablePreguntas').dataTable(
+                {
+                responsive: {
+                    details: {
+                        type: 'column',
+                        target: 'tr'
+                    }
+                },
+                "dom": 'Blfrtip',
+                "ordering": true,
+                "processing": true,
+                "paginate": true,
+                "order": [[3, "asc"], [4, "asc"]],
+                "buttons": [{
+                    text: '@resourceView.TK_ECAR_Resource.btnExportarExcel',
+                    extend: 'excel',
+                    className: 'btn btn-default export-btn',
+                    title: '@Html.Raw(@resourceView.TK_ECAR_Resource.TitlePreguntasFrecuentes)',
+                    exportOptions: {
+                        columns: [4, 5, 6]
+                    }
+                }],
+                "language": {
+                    "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.TK_ECAR_Resource.ArchivoIdiomaDataTable )'
+                },
+                    "drawCallback": function () {
+                        $('[data-toggle="popover"]').popover({ html: true });
+                },
+                "columnDefs": [
+                {
+                    "targets": [0, 1, 2, 7, 8],
+                    "orderable": false,
+                    "searchable": false
+                    //,
+                    //"mRender": function ( data, type, row ) {
+                    //    return '<img src="/Content/img/Application/details_open.png" rel="' + row.Respuesta + '" alt="expand/collapse">';}
+                },
+                {
+                    "targets": [1, 2, 8],
+                    "visible": false,
+                    "searchable": false
+                },
+                {
+                    "targets": 0,
+                    "width": "1%",
+                },
+                {
+                    "targets": 3,
+                    "width": "2%",
+                    "render": function (data, type, row) {
+                        return "<a data-placement='right' data-toggle='popover' data-trigger='hover' data-content='" + row[8] + "' >" + row[3] + "</a>";
+                    }
+
+                },
+                {
+                    "targets": 4,
+                    "width": "10%",
+                },
+                {
+                    "targets": [5, 6],
+                    "width": "30%",
+                },
+                {
+                    "targets": 7,
+                    "className": "dt-center",
+                    "width": "10%",
+                }
+                ]
+            });
+
+
+            $('#tablePreguntas tbody td img').click(function () {
+                var nTr = $(this).parents('tr')[0];
+                if (this.src.match('details_close')) {
+                    this.src = "Content/img/Application/details_open.png";
+                    _tablePreguntas.fnClose(nTr);
+                }
+                else {
+                    this.src = "Content/img/Application/details_close.png";
+                    var respuesta = $(this).attr("rel");
+                    _tablePreguntas.fnOpen(nTr, fnFormatDetails(respuesta, nTr), 'details');
+                }
+            });
+        });
+
+        function fnFormatDetails(respuesta) {
+            var sOut = '<table class="display responsive" cellpadding="5" class border="0" style="padding-left:50px;">';
+            sOut += '<tr><td><span class="label label-success">@resourceView.TK_ECAR_Resource.PreguntasCabRespuesta:</span></td><td>' + respuesta + '</td></tr>';
+            sOut += '</table>';
+            return sOut;
+        }
+
+        function showModalPregunta() {
+            $('#modalPregunta').modal('show');
+
+            //$("#Matricula").autocomplete("option", "appendTo", "#modalbodySolicitud");
+        }
+        function setTitleModal(title) {
+            $('#modaltitlePregunta').text(title);
+        }
+
+        //function completeModal() {
+        //    //para que funcione los validadores a la viewpartial recien creada.
+        //    //reconstruye el DOM con los validadores de los campos nuevos
+        //    $("form").removeData("validator");
+        //    $("form").removeData("unobtrusiveValidation");
+        //    $.validator.unobtrusive.parse("form");
+        //    $("form").validate();
+        //}
+
+</script>
+}
+

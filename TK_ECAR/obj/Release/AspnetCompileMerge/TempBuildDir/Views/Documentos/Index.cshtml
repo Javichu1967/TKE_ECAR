@@ -1,0 +1,218 @@
+﻿
+@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@model IEnumerable<TK_ECAR.Models.DocumentacionDataTableModel>
+@using System.Configuration;
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="infoDocGestion">
+            @{
+                var actionLink = Ajax.ActionLink("JSTITLEMODAL", "NuevoDocumento", "Documentos", new { },
+                new AjaxOptions
+                {
+                    UpdateTargetId = "modalbodyDocumentacion",
+                    OnSuccess = "showModalDocumentacion();",
+                    OnComplete = "completeModal()",
+                    InsertionMode = InsertionMode.Replace,
+                    OnBegin = "setTitleModal('JSTITLEMODAL')"
+                }, new { @title = "tooltip", @class = "tk-icon-med icon-tk-plus", @style = "float: right;" }).ToString();
+            }
+            @*<h3>@resourceView.TitleDocumentos    @Html.Raw(actionLink.Replace("JSTITLEMODAL", @resourceView.LNuevoDocumento))</h3>*@
+            <h3>@resourceView.TitleDocumentos
+                <span id="linkuser" style="float: right;">@resourceView.LAñadir</span> 
+                @Html.Raw(actionLink.Replace("JSTITLEMODAL", @resourceView.LNuevoDocumento).Replace("tooltip", @resourceView.LNuevoDocumento))
+            </h3>
+            <p>@resourceView.TitleDocumentosInf</p>
+        </div>
+    </div>
+</div>
+
+@{
+    var actionLinkEdit = Ajax.ActionLink("JSTITLEACTION", "EditarDocumento", "Documentos", new { idDocumentacion = "JSVARTIPO" },
+    new AjaxOptions
+    {
+        UpdateTargetId = "modalbodyDocumentacion",
+        OnSuccess = "showModalDocumentacion();",
+        OnComplete = "completeModal()",
+        InsertionMode = InsertionMode.Replace,
+        OnBegin = "setTitleModal('JSTITLEMODAL')"
+    }, new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" }).ToString();
+    actionLinkEdit = "<a class='tk-icon-med icon-tk-edit tk-icon-bold ' "
+                + actionLinkEdit.Replace("textoQuitarPorVacio", "").Replace("accionmenu", @resourceView.AccionEditar)
+                 + " </a>"; 
+
+    var actionLinkDelete = Ajax.ActionLink("JSTITLEACTION", "BorrarDocumento", "Documentos", new { idDocumentacion = "JSVARTIPO" },
+    new AjaxOptions
+    {
+        UpdateTargetId = "modalbodyDocumentacion",
+        OnSuccess = "showModalDocumentacion();",
+        OnComplete = "completeModal()",
+        InsertionMode = InsertionMode.Replace,
+        OnBegin = "setTitleModal('JSTITLEMODAL')"
+    }, new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" }).ToString();
+    actionLinkDelete = "<a class='tk-icon-med icon-tk-delete tk-icon-bold tk-icon-red ' "
+                + actionLinkDelete.Replace("textoQuitarPorVacio", "").Replace("accionmenu", @resourceView.AccionBorrar)
+                 + " </a>"; 
+
+}
+
+<table id="tableDocumentacion" class="display responsive" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Ordenacion</th>
+            <th>ID_Categoria</th>
+            <th>ID_Documento</th>
+            <th>Documento</th>
+            <th>@resourceView.GeneralCabCategoria</th>
+            <th>@resourceView.DocumentoCabNombreDoc</th>
+            <th>@resourceView.DataTableCabAccion</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    <img src="Content/img/Application/details_open.png" rel="@item.Descripcion" alt="expand/collapse">                    
+                </td>
+                <td>@item.Ordenacion</td>
+                <td>@item.ID_Categoria</td>
+                <td>@item.ID_Documento</td>
+                <td>@item.Documento</td>
+                <td>@item.DescCategoria</td>
+                <td>@item.Nombre</td>
+                <td>
+                    <span></span> @Html.Raw(actionLinkEdit.Replace("JSVARTIPO", (item.ID_Documento).ToString()).Replace("JSTITLEACTION", @resourceView.AccionEditar).Replace("JSTITLEMODAL", @resourceView.TitleDocumentacionEditar))
+                    @Html.Raw(actionLinkDelete.Replace("JSVARTIPO", (item.ID_Documento).ToString()).Replace("JSTITLEACTION", @resourceView.AccionBorrar).Replace("JSTITLEMODAL", @resourceView.TitleDocumentacionBorrar))
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@Html.Partial("_ModalDocumentacion")
+
+
+<style>
+    .export-btn {
+        margin: 10px;
+        padding: 5px;
+    }
+</style>
+
+@section Scripts {
+
+
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecss")'>
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecssResponsive")'>
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/datepicker")'>
+
+    <script src='@Scripts.Url("~/bundles/moment")'> </script>
+    <script src='@Scripts.Url("~/bundles/datatable")'> </script>
+    <script src='@Scripts.Url("~/bundles/dtresponsive")'> </script>
+
+    <script src='@Scripts.Url("~/bundles/jqueryUnobtrusiveAjax")'> </script>
+    <script src='@Scripts.Url("~/bundles/jQueryValidate")'> </script>
+    <script src='@Scripts.Url("~/bundles/jQueryValidateGlobal")'> </script>
+    <script src='@Scripts.Url("~/bundles/jQueryValidateUnotrusive")'> </script>
+
+    <script src='@Scripts.Url("~/bundles/DataTablesButtonJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsFlashJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsHtml5Js")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesjszipJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesVfsFontsJs")'> </script>
+    
+    <script type="text/javascript">
+        var _tableDocumentacion;
+
+        $(document).ready(function () {
+
+            _tableDocumentacion = $('#tableDocumentacion').dataTable(
+                {
+                    responsive: {
+                        details: {
+                            type: 'column',
+                            target: 'tr'
+                        }
+                    },
+                    "dom": 'Blfrtip',
+                    "ordering": true,
+                    "processing": true,
+                    "paginate": true,
+                    "order": [[1, "asc"]],
+                    "order": [[3, "asc"], [4, "asc"]], "buttons": [{
+                        text: '@resourceView.btnExportarExcel',
+                        extend: 'excel',
+                        className: 'btn btn-default export-btn',
+                        title: '@Html.Raw(@resourceView.TitleDocumentos)',
+                        exportOptions: {
+                            columns: [4, 5, 6]
+                        }
+                    }],
+                    "language": {
+                        "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.ArchivoIdiomaDataTable )'
+                    },
+                    "drawCallback": function () {
+                        $('[data-toggle="popover"]').popover({ html: true });
+                    },
+                    "columnDefs": [
+                    {
+                        "targets": [1, 2, 3, 4],
+                        "visible": false,
+                        "orderable": false,
+                        "searchable": false
+                        //,
+                        //"mRender": function ( data, type, row ) {
+                        //    return '<img src="/Content/img/Application/details_open.png" rel="' + row.Respuesta + '" alt="expand/collapse">';}
+                    },
+                    {
+                        "targets": [0],
+                        "orderable": false,
+                        "searchable": false
+                    }
+                    ]
+                });
+
+
+            $('#tableDocumentacion tbody td img').click(function () {
+                var nTr = $(this).parents('tr')[0];
+                if (this.src.match('details_close')) {
+                    this.src = "Content/img/Application/details_open.png";
+                    _tableDocumentacion.fnClose(nTr);
+                }
+                else {
+                    this.src = "Content/img/Application/details_close.png";
+                    var descripcion = $(this).attr("rel");
+                    _tableDocumentacion.fnOpen(nTr, fnFormatDetails(descripcion, nTr), 'details');
+                }
+            });
+        });
+
+        function fnFormatDetails(descripcion) {
+            var sOut = '<table class="display responsive" cellpadding="5" class border="0" style="padding-left:50px;">';
+            sOut += '<tr><td><span class="label label-success">@resourceView.DocumentoCabDescripcion:</span></td><td>' + descripcion + '</td></tr>';
+            sOut += '</table>';
+            return sOut;
+        }
+
+        function showModalDocumentacion() {
+            $('#modalDocumentacion').modal('show');
+        }
+        function setTitleModal(title) {
+            $('#modaltitleDocumentacion').text(title);
+        }
+
+        //function completeModal() {
+        //    //para que funcione los validadores a la viewpartial recien creada.
+        //    //reconstruye el DOM con los validadores de los campos nuevos
+        //    $("form").removeData("validator");
+        //    $("form").removeData("unobtrusiveValidation");
+        //    $.validator.unobtrusive.parse("form");
+        //    $("form").validate();
+        //}
+
+    </script>
+}
+

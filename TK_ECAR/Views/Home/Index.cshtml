@@ -1,0 +1,356 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Framework
+@using TK_ECAR.Content.resources;
+@using TKUtilidades;
+
+@{ 
+    var listaAlertasPendientes = ViewData["ResumenAlertasPendientes"] as List<int>;
+    var listaTiposAlerta = ViewData["TiposAlertas"] as List<SelectListItem>;
+    var cont = -1;
+
+    UserModel user = (UserModel)HttpContext.Current.Session["userProfile"];
+    var perfilUsuario = user.IdPerfil;
+
+    var TextoPerfil = Util.GetItemFromMemory("TextoPerfil"); //ViewData["TextoPerfil"].ToString();
+
+    var numeroAlertasPendientesTipoAlertaPerfil =  ViewData["numeroAlertasPendientesTipoAlertaPerfil"] as List<int>;
+}
+
+<link href="~/Content/styles/Site.css" rel="stylesheet" />
+
+<section>
+    @*Fila para el resumen de las alertas (el total y las pendientes)*@
+    <div class="row">
+        <div class="col-md-3">
+            <div class="info" style="height:100px">
+                <h3>@resourceView.TitleTotalAlertas</h3>
+                <p>@resourceView.TitleTotalAlertasInf </p>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div id="talkbubble">
+                <span> @ViewData["TotalAlertasPendientes"].ToString() </span>
+            </div>
+        </div>
+        @if (Convert.ToInt32(perfilUsuario) == (int)EnumTipoPerfil.SuperUsuario)
+        {
+            <div class="col-md-2">
+                <h3>@resourceView.TitlePendientes @TextoPerfil</h3>
+            </div>
+            <div class="col-md-3">
+                <div id="talkbubble">
+                    <span>@ViewData["totalAlertasPendientesPerfilUsuario"].ToString() </span>
+                </div>
+            </div>
+        }
+
+    </div>
+
+    @*Fila para los tipos de alerta que hay*@
+    <div class="row">
+        @foreach (var item in listaTiposAlerta)
+        {
+            var texto = @TK_ECAR_Resource.ResourceManager.GetString("NombreAlerta" + item.Text.Replace(" ", "_"));
+            //var textoPendientes = "";
+            cont++;
+            <a href="@Url.Action("Index","Alertas", new { idtipoAlerta = item.Value})" style="color:inherit">
+                <div class="columns">
+                    <ul class="infoInicial">
+                        <li class="header">@texto</li>
+                        <li class="grey">@listaAlertasPendientes[cont]</li>
+                        @if (Convert.ToInt32(perfilUsuario) == (int)EnumTipoPerfil.SuperUsuario)
+                        {
+                            <li class="progress progress-info active">
+                                @if (@numeroAlertasPendientesTipoAlertaPerfil[cont] > 0)
+                                {
+                                    //textoPendientes = @resourceView.TitlePendientes + ' ' + @numeroAlertasPendientesTipoAlertaPerfil[cont].ToString() + ' ';
+                                    <div style="text-align:left;width:100%;color: #0055BE;">
+                                        <span style="float:right; color: #0055BE;">- @numeroAlertasPendientesTipoAlertaPerfil[cont].ToString() -</span>
+                                        @resourceView.TitlePendientes
+                                    </div>
+                                    @*<apan class="pull-right" style="color: #0055BE;">@textoPendientes</apan>*@
+                                }
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </a>
+        }
+    </div>
+</section>
+
+@*<div class="content">
+        <h1>Responsive Organization Chart (updated)</h1>
+        <figure class="org-chart cf">
+            <div class="board ">
+                <ul class="Raiz">
+                    <li>
+                        <span class="lvl-b">
+                            <strong>Position Name</strong>
+                            <br>Name Surname
+                            <br>AA
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <ul class="departments ">
+                <li class="department ">
+                    <span class="lvl-b">
+                        <strong>Position Name</strong>
+                        <br>Name Surname 1
+                        <br>AB
+                    </span>
+                </li>
+                <li class="department ">
+                    <span class="lvl-b">
+                        <strong>Position Name</strong>
+                        <br>Name Surname 2
+                        <br>AB
+                    </span>
+                </li>
+                <li class="department ">
+                    <span class="lvl-b">
+                        <strong>Position Name</strong>
+                        <br>Name Surname 3
+                        <br>AB
+                    </span>
+                </li>
+                <li class="department ">
+                    <span class="lvl-b">
+                        <strong>Position Name</strong>
+                        <br>Name Surname 4
+                        <br>AB
+                    </span>
+                    <ul class="sections">
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>CC
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>AA
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>CC
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>CC
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>CC
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="department ">
+                    <span class="lvl-b">
+                        <strong>Position Name</strong>
+                        <br>Name Surname
+                        <br>AB
+                    </span>
+                    <ul class="sections">
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>AA
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>BB
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>BB
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>BB
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>BB
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>BB
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="department central">
+                    <span class="lvl-b">
+                        <strong>Position Name</strong>
+                        <br>Name Surname
+                        <br>AB
+                    </span>
+                    <ul class="sections">
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>AA
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>CC
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>CC
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>CC
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="department ">
+                    <span class="lvl-b">
+                        <strong>Position Name</strong>
+                        <br>Name Surname
+                        <br>AB
+                    </span>
+                    <ul class="sections">
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>AA
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>BB
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>BB
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>BB
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="department ">
+                    <span class="lvl-b">
+                        <strong>Position Name</strong>
+                        <br>Name Surname
+                        <br>AB
+                    </span>
+                    <ul class="sections">
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>CC
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>AA
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>CC
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>CC
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>CC
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+                <li class="department ">
+                    <span class="lvl-b">
+                        <strong>Position Name</strong>
+                        <br>Name Surname
+                        <br>AB
+                    </span>
+                    <ul class="sections">
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>AA
+                            </span>
+                        </li>
+                        <li class="section">
+                            <span>
+                                <strong>Position Name</strong>
+                                <br>Name Surname
+                                <br>BB
+                            </span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </figure>
+    </div>*@

@@ -1,0 +1,109 @@
+﻿@Html.TextBox("", ViewData.TemplateInfo.FormattedModelValue.ToString(), new { type = "file", @style = "display:none", @puedeDeshabilitarse = "SI" })
+@{
+    var propertymodel = ViewData.TemplateInfo.HtmlFieldPrefix.Replace(".", "_");
+    var namePropertymodel = ViewData.TemplateInfo.HtmlFieldPrefix;
+}
+<div class="input-group">
+    @Html.TextBox("NombreFicheroUpload", string.Empty,
+            new
+            {
+                @class = "form-control input-sm inputfile",
+                @readonly = "readonly",
+                @data_toggle = "popover",
+                @data_placement = "top",
+                @data_trigger = "hover",
+                @data_content = "",
+                //@style = "cursor:pointer",
+                @data_valmsg_for = namePropertymodel
+            })
+    <span class="input-group-addon" botonUpload = "SI">
+        @{ var idbtn = "btnUpload" + propertymodel; }
+
+        <a id="@idbtn" style="cursor:pointer" botonUpload = "SI">
+            <span class="tk-icon icon-tk-download"></span>
+        </a>
+    </span>
+    <span class="input-group-addon" marca="deletearchivooperacion" botonUpload = "SI">
+        @{ var idbtnDelete = "btnDelete" + propertymodel; }
+        <a id="@idbtnDelete" style="cursor:pointer" botonUpload = "SI">
+            <span class="tk-icon icon-tk-delete"> </span>
+        </a>
+    </span>
+</div>
+<style type="text/css">
+    .inputfile.field-validation-error {
+        border: 1px solid #f00;
+        background-color: #fee !important;
+    }
+</style>
+<script type="text/javascript">
+    var uRLdownLoadArchivos = "";
+    $(document).ready(function () {
+        uRLdownLoadArchivos = '@Html.Raw(@Url.Action("ImprimirArchivosOperacion", "Operaciones", new { idOperacion = "valoridoperacion", tiposArchivo = "tipoarchivoseleccionado", archivosSeleccionados = "archivodownload" }))';
+
+        $('[data-toggle="tooltip"]').tooltip();
+
+        var nombreArchivoToolTip = "";
+
+        var propertyFileDownLoad = '@ViewData.ModelMetadata.PropertyName';
+        var nombreArchivoDownLoad = $("#" + propertyFileDownLoad + "_download").val();
+        var propertymodelAux = '@ViewData.TemplateInfo.HtmlFieldPrefix.Replace(".","_")';
+        if (nombreArchivoDownLoad != null) {
+
+            $("#" + propertymodelAux + "_NombreFicheroUpload").val(nombreArchivoDownLoad);
+
+            if (nombreArchivoDownLoad != "") {
+                $("#" + propertymodelAux + "_NombreFicheroUpload").css('cursor', 'pointer');
+            }
+
+            nombreArchivoToolTip = nombreArchivoDownLoad;
+        }
+
+        $("#" + propertymodelAux + "_NombreFicheroUpload").prop('data_content', nombreArchivoToolTip);
+    });
+
+
+    $(function () {
+        var propertymodel = '@ViewData.TemplateInfo.HtmlFieldPrefix.Replace(".","_")';
+        $("#btnUpload" + propertymodel).click(function () {
+            $("#" + propertymodel).click();
+        });
+
+        $("#" + propertymodel).on('change', function (evt) {
+            var files = evt.target.files; // FileList object
+            if (files.length > 0) {
+                $("#" + propertymodel + "_NombreFicheroUpload").val(files[0].name);
+            }
+            else {
+                $("#" + propertymodel + "_NombreFicheroUpload").val('');
+            }
+            var nomFile = $("#" + propertymodel + "_NombreFicheroUpload").val();
+            $("#" + propertymodel + "_download").val(nomFile);
+            $("#" + propertymodel + "_download").trigger("change");
+            $("#" + propertymodel + "_NombreFicheroUpload").prop('data_content', $("#" + propertymodel + "_NombreFicheroUpload").val());
+        });
+
+        $("#btnDelete" + propertymodel).click(function () {
+            $("#" + propertymodel + "_download").val("");
+            $("#" + propertymodel + "_NombreFicheroUpload").val("")
+            reseteaFile(propertymodel);
+            $("#" + propertymodel + "_NombreFicheroUpload").prop('data_content', $("#" + propertymodel + "_NombreFicheroUpload").val());
+            $("#" + propertymodel + "_NombreFicheroUpload").css('cursor', 'auto');
+            $("#" + propertymodel + "_download").trigger("change");
+        });
+    });
+
+    //Quita el archivo que tuviera asociado el control File.
+    function reseteaFile(file) {
+        var $el = $('#' + file);
+        $el.wrap('<form>').closest('form').get(0).reset();
+        $el.unwrap();
+    }
+
+    function clickDescargarFichero(idOperacion, tipoArchivo, archivosSeleccionados) {
+        window.location = uRLdownLoadArchivos.replace("valoridoperacion", idOperacion)
+                            .replace("archivodownload", archivosSeleccionados)
+                            .replace("tipoarchivoseleccionado", tipoArchivo);
+    }
+
+</script>

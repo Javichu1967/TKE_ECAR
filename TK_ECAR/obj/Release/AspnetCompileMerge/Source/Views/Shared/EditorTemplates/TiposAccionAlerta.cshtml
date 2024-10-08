@@ -1,0 +1,50 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<select id="TiposAccionAlerta" title="Tipos acciones" multiple="multiple" class="form-control">
+    <option></option>
+</select>
+
+<style type="text/css">
+    #TiposAccionAlerta {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+<script type="text/javascript">
+
+   $(function () {
+       chosenTiposAccionAlerta();
+    });
+
+   function chosenTiposAccionAlerta() {
+       var link = '@Html.Raw(Url.Action("GetTiposAccionAlertas", "Filter", new { tiposSel = "VARtiposSel", estadosSel = "VARestadosSel" }))';
+       link = link.replace("VARtiposSel", ConcatenaValoresChosen("TiposAlertas"));
+       link = link.replace("VARestadosSel", ConcatenaValoresChosen("TiposEstadosAlertas"));
+       $("#TiposAccionAlerta").ajaxChosen({
+            type: 'GET',
+            url: link,
+            minTermLength: 0,
+            dataType: 'json'
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+
+        },
+        {
+            //options
+            disable_search_threshold: -1
+        });
+    }
+    $('#TiposAccionAlerta').change(function () {
+
+        //LimpiaFiltroChosen("TiposAlertas");
+        //LimpiaFiltroChosen("TiposEstadosAlertas");
+        //chosenTiposAlertas();
+        //chosenTiposEstadosAlertas();
+
+
+    });
+</script>

@@ -1,0 +1,209 @@
+﻿@using resourceView = TK_ECAR.Content.resources
+@model DatosITV_TMPModel
+@using TK_ECAR.Framework;
+
+@{ 
+    var accionEntity = Model.Accion;
+}
+
+@Html.HiddenFor(model => model.Accion)
+@Html.HiddenFor(model => model.ID)
+@Html.HiddenFor(model => model.Linea)
+@Html.HiddenFor(model => model.LineaNueva)
+@Html.HiddenFor(model => model.FileUpload_download)
+@Html.HiddenFor(model => model.Documento)
+@Html.HiddenFor(model => model.TipoArchivo)
+@Html.HiddenFor(model => model.ITV_Pasada)
+
+<div class="form-horizontal">
+    <div class="form-group">
+        @Html.LabelFor(model => model.FechaUltimaITV, new { @class = "control-label col-md-3" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.FechaUltimaITV, new { @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.RequiredLabelFor(model => model.FechaVtoITV, new { @class = "control-label col-md-3" })
+        <div class="col-md-4">
+            @Html.EditorFor(model => model.FechaVtoITV, new { @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ImporteITV, new { @class = "control-label col-md-3" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.ImporteITV, new { @class = "form-control", @marca = "EsDouble", @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ImporteCirculacionITV, new { @class = "control-label col-md-3" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.ImporteCirculacionITV, new { @class = "form-control", @marca = "EsDouble", @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.PrimaConservacionITV, new { @class = "control-label col-md-3" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.PrimaConservacionITV, new { @class = "form-control", @marca = "EsDouble", @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.TarifaITV, new { @class = "control-label col-md-3" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.TarifaITV, new { @class = "form-control", @marca = "EsDouble", @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.TasaITV, new { @class = "control-label col-md-3" })
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.TasaITV, new { @class = "form-control", @marca = "EsDouble", @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.FileUpload, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.EditorFor(model => model.FileUpload)
+            @Html.TextBoxFor(model => model.TipoArchivo, new { @style = "display: none;", @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>    
+    <div class="form-group">
+        @Html.LabelFor(model => model.Observaciones, new { @class = "control-label col-md-3" })
+        <div class="col-md-8">
+            @Html.TextAreaFor(model => model.Observaciones, new { @class = "form-control", @puedeDeshabilitarse = "SI" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ITV_Pasada, new { @class = "control-label col-md-3" })
+        <div class="material-switch pull-right col-sm-9">
+            <input id="ITVRealizada" name="ITVRealizada" type="checkbox" puedeDeshabilitarse="SI" />
+            <label for="ITVRealizada" class="label-primary"></label> @*label-default, label-primary, label-success, label-info, label-warning, label-danger*@
+            <span class="ValorITVRealizada">
+                NO
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-12">
+            @Html.Partial("_CustomValidationSummaryBis", ViewData.ModelState)
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    //$("#file").on('change', function (evt) {
+    //    var files = evt.target.files; // FileList object
+
+
+    //    if (files.length > 0) {
+    //        $("#NombreFichero").val(files[0].name);
+    //    }
+    //    else {
+
+    //        $("#NombreFichero").val('');
+    //    }
+    //});
+
+    $(document).ready(function () {
+        if ('@accionEntity' == '@EnumAccionEntity.Consulta') {
+            disableControlsITV();
+        }
+        else {
+            $("#btnAceptarMtoITV").show();
+        }
+        if ($('#ITV_Pasada').val() == "True") {
+            $("#ITVRealizada").prop('checked', true);
+        }
+        PonerITVSiNo();
+    });
+
+
+    $("#ITVRealizada").click(function () {
+        PonerITVSiNo();
+    });
+
+
+    function PonerITVSiNo() {
+        if ($("#ITVRealizada").is(':checked')) {
+            jQuery(".ValorITVRealizada").html('@resourceView.TK_ECAR_Resource.ValorYES');
+            $('#ITV_Pasada').val(true);
+        }
+        else {
+            jQuery(".ITVRealizada").html('@resourceView.TK_ECAR_Resource.ValorNO');
+            $('#ITV_Pasada').val(false);
+        }
+    }
+
+
+    //Zona cosas comunes a las vistas***************
+    //Formatear valores numericos***********
+    $("[marca=EsDouble]").focus(function () {
+        var elID = '#' + this.id;
+        var imp = DevuelveConPuntoDecimal($(elID).val());
+        if ($.isNumeric(imp)) {
+            $(elID).val(imp.replace('.', ','));
+        }
+    });
+
+    $("[marca=EsDouble]").blur(function () {
+        var elID = '#' + this.id;
+        var imp = DevuelveConPuntoDecimal($(elID).val());
+        if ($.isNumeric(imp)) {
+            $(elID).val(formateaNumero(imp.replace('.', ','), 2));
+        }
+    });
+
+    $("[marca=EsInt]").focus(function () {
+        var elID = '#' + this.id;
+        var imp = DevuelveValorInt($(elID).val());
+        if ($.isNumeric(imp)) {
+            $(elID).val(imp);
+        }
+    });
+
+    $("[marca=EsInt]").blur(function () {
+        var elID = '#' + this.id;
+        var imp = DevuelveValorInt($(elID).val());
+        if ($.isNumeric(imp)) {
+            $(elID).val(formateaNumero(imp.replace('.', ','), 0));
+        }
+    });
+    //***********Formatear valores numericos
+    //***************Zona cosas comunes a las vistas
+
+
+    function PonerComoNumericoLosImportesITV() {
+        var elID = '';
+        $("[marca=EsDouble]").each(function () {
+            QuitaFormatoNumericoDouble(this.id);
+        });
+        $("[marca=EsInt]").each(function () {
+            var elID = '#' + this.id;
+            var imp = DevuelveValorInt($(elID).val());
+            if ($.isNumeric(imp)) {
+                $(elID).val(imp);
+            }
+        });
+    }
+
+    function disableControlsITV() {
+        $("form#formMtoITV [puedeDeshabilitarse=SI]").each(function () {
+            $(this).prop('disabled', true);
+            if (this.nextElementSibling != null) {
+                if (this.nextElementSibling.id.replace("_chosen", "") == this.id) {
+                    $('#' + this.id).prop('disabled', true).trigger("chosen:updated");
+                }
+            }
+        });
+
+        //$("form#formMtoITV [botonUpload=SI]").hide();
+        $("form#formMtoITV [botonUpload=SI]").each(function () {
+            this.hidden = true;
+        });
+
+        $("#btnAceptarMtoITV").hide();
+    }
+
+</script>

@@ -1,0 +1,98 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Models
+@using System.Configuration;
+
+@* QUITAR Html.BeginForm *@
+@using (Html.BeginForm("GuardarITV", "MiFlota", null, FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "stripHtml('formMtoITV')", @id = "formMtoITV" }))
+{ @Html.AntiForgeryToken()
+
+    <div class="modal fade" id="modalMtoITV" role="dialog">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog modal vertical-align-center">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        @*<button type="button" class="close" data-dismiss="modal" aria-hidden="true">*@
+                        <button id="cerrarModalITVCabecera" type="button" class="close" aria-hidden="true">
+                            <span class="modal-header-logo"></span>
+                        </button>
+                        <h4 class="modal-title" id="modaltitleMtoITV"> </h4>
+                    </div>
+
+                    <div class="modal-body" id="modalbodyMtoITV">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" id="btnAceptarMtoITV" class="btn btn-default">@resourceView.AccionAceptar</button>
+                        @*<button type="button" class="btn btn-cancel" data-dismiss="modal">@resourceView.AccionCerrar</button>*@
+                        <button id="cerrarModalITVBoton" type="button" class="btn btn-cancel">@resourceView.AccionCerrar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+<script type="text/javascript">
+    var uRl_ITV = '@Url.Action("GuardarITV", "MiFlota")'; 
+
+    $(document).on('click', '#btnAceptarMtoITV', function (event) {
+        PonerComoNumericoLosImportesITV();
+    });
+
+    $(document).ready(function () {
+        $("#formMtoITV").submit(function (e) {
+            event.preventDefault();
+            if ($("#formMtoITV").valid()) {//validamos el form
+                LimpiaValidationSummaryBis();
+                var formData = new FormData(this);
+                $.ajax({
+                    type: "POST",
+                    url: uRl_ITV,
+                    dataType: 'json',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+
+                    success: function (data) {
+                        if (data == 'OK') {
+                            ajaxSuccessITV();
+                            reloadtableMtoITV();
+                        }
+                        else {
+                            ajaxError();
+                        }
+                    },
+                    error: function (error) {
+                        ajaxErrorITV();
+                    }
+                });
+            }
+            else {
+                $("#collapseListaErroresBis").collapse('show');
+                return false;
+            }
+        });
+
+        function ajaxSuccessITV() {
+            //notify('@resourceView.toastrInfMtoVehiculoCorrecto', 'i');
+            cerrarVentanaMtoITV();
+        }
+
+        function ajaxErrorITV() {
+            notify('@resourceView.toastrInfMtoITVError', 'e');
+        }
+
+        $(document).on('click', '#cerrarModalITVCabecera', function (event) {
+            cerrarVentanaMtoITV();
+        });
+        $(document).on('click', '#cerrarModalITVBoton', function (event) {
+            cerrarVentanaMtoITV();
+        });
+    });
+
+    function cerrarVentanaMtoITV() {
+        $('#modalMtoITV').modal('hide');
+    }
+
+</script>

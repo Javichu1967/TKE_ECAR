@@ -1,0 +1,196 @@
+﻿@model string
+
+
+<style>
+    .progress {
+        position: relative;
+	    height: 25px;
+    }
+    .progress > .progress-type {
+	    position: absolute;
+	    left: 0px;
+	    font-weight: 800;
+	    padding: 3px 30px 2px 10px;
+	    color: rgb(255, 255, 255);
+	    background-color: rgba(25, 25, 25, 0.2);
+    }
+    .progress > .progress-completed {
+	    position: absolute;
+	    right: 0px;
+	    font-weight: 800;
+	    padding: 3px 10px 2px;
+    }
+
+
+    /*Resumen importación*/
+    .tile-progress {
+    background-color: #303641;
+    color: #fff;
+    }
+    .tile-progress {
+    background: #4b5564; /*#00a65b;*/
+    color: #fff;
+    margin-bottom: 0px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    }
+    .tile-progress .tile-header {
+    padding: 1px 20px;
+    padding-bottom: 0px;
+    }
+    .tile-progress .tile-progressbar {
+    height: 2px;
+    background: rgba(0,0,0,0.18);
+    margin: 0;
+    }
+    .tile-progress .tile-progressbar span {
+    background: #fff;
+    }
+    .tile-progress .tile-progressbar span {
+    display: block;
+    background: #fff;
+    width: 0;
+    height: 100%;
+    -webkit-transition: all 1.5s cubic-bezier(0.230,1.000,0.320,1.000);
+    -moz-transition: all 1.5s cubic-bezier(0.230,1.000,0.320,1.000);
+    -o-transition: all 1.5s cubic-bezier(0.230,1.000,0.320,1.000);
+    transition: all 1.5s cubic-bezier(0.230,1.000,0.320,1.000);
+    }
+    .tile-progress .tile-footer {
+    padding: 20px;
+    text-align: right;
+    background: rgba(0,0,0,0.1);
+    -webkit-border-radius: 0 0 3px 3px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 0 0 3px 3px;
+    -moz-background-clip: padding;
+    border-radius: 0 0 3px 3px;
+    background-clip: padding-box;
+    -webkit-border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+    }
+
+    .resumen-importacion {
+    padding: 7px;
+    text-align: left;
+    color:white;
+    background: rgba(0,0,0,0.3);
+    -webkit-border-radius: 0 0 3px 3px;
+    -webkit-background-clip: padding-box;
+    -moz-border-radius: 0 0 3px 3px;
+    -moz-background-clip: padding;
+    border-radius: 0 0 3px 3px;
+    background-clip: padding-box;
+    -webkit-border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+    }
+</style>
+
+
+<div class="col-sm-12">
+    <div class="tile-progress tile-gray">
+        <div class="tile-header">
+            <h3 style="color:white; line-height: 0.333333em;">@Model</h3>
+            <h4 style="color:white; text-align: right; line-height: 0.333333em;">
+                <span id="status" class="pct-counter"> </span>
+            </h4>
+            <h5 style="color:white; text-align: right; line-height: 0.333333em;">
+                <span id="subStatus" class="pct-counter"> </span>
+            </h5>
+        </div>
+        <div class="tile-progressbar">
+            <span id="spanProgress" style="width: 0%;"></span>
+        </div>
+        <div class="resumen-importacion">
+            @*<h4 style="color:white;">
+                    @resourceView.TK_ECAR_Resource.titleResumenImportacion
+                </h4>*@
+            @*<span>so far in our blog and our website</span>*@
+        </div>
+    </div>
+</div>
+
+
+    @*<link href="~/Content/styles/Site.css" rel="stylesheet" />*@
+
+    <script src="~/Content/scripts/signalR/jquery.signalR-2.2.2.js"></script>
+    <script src="~/signalr/hubs"></script> @*Hay que crear este directorio*@
+
+    <script type="text/javascript" language="javascript">
+        //var conexionEstablecida = false; //DEBE ESTAR EN LA VISTA PRICIPAL
+
+    $(document).ready(function () {
+        //SIGNALR **************************************************
+            // initialize the connection to the server
+            var progressNotifier = $.connection.ECAR_ProgressHub;
+
+            // establish the connection to the server
+            $.connection.hub.start({ transport: 'longPolling' }, function () {
+                console.log('connection started!');
+                conexionEstablecida = true;
+            });
+            //$.connection.hub.start().done(function () {
+            //    //once we're connected, enable the upload button
+            //    conexionEstablecida = true;
+            //});
+            $.connection.hub.error(function (error) {
+                console.warn(error);
+            });
+
+            $.connection.hub.received(function (data) {
+                //console.log(data);
+            });
+
+            // client-side sendMessage function that will be called from the server-side
+            progressNotifier.client.sendMessage = function (message, count) {
+                // update progress
+                UpdateProgress(message, count);
+            };
+
+            progressNotifier.client.sendMessageSubProcess = function (message, count) {
+                // update progress
+                UpdateSubStatus(message, count);
+            };
+
+            progressNotifier.client.sendMessageFinished = function (message, count) {
+                UpdateProgress(message, count);
+                UpdateSubStatus("", 0);
+                InicializaProgress();
+                reloadtableResumenImp();
+            };
+
+
+            function UpdateProgress(message, count) {
+                // get status div
+                var status = $("#status");
+
+                // set message
+                status.html(message);
+
+                $('#spanProgress').css('width', count + '%');
+            }
+
+            function UpdateSubStatus(message, count) {
+                // get status div
+                var substatus = $("#subStatus");
+
+                // set message
+                substatus.html(message);
+            }
+        //************************************************** SIGNALR
+    });
+
+    function InicializaProgress() {
+        $('#spanProgress').css('width', '0%');
+    }
+
+</script>

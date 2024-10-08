@@ -1,0 +1,1101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="FechaITVMayorFechaCaducidadITV" xml:space="preserve">
+    <value>La fecha de caducidad de la ITV no puede ser menor o igual que la fecha ITV.</value>
+  </data>
+  <data name="ForceFileCarnetValidation" xml:space="preserve">
+    <value>Es obligatorio adjuntar el fichero del carnet de conducir cuando el DNI comienza por X.</value>
+  </data>
+  <data name="lblAbono" xml:space="preserve">
+    <value>Abono</value>
+  </data>
+  <data name="lblAccionAlertas" xml:space="preserve">
+    <value>Acciones:</value>
+  </data>
+  <data name="lblApellidos" xml:space="preserve">
+    <value>Apellidos</value>
+  </data>
+  <data name="lblAutorizacionPermiso" xml:space="preserve">
+    <value>¿Dispone de autorización para conducir?</value>
+  </data>
+  <data name="lblCargo" xml:space="preserve">
+    <value>Cargo</value>
+  </data>
+  <data name="lblCarnetConducir" xml:space="preserve">
+    <value>Carnet conducir</value>
+  </data>
+  <data name="lblCategoria" xml:space="preserve">
+    <value>Categoría</value>
+  </data>
+  <data name="lblCECO" xml:space="preserve">
+    <value>CECO</value>
+  </data>
+  <data name="lblCodigoPostal" xml:space="preserve">
+    <value>Código postal</value>
+  </data>
+  <data name="lblCoefExceso" xml:space="preserve">
+    <value>Coef. exceso</value>
+  </data>
+  <data name="lblCompañiaSeguros" xml:space="preserve">
+    <value>CIA. de seguros</value>
+  </data>
+  <data name="lblConductor" xml:space="preserve">
+    <value>Conductor</value>
+  </data>
+  <data name="lblCuotas" xml:space="preserve">
+    <value>Cuotas</value>
+  </data>
+  <data name="lblDadoBaja" xml:space="preserve">
+    <value>¿Dado de baja?</value>
+  </data>
+  <data name="lblDescDocumento" xml:space="preserve">
+    <value>Descripción del documento</value>
+  </data>
+  <data name="lblDescripcion" xml:space="preserve">
+    <value>Descripción</value>
+  </data>
+  <data name="lblDiasPreaviso" xml:space="preserve">
+    <value>Días preaviso</value>
+  </data>
+  <data name="lblDireccion" xml:space="preserve">
+    <value>Dirección</value>
+  </data>
+  <data name="lblDni" xml:space="preserve">
+    <value>Nº de identificación</value>
+  </data>
+  <data name="lblDomicilio" xml:space="preserve">
+    <value>Domicilio</value>
+  </data>
+  <data name="lblEjercicio" xml:space="preserve">
+    <value>Ejercicio</value>
+  </data>
+  <data name="lblEstadoAlertas" xml:space="preserve">
+    <value>Estados de alertas:</value>
+  </data>
+  <data name="lblExcesoAjuste" xml:space="preserve">
+    <value>Exceso ajuste</value>
+  </data>
+  <data name="lblExpediente" xml:space="preserve">
+    <value>Expediente</value>
+  </data>
+  <data name="lblFecha" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="lblFechaAlta" xml:space="preserve">
+    <value>Fecha de alta</value>
+  </data>
+  <data name="lblFechaBaja" xml:space="preserve">
+    <value>Fecha de baja</value>
+  </data>
+  <data name="lblFechaCaducidadCarnet" xml:space="preserve">
+    <value>Fecha de caducidad carnet</value>
+  </data>
+  <data name="lblFechaCaducidadITV" xml:space="preserve">
+    <value>Fecha de próxima ITV</value>
+  </data>
+  <data name="lblFechaDenuncia" xml:space="preserve">
+    <value>Fecha de denuncia</value>
+  </data>
+  <data name="lblFechaDevolucion" xml:space="preserve">
+    <value>F. de devolución</value>
+  </data>
+  <data name="lblFechaEfecto" xml:space="preserve">
+    <value>Fecha de Efecto</value>
+  </data>
+  <data name="lblFechaFactura" xml:space="preserve">
+    <value>Fecha Factura</value>
+  </data>
+  <data name="lblFechaFinalizacion" xml:space="preserve">
+    <value>F. de finalización</value>
+  </data>
+  <data name="lblFechaITV" xml:space="preserve">
+    <value>Fecha de ITV</value>
+  </data>
+  <data name="lblFechaNacimiento" xml:space="preserve">
+    <value>Fec. nacimiento</value>
+  </data>
+  <data name="lblFechaOperacion" xml:space="preserve">
+    <value>Fecha Operación</value>
+  </data>
+  <data name="lblFechaRecogida" xml:space="preserve">
+    <value>F. de recogida</value>
+  </data>
+  <data name="lblFechaRobo" xml:space="preserve">
+    <value>Fecha de robo</value>
+  </data>
+  <data name="lblFechaSolicitud" xml:space="preserve">
+    <value>Fecha de solicitud</value>
+  </data>
+  <data name="lblFechaUltimaITV" xml:space="preserve">
+    <value>F. última ITV</value>
+  </data>
+  <data name="lblFechaVtoCarnet" xml:space="preserve">
+    <value>Fec. vto. Carnet</value>
+  </data>
+  <data name="lblFechaVtoITV" xml:space="preserve">
+    <value>F. vto. ITV</value>
+  </data>
+  <data name="lblFechaVtoSeguro" xml:space="preserve">
+    <value>Fecha vto. seguro</value>
+  </data>
+  <data name="lblFile" xml:space="preserve">
+    <value>Adjuntar fichero</value>
+  </data>
+  <data name="lblFileCarnet" xml:space="preserve">
+    <value>Adjuntar fichero del carnet</value>
+  </data>
+  <data name="lblFileEmiteRenting" xml:space="preserve">
+    <value>Adjuntar fichero que emite renting</value>
+  </data>
+  <data name="lblFileReciboITV" xml:space="preserve">
+    <value>Adjuntar Informe  ITV</value>
+  </data>
+  <data name="lblFileRespuesta" xml:space="preserve">
+    <value>Adjuntar fichero respuesta</value>
+  </data>
+  <data name="lblFoto" xml:space="preserve">
+    <value>Foto</value>
+  </data>
+  <data name="lblHora" xml:space="preserve">
+    <value>Hora</value>
+  </data>
+  <data name="lblImpAdministracion" xml:space="preserve">
+    <value>Admin. (€)</value>
+  </data>
+  <data name="lblImpITV" xml:space="preserve">
+    <value>ITV (€)</value>
+  </data>
+  <data name="lblImpMantenimiento" xml:space="preserve">
+    <value>Mantenimiento (€)</value>
+  </data>
+  <data name="lblImporte" xml:space="preserve">
+    <value>Importe</value>
+  </data>
+  <data name="lblImporteCirculacionITV" xml:space="preserve">
+    <value>Importe circula. ITV</value>
+  </data>
+  <data name="lblImporteITV" xml:space="preserve">
+    <value>Importe ITV</value>
+  </data>
+  <data name="lblImporteSeguro" xml:space="preserve">
+    <value>Importe del seguro</value>
+  </data>
+  <data name="lblImporteSinIVA" xml:space="preserve">
+    <value>Importe (sin IVA) (€)</value>
+  </data>
+  <data name="lblImpRenting" xml:space="preserve">
+    <value>Renting (€)</value>
+  </data>
+  <data name="lblImpSeguro" xml:space="preserve">
+    <value>Seguro (€)</value>
+  </data>
+  <data name="lblImpTotal" xml:space="preserve">
+    <value>TOTAL (€)</value>
+  </data>
+  <data name="lblInfraccion" xml:space="preserve">
+    <value>Infracción</value>
+  </data>
+  <data name="lblKilometros" xml:space="preserve">
+    <value>Kilómetros</value>
+  </data>
+  <data name="lblKMExentos" xml:space="preserve">
+    <value>Km. exentos</value>
+  </data>
+  <data name="lblKmTotales" xml:space="preserve">
+    <value>Km. totales</value>
+  </data>
+  <data name="lblLugar" xml:space="preserve">
+    <value>Lugar de infracción</value>
+  </data>
+  <data name="lblMarca" xml:space="preserve">
+    <value>Marca</value>
+  </data>
+  <data name="lblMatricula" xml:space="preserve">
+    <value>Matrícula</value>
+  </data>
+  <data name="lblModelo" xml:space="preserve">
+    <value>Modelo</value>
+  </data>
+  <data name="lblMotivo" xml:space="preserve">
+    <value>Motivo</value>
+  </data>
+  <data name="lblMotivoCambioConductor" xml:space="preserve">
+    <value>Motivo del cambio</value>
+  </data>
+  <data name="lblMovil" xml:space="preserve">
+    <value>Móvil</value>
+  </data>
+  <data name="lblNacionalidadPermiso" xml:space="preserve">
+    <value>Nacionalidad del permiso</value>
+  </data>
+  <data name="lblNombre" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="lblNombreDocumento" xml:space="preserve">
+    <value>Nombre del documento</value>
+  </data>
+  <data name="lblNumBastidor" xml:space="preserve">
+    <value>Nº de bastidor</value>
+  </data>
+  <data name="lblNumContrato" xml:space="preserve">
+    <value>Nº Contrato</value>
+  </data>
+  <data name="lblNumEmpleado" xml:space="preserve">
+    <value>Núm. Empleado</value>
+  </data>
+  <data name="lblNumFactura" xml:space="preserve">
+    <value>Nº Factura</value>
+  </data>
+  <data name="lblNumLitros" xml:space="preserve">
+    <value>Nº Litros</value>
+  </data>
+  <data name="lblObservaciones" xml:space="preserve">
+    <value>Observaciones</value>
+  </data>
+  <data name="lblObservacionesRespuesta" xml:space="preserve">
+    <value>Observaciones respuesta</value>
+  </data>
+  <data name="lblOrden" xml:space="preserve">
+    <value>Nº Ordenación</value>
+  </data>
+  <data name="lblPais" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="lblPermisoConducir" xml:space="preserve">
+    <value>Nº carnet de conducir</value>
+  </data>
+  <data name="lblPoblacion" xml:space="preserve">
+    <value>Población</value>
+  </data>
+  <data name="lblPolizaSeguro" xml:space="preserve">
+    <value>Poliza de seguro</value>
+  </data>
+  <data name="lblPregunta" xml:space="preserve">
+    <value>Pregunta</value>
+  </data>
+  <data name="lblPrimaConservacionITV" xml:space="preserve">
+    <value>Prima conser. ITV</value>
+  </data>
+  <data name="lblProducto" xml:space="preserve">
+    <value>Producto</value>
+  </data>
+  <data name="lblProvincia" xml:space="preserve">
+    <value>Provincia</value>
+  </data>
+  <data name="lblPuesto" xml:space="preserve">
+    <value>Puesto</value>
+  </data>
+  <data name="lblRenovacion" xml:space="preserve">
+    <value>¿Renovación?</value>
+  </data>
+  <data name="lblRenovarRenting" xml:space="preserve">
+    <value>Renovar renting</value>
+  </data>
+  <data name="lblRespuesta" xml:space="preserve">
+    <value>Respuesta</value>
+  </data>
+  <data name="lblRuta" xml:space="preserve">
+    <value>Ruta archivo</value>
+  </data>
+  <data name="lblSelecionAgrupacion" xml:space="preserve">
+    <value>Agrupacion:</value>
+  </data>
+  <data name="lblSelecionCentrosCoste" xml:space="preserve">
+    <value>Centro Coste:</value>
+  </data>
+  <data name="lblSelecionDelegaciones" xml:space="preserve">
+    <value>Delegación:</value>
+  </data>
+  <data name="lblSelecionDireccionTerritorial" xml:space="preserve">
+    <value>Dirección Territorial:</value>
+  </data>
+  <data name="lblSelecionEmpresa" xml:space="preserve">
+    <value>Empresa:</value>
+  </data>
+  <data name="lblTarifaITV" xml:space="preserve">
+    <value>Tarifa ITV</value>
+  </data>
+  <data name="lblTasaITV" xml:space="preserve">
+    <value>Tasa ITV</value>
+  </data>
+  <data name="lblTelefono" xml:space="preserve">
+    <value>Teléfono</value>
+  </data>
+  <data name="lblTelefono1" xml:space="preserve">
+    <value>Teléfono Fijo</value>
+  </data>
+  <data name="lblTelefono2" xml:space="preserve">
+    <value>Móvil Corporativo</value>
+  </data>
+  <data name="lblTipoAlertas" xml:space="preserve">
+    <value>Tipos de alertas:</value>
+  </data>
+  <data name="lblTipoLiquidacion" xml:space="preserve">
+    <value>T. liquidación</value>
+  </data>
+  <data name="lblTipoPeticion" xml:space="preserve">
+    <value>Tipo de petición</value>
+  </data>
+  <data name="lblTipoSeguro" xml:space="preserve">
+    <value>Tipo de seguro</value>
+  </data>
+  <data name="lblTipoVehiculo" xml:space="preserve">
+    <value>Tipo de vehículo</value>
+  </data>
+  <data name="lblTotalDescuento" xml:space="preserve">
+    <value>Total Descuento (€)</value>
+  </data>
+  <data name="lblTotalImporte" xml:space="preserve">
+    <value>Total Importe (€)</value>
+  </data>
+  <data name="lblTrimestre" xml:space="preserve">
+    <value>Trimestre</value>
+  </data>
+  <data name="lblValidezPermisoESP" xml:space="preserve">
+    <value>¿La autorización para conducir que posee es válida para España?</value>
+  </data>
+  <data name="lblViaVerdeCliente" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
+  <data name="lblViaVerdeDescuento" xml:space="preserve">
+    <value>Descuento</value>
+  </data>
+  <data name="lblViaVerdeF_Entrada" xml:space="preserve">
+    <value>F. Entrada</value>
+  </data>
+  <data name="lblViaVerdeF_Salida" xml:space="preserve">
+    <value>F. Salida</value>
+  </data>
+  <data name="lblViaVerdeLugarEntrada" xml:space="preserve">
+    <value>Lugar Entrada</value>
+  </data>
+  <data name="lblViaVerdeLugarSalida" xml:space="preserve">
+    <value>Lugar Salida</value>
+  </data>
+  <data name="lblViaVerdeOperador" xml:space="preserve">
+    <value>Operador</value>
+  </data>
+  <data name="lblViaVerdeRefPago" xml:space="preserve">
+    <value>Ref. Pago</value>
+  </data>
+  <data name="lblViaVerdeTarjeta" xml:space="preserve">
+    <value>Tarjeta</value>
+  </data>
+  <data name="MaxLenDescripcion" xml:space="preserve">
+    <value>La descripción del documento no puede exceder de 2500 caracteres.</value>
+  </data>
+  <data name="MaxLenDescripcion50" xml:space="preserve">
+    <value>La descripción del documento no puede exceder de 50 caracteres.</value>
+  </data>
+  <data name="MaxLenDescTelefono" xml:space="preserve">
+    <value>La descripción del teléfono no puede exceder de 100 caracteres.</value>
+  </data>
+  <data name="MaxLenDiasPreavisoTipoAlerta" xml:space="preserve">
+    <value>Los días de preaviso no pueden ser mayores de 365</value>
+  </data>
+  <data name="MaxLenDomicilio" xml:space="preserve">
+    <value>El domicilio no puede exceder de 150 caracteres.</value>
+  </data>
+  <data name="MaxLenExpediente" xml:space="preserve">
+    <value>El expediente no puede exceder de 250 caracteres.</value>
+  </data>
+  <data name="MaxLenInfraccion" xml:space="preserve">
+    <value>La infracción no puede exceder de 250 caracteres.</value>
+  </data>
+  <data name="MaxLenLugar" xml:space="preserve">
+    <value>El lugar de la infracción no puede exceder de 250 caracteres.</value>
+  </data>
+  <data name="MaxLenMatricula" xml:space="preserve">
+    <value>La matrícula no puede exceder de 25 caracteres.</value>
+  </data>
+  <data name="MaxLenNacionalidadPermiso" xml:space="preserve">
+    <value>La nacionalidad del permiso de conducir no puede exceder de 50 caracteres.</value>
+  </data>
+  <data name="MaxLenNombre" xml:space="preserve">
+    <value>El nombre del documento no puede exceder de 250 caracteres.</value>
+  </data>
+  <data name="MaxLenNombre50" xml:space="preserve">
+    <value>El nombre del documento no puede exceder de 50 caracteres.</value>
+  </data>
+  <data name="MaxLenNombreConductor" xml:space="preserve">
+    <value>El nombre del conductor no puede exceder de 150 caracteres.</value>
+  </data>
+  <data name="MaxLenNumPermiso" xml:space="preserve">
+    <value>El  número de permiso de conducir no puede exceder de 50 caracteres.</value>
+  </data>
+  <data name="MaxLenPais" xml:space="preserve">
+    <value>El país no puede exceder de 50 caracteres.</value>
+  </data>
+  <data name="MaxLenPoblacion" xml:space="preserve">
+    <value>La población no puede exceder de 50 caracteres.</value>
+  </data>
+  <data name="MaxLenProvincia" xml:space="preserve">
+    <value>La provincia no puede exceder de 50 caracteres.</value>
+  </data>
+  <data name="MaxLenPuesto" xml:space="preserve">
+    <value>El puesto no puede exceder de 100 caracteres.</value>
+  </data>
+  <data name="MaxLenTelefono" xml:space="preserve">
+    <value>El número de teléfono no puede exceder de 20 caracteres.</value>
+  </data>
+  <data name="MaxLenTelefono1" xml:space="preserve">
+    <value>El teléfono fijo no puede exceder de 50 caracteres.</value>
+  </data>
+  <data name="MaxLenTelefono2" xml:space="preserve">
+    <value>El teléfono corporativo no puede exceder de 50 caracteres.</value>
+  </data>
+  <data name="MustBeNumeric" xml:space="preserve">
+    <value>Sólo se admiten números</value>
+  </data>
+  <data name="NotEqualConductor" xml:space="preserve">
+    <value>El empleado no puede ser el mismo que el conductor del vehículo.</value>
+  </data>
+  <data name="RangeImporte" xml:space="preserve">
+    <value>El importe debe estár comprendido entre 0 y 999999999,99</value>
+  </data>
+  <data name="RequiredCategoria" xml:space="preserve">
+    <value>La categoría es un campo obligatorio</value>
+  </data>
+  <data name="RequiredDescripcion" xml:space="preserve">
+    <value>La descripción es un campo obligatorio</value>
+  </data>
+  <data name="RequiredDomicilio" xml:space="preserve">
+    <value>El domicilio es obligatorio</value>
+  </data>
+  <data name="RequiredEmpleado" xml:space="preserve">
+    <value>El  empleado es un campo obligatorio.</value>
+  </data>
+  <data name="RequiredFechaCaducidadCarnet" xml:space="preserve">
+    <value>La fecha de caducidad del carnet es un campo obligatorio.</value>
+  </data>
+  <data name="RequiredFechaCaducidadITV" xml:space="preserve">
+    <value>La fecha de caducidad de ITV es un campo obligatorio.</value>
+  </data>
+  <data name="RequiredFechaDenuncia" xml:space="preserve">
+    <value>La fecha de denuncia es un campo obligatorio.</value>
+  </data>
+  <data name="RequiredFechaEfecto" xml:space="preserve">
+    <value>La fecha de efecto es obligatoria</value>
+  </data>
+  <data name="RequiredFechaITV" xml:space="preserve">
+    <value>La fecha de ITV es un campo obligatorio.</value>
+  </data>
+  <data name="RequiredFechaRobo" xml:space="preserve">
+    <value>La fecha de robo es un campo obligatorio.</value>
+  </data>
+  <data name="RequiredFechaSolicitud" xml:space="preserve">
+    <value>La fecha de solicitud es un campo obligatorio.</value>
+  </data>
+  <data name="RequiredFicheroDenunciaSOLRED" xml:space="preserve">
+    <value>Es obligatorio adjuntar el fichero de la denuncia.</value>
+  </data>
+  <data name="RequiredFile" xml:space="preserve">
+    <value>El fichero es un valor obligatorio</value>
+  </data>
+  <data name="RequiredFileReciboITV" xml:space="preserve">
+    <value>El recibo de la ITV es un campo obligatorio.</value>
+  </data>
+  <data name="RequiredHoraDenuncia" xml:space="preserve">
+    <value>La hora de la denuncia es obligatoria</value>
+  </data>
+  <data name="RequiredMatricula" xml:space="preserve">
+    <value>La matrícula es un campo obligatorio.</value>
+  </data>
+  <data name="RequiredMotivoSolicitud" xml:space="preserve">
+    <value>El mótivo de solicitud de la tarjeta SOLRED es un campo obligatorio.</value>
+  </data>
+  <data name="RequiredNombre" xml:space="preserve">
+    <value>El nombre es un campo obligatorio.</value>
+  </data>
+  <data name="RequiredNumEmpleado" xml:space="preserve">
+    <value>El número del empleado es un campo obligatorio.</value>
+  </data>
+  <data name="RequiredNumPermisoConducir" xml:space="preserve">
+    <value>El número del permiso de conducir es obligatorio</value>
+  </data>
+  <data name="RequiredObservacionesMotivoSolicitud" xml:space="preserve">
+    <value>Es obligatorio indicar en el campo de observaciones el motivo de la solicitud.</value>
+  </data>
+  <data name="RequiredOrdenacion" xml:space="preserve">
+    <value>La ordenación  es un campo obligatorio</value>
+  </data>
+  <data name="RequiredPoblacion" xml:space="preserve">
+    <value>La población es obligatoria</value>
+  </data>
+  <data name="RequiredPreaviso" xml:space="preserve">
+    <value>Los días de preaviso es un campo obligatorio.</value>
+  </data>
+  <data name="RequiredPregunta" xml:space="preserve">
+    <value>La pregunta es un campo obligatorio</value>
+  </data>
+  <data name="RequiredProvincia" xml:space="preserve">
+    <value>La provincia es requerida</value>
+  </data>
+  <data name="RequiredPuesto" xml:space="preserve">
+    <value>El puesto es un campo obligatorio.</value>
+  </data>
+  <data name="RequiredRespuesta" xml:space="preserve">
+    <value>La respuesta es un campo obligatorio</value>
+  </data>
+  <data name="RequiredSeleccionarConductor" xml:space="preserve">
+    <value>Es obligatorio seleccionar un conductor.</value>
+  </data>
+  <data name="RequiredTelefono" xml:space="preserve">
+    <value>El teléfono es requerido</value>
+  </data>
+  <data name="RequiredTelefono1" xml:space="preserve">
+    <value>El teléfono 1 es un campo obligatorio.</value>
+  </data>
+  <data name="RequiredTipoPeticion" xml:space="preserve">
+    <value>El tipo de petición es un campo obligatorio</value>
+  </data>
+  <data name="TypeCodigoPostal" xml:space="preserve">
+    <value>El código postal no es un tipo de código válido</value>
+  </data>
+  <data name="TypeFechaCaducidadCarnet" xml:space="preserve">
+    <value>La fecha de caducidad del carnet no es un tipo de fecha válido</value>
+  </data>
+  <data name="TypeFechaCaducidadITV" xml:space="preserve">
+    <value>La fecha de caducidad de ITV no es un tipo de fecha válido</value>
+  </data>
+  <data name="TypeFechaDenuncia" xml:space="preserve">
+    <value>La fecha de denuncia no es un tipo de fecha válido</value>
+  </data>
+  <data name="TypeFechaFechaEfecto" xml:space="preserve">
+    <value>La fecha de efecto no es un tipo de fecha válido</value>
+  </data>
+  <data name="TypeFechaFechaNacimiento" xml:space="preserve">
+    <value>La fecha de nacimiento no es un tipo de fecha válido</value>
+  </data>
+  <data name="TypeFechaITV" xml:space="preserve">
+    <value>La fecha de ITV no es un tipo de fecha válido</value>
+  </data>
+  <data name="TypeFechaRobo" xml:space="preserve">
+    <value>La fecha de robo no es un tipo de fecha válido</value>
+  </data>
+  <data name="TypeFechaSolicitud" xml:space="preserve">
+    <value>La fecha de solicitud no es un tipo de fecha válido</value>
+  </data>
+  <data name="TypeHoras" xml:space="preserve">
+    <value>Hora errónea</value>
+  </data>
+  <data name="TypeImporte" xml:space="preserve">
+    <value>El importe no es un tipo númerico válido. Debe ser numérico y con dos décimales máximo.</value>
+  </data>
+  <data name="TypeNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="TypeYes" xml:space="preserve">
+    <value>Si</value>
+  </data>
+  <data name="lblFecVTORenting" xml:space="preserve">
+    <value>F. Fin Renting</value>
+  </data>
+  <data name="lblCiaRenting" xml:space="preserve">
+    <value>Cía. Renting</value>
+  </data>
+  <data name="lblEmpresa" xml:space="preserve">
+    <value>Empresa</value>
+  </data>
+  <data name="RequiredEmpresa" xml:space="preserve">
+    <value>La empresa es obligatoria</value>
+  </data>
+  <data name="RequiredMarca" xml:space="preserve">
+    <value>La marca del vehículo es obligatoria</value>
+  </data>
+  <data name="lblTieneITV" xml:space="preserve">
+    <value>Tiene ITV</value>
+  </data>
+  <data name="RequiredTieneITV" xml:space="preserve">
+    <value>Tiene ITV es un valor requerido</value>
+  </data>
+  <data name="RequiredDNI" xml:space="preserve">
+    <value>El documento de identificación es un campo obligatorio</value>
+  </data>
+  <data name="MaxLenApellidos50" xml:space="preserve">
+    <value>Los apellidos no pueden exceder de 50 caracteres.</value>
+  </data>
+  <data name="RequiredApellidos" xml:space="preserve">
+    <value>Los apellidos es un campo obligatorio</value>
+  </data>
+  <data name="lblEmail" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="lblPersonalInterno" xml:space="preserve">
+    <value>Personal interno</value>
+  </data>
+  <data name="RequiredPersonalInterno" xml:space="preserve">
+    <value>Personal interno es un campo obligatorio</value>
+  </data>
+  <data name="lblFechaCarnet" xml:space="preserve">
+    <value>Fec. carnet conducir</value>
+  </data>
+  <data name="MaxLenCodPostal" xml:space="preserve">
+    <value>El código postal no puede ser mayor de 8 caracteres</value>
+  </data>
+  <data name="MaxLenDireccion" xml:space="preserve">
+    <value>La dirección no puede ser mayor de 100 caracteres</value>
+  </data>
+  <data name="MaxLenDNI" xml:space="preserve">
+    <value>El documento de identificación no puede ser mayor de 20 caracteres</value>
+  </data>
+  <data name="MaxLenMovil" xml:space="preserve">
+    <value>El teléfono móvil no puede ser mayor de 15 caracteres</value>
+  </data>
+  <data name="MaxLenTelefono3" xml:space="preserve">
+    <value>El teléfono no puede ser mayor de 15 caracteres</value>
+  </data>
+  <data name="TypeEmail" xml:space="preserve">
+    <value>El Email no tiene un formato correcto</value>
+  </data>
+  <data name="MaxLenCeco" xml:space="preserve">
+    <value>El centro de coste no puede ser mayor de 10 caracteres</value>
+  </data>
+  <data name="lblFechaCreacion" xml:space="preserve">
+    <value>Fecha creación</value>
+  </data>
+  <data name="lblFechaCreacionDesde" xml:space="preserve">
+    <value>Fecha creación desde:</value>
+  </data>
+  <data name="lblFechaCreacionHasta" xml:space="preserve">
+    <value>Fecha creación hasta:</value>
+  </data>
+  <data name="MaxLenDescripcionMtoTipo" xml:space="preserve">
+    <value>La descripción no puede exceder de 100 caracteres.</value>
+  </data>
+  <data name="MaxLenNombre100" xml:space="preserve">
+    <value>El nombre del documento no puede exceder de 100 caracteres.</value>
+  </data>
+  <data name="lblAseguradora" xml:space="preserve">
+    <value>Empresa aseguradora</value>
+  </data>
+  <data name="lblPersonaContacto" xml:space="preserve">
+    <value>Persona de contacto</value>
+  </data>
+  <data name="lblRenting" xml:space="preserve">
+    <value>Empresa renting</value>
+  </data>
+  <data name="MaxLenEmail" xml:space="preserve">
+    <value>El email no puede exceder de 100 caracteres</value>
+  </data>
+  <data name="MaxLenPersonaContacto" xml:space="preserve">
+    <value>La persona de contacto no puede exceder de 100 caracteres</value>
+  </data>
+  <data name="MaxLenPoblacion100" xml:space="preserve">
+    <value>La población no puede exceder de 100 caracteres.</value>
+  </data>
+  <data name="RequiredAseguradora" xml:space="preserve">
+    <value>Empresa aseguradora es un campo requerido</value>
+  </data>
+  <data name="RequiredRenting" xml:space="preserve">
+    <value>Empresa renting es un campo requerido</value>
+  </data>
+  <data name="lblTelefono_1" xml:space="preserve">
+    <value>Teléfono 1</value>
+  </data>
+  <data name="lblTelefono_2" xml:space="preserve">
+    <value>Teléfono 2</value>
+  </data>
+  <data name="MaxLenTelefono_1" xml:space="preserve">
+    <value>El teléfono 1 no puede ser mayor de 15 caracteres</value>
+  </data>
+  <data name="MaxLenTelefono_2" xml:space="preserve">
+    <value>El teléfono 2 no puede ser mayor de 15 caracteres</value>
+  </data>
+  <data name="lblCodigoTarjeta" xml:space="preserve">
+    <value>Código tarjeta</value>
+  </data>
+  <data name="lblEmpresaEmisora" xml:space="preserve">
+    <value>Empresa emisora</value>
+  </data>
+  <data name="lblFechaCaducidad" xml:space="preserve">
+    <value>Fecha caducidad</value>
+  </data>
+  <data name="lblPIN" xml:space="preserve">
+    <value>PIN</value>
+  </data>
+  <data name="MaxLenCodigoTarjeta" xml:space="preserve">
+    <value>El código de la tarjeta no puede exceder de 19 caracteres</value>
+  </data>
+  <data name="MaxLenPIN" xml:space="preserve">
+    <value>El PIN no puede exceder  de 15 caracteres</value>
+  </data>
+  <data name="RequiredCodigoTarjeta" xml:space="preserve">
+    <value>El código de la tarjeta es un dato obligatorio</value>
+  </data>
+  <data name="RequiredEmpresaEmisora" xml:space="preserve">
+    <value>La empresa emisora es un dato obligatorio</value>
+  </data>
+  <data name="RequiredFechaCaducidad" xml:space="preserve">
+    <value>La fecha de caducidad es obligatoria</value>
+  </data>
+  <data name="RequiredPIN" xml:space="preserve">
+    <value>El PIN es un dato obligatorio</value>
+  </data>
+  <data name="CuotasMustBeNumeric" xml:space="preserve">
+    <value>Las cuotas debe ser un número entero</value>
+  </data>
+  <data name="InvalidAbono" xml:space="preserve">
+    <value>El abono no es un importe correcto</value>
+  </data>
+  <data name="InvalidCargo" xml:space="preserve">
+    <value>El cargo no es un importe correcto</value>
+  </data>
+  <data name="InvalidCoeficienteExceso" xml:space="preserve">
+    <value>El coeficiente de exceso no es correcto</value>
+  </data>
+  <data name="InvalidExcesoAjuste" xml:space="preserve">
+    <value>El exceso de ajuste no es correcto</value>
+  </data>
+  <data name="InvalidImporteSeguro" xml:space="preserve">
+    <value>El importe del seguro no es correcto</value>
+  </data>
+  <data name="InvalidKilometros" xml:space="preserve">
+    <value>El nº de kilómetros no es correcto</value>
+  </data>
+  <data name="lblDepartamento" xml:space="preserve">
+    <value>Departamento</value>
+  </data>
+  <data name="lblDirectivo" xml:space="preserve">
+    <value>Directivo</value>
+  </data>
+  <data name="lblEquipamiento" xml:space="preserve">
+    <value>Equipamiento</value>
+  </data>
+  <data name="lblExtras" xml:space="preserve">
+    <value>Extras</value>
+  </data>
+  <data name="lblFechaDevolución" xml:space="preserve">
+    <value>Fecha devolución</value>
+  </data>
+  <data name="lblFechaRecibido" xml:space="preserve">
+    <value>Fecha recibido</value>
+  </data>
+  <data name="lblFechaRenovacion" xml:space="preserve">
+    <value>Fecha renovación</value>
+  </data>
+  <data name="lblLugarEntrega" xml:space="preserve">
+    <value>Lugar de entrega</value>
+  </data>
+  <data name="lblMatriculaSustituida" xml:space="preserve">
+    <value>Vehiculo al que sustituye</value>
+  </data>
+  <data name="lblTipoRuta" xml:space="preserve">
+    <value>Ruta</value>
+  </data>
+  <data name="MaxLenEquipamiento250" xml:space="preserve">
+    <value>El equipamiento no puede exceder de 250 caracteres</value>
+  </data>
+  <data name="MaxLenExtras250" xml:space="preserve">
+    <value>Los extras no pueden exceder de 250 caracteres</value>
+  </data>
+  <data name="MaxLenLugarEntrega250" xml:space="preserve">
+    <value>El lugar de entrega no puede exceder de 250 caracteres</value>
+  </data>
+  <data name="MaxLenMatriculaSustituida" xml:space="preserve">
+    <value>La matrícula del vehículo al que sustituye no puede exceder de 15 caracteres</value>
+  </data>
+  <data name="MaxLenNumBastidor50" xml:space="preserve">
+    <value>El nº de bastidor no puede exceder de 50 caracteres</value>
+  </data>
+  <data name="MaxLenNumContratoSeguro25" xml:space="preserve">
+    <value>El nº de contrato no puede exceder de 25 caracteres</value>
+  </data>
+  <data name="lblCarburante" xml:space="preserve">
+    <value>Carburante</value>
+  </data>
+  <data name="lblUbicacion" xml:space="preserve">
+    <value>Ubicación</value>
+  </data>
+  <data name="lblDelegacion" xml:space="preserve">
+    <value>Delegación</value>
+  </data>
+  <data name="lblEmpresaLeasing" xml:space="preserve">
+    <value>Empresa leasing</value>
+  </data>
+  <data name="lblTarjetaCombustible" xml:space="preserve">
+    <value>Tarjeta combustible</value>
+  </data>
+  <data name="MaxLenPolizaSeguro50" xml:space="preserve">
+    <value>El nº de poliza del seguno no puede exceder de 50 caracteres.</value>
+  </data>
+  <data name="RequiredNumContrato" xml:space="preserve">
+    <value>El nº de contrato es un campo obligatorio</value>
+  </data>
+  <data name="MaxLenCuotas" xml:space="preserve">
+    <value>Las cuotas deben estar entre 0 y 100</value>
+  </data>
+  <data name="InvalidKMExentos" xml:space="preserve">
+    <value>Los kilómetros exentos deben ser numéricos</value>
+  </data>
+  <data name="RequiredFechaUltimaITV" xml:space="preserve">
+    <value>La fecha de última ITV es un valor obligatorio, cuando no es la primera ITV</value>
+  </data>
+  <data name="RequiredFechaVtoITV" xml:space="preserve">
+    <value>La fecha vto. ITV es un campo obligatorio</value>
+  </data>
+  <data name="FechaVtoITVMayorFechaUltimaITV" xml:space="preserve">
+    <value>La fecha de vencimiento de la ITV no puede ser menor o igual que la fecha de la última ITV.</value>
+  </data>
+  <data name="FechaBajaMayorFechaAlta" xml:space="preserve">
+    <value>La fecha de baja debe ser mayor que la fecha de alta</value>
+  </data>
+  <data name="FechaDevolucionMayorIgualFechaRecogida" xml:space="preserve">
+    <value>La fecha de devolución debe ser mayor o igual a la fecha de recogida</value>
+  </data>
+  <data name="FechaRecogidaMayorIgualFechaAlta" xml:space="preserve">
+    <value>La fecha de recogida debe ser mayor o igual a la fecha de alta</value>
+  </data>
+  <data name="FechaRecogidaMenorFechabaja" xml:space="preserve">
+    <value>La fecha de recogida debe ser menor que la fecha de baja</value>
+  </data>
+  <data name="msgErrTarjetaAsociadaMatricula" xml:space="preserve">
+    <value>La tarjeta de combustible está asociada a otro vehículo</value>
+  </data>
+  <data name="msgMatriculaSustituida" xml:space="preserve">
+    <value>La matrícula sustituida no puede ser igual a la que se está modificando</value>
+  </data>
+  <data name="msgVehiculoExistente" xml:space="preserve">
+    <value>Ya existe un vehículo con esa matrícula. Imposible darlo de alta</value>
+  </data>
+  <data name="RequiredMatriculaSustituida" xml:space="preserve">
+    <value>El vehículo sustituido es un campo obligatorio, cuando está seleccionado.</value>
+  </data>
+  <data name="FechaVtoITV_Vacia" xml:space="preserve">
+    <value>La fecha de Vto. no puede estar vacía, cuando ya hay otra que lo está.</value>
+  </data>
+  <data name="FechasITV_Correctas" xml:space="preserve">
+    <value>La fecha de última ITV y la fecha de Vto. no pueden abarcar otras fechas ya existentes</value>
+  </data>
+  <data name="lblFechaImportacion" xml:space="preserve">
+    <value>Fecha importación</value>
+  </data>
+  <data name="lblIdentificadorImportacion" xml:space="preserve">
+    <value>Identificador para la importación</value>
+  </data>
+  <data name="lblPrioridad" xml:space="preserve">
+    <value>Prioridad</value>
+  </data>
+  <data name="lblResponsable" xml:space="preserve">
+    <value>Responsable</value>
+  </data>
+  <data name="MaxLenIdentificadorImportacion" xml:space="preserve">
+    <value>El identificador de importación no puede exceder de 50 caractres</value>
+  </data>
+  <data name="MaxLenPrioridadEntrega" xml:space="preserve">
+    <value>La prioridad no puede exceder de 50 caracteres</value>
+  </data>
+  <data name="MaxLenResponsable100" xml:space="preserve">
+    <value>El responsable no puede exceder de 100 caracteres</value>
+  </data>
+  <data name="lblPendienteDefinir" xml:space="preserve">
+    <value>Pendiente de definir</value>
+  </data>
+  <data name="lblFechaMatriculacion" xml:space="preserve">
+    <value>Fecha matriculación</value>
+  </data>
+  <data name="FechaMatriculacionMenorIgualFechaRecogida" xml:space="preserve">
+    <value>La fecha de matriculación debe ser inferior a la de recogida</value>
+  </data>
+  <data name="RequiredAlMenosUnaFechaITV" xml:space="preserve">
+    <value>Debe rellenar alguna fecha.</value>
+  </data>
+  <data name="lblFileToImport" xml:space="preserve">
+    <value>Archivo de importación</value>
+  </data>
+  <data name="RequiredArchivoToImport" xml:space="preserve">
+    <value>El archivo para importar es obligatorio</value>
+  </data>
+  <data name="IdentificadorExistente" xml:space="preserve">
+    <value>El identificador que ha escrito ya ha sido utilizado.</value>
+  </data>
+  <data name="RequiredIdentificadorImportacion" xml:space="preserve">
+    <value>El identificador para la importación es un campo requerido</value>
+  </data>
+  <data name="lblPrioridadEntrega" xml:space="preserve">
+    <value>Prioridad entrega</value>
+  </data>
+  <data name="lblFechaPrevistaEntrega" xml:space="preserve">
+    <value>Fec. prevista entrega</value>
+  </data>
+  <data name="lblITV_Pasada" xml:space="preserve">
+    <value>Pasada ITV</value>
+  </data>
+  <data name="ITV_PasadaError" xml:space="preserve">
+    <value>No puede tener más de una ITV sin pasar</value>
+  </data>
+  <data name="RequiredEmpresaLeasing" xml:space="preserve">
+    <value>La empresa de leasing es un dato obligatorio</value>
+  </data>
+  <data name="ExcelExtensionNoPermitida" xml:space="preserve">
+    <value>Los archivos ".xls" no se pueden importar, deben guardarse en una versión más moderna ".xlsx"</value>
+  </data>
+  <data name="lblFechaFacturacion" xml:space="preserve">
+    <value>Fecha Facturación</value>
+  </data>
+  <data name="RequiredFechaFacturacion" xml:space="preserve">
+    <value>La fecha de facturación es obligatoria</value>
+  </data>
+  <data name="lblNIF" xml:space="preserve">
+    <value>Nº documento identificación</value>
+  </data>
+  <data name="MaxLenNIF" xml:space="preserve">
+    <value>El nº del documento de identificación no puede exceder de 50 carácteres</value>
+  </data>
+  <data name="lblArchivoParaBorrar" xml:space="preserve">
+    <value>Archivo a borrar</value>
+  </data>
+  <data name="RequiredArchivoParaBorrar" xml:space="preserve">
+    <value>El nombre del archivo para borrar es un valor obligatorio</value>
+  </data>
+  <data name="lblTipoDocIdentificacion" xml:space="preserve">
+    <value>Tipo doc. identificación</value>
+  </data>
+  <data name="RequiredTipoDocIdentificacion" xml:space="preserve">
+    <value>El tipo doc. identificación es un dato obligatorio</value>
+  </data>
+  <data name="MaxLenCarnetConducir" xml:space="preserve">
+    <value>El carnet de conducir no puede exceder de 20 caracteres.</value>
+  </data>
+  <data name="RequiredCarnetConducir" xml:space="preserve">
+    <value>El carnet de conducir es un dato obligatorio</value>
+  </data>
+  <data name="lblDniConductor" xml:space="preserve">
+    <value>Nº doc. identifi. conductor</value>
+  </data>
+  <data name="lblFechaContDesde" xml:space="preserve">
+    <value>Fecha contrato desde</value>
+  </data>
+  <data name="lblFechaContHasta" xml:space="preserve">
+    <value>Fecha contrato hasta</value>
+  </data>
+  <data name="RequiredFechaContDesde" xml:space="preserve">
+    <value>La fecha desde del contrato es un campo obligatorio</value>
+  </data>
+  <data name="TypeFechaContDesde" xml:space="preserve">
+    <value>La fecha desde del contrato no tiene un formato válido</value>
+  </data>
+  <data name="TypeFechaContHasta" xml:space="preserve">
+    <value>La fecha hasta del contrato no tiene un formato válido</value>
+  </data>
+  <data name="RequiredCentroCoste" xml:space="preserve">
+    <value>El Centro de Coste es un dato obligatorio.</value>
+  </data>
+</root>

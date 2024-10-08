@@ -1,0 +1,40 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Models
+@model IEnumerable<DatosVehiculoLeasePlanModel>
+
+<h2>@resourceView.TabFacturacionRenting</h2>
+<table id="tabledatosRenting" class="display responsive" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblEjercicio</th>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblTrimestre</th>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblFechaFactura</th>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblNumFactura</th>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblImpRenting</th>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblImpMantenimiento</th>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblImpAdministracion</th>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblImpSeguro</th>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblImpITV</th>
+            <th>@TK_ECAR.Content.resources.ModelsResources.lblImpTotal</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.Ejercicio</td>
+                <td>@item.Trimestre</td>
+                <td>@Html.DisplayFor(modelItem => item.FechaFactura)</td>
+                <td>@item.NumFactura</td>
+                <td>@Html.DisplayFor(modelItem => item.ImpRenting)</td>
+                <td>@Html.DisplayFor(modelItem => item.ImpMantenimiento)</td>
+                <td>@Html.DisplayFor(modelItem => item.ImpAdministracion)</td>
+                <td>@Html.DisplayFor(modelItem => item.ImpSeguro)</td>
+                <td>@Html.DisplayFor(modelItem => item.ImpITV)</td>
+                <td>@Html.DisplayFor(modelItem => item.ImpTotal)</td>
+            </tr>
+        }
+    </tbody>
+</table> 
+ 

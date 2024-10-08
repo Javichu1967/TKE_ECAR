@@ -1,0 +1,274 @@
+﻿@using resourceView = TK_ECAR.Content.resources
+@using System.Configuration;
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="infoMtoTarjetasCombustible">
+            @{
+                var actionLink = Ajax.ActionLink("JSTITLEMODAL", "NuevaTarjeta", "TarjetasCombustible", new { },
+                new AjaxOptions
+                {
+                    UpdateTargetId = "modalbodyTarjeta",
+                    OnSuccess = "showModalTarjeta();",
+                    OnComplete = "completeModal()",
+                    InsertionMode = InsertionMode.Replace,
+                    OnBegin = "setTitleModal('JSTITLEMODAL')"
+                }, new { @title = "tooltip", @class = "tk-icon-med icon-tk-plus", @style = "float: right;" }).ToString();
+            }
+            <h3>@resourceView.TK_ECAR_Resource.TitleTarjetasCombustible
+                <span id="linkuser" style="float: right;">@resourceView.TK_ECAR_Resource.LAñadir</span> 
+                @Html.Raw(actionLink.Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.lblNuevaTarjeta).Replace("tooltip", @resourceView.TK_ECAR_Resource.lblNuevaTarjeta))
+            </h3>
+            <p>@resourceView.TK_ECAR_Resource.TitleTarjetasCombustibleInf</p>
+        </div>
+    </div>
+</div>
+
+<table id="tableTarjeta" class="display responsive" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>IDTarjeta</th>
+            <th>@resourceView.ModelsResources.lblEmpresa</th>
+            <th>@resourceView.ModelsResources.lblCodigoTarjeta</th>
+            <th>@resourceView.ModelsResources.lblFechaCaducidad</th>
+            <th>@resourceView.ModelsResources.lblEmpresaEmisora</th>
+            <th>@resourceView.TK_ECAR_Resource.CabVehiculoAsociadoTarjeta</th>
+            <th>@resourceView.TK_ECAR_Resource.DataTableCabAccion</th>
+            <th>NombreEmpresaTarjeta</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+@*Modal Datos*@
+<div class="modal fade" id="modalDatosMatricula" role="dialog">
+    <div class="vertical-alignment-helper">
+        <div class="modal-dialog  vertical-align-center modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span class="modal-header-logo"></span>
+                    </button>
+                    <h4 class="modal-title">@resourceView.TK_ECAR_Resource.TitleInfDatosGenerales</h4>
+                </div>
+
+                <div class="modal-body" id="modalbodyDatosMatricula">
+
+
+                </div>
+
+                <div class="modal-footer">
+                    @*<button type="button" id="aceptarDatos" class="btn btn-default" data-dismiss="modal">@resourceView.AccionAceptar</button>*@
+                    <button type="button" class="btn btn-cancel" data-dismiss="modal">@resourceView.TK_ECAR_Resource.AccionCerrar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@Html.Partial("_ModalTarjeta")
+
+<style>
+    .export-btn {
+        margin: 10px;
+        padding: 5px;
+    }
+</style>
+
+@section Scripts {
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecss")'>
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecssResponsive")'>
+    
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/choosenCSS")'>
+
+
+    <script src='@Scripts.Url("~/bundles/datatable")'> </script>
+    <script src='@Scripts.Url("~/bundles/dtresponsive")'> </script>
+    <script src='@Scripts.Url("~/bundles/DateTimeTableSortJs")'> </script>
+
+    <script src='@Scripts.Url("~/bundles/choosenJqJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/choosenAjaxJs")'> </script>
+
+    <script src='@Scripts.Url("~/bundles/DataTablesButtonJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsFlashJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsHtml5Js")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesjszipJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesVfsFontsJs")'> </script>
+
+    <script src="~/Content/scripts/Application/DNI_NIF_CIF_Utilities.js"></script>
+
+    <script type="text/javascript">
+        var _tableTarjeta;
+
+        var actionTarjeta = '@Ajax.RawActionLink("textoQuitarPorVacio", "EditarTarjeta", "TarjetasCombustible", new { idtarjeta = "valordelidaccion" },
+        new AjaxOptions { UpdateTargetId = "modalbodyTarjeta", OnSuccess = "showModalTarjeta();", OnComplete = "completeModal()", InsertionMode = InsertionMode.Replace },
+        new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" })';
+        actionTarjeta = actionTarjeta.replace("textoQuitarPorVacio", "");
+
+        $(document).ready(function () {
+            $.fn.dataTable.moment('DD/MM/YYYY');
+
+            _tableTarjeta = $('#tableTarjeta').DataTable(
+                {
+                    "dom": 'Blfrtip',
+                    "ordering": true,
+                    "processing": true,
+                    "paginate": true,
+                    "order": [[1, "asc"]],
+                    "buttons": [{
+                        text: '@resourceView.TK_ECAR_Resource.btnExportarExcel',
+                        extend: 'excel',
+                        className: 'btn btn-default export-btn',
+                        title: '@Html.Raw(@resourceView.TK_ECAR_Resource.TitleTarjetasCombustible)',
+                        exportOptions: {
+                            columns: [1, 2, 3, 4, 5]
+                        }
+                    }],
+                    "ajax": {
+                        "url": '@Url.Action("TarjetasJson", "TarjetasCombustible")',
+                        "datatype": "json",
+                        "type": "POST"
+
+                    },
+                    "columns": [
+                        { "data": "IDTarjeta" },
+                        { "data": "IDEmpresa" },
+                        { "data": "CodTarjeta" },
+                        { "data": "FechaCaducidad" },
+                        { "data": "NombreEmpresaEmisora" },
+                        { "data": "MatriculaAsociadaTarjeta" },
+                        { "data": "AccionDatatable" },
+                        { "data": "NombreEmpresaTarjeta" },
+                    ],
+                    "language": {
+                        "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.TK_ECAR_Resource.ArchivoIdiomaDataTable )'
+                    },
+                    "drawCallback": function () {
+                        $('[data-toggle="popover"]').popover({ html: true });
+                    },
+                    "columnDefs": [
+                    {
+                        "targets": 0,
+                        "visible": false,
+                        "searchable": false
+                    },
+                    {
+                        "targets": 1,
+                        "width": "5%",
+                        "render": function (data, type, row) {
+                            return "<a data-placement='top' data-toggle='popover' data-trigger='hover' data-content='" + row.NombreEmpresaTarjeta + "' >" + row.IDEmpresa + "</a>";
+                        }
+
+                    },
+                    {
+                        "targets": 2,
+                        "width": "20%",
+                    },
+                    {
+                        "targets": 3,
+                        "width": "20%",
+                        "render": function (data, type, full, meta) {
+                            return formatJSONDate(data);
+                        }
+                    },
+                    {
+                        "targets": 4,
+                        "width": "30%",
+                    },
+                    {
+                        "targets": 5,
+                        "width": "10%",
+                        "type": "html",
+                        "render": function (data, type, row) {
+                            var actionVer = '';
+                            if (row.MatriculaAsociadaTarjeta != null && row.MatriculaAsociadaTarjeta != '') {
+                                actionVer = '@Ajax.RawActionLink("<span>valordelacolumnamatriculaLink</span>", "VerVehiculo", "MiFlota", new { matricula = "valordelacolumnamatricula" },
+                                new AjaxOptions { UpdateTargetId = "modalbodyDatosMatricula", OnSuccess = "showModalDatosMatricula();", OnComplete = "completeModal()", InsertionMode = InsertionMode.Replace }, new { })';
+                                actionVer = actionVer.replace("valordelacolumnamatriculaLink", row.MatriculaAsociadaTarjeta).replace("valordelacolumnamatricula", row.MatriculaAsociadaTarjeta); //Reemplazar valordelacolumnamatricula por el valor de row.columna
+                            }
+                            return actionVer;
+                        }
+                     },
+                     {
+                        "targets": 6,
+                        "orderable": false,
+                        "searchable": false,
+                        "className": "dt-center",
+                        "type": "html",
+                        "render": function (data, type, row) {
+                            var menuAcciones = "";
+                            menuAcciones = menuAcciones + "<a class='tk-icon-med icon-tk-edit tk-icon-bold ' "
+                                            + actionTarjeta.replace("valordelidaccion", row.IDTarjeta)
+                                            .replace("TITTLEACCION", '@resourceView.TK_ECAR_Resource.AccionEditar')
+                                            .replace("accionmenu", "@resourceView.TK_ECAR_Resource.AccionEditar") + " </a>";
+                            menuAcciones = menuAcciones + '<a class="tk-icon-med icon-tk-delete tk-icon-bold tk-icon-red " '
+                                            + 'href="#" onclick="return clickBorrar(event,' + row.IDTarjeta + ',\'' + escape(row.CodTarjeta) + '\');" '
+                                            + " data-toggle = 'popover', data-placement = 'top', data-trigger = 'hover' "
+                                            + "data-content = '@Html.Raw(@resourceView.TK_ECAR_Resource.AccionBorrar)'>"
+                                            + "</a>";
+                            return menuAcciones;    // + ',\'' + row.Matricula + '\'
+                        }
+                    },
+                    {
+                        "targets": 7,
+                        "visible": false,
+                        "searchable": false
+                    },
+                    ]
+                });
+        });
+
+        function clickBorrar(e, id, nombre) {
+            e.preventDefault();
+            var title = "@resourceView.TK_ECAR_Resource.msgBorrarTarjeta" + "  - " + nombre + " -";
+            confirm(title, '@resourceView.TK_ECAR_Resource.msgPreguntaBorrarTarjeta',
+                function (result) {
+                    if (result) {
+                        var link = '@Html.Raw(Url.Action("BorraTarjeta", "TarjetasCombustible", new { idTarjeta = "idborrar" }))';
+                        link = link.replace("idborrar", id);
+                        $.ajax({
+                            "url": link,
+                            "dataType": 'json',
+                            "success": function (data, t, x) {
+                                reloadTableTarjeta();
+                            }
+                        });
+                    }
+                });
+        }
+
+        function formatJSONDate(jsonDate) {
+            var resul = moment(jsonDate);
+            return (resul && resul.isValid()) ? resul.format("DD/MM/YYYY") : "";
+        }
+
+
+        function reloadTableTarjeta() {
+            _tableTarjeta.ajax.reload(null, false);
+        }
+
+        function showModalTarjeta() {
+            $('#modalTarjeta').modal('show');
+        }
+        function setTitleModal(title) {
+            $('#modaltitleTarjeta').text(title);
+        }
+        function showModalDatosMatricula(Matricula) {
+            $('#modalDatosMatricula').modal('show');
+        }
+
+        //function completeModal() {
+        //    //para que funcione los validadores a la viewpartial recien creada.
+        //    //reconstruye el DOM con los validadores de los campos nuevos
+        //    $("form").removeData("validator");
+        //    $("form").removeData("unobtrusiveValidation");
+        //    $.validator.unobtrusive.parse("form");
+        //    $("form").validate();
+        //}
+
+    </script>
+}
+

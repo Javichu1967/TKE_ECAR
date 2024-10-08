@@ -1,0 +1,60 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<select id="miSeguro_Tipo" title=@resourceView.LSelectCompany search class="form-control" data-placeholder=@resourceView.placeholderChosen puedeDeshabilitarse = "SI">
+    <option></option>
+</select>
+<style type="text/css">
+    #miSeguro_Tipo_chosen {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+<script type="text/javascript">
+
+    if ($("#IDTipoSeguro").val() != '') {
+        var uRl = '@Html.Raw(@Url.Action("GetTipoSeguroByID_Chosen", "MiFlota", new { ID = "idchosen" }))'
+        uRl = uRl.replace("idchosen", $("#IDTipoSeguro").val());
+        $.ajax({
+            "url": uRl,
+            "dataType": 'json',
+            //"async": false,
+            "success": function (data, t, x) {
+                $.each(data, function (i, val) {
+                    var $opt = $('<option value="' + val.value + '" selected="selected">').html(val.text);
+                    $('#miSeguro_Tipo').append($opt);
+                });
+
+                $("#miSeguro_Tipo").trigger("chosen:updated");
+            }
+        });
+    }
+
+    TipoSeguroChosen();
+
+    function TipoSeguroChosen() {
+        $("#miSeguro_Tipo").ajaxChosen({
+            type: 'GET',
+            url: '@Url.Action("GetTiposSeguro_Chosen", "MiFlota")',
+            minTermLength: 0,
+            dataType: 'json'
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+
+        },
+            {
+                //options
+                disable_search_threshold: -1,
+                allow_single_deselect: true,
+            });
+    }
+    //Pasar como parámetro a chosen el filtro de lo que se quiere.
+    $('#miSeguro_Tipo').change(function () {
+        $("#IDTipoSeguro").val(this.value);
+    });
+
+
+</script>

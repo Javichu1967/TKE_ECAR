@@ -1,0 +1,559 @@
+﻿@using resourceView = TK_ECAR.Content.resources
+@using TK_ECAR.Models
+@using System.Configuration;
+@using TK_ECAR.Framework
+
+@{
+    var ocultarNuevoVehiculo = ViewData["OcultarNuevoVehiculo"].ToString();
+    UserModel user = (UserModel)HttpContext.Current.Session["userProfile"];
+    var perfilUsuario = user.IdPerfil;
+    var permitirEditar = false;
+    if (perfilUsuario == (int)EnumTipoPerfil.SuperUsuario && ocultarNuevoVehiculo == "NO")
+    {
+        permitirEditar = true;
+    }
+}
+
+<section>
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "__AjaxAntiForgeryForm" }))
+    {
+        @Html.AntiForgeryToken()
+
+
+    }
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="infoFlota">
+                @{
+                    var actionLink = Ajax.ActionLink("JSTITLEMODAL", "NuevoVehiculo", "MiFlota", new { },
+                            new AjaxOptions
+                            {
+                                UpdateTargetId = "modalbodyMtoVehiculo",
+                                OnSuccess = "showModalMtoVehiculo();",
+                                OnComplete = "completeModal()",
+                                InsertionMode = InsertionMode.Replace,
+                                OnBegin = "setTitleModalMtoVehiculo('JSTITLEMODAL')",
+                                HttpMethod = "POST"
+                            }, new { @title = "tooltip", @class = "tk-icon-med icon-tk-plus", @style = "float: right;" }).ToString();
+                }
+                <h3>@resourceView.TK_ECAR_Resource.TitleMiFlota</h3>
+                @if (ocultarNuevoVehiculo == "NO")
+                {
+                    <span id="linkuser" style="float: right;">@resourceView.TK_ECAR_Resource.TitleNuevoVehiculo</span>
+                    @Html.Raw(actionLink.Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.TitleNuevoVehiculo).Replace("tooltip", @resourceView.TK_ECAR_Resource.TitleNuevoVehiculo))
+                }
+                <p>@resourceView.TK_ECAR_Resource.TitleMiFlotaInf</p>
+            </div>
+            <div style="float:left; margin: 6px; border-bottom: 1px solid #ddd;" class="col-sm-12" width="100%"></div>
+        </div>
+    </div>
+
+    @using (Ajax.BeginForm("BuscaMiFlota", "MiFlota", null, new AjaxOptions { OnSuccess = "onSuccess", HttpMethod = "Post" }, new { @id = "formFiltro" }))
+    { 
+        @*@Html.AntiForgeryToken()*@
+
+
+        <div class="row">
+            <div class="col-md-12">
+                @Html.Partial("_Filters")
+            </div>
+        </div>
+        <div class="col-sm-12 left">
+            <div id="divEstadoVehiculo" class="btn-group btn-group-horizontal" data-toggle="buttons">
+                <label class="btn active">
+                    <input type="radio" name='estadoVehiculo' id="VerAltas" checked><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i>
+                    <span>@resourceView.TK_ECAR_Resource.CheckVehiculosAlta</span>
+                </label>
+                <label class="btn">
+                    <input type="radio" name='estadoVehiculo' id="VerBajas"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i>
+                    <span>@resourceView.TK_ECAR_Resource.CheckVehiculosBaja</span>
+                </label>
+                <label class="btn">
+                    <input type="radio" name='estadoVehiculo' id="VerTodas"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i>
+                    <span>@resourceView.TK_ECAR_Resource.CheckVehiculosTodos</span>
+                </label>
+            </div>
+
+            @*@<img class="paragraph-icon" id="imgVerAltas" style="vertical-align:middle" src='@Url.Content("~/Content/img/Application/RadioButtonSelect.png")' onclick="setVerAltas(this);" />
+                <span style="margin-left:0px;">@resourceView.CheckVehiculosAlta</span>
+                <span>  </span>
+                <img class="paragraph-icon" id="imgVerBajas" style="vertical-align:middle; margin-left: 20px;" src='@Url.Content("~/Content/img/Application/RadioButtonUnSelect.png")' onclick="setVerBajas(this);" />
+                <span style="margin-left:0px;">@resourceView.CheckVehiculosBaja</span>
+                <span>  </span>
+                <img class="paragraph-icon" id="imgVerAltasBajas" style="vertical-align:middle; margin-left: 20px;" src='@Url.Content("~/Content/img/Application/RadioButtonUnSelect.png")' onclick="setVerAltasBajas(this);" />
+                <span style="margin-left:0px;">@resourceView.CheckVehiculosAltasBajas</span>*@
+        </div>
+        <br />
+    }
+
+    <br />
+
+    @Html.Partial("~/Views/Shared/MantenimientoVehiculo/_ModalMtoVehiculo.cshtml")
+
+    <table id="tableflota" class="display responsive" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Sociedad</th>
+                <th>@resourceView.ModelsResources.lblMatricula</th>
+                <th>@resourceView.ModelsResources.lblConductor</th>
+                <th>@resourceView.ModelsResources.lblCECO</th>
+                <th>@resourceView.ModelsResources.lblModelo</th>
+                <th>@resourceView.ModelsResources.lblFechaRecogida</th>
+                <th>@resourceView.ModelsResources.lblFecVTORenting</th>
+                <th>@resourceView.ModelsResources.lblCiaRenting</th>
+                <th>@resourceView.ModelsResources.lblFechaITV</th>
+                <th>@resourceView.ModelsResources.lblNumContrato</th>
+                <th>@resourceView.ModelsResources.lblFechaVtoSeguro</th>
+                <th>@resourceView.TK_ECAR_Resource.lblVer</th>
+                <th>Baja</th>
+                <th>EstadoDelVehiculo</th>
+            </tr>
+        </thead>
+        @*BÚSQUEDA POR LOS CAMPOS DEBAJO DEL DATATABLE.*@
+        <tfoot>
+            <tr>
+                <th id="idSociedad" marca="filtroFooter">Sociedad</th>
+                <th id="idMatricula" marca="filtroFooter">@resourceView.ModelsResources.lblMatricula</th>
+                <th id="idConductor" marca="filtroFooter">@resourceView.ModelsResources.lblConductor</th>
+                <th id="idCeco" marca="filtroFooter">@resourceView.ModelsResources.lblCECO</th>
+                <th id="idModelo" marca="filtroFooter">@resourceView.ModelsResources.lblModelo</th>
+                <th id="idRecogida" marca="filtroFooter">@resourceView.ModelsResources.lblFechaRecogida</th>
+                <th id="idVTORenting" marca="filtroFooter">@resourceView.ModelsResources.lblFecVTORenting</th>
+                <th id="idSCiaRenting" marca="filtroFooter">@resourceView.ModelsResources.lblCiaRenting</th>
+                <th id="idSociedad" marca="filtroFooter">@resourceView.ModelsResources.lblFechaITV</th>
+                <th id="idFechaITV" marca="filtroFooter">@resourceView.ModelsResources.lblNumContrato</th>
+                <th id="idNumContrato" marca="filtroFooter">@resourceView.ModelsResources.lblFechaVtoSeguro</th>
+                <th id="verFooter">@resourceView.TK_ECAR_Resource.lblVer</th>
+                <th>Baja</th>
+                <th>EstadoDelVehiculo</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    @*Modal Datos*@
+    <div class="modal fade" id="modalDatos" role="dialog">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog  vertical-align-center modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="modal-header-logo"></span>
+                        </button>
+                        <h4 class="modal-title">@resourceView.TK_ECAR_Resource.TitleInfDatosGenerales</h4>
+                    </div>
+
+                    <div class="modal-body" id="modalbodyDatos">
+
+
+                    </div>
+
+                    <div class="modal-footer">
+                        @*<button type="button" id="aceptarDatos" class="btn btn-default" data-dismiss="modal">@resourceView.AccionAceptar</button>*@
+                        <button type="button" class="btn btn-cancel" data-dismiss="modal">@resourceView.TK_ECAR_Resource.AccionCerrar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*Modal nuevo docuemnto*@
+</section>
+
+<style>
+    .export-btn {
+        margin: 10px;
+        padding: 5px;
+    }
+</style>
+
+@section Scripts {
+
+    <script src="~/Content/scripts/Application/DataTableUtilities.js"></script>
+
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecss")'>
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecssResponsive")'>
+
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/datepicker")'>
+
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/choosenCSS")'>
+
+
+    <script src='@Scripts.Url("~/bundles/datatable")'> </script>
+    <script src='@Scripts.Url("~/bundles/dtresponsive")'> </script>
+    <script src='@Scripts.Url("~/bundles/DateTimeTableSortJs")'> </script>
+
+
+    <script src='@Scripts.Url("~/bundles/choosenJqJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/choosenAjaxJs")'> </script>
+
+
+    <script src='@Scripts.Url("~/bundles/DataTablesButtonJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsFlashJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsHtml5Js")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesjszipJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesVfsFontsJs")'> </script>
+
+    <script type="text/javascript">
+        var tableflota = null;
+
+        var ajaxActionLinkAccionEditarVehiculo = '@Ajax.ActionLink("textoQuitarPorVacio", "EditarVehiculo", "MiFlota", new { matricula = "matriculaeditar" },
+        new AjaxOptions
+        {
+            UpdateTargetId = "modalbodyMtoVehiculo",
+            OnSuccess = "showModalMtoVehiculo();",
+            OnComplete = "completeModal()",
+            InsertionMode = InsertionMode.Replace,
+            OnBegin = "setTitleModalMtoVehiculo('JSTITLEMODAL')",
+            HttpMethod = "POST"
+        }, new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" })';
+        ajaxActionLinkAccionEditarVehiculo = ajaxActionLinkAccionEditarVehiculo.replace('JSTITLEMODAL','@resourceView.TK_ECAR_Resource.AccionEditar').replace("textoQuitarPorVacio","");
+
+        $(document).ready(function () {
+            //BÚSQUEDA POR LOS CAMPOS DEBAJO DEL DATATABLE.
+
+            $('#tableflota tfoot th').each( function () {
+                var title = $(this).text();
+                $(this).html( '<input type="text" placeholder="' + title + '" style="width: 100%;"/>' );
+            } );
+            $('#verFooter').css('visibility', 'hidden');
+
+            //$.fn.dataTable.moment('DD/MM/YYYY');
+
+            $("#EstadoVehiculo").attr("value", @((int)EnumAltasBajasAmbas.Altas));
+
+            $("#EmpresasSeleccionadas").val("-1");
+
+            tableflota = $('#tableflota').DataTable({
+                "dom": 'Blfrtip',
+                "ordering": true,
+                "processing": true,
+                "paginate": true,
+                "order": [[1, "asc"], [2, "asc"]],
+                "buttons": [
+                    {
+                        text: '@resourceView.TK_ECAR_Resource.btnExportarExcel',
+                        extend: 'excel',
+                        className: 'btn btn-default export-btn',
+                        exportOptions: {
+                            columns: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+                        }
+                    }
+                ],
+                "ajax": {
+                    "url": '@Url.Action("BuscaMiFlota", "MiFlota")',
+                    "datatype": "json",
+                    "type": "POST",
+                    "data": function (d) {
+                        d.EmpresasSeleccionadas = $("#EmpresasSeleccionadas").val();
+                        d.DireccionesTerritorialesSeleccionadas = $("#DireccionesTerritorialesSeleccionadas").val();
+                        d.DelegacionesSeleccionadas = $("#DelegacionesSeleccionadas").val();
+                        d.CentrosCosteSeleccionados = $("#CentrosCosteSeleccionados").val();
+                        d.AgrupacionesFiltroSeleccionadas = $("#AgrupacionesFiltroSeleccionadas").val();
+                        d.EstadoVehiculo = $("#EstadoVehiculo").val();
+                    }
+                },
+                "columns": [
+                        { "data": "Sociedad" },
+                        { "data": "Matricula" },
+                        { "data": "Conductor" },
+                        { "data": "CECO" },
+                        { "data": "Modelo" },
+                        { "data": "FechaRecogida" },
+                        { "data": "FechaVtoRenting" },
+                        { "data": "CiaRenting" },
+                        { "data": "FechaProximaITV" },
+                        { "data": "NumContrato" },
+                        { "data": "FechaVtoSeguro" },
+                        { "data": "Accion" },
+                        { "data": "Baja" },
+                        { "data": "EstadoDelVehiculo" }
+                ],
+                "language": {
+                    "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.TK_ECAR_Resource.ArchivoIdiomaDataTable )'
+                },
+                "drawCallback": function () {
+                    $('[data-toggle="popover"]').popover({ html: true });
+                },
+                //"data": respuesta.data,
+                "columnDefs": [
+                {
+                    "targets": [0, 12],
+                    "visible": false,
+                    "searchable": false
+                },
+                {
+                    "targets": [13],
+                    "visible": false,
+                    "searchable": true
+                },
+                //{
+                //    "targets": 1,
+                //    "type": "html",
+                //    "render": function (data, type, row) {
+                //        return "<span class='label label-danger'>" + data + "</span>";
+                //    }
+                //},
+                {
+                    "targets": [5, 6, 8, 10],
+                    "render": function (data, type, full, meta) {
+                        return formatJSONDate(data);
+                    }
+                },
+                {
+                    "targets": 1,
+                    "type": "html",
+                    "className": "dt-center",
+                    "render": function (data, type, row) {
+                        //"<span class='label label-danger'>" + data +"</span>";
+                        var divMatricula = "matriculaEspaña";
+                        if (row.Sociedad == 8150){
+                            divMatricula = "matriculaPortugal";
+                        }
+                        var actionMatricula = '@Ajax.RawActionLink("<span class=valordelaclase>valordelacolumnamatricula</span>", "VerDatosGenerales", "MiFlota", new { matricula = "valordelamatricula" },
+                                                new AjaxOptions { UpdateTargetId = "modalbodyDatos", OnSuccess = "showModalDatos();", OnComplete = "completeModal()", InsertionMode = InsertionMode.Replace },
+                                                new { @class = "" })';
+                        actionMatricula = actionMatricula.replace("valordelamatricula", row.Matricula); //Reemplazar valordelamatricula por el valor de row.columna
+                        actionMatricula = actionMatricula.replace("valordelacolumnamatricula", row.Matricula); //Reemplazar valordelacolumnamatricula por el valor de row.columna
+                        if (row.Baja){
+                            //actionMatricula = actionMatricula.replace("valordelaclase", "'label label-default matriculaEspaña' style='font-size:12px;'");
+                            actionMatricula = actionMatricula.replace("valordelaclase", "'label label-matricula'");
+                            if (row.Sociedad == 8150)
+                            {
+                                divMatricula = "matriculaPortugalBaja";
+                            }
+                            else{
+                                divMatricula = "matriculaEspañaBaja";
+                            }
+                        }
+                        else{
+                            //actionMatricula = actionMatricula.replace("valordelaclase", "'label label-success matriculaEspaña' style='font-size:12px;'");
+                            actionMatricula = actionMatricula.replace("valordelaclase", "'label label-matricula'");
+                        }
+
+                        return "<div class='" + divMatricula + "'>" + actionMatricula + "</div>";
+                        //"<a href='#' data-toggle='modal' data-target='#showModalVehiculo'><span class='text-danger'>" + data + "</span></a>";
+                    }
+                },
+                {
+                    "targets": 2,
+                    "type": "html",
+                    "render": function (data, type, row) {
+                        var actionConductor = '@Ajax.RawActionLink("<span>valordelacolumnaconductor</span>", "VerConductor", "MiFlota", new { matricula = "valordelacolumnamatricula" },
+                                                new AjaxOptions { UpdateTargetId = "modalbodyDatos", OnSuccess = "showModalDatos();", OnComplete = "completeModal()", InsertionMode = InsertionMode.Replace }, new { @class = "" })';
+                        actionConductor = actionConductor.replace("valordelacolumnamatricula", row.Matricula); //Reemplazar valordelacolumnamatricula por el valor de row.columna
+                        actionConductor = actionConductor.replace("valordelacolumnaconductor", row.Conductor); //Reemplazar valordelacolumnaconductor por el valor de row.columna
+                        return actionConductor;
+                        //"<a href='#' data-toggle='modal' data-target='#showModalVehiculo'><span class='text-danger'>" + data + "</span></a>";
+                    }
+                },
+                {
+                    "targets": 11,
+                    "className": "dt-center",
+                    "type": "html",
+                    "render": function (data, type, row) {
+                        var actionVer = '@Ajax.RawActionLink("<span></span>", "VerVehiculo", "MiFlota", new { matricula = "valordelacolumnamatricula" },
+                                        new AjaxOptions { UpdateTargetId = "modalbodyDatos", OnSuccess = "showModalDatos();", OnComplete = "completeModal()", InsertionMode = InsertionMode.Replace },
+                                        new { @class = "tk-icon-med icon-tk-search tk-icon-bold", @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" })';
+                        actionVer = actionVer.replace("valordelacolumnamatricula", row.Matricula); //Reemplazar valordelacolumnamatricula por el valor de row.columna
+                        actionVer = actionVer.replace("accionmenu", "@resourceView.TK_ECAR_Resource.AccionConsultar");
+
+                        if ('@permitirEditar'.toUpperCase() == 'TRUE')
+                        {
+                            actionVer = actionVer + "<a class='tk-icon-med icon-tk-edit tk-icon-bold ' "
+                            + ajaxActionLinkAccionEditarVehiculo.replace("matriculaeditar", row.Matricula)
+                                    .replace('JSTITLEMODAL', '@Html.Raw(@resourceView.TK_ECAR_Resource.AccionEditar)')
+                                    .replace("accionmenu", "@Html.Raw(@resourceView.TK_ECAR_Resource.AccionEditar)") + " </a>";
+                        }
+                        return actionVer;
+                    }
+                }
+                ]
+            });
+
+            //tableflota.columns().every( function () {
+            //    var that = this;
+
+            //    $( 'input', this.footer() ).on( 'keyup change', function () {
+            //        if ( that.search() !== this.value ) {
+            //            that
+            //                .search( this.value )
+            //                .draw();
+            //        }
+            //    } );
+            //} );
+
+        });
+
+        function onSuccess(respuesta) {
+            tableflota
+            .clear();
+
+            if (respuesta.data != undefined){
+                tableflota.rows.add(respuesta.data)
+                .draw();
+
+                tableflota.columns().every( function () {
+                    var that = this;
+
+                    //BÚSQUEDA POR LOS CAMPOS DEBAJO DEL DATATABLE.
+                    $( 'input', this.footer() ).on( 'keyup change', function () {
+                        debugger;
+                        if ( that.search() !== this.value ) {
+                            that
+                                .search( this.value )
+                                .draw();
+                        }
+                    } );
+                } );
+
+                SetGoToPage("tableflota", tableflota, 10, '@resourceView.TK_ECAR_Resource.LIr_a_Pagina');
+                addButtonDataTable("tableflota", "limpiarFiltroDataTable", '@resourceView.TK_ECAR_Resource.TextoBotonLimpiarFooterDataTable ');
+            }
+            else{
+                jsonErrorBuscarFlota(respuesta);
+            }
+        }
+
+        function jsonErrorBuscarFlota(data) {
+            notify(data, 'e');
+        }
+
+        //CUANDO PINCHEN EN EL BOTÓN BUSCAR DEL FILTRO,
+        //setInterval(function () {
+        //    _tableFlota.api().ajax.reload();
+        //}, 30000);
+
+        $(document).on('click', '#limpiarFiltroDataTable', function (event) {
+            tableflota.columns().every( function () {
+                var that = this;
+                $( 'input', this.footer() ).val('');
+                that.search('').draw();
+            });
+        });
+
+
+        function reloadTableFlota() {
+            tableflota.ajax.reload(null, false);
+            SetGoToPage("tableflota", tableflota, 10, '@resourceView.TK_ECAR_Resource.LIr_a_Pagina');
+        }
+
+        function formatJSONDate(jsonDate) {
+            $.fn.dataTable.moment('DD/MM/YYYY');
+            var resul = moment(jsonDate);
+            return (resul && resul.isValid()) ? resul.format("DD/MM/YYYY") : "";
+        }
+
+        function showModalDatos(Matricula) {
+            $('#modalDatos').modal('show');
+        }
+
+        //function completeModal() {
+        //    //para que funcione los validadores a la viewpartial recien creada.
+        //    //reconstruye el DOM con los validadores de los campos nuevos
+        //    $("form").removeData("validator");
+        //    $("form").removeData("unobtrusiveValidation");
+        //    $.validator.unobtrusive.parse("form");
+        //    $("form").validate();
+        //}
+
+        $("#modalDatos").on('hidden.bs.modal', function () {
+            $(this).data('bs.modal', null);
+        });
+
+        //$.fn.dataTable.moment('DD/MM/YYYY');
+
+        $("#VerAltas") // select the radio by its id
+            .change(function(){ // bind a function to the change event
+                if( $(this).is(":checked") ){ // check if the radio is checked
+                    $("#EstadoVehiculo").attr("value", @((int)EnumAltasBajasAmbas.Altas));
+                    $('#btnFilterBuscar').trigger('click');
+                }
+            });
+
+        $("#VerBajas") // select the radio by its id
+            .change(function(){ // bind a function to the change event
+                if( $(this).is(":checked") ){ // check if the radio is checked
+                    $("#EstadoVehiculo").attr("value", @((int)EnumAltasBajasAmbas.Bajas));
+                    $('#btnFilterBuscar').trigger('click');
+                }
+            });
+        $("#VerTodas") // select the radio by its id
+            .change(function(){ // bind a function to the change event
+                if( $(this).is(":checked") ){ // check if the radio is checked
+                    $("#EstadoVehiculo").attr("value", @((int)EnumAltasBajasAmbas.Todas));
+                    $('#btnFilterBuscar').trigger('click');
+                }
+            });
+
+
+        @*function setVerBajas(imagen) {
+        $("#EstadoVehiculo").attr("value", @((int)EnumAltasBajasAmbas.Bajas));
+        $(imagen).attr("src", '@Url.Content("~/Content/img/Application/RadioButtonSelect.png")');
+        $("#imgVerAltas").attr("src", '@Url.Content("~/Content/img/Application/RadioButtonUnSelect.png")');
+        $("#imgVerAltasBajas").attr("src", '@Url.Content("~/Content/img/Application/RadioButtonUnSelect.png")');
+    };
+    function setVerAltas(imagen) {
+        $("#EstadoVehiculo").attr("value", @((int)EnumAltasBajasAmbas.Altas));
+        $(imagen).attr("src", '@Url.Content("~/Content/img/Application/RadioButtonSelect.png")');
+        $("#imgVerBajas").attr("src", '@Url.Content("~/Content/img/Application/RadioButtonUnSelect.png")');
+        $("#imgVerAltasBajas").attr("src", '@Url.Content("~/Content/img/Application/RadioButtonUnSelect.png")');
+    };
+    function setVerAltasBajas(imagen) {
+        $("#EstadoVehiculo").attr("value", @((int)EnumAltasBajasAmbas.Ambas));
+        $(imagen).attr("src", '@Url.Content("~/Content/img/Application/RadioButtonSelect.png")');
+        $("#imgVerAltas").attr("src", '@Url.Content("~/Content/img/Application/RadioButtonUnSelect.png")');
+        $("#imgVerBajas").attr("src", '@Url.Content("~/Content/img/Application/RadioButtonUnSelect.png")');
+    };*@
+
+
+
+        function limpiaDataTable() {
+            return $('#tableflota').DataTable({
+                "autoWidth":false,
+                "ordering": true,
+                "processing": false,
+                "paginate": true,
+                "columns": [
+                    { "data": "Sociedad" },
+                    { "data": "Matricula" },
+                    { "data": "Conductor" },
+                    { "data": "CECO" },
+                    { "data": "Modelo" },
+                    { "data": "FechaRecogida" },
+                    { "data": "FechaVtoRenting" },
+                    { "data": "CiaRenting" },
+                    { "data": "FechaProximaITV" },
+                    { "data": "NumContrato" },
+                    { "data": "FechaVtoSeguro" },
+                    { "data": "Accion" }
+                ],
+                "language": {
+                    "url": "//desapps.thyssenkrupp.gtk.local/TKCommon/Content/DataTables/i18n/Spanish.json"
+                },
+                "columnDefs": [
+                {
+                    "targets": 0,
+                    "visible": false,
+                    "searchable": false
+                }
+                ]
+            });
+        }
+
+
+        /*Nuevo-Editar**************************/
+        function showModalMtoVehiculo() {
+            $('#modalMtoVehiculo').modal('show');
+        }
+        function setTitleModalMtoVehiculo(title) {
+            $('#modaltitleMtoVehiculo').text(title);
+        }
+
+        $("#modalMtoVehiculo").on('hidden.bs.modal', function () {
+            $(this).data('bs.modal', null);
+        });
+        /**************************Nuevo-Editar*/
+
+    </script>
+}

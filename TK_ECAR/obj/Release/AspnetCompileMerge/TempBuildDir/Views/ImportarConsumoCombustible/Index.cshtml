@@ -1,0 +1,367 @@
+﻿@using resourceView = TK_ECAR.Content.resources
+@using TK_ECAR.Framework
+@using System.Configuration;
+@model TK_ECAR.Models.ImportacionDatosModels
+
+<script src='@Scripts.Url("~/bundles/choosenJqJs")'> </script>
+<script src='@Scripts.Url("~/bundles/choosenAjaxJs")'> </script>
+
+<script type="text/javascript">
+    $.validator.setDefaults({ ignore: null }); //para validar campos ocultos
+</script>
+
+
+<section>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="infoImportar">
+                <h3>@resourceView.TK_ECAR_Resource.TitleImportarTarjetaCombustible</h3>
+                <p>@resourceView.TK_ECAR_Resource.TitleImportarTarjetaCombustibleInf</p>
+            </div>
+            <div style="float:left; margin: 6px; border-bottom: 1px solid #ddd;" class="col-sm-12" width="100%"></div>
+        </div>
+    </div>
+
+    @using (Html.BeginForm("ImportarCombustible", "ImportarConsumoCombustible", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "stripHtml('formImportarConsumoCombustible')", id = "formImportarConsumoCombustible" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.HiddenFor(model => model.FileToImport_download)
+        @Html.HiddenFor(model => model.DescEmpresa)
+        @Html.HiddenFor(model => model.IDEmpresa)
+        @Html.HiddenFor(model => model.IDEmpresaEmisora)
+        <!-- File Upload Row -->
+        <div class="row">
+            <div class="form-horizontal">
+                <div class="notice notice-gray col-md-12">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.RequiredLabelFor(model => model.Empresa, new { @class = "control-label col-md-2" })
+                            <div class="col-md-6">
+                                @Html.EditorFor(model => model.Empresa)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.RequiredLabelFor(model => model.EmpresaEmisora, new { @class = "control-label col-md-2" })
+                            <div class="col-md-6">
+                                @Html.EditorFor(model => model.EmpresaEmisora)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            @Html.RequiredLabelFor(model => model.FileToImport, new { @class = "control-label col-md-2" })
+                            <div class="col-md-6">
+                                @Html.EditorFor(model => model.FileToImport)
+                            </div>
+                            <div class="col-md-4 text-left">
+                                <button id="btnImportar" type="button" class="btn btn-default form-control"><i class="fa fa-download"></i>&nbsp;@resourceView.TK_ECAR_Resource.btnImportarCombustible</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" id="rowValidationSummary">
+            <div class="form-group" id="divValidationSummary">
+                <div class="col-lg-12">
+                    @Html.Partial("_CustomValidationSummary", ViewData.ModelState)
+                </div>
+            </div>
+        </div>
+    }
+
+    <div style="float:left; margin: 6px; border-bottom: 1px solid #ddd;" class="col-sm-12" width="100%"></div>
+
+    <div class="row" id="rowProgress">
+        @Html.Partial("_Progress", @resourceView.TK_ECAR_Resource.TitleImportarTarjetaCombustible)
+    </div>
+
+    <div class="row" id="rowResumen">
+
+        <h4 id="TituloResumen">
+            @resourceView.TK_ECAR_Resource.titleResumenImportacion
+        </h4>
+
+        <table id="tableResumenImp" class="responsive compact stripe" cellspacing="0" width="100%" style="font-size: 12px;">
+            <thead>
+                <tr>
+                    <th>TipoLinea</th>
+                    <th>@resourceView.TK_ECAR_Resource.TitleResumen</th>
+                </tr>
+            </thead>
+        </table>
+
+    </div>
+
+</section>
+
+<style>
+    .export-btn {
+        margin: 10px;
+        padding: 5px;
+    }
+    .dataTables_wrapper table thead{
+        display:none;
+    }
+</style>
+
+@section Scripts {
+    <link href="~/Content/styles/Site.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecss")'>
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecssResponsive")'>
+
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/choosenCSS")'>
+
+    @*<script src="~/Content/scripts/signalR/jquery.signalR-2.2.2.js"></script>
+    <script src="~/signalr/hubs"></script> Hay que crear este directorio*@
+
+    <script src='@Scripts.Url("~/bundles/datatable")'> </script>
+    <script src='@Scripts.Url("~/bundles/dtresponsive")'> </script>
+
+    <script src='@Scripts.Url("~/bundles/DataTablesButtonJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsFlashJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsHtml5Js")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesjszipJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesVfsFontsJs")'> </script>
+
+    <script src="~/Content/scripts/Application/Global.js"></script>
+    <script src="~/Content/scripts/Application/DataTableUtilities.js"></script>
+
+    <script type="text/javascript" language="javascript">
+        var tableResumenImp = null;
+        var uRl = '@Url.Action("ImportarCombustible", "ImportarConsumoCombustible")';
+        var conexionEstablecida = false;
+        var backColorIncidencia = '#ffb400';
+        var backColorError = '#e60050';
+        var backColorResumen = '#eee';
+        var nombreArchivoImportar = '';
+        var continuar = true;
+
+        $(document).ready(function () {
+            //$('.progress').hide();
+            $('#btnImportar').hide();
+            $('#rowProgress').hide();
+            $('#rowResumen').hide();
+
+            tableResumenImp = $('#tableResumenImp').DataTable({
+                "dom": 'Blfrtip',
+                "bInfo" : false,
+                "ordering": false,
+                "processing": true,
+                "paginate": true,
+                "pageLength": 25,
+                "buttons": [
+                    {
+                        text: '@resourceView.TK_ECAR_Resource.btnExportarExcel',
+                        extend: 'excel',
+                        className: 'btn btn-default export-btn',
+                        title: '@Html.Raw(@resourceView.TK_ECAR_Resource.titleResumenImportacion + "_GALP_")' + GetCurrentDateFormatYYYYMMDD(),
+                        exportOptions: {
+                            columns: [1]
+                        }
+                    }
+                ],
+                "ajax": {
+                    "url": '@Url.Action("DatosImportacionJson", "ImportarConsumoCombustible")',
+                    "datatype": "json",
+                    "type": "POST",
+                },
+                "rowCallback": function (row, data, index) { //Cambiar formato de la línbea.
+                    switch (data.TipoLinea)
+                    {
+                        case @((int)EnumTipoLineaImportacion.VehiculoExistente):
+                            $(row).css('background-color', backColorIncidencia);
+                            break;
+                        case @((int)EnumTipoLineaImportacion.Error):
+                            $(row).css('background-color', backColorError);
+                            $(row).css('color', '#ffffff');
+                            break;
+                        case @((int)EnumTipoLineaImportacion.Resumen):
+                            $(row).css('font-weight', 'bold');
+                            $(row).css('font-size', '15px');
+                            $(row).css('background-color', backColorResumen);
+                            break;
+                        case @((int)EnumTipoLineaImportacion.Normal):
+                            $(row).css('background-color', backColorResumen);
+                            break;
+                    }
+                },
+                "columns": [
+                        { "data": "TipoLinea" },
+                        { "data": "Texto" }
+                ],
+                "language": {
+                    "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.TK_ECAR_Resource.ArchivoIdiomaDataTable )'
+                },
+                //"data": respuesta.data,
+                "columnDefs": [
+                {
+                    "targets": 0,
+                    "visible": false,
+                    "searchable": false,
+                },
+                {
+                    "targets": 1,
+                    "searchable": true,
+                },
+                ]
+            });
+
+            $(document).on('click', '#btnImportar', function (event) {
+                if ($("#formImportarConsumoCombustible").valid()) {//validamos el form
+                    if (archivoProcesadoAnteriormente()) {
+                        confirm('@resourceView.TK_ECAR_Resource.msgCabFicheroYaProcesado', '@resourceView.TK_ECAR_Resource.msgFicheroYaProcesadoFlota',
+                            function (result) {
+                                if (result) {
+                                    continuar = true;
+                                    $(this).resetSummary();
+                                    $("#formImportarConsumoCombustible").submit();
+                                } else {
+                                    continuar = false;
+                                }
+                            });
+                    } else {
+                        continuar = true;
+                        $(this).resetSummary();
+                        $("#formImportarConsumoCombustible").submit();
+                    }
+                }else{
+                    $('#rowValidationSummary').show();
+                }
+            });
+
+            $("#formImportarConsumoCombustible").submit(function (e) {
+                e.preventDefault();
+                if ($("#btnImportar").is(":visible")){
+                    if ($("#formImportarConsumoCombustible").valid()) {//validamos el form
+                        LimpiaValidationSummary();
+                        if (continuar) {
+                            if (!ExcededFilesSizeUpload('formImportarConsumoCombustible')){
+                                $("#rowValidationSummary").hide();
+                                $('#rowProgress').show();
+
+                                var formData = new FormData(this);
+                                $.ajax({
+                                    type: "POST",
+                                    url: uRl,
+                                    dataType: 'json',
+                                    //async: false,
+                                    data: formData,
+                                    contentType: false,
+                                    processData: false,
+
+                                    success: function (data) {
+                                        if (data == 'OK') {
+                                            ajaxSuccessImportacion();
+                                            $('#btnImportar').hide();
+                                        }
+                                        else {
+                                            ajaxErrorImportacion();
+                                            $('#btnImportar').hide();
+
+                                        }
+                                    },
+                                    error: function (error) {
+                                        ajaxErrorImportacion();
+                                        $('#btnImportar').hide();
+                                    }
+                                });
+                            }
+                            else{
+                                var mensaje = '@Html.Raw(@resourceView.TK_ECAR_Resource.toastrInfTamañoArchivosError)'.replace('#', (sizeRequest / 1024))
+                                notify(mensaje, 'e');
+                            }
+                        }
+                    }else{
+                        $('#rowValidationSummary').show();
+                    }
+                }
+            });
+        });
+
+        $("#FileToImport_download").on('change', function (evt) {
+            $('#rowResumen').hide();
+            hideProgress_Resumen();
+            if ($("#FileToImport_download").val() != "" && conexionEstablecida) {
+                //$("#NombreFichero").val(files[0].name);
+                $('#btnImportar').show();
+            }
+            else {
+                //$("#NombreFichero").val('');
+                $('#btnImportar').hide();
+            }
+        });
+
+        function reloadtableResumenImp() {
+            $("#TituloResumen").html('@resourceView.TK_ECAR_Resource.titleResumenImportacion' + '  (CARGANDO)');
+            tableResumenImp.ajax.reload(null, false);
+            $("#TituloResumen").html('@resourceView.TK_ECAR_Resource.titleResumenImportacion');
+            showResumen();
+        }
+
+        function hideProgress_Resumen(){
+            $('#rowProgress').hide();
+            $('#rowResumen').hide();
+            //$("#TituloResumen").attr("style", "visibility: hidden");
+            //$("#tableResumenImp_wrapper").attr("style", "visibility: hidden");
+            //$("#tableResumenImp").attr("style", "visibility: hidden");
+        }
+        function showResumen(){
+            $('#rowResumen').show();
+            //$("#TituloResumen").attr("style", "visibility: visible");
+            //$("#tableResumenImp_wrapper").attr("style", "visibility: visible");
+            //$("#tableResumenImp").attr("style", "visibility: visible");
+        }
+
+        $("#FileToImport").on('change', function (evt) {
+            $("#rowValidationSummary").hide();
+            $(this).resetSummary();
+            InicializaProgress();
+
+            var files = evt.target.files; // FileList object
+
+            if (files.length > 0 && conexionEstablecida) {
+                //$("#NombreFichero").val(files[0].name);
+                $('#btnImportar').show();
+                nombreArchivoImportar = files[0].name;
+            }
+            else {
+                //$("#NombreFichero").val('');
+                $('#btnImportar').hide();
+                nombreArchivoImportar = '';
+            }
+        });
+
+        function ajaxSuccessImportacion() {
+            notify('@resourceView.TK_ECAR_Resource.toastrInfImportCorrecto', 'i');
+            //cerrarVentanaMtoITV();
+        }
+
+        function ajaxErrorImportacion() {
+            notify('@resourceView.TK_ECAR_Resource.toastrInfImportError', 'e');
+        }
+
+        function archivoProcesadoAnteriormente() {
+            var valorReturn = false;
+            var uRlImportado = '@Html.Raw(@Url.Action("ArchivoYaProcesado", "ImportarConsumoCombustible", new { archivo = "valorarchivo" }))';
+            uRlImportado = uRlImportado.replace("valorarchivo", nombreArchivoImportar);
+            $.ajax({
+                "url": uRlImportado,
+                "dataType": "json",
+                "async": false,
+                "success": function (res) {
+                    if (res == "SI") {
+                        valorReturn = true;
+                    }
+                }
+            });
+
+            return valorReturn;
+        }
+
+    </script>
+}

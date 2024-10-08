@@ -1,0 +1,75 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<select id="TiposEstadosAlertas" title="Tipos estados" multiple="multiple" class="form-control">
+    <option></option>
+</select>
+
+<style type="text/css">
+    #TiposEstadosAlertas {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+<script type="text/javascript">
+
+    $(function () {
+        var valor = '@(((int?)ViewData["idTipoAlerta"]).HasValue ? ((int)ViewData["idTipoAlerta"]).ToString() : string.Empty)';
+
+        if (valor != '') {
+
+            $.ajax({
+                "url": '@Html.Raw(@Url.Action("GetTiposEstadosPendienteByTipo", "Filter", new { valor = (int?)ViewData["idTipoAlerta"] }))',
+                "dataType": 'json',
+                "success": function (data, t, x) {
+
+                    $.each(data, function (i, val) {
+                        var $opt = $('<option value="' + val.value + '" selected="selected">').html(val.text);
+                        $('#TiposEstadosAlertas').append($opt);
+                    });
+
+                    $("#TiposEstadosAlertas").trigger("chosen:updated");
+
+                }
+            });
+        }
+        var link = '@Html.Raw(Url.Action("GetTipoEstadoAlertas", "Filter", new { tiposSel = "VARtiposSel"}))';
+        link = link.replace("VARtiposSel", valor);
+        requestAjaxTiposEstadosAlertas(link);
+    });
+
+    function chosenTiposEstadosAlertas() {
+
+        var link = '@Html.Raw(Url.Action("GetTipoEstadoAlertas", "Filter", new { tiposSel = "VARtiposSel"}))';
+        link = link.replace("VARtiposSel", ConcatenaValoresChosen("TiposAlertas"));
+        requestAjaxTiposEstadosAlertas(link)
+    }
+    function requestAjaxTiposEstadosAlertas(link) {
+        $("#TiposEstadosAlertas").ajaxChosen({
+            type: 'GET',
+            url: link,
+            minTermLength: 0,
+            dataType: 'json'
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+
+        },
+        {
+            //options
+            disable_search_threshold: -1
+        });
+    }
+    $('#TiposEstadosAlertas').change(function () {
+
+        //LimpiaFiltroChosen("TiposAlertas");
+        LimpiaFiltroChosen("TiposAccionAlerta");
+        //chosenTiposAlertas();
+        chosenTiposAccionAlerta();
+
+
+    });
+
+</script>

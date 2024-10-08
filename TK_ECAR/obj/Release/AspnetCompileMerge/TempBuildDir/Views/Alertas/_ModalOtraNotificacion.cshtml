@@ -1,0 +1,69 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+
+@using (Html.BeginForm("NotificarRespuesta", "Alertas", FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "stripHtml('formNotificar')", @id = "formNotificar" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="modal fade" id="modalOtraNotificacion" role="dialog">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog  vertical-align-center">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="modal-header-logo"></span>
+                        </button>
+                        <h4 class="modal-title" id="modaltitleOtraNotificacion"> </h4>
+                    </div>
+                         
+                    <div class="modal-body" id="modalbodyOtraNotificacion"> 
+                        @*<div id="toast-container"></div>*@      
+                    </div>                             
+                    <div class="modal-footer">
+                        <button type="submit" id="aceptarOtraNotificacion" class="btn btn-default">@resourceView.AccionAceptar</button>
+                        <button type="button" class="btn btn-cancel" data-dismiss="modal">@resourceView.AccionCerrar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+      
+}
+
+    <script type="text/javascript">
+
+
+        $("#formNotificar").submit(function (e) {
+
+            if ($("#formNotificar").valid()) {//validamos el form
+                var formData = new FormData(this);
+
+                $.ajax({
+                    type: this.method,
+                    url: this.action,
+                    data: formData,
+                    contentType: false,
+                    processData: false
+
+                }).done(function (data, textStatus, jqXHR) {
+                    if (data == 'Success') {
+
+                        tableAlertas.ajax.reload(null, false);
+
+                        notify('@resourceView.toastrInfAccionOK', 'i');
+
+
+                        $('#modalOtraNotificacion').modal('hide');
+
+                    }
+                    else {
+                        notify(data, 'e');
+                    }
+                });
+            }
+
+            e.preventDefault();
+        });
+
+    </script>

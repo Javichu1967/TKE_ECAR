@@ -1,0 +1,47 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Models
+@model ViaVerdeDatatable
+
+<style>
+    p {
+        width: 100%;
+        padding-right: 2px;
+    }
+</style>
+
+<div class="col-sm-12">
+    <h2> @resourceView.TitleListadoDatosViaVerde </h2>
+</div>
+
+<div class="notice notice-Lightgreen">
+    <div class="row">
+        <div class="form-group">
+            @Html.LabelFor(model => model.TOTAL_IMPORTE, new { @class = "control-label col-sm-2", @style = "font-weight:bold" })
+            <div class="col-sm-2">
+                @Html.DisplayFor(model => model.TOTAL_IMPORTE, new { @class = "form-control", @style = "font-weight:bold" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.RequiredLabelFor(model => model.TOTAL_DESCUENTO, new { @class = "control-label col-sm-2", @style = "font-weight:bold" })
+            <div class="col-sm-2">
+                @Html.DisplayFor(model => model.TOTAL_DESCUENTO, new { @class = "form-control", @style = "font-weight:bold" })
+            </div>
+        </div>
+    </div>
+</div>
+
+    <table id="tabledatosViaVerde" class="display responsive" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>@TK_ECAR.Content.resources.ModelsResources.lblViaVerdeF_Entrada</th>
+                <th>@TK_ECAR.Content.resources.ModelsResources.lblViaVerdeLugarEntrada</th>
+                <th>@TK_ECAR.Content.resources.ModelsResources.lblViaVerdeF_Salida</th>
+                <th>@TK_ECAR.Content.resources.ModelsResources.lblViaVerdeLugarSalida</th>
+                <th>@TK_ECAR.Content.resources.ModelsResources.lblViaVerdeRefPago</th>
+                <th>@TK_ECAR.Content.resources.ModelsResources.lblViaVerdeOperador</th>
+                <th>@TK_ECAR.Content.resources.ModelsResources.lblImporte</th>
+                <th>@TK_ECAR.Content.resources.ModelsResources.lblViaVerdeDescuento</th>
+            </tr>
+        </thead>
+    </table>

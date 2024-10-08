@@ -1,0 +1,54 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<select id="DireccionTerritorial" title=@resourceView.LSelectDT multiple="multiple" class="form-control">
+    <option></option>
+</select>
+
+<style type="text/css">
+    #DireccionTerritorial {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+<script type="text/javascript">
+
+    $(function() {
+        chosenDirTerritorial();
+    });
+
+    function chosenDirTerritorial(parametro) {
+        var link = '@Html.Raw(Url.Action("GetDireccionesTerritoriales", "Filter", new { empresasSel = "empSel"}))';
+        link = link.replace("empSel", ConcatenaValoresChosen("Empresa"));
+        $('#DireccionTerritorial').prepend($('<option></option>').html('@resourceView.msgCargando'));
+        $("#DireccionTerritorial").ajaxChosen({
+            type: 'GET',
+            url: link,
+            minTermLength: 0,
+            dataType: 'json'
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+
+        },
+            {
+                //options
+                disable_search_threshold: -1,
+
+            });
+
+    }
+
+    $('#DireccionTerritorial').change(function () {
+
+        LimpiaFiltroChosen("Delegacion");
+        LimpiaFiltroChosen("CentroCoste");
+
+        chosenDelegacion();
+        chosenCentroCoste();
+
+    });
+
+</script>

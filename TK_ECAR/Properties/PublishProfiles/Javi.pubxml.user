@@ -1,0 +1,894 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo es utilizado por el proceso de paquete/publicación de nuestro proyecto Web. Puede personalizar el comportamiento de este proceso
+editando este archivo MSBuild. Para conocer más acerca de esto, visite http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Workspaces\Projects\TK_ECAR_PUBLICACION\</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="App_Data/data.txt">
+      <publishTime>10/10/2017 17:50:07</publishTime>
+    </File>
+    <File Include="App_Data/manual/TKE_WEBAPP_USERMAN_ECAR_V1.pdf">
+      <publishTime>10/10/2017 17:50:07</publishTime>
+    </File>
+    <File Include="App_Data/manual/TKE_WEBAPP_USERMAN_ECAR_V2.pdf">
+      <publishTime>10/10/2017 17:50:07</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>10/10/2017 17:49:57</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.compiled">
+      <publishTime>12/14/2017 12:47:31</publishTime>
+    </File>
+    <File Include="bin/App_global.asax.dll">
+      <publishTime>12/14/2017 12:47:31</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>10/10/2017 17:49:58</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>10/10/2017 17:49:58</publishTime>
+    </File>
+    <File Include="bin/EPPlus.dll">
+      <publishTime>10/10/2017 17:50:05</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Helpers.resources.dll">
+      <publishTime>10/10/2017 17:50:02</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Mvc.resources.dll">
+      <publishTime>10/10/2017 17:50:02</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Optimization.resources.dll">
+      <publishTime>10/10/2017 17:50:02</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.Razor.resources.dll">
+      <publishTime>10/10/2017 17:50:02</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.WebPages.Deployment.resources.dll">
+      <publishTime>10/10/2017 17:50:02</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.WebPages.Razor.resources.dll">
+      <publishTime>10/10/2017 17:50:02</publishTime>
+    </File>
+    <File Include="bin/es/System.Web.WebPages.resources.dll">
+      <publishTime>10/10/2017 17:50:02</publishTime>
+    </File>
+    <File Include="bin/itextsharp.dll">
+      <publishTime>10/10/2017 17:49:58</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>10/10/2017 17:50:01</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.Core.dll">
+      <publishTime>10/10/2017 17:50:02</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.SystemWeb.dll">
+      <publishTime>10/10/2017 17:50:02</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>10/10/2017 17:50:02</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>10/10/2017 17:50:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>10/10/2017 17:50:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>10/10/2017 17:50:03</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>10/10/2017 17:50:04</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>10/10/2017 17:50:04</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>10/10/2017 17:50:04</publishTime>
+    </File>
+    <File Include="bin/PostSharp.dll">
+      <publishTime>10/10/2017 17:50:04</publishTime>
+    </File>
+    <File Include="bin/pt-PT/TK_ECAR.resources.dll">
+      <publishTime>12/14/2017 12:47:18</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>10/10/2017 17:50:02</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>10/10/2017 17:50:03</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>10/10/2017 17:50:03</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>10/10/2017 17:50:03</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>10/10/2017 17:50:03</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>10/10/2017 17:50:02</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>10/10/2017 17:50:03</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>10/10/2017 17:50:03</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>10/10/2017 17:50:03</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>10/10/2017 17:50:03</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>10/10/2017 17:50:03</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>10/10/2017 17:50:03</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>07/24/2015 14:15:58</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>10/10/2017 17:50:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>10/10/2017 17:50:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>10/10/2017 17:50:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>10/10/2017 17:50:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>10/10/2017 17:50:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>10/10/2017 17:50:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>10/10/2017 17:50:02</publishTime>
+    </File>
+    <File Include="bin/TKSeguridad.dll">
+      <publishTime>10/10/2017 17:50:05</publishTime>
+    </File>
+    <File Include="bin/TKUtilidades.dll">
+      <publishTime>10/10/2017 17:50:05</publishTime>
+    </File>
+    <File Include="bin/TK_ECAR.dll">
+      <publishTime>12/14/2017 12:47:18</publishTime>
+    </File>
+    <File Include="bin/TK_ECAR.Domain.dll">
+      <publishTime>11/22/2017 16:27:21</publishTime>
+    </File>
+    <File Include="bin/TK_ECAR.Framework.dll">
+      <publishTime>12/14/2017 12:47:11</publishTime>
+    </File>
+    <File Include="bin/TK_ECAR.Infraestructure.dll">
+      <publishTime>11/22/2017 16:27:23</publishTime>
+    </File>
+    <File Include="bin/TK_ECAR.Monitorizacion.exe">
+      <publishTime>12/14/2017 12:47:12</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>10/10/2017 17:50:05</publishTime>
+    </File>
+    <File Include="Content/img/Application/244__service_RGB_blue.png">
+      <publishTime>10/10/2017 17:50:08</publishTime>
+    </File>
+    <File Include="Content/img/Application/285__General_Partner_RGB_blue_small.png">
+      <publishTime>10/10/2017 17:50:08</publishTime>
+    </File>
+    <File Include="Content/img/Application/309__refuel_RGB_blue.png">
+      <publishTime>10/10/2017 17:50:08</publishTime>
+    </File>
+    <File Include="Content/img/Application/38__Automotive_Driver_RGB_blue.png">
+      <publishTime>10/10/2017 17:50:08</publishTime>
+    </File>
+    <File Include="Content/img/Application/38__Drivers_RGB_blue.png">
+      <publishTime>10/10/2017 17:50:08</publishTime>
+    </File>
+    <File Include="Content/img/Application/38__Import_vehicles_RGB_blue.png">
+      <publishTime>06/05/2017 12:30:39</publishTime>
+    </File>
+    <File Include="Content/img/Application/5__Actions_show_RGB_blue.png">
+      <publishTime>10/10/2017 17:50:08</publishTime>
+    </File>
+    <File Include="Content/img/Application/Automotive_RGB_blue.png">
+      <publishTime>10/10/2017 17:50:08</publishTime>
+    </File>
+    <File Include="Content/img/Application/CarnetConducirVacio.jpg">
+      <publishTime>10/10/2017 17:50:08</publishTime>
+    </File>
+    <File Include="Content/img/Application/categ_blue.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/Communication_speech bubble helpline_RGB_blue.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/Customer_Stakeholder_Building_Managers_RGB_blue_large.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/details_close.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/details_open.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/doc_blue.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/faq_blue.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/Files_document desk_RGB_blue.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/Files_document_RGB_blue.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/gestion_categ_blue.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/gestion_doc_blue.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/gestion_faq_blue.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/gestion_telfrec_blue.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/gestor_flota.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/gestor_flota_gest.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/Import_vehicles_RGB_blue.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/Information_quiz_RGB_blue.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/loader.gif">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/loading-icon_original.gif">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/Logo-TK_2x_mail.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/MatriculaE.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/matriculaEspana.png">
+      <publishTime>11/02/2017 16:28:25</publishTime>
+    </File>
+    <File Include="Content/img/Application/matriculaEspaña-baja.png">
+      <publishTime>11/02/2017 17:56:31</publishTime>
+    </File>
+    <File Include="Content/img/Application/matriculaEspaña-sucess.png">
+      <publishTime>11/02/2017 17:52:46</publishTime>
+    </File>
+    <File Include="Content/img/Application/matriculaEspaña.png">
+      <publishTime>11/03/2017 09:47:54</publishTime>
+    </File>
+    <File Include="Content/img/Application/matriculaPortugal-baja.png">
+      <publishTime>11/02/2017 18:05:59</publishTime>
+    </File>
+    <File Include="Content/img/Application/matriculaPortugal.png">
+      <publishTime>11/02/2017 18:05:16</publishTime>
+    </File>
+    <File Include="Content/img/Application/MiFlota_Blue.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/miveh_blue.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/Others_RGB_blue.png">
+      <publishTime>10/10/2017 17:50:09</publishTime>
+    </File>
+    <File Include="Content/img/Application/People_identity card_RGB_blue.png">
+      <publishTime>10/10/2017 17:50:10</publishTime>
+    </File>
+    <File Include="Content/img/Application/Performance_Customized_Design_RGB_blue_large.png">
+      <publishTime>10/10/2017 17:50:10</publishTime>
+    </File>
+    <File Include="Content/img/Application/service_RGB_blue.png">
+      <publishTime>10/10/2017 17:50:10</publishTime>
+    </File>
+    <File Include="Content/img/Application/sinImagen.jpg">
+      <publishTime>10/10/2017 17:50:10</publishTime>
+    </File>
+    <File Include="Content/img/Application/telfrec_blue.png">
+      <publishTime>10/10/2017 17:50:10</publishTime>
+    </File>
+    <File Include="Content/img/Application/tk_icon_osh_Einsatz_und_Engagement_RGB_blue_large.png">
+      <publishTime>10/10/2017 17:50:10</publishTime>
+    </File>
+    <File Include="Content/img/Application/TK_Trucks_RGB_blue.png">
+      <publishTime>10/10/2017 17:50:10</publishTime>
+    </File>
+    <File Include="Content/scripts/Application/customannotation.js">
+      <publishTime>10/10/2017 17:50:11</publishTime>
+    </File>
+    <File Include="Content/scripts/Application/DataTableUtilities.js">
+      <publishTime>10/10/2017 17:50:10</publishTime>
+    </File>
+    <File Include="Content/scripts/Application/DNI_NIF_CIF_Utilities.js">
+      <publishTime>10/10/2017 17:50:11</publishTime>
+    </File>
+    <File Include="Content/scripts/Application/FilterUtilities.js">
+      <publishTime>10/10/2017 17:50:11</publishTime>
+    </File>
+    <File Include="Content/scripts/Application/Global.js">
+      <publishTime>10/10/2017 17:50:11</publishTime>
+    </File>
+    <File Include="Content/scripts/Application/jquery.form.js">
+      <publishTime>10/10/2017 17:50:11</publishTime>
+    </File>
+    <File Include="Content/scripts/Application/resetValidation.js">
+      <publishTime>10/10/2017 17:50:11</publishTime>
+    </File>
+    <File Include="Content/scripts/Application/toastrUtilities.js">
+      <publishTime>10/10/2017 17:50:11</publishTime>
+    </File>
+    <File Include="Content/scripts/bootstrap-dialog.js">
+      <publishTime>10/10/2017 17:50:11</publishTime>
+    </File>
+    <File Include="Content/scripts/signalR/jquery.signalR-2.2.2.js">
+      <publishTime>10/10/2017 17:50:11</publishTime>
+    </File>
+    <File Include="Content/scripts/signalR/jquery.signalR-2.2.2.min.js">
+      <publishTime>10/10/2017 17:50:11</publishTime>
+    </File>
+    <File Include="Content/styles/Application/Application.css">
+      <publishTime>11/29/2017 18:13:58</publishTime>
+    </File>
+    <File Include="Content/styles/bootstrap-dialog.css">
+      <publishTime>10/10/2017 17:50:11</publishTime>
+    </File>
+    <File Include="Content/styles/Site.css">
+      <publishTime>10/16/2017 10:18:44</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>10/10/2017 17:50:06</publishTime>
+    </File>
+    <File Include="log4net.xml">
+      <publishTime>10/10/2017 17:50:06</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/10/2017 17:50:06</publishTime>
+    </File>
+    <File Include="PrecompiledApp.config">
+      <publishTime>12/14/2017 12:47:22</publishTime>
+    </File>
+    <File Include="Service References/ServiceIncidentManagement/TK_ECAR.ServiceIncidentManagement.DatosUsuario.datasource">
+      <publishTime>10/10/2017 17:50:12</publishTime>
+    </File>
+    <File Include="Views/Alertas/Index.cshtml">
+      <publishTime>11/22/2017 13:31:06</publishTime>
+    </File>
+    <File Include="Views/Alertas/_CambioConductor.cshtml">
+      <publishTime>10/10/2017 17:50:12</publishTime>
+    </File>
+    <File Include="Views/Alertas/_ConfirmarConductorMulta.cshtml">
+      <publishTime>10/10/2017 17:50:12</publishTime>
+    </File>
+    <File Include="Views/Alertas/_DatosMulta.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Alertas/_ModalCambioConductor.cshtml">
+      <publishTime>10/10/2017 17:50:12</publishTime>
+    </File>
+    <File Include="Views/Alertas/_ModalOtraNotificacion.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Alertas/_ModalRenovacion.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Alertas/_ModalRenovarRenting.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Alertas/_ModalSolicitud.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Alertas/_ModalValidarSolicitud.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Alertas/_NotificarRenting.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Alertas/_NotificarRobo.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Alertas/_OtraNotificacion.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Alertas/_RenovarCarnet.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Alertas/_RenovarITV.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Alertas/_SolicitudSOLRED.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/BorrarImportacion/Index.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Categorias/Index.cshtml">
+      <publishTime>11/22/2017 12:03:48</publishTime>
+    </File>
+    <File Include="Views/Categorias/_MantenimientoCategorias.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Categorias/_ModalCategorias.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/CategoriasPreguntas/Index.cshtml">
+      <publishTime>11/22/2017 12:03:48</publishTime>
+    </File>
+    <File Include="Views/CategoriasPreguntas/_MantenimientoCategoriasPreguntas.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/CategoriasPreguntas/_ModalCategoriasPreguntas.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Conductores/Index.cshtml">
+      <publishTime>11/22/2017 13:23:16</publishTime>
+    </File>
+    <File Include="Views/Conductores/_MantenimientoConductor.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Conductores/_ModalConductores.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Documentos/Index.cshtml">
+      <publishTime>11/23/2017 12:33:14</publishTime>
+    </File>
+    <File Include="Views/Documentos/VerDocumentacion.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Documentos/_BorrarDocumentacion.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Documentos/_MantenimientoDocumentacion.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Documentos/_ModalDocumentacion.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/EmpresasVehiculos/Index.cshtml">
+      <publishTime>11/22/2017 12:03:48</publishTime>
+    </File>
+    <File Include="Views/EmpresasVehiculos/_MantenimientoEmpresa.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/EmpresasVehiculos/_ModalEmpresa.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Error/ApplicationNotAvailable.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Error/BrowserNotSupported.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Error/EntityExpception.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Error/Error404.cshtml.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Error/ProfileNotDefined.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Error/UnauthorizedAccess.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Facturacion/Index.cshtml">
+      <publishTime>11/22/2017 12:54:04</publishTime>
+    </File>
+    <File Include="Views/GestoresFlota/Index.cshtml">
+      <publishTime>11/22/2017 12:03:48</publishTime>
+    </File>
+    <File Include="Views/GestoresFlota/VerGestorFlota.cshtml">
+      <publishTime>11/22/2017 12:03:48</publishTime>
+    </File>
+    <File Include="Views/GestoresFlota/_BorrarGestorFlota.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/GestoresFlota/_MantenimientoGestorFlota.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/GestoresFlota/_ModalGestorFlota.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/ImportarConsumoCombustible/Index.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/ImportarFlota/Index.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/ImportarGALP/Index.cshtml">
+      <publishTime>07/10/2017 10:39:00</publishTime>
+    </File>
+    <File Include="Views/ImportarLeasing/Index.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/ImportarViaVerde/Index.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Informes/InfAltaBajaFechaContrato.cshtml">
+      <publishTime>11/22/2017 12:54:04</publishTime>
+    </File>
+    <File Include="Views/jsTree3/AJAXDemo.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/jsTree3/Demo.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/MiFlota/FichaConductor.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/MiFlota/FichaDatosGenerales.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/MiFlota/Index.cshtml">
+      <publishTime>12/04/2017 18:38:13</publishTime>
+    </File>
+    <File Include="Views/MiFlota/_ModalMtoITV.cshtml">
+      <publishTime>09/29/2017 09:14:20</publishTime>
+    </File>
+    <File Include="Views/MiFlota/_ModalMtoVehiculo.cshtml">
+      <publishTime>09/29/2017 09:14:20</publishTime>
+    </File>
+    <File Include="Views/MiFlota/_MtoDatosContratoVehiculo.cshtml">
+      <publishTime>09/29/2017 09:14:20</publishTime>
+    </File>
+    <File Include="Views/MiFlota/_MtoDatosGeneralesVehiculo.cshtml">
+      <publishTime>09/29/2017 09:14:20</publishTime>
+    </File>
+    <File Include="Views/MiFlota/_MtoDatosITV_Vehiculo.cshtml">
+      <publishTime>09/29/2017 09:14:20</publishTime>
+    </File>
+    <File Include="Views/MiFlota/_MtoDatosObservacionVehiculo.cshtml">
+      <publishTime>09/29/2017 09:14:20</publishTime>
+    </File>
+    <File Include="Views/MiFlota/_MtoDatosSeguroVehiculo.cshtml">
+      <publishTime>09/29/2017 09:14:20</publishTime>
+    </File>
+    <File Include="Views/MiFlota/_MtoITV.cshtml">
+      <publishTime>09/29/2017 09:14:20</publishTime>
+    </File>
+    <File Include="Views/MiFlota/_MtoVehiculo.cshtml">
+      <publishTime>09/29/2017 09:14:20</publishTime>
+    </File>
+    <File Include="Views/MiVehiculo/Index.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/MiVehiculo/_Conductor.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/MiVehiculo/_DatosContrato.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/MiVehiculo/_DatosGenerales.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/MiVehiculo/_DatosITV.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/MiVehiculo/_DatosMulta.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/MiVehiculo/_DatosRenting.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/MiVehiculo/_DatosSOLRED.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/MiVehiculo/_DatosViaVerde.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/MiVehiculo/_Documentacion.cshtml">
+      <publishTime>11/22/2017 12:03:48</publishTime>
+    </File>
+    <File Include="Views/MiVehiculo/_DocumentacionVehiculoAlta.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/MiVehiculo/_DocumentacionVehiculoModal.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/MiVehiculo/_Vehiculo.cshtml">
+      <publishTime>11/13/2017 17:58:52</publishTime>
+    </File>
+    <File Include="Views/MtoGenericoTipos/Index.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/MtoGenericoTipos/_ModalMtoGenericoTipos.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/MtoGenericoTipos/_MtoGenericoTipos.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/PreavisosAlertas/Index.cshtml">
+      <publishTime>11/22/2017 12:03:48</publishTime>
+    </File>
+    <File Include="Views/PreavisosAlertas/_MantenimientoPreaviso.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/PreavisosAlertas/_ModalPreaviso.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/PreguntasFrecuentes/Index.cshtml">
+      <publishTime>11/22/2017 12:03:48</publishTime>
+    </File>
+    <File Include="Views/PreguntasFrecuentes/VerPreguntasFrecuentes.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/PreguntasFrecuentes/_BorrarPregunta.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/PreguntasFrecuentes/_MantenimientoPregunta.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/PreguntasFrecuentes/_ModalPreguntas.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Shared/DisplayTemplates/Currency.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/DisplayTemplates/Date.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/DisplayTemplates/Empleado.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/DisplayTemplates/Matricula.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/DisplayTemplates/NumEmpleado.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/DisplayTemplates/YesNo.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/AgrupacionesFiltro.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/CalendarMonthYear.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/CarburanteChosen.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/CentroCosteChosen.cshtml">
+      <publishTime>11/22/2017 12:54:04</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/CentroCosteConductor.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/CentrosCoste.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/Conductor.cshtml">
+      <publishTime>11/22/2017 12:54:03</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/ConductoresIdChosen.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/Currency.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/Date.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/Delegaciones.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/DelegacionesChosen.cshtml">
+      <publishTime>11/22/2017 12:54:03</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/DepartamentosChosen.cshtml">
+      <publishTime>10/11/2017 10:16:55</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/DireccionesTerritoriales.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/Empleado.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/EmpresaChosen.cshtml">
+      <publishTime>10/11/2017 11:34:04</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/EmpresaEmisoraTarjeta.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/Empresas.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/EstadoVehiculoFiltro.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/LeasingMultiChosen.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/LeasingSeguroChosen.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/MarcaVehiculoChosen.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/MarcaVehiculoMultiChosen.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/Matricula.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/MatriculaSustituidaChosen.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/ModeloVehiculoChosen.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/ModeloVehiculoMultiChosen.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/ModeloVehiculoSeleccion.cshtml">
+      <publishTime>09/29/2017 09:14:21</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/NombreArchivoParaBorrarChosen.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/NumEmpleado.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/TarjetaCombustibleChosen.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/TipoDocIdentificacion.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/TipoLiquidacionChosen.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/TipoRutaChosen.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/TiposAccionAlerta.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/TiposAlertas.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/TipoSeguroChosen.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/TiposEstadosAlertas.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/TipoVehiculoChosen.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/UbicacionesChosen.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/Upload.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/UploadMofificado.cshtml">
+      <publishTime>11/29/2017 16:52:09</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/YesNo.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/MantenimientoVehiculo/_ModalMtoITV.cshtml">
+      <publishTime>11/22/2017 16:42:41</publishTime>
+    </File>
+    <File Include="Views/Shared/MantenimientoVehiculo/_ModalMtoVehiculo.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/MantenimientoVehiculo/_MtoDatosContratoVehiculo.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/MantenimientoVehiculo/_MtoDatosGeneralesVehiculo.cshtml">
+      <publishTime>10/11/2017 11:27:39</publishTime>
+    </File>
+    <File Include="Views/Shared/MantenimientoVehiculo/_MtoDatosITV_Vehiculo.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/MantenimientoVehiculo/_MtoDatosObservacionVehiculo.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/MantenimientoVehiculo/_MtoDatosSeguroVehiculo.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/MantenimientoVehiculo/_MtoITV.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/MantenimientoVehiculo/_MtoVehiculo.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Shared/_CustomValidationSummary.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/_CustomValidationSummaryBis.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/_DatosIncidencia.cshtml">
+      <publishTime>11/29/2017 17:03:21</publishTime>
+    </File>
+    <File Include="Views/Shared/_FilterAlertas.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/_FilterInformeFlota.cshtml">
+      <publishTime>10/10/2017 17:50:13</publishTime>
+    </File>
+    <File Include="Views/Shared/_Filters.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/_Footer.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/_Header.cshtml">
+      <publishTime>11/29/2017 18:21:34</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>11/22/2017 13:31:23</publishTime>
+    </File>
+    <File Include="Views/Shared/_LayoutMenu.cshtml">
+      <publishTime>10/10/2017 17:50:14</publishTime>
+    </File>
+    <File Include="Views/Shared/_ModalAbrirIncidencia.cshtml">
+      <publishTime>11/29/2017 16:56:30</publishTime>
+    </File>
+    <File Include="Views/Shared/_Progress.cshtml">
+      <publishTime>11/22/2017 12:54:04</publishTime>
+    </File>
+    <File Include="Views/TarjetasCombustible/Index.cshtml">
+      <publishTime>11/22/2017 12:03:48</publishTime>
+    </File>
+    <File Include="Views/TarjetasCombustible/_MantenimientoTarjeta.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/TarjetasCombustible/_ModalTarjeta.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/TelefonosFrecuentes/Index.cshtml">
+      <publishTime>11/22/2017 12:03:48</publishTime>
+    </File>
+    <File Include="Views/TelefonosFrecuentes/_BorrarTelefono.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/TelefonosFrecuentes/_MantenimientoTelefonos.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/TelefonosFrecuentes/_ModalTelefonos.cshtml">
+      <publishTime>10/10/2017 17:50:15</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>10/10/2017 17:50:12</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>10/10/2017 17:50:12</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>11/30/2017 08:54:09</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

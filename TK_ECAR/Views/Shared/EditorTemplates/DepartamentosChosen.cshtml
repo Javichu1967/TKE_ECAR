@@ -1,0 +1,78 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<select id="miDepartamento" title=@resourceView.LSelectCompany search class="form-control" data-placeholder=@resourceView.placeholderChosen puedeDeshabilitarse = "SI">
+    <option></option>
+</select>
+<style type="text/css">
+    #miDepartamento_chosen {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+<script type="text/javascript">
+
+    if ($("#IDDepartamento").val() != '') {
+        SeleccionaDepartamento();
+    }
+
+    function SeleccionaDepartamento() {
+        var uRl = '@Html.Raw(@Url.Action("GetDepartamentoByID_Chosen", "MiFlota", new { idDepartamento = "iddepartamentochosen" }))';
+        uRl = uRl.replace("iddepartamentochosen", $("#IDDepartamento").val());
+        $.ajax({
+            "url": uRl,
+            "dataType": 'json',
+            "async": false,
+            "success": function (data, t, x) {
+                $.each(data, function (i, val) {
+                    var $opt = $('<option value="' + val.value + '" selected="selected">').html(val.text);
+                    $('#miDepartamento').append($opt);
+                });
+
+                $("#miDelegacion").trigger("chosen:updated");
+            }
+        });
+    }
+
+    DepartamentoChosen();
+
+    function DepartamentoChosen(DespuesDeBorrado) {
+        var uRl = '@Html.Raw(@Url.Action("GetDepartamentoByEmpresa", "MiFlota", new { idEmpresa = "idempresachosen" }))';
+        uRl = uRl.replace("idempresachosen", $("#IDEmpresa").val());
+
+        if (DespuesDeBorrado == undefined || DespuesDeBorrado == false) {
+            $('#miDepartamento').prepend($('<option></option>').html('@resourceView.msgCargando'));
+        }
+        $("#miDepartamento").ajaxChosen({
+            type: 'GET',
+            url: uRl, @*'@Url.Action("GetDelegaciones", "MiFlotaController")',*@
+            async: true,
+            beforeSend: function (data, textStatus, jqXHR) {
+                $("#miDepartamento_chosen span").addClass('loading-Chosen')
+            },
+            complete: function (data, textStatus, jqXHR) {
+                $("#miDepartamento_chosen span").removeClass('loading-Chosen');
+            },
+            minTermLength: 0,
+            dataType: 'json'
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+
+        },
+            {
+                //options
+                disable_search_threshold: -1,
+                allow_single_deselect: true,
+            });
+    }
+    //Pasar como parámetro a chosen el filtro de lo que se quiere.
+    $('#miDepartamento').change(function () {
+        $("#Departamento").val(this.value);
+        $("#IDDepartamento").val(this.value);
+    });
+
+
+</script>

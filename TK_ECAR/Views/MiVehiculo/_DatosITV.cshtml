@@ -1,0 +1,97 @@
+﻿ @*<table id="tabledatositv" cellspacing="0" width="100%">
+
+    <tbody>
+        <tr><td colspan="4"><h2>Datos ITV</h2></td></tr>
+        <tr>
+            <td><strong>Última ITV</strong></td>
+            <td><strong>Vcto. ITV</strong></td>
+            <td><strong>Tarifa</strong></td>
+            <td><strong>Tasa</strong></td>
+        </tr>
+        <tr>
+            <td>19/06/2013</td>
+            <td>19/06/2015</td>
+            <td>36,64 €</td>
+            <td>3,70 €</td>
+        </tr>
+        <tr>
+            <td><strong>Importe</strong></td>
+            <td><strong>Prima Conserv.</strong></td>
+            <td><strong>Imp. Circul.</strong></td>
+
+        </tr>
+        <tr>
+            <td>49,03 €</td>
+            <td>TALAVERA</td>
+            <td>P.V.</td>
+        </tr>
+        <tr><td colspan="5"><h2>Observaciones</h2></td></tr>
+        <tr>
+            <td>Esto en un campo de observaciones </td>
+        </tr>
+    </tbody>
+</table>*@
+
+@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Models
+@model DatosITVModel
+
+<style>
+    p {
+        width: 100%;
+        padding-right: 2px;
+    }
+</style>
+<div class="notice notice-Lightgreen">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>@resourceView.TabDatosITV</h2>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <strong>@Html.LabelFor(model => model.FechaUltimaITV)</strong>
+            <p>@Html.DisplayFor(model => model.FechaUltimaITV)</p>
+        </div>
+        <div class="col-sm-3">
+            <strong>@Html.LabelFor(model => model.FechaVtoITV)</strong>
+            <p>@Html.DisplayFor(model => model.FechaVtoITV)</p>
+        </div>
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.TarifaITV)</strong>
+            <p>@Html.DisplayFor(model => model.TarifaITV)</p>
+        </div>
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.TasaITV)</strong>
+            <p>@Html.DisplayFor(model => model.TasaITV)</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.ImporteITV)</strong>
+            <p>@Html.DisplayFor(model => model.ImporteITV)</p>
+        </div>
+        @*<div class="col-sm-2">
+                <strong>@Html.LabelFor(model => model.PrimaConservacionITV)</strong>
+                <p>@Html.DisplayFor(model => model.PrimaConservacionITV)</p>
+            </div>*@
+        <div class="col-sm-2">
+            <strong>@Html.LabelFor(model => model.ImporteCirculacionITV)</strong>
+            <p>@Html.DisplayFor(model => model.ImporteCirculacionITV)</p>
+        </div>
+    </div>
+</div>
+
+<div class="notice notice-Lightgreen">
+    <div class="row">
+        <div class="col-sm-12">
+            <h2>@Html.LabelFor(model => model.Observaciones)</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            @Html.DisplayFor(model => model.Observaciones)
+        </div>
+    </div>
+</div>

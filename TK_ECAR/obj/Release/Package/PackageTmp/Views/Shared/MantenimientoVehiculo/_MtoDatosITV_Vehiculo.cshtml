@@ -1,0 +1,69 @@
+﻿@using resourceView = TK_ECAR.Content.resources
+@using TK_ECAR.Framework
+
+@{
+    var Accion = ViewData["AccionEntity"].ToString();
+}
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="info">
+            @{
+                var actionLink = Ajax.ActionLink("JSTITLEMODAL", "NuevaITV", "MiFlota", new { },
+                        new AjaxOptions
+                        {
+                            UpdateTargetId = "modalbodyMtoITV",
+                            OnSuccess = "showModalNuevaITV();",
+                            OnComplete = "completeModal()",
+                            InsertionMode = InsertionMode.Replace,
+                            OnBegin = "setTitleModalNuevaITV('JSTITLEMODAL')",
+                            HttpMethod = "POST"
+                        }, new { @title = "tooltip", @class = "tk-icon-med icon-tk-plus", @style = "float: right;", @puedeDeshabilitarse = "SI" }).ToString();
+            }
+            @if (Convert.ToInt32(Accion) != (int)EnumAccionEntity.Consulta)
+            {
+                <span id="linkuser" style="float: right;">Nueva ITV</span>
+                    @Html.Raw(actionLink.Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.LNuevaITV).Replace("tooltip", @resourceView.TK_ECAR_Resource.LNuevaITV))
+            }
+        </div>
+        <div style="float:left; margin: 6px; border-bottom: 1px solid #ddd;" class="col-sm-12" width="100%"></div>
+    </div>
+</div>
+
+
+<table id="tableMtoITV" class="display responsive" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>@resourceView.ModelsResources.lblFechaUltimaITV</th>
+            <th>@resourceView.ModelsResources.lblFechaVtoITV</th>
+            <th>@resourceView.ModelsResources.lblITV_Pasada</th>
+            <th>@resourceView.TK_ECAR_Resource.lblAccion</th>
+        </tr>
+    </thead>
+    @*<tbody>
+        <tr>
+            <td>10/11/2016</td>
+            <td></td>
+            <td>Borrar</td>
+        </tr>
+    </tbody>*@
+</table>
+
+<script type="text/javascript">
+
+
+    /*Nuevo-EditarITV**************************/
+    function showModalNuevaITV() {
+        $('#modalMtoITV').modal('show');
+    }
+    function setTitleModalNuevaITV(title) {
+        $('#modaltitleMtoITV').text(title);
+    }
+
+    $("#modalMtoITV").on('hidden.bs.modal', function () {
+        $(this).data('bs.modal', null);
+    });
+    /**************************Nuevo-EditarITV*/
+
+</script>

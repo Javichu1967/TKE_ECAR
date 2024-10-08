@@ -1,0 +1,928 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TKE_CARModelStoreContainer" CdmEntityContainer="ModelEntities">
+    <EntitySetMapping Name="T_G_ALERTAS">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_ALERTAS">
+        <MappingFragment StoreEntitySet="T_G_ALERTAS">
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+          <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+          <ScalarProperty Name="MODELO" ColumnName="MODELO" />
+          <ScalarProperty Name="FECHA_VENCIMIENTO" ColumnName="FECHA_VENCIMIENTO" />
+          <ScalarProperty Name="ID_CECO" ColumnName="ID_CECO" />
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+          <ScalarProperty Name="FICHERO" ColumnName="FICHERO" />
+          <ScalarProperty Name="MATRICULA" ColumnName="MATRICULA" />
+          <ScalarProperty Name="ID_ACCION" ColumnName="ID_ACCION" />
+          <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+          <ScalarProperty Name="ID_TIPO_ALERTA" ColumnName="ID_TIPO_ALERTA" />
+          <ScalarProperty Name="ID_ALERTA" ColumnName="ID_ALERTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_ALERTAS_RENOVACION_CARNET">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_ALERTAS_RENOVACION_CARNET">
+        <MappingFragment StoreEntitySet="T_G_ALERTAS_RENOVACION_CARNET">
+          <ScalarProperty Name="FICHERO_CARNET" ColumnName="FICHERO_CARNET" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="CONDUCTOR" ColumnName="CONDUCTOR" />
+          <ScalarProperty Name="COD_CONDUCTOR" ColumnName="COD_CONDUCTOR" />
+          <ScalarProperty Name="FECHA_CADUCIDAD_CARNET" ColumnName="FECHA_CADUCIDAD_CARNET" />
+          <ScalarProperty Name="ID_ALERTA" ColumnName="ID_ALERTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_ALERTAS_RENOVACION_ITV">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_ALERTAS_RENOVACION_ITV">
+        <MappingFragment StoreEntitySet="T_G_ALERTAS_RENOVACION_ITV">
+          <ScalarProperty Name="FICHERO_ITV" ColumnName="FICHERO_ITV" />
+          <ScalarProperty Name="FECHA_CADUCIDAD_ITV" ColumnName="FECHA_CADUCIDAD_ITV" />
+          <ScalarProperty Name="FECHA_ITV" ColumnName="FECHA_ITV" />
+          <ScalarProperty Name="ID_ALERTA" ColumnName="ID_ALERTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_ALERTAS_ROBO">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_ALERTAS_ROBO">
+        <MappingFragment StoreEntitySet="T_G_ALERTAS_ROBO">
+          <ScalarProperty Name="FECHA_ROBO" ColumnName="FECHA_ROBO" />
+          <ScalarProperty Name="ID_ALERTA" ColumnName="ID_ALERTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_ALERTAS_SOLICITUD_SOLRED">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_ALERTAS_SOLICITUD_SOLRED">
+        <MappingFragment StoreEntitySet="T_G_ALERTAS_SOLICITUD_SOLRED">
+          <ScalarProperty Name="ID_TIPO_SOLICITUD_SOLRED" ColumnName="ID_TIPO_SOLICITUD_SOLRED" />
+          <ScalarProperty Name="FECHA_SOLICITUD" ColumnName="FECHA_SOLICITUD" />
+          <ScalarProperty Name="ID_ALERTA" ColumnName="ID_ALERTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_DOCUMENTACION">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_DOCUMENTACION">
+        <MappingFragment StoreEntitySet="T_G_DOCUMENTACION">
+          <ScalarProperty Name="TIPO_ARCHIVO" ColumnName="TIPO_ARCHIVO" />
+          <ScalarProperty Name="FECHAALTA" ColumnName="FECHAALTA" />
+          <ScalarProperty Name="FICHERO" ColumnName="FICHERO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
+          <ScalarProperty Name="ID_DOCUMENTO" ColumnName="ID_DOCUMENTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_DOCUMENTACION_VEHICULO">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_DOCUMENTACION_VEHICULO">
+        <MappingFragment StoreEntitySet="T_G_DOCUMENTACION_VEHICULO">
+          <ScalarProperty Name="ID_TIPO_ALERTA" ColumnName="ID_TIPO_ALERTA" />
+          <ScalarProperty Name="FECHA_ALTA" ColumnName="FECHA_ALTA" />
+          <ScalarProperty Name="FICHERO" ColumnName="FICHERO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="MATRICULA" ColumnName="MATRICULA" />
+          <ScalarProperty Name="ID_DOCUMENTO" ColumnName="ID_DOCUMENTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_HIST_ALERTAS">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_HIST_ALERTAS">
+        <MappingFragment StoreEntitySet="T_G_HIST_ALERTAS">
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="ID_ACCION" ColumnName="ID_ACCION" />
+          <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+          <ScalarProperty Name="ID_ALERTA" ColumnName="ID_ALERTA" />
+          <ScalarProperty Name="ID_HIST_ALERTA" ColumnName="ID_HIST_ALERTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_HIST_CAMBIOS_CONDUCTOR">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_HIST_CAMBIOS_CONDUCTOR">
+        <MappingFragment StoreEntitySet="T_G_HIST_CAMBIOS_CONDUCTOR">
+          <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+          <ScalarProperty Name="FECHA_ALTA" ColumnName="FECHA_ALTA" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="MATRICULA" ColumnName="MATRICULA" />
+          <ScalarProperty Name="ID_CONDUCTOR_NUEVO" ColumnName="ID_CONDUCTOR_NUEVO" />
+          <ScalarProperty Name="ID_CONDUCTOR_ANT" ColumnName="ID_CONDUCTOR_ANT" />
+          <ScalarProperty Name="ID_HIST_CAMBIOS_CONDUCTOR" ColumnName="ID_HIST_CAMBIOS_CONDUCTOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_MENUS">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_MENUS">
+        <MappingFragment StoreEntitySet="T_G_MENUS">
+          <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+          <ScalarProperty Name="B_ACTIVO" ColumnName="B_ACTIVO" />
+          <ScalarProperty Name="ID_MENU_PARENT" ColumnName="ID_MENU_PARENT" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ORDEN" ColumnName="ORDEN" />
+          <ScalarProperty Name="ID_MENU" ColumnName="ID_MENU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_USUARIOS">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_USUARIOS">
+        <MappingFragment StoreEntitySet="T_G_USUARIOS">
+          <ScalarProperty Name="B_ACTIVO" ColumnName="B_ACTIVO" />
+          <ScalarProperty Name="B_RECIBIR_ALERTA_EMAIL" ColumnName="B_RECIBIR_ALERTA_EMAIL" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="ID_PERFIL" ColumnName="ID_PERFIL" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="LOGIN" ColumnName="LOGIN" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_USUARIOS_CECO">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_USUARIOS_CECO">
+        <MappingFragment StoreEntitySet="T_G_USUARIOS_CECO">
+          <ScalarProperty Name="ID_CECO" ColumnName="ID_CECO" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_USUARIOS_DELEGACION">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_USUARIOS_DELEGACION">
+        <MappingFragment StoreEntitySet="T_G_USUARIOS_DELEGACION">
+          <ScalarProperty Name="ID_DELEGACION" ColumnName="ID_DELEGACION" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_USUARIOS_DIR_TERRITORIAL">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_USUARIOS_DIR_TERRITORIAL">
+        <MappingFragment StoreEntitySet="T_G_USUARIOS_DIR_TERRITORIAL">
+          <ScalarProperty Name="ID_DT" ColumnName="ID_DT" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_USUARIOS_EMPRESAS">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_USUARIOS_EMPRESAS">
+        <MappingFragment StoreEntitySet="T_G_USUARIOS_EMPRESAS">
+          <ScalarProperty Name="ID_EMPRESA" ColumnName="ID_EMPRESA" />
+          <ScalarProperty Name="ID_USUARIO" ColumnName="ID_USUARIO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_ACCIONES">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_ACCIONES">
+        <MappingFragment StoreEntitySet="T_M_ACCIONES">
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_ACCION" ColumnName="ID_ACCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_CATEGORIAS">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_CATEGORIAS">
+        <MappingFragment StoreEntitySet="T_M_CATEGORIAS">
+          <ScalarProperty Name="BAJA" ColumnName="BAJA" />
+          <ScalarProperty Name="ORDENACION" ColumnName="ORDENACION" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_ESTADOS">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_ESTADOS">
+        <MappingFragment StoreEntitySet="T_M_ESTADOS">
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_PERFILES">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_PERFILES">
+        <MappingFragment StoreEntitySet="T_M_PERFILES">
+          <ScalarProperty Name="B_ACTIVO" ColumnName="B_ACTIVO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_PERFIL" ColumnName="ID_PERFIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_TIPOS_ALERTAS">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_TIPOS_ALERTAS">
+        <MappingFragment StoreEntitySet="T_M_TIPOS_ALERTAS">
+          <ScalarProperty Name="DIAS_PREAVISO" ColumnName="DIAS_PREAVISO" />
+          <ScalarProperty Name="B_AUTOMATICA" ColumnName="B_AUTOMATICA" />
+          <ScalarProperty Name="PRIORIDAD" ColumnName="PRIORIDAD" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_TIPO_ALERTA" ColumnName="ID_TIPO_ALERTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_TIPOS_SOLICITUD_SOLRED">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_TIPOS_SOLICITUD_SOLRED">
+        <MappingFragment StoreEntitySet="T_M_TIPOS_SOLICITUD_SOLRED">
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_TIPO_SOLICITUD_SOLRED" ColumnName="ID_TIPO_SOLICITUD_SOLRED" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_R_PERFILES_MENU">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_R_PERFILES_MENU">
+        <MappingFragment StoreEntitySet="T_R_PERFILES_MENU">
+          <ScalarProperty Name="B_ACTIVO" ColumnName="B_ACTIVO" />
+          <ScalarProperty Name="ID_MENU" ColumnName="ID_MENU" />
+          <ScalarProperty Name="ID_PERFIL" ColumnName="ID_PERFIL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_ALERTAS_OTRAS_NOTIFICACIONES">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_ALERTAS_OTRAS_NOTIFICACIONES">
+        <MappingFragment StoreEntitySet="T_G_ALERTAS_OTRAS_NOTIFICACIONES">
+          <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+          <ScalarProperty Name="FICHERO" ColumnName="FICHERO" />
+          <ScalarProperty Name="ID_TIPO_CLASIFICACION" ColumnName="ID_TIPO_CLASIFICACION" />
+          <ScalarProperty Name="ID_ALERTA" ColumnName="ID_ALERTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_TIPOS_CLASIFICACION">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_TIPOS_CLASIFICACION">
+        <MappingFragment StoreEntitySet="T_M_TIPOS_CLASIFICACION">
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_TIPO_CLASIFICACION" ColumnName="ID_TIPO_CLASIFICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_GESTORES_FLOTA">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_GESTORES_FLOTA">
+        <MappingFragment StoreEntitySet="T_G_GESTORES_FLOTA">
+          <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+          <ScalarProperty Name="FECHA_ALTA" ColumnName="FECHA_ALTA" />
+          <ScalarProperty Name="FOTO" ColumnName="FOTO" />
+          <ScalarProperty Name="TELEFONO2" ColumnName="TELEFONO2" />
+          <ScalarProperty Name="TELEFONO1" ColumnName="TELEFONO1" />
+          <ScalarProperty Name="PUESTO" ColumnName="PUESTO" />
+          <ScalarProperty Name="NUMEROEMPLEADO" ColumnName="NUMEROEMPLEADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_R_ESTADOS_ACCION">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_R_ESTADOS_ACCION">
+        <MappingFragment StoreEntitySet="T_R_ESTADOS_ACCION">
+          <ScalarProperty Name="ID_PERFIL" ColumnName="ID_PERFIL" />
+          <ScalarProperty Name="ID_ESTADO_ANTERIOR" ColumnName="ID_ESTADO_ANTERIOR" />
+          <ScalarProperty Name="ID_ACCION" ColumnName="ID_ACCION" />
+          <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+          <ScalarProperty Name="ID_TIPO_ALERTA" ColumnName="ID_TIPO_ALERTA" />
+          <ScalarProperty Name="ID_ESTADO_ACCION" ColumnName="ID_ESTADO_ACCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_VIA_VERDE_EXTRACTOS">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_VIA_VERDE_EXTRACTOS">
+        <MappingFragment StoreEntitySet="T_G_VIA_VERDE_EXTRACTOS">
+          <ScalarProperty Name="NOMBRE_ARCHIVO_IMPORTACION" ColumnName="NOMBRE_ARCHIVO_IMPORTACION" />
+          <ScalarProperty Name="TOTAL_IVA" ColumnName="TOTAL_IVA" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+          <ScalarProperty Name="AÑO_EMISION" ColumnName="AÑO_EMISION" />
+          <ScalarProperty Name="MES_EMISION" ColumnName="MES_EMISION" />
+          <ScalarProperty Name="ID_EXTRACTO" ColumnName="ID_EXTRACTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_VIA_VERDE_IDENTIFICADORES">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_VIA_VERDE_IDENTIFICADORES">
+        <MappingFragment StoreEntitySet="T_G_VIA_VERDE_IDENTIFICADORES">
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="REF_PAGO" ColumnName="REF_PAGO" />
+          <ScalarProperty Name="MATRICULA" ColumnName="MATRICULA" />
+          <ScalarProperty Name="ID_EXTRACTO" ColumnName="ID_EXTRACTO" />
+          <ScalarProperty Name="IDENTIFICADOR" ColumnName="IDENTIFICADOR" />
+          <ScalarProperty Name="ID_IDENTIFICADOR" ColumnName="ID_IDENTIFICADOR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_CLIENTES">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_CLIENTES">
+        <MappingFragment StoreEntitySet="T_M_CLIENTES">
+          <ScalarProperty Name="CODIGO_POSTAL" ColumnName="CODIGO_POSTAL" />
+          <ScalarProperty Name="LOCALIDAD" ColumnName="LOCALIDAD" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="NIF" ColumnName="NIF" />
+          <ScalarProperty Name="ID_CLIENTE" ColumnName="ID_CLIENTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_VIA_VERDE_TRANSACCIONES">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_VIA_VERDE_TRANSACCIONES">
+        <MappingFragment StoreEntitySet="T_G_VIA_VERDE_TRANSACCIONES">
+          <ScalarProperty Name="NUM_TARJETA" ColumnName="NUM_TARJETA" />
+          <ScalarProperty Name="FECHA_TARJETA" ColumnName="FECHA_TARJETA" />
+          <ScalarProperty Name="TIPO" ColumnName="TIPO" />
+          <ScalarProperty Name="OPERADOR" ColumnName="OPERADOR" />
+          <ScalarProperty Name="PORCENTAJE_IMPUESTO" ColumnName="PORCENTAJE_IMPUESTO" />
+          <ScalarProperty Name="DECUENTO" ColumnName="DECUENTO" />
+          <ScalarProperty Name="IMPORTE" ColumnName="IMPORTE" />
+          <ScalarProperty Name="LUGAR_SALIDA" ColumnName="LUGAR_SALIDA" />
+          <ScalarProperty Name="FECHA_SALIDA" ColumnName="FECHA_SALIDA" />
+          <ScalarProperty Name="LUGAR_ENTRADA" ColumnName="LUGAR_ENTRADA" />
+          <ScalarProperty Name="FECHA_ENTRADA" ColumnName="FECHA_ENTRADA" />
+          <ScalarProperty Name="ID_IDENTIFICADOR" ColumnName="ID_IDENTIFICADOR" />
+          <ScalarProperty Name="ID_TRANSACCION" ColumnName="ID_TRANSACCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_TELEFONOS_FRECUENTES">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_TELEFONOS_FRECUENTES">
+        <MappingFragment StoreEntitySet="T_G_TELEFONOS_FRECUENTES">
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_EMPRESA" ColumnName="ID_EMPRESA" />
+          <ScalarProperty Name="NUMERO_TELEFONO" ColumnName="NUMERO_TELEFONO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_CATEGORIA_PREGUNTAS">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_CATEGORIA_PREGUNTAS">
+        <MappingFragment StoreEntitySet="T_M_CATEGORIA_PREGUNTAS">
+          <ScalarProperty Name="BAJA" ColumnName="BAJA" />
+          <ScalarProperty Name="ORDENACION" ColumnName="ORDENACION" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID_EMPRESA" ColumnName="ID_EMPRESA" />
+          <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_PREGUNTAS_FRECUENTES">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_PREGUNTAS_FRECUENTES">
+        <MappingFragment StoreEntitySet="T_G_PREGUNTAS_FRECUENTES">
+          <ScalarProperty Name="BAJA" ColumnName="BAJA" />
+          <ScalarProperty Name="RESPUESTA" ColumnName="RESPUESTA" />
+          <ScalarProperty Name="PREGUNTA" ColumnName="PREGUNTA" />
+          <ScalarProperty Name="ID_CATEGORIA" ColumnName="ID_CATEGORIA" />
+          <ScalarProperty Name="ID_PREGUNTA" ColumnName="ID_PREGUNTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_MARCA_VEHICULOS">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_MARCA_VEHICULOS">
+        <MappingFragment StoreEntitySet="T_M_MARCA_VEHICULOS">
+          <ScalarProperty Name="BAJA" ColumnName="BAJA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_MARCA" ColumnName="ID_MARCA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_MODELOS_VEHICULO">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_MODELOS_VEHICULO">
+        <MappingFragment StoreEntitySet="T_M_MODELOS_VEHICULO">
+          <ScalarProperty Name="BAJA" ColumnName="BAJA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_MARCA" ColumnName="ID_MARCA" />
+          <ScalarProperty Name="ID_MODELO" ColumnName="ID_MODELO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_RUTA_VEHICULOS">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_RUTA_VEHICULOS">
+        <MappingFragment StoreEntitySet="T_M_RUTA_VEHICULOS">
+          <ScalarProperty Name="BAJA" ColumnName="BAJA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_RUTA_VEHICULO" ColumnName="ID_RUTA_VEHICULO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_TIPOS_CARBURANTE">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_TIPOS_CARBURANTE">
+        <MappingFragment StoreEntitySet="T_M_TIPOS_CARBURANTE">
+          <ScalarProperty Name="BAJA" ColumnName="BAJA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_CARBURANTE" ColumnName="ID_CARBURANTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_TIPOS_VEHICULO">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_TIPOS_VEHICULO">
+        <MappingFragment StoreEntitySet="T_M_TIPOS_VEHICULO">
+          <ScalarProperty Name="TIENE_ITV" ColumnName="TIENE_ITV" />
+          <ScalarProperty Name="BAJA" ColumnName="BAJA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_TIPO_VEHICULO" ColumnName="ID_TIPO_VEHICULO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_UBICACIONES">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_UBICACIONES">
+        <MappingFragment StoreEntitySet="T_M_UBICACIONES">
+          <ScalarProperty Name="BAJA" ColumnName="BAJA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_UBICACION" ColumnName="ID_UBICACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_TIPO_SEGURO_VEHICULO">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_TIPO_SEGURO_VEHICULO">
+        <MappingFragment StoreEntitySet="T_M_TIPO_SEGURO_VEHICULO">
+          <ScalarProperty Name="BAJA" ColumnName="BAJA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_SEGURO_VEHICULO" ColumnName="ID_SEGURO_VEHICULO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_TIPO_TARJETA_COMBUSTIBLE">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_TIPO_TARJETA_COMBUSTIBLE">
+        <MappingFragment StoreEntitySet="T_M_TIPO_TARJETA_COMBUSTIBLE">
+          <ScalarProperty Name="BAJA" ColumnName="BAJA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_TARJETA_COMBUSTIBLE" ColumnName="ID_TARJETA_COMBUSTIBLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_ALERTAS_CECOS_DELEGACION">
+      <EntityTypeMapping TypeName="TKE_CARModel.V_ALERTAS_CECOS_DELEGACION">
+        <MappingFragment StoreEntitySet="V_ALERTAS_CECOS_DELEGACION">
+          <ScalarProperty Name="NOMBRE_DELEGACION" ColumnName="NOMBRE_DELEGACION" />
+          <ScalarProperty Name="NUM_DEL" ColumnName="NUM_DEL" />
+          <ScalarProperty Name="ID_CECO" ColumnName="ID_CECO" />
+          <ScalarProperty Name="ID_ALERTA" ColumnName="ID_ALERTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_TARJETAS_COMBUSTIBLE_EMPRESAS">
+      <EntityTypeMapping TypeName="TKE_CARModel.V_TARJETAS_COMBUSTIBLE_EMPRESAS">
+        <MappingFragment StoreEntitySet="V_TARJETAS_COMBUSTIBLE_EMPRESAS">
+          <ScalarProperty Name="NOMBRE_EMPRESA_EMISORA" ColumnName="NOMBRE_EMPRESA_EMISORA" />
+          <ScalarProperty Name="BAJA" ColumnName="BAJA" />
+          <ScalarProperty Name="PIN" ColumnName="PIN" />
+          <ScalarProperty Name="FECHA_CADUCIDAD" ColumnName="FECHA_CADUCIDAD" />
+          <ScalarProperty Name="NOMBRE_EMPRESA" ColumnName="NOMBRE_EMPRESA" />
+          <ScalarProperty Name="ID_EMPRESA_EMISORA" ColumnName="ID_EMPRESA_EMISORA" />
+          <ScalarProperty Name="ID_EMPRESA" ColumnName="ID_EMPRESA" />
+          <ScalarProperty Name="COD_TARJETA" ColumnName="COD_TARJETA" />
+          <ScalarProperty Name="ID_TARJETA" ColumnName="ID_TARJETA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ECAR_Datos_Conductor">
+      <EntityTypeMapping TypeName="TKE_CARModel.ECAR_Datos_Conductor">
+        <MappingFragment StoreEntitySet="ECAR_Datos_Conductor">
+          <ScalarProperty Name="NumeroCarnetConducir" ColumnName="NumeroCarnetConducir" />
+          <ScalarProperty Name="IDTipoDocIdentificacion" ColumnName="IDTipoDocIdentificacion" />
+          <ScalarProperty Name="PendienteDefinir" ColumnName="PendienteDefinir" />
+          <ScalarProperty Name="Baja" ColumnName="Baja" />
+          <ScalarProperty Name="Personal_Interno" ColumnName="Personal_Interno" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+          <ScalarProperty Name="E_Mail" ColumnName="E-Mail" />
+          <ScalarProperty Name="Fecha_Alta_Empresa" ColumnName="Fecha_Alta_Empresa" />
+          <ScalarProperty Name="CodCeco" ColumnName="CodCeco" />
+          <ScalarProperty Name="Fecha_Vencimiento_Carnet" ColumnName="Fecha_Vencimiento_Carnet" />
+          <ScalarProperty Name="Num_Empleado" ColumnName="Num_Empleado" />
+          <ScalarProperty Name="Fecha_Carnet" ColumnName="Fecha_Carnet" />
+          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+          <ScalarProperty Name="Movil" ColumnName="Movil" />
+          <ScalarProperty Name="Tlf" ColumnName="Tlf" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
+          <ScalarProperty Name="Cod_Postal" ColumnName="Cod_Postal" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="Cod_Conductor" ColumnName="Cod_Conductor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ECAR_Tipo_Liquidacion">
+      <EntityTypeMapping TypeName="TKE_CARModel.ECAR_Tipo_Liquidacion">
+        <MappingFragment StoreEntitySet="ECAR_Tipo_Liquidacion">
+          <ScalarProperty Name="Baja" ColumnName="Baja" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Cod_tipo" ColumnName="Cod_tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ECAR_Datos_Vehiculo">
+      <EntityTypeMapping TypeName="TKE_CARModel.ECAR_Datos_Vehiculo">
+        <MappingFragment StoreEntitySet="ECAR_Datos_Vehiculo">
+          <ScalarProperty Name="Fecha_Vto_Contrato" ColumnName="Fecha_Vto_Contrato" />
+          <ScalarProperty Name="NOMBRE_ARCHIVO_IMPORTACION" ColumnName="NOMBRE_ARCHIVO_IMPORTACION" />
+          <ScalarProperty Name="FechaPrevistaEntrega" ColumnName="FechaPrevistaEntrega" />
+          <ScalarProperty Name="UsuarioImportacion" ColumnName="UsuarioImportacion" />
+          <ScalarProperty Name="FechaMatriculacion" ColumnName="FechaMatriculacion" />
+          <ScalarProperty Name="FechaImportacion" ColumnName="FechaImportacion" />
+          <ScalarProperty Name="IdentificadorImportacion" ColumnName="IdentificadorImportacion" />
+          <ScalarProperty Name="PrioridadEntrega" ColumnName="PrioridadEntrega" />
+          <ScalarProperty Name="Responsable" ColumnName="Responsable" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="Equipamiento" ColumnName="Equipamiento" />
+          <ScalarProperty Name="FechaRenovacion" ColumnName="FechaRenovacion" />
+          <ScalarProperty Name="LugarEntrega" ColumnName="LugarEntrega" />
+          <ScalarProperty Name="IDTarjetaCombustible" ColumnName="IDTarjetaCombustible" />
+          <ScalarProperty Name="IDTipoRuta" ColumnName="IDTipoRuta" />
+          <ScalarProperty Name="Falta" ColumnName="Falta" />
+          <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+          <ScalarProperty Name="Ubicacion" ColumnName="Ubicacion" />
+          <ScalarProperty Name="Orden" ColumnName="Orden" />
+          <ScalarProperty Name="IDCarburante" ColumnName="IDCarburante" />
+          <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+          <ScalarProperty Name="Abono" ColumnName="Abono" />
+          <ScalarProperty Name="Km_Exentos" ColumnName="Km_Exentos" />
+          <ScalarProperty Name="Coef_exceso" ColumnName="Coef_exceso" />
+          <ScalarProperty Name="Exceso_ajuste" ColumnName="Exceso_ajuste" />
+          <ScalarProperty Name="IDTipoLiquidacion" ColumnName="IDTipoLiquidacion" />
+          <ScalarProperty Name="Km_Totales" ColumnName="Km_Totales" />
+          <ScalarProperty Name="Cuotas" ColumnName="Cuotas" />
+          <ScalarProperty Name="Fecha_Incorporacion" ColumnName="Fecha_Incorporacion" />
+          <ScalarProperty Name="Fecha_Devolucion" ColumnName="Fecha_Devolucion" />
+          <ScalarProperty Name="Fecha_Recibidos" ColumnName="Fecha_Recibidos" />
+          <ScalarProperty Name="Fecha_Baja" ColumnName="Fecha_Baja" />
+          <ScalarProperty Name="Baja" ColumnName="Baja" />
+          <ScalarProperty Name="Fecha_Alta" ColumnName="Fecha_Alta" />
+          <ScalarProperty Name="Num_Contrato" ColumnName="Num_Contrato" />
+          <ScalarProperty Name="Veh_sustituido" ColumnName="Veh_sustituido" />
+          <ScalarProperty Name="Vto_Seguro" ColumnName="Vto_Seguro" />
+          <ScalarProperty Name="Importe_Seguro" ColumnName="Importe_Seguro" />
+          <ScalarProperty Name="Poliza_Seguro" ColumnName="Poliza_Seguro" />
+          <ScalarProperty Name="Cia_Seguro" ColumnName="Cia_Seguro" />
+          <ScalarProperty Name="Tipo_Seguro" ColumnName="Tipo_Seguro" />
+          <ScalarProperty Name="Conductor" ColumnName="Conductor" />
+          <ScalarProperty Name="EmpresaLeasing" ColumnName="EmpresaLeasing" />
+          <ScalarProperty Name="Directivo" ColumnName="Directivo" />
+          <ScalarProperty Name="F_D" ColumnName="F_D" />
+          <ScalarProperty Name="Delegacion" ColumnName="Delegacion" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="CC" ColumnName="CC" />
+          <ScalarProperty Name="Num_Bastidor" ColumnName="Num_Bastidor" />
+          <ScalarProperty Name="Tipo_Vehiculo" ColumnName="Tipo_Vehiculo" />
+          <ScalarProperty Name="Extras" ColumnName="Extras" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+          <ScalarProperty Name="Sociedad" ColumnName="Sociedad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ECAR_Datos_ITV">
+      <EntityTypeMapping TypeName="TKE_CARModel.ECAR_Datos_ITV">
+        <MappingFragment StoreEntitySet="ECAR_Datos_ITV">
+          <ScalarProperty Name="ITV_PASADA" ColumnName="ITV_PASADA" />
+          <ScalarProperty Name="UsuarioModificacion" ColumnName="UsuarioModificacion" />
+          <ScalarProperty Name="UsuarioAlta" ColumnName="UsuarioAlta" />
+          <ScalarProperty Name="FechaModificacion" ColumnName="FechaModificacion" />
+          <ScalarProperty Name="TipoArchivo" ColumnName="TipoArchivo" />
+          <ScalarProperty Name="Fichero" ColumnName="Fichero" />
+          <ScalarProperty Name="Falta" ColumnName="Falta" />
+          <ScalarProperty Name="Otros" ColumnName="Otros" />
+          <ScalarProperty Name="Pr_Conservacion" ColumnName="Pr_Conservacion" />
+          <ScalarProperty Name="Impuesto_Circulacion" ColumnName="Impuesto_Circulacion" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+          <ScalarProperty Name="Tasa" ColumnName="Tasa" />
+          <ScalarProperty Name="Tarifa" ColumnName="Tarifa" />
+          <ScalarProperty Name="Vto_ITV" ColumnName="Vto_ITV" />
+          <ScalarProperty Name="Ultima_ITV" ColumnName="Ultima_ITV" />
+          <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TMP_RENOVACION_ITV">
+      <EntityTypeMapping TypeName="TKE_CARModel.TMP_RENOVACION_ITV">
+        <MappingFragment StoreEntitySet="TMP_RENOVACION_ITV">
+          <ScalarProperty Name="ITV_PASADA" ColumnName="ITV_PASADA" />
+          <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+          <ScalarProperty Name="PR_CONSERVACION" ColumnName="PR_CONSERVACION" />
+          <ScalarProperty Name="IMPUESTO_CIRCULACIÓN" ColumnName="IMPUESTO_CIRCULACIÓN" />
+          <ScalarProperty Name="TASA" ColumnName="TASA" />
+          <ScalarProperty Name="TARIFA" ColumnName="TARIFA" />
+          <ScalarProperty Name="IMPORTE" ColumnName="IMPORTE" />
+          <ScalarProperty Name="LINEA_NUEVA" ColumnName="LINEA_NUEVA" />
+          <ScalarProperty Name="TIPO_ARCHIVO" ColumnName="TIPO_ARCHIVO" />
+          <ScalarProperty Name="FICHERO_ITV" ColumnName="FICHERO_ITV" />
+          <ScalarProperty Name="FECHA_CADUCIDAD_ITV" ColumnName="FECHA_CADUCIDAD_ITV" />
+          <ScalarProperty Name="FECHA_ITV" ColumnName="FECHA_ITV" />
+          <ScalarProperty Name="MATRICULA" ColumnName="MATRICULA" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="LOGIN" ColumnName="LOGIN" />
+          <ScalarProperty Name="NUM_LINEA" ColumnName="NUM_LINEA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_HIST_CAMBIOS_TARJETA">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_HIST_CAMBIOS_TARJETA">
+        <MappingFragment StoreEntitySet="T_G_HIST_CAMBIOS_TARJETA">
+          <ScalarProperty Name="FECHA_ALTA" ColumnName="FECHA_ALTA" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="MATRICULA" ColumnName="MATRICULA" />
+          <ScalarProperty Name="ID_TARJETA_NUEVA" ColumnName="ID_TARJETA_NUEVA" />
+          <ScalarProperty Name="ID_TARJETA_ANT" ColumnName="ID_TARJETA_ANT" />
+          <ScalarProperty Name="ID_HIST_CAMBIO_TARJETA" ColumnName="ID_HIST_CAMBIO_TARJETA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_HIST_CAMBIOS_CENTRO_COSTE">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_HIST_CAMBIOS_CENTRO_COSTE">
+        <MappingFragment StoreEntitySet="T_G_HIST_CAMBIOS_CENTRO_COSTE">
+          <ScalarProperty Name="FECHA_ALTA" ColumnName="FECHA_ALTA" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="MATRICULA" ColumnName="MATRICULA" />
+          <ScalarProperty Name="ID_CENTRO_COSTE_ANT" ColumnName="ID_CENTRO_COSTE_ANT" />
+          <ScalarProperty Name="ID_CENTRO_COSTE_NUEVO" ColumnName="ID_CENTRO_COSTE_NUEVO" />
+          <ScalarProperty Name="ID_HIST_CAMBIO_CENTRO_COSTE" ColumnName="ID_HIST_CAMBIO_CENTRO_COSTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ECAR_Datos_SolRed">
+      <EntityTypeMapping TypeName="TKE_CARModel.ECAR_Datos_SolRed">
+        <MappingFragment StoreEntitySet="ECAR_Datos SolRed">
+          <ScalarProperty Name="KmsCiclo" ColumnName="KmsCiclo" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+          <ScalarProperty Name="IMP_TOTAL" ColumnName="IMP_TOTAL" />
+          <ScalarProperty Name="IVA" ColumnName="IVA" />
+          <ScalarProperty Name="BONIF_TOTAL" ColumnName="BONIF_TOTAL" />
+          <ScalarProperty Name="IMPORTE" ColumnName="IMPORTE" />
+          <ScalarProperty Name="NUM_LITROS" ColumnName="NUM_LITROS" />
+          <ScalarProperty Name="KILOMETROS" ColumnName="KILOMETROS" />
+          <ScalarProperty Name="COD_PRODU" ColumnName="COD_PRODU" />
+          <ScalarProperty Name="DES_PRODU" ColumnName="DES_PRODU" />
+          <ScalarProperty Name="MATRICULA" ColumnName="MATRICULA" />
+          <ScalarProperty Name="FECHA_OPERACION" ColumnName="FECHA_OPERACION" />
+          <ScalarProperty Name="FECHA_FACTURA" ColumnName="FECHA_FACTURA" />
+          <ScalarProperty Name="TRIMESTRE" ColumnName="TRIMESTRE" />
+          <ScalarProperty Name="EJERCICIO" ColumnName="EJERCICIO" />
+          <ScalarProperty Name="Sociedad" ColumnName="Sociedad" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_ALERTAS_CAMBIO_CONDUCTOR">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_ALERTAS_CAMBIO_CONDUCTOR">
+        <MappingFragment StoreEntitySet="T_G_ALERTAS_CAMBIO_CONDUCTOR">
+          <ScalarProperty Name="FECHA_EFECTO" ColumnName="FECHA_EFECTO" />
+          <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+          <ScalarProperty Name="FICHERO_RENTING" ColumnName="FICHERO_RENTING" />
+          <ScalarProperty Name="MOTIVO" ColumnName="MOTIVO" />
+          <ScalarProperty Name="FECHA_VENCIMIENTO_CARNET" ColumnName="FECHA_VENCIMIENTO_CARNET" />
+          <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
+          <ScalarProperty Name="POBLACION" ColumnName="POBLACION" />
+          <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+          <ScalarProperty Name="CP" ColumnName="CP" />
+          <ScalarProperty Name="DOMICILIO" ColumnName="DOMICILIO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="NUM_EMPLEADO" ColumnName="NUM_EMPLEADO" />
+          <ScalarProperty Name="ID_ALERTA" ColumnName="ID_ALERTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR">
+        <MappingFragment StoreEntitySet="T_G_ALERTAS_MULTA_CONFIRMACION_CONDUCTOR">
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="FICHERO_CARNET" ColumnName="FICHERO_CARNET" />
+          <ScalarProperty Name="B_AUTORIZACION_PERMISO" ColumnName="B_AUTORIZACION_PERMISO" />
+          <ScalarProperty Name="COD_POSTAL" ColumnName="COD_POSTAL" />
+          <ScalarProperty Name="DOMICILIO" ColumnName="DOMICILIO" />
+          <ScalarProperty Name="POBLACION" ColumnName="POBLACION" />
+          <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+          <ScalarProperty Name="PAIS" ColumnName="PAIS" />
+          <ScalarProperty Name="B_VALIDEZ_PERMISO" ColumnName="B_VALIDEZ_PERMISO" />
+          <ScalarProperty Name="NACIONALIDAD_PERMISO" ColumnName="NACIONALIDAD_PERMISO" />
+          <ScalarProperty Name="NUM_PERMISO_CONDUCIR" ColumnName="NUM_PERMISO_CONDUCIR" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID_ALERTA" ColumnName="ID_ALERTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR">
+        <MappingFragment StoreEntitySet="T_G_ALERTAS_RENTING_CONFIRMACION_CONDUCTOR">
+          <ScalarProperty Name="FECHA_VENCIMIENTO_CARNET" ColumnName="FECHA_VENCIMIENTO_CARNET" />
+          <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
+          <ScalarProperty Name="POBLACION" ColumnName="POBLACION" />
+          <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+          <ScalarProperty Name="CP" ColumnName="CP" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="DNI" ColumnName="DNI" />
+          <ScalarProperty Name="COD_CONDUCTOR" ColumnName="COD_CONDUCTOR" />
+          <ScalarProperty Name="ID_ALERTA" ColumnName="ID_ALERTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_DATOS_LEASING">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_DATOS_LEASING">
+        <MappingFragment StoreEntitySet="T_G_DATOS_LEASING">
+          <ScalarProperty Name="NOMBRE_ARCHIVO_IMPORTACION" ColumnName="NOMBRE_ARCHIVO_IMPORTACION" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+          <ScalarProperty Name="Sociedad" ColumnName="Sociedad" />
+          <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
+          <ScalarProperty Name="ITV_IVA" ColumnName="ITV_IVA" />
+          <ScalarProperty Name="ITV" ColumnName="ITV" />
+          <ScalarProperty Name="Fecha_Importacion" ColumnName="Fecha_Importacion" />
+          <ScalarProperty Name="Fecha_Servicio" ColumnName="Fecha_Servicio" />
+          <ScalarProperty Name="Directivo" ColumnName="Directivo" />
+          <ScalarProperty Name="Canarias" ColumnName="Canarias" />
+          <ScalarProperty Name="Intereses_Prepagados_IVA" ColumnName="Intereses_Prepagados_IVA" />
+          <ScalarProperty Name="Intereses_Prepagados" ColumnName="Intereses_Prepagados" />
+          <ScalarProperty Name="Asistencia_Carretera_IVA" ColumnName="Asistencia_Carretera_IVA" />
+          <ScalarProperty Name="Asistencia_Carretera" ColumnName="Asistencia_Carretera" />
+          <ScalarProperty Name="Seguro_IVA" ColumnName="Seguro_IVA" />
+          <ScalarProperty Name="Seguro" ColumnName="Seguro" />
+          <ScalarProperty Name="Administracion_IVA" ColumnName="Administracion_IVA" />
+          <ScalarProperty Name="Administracion" ColumnName="Administracion" />
+          <ScalarProperty Name="Neumaticos_IVA" ColumnName="Neumaticos_IVA" />
+          <ScalarProperty Name="Neumaticos" ColumnName="Neumaticos" />
+          <ScalarProperty Name="Mantenimiento_IVA" ColumnName="Mantenimiento_IVA" />
+          <ScalarProperty Name="Mantenimiento" ColumnName="Mantenimiento" />
+          <ScalarProperty Name="Alquiler_IVA" ColumnName="Alquiler_IVA" />
+          <ScalarProperty Name="Alquiler" ColumnName="Alquiler" />
+          <ScalarProperty Name="Imp_Matriculacion_IVA" ColumnName="Imp_Matriculacion_IVA" />
+          <ScalarProperty Name="Imp_Matriculacion" ColumnName="Imp_Matriculacion" />
+          <ScalarProperty Name="Imp_Circulacion_IVA" ColumnName="Imp_Circulacion_IVA" />
+          <ScalarProperty Name="Imp_Circulacion" ColumnName="Imp_Circulacion" />
+          <ScalarProperty Name="Trimestre" ColumnName="Trimestre" />
+          <ScalarProperty Name="Ejercicio" ColumnName="Ejercicio" />
+          <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+          <ScalarProperty Name="Num_Factura" ColumnName="Num_Factura" />
+          <ScalarProperty Name="Fecha_Factura" ColumnName="Fecha_Factura" />
+          <ScalarProperty Name="EmpresaLeasing" ColumnName="EmpresaLeasing" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_CORRESPONDENCIA_COD_CLI_EMPRESA_TKE">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_CORRESPONDENCIA_COD_CLI_EMPRESA_TKE">
+        <MappingFragment StoreEntitySet="T_M_CORRESPONDENCIA_COD_CLI_EMPRESA_TKE">
+          <ScalarProperty Name="CODIGO_EMPRESA_TKE" ColumnName="CODIGO_EMPRESA_TKE" />
+          <ScalarProperty Name="CODIGO_CLIENTE" ColumnName="CODIGO_CLIENTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_TARJETA_COMBUSTIBLE">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_TARJETA_COMBUSTIBLE">
+        <MappingFragment StoreEntitySet="T_G_TARJETA_COMBUSTIBLE">
+          <ScalarProperty Name="ID_EMPRESA_TARJETA_COMBUSTIBLE" ColumnName="ID_EMPRESA_TARJETA_COMBUSTIBLE" />
+          <ScalarProperty Name="NOMBRE_ARCHIVO_IMPORTACION" ColumnName="NOMBRE_ARCHIVO_IMPORTACION" />
+          <ScalarProperty Name="KmsCiclo" ColumnName="KmsCiclo" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+          <ScalarProperty Name="IMP_TOTAL" ColumnName="IMP_TOTAL" />
+          <ScalarProperty Name="IVA" ColumnName="IVA" />
+          <ScalarProperty Name="BONIF_TOTAL" ColumnName="BONIF_TOTAL" />
+          <ScalarProperty Name="IMPORTE" ColumnName="IMPORTE" />
+          <ScalarProperty Name="NUM_LITROS" ColumnName="NUM_LITROS" />
+          <ScalarProperty Name="KILOMETROS" ColumnName="KILOMETROS" />
+          <ScalarProperty Name="COD_PRODU" ColumnName="COD_PRODU" />
+          <ScalarProperty Name="DES_PRODU" ColumnName="DES_PRODU" />
+          <ScalarProperty Name="MATRICULA" ColumnName="MATRICULA" />
+          <ScalarProperty Name="COD_TARJETA" ColumnName="COD_TARJETA" />
+          <ScalarProperty Name="FECHA_OPERACION" ColumnName="FECHA_OPERACION" />
+          <ScalarProperty Name="FECHA_FACTURA" ColumnName="FECHA_FACTURA" />
+          <ScalarProperty Name="NUM_DOCUMENTO" ColumnName="NUM_DOCUMENTO" />
+          <ScalarProperty Name="TRIMESTRE" ColumnName="TRIMESTRE" />
+          <ScalarProperty Name="EJERCICIO" ColumnName="EJERCICIO" />
+          <ScalarProperty Name="Sociedad" ColumnName="Sociedad" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_CUENTAS_CONTABLES">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_CUENTAS_CONTABLES">
+        <MappingFragment StoreEntitySet="T_M_CUENTAS_CONTABLES">
+          <ScalarProperty Name="NOMBRE_CUENTA" ColumnName="NOMBRE_CUENTA" />
+          <ScalarProperty Name="CUENTA_CONTABLE" ColumnName="CUENTA_CONTABLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_TIPOS_COSTE">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_TIPOS_COSTE">
+        <MappingFragment StoreEntitySet="T_M_TIPOS_COSTE">
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+          <ScalarProperty Name="ID_TIPOCOSTE" ColumnName="ID_TIPOCOSTE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_R_TIPOSCOSTE_CUENTA_CONTABLE">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_R_TIPOSCOSTE_CUENTA_CONTABLE">
+        <MappingFragment StoreEntitySet="T_R_TIPOSCOSTE_CUENTA_CONTABLE">
+          <ScalarProperty Name="CUENTA_CONTABLE" ColumnName="CUENTA_CONTABLE" />
+          <ScalarProperty Name="ID_TIPOCOSTE" ColumnName="ID_TIPOCOSTE" />
+          <ScalarProperty Name="IDEMPRESA" ColumnName="IDEMPRESA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_EMPRESAS_VEHICULOS">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_EMPRESAS_VEHICULOS">
+        <MappingFragment StoreEntitySet="T_M_EMPRESAS_VEHICULOS">
+          <ScalarProperty Name="BAJA" ColumnName="BAJA" />
+          <ScalarProperty Name="ASEGURADORA" ColumnName="ASEGURADORA" />
+          <ScalarProperty Name="RENTING" ColumnName="RENTING" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="TELEFONO2" ColumnName="TELEFONO2" />
+          <ScalarProperty Name="TELEFONO1" ColumnName="TELEFONO1" />
+          <ScalarProperty Name="PERSONA_CONTACTO" ColumnName="PERSONA_CONTACTO" />
+          <ScalarProperty Name="CODPOSTAL" ColumnName="CODPOSTAL" />
+          <ScalarProperty Name="POBLACION" ColumnName="POBLACION" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="NUM_DOCUMENTO" ColumnName="NUM_DOCUMENTO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="ID_EMPRESA" ColumnName="ID_EMPRESA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_M_TARJETAS_CONBUSTIBLE">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_M_TARJETAS_CONBUSTIBLE">
+        <MappingFragment StoreEntitySet="T_M_TARJETAS_CONBUSTIBLE">
+          <ScalarProperty Name="BAJA" ColumnName="BAJA" />
+          <ScalarProperty Name="PIN" ColumnName="PIN" />
+          <ScalarProperty Name="FECHA_CADUCIDAD" ColumnName="FECHA_CADUCIDAD" />
+          <ScalarProperty Name="ID_EMPRESA_EMISORA" ColumnName="ID_EMPRESA_EMISORA" />
+          <ScalarProperty Name="ID_EMPRESA" ColumnName="ID_EMPRESA" />
+          <ScalarProperty Name="COD_TARJETA" ColumnName="COD_TARJETA" />
+          <ScalarProperty Name="ID_TARJETA" ColumnName="ID_TARJETA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_ALERTAS_MULTA">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_ALERTAS_MULTA">
+        <MappingFragment StoreEntitySet="T_G_ALERTAS_MULTA">
+          <ScalarProperty Name="MINUTOS_DENUNCIA" ColumnName="MINUTOS_DENUNCIA" />
+          <ScalarProperty Name="HORA_DENUNCIA" ColumnName="HORA_DENUNCIA" />
+          <ScalarProperty Name="IMPORTE" ColumnName="IMPORTE" />
+          <ScalarProperty Name="LUGAR" ColumnName="LUGAR" />
+          <ScalarProperty Name="INFRACCION" ColumnName="INFRACCION" />
+          <ScalarProperty Name="EXPEDIENTE" ColumnName="EXPEDIENTE" />
+          <ScalarProperty Name="FECHA_DENUNCIA" ColumnName="FECHA_DENUNCIA" />
+          <ScalarProperty Name="ID_ALERTA" ColumnName="ID_ALERTA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="T_G_HIST_CAMBIOS_EMPRESA">
+      <EntityTypeMapping TypeName="TKE_CARModel.T_G_HIST_CAMBIOS_EMPRESA">
+        <MappingFragment StoreEntitySet="T_G_HIST_CAMBIOS_EMPRESA">
+          <ScalarProperty Name="ID_ESTADO" ColumnName="ID_ESTADO" />
+          <ScalarProperty Name="FECHA_ALTA" ColumnName="FECHA_ALTA" />
+          <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+          <ScalarProperty Name="MATRICULA" ColumnName="MATRICULA" />
+          <ScalarProperty Name="ID_EMPRESA_NUEVA" ColumnName="ID_EMPRESA_NUEVA" />
+          <ScalarProperty Name="ID_EMPRESA_ANT" ColumnName="ID_EMPRESA_ANT" />
+          <ScalarProperty Name="ID_HIST_CAMBIOS_EMPRESA" ColumnName="ID_HIST_CAMBIOS_EMPRESA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ECAR_Datos_Multas">
+      <EntityTypeMapping TypeName="TKE_CARModel.ECAR_Datos_Multas">
+        <MappingFragment StoreEntitySet="ECAR_Datos_Multas">
+          <ScalarProperty Name="FAlta" ColumnName="FAlta" />
+          <ScalarProperty Name="EmitidaAlerta" ColumnName="EmitidaAlerta" />
+          <ScalarProperty Name="Cobertura" ColumnName="Cobertura" />
+          <ScalarProperty Name="Contrario" ColumnName="Contrario" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+          <ScalarProperty Name="Conductor" ColumnName="Conductor" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_CONDUCTORES_USUARIOS_SAP">
+      <EntityTypeMapping TypeName="TKE_CARModel.V_CONDUCTORES_USUARIOS_SAP">
+        <MappingFragment StoreEntitySet="V_CONDUCTORES_USUARIOS_SAP">
+          <ScalarProperty Name="NumeroCarnetConducir" ColumnName="NumeroCarnetConducir" />
+          <ScalarProperty Name="IDTipoDocIdentificacion" ColumnName="IDTipoDocIdentificacion" />
+          <ScalarProperty Name="NombreCECO" ColumnName="NombreCECO" />
+          <ScalarProperty Name="PendienteDefinir" ColumnName="PendienteDefinir" />
+          <ScalarProperty Name="Baja" ColumnName="Baja" />
+          <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+          <ScalarProperty Name="Email_SAP" ColumnName="Email_SAP" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DNI_SAP" ColumnName="DNI_SAP" />
+          <ScalarProperty Name="DNI_CONDUCTOR" ColumnName="DNI_CONDUCTOR" />
+          <ScalarProperty Name="Apellidos_SAP" ColumnName="Apellidos_SAP" />
+          <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+          <ScalarProperty Name="Nombre_SAP" ColumnName="Nombre_SAP" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Provincia_SAP" ColumnName="Provincia_SAP" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Poblacion_SAP" ColumnName="Poblacion_SAP" />
+          <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
+          <ScalarProperty Name="Cod_Postal_SAP" ColumnName="Cod_Postal_SAP" />
+          <ScalarProperty Name="Cod_Postal" ColumnName="Cod_Postal" />
+          <ScalarProperty Name="Fecha_Nacimiento_SAP" ColumnName="Fecha_Nacimiento_SAP" />
+          <ScalarProperty Name="Fecha_Nacimiento" ColumnName="Fecha_Nacimiento" />
+          <ScalarProperty Name="Direccion_SAP" ColumnName="Direccion_SAP" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="NombreEmpresa" ColumnName="NombreEmpresa" />
+          <ScalarProperty Name="ID_EMPRESA_SAP" ColumnName="ID_EMPRESA_SAP" />
+          <ScalarProperty Name="CentroCoste_SAP" ColumnName="CentroCoste_SAP" />
+          <ScalarProperty Name="CentroCoste" ColumnName="CentroCoste" />
+          <ScalarProperty Name="Num_Empleado_SAP" ColumnName="Num_Empleado_SAP" />
+          <ScalarProperty Name="Num_Empleado" ColumnName="Num_Empleado" />
+          <ScalarProperty Name="Fecha_Carnet" ColumnName="Fecha_Carnet" />
+          <ScalarProperty Name="Movil" ColumnName="Movil" />
+          <ScalarProperty Name="Tlf" ColumnName="Tlf" />
+          <ScalarProperty Name="Personal_Interno" ColumnName="Personal_Interno" />
+          <ScalarProperty Name="Fecha_Vencimiento_Carnet" ColumnName="Fecha_Vencimiento_Carnet" />
+          <ScalarProperty Name="Cod_Conductor" ColumnName="Cod_Conductor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

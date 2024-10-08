@@ -1,0 +1,25 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+@{
+
+    //string BU = @System.Configuration.ConfigurationManager.AppSettings["BU"] + " " + @resourceView.LCountry;
+    string BU = @resourceView.lblTKE + " " + @resourceView.LCountry;
+
+}
+
+  
+<div class="container-fluid">
+
+        <div class="row">
+            <div class="col-sm-2">
+                <p class="sheadline">@System.Configuration.ConfigurationManager.AppSettings["BA"]</p>
+            </div>
+            <div class="col-sm-10">
+                <div class="pull-right">
+                    <p class="sheadline">@BU</p>
+                </div>
+            </div>
+        </div>
+  
+
+</div>

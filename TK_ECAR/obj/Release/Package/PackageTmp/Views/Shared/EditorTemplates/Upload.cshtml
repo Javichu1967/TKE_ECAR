@@ -1,0 +1,42 @@
+﻿@Html.TextBox("", ViewData.TemplateInfo.FormattedModelValue.ToString(), new { type = "file", @style= "display:none" })
+@*<input type="file" id="file" name="file" style="display:none" />*@
+<div class="input-group">
+    @Html.TextBox("NombreFichero", string.Empty, new { @class = "form-control", @readonly = "readonly" })
+    <span class="input-group-addon">
+        @{ var idbtn ="btn" + ViewData.ModelMetadata.PropertyName; }
+        <a id="@idbtn" style="cursor:pointer">
+            <span class="tk-icon icon-tk-download"></span>
+        </a>
+    </span>
+</div>
+<script type="text/javascript">
+    //var propertymodel = '@ViewData.ModelMetadata.PropertyName';
+    var propertymodel = '@ViewData.TemplateInfo.HtmlFieldPrefix.Replace(".","_")';
+
+    $(document).ready(function () {
+        var propertyFileDownLoad = '@ViewData.ModelMetadata.PropertyName';
+        var nombreArchivoDownLoad = $("#" + propertyFileDownLoad + "_download").val();
+        var propertymodelAux = '@ViewData.TemplateInfo.HtmlFieldPrefix.Replace(".","_")';
+        if (nombreArchivoDownLoad != null) {
+            $("#" + propertymodelAux + "_NombreFichero").val(nombreArchivoDownLoad);
+        }
+
+    });
+
+    $("#btn" + propertymodel).click(function () {
+        $("#" + propertymodel).click();
+    });
+
+
+    $("#" + propertymodel).on('change', function (evt) {
+        var files = evt.target.files; // FileList object
+        if (files.length > 0) {
+            $("#"+propertymodel +"_NombreFichero").val(files[0].name);
+        }
+        else {
+
+            $("#" + propertymodel + "_NombreFichero").val('');
+        }
+    });
+
+</script>

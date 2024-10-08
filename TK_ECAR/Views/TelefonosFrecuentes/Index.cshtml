@@ -1,0 +1,181 @@
+﻿@using resourceView = TK_ECAR.Content.resources
+@using System.Configuration;
+@model IEnumerable<TK_ECAR.Models.TelefonosFrecuentesModels>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="infoTelFrecGestion">
+            @{
+                var actionLink = Ajax.ActionLink("JSTITLEMODAL", "NuevoTelefono", "TelefonosFrecuentes", new { },
+                new AjaxOptions
+                {
+                    UpdateTargetId = "modalbodyTelefonos",
+                    OnSuccess = "showModalTelefonos();",
+                    OnComplete = "completeModal()",
+                    InsertionMode = InsertionMode.Replace,
+                    OnBegin = "setTitleModal('JSTITLEMODAL')"
+                }, new { @title = "tooltip", @class = "tk-icon-med icon-tk-plus", @style = "float: right;" }).ToString();
+            }
+            @*<h3>@resourceView.TitleTelefonosFrecuentes    @Html.Raw(actionLink.Replace("JSTITLEMODAL", @resourceView.LNuevoTelefono))</h3>*@
+            <h3>@resourceView.TK_ECAR_Resource.TitleTelefonosFrecuentes
+                <span id="linkuser" style="float: right;">@resourceView.TK_ECAR_Resource.LAñadir</span> 
+                @Html.Raw(actionLink.Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.LNuevoTelefono).Replace("tooltip", @resourceView.TK_ECAR_Resource.LNuevoTelefono))
+            </h3>
+            <p>@resourceView.TK_ECAR_Resource.TitleTelefonosFrecuentesInf</p>
+        </div>
+    </div>
+</div>
+
+@{
+    var actionLinkEdit = Ajax.ActionLink("JSTITLEACTION", "EditarTelefono", "TelefonosFrecuentes", new { numTelefono = "JSVARTIPO" },
+    new AjaxOptions
+    {
+        UpdateTargetId = "modalbodyTelefonos",
+        OnSuccess = "showModalTelefonos();",
+        OnComplete = "completeModal()",
+        InsertionMode = InsertionMode.Replace,
+        OnBegin = "setTitleModal('JSTITLEMODAL')"
+    }, new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" }).ToString();
+    actionLinkEdit = "<a class='tk-icon-med icon-tk-edit tk-icon-bold ' "
+                + actionLinkEdit.Replace("textoQuitarPorVacio", "").Replace("accionmenu", @resourceView.TK_ECAR_Resource.AccionEditar)
+                 + " </a>";
+
+    var actionLinkDelete = Ajax.ActionLink("JSTITLEACTION", "BorrarTelefono", "TelefonosFrecuentes", new { numTelefono = "JSVARTIPO" },
+    new AjaxOptions
+    {
+        UpdateTargetId = "modalbodyTelefonos",
+        OnSuccess = "showModalTelefonos();",
+        OnComplete = "completeModal()",
+        InsertionMode = InsertionMode.Replace,
+        OnBegin = "setTitleModal('JSTITLEMODAL')"
+    }, new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" }).ToString();
+    actionLinkDelete = "<a class='tk-icon-med icon-tk-delete tk-icon-bold tk-icon-red ' "
+                + actionLinkDelete.Replace("textoQuitarPorVacio", "").Replace("accionmenu", @resourceView.TK_ECAR_Resource.AccionBorrar)
+                 + " </a>";
+
+}
+
+<table id="tableTelefonos" class="display responsive" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>@resourceView.ModelsResources.lblEmpresa</th>
+            <th>@resourceView.TK_ECAR_Resource.GeneralCabDescripcion</th>
+            <th>@resourceView.TK_ECAR_Resource.DataTableCabTelefono</th>
+            <th>@resourceView.TK_ECAR_Resource.DataTableCabAccion</th>
+            <th>DescEmpresa</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID_Empresa</td>
+                <td>@item.DESCRIPCION</td>
+                <td>@item.NUMERO_TELEFONO</td>
+                <td>
+                    <span></span> @Html.Raw(actionLinkEdit.Replace("JSVARTIPO", (item.NUMERO_TELEFONO).ToString()).Replace("JSTITLEACTION", @resourceView.TK_ECAR_Resource.AccionEditar).Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.TitleTelefonosEditar))
+                    @Html.Raw(actionLinkDelete.Replace("JSVARTIPO", (item.NUMERO_TELEFONO).ToString()).Replace("JSTITLEACTION", @resourceView.TK_ECAR_Resource.AccionBorrar).Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.TitleTelefonosBorrar))
+                </td>
+                <td>@item.DescEmpresa</td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@Html.Partial("_ModalTelefonos")
+
+<style>
+    .export-btn {
+        margin: 10px;
+        padding: 5px;
+    }
+</style>
+
+
+@section Scripts {
+
+
+<link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecss")'>
+<link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecssResponsive")'>
+
+<script src='@Scripts.Url("~/bundles/datatable")'> </script>
+<script src='@Scripts.Url("~/bundles/dtresponsive")'> </script>
+
+<script src='@Scripts.Url("~/bundles/DataTablesButtonJs")'> </script>
+<script src='@Scripts.Url("~/bundles/DataTablesbuttonsFlashJs")'> </script>
+<script src='@Scripts.Url("~/bundles/DataTablesbuttonsHtml5Js")'> </script>
+<script src='@Scripts.Url("~/bundles/DataTablesjszipJs")'> </script>
+<script src='@Scripts.Url("~/bundles/DataTablesVfsFontsJs")'> </script>
+
+    <script type="text/javascript">
+        var _tableTelefonos;
+
+        $(document).ready(function () {
+            _tableTelefonos = $('#tableTelefonos').DataTable(
+                {
+                "dom": 'Blfrtip',
+                "ordering": true,
+                "processing": true,
+                "paginate": true,
+                "order": [[0, "asc"], [1, "asc"]],
+                "buttons": [{
+                    text: '@resourceView.TK_ECAR_Resource.btnExportarExcel',
+                    extend: 'excel',
+                    className: 'btn btn-default export-btn',
+                    title: '@Html.Raw(@resourceView.TK_ECAR_Resource.TitleTelefonosFrecuentes)',
+                    exportOptions: {
+                        columns: [0, 1, 2]
+                    }
+                }],
+                "language": {
+                    "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.TK_ECAR_Resource.ArchivoIdiomaDataTable )'
+                },
+                    "drawCallback": function () {
+                        $('[data-toggle="popover"]').popover({ html: true });
+                },
+                "columnDefs": [
+                {
+                    "targets": 3,
+                    "orderable": false,
+                    "searchable": false
+                },
+                {
+                    "targets": 4,
+                    "visible": false,
+                    "orderable": false,
+                    "searchable": false
+                },
+                {
+                    "targets": 0,
+                    "width": "2%",
+                    "render": function (data, type, row) {
+                        return "<a data-placement='right' data-toggle='popover' data-trigger='hover' data-content='" + row[4] + "' >" + row[0] + "</a>";
+                    }
+
+                }
+                ]
+            });
+        });
+
+        function showModalTelefonos() {
+            $('#modalTelefonos').modal('show');
+
+            //$("#Matricula").autocomplete("option", "appendTo", "#modalbodySolicitud");
+        }
+        function setTitleModal(title) {
+            $('#modaltitleTelefonos').text(title);
+        }
+
+        //function completeModal() {
+        //    //para que funcione los validadores a la viewpartial recien creada.
+        //    //reconstruye el DOM con los validadores de los campos nuevos
+        //    $("form").removeData("validator");
+        //    $("form").removeData("unobtrusiveValidation");
+        //    $.validator.unobtrusive.parse("form");
+        //    $("form").validate();
+        //}
+
+</script>
+}
+

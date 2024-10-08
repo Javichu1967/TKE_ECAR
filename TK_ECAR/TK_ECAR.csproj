@@ -1,0 +1,676 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E631E0D1-95C4-41F7-B964-E1CB06371EDA}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TK_ECAR</RootNamespace>
+    <AssemblyName>TK_ECAR</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <DontImportPostSharp>True</DontImportPostSharp>
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.1.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\TK.Dlls\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.2\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.2.2\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PostSharp, Version=4.3.21.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <HintPath>..\packages\PostSharp.4.3.21\lib\net35-client\PostSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TKSeguridad">
+      <HintPath>..\TK.Dlls\TKSeguridad.dll</HintPath>
+    </Reference>
+    <Reference Include="TKUtilidades">
+      <HintPath>..\TK.Dlls\TKUtilidades.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application Services\CategoriasPreguntasService.cs" />
+    <Compile Include="Application Services\InformeFlotaService.cs" />
+    <Compile Include="Application Services\LeasingService.cs" />
+    <Compile Include="Application Services\FacturacionLeasingService.cs" />
+    <Compile Include="Application Services\ImportacionLeasingService.cs" />
+    <Compile Include="Application Services\ImportacionConsumoCombustibleService.cs" />
+    <Compile Include="Application Services\ImportacionPortugalService.cs" />
+    <Compile Include="Application Services\ImportarFlotaService.cs" />
+    <Compile Include="Application Services\BorradoImportacionService.cs" />
+    <Compile Include="Application Services\VehiculoService.cs" />
+    <Compile Include="Application Services\TarjetasCombustibleService.cs" />
+    <Compile Include="Application Services\EmpresasVehiculosService.cs" />
+    <Compile Include="Application Services\ConductoresECARService.cs" />
+    <Compile Include="Application Services\EmailService.cs" />
+    <Compile Include="Application Services\GestoresFlotaService.cs" />
+    <Compile Include="Application Services\DTOs\AlertasDTOs.cs" />
+    <Compile Include="Application Services\PreavisosAlertasService.cs" />
+    <Compile Include="Application Services\MtoTiposGeneralesService.cs" />
+    <Compile Include="Application Services\TelefonosService.cs" />
+    <Compile Include="Application Services\UsersService.cs" />
+    <Compile Include="Application Services\ConductoresService.cs" />
+    <Compile Include="Application Services\AlertasService.cs" />
+    <Compile Include="Application Services\CategoriasService.cs" />
+    <Compile Include="Application Services\FilterService.cs" />
+    <Compile Include="Application Services\DocumentacionService.cs" />
+    <Compile Include="Application Services\PreguntasService.cs" />
+    <Compile Include="Application Services\MiVehiculoService.cs" />
+    <Compile Include="Application Services\FlotaService.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\ModelsBinderConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Aspects\SendEmailAlertaAttribute .cs" />
+    <Compile Include="Content\resources\EnumResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\resources\EnumResources.pt-PT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EnumResources.pt-PT.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\resources\ModelsResources.Designer.cs">
+      <DependentUpon>ModelsResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Content\resources\TK_ECAR_Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TK_ECAR_Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\FacturacionController.cs" />
+    <Compile Include="Controllers\InformesController.cs" />
+    <Compile Include="Controllers\ImportarLeasingController.cs" />
+    <Compile Include="Controllers\ImportarConsumoCombustibleController.cs" />
+    <Compile Include="Controllers\ImportarViaVerdeController.cs" />
+    <Compile Include="Controllers\ImportarFlotaController.cs" />
+    <Compile Include="Controllers\BorrarImportacionController.cs" />
+    <Compile Include="Controllers\TarjetasCombustibleController.cs" />
+    <Compile Include="Controllers\EmpresasVehiculosController.cs" />
+    <Compile Include="Controllers\ConductoresController.cs" />
+    <Compile Include="Controllers\MtoGenericoTiposController.cs" />
+    <Compile Include="Controllers\CategoriasPreguntasController.cs" />
+    <Compile Include="Controllers\FilterController.cs" />
+    <Compile Include="Controllers\CategoriasController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MiFlotaController.cs" />
+    <Compile Include="Controllers\DocumentosController.cs" />
+    <Compile Include="Controllers\PreavisosAlertasController.cs" />
+    <Compile Include="Controllers\GestoresFlotaController.cs" />
+    <Compile Include="Controllers\TelefonosFrecuentesController.cs" />
+    <Compile Include="Controllers\PreguntasFrecuentesController.cs" />
+    <Compile Include="Controllers\MiVehiculoController.cs" />
+    <Compile Include="Controllers\AlertasController.cs" />
+    <Compile Include="Filters\AutorizeExtendingAttribute.cs" />
+    <Compile Include="Filters\LocalizationAttribute.cs" />
+    <Compile Include="Filters\ValidationsECarAttribute.cs" />
+    <Compile Include="Filters\HandleCustomException.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BorrarImportacionModels.cs" />
+    <Compile Include="Models\IncidenciaModel.cs" />
+    <Compile Include="Models\InfFlotaFechaContratoModels.cs" />
+    <Compile Include="Models\FacturaModels.cs" />
+    <Compile Include="Models\ImportacionDatosModels.cs" />
+    <Compile Include="Models\GeneracionFacturacionModels.cs" />
+    <Compile Include="Models\ImportacionLeasingModels.cs" />
+    <Compile Include="Models\DatosCombustibleModels.cs" />
+    <Compile Include="Models\LeasingModels.cs" />
+    <Compile Include="Models\Portugal\ViaVerdeModels.cs" />
+    <Compile Include="Models\ResumenImportacionModels.cs" />
+    <Compile Include="Models\ImportacionFlotaModels.cs" />
+    <Compile Include="Models\TarjetasCombustibleModels.cs" />
+    <Compile Include="Models\EmpresasVehiculosModels.cs" />
+    <Compile Include="Models\MtoGenericoTiposModels.cs" />
+    <Compile Include="Models\ClientesModels.cs" />
+    <Compile Include="Models\CategoriasPreguntasModels.cs" />
+    <Compile Include="Models\ViaVerdeModels.cs" />
+    <Compile Include="Models\PreavisosAlertasModels.cs" />
+    <Compile Include="Models\GestoresFlotaModels.cs" />
+    <Compile Include="Models\TelefonosFrecuentesModels.cs" />
+    <Compile Include="Models\RenovacionesModels.cs" />
+    <Compile Include="Models\CategoriaModels.cs" />
+    <Compile Include="Models\DocumentacionModels.cs" />
+    <Compile Include="Models\FilterModels.cs" />
+    <Compile Include="Models\DatosContratoModels.cs" />
+    <Compile Include="Models\DatosConductoresModels.cs" />
+    <Compile Include="Models\DatosVehiculoLeasePlanModels.cs" />
+    <Compile Include="Models\DatosVehiculoDocumentacionModels.cs" />
+    <Compile Include="Models\DatosVehiculoSOLREDModels.cs" />
+    <Compile Include="Models\DatosVehiculoMultaModels.cs" />
+    <Compile Include="Models\DatosITVModels.cs" />
+    <Compile Include="Models\DatosGeneralesModels.cs" />
+    <Compile Include="Models\DatosVehiculoModels.cs" />
+    <Compile Include="Models\TreeViewModels.cs" />
+    <Compile Include="Models\PreguntasModels.cs" />
+    <Compile Include="Models\MiFlotaModels.cs" />
+    <Compile Include="Models\ConductorModels.cs" />
+    <Compile Include="Models\AlertaModels.cs" />
+    <Compile Include="Models\TestFilter.cs" />
+    <Compile Include="Models\UserModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ServiceIncidentManagement\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ECAR_Progress.cs" />
+    <Compile Include="Utils\ECAR_ProgressHub.cs" />
+    <Compile Include="Utils\EnumUtilities.cs" />
+    <Compile Include="Utils\FileUtilities.cs" />
+    <Compile Include="Utils\Constants.cs" />
+    <Compile Include="Utils\Global.cs" />
+    <Compile Include="Utils\GlobalProcesosSignalR.cs" />
+    <Compile Include="Utils\HelperExtensions.cs" />
+    <Compile Include="Utils\ModelUtilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\data.txt" />
+    <Content Include="Content\img\Application\244__service_RGB_blue.png" />
+    <Content Include="Content\img\Application\285__General_Partner_RGB_blue_small.png" />
+    <Content Include="Content\img\Application\309__refuel_RGB_blue.png" />
+    <Content Include="Content\img\Application\38__Automotive_Driver_RGB_blue.png" />
+    <Content Include="Content\img\Application\38__Drivers_RGB_blue.png" />
+    <Content Include="Content\img\Application\Import_vehicles_RGB_blue.png" />
+    <Content Include="Content\img\Application\5__Actions_show_RGB_blue.png" />
+    <Content Include="Content\img\Application\Automotive_RGB_blue.png" />
+    <Content Include="Content\img\Application\CarnetConducirVacio.jpg" />
+    <Content Include="Content\img\Application\categ_blue.png" />
+    <Content Include="Content\img\Application\Communication_speech bubble helpline_RGB_blue.png" />
+    <Content Include="Content\img\Application\Customer_Stakeholder_Building_Managers_RGB_blue_large.png" />
+    <Content Include="Content\img\Application\details_close.png" />
+    <Content Include="Content\img\Application\details_open.png" />
+    <Content Include="Content\img\Application\doc_blue.png" />
+    <Content Include="Content\img\Application\faq_blue.png" />
+    <Content Include="Content\img\Application\Files_document desk_RGB_blue.png" />
+    <Content Include="Content\img\Application\Files_document_RGB_blue.png" />
+    <Content Include="Content\img\Application\gestion_categ_blue.png" />
+    <Content Include="Content\img\Application\gestion_doc_blue.png" />
+    <Content Include="Content\img\Application\gestion_faq_blue.png" />
+    <Content Include="Content\img\Application\gestion_telfrec_blue.png" />
+    <Content Include="Content\img\Application\gestor_flota.png" />
+    <Content Include="Content\img\Application\gestor_flota_gest.png" />
+    <Content Include="Content\img\Application\Information_quiz_RGB_blue.png" />
+    <Content Include="Content\img\Application\loader.gif" />
+    <Content Include="Content\img\Application\loading-icon_original.gif" />
+    <Content Include="Content\img\Application\Logo-TK_2x_mail.png" />
+    <Content Include="Content\img\Application\MatriculaE.png" />
+    <Content Include="Content\img\Application\matriculaEspana.png" />
+    <Content Include="Content\img\Application\matriculaEspaña-baja.png" />
+    <Content Include="Content\img\Application\matriculaEspaña-sucess.png" />
+    <Content Include="Content\img\Application\matriculaEspaña.png" />
+    <Content Include="Content\img\Application\matriculaPortugal-baja.png" />
+    <Content Include="Content\img\Application\matriculaPortugal.png" />
+    <Content Include="Content\img\Application\MiFlota_Blue.png" />
+    <Content Include="Content\img\Application\miveh_blue.png" />
+    <Content Include="Content\img\Application\Others_RGB_blue.png" />
+    <Content Include="Content\img\Application\People_identity card_RGB_blue.png" />
+    <Content Include="Content\img\Application\Performance_Customized_Design_RGB_blue_large.png" />
+    <Content Include="Content\img\Application\service_RGB_blue.png" />
+    <Content Include="Content\img\Application\sinImagen.jpg" />
+    <Content Include="Content\img\Application\telfrec_blue.png" />
+    <Content Include="Content\img\Application\tk_icon_osh_Einsatz_und_Engagement_RGB_blue_large.png" />
+    <Content Include="Content\img\Application\TK_Trucks_RGB_blue.png" />
+    <Content Include="Content\scripts\Application\customannotation.js" />
+    <Content Include="Content\scripts\Application\DataTableUtilities.js" />
+    <Content Include="Content\scripts\Application\DNI_NIF_CIF_Utilities.js" />
+    <Content Include="Content\scripts\Application\FilterUtilities.js" />
+    <Content Include="Content\scripts\Application\Global.js" />
+    <Content Include="Content\scripts\Application\jquery.form.js" />
+    <Content Include="Content\scripts\Application\resetValidation.js" />
+    <Content Include="Content\scripts\Application\toastrUtilities.js" />
+    <Content Include="Content\scripts\bootstrap-dialog.js" />
+    <Content Include="Content\styles\Application\Application.css" />
+    <Content Include="Content\styles\bootstrap-dialog.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\styles\Site.css" />
+    <Content Include="log4net.xml" />
+    <Content Include="Content\scripts\signalR\jquery.signalR-2.2.2.js" />
+    <Content Include="Content\scripts\signalR\jquery.signalR-2.2.2.min.js" />
+    <Content Include="Service References\ServiceIncidentManagement\TK_ECAR.ServiceIncidentManagement.DatosUsuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="App_Data\manual\TKE_WEBAPP_USERMAN_ECAR_V2.pdf" />
+    <None Include="Properties\PublishProfiles\Javi.pubxml" />
+    <None Include="Service References\ServiceIncidentManagement\WebServices.disco" />
+    <None Include="Service References\ServiceIncidentManagement\configuration91.svcinfo" />
+    <None Include="Service References\ServiceIncidentManagement\configuration.svcinfo" />
+    <None Include="Service References\ServiceIncidentManagement\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Filters.cshtml" />
+    <Content Include="Views\Alertas\_ModalOtraNotificacion.cshtml" />
+    <Content Include="Views\Alertas\_DatosMulta.cshtml" />
+    <Content Include="Views\Alertas\_SolicitudSOLRED.cshtml" />
+    <Content Include="Views\Alertas\_RenovarITV.cshtml" />
+    <Content Include="Views\Alertas\_RenovarCarnet.cshtml" />
+    <Content Include="Views\Alertas\_OtraNotificacion.cshtml" />
+    <Content Include="Views\Alertas\_ConfirmarConductorMulta.cshtml" />
+    <Content Include="Views\Alertas\_NotificarRobo.cshtml" />
+    <Content Include="Views\Alertas\_NotificarRenting.cshtml" />
+    <Content Include="Views\MiVehiculo\Index.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\MiVehiculo\_DatosGenerales.cshtml" />
+    <Content Include="Views\MiVehiculo\_Conductor.cshtml" />
+    <Content Include="Views\MiVehiculo\_DatosITV.cshtml" />
+    <Content Include="Views\MiVehiculo\_DatosContrato.cshtml" />
+    <Content Include="Views\MiVehiculo\_DatosSOLRED.cshtml" />
+    <Content Include="Views\MiVehiculo\_DatosMulta.cshtml" />
+    <Content Include="Views\MiVehiculo\_DatosRenting.cshtml" />
+    <Content Include="Views\MiVehiculo\_Documentacion.cshtml" />
+    <Content Include="Views\MiFlota\Index.cshtml" />
+    <Content Include="Views\PreguntasFrecuentes\Index.cshtml" />
+    <Content Include="Views\MiVehiculo\_Vehiculo.cshtml" />
+    <Content Include="Views\Documentos\Index.cshtml" />
+    <Content Include="App_Data\manual\TKE_WEBAPP_USERMAN_ECAR_V1.pdf" />
+    <None Include="Properties\PublishProfiles\fichero.pubxml" />
+    <Content Include="Views\Shared\_CustomValidationSummary.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Upload.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Currency.cshtml" />
+    <Content Include="Views\Error\EntityExpception.cshtml" />
+    <Content Include="Views\Error\Error404.cshtml.cshtml" />
+    <Content Include="Views\Error\UnauthorizedAccess.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Matricula.cshtml" />
+    <Content Include="Views\Alertas\Index.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\YesNo.cshtml" />
+    <Content Include="Views\MiFlota\FichaConductor.cshtml" />
+    <Content Include="Views\MiFlota\FichaDatosGenerales.cshtml" />
+    <Content Include="Views\PreguntasFrecuentes\_ModalPreguntas.cshtml" />
+    <Content Include="Views\PreguntasFrecuentes\_MantenimientoPregunta.cshtml" />
+    <Content Include="Views\PreguntasFrecuentes\_BorrarPregunta.cshtml" />
+    <Content Include="Views\jsTree3\Demo.cshtml" />
+    <Content Include="Views\jsTree3\AJAXDemo.cshtml" />
+    <Content Include="Views\Documentos\VerDocumentacion.cshtml" />
+    <Content Include="Views\Documentos\_ModalDocumentacion.cshtml" />
+    <Content Include="Views\Documentos\_MantenimientoDocumentacion.cshtml" />
+    <Content Include="Views\Documentos\_BorrarDocumentacion.cshtml" />
+    <Content Include="Views\Categorias\Index.cshtml" />
+    <Content Include="Views\Categorias\_ModalCategorias.cshtml" />
+    <Content Include="Views\Categorias\_MantenimientoCategorias.cshtml" />
+    <Content Include="Views\PreguntasFrecuentes\VerPreguntasFrecuentes.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Empresas.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DireccionesTerritoriales.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Delegaciones.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CentrosCoste.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\AgrupacionesFiltro.cshtml" />
+    <Content Include="Views\MiVehiculo\_DocumentacionVehiculoModal.cshtml" />
+    <Content Include="Views\MiVehiculo\_DocumentacionVehiculoAlta.cshtml" />
+    <Content Include="Views\Alertas\_ModalRenovacion.cshtml" />
+    <Content Include="Views\TelefonosFrecuentes\Index.cshtml" />
+    <Content Include="Views\TelefonosFrecuentes\_ModalTelefonos.cshtml" />
+    <Content Include="Views\TelefonosFrecuentes\_MantenimientoTelefonos.cshtml" />
+    <Content Include="Views\TelefonosFrecuentes\_BorrarTelefono.cshtml" />
+    <Content Include="Views\Alertas\_ModalRenovarRenting.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Matricula.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Date.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Currency.cshtml" />
+    <Content Include="Views\Alertas\_CambioConductor.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\NumEmpleado.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\NumEmpleado.cshtml" />
+    <Content Include="Views\Alertas\_ModalCambioConductor.cshtml" />
+    <Content Include="Views\Shared\_LayoutMenu.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\YesNo.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EstadoVehiculoFiltro.cshtml" />
+    <Content Include="Views\Shared\_FilterAlertas.cshtml" />
+    <Content Include="Views\PreavisosAlertas\_MantenimientoPreaviso.cshtml" />
+    <Content Include="Views\PreavisosAlertas\_ModalPreaviso.cshtml" />
+    <Content Include="Views\PreavisosAlertas\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TiposAlertas.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TiposEstadosAlertas.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TiposAccionAlerta.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Empleado.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Empleado.cshtml" />
+    <Content Include="Views\GestoresFlota\_BorrarGestorFlota.cshtml" />
+    <Content Include="Views\GestoresFlota\_MantenimientoGestorFlota.cshtml" />
+    <Content Include="Views\GestoresFlota\_ModalGestorFlota.cshtml" />
+    <Content Include="Views\GestoresFlota\Index.cshtml" />
+    <Content Include="Views\GestoresFlota\VerGestorFlota.cshtml" />
+    <Content Include="Views\CategoriasPreguntas\_MantenimientoCategoriasPreguntas.cshtml" />
+    <Content Include="Views\CategoriasPreguntas\_ModalCategoriasPreguntas.cshtml" />
+    <Content Include="Views\CategoriasPreguntas\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UploadMofificado.cshtml" />
+    <None Include="Service References\ServiceIncidentManagement\WebServices.wsdl" />
+    <Content Include="Views\MiVehiculo\_DatosViaVerde.cshtml" />
+    <Content Include="Views\Alertas\_ModalSolicitud.cshtml" />
+    <Content Include="Views\Alertas\_ModalValidarSolicitud.cshtml" />
+    <Content Include="Views\Error\ApplicationNotAvailable.cshtml" />
+    <Content Include="Views\Error\ProfileNotDefined.cshtml" />
+    <Content Include="Views\Shared\MantenimientoVehiculo\_ModalMtoVehiculo.cshtml" />
+    <Content Include="Views\Shared\MantenimientoVehiculo\_MtoVehiculo.cshtml" />
+    <Content Include="Views\Shared\MantenimientoVehiculo\_MtoDatosGeneralesVehiculo.cshtml" />
+    <Content Include="Views\Shared\MantenimientoVehiculo\_MtoDatosSeguroVehiculo.cshtml" />
+    <Content Include="Views\Shared\MantenimientoVehiculo\_MtoDatosITV_Vehiculo.cshtml" />
+    <Content Include="Views\Shared\MantenimientoVehiculo\_ModalMtoITV.cshtml" />
+    <Content Include="Views\Shared\MantenimientoVehiculo\_MtoITV.cshtml" />
+    <Content Include="Views\Shared\MantenimientoVehiculo\_MtoDatosContratoVehiculo.cshtml" />
+    <Content Include="Views\MtoGenericoTipos\Index.cshtml" />
+    <Content Include="Views\MtoGenericoTipos\_ModalMtoGenericoTipos.cshtml" />
+    <Content Include="Views\MtoGenericoTipos\_MtoGenericoTipos.cshtml" />
+    <Content Include="Views\Conductores\_ModalConductores.cshtml" />
+    <Content Include="Views\Conductores\Index.cshtml" />
+    <Content Include="Views\Conductores\_MantenimientoConductor.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Conductor.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CentroCosteConductor.cshtml" />
+    <Content Include="Views\EmpresasVehiculos\_MantenimientoEmpresa.cshtml" />
+    <Content Include="Views\EmpresasVehiculos\_ModalEmpresa.cshtml" />
+    <Content Include="Views\EmpresasVehiculos\Index.cshtml" />
+    <Content Include="Views\TarjetasCombustible\_MantenimientoTarjeta.cshtml" />
+    <Content Include="Views\TarjetasCombustible\_ModalTarjeta.cshtml" />
+    <Content Include="Views\TarjetasCombustible\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EmpresaChosen.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EmpresaEmisoraTarjeta.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CentroCosteChosen.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\LeasingSeguroChosen.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DelegacionesChosen.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TipoRutaChosen.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TarjetaCombustibleChosen.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MatriculaSustituidaChosen.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MarcaVehiculoChosen.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ModeloVehiculoChosen.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TipoVehiculoChosen.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CarburanteChosen.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DepartamentosChosen.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UbicacionesChosen.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TipoSeguroChosen.cshtml" />
+    <Content Include="Views\Shared\MantenimientoVehiculo\_MtoDatosObservacionVehiculo.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TipoLiquidacionChosen.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ConductoresIdChosen.cshtml" />
+    <Content Include="Views\Shared\_CustomValidationSummaryBis.cshtml" />
+    <Content Include="Views\ImportarFlota\Index.cshtml" />
+    <Content Include="Views\Shared\_Progress.cshtml" />
+    <Content Include="Views\ImportarViaVerde\Index.cshtml" />
+    <Content Include="Views\ImportarConsumoCombustible\Index.cshtml" />
+    <Content Include="Views\ImportarLeasing\Index.cshtml" />
+    <Content Include="Views\Facturacion\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CalendarMonthYear.cshtml" />
+    <Content Include="Views\BorrarImportacion\Index.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\NombreArchivoParaBorrarChosen.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TipoDocIdentificacion.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Error\BrowserNotSupported.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ModeloVehiculoMultiChosen.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MarcaVehiculoMultiChosen.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\LeasingMultiChosen.cshtml" />
+    <Content Include="Views\Shared\_FilterInformeFlota.cshtml" />
+    <Content Include="Views\Informes\InfAltaBajaFechaContrato.cshtml" />
+    <Content Include="Views\Shared\_ModalAbrirIncidencia.cshtml" />
+    <Content Include="Views\Shared\_DatosIncidencia.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\" />
+    <Folder Include="signalr\hubs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Content\resources\EnumResources.pt-PT.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EnumResources.pt-PT.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\resources\EnumResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>EnumResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\resources\ModelsResources.pt-PT.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\resources\TK_ECAR_Resource.pt-PT.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\resources\ModelsResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ModelsResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Content\resources\TK_ECAR_Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TK_ECAR_Resource.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TK_ECAR.Domain\TK_ECAR.Domain.csproj">
+      <Project>{1ca5867c-7deb-4585-8b80-c615a50eeabd}</Project>
+      <Name>TK_ECAR.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TK_ECAR.Framework\TK_ECAR.Framework.csproj">
+      <Project>{D55B7430-80EF-4A83-BDB5-B73D86897E81}</Project>
+      <Name>TK_ECAR.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TK_ECAR.Infraestructure\TK_ECAR.Infraestructure.csproj">
+      <Project>{38e5c2ea-89c2-4c40-bb5b-a29c4c7ec928}</Project>
+      <Name>TK_ECAR.Infraestructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TK_ECAR.Monitorizacion\TK_ECAR.Monitorizacion.csproj">
+      <Project>{05EF1CC9-7CB2-4CFD-8D17-6BCFE7E04F14}</Project>
+      <Name>TK_ECAR.Monitorizacion</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceIncidentManagement\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49846</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49846/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <Import Project="..\packages\PostSharp.4.3.21\tools\PostSharp.targets" Condition="Exists('..\packages\PostSharp.4.3.21\tools\PostSharp.targets')" />
+  <Target Name="EnsurePostSharpImported" BeforeTargets="BeforeBuild" Condition="'$(PostSharp30Imported)' == ''">
+    <Error Condition="!Exists('..\packages\PostSharp.4.3.21\tools\PostSharp.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://www.postsharp.net/links/nuget-restore." />
+    <Error Condition="Exists('..\packages\PostSharp.4.3.21\tools\PostSharp.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://www.postsharp.net/links/nuget-restore." />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

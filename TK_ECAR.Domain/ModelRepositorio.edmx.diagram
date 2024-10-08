@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="85aae3e2327f467f8ecee8468c559cb4" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="TKRepositorioModel.MERSY_USERS_ZONAS" Width="1.5" PointX="5.25" PointY="15.375" />
+        <EntityTypeShape EntityType="TKRepositorioModel.MERSY_ZONAS" Width="1.5" PointX="3" PointY="12.25" />
+        <EntityTypeShape EntityType="TKRepositorioModel.SAPHR_Delegaciones" Width="1.5" PointX="5.25" PointY="10.5" />
+        <EntityTypeShape EntityType="TKRepositorioModel.SAPHR_DireccionesArea" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="TKRepositorioModel.SAPHR_DireccionesTerritoriales" Width="1.5" PointX="3" PointY="15.5" />
+        <EntityTypeShape EntityType="TKRepositorioModel.SAPHR_Empresas" Width="1.5" PointX="0.75" PointY="6.625" />
+        <EntityTypeShape EntityType="TKRepositorioModel.SAPHR_FiltroSeleccionCentrosCoste" Width="1.5" PointX="2.75" PointY="0.75" />
+        <AssociationConnector Association="TKRepositorioModel.FK_MERSY_USERS_ZONAS_MERSY_ZONAS" />
+        <AssociationConnector Association="TKRepositorioModel.FK_SAPHR_Delegaciones_MERSY_ZONAS" />
+        <AssociationConnector Association="TKRepositorioModel.FK_SAPHR_Delegaciones_SAPHR_DireccionesTerritoriales" />
+        <AssociationConnector Association="TKRepositorioModel.FK_SAPHR_Delegaciones_SAPHR_Empresas" />
+        <AssociationConnector Association="TKRepositorioModel.FK_SAPHR_DireccionesTerritoriales_SAPHR_Empresas" />
+        <AssociationConnector Association="TKRepositorioModel.FK_SAPHR_DireccionesArea_SAPHR_DireccionesTerritoriales" />
+        <AssociationConnector Association="TKRepositorioModel.FK_SAPHR_DireccionesArea_SAPHR_Empresas" />
+        <EntityTypeShape EntityType="TKRepositorioModel.SAPHR_UsuariosSAP" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="TKRepositorioModel.SAPHR_CentrosCoste" Width="1.5" PointX="7.5" PointY="11" />
+        <AssociationConnector Association="TKRepositorioModel.FK_SAPHR_CentrosCoste_SAPHR_Delegaciones" />
+        <AssociationConnector Association="TKRepositorioModel.FK_SAPHR_CentrosCoste_SAPHR_DireccionesTerritoriales" />
+        <AssociationConnector Association="TKRepositorioModel.FK_SAPHR_CentrosCoste_SAPHR_Empresas" />
+        <EntityTypeShape EntityType="TKRepositorioModel.SAPHR_UnidadesOrganizativas" Width="1.5" PointX="3" PointY="6.875" />
+        <AssociationConnector Association="TKRepositorioModel.FK_SAPHR_UnidadesOrganizativas_SAPHR_Empresas" />
+        <EntityTypeShape EntityType="TKRepositorioModel.GENERAL_PARAMETROS_APLICACIONES" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="TKRepositorioModel.GENERAL_IDIOMAS" Width="1.5" PointX="0.75" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

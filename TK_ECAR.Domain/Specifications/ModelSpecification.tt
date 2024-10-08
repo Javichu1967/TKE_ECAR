@@ -1,0 +1,512 @@
+﻿<#
+//*********************************************************
+//
+//    Copyright (c) Rui Jarimba. All rights reserved.
+//    This code is licensed under the Code Project Open License (CPOL).
+//    THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+//    ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+//    IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+//    PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+#>
+<#@ template language="C#" debug="false" hostspecific="true"#>
+<#@ include file="EF.Utility.CS.ttinclude"#>
+<#@ output extension=".cs"#>
+<#
+CodeGenerationTools code = new CodeGenerationTools(this);
+MetadataLoader loader = new MetadataLoader(this);
+CodeRegion region = new CodeRegion(this, 1);
+MetadataTools ef = new MetadataTools(this);
+
+string inputFile = @"..\Model.edmx";
+//string inputFile = @"..\ModelVacations.edmx";
+string namespaceName = @"TK_ECAR.Domain.Specifications"; // code.VsNamespaceSuggestion();
+string filenameSuffix = "Specification.cs";
+bool generateNavigationPropertiesSearch = true;
+
+// include additional using statements here
+List<string> usingList = new List<string>(){
+	"System.Collections.Generic",
+	"TK_ECAR.Domain.DomainModel",
+//	,"other namespace"
+};
+
+/////////////////////////////////////////////////////////////////////////////// Don't edit from here
+
+EdmItemCollection ItemCollection = loader.CreateEdmItemCollection(inputFile);
+EntityFrameworkTemplateFileManager fileManager = EntityFrameworkTemplateFileManager.Create(this);
+
+// Write out support code to primary template output file
+WriteHeader(fileManager, usingList.ToArray());
+BeginNamespace(namespaceName, code);
+EndNamespace(namespaceName);
+
+// Emit Entity Types
+foreach (EntityType entity in ItemCollection.GetItems<EntityType>().OrderBy(e => e.Name))
+{
+    fileManager.StartNewFile(entity.Name + filenameSuffix);
+    BeginNamespace(namespaceName, code);
+    bool entityHasNullableFKs = entity.NavigationProperties.Any(np => np.GetDependentProperties().Any(p=>ef.IsNullable(p)));
+#>
+
+[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
+[System.CodeDom.Compiler.GeneratedCode("GeneratedCode","1.0")]
+
+[Serializable]
+<#=Accessibility.ForType(entity)#> <#=code.SpaceAfter(code.AbstractOption(entity))#>partial class <#=code.Escape(entity)#><#=code.StringBefore(" : ", code.Escape(entity.BaseType))#>Specification : ISpecification<<#=code.Escape(entity)#>>
+{
+<#
+	var properties = entity.Properties.Where(p => p.TypeUsage.EdmType is PrimitiveType && p.DeclaringType == entity);
+	
+    foreach (EdmProperty edmProperty in properties)
+    {
+		// it makes no sense to generate search properties to non-public members
+		if(!IsPublic(edmProperty))
+			continue;
+		
+        bool isForeignKey = entity.NavigationProperties.Any(np=>np.GetDependentProperties().Contains(edmProperty));
+        bool isDefaultValueDefinedInModel = (edmProperty.DefaultValue != null);
+		
+		string propertyType = (IsString(edmProperty) || edmProperty.Nullable) ? 
+			code.Escape(edmProperty.TypeUsage) : 
+			string.Format("Nullable<{0}>", code.Escape(edmProperty.TypeUsage));
+		
+		// generate range properties (to-from) for numeric values, datetimes
+		// ignore booleans and Id* fields (primary and foreign keys)
+		bool generateRangeProperties = !IsString(edmProperty) && !IsBoolean(edmProperty) && !isForeignKey 
+			&& !edmProperty.Name.Equals("Id");
+		
+		string propertyHeader = string.Format("{0} {1} {2}", Accessibility.ForProperty(edmProperty), propertyType, code.Escape(edmProperty));
+		string propertyHeaderEnumerable = string.Format("{0} IEnumerable<{1}> {2}", Accessibility.ForProperty(edmProperty), propertyType, code.Escape(edmProperty));
+		
+		var getterAccess = code.SpaceAfter(Accessibility.ForGetter(edmProperty));
+		var setterAccess = code.SpaceAfter(Accessibility.ForSetter(edmProperty));
+#>
+
+    <#=Accessibility.ForProperty(edmProperty)#> <#=propertyType #> <#=code.Escape(edmProperty)#>
+    {
+        <#=getterAccess#>get; 
+        <#=setterAccess#>set;
+    }
+		
+	<#=propertyHeaderEnumerable#>IN
+	{
+		get;
+		set;
+	}
+<#
+        if (generateRangeProperties)
+        {
+#>
+
+	<#=propertyHeader#>From
+	{
+		get;
+		set;
+	}
+	
+	<#=propertyHeader#>To
+	{
+		get;
+		set;
+	}
+	 
+    
+
+<#
+		}
+		if (IsDateTime(edmProperty))
+		{
+#>
+	<#= propertyHeader #>FromOrNull
+    {
+        get;
+        set;
+    }
+
+                
+    <#= propertyHeader #>ToOrNull
+    {
+        get;
+        set;
+    }
+		
+<#		
+		}
+		if (IsString(edmProperty))
+        {
+#>
+
+	<#=propertyHeader#>Contains
+	{
+		get;
+		set;
+	}
+	
+	<#=propertyHeader#>StartsWith
+	{
+		get;
+		set;
+	}
+	
+	<#=propertyHeader#>EndsWith
+	{
+		get;
+		set;
+	}
+
+<#
+		}
+    }	
+	
+	if(generateNavigationPropertiesSearch)
+	{
+#>
+
+<#
+		region.Begin("Navigation Properties");
+
+		GenerateNavigationPropertiesSearch(entity, code);
+
+		region.End();
+	}
+
+	GenerateConstructor(entity, code);	
+#>
+
+<#
+	region.Begin("ISpecification Members");
+
+	GenerateExpressionMethod(entity, properties, generateNavigationPropertiesSearch);
+	GenerateISpecificationMethod(entity, code);
+	
+	region.End();
+#>
+}
+<#
+    EndNamespace(namespaceName);
+}
+
+
+if (!VerifyTypesAreCaseInsensitiveUnique(ItemCollection))
+{
+    return "";
+}
+
+fileManager.Process();
+
+#>
+<#+
+void WriteHeader(EntityFrameworkTemplateFileManager fileManager, params string[] extraUsings)
+{
+    fileManager.StartHeader();
+#>
+//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated from a template.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+using System;
+using System.Linq;
+using System.Linq.Expressions;
+
+
+<#=String.Join(String.Empty, extraUsings.Select(u => "using " + u + ";" + Environment.NewLine).ToArray())#>
+<#+
+    fileManager.EndBlock();
+}
+
+void BeginNamespace(string namespaceName, CodeGenerationTools code)
+{
+    CodeRegion region = new CodeRegion(this);
+    if (!String.IsNullOrEmpty(namespaceName))
+    {
+#>
+namespace <#=code.EscapeNamespace(namespaceName)#>
+{
+<#+
+        PushIndent(CodeRegion.GetIndent(1));
+    }
+}
+
+void EndNamespace(string namespaceName)
+{
+    if (!String.IsNullOrEmpty(namespaceName))
+    {
+        PopIndent();
+#>
+}
+<#+
+    }
+}
+
+bool IsPublic(EdmProperty property)
+{
+	return Accessibility.ForProperty(property).Equals("public");
+}
+
+bool IsPublic(NavigationProperty property)
+{
+	return Accessibility.ForProperty(property).Equals("public");
+}
+
+bool IsString(EdmProperty property)
+{
+	return property.TypeUsage.ToString().Equals("Edm.String");
+}
+
+bool IsBoolean(EdmProperty property)
+{
+	return property.TypeUsage.ToString().Equals("Edm.Boolean");
+}
+bool IsDateTime(EdmProperty property)
+{
+    return property.TypeUsage.ToString().Equals("Edm.DateTime");
+}
+
+
+bool IsReadWriteAccessibleProperty(EdmMember member)
+{
+    string setter = Accessibility.ForWriteOnlyProperty(member);
+    string getter = Accessibility.ForReadOnlyProperty(member);
+
+    return getter != "private" && getter != "protected" && setter != "private" && setter != "protected";
+}
+
+string PropertyVirtualModifier(string accessibility)
+{
+    return accessibility + (accessibility != "private" ? " virtual" : "");
+}
+
+
+bool VerifyTypesAreCaseInsensitiveUnique(EdmItemCollection itemCollection)
+{
+    Dictionary<string, bool> alreadySeen = new Dictionary<string, bool>(StringComparer.OrdinalIgnoreCase);
+    foreach(StructuralType type in itemCollection.GetItems<StructuralType>())
+    {
+        if (!(type is EntityType || type is ComplexType))
+        {
+            continue;
+        }
+
+        if (alreadySeen.ContainsKey(type.FullName))
+        {
+            Error(String.Format(CultureInfo.CurrentCulture, "This template does not support types that differ only by case, the types {0} are not supported", type.FullName));
+            return false;
+        }
+        else
+        {
+            alreadySeen.Add(type.FullName, true);
+        }
+
+    }
+
+    return true;
+}
+
+void GenerateExpressionMethod(EntityType entity, IEnumerable<EdmProperty> properties, bool generateNavigation)
+{
+#>
+
+	public Expression<Func<<#= entity.Name #>, bool>> GetExpression()
+	{
+		Expression<Func<<#= entity.Name #>, bool>> expression = x => true;
+<#+
+	foreach (var p in properties)
+    {
+		// it makes no sense to generate search properties to non-public members
+		if(!IsPublic(p))
+			continue;
+			
+		bool isForeignKey = entity.NavigationProperties.Any(np=>np.GetDependentProperties().Contains(p));
+		bool isString = p.TypeUsage.ToString().Equals("Edm.String");
+		bool isBool = p.TypeUsage.ToString().Equals("Edm.Boolean");
+		// string nullable = (isString || p.Nullable)? "" : "?";
+		
+		// from - to properties
+		// PublicationDateFrom - PublicationDateTo
+		// Range properties (to-from) for numeric values, datetimes
+		// ignore ID* fields (primary and foreign keys)
+		bool generateRangeProperties = (!isString) && (!isBool) && (!isForeignKey) 
+			&& (!p.Name.Equals("Id"));
+
+		bool isDate =p.TypeUsage.ToString().Equals("Edm.DateTime");
+		
+		if (isString)
+		{
+#>	
+		if(!string.IsNullOrWhiteSpace(<#= p.Name #>))  
+			expression = expression.And(x => x.<#= p.Name #>.Equals(<#= p.Name #>));
+			
+		if(!string.IsNullOrWhiteSpace(<#= p.Name #>Contains))  
+			expression = expression.And(x => x.<#= p.Name #>.Contains(<#= p.Name #>Contains));
+			
+		if(!string.IsNullOrWhiteSpace(<#= p.Name #>StartsWith))
+			expression = expression.And(x => x.<#= p.Name #>.StartsWith(<#= p.Name #>StartsWith));
+
+		if(!string.IsNullOrWhiteSpace(<#= p.Name #>EndsWith))
+			expression = expression.And(x => x.<#= p.Name #>.EndsWith(<#= p.Name #>EndsWith));
+<#+
+		}
+		else
+		{
+#>
+
+		if(<#= p.Name #>.HasValue)
+			expression = expression.And(x => x.<#= p.Name #> == <#= p.Name #>.Value);
+<#+
+		}
+		#>
+
+		if(<#= p.Name #>IN != null && <#= p.Name #>IN.Count() > 0)
+			expression = expression.And(x => <#= p.Name #>IN.Contains(x.<#= p.Name #>));
+<#+
+		
+		if (generateRangeProperties)
+		{
+#>	
+		if(<#= p.Name #>From.HasValue)
+			expression = expression.And(x => x.<#= p.Name #> >= <#= p.Name #>From.Value);
+			
+		if(<#= p.Name #>To.HasValue)
+			expression = expression.And(x => x.<#= p.Name #> <= <#= p.Name #>To.Value);
+				
+
+<#+
+		}
+		if (isDate)
+		{
+#>
+		if(<#= p.Name #>FromOrNull.HasValue)
+            expression = expression.And(x => x.<#= p.Name #> >= <#= p.Name #>FromOrNull.Value || x.<#= p.Name #> == null);
+
+        if(<#= p.Name #>ToOrNull.HasValue)
+            expression = expression.And(x => x.<#= p.Name #> <= <#= p.Name #>ToOrNull.Value || x.<#= p.Name #> == null);
+<#+
+		}
+	}
+	
+	if(generateNavigation)
+	{
+#>		
+		//
+		// Navigation properties
+		//
+<#+
+		foreach (NavigationProperty navProperty in entity.NavigationProperties.Where(np => np.DeclaringType == entity))
+    	{
+			// it makes no sense to generate search properties to non-public members
+			if(!IsPublic(navProperty))
+				continue;
+#>
+
+		if(this.<#=navProperty#> != null)
+		{
+<#+
+			if (navProperty.ToEndMember.RelationshipMultiplicity == RelationshipMultiplicity.Many)
+        	{
+#>
+			var subExpression = <#=navProperty#>.GetExpression();
+			expression = expression.And(x => x.<#=navProperty#>.AsQueryable().Any(subExpression));
+<#+
+			}
+			else // RelationshipMultiplicity.One or RelationshipMultiplicity.ZeroOrOne
+			{
+				// it's no possible to "query" a single entity X
+				// You need to "convert" that entity to an IEnumerable:
+				// new[] { X }
+#>
+			var subExpression = <#=navProperty#>.GetExpression();
+			expression = expression.And(x => (new[] { x.<#=navProperty#> }).AsQueryable().Any(subExpression));
+<#+			
+			}
+#>
+		}
+<#+
+		}
+	}
+#>	
+		return expression;
+	}
+<#+
+}
+
+void GenerateConstructor(EntityType entity, CodeGenerationTools code)
+{
+#>
+
+	/// <summary>
+	/// Default constructor (needed for serialization)
+	/// Initializes a new instance of the <see cref="<#=code.Escape(entity)#><#=code.StringBefore(" : ", code.Escape(entity.BaseType))#>Specification"/> class.
+	/// </summary>
+	public <#=code.Escape(entity)#><#=code.StringBefore(" : ", code.Escape(entity.BaseType))#>Specification()
+	{
+
+	}
+
+	/// <summary>
+	/// Initializes a new instance of the <see cref="<#=code.Escape(entity)#><#=code.StringBefore(" : ", code.Escape(entity.BaseType))#>Specification"/> class.
+	/// </summary>
+	/// <param name="initializeNavigationProperties">if set to <c>true</c> initialize navigation properties.</param>
+	public <#=code.Escape(entity)#><#=code.StringBefore(" : ", code.Escape(entity.BaseType))#>Specification(bool initializeNavigationProperties)
+	{
+		if(!initializeNavigationProperties)
+			return;
+
+<#+
+		foreach (NavigationProperty navProperty in entity.NavigationProperties.Where(np => np.DeclaringType == entity))
+    	{
+			if(!IsPublic(navProperty))
+				continue;
+#>
+		this.<#=navProperty#> = new <#=code.Escape(navProperty.ToEndMember.GetEntityType())#>Specification();
+<#+
+		}
+#>
+	}
+<#+
+}
+
+void GenerateISpecificationMethod(EntityType entity, CodeGenerationTools code)
+{
+#>
+	
+	public bool IsSatisfiedBy(<#=code.Escape(entity)#><#=code.StringBefore(" : ", code.Escape(entity.BaseType))#> entity)
+	{
+		// convert single entity to a IQueryable object, 
+		// in order to be able to use lambda expressions
+		IQueryable<<#=code.Escape(entity)#><#=code.StringBefore(" : ", code.Escape(entity.BaseType))#>> entities = (new[] { entity }).AsQueryable();
+		
+		return entities.Any(this.GetExpression());
+	}
+
+    public override string ToString()
+    {
+        return Evaluator.PartialEval(this.GetExpression()).ToString();
+    }
+<#+
+}
+
+void GenerateNavigationPropertiesSearch(EntityType entity, CodeGenerationTools code)
+{
+	foreach (NavigationProperty navProperty in entity.NavigationProperties.Where(np => np.DeclaringType == entity))
+    {
+		if(!IsPublic(navProperty))
+			continue;
+
+#>
+
+	public <#=code.Escape(navProperty.ToEndMember.GetEntityType())#>Specification <#=navProperty#>
+    {
+        get;
+		set;
+	}
+<#+		
+	}
+}
+#>

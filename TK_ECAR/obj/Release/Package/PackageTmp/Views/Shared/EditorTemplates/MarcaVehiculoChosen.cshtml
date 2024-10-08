@@ -1,0 +1,112 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<select id="miMarcaVehiculo" title="" search class="form-control" data-placeholder=@resourceView.placeholderChosen puedeDeshabilitarse = "SI">
+    <option></option>
+</select>
+<style type="text/css">
+    #miMarcaVehiculo_chosen {
+        width: 100% !important;
+        display: block;
+    }
+</style>
+
+<script type="text/javascript">
+    if ($("#IDMarca").val() != '') {
+        SeleccionaMarca();
+    }
+
+    function SeleccionaMarca() {
+        var uRl = '@Html.Raw(@Url.Action("GetMarcaVehiculoByID_Chosen", "MiFlota", new { ID = "idchosen" }))'
+        uRl = uRl.replace("idchosen", $("#IDMarca").val());
+        $.ajax({
+            "url": uRl,
+            "dataType": 'json',
+            //"async": false,
+            "success": function (data, t, x) {
+                $.each(data, function (i, val) {
+                    var $opt = $('<option value="' + val.value + '" selected="selected">').html(val.text);
+                    $('#miMarcaVehiculo').append($opt);
+                });
+
+                $("#miMarcaVehiculo").trigger("chosen:updated");
+            }
+        });
+    }
+
+
+
+    MarcaVehiculoChosen();
+
+    function MarcaVehiculoChosen() {
+        $("#miMarcaVehiculo").ajaxChosen({
+            type: 'GET',
+            url: '@Url.Action("GetMarcaVehiculo_Chosen", "MiFlota")',
+            "async": false,
+            minTermLength: 0,
+            dataType: 'json'
+        }, function (data) {
+            var terms = [];
+            $.each(data, function (i, val) {
+                terms[i] = val;
+            });
+            return terms;
+
+        },
+            {
+                //options
+                disable_search_threshold: -1,
+                allow_single_deselect: true,
+            });
+    }
+
+    $('#miMarcaVehiculo').on('change', function (evt, params) {
+        $("#IDMarca").val(this.value);
+        LimpiaFiltroChosen("miIDModelo");
+        ChosenModeloVehiculo();
+        if (evt.target.selectedIndex != 0) {
+            DevuelveModeloSegunMarca(this.value);
+        }
+        else {
+            $("#IDModelo").val('');
+        }
+    });
+
+
+    function DevuelveModeloSegunMarca(marca) {
+        var modelo = "";
+        var cont = 0;
+        var uRl = '@Html.Raw(@Url.Action("GetModeloVehiculoByMarca_Chosen", "MiFlota", new { IDMarca = "idmarcachosen" }))';
+        uRl = uRl.replace("idmarcachosen", marca);
+        $.ajax({
+            "url": uRl,
+            "dataType": 'json',
+            "async": false,
+            "success": function (data, t, x) {
+                $.each(data, function (i, val) {
+                    cont++;
+                    modelo = val.value;
+                });
+                if (modelo != '' && modelo != null && cont == 1) {
+                    $('#IDModelo').val(modelo);
+                    ChosenModeloVehiculoSeleccionado();
+                    PonerDeleteEnChosen('miIDModelo');
+                }
+                else {
+                    $("#IDModelo").val('');
+                }
+            }
+        });
+    }
+
+    ////Pasar como parámetro a chosen el filtro de lo que se quiere.
+    //$('#miMarcaVehiculo').change(function () {
+    //    $("#IDMarca").val(this.value);
+    //    LimpiaFiltroChosen("miIDModelo");
+    //    ChosenModeloVehiculo();
+    //    $("#IDModelo").val('');
+    //});
+
+
+
+
+</script>

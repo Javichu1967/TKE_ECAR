@@ -1,0 +1,940 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TKRepositorioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="GENERAL_IDIOMAS">
+          <Key>
+            <PropertyRef Name="ID_APLICACION" />
+            <PropertyRef Name="IDIOMA" />
+          </Key>
+          <Property Name="ID_APLICACION" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="IDIOMA" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ACTIVO" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GENERAL_PARAMETROS_APLICACIONES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AGRUPACION" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PARAMETRO" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VALOR" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="NUM_ORDEN" Type="int" Nullable="false" />
+          <Property Name="BAJA" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MERSY_USERS_ZONAS">
+          <Key>
+            <PropertyRef Name="User_Logon" />
+            <PropertyRef Name="IDZona" />
+          </Key>
+          <Property Name="User_Logon" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IDZona" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="FechaHoraAlta" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MERSY_ZONAS">
+          <Key>
+            <PropertyRef Name="IDZona" />
+          </Key>
+          <Property Name="Sociedad" Type="int" Nullable="false" />
+          <Property Name="IDZona" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SAPHR_CentrosCoste">
+          <Key>
+            <PropertyRef Name="IdCeco" />
+            <PropertyRef Name="Empresa" />
+          </Key>
+          <Property Name="IdCeco" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Empresa" Type="int" Nullable="false" />
+          <Property Name="Baja" Type="bit" Nullable="false" />
+          <Property Name="FechaBaja" Type="datetime2" Precision="7" />
+          <Property Name="IdDelegacion" Type="nvarchar" MaxLength="10" />
+          <Property Name="IdDT" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="SAPHR_Delegaciones">
+          <Key>
+            <PropertyRef Name="IdDelegacion" />
+          </Key>
+          <Property Name="IdDelegacion" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Empresa" Type="int" Nullable="false" />
+          <Property Name="IdDT" Type="nvarchar" MaxLength="10" />
+          <Property Name="Baja" Type="bit" Nullable="false" />
+          <Property Name="FechaBaja" Type="datetime2" Precision="7" />
+          <Property Name="IdZona" Type="varchar" MaxLength="2" />
+          <Property Name="IdDistrito" Type="varchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="SAPHR_DireccionesArea">
+          <Key>
+            <PropertyRef Name="ID_DA" />
+          </Key>
+          <Property Name="ID_DA" Type="int" Nullable="false" />
+          <Property Name="DA" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Empresa" Type="int" Nullable="false" />
+          <Property Name="idDT" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SAPHR_DireccionesTerritoriales">
+          <Key>
+            <PropertyRef Name="IdDT" />
+          </Key>
+          <Property Name="IdDT" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Empresa" Type="int" Nullable="false" />
+          <Property Name="Baja" Type="bit" Nullable="false" />
+          <Property Name="FechaBaja" Type="datetime2" Precision="7" />
+          <Property Name="IdDT_Medea" Type="nvarchar" MaxLength="3" />
+          <Property Name="IdEmpresa_Medea" Type="nvarchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="SAPHR_Empresas">
+          <Key>
+            <PropertyRef Name="CodigoEmpresa" />
+          </Key>
+          <Property Name="CodigoEmpresa" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Activo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SAPHR_FiltroSeleccionCentrosCoste">
+          <Key>
+            <PropertyRef Name="IDSeleccion" />
+          </Key>
+          <Property Name="IDSeleccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FiltroCentroCoste" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Agrupacion1" Type="nvarchar" MaxLength="10" />
+          <Property Name="Agrupacion2" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="SAPHR_UnidadesOrganizativas">
+          <Key>
+            <PropertyRef Name="IdUniOrganizativa" />
+            <PropertyRef Name="Empresa" />
+          </Key>
+          <Property Name="IdUniOrganizativa" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Empresa" Type="int" Nullable="false" />
+          <Property Name="Baja" Type="bit" Nullable="false" />
+          <Property Name="FechaBaja" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SAPHR_UsuariosSAP">
+          <Key>
+            <PropertyRef Name="NumeroEmpleado" />
+          </Key>
+          <Property Name="NumeroEmpleado" Type="int" Nullable="false" />
+          <Property Name="Logon" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Apellido1" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Apellido2" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="IdPuesto" Type="nvarchar" MaxLength="50" />
+          <Property Name="Puesto" Type="nvarchar" MaxLength="100" />
+          <Property Name="IdDivision" Type="nvarchar" MaxLength="4" />
+          <Property Name="Division" Type="nvarchar" MaxLength="100" />
+          <Property Name="IdSubdivision" Type="nvarchar" MaxLength="4" />
+          <Property Name="SubDivision" Type="nvarchar" MaxLength="100" />
+          <Property Name="IdUniOrganizativa" Type="nvarchar" MaxLength="50" />
+          <Property Name="UniOrganizativa" Type="nvarchar" MaxLength="100" />
+          <Property Name="IdCeco" Type="nvarchar" MaxLength="10" />
+          <Property Name="CentroCoste" Type="nvarchar" MaxLength="100" />
+          <Property Name="IdDelegacion" Type="nvarchar" MaxLength="10" />
+          <Property Name="Delegacion" Type="nvarchar" MaxLength="100" />
+          <Property Name="IdDT" Type="nvarchar" MaxLength="10" />
+          <Property Name="DT" Type="nvarchar" MaxLength="100" />
+          <Property Name="IdDirArea" Type="int" />
+          <Property Name="DirArea" Type="nvarchar" MaxLength="100" />
+          <Property Name="IdFuncion" Type="nvarchar" MaxLength="50" />
+          <Property Name="Funcion" Type="nvarchar" MaxLength="100" />
+          <Property Name="IdCategoriaProfesional" Type="nvarchar" MaxLength="3" />
+          <Property Name="CategoriaProfesional" Type="nvarchar" MaxLength="100" />
+          <Property Name="CodigoEmpresa" Type="int" Nullable="false" />
+          <Property Name="Empresa" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdRelaLaboral" Type="nvarchar" MaxLength="10" />
+          <Property Name="RelaLaboral" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaAlta" Type="datetime" Nullable="false" />
+          <Property Name="FechaBaja" Type="datetime2" Precision="7" />
+          <Property Name="Baja" Type="bit" Nullable="false" />
+          <Property Name="Dni" Type="nvarchar" MaxLength="15" />
+          <Property Name="Domicilio" Type="nvarchar" MaxLength="100" />
+          <Property Name="CodPostal" Type="nvarchar" MaxLength="10" />
+          <Property Name="Poblacion" Type="nvarchar" MaxLength="50" />
+          <Property Name="Provincia" Type="nvarchar" MaxLength="50" />
+          <Property Name="FecNacimiento" Type="date" />
+          <Property Name="PaisNac" Type="nvarchar" MaxLength="50" />
+          <Property Name="LugarNac" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProvinciaNac" Type="nvarchar" MaxLength="50" />
+          <Property Name="NacionalidadNac" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdProvincia" Type="nvarchar" MaxLength="2" />
+          <Property Name="FechaVolcado" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_MERSY_USERS_ZONAS_MERSY_ZONAS">
+          <End Role="MERSY_ZONAS" Type="Self.MERSY_ZONAS" Multiplicity="1" />
+          <End Role="MERSY_USERS_ZONAS" Type="Self.MERSY_USERS_ZONAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MERSY_ZONAS">
+              <PropertyRef Name="IDZona" />
+            </Principal>
+            <Dependent Role="MERSY_USERS_ZONAS">
+              <PropertyRef Name="IDZona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAPHR_CentrosCoste_SAPHR_Delegaciones">
+          <End Role="SAPHR_Delegaciones" Type="Self.SAPHR_Delegaciones" Multiplicity="0..1" />
+          <End Role="SAPHR_CentrosCoste" Type="Self.SAPHR_CentrosCoste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAPHR_Delegaciones">
+              <PropertyRef Name="IdDelegacion" />
+            </Principal>
+            <Dependent Role="SAPHR_CentrosCoste">
+              <PropertyRef Name="IdDelegacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAPHR_CentrosCoste_SAPHR_DireccionesTerritoriales">
+          <End Role="SAPHR_DireccionesTerritoriales" Type="Self.SAPHR_DireccionesTerritoriales" Multiplicity="0..1" />
+          <End Role="SAPHR_CentrosCoste" Type="Self.SAPHR_CentrosCoste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAPHR_DireccionesTerritoriales">
+              <PropertyRef Name="IdDT" />
+            </Principal>
+            <Dependent Role="SAPHR_CentrosCoste">
+              <PropertyRef Name="IdDT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAPHR_CentrosCoste_SAPHR_Empresas">
+          <End Role="SAPHR_Empresas" Type="Self.SAPHR_Empresas" Multiplicity="1" />
+          <End Role="SAPHR_CentrosCoste" Type="Self.SAPHR_CentrosCoste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAPHR_Empresas">
+              <PropertyRef Name="CodigoEmpresa" />
+            </Principal>
+            <Dependent Role="SAPHR_CentrosCoste">
+              <PropertyRef Name="Empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAPHR_Delegaciones_MERSY_ZONAS">
+          <End Role="MERSY_ZONAS" Type="Self.MERSY_ZONAS" Multiplicity="0..1" />
+          <End Role="SAPHR_Delegaciones" Type="Self.SAPHR_Delegaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MERSY_ZONAS">
+              <PropertyRef Name="IDZona" />
+            </Principal>
+            <Dependent Role="SAPHR_Delegaciones">
+              <PropertyRef Name="IdZona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAPHR_Delegaciones_SAPHR_DireccionesTerritoriales">
+          <End Role="SAPHR_DireccionesTerritoriales" Type="Self.SAPHR_DireccionesTerritoriales" Multiplicity="0..1" />
+          <End Role="SAPHR_Delegaciones" Type="Self.SAPHR_Delegaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAPHR_DireccionesTerritoriales">
+              <PropertyRef Name="IdDT" />
+            </Principal>
+            <Dependent Role="SAPHR_Delegaciones">
+              <PropertyRef Name="IdDT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAPHR_Delegaciones_SAPHR_Empresas">
+          <End Role="SAPHR_Empresas" Type="Self.SAPHR_Empresas" Multiplicity="1" />
+          <End Role="SAPHR_Delegaciones" Type="Self.SAPHR_Delegaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAPHR_Empresas">
+              <PropertyRef Name="CodigoEmpresa" />
+            </Principal>
+            <Dependent Role="SAPHR_Delegaciones">
+              <PropertyRef Name="Empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAPHR_DireccionesArea_SAPHR_DireccionesTerritoriales">
+          <End Role="SAPHR_DireccionesTerritoriales" Type="Self.SAPHR_DireccionesTerritoriales" Multiplicity="1" />
+          <End Role="SAPHR_DireccionesArea" Type="Self.SAPHR_DireccionesArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAPHR_DireccionesTerritoriales">
+              <PropertyRef Name="IdDT" />
+            </Principal>
+            <Dependent Role="SAPHR_DireccionesArea">
+              <PropertyRef Name="idDT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAPHR_DireccionesArea_SAPHR_Empresas">
+          <End Role="SAPHR_Empresas" Type="Self.SAPHR_Empresas" Multiplicity="1" />
+          <End Role="SAPHR_DireccionesArea" Type="Self.SAPHR_DireccionesArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAPHR_Empresas">
+              <PropertyRef Name="CodigoEmpresa" />
+            </Principal>
+            <Dependent Role="SAPHR_DireccionesArea">
+              <PropertyRef Name="Empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAPHR_DireccionesTerritoriales_SAPHR_Empresas">
+          <End Role="SAPHR_Empresas" Type="Self.SAPHR_Empresas" Multiplicity="1" />
+          <End Role="SAPHR_DireccionesTerritoriales" Type="Self.SAPHR_DireccionesTerritoriales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAPHR_Empresas">
+              <PropertyRef Name="CodigoEmpresa" />
+            </Principal>
+            <Dependent Role="SAPHR_DireccionesTerritoriales">
+              <PropertyRef Name="Empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAPHR_UnidadesOrganizativas_SAPHR_Empresas">
+          <End Role="SAPHR_Empresas" Type="Self.SAPHR_Empresas" Multiplicity="1" />
+          <End Role="SAPHR_UnidadesOrganizativas" Type="Self.SAPHR_UnidadesOrganizativas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAPHR_Empresas">
+              <PropertyRef Name="CodigoEmpresa" />
+            </Principal>
+            <Dependent Role="SAPHR_UnidadesOrganizativas">
+              <PropertyRef Name="Empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TKRepositorioModelStoreContainer">
+          <EntitySet Name="GENERAL_IDIOMAS" EntityType="Self.GENERAL_IDIOMAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GENERAL_PARAMETROS_APLICACIONES" EntityType="Self.GENERAL_PARAMETROS_APLICACIONES" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MERSY_USERS_ZONAS" EntityType="Self.MERSY_USERS_ZONAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MERSY_ZONAS" EntityType="Self.MERSY_ZONAS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SAPHR_CentrosCoste" EntityType="Self.SAPHR_CentrosCoste" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SAPHR_Delegaciones" EntityType="Self.SAPHR_Delegaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SAPHR_DireccionesArea" EntityType="Self.SAPHR_DireccionesArea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SAPHR_DireccionesTerritoriales" EntityType="Self.SAPHR_DireccionesTerritoriales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SAPHR_Empresas" EntityType="Self.SAPHR_Empresas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SAPHR_FiltroSeleccionCentrosCoste" EntityType="Self.SAPHR_FiltroSeleccionCentrosCoste" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SAPHR_UnidadesOrganizativas" EntityType="Self.SAPHR_UnidadesOrganizativas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SAPHR_UsuariosSAP" EntityType="Self.SAPHR_UsuariosSAP" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_MERSY_USERS_ZONAS_MERSY_ZONAS" Association="Self.FK_MERSY_USERS_ZONAS_MERSY_ZONAS">
+            <End Role="MERSY_ZONAS" EntitySet="MERSY_ZONAS" />
+            <End Role="MERSY_USERS_ZONAS" EntitySet="MERSY_USERS_ZONAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAPHR_CentrosCoste_SAPHR_Delegaciones" Association="Self.FK_SAPHR_CentrosCoste_SAPHR_Delegaciones">
+            <End Role="SAPHR_Delegaciones" EntitySet="SAPHR_Delegaciones" />
+            <End Role="SAPHR_CentrosCoste" EntitySet="SAPHR_CentrosCoste" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAPHR_CentrosCoste_SAPHR_DireccionesTerritoriales" Association="Self.FK_SAPHR_CentrosCoste_SAPHR_DireccionesTerritoriales">
+            <End Role="SAPHR_DireccionesTerritoriales" EntitySet="SAPHR_DireccionesTerritoriales" />
+            <End Role="SAPHR_CentrosCoste" EntitySet="SAPHR_CentrosCoste" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAPHR_CentrosCoste_SAPHR_Empresas" Association="Self.FK_SAPHR_CentrosCoste_SAPHR_Empresas">
+            <End Role="SAPHR_Empresas" EntitySet="SAPHR_Empresas" />
+            <End Role="SAPHR_CentrosCoste" EntitySet="SAPHR_CentrosCoste" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAPHR_Delegaciones_MERSY_ZONAS" Association="Self.FK_SAPHR_Delegaciones_MERSY_ZONAS">
+            <End Role="MERSY_ZONAS" EntitySet="MERSY_ZONAS" />
+            <End Role="SAPHR_Delegaciones" EntitySet="SAPHR_Delegaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAPHR_Delegaciones_SAPHR_DireccionesTerritoriales" Association="Self.FK_SAPHR_Delegaciones_SAPHR_DireccionesTerritoriales">
+            <End Role="SAPHR_DireccionesTerritoriales" EntitySet="SAPHR_DireccionesTerritoriales" />
+            <End Role="SAPHR_Delegaciones" EntitySet="SAPHR_Delegaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAPHR_Delegaciones_SAPHR_Empresas" Association="Self.FK_SAPHR_Delegaciones_SAPHR_Empresas">
+            <End Role="SAPHR_Empresas" EntitySet="SAPHR_Empresas" />
+            <End Role="SAPHR_Delegaciones" EntitySet="SAPHR_Delegaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAPHR_DireccionesArea_SAPHR_DireccionesTerritoriales" Association="Self.FK_SAPHR_DireccionesArea_SAPHR_DireccionesTerritoriales">
+            <End Role="SAPHR_DireccionesTerritoriales" EntitySet="SAPHR_DireccionesTerritoriales" />
+            <End Role="SAPHR_DireccionesArea" EntitySet="SAPHR_DireccionesArea" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAPHR_DireccionesArea_SAPHR_Empresas" Association="Self.FK_SAPHR_DireccionesArea_SAPHR_Empresas">
+            <End Role="SAPHR_Empresas" EntitySet="SAPHR_Empresas" />
+            <End Role="SAPHR_DireccionesArea" EntitySet="SAPHR_DireccionesArea" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAPHR_DireccionesTerritoriales_SAPHR_Empresas" Association="Self.FK_SAPHR_DireccionesTerritoriales_SAPHR_Empresas">
+            <End Role="SAPHR_Empresas" EntitySet="SAPHR_Empresas" />
+            <End Role="SAPHR_DireccionesTerritoriales" EntitySet="SAPHR_DireccionesTerritoriales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAPHR_UnidadesOrganizativas_SAPHR_Empresas" Association="Self.FK_SAPHR_UnidadesOrganizativas_SAPHR_Empresas">
+            <End Role="SAPHR_Empresas" EntitySet="SAPHR_Empresas" />
+            <End Role="SAPHR_UnidadesOrganizativas" EntitySet="SAPHR_UnidadesOrganizativas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TKRepositorioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TKRepositorioEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MERSY_USERS_ZONAS" EntityType="TKRepositorioModel.MERSY_USERS_ZONAS" />
+          <EntitySet Name="MERSY_ZONAS" EntityType="TKRepositorioModel.MERSY_ZONAS" />
+          <EntitySet Name="SAPHR_Delegaciones" EntityType="TKRepositorioModel.SAPHR_Delegaciones" />
+          <EntitySet Name="SAPHR_DireccionesArea" EntityType="TKRepositorioModel.SAPHR_DireccionesArea" />
+          <EntitySet Name="SAPHR_DireccionesTerritoriales" EntityType="TKRepositorioModel.SAPHR_DireccionesTerritoriales" />
+          <EntitySet Name="SAPHR_Empresas" EntityType="TKRepositorioModel.SAPHR_Empresas" />
+          <EntitySet Name="SAPHR_FiltroSeleccionCentrosCoste" EntityType="TKRepositorioModel.SAPHR_FiltroSeleccionCentrosCoste" />
+          <AssociationSet Name="FK_MERSY_USERS_ZONAS_MERSY_ZONAS" Association="TKRepositorioModel.FK_MERSY_USERS_ZONAS_MERSY_ZONAS">
+            <End Role="MERSY_ZONAS" EntitySet="MERSY_ZONAS" />
+            <End Role="MERSY_USERS_ZONAS" EntitySet="MERSY_USERS_ZONAS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAPHR_Delegaciones_MERSY_ZONAS" Association="TKRepositorioModel.FK_SAPHR_Delegaciones_MERSY_ZONAS">
+            <End Role="MERSY_ZONAS" EntitySet="MERSY_ZONAS" />
+            <End Role="SAPHR_Delegaciones" EntitySet="SAPHR_Delegaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAPHR_Delegaciones_SAPHR_DireccionesTerritoriales" Association="TKRepositorioModel.FK_SAPHR_Delegaciones_SAPHR_DireccionesTerritoriales">
+            <End Role="SAPHR_DireccionesTerritoriales" EntitySet="SAPHR_DireccionesTerritoriales" />
+            <End Role="SAPHR_Delegaciones" EntitySet="SAPHR_Delegaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAPHR_Delegaciones_SAPHR_Empresas" Association="TKRepositorioModel.FK_SAPHR_Delegaciones_SAPHR_Empresas">
+            <End Role="SAPHR_Empresas" EntitySet="SAPHR_Empresas" />
+            <End Role="SAPHR_Delegaciones" EntitySet="SAPHR_Delegaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAPHR_DireccionesTerritoriales_SAPHR_Empresas" Association="TKRepositorioModel.FK_SAPHR_DireccionesTerritoriales_SAPHR_Empresas">
+            <End Role="SAPHR_Empresas" EntitySet="SAPHR_Empresas" />
+            <End Role="SAPHR_DireccionesTerritoriales" EntitySet="SAPHR_DireccionesTerritoriales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAPHR_DireccionesArea_SAPHR_DireccionesTerritoriales" Association="TKRepositorioModel.FK_SAPHR_DireccionesArea_SAPHR_DireccionesTerritoriales">
+            <End Role="SAPHR_DireccionesTerritoriales" EntitySet="SAPHR_DireccionesTerritoriales" />
+            <End Role="SAPHR_DireccionesArea" EntitySet="SAPHR_DireccionesArea" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAPHR_DireccionesArea_SAPHR_Empresas" Association="TKRepositorioModel.FK_SAPHR_DireccionesArea_SAPHR_Empresas">
+            <End Role="SAPHR_Empresas" EntitySet="SAPHR_Empresas" />
+            <End Role="SAPHR_DireccionesArea" EntitySet="SAPHR_DireccionesArea" />
+          </AssociationSet>
+          <EntitySet Name="SAPHR_UsuariosSAP" EntityType="TKRepositorioModel.SAPHR_UsuariosSAP" />
+          <EntitySet Name="SAPHR_CentrosCoste" EntityType="TKRepositorioModel.SAPHR_CentrosCoste" />
+          <AssociationSet Name="FK_SAPHR_CentrosCoste_SAPHR_Delegaciones" Association="TKRepositorioModel.FK_SAPHR_CentrosCoste_SAPHR_Delegaciones">
+            <End Role="SAPHR_Delegaciones" EntitySet="SAPHR_Delegaciones" />
+            <End Role="SAPHR_CentrosCoste" EntitySet="SAPHR_CentrosCoste" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAPHR_CentrosCoste_SAPHR_DireccionesTerritoriales" Association="TKRepositorioModel.FK_SAPHR_CentrosCoste_SAPHR_DireccionesTerritoriales">
+            <End Role="SAPHR_DireccionesTerritoriales" EntitySet="SAPHR_DireccionesTerritoriales" />
+            <End Role="SAPHR_CentrosCoste" EntitySet="SAPHR_CentrosCoste" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SAPHR_CentrosCoste_SAPHR_Empresas" Association="TKRepositorioModel.FK_SAPHR_CentrosCoste_SAPHR_Empresas">
+            <End Role="SAPHR_Empresas" EntitySet="SAPHR_Empresas" />
+            <End Role="SAPHR_CentrosCoste" EntitySet="SAPHR_CentrosCoste" />
+          </AssociationSet>
+          <EntitySet Name="SAPHR_UnidadesOrganizativas" EntityType="TKRepositorioModel.SAPHR_UnidadesOrganizativas" />
+          <AssociationSet Name="FK_SAPHR_UnidadesOrganizativas_SAPHR_Empresas" Association="TKRepositorioModel.FK_SAPHR_UnidadesOrganizativas_SAPHR_Empresas">
+            <End Role="SAPHR_Empresas" EntitySet="SAPHR_Empresas" />
+            <End Role="SAPHR_UnidadesOrganizativas" EntitySet="SAPHR_UnidadesOrganizativas" />
+          </AssociationSet>
+          <EntitySet Name="GENERAL_PARAMETROS_APLICACIONES" EntityType="TKRepositorioModel.GENERAL_PARAMETROS_APLICACIONES" />
+          <EntitySet Name="GENERAL_IDIOMAS" EntityType="TKRepositorioModel.GENERAL_IDIOMAS" />
+        </EntityContainer>
+        <EntityType Name="MERSY_USERS_ZONAS">
+          <Key>
+            <PropertyRef Name="User_Logon" />
+            <PropertyRef Name="IDZona" />
+          </Key>
+          <Property Name="User_Logon" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IDZona" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="FechaHoraAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="MERSY_ZONAS" Relationship="TKRepositorioModel.FK_MERSY_USERS_ZONAS_MERSY_ZONAS" FromRole="MERSY_USERS_ZONAS" ToRole="MERSY_ZONAS" />
+        </EntityType>
+        <EntityType Name="MERSY_ZONAS">
+          <Key>
+            <PropertyRef Name="IDZona" />
+          </Key>
+          <Property Name="Sociedad" Type="Int32" Nullable="false" />
+          <Property Name="IDZona" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MERSY_USERS_ZONAS" Relationship="TKRepositorioModel.FK_MERSY_USERS_ZONAS_MERSY_ZONAS" FromRole="MERSY_ZONAS" ToRole="MERSY_USERS_ZONAS" />
+          <NavigationProperty Name="SAPHR_Delegaciones" Relationship="TKRepositorioModel.FK_SAPHR_Delegaciones_MERSY_ZONAS" FromRole="MERSY_ZONAS" ToRole="SAPHR_Delegaciones" />
+        </EntityType>
+        <EntityType Name="SAPHR_Delegaciones">
+          <Key>
+            <PropertyRef Name="IdDelegacion" />
+          </Key>
+          <Property Name="IdDelegacion" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Empresa" Type="Int32" Nullable="false" />
+          <Property Name="IdDT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Baja" Type="Boolean" Nullable="false" />
+          <Property Name="FechaBaja" Type="DateTime" Precision="7" />
+          <Property Name="IdZona" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="IdDistrito" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MERSY_ZONAS" Relationship="TKRepositorioModel.FK_SAPHR_Delegaciones_MERSY_ZONAS" FromRole="SAPHR_Delegaciones" ToRole="MERSY_ZONAS" />
+          <NavigationProperty Name="SAPHR_DireccionesTerritoriales" Relationship="TKRepositorioModel.FK_SAPHR_Delegaciones_SAPHR_DireccionesTerritoriales" FromRole="SAPHR_Delegaciones" ToRole="SAPHR_DireccionesTerritoriales" />
+          <NavigationProperty Name="SAPHR_Empresas" Relationship="TKRepositorioModel.FK_SAPHR_Delegaciones_SAPHR_Empresas" FromRole="SAPHR_Delegaciones" ToRole="SAPHR_Empresas" />
+          <NavigationProperty Name="SAPHR_CentrosCoste" Relationship="TKRepositorioModel.FK_SAPHR_CentrosCoste_SAPHR_Delegaciones" FromRole="SAPHR_Delegaciones" ToRole="SAPHR_CentrosCoste" />
+        </EntityType>
+        <EntityType Name="SAPHR_DireccionesArea">
+          <Key>
+            <PropertyRef Name="ID_DA" />
+          </Key>
+          <Property Name="ID_DA" Type="Int32" Nullable="false" />
+          <Property Name="DA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Empresa" Type="Int32" Nullable="false" />
+          <Property Name="idDT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SAPHR_DireccionesTerritoriales" Relationship="TKRepositorioModel.FK_SAPHR_DireccionesArea_SAPHR_DireccionesTerritoriales" FromRole="SAPHR_DireccionesArea" ToRole="SAPHR_DireccionesTerritoriales" />
+          <NavigationProperty Name="SAPHR_Empresas" Relationship="TKRepositorioModel.FK_SAPHR_DireccionesArea_SAPHR_Empresas" FromRole="SAPHR_DireccionesArea" ToRole="SAPHR_Empresas" />
+        </EntityType>
+        <EntityType Name="SAPHR_DireccionesTerritoriales">
+          <Key>
+            <PropertyRef Name="IdDT" />
+          </Key>
+          <Property Name="IdDT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Empresa" Type="Int32" Nullable="false" />
+          <Property Name="Baja" Type="Boolean" Nullable="false" />
+          <Property Name="FechaBaja" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="SAPHR_Delegaciones" Relationship="TKRepositorioModel.FK_SAPHR_Delegaciones_SAPHR_DireccionesTerritoriales" FromRole="SAPHR_DireccionesTerritoriales" ToRole="SAPHR_Delegaciones" />
+          <NavigationProperty Name="SAPHR_Empresas" Relationship="TKRepositorioModel.FK_SAPHR_DireccionesTerritoriales_SAPHR_Empresas" FromRole="SAPHR_DireccionesTerritoriales" ToRole="SAPHR_Empresas" />
+          <NavigationProperty Name="SAPHR_DireccionesArea" Relationship="TKRepositorioModel.FK_SAPHR_DireccionesArea_SAPHR_DireccionesTerritoriales" FromRole="SAPHR_DireccionesTerritoriales" ToRole="SAPHR_DireccionesArea" />
+          <NavigationProperty Name="SAPHR_CentrosCoste" Relationship="TKRepositorioModel.FK_SAPHR_CentrosCoste_SAPHR_DireccionesTerritoriales" FromRole="SAPHR_DireccionesTerritoriales" ToRole="SAPHR_CentrosCoste" />
+          <Property Name="IdDT_Medea" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="IdEmpresa_Medea" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SAPHR_Empresas">
+          <Key>
+            <PropertyRef Name="CodigoEmpresa" />
+          </Key>
+          <Property Name="CodigoEmpresa" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Activo" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="SAPHR_Delegaciones" Relationship="TKRepositorioModel.FK_SAPHR_Delegaciones_SAPHR_Empresas" FromRole="SAPHR_Empresas" ToRole="SAPHR_Delegaciones" />
+          <NavigationProperty Name="SAPHR_DireccionesTerritoriales" Relationship="TKRepositorioModel.FK_SAPHR_DireccionesTerritoriales_SAPHR_Empresas" FromRole="SAPHR_Empresas" ToRole="SAPHR_DireccionesTerritoriales" />
+          <NavigationProperty Name="SAPHR_DireccionesArea" Relationship="TKRepositorioModel.FK_SAPHR_DireccionesArea_SAPHR_Empresas" FromRole="SAPHR_Empresas" ToRole="SAPHR_DireccionesArea" />
+          <NavigationProperty Name="SAPHR_CentrosCoste" Relationship="TKRepositorioModel.FK_SAPHR_CentrosCoste_SAPHR_Empresas" FromRole="SAPHR_Empresas" ToRole="SAPHR_CentrosCoste" />
+          <NavigationProperty Name="SAPHR_UnidadesOrganizativas" Relationship="TKRepositorioModel.FK_SAPHR_UnidadesOrganizativas_SAPHR_Empresas" FromRole="SAPHR_Empresas" ToRole="SAPHR_UnidadesOrganizativas" />
+        </EntityType>
+        <EntityType Name="SAPHR_FiltroSeleccionCentrosCoste">
+          <Key>
+            <PropertyRef Name="IDSeleccion" />
+          </Key>
+          <Property Name="IDSeleccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FiltroCentroCoste" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Agrupacion1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Agrupacion2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_MERSY_USERS_ZONAS_MERSY_ZONAS">
+          <End Type="TKRepositorioModel.MERSY_ZONAS" Role="MERSY_ZONAS" Multiplicity="1" />
+          <End Type="TKRepositorioModel.MERSY_USERS_ZONAS" Role="MERSY_USERS_ZONAS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MERSY_ZONAS">
+              <PropertyRef Name="IDZona" />
+            </Principal>
+            <Dependent Role="MERSY_USERS_ZONAS">
+              <PropertyRef Name="IDZona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAPHR_Delegaciones_MERSY_ZONAS">
+          <End Type="TKRepositorioModel.MERSY_ZONAS" Role="MERSY_ZONAS" Multiplicity="0..1" />
+          <End Type="TKRepositorioModel.SAPHR_Delegaciones" Role="SAPHR_Delegaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MERSY_ZONAS">
+              <PropertyRef Name="IDZona" />
+            </Principal>
+            <Dependent Role="SAPHR_Delegaciones">
+              <PropertyRef Name="IdZona" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAPHR_Delegaciones_SAPHR_DireccionesTerritoriales">
+          <End Type="TKRepositorioModel.SAPHR_DireccionesTerritoriales" Role="SAPHR_DireccionesTerritoriales" Multiplicity="0..1" />
+          <End Type="TKRepositorioModel.SAPHR_Delegaciones" Role="SAPHR_Delegaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAPHR_DireccionesTerritoriales">
+              <PropertyRef Name="IdDT" />
+            </Principal>
+            <Dependent Role="SAPHR_Delegaciones">
+              <PropertyRef Name="IdDT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAPHR_Delegaciones_SAPHR_Empresas">
+          <End Type="TKRepositorioModel.SAPHR_Empresas" Role="SAPHR_Empresas" Multiplicity="1" />
+          <End Type="TKRepositorioModel.SAPHR_Delegaciones" Role="SAPHR_Delegaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAPHR_Empresas">
+              <PropertyRef Name="CodigoEmpresa" />
+            </Principal>
+            <Dependent Role="SAPHR_Delegaciones">
+              <PropertyRef Name="Empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAPHR_DireccionesTerritoriales_SAPHR_Empresas">
+          <End Type="TKRepositorioModel.SAPHR_Empresas" Role="SAPHR_Empresas" Multiplicity="1" />
+          <End Type="TKRepositorioModel.SAPHR_DireccionesTerritoriales" Role="SAPHR_DireccionesTerritoriales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAPHR_Empresas">
+              <PropertyRef Name="CodigoEmpresa" />
+            </Principal>
+            <Dependent Role="SAPHR_DireccionesTerritoriales">
+              <PropertyRef Name="Empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAPHR_DireccionesArea_SAPHR_DireccionesTerritoriales">
+          <End Type="TKRepositorioModel.SAPHR_DireccionesTerritoriales" Role="SAPHR_DireccionesTerritoriales" Multiplicity="1" />
+          <End Type="TKRepositorioModel.SAPHR_DireccionesArea" Role="SAPHR_DireccionesArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAPHR_DireccionesTerritoriales">
+              <PropertyRef Name="IdDT" />
+            </Principal>
+            <Dependent Role="SAPHR_DireccionesArea">
+              <PropertyRef Name="idDT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAPHR_DireccionesArea_SAPHR_Empresas">
+          <End Type="TKRepositorioModel.SAPHR_Empresas" Role="SAPHR_Empresas" Multiplicity="1" />
+          <End Type="TKRepositorioModel.SAPHR_DireccionesArea" Role="SAPHR_DireccionesArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAPHR_Empresas">
+              <PropertyRef Name="CodigoEmpresa" />
+            </Principal>
+            <Dependent Role="SAPHR_DireccionesArea">
+              <PropertyRef Name="Empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SAPHR_UsuariosSAP">
+          <Key>
+            <PropertyRef Name="NumeroEmpleado" />
+          </Key>
+          <Property Name="NumeroEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="Logon" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Apellido1" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Apellido2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IdPuesto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Puesto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IdDivision" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Division" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IdSubdivision" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="SubDivision" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IdUniOrganizativa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UniOrganizativa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IdCeco" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="CentroCoste" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IdDelegacion" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Delegacion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IdDT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IdDirArea" Type="Int32" />
+          <Property Name="DirArea" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IdFuncion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Funcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IdCategoriaProfesional" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
+          <Property Name="CategoriaProfesional" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CodigoEmpresa" Type="Int32" Nullable="false" />
+          <Property Name="Empresa" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdRelaLaboral" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="RelaLaboral" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaAlta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FechaBaja" Type="DateTime" Precision="7" />
+          <Property Name="Baja" Type="Boolean" Nullable="false" />
+          <Property Name="Dni" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Domicilio" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CodPostal" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Poblacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Provincia" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FecNacimiento" Type="DateTime" Precision="0" />
+          <Property Name="PaisNac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LugarNac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProvinciaNac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NacionalidadNac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdProvincia" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="FechaVolcado" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="SAPHR_CentrosCoste">
+          <Key>
+            <PropertyRef Name="IdCeco" />
+            <PropertyRef Name="Empresa" />
+          </Key>
+          <Property Name="IdCeco" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Empresa" Type="Int32" Nullable="false" />
+          <Property Name="Baja" Type="Boolean" Nullable="false" />
+          <Property Name="FechaBaja" Type="DateTime" Precision="7" />
+          <Property Name="IdDelegacion" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IdDT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SAPHR_Delegaciones" Relationship="TKRepositorioModel.FK_SAPHR_CentrosCoste_SAPHR_Delegaciones" FromRole="SAPHR_CentrosCoste" ToRole="SAPHR_Delegaciones" />
+          <NavigationProperty Name="SAPHR_DireccionesTerritoriales" Relationship="TKRepositorioModel.FK_SAPHR_CentrosCoste_SAPHR_DireccionesTerritoriales" FromRole="SAPHR_CentrosCoste" ToRole="SAPHR_DireccionesTerritoriales" />
+          <NavigationProperty Name="SAPHR_Empresas" Relationship="TKRepositorioModel.FK_SAPHR_CentrosCoste_SAPHR_Empresas" FromRole="SAPHR_CentrosCoste" ToRole="SAPHR_Empresas" />
+        </EntityType>
+        <Association Name="FK_SAPHR_CentrosCoste_SAPHR_Delegaciones">
+          <End Type="TKRepositorioModel.SAPHR_Delegaciones" Role="SAPHR_Delegaciones" Multiplicity="0..1" />
+          <End Type="TKRepositorioModel.SAPHR_CentrosCoste" Role="SAPHR_CentrosCoste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAPHR_Delegaciones">
+              <PropertyRef Name="IdDelegacion" />
+            </Principal>
+            <Dependent Role="SAPHR_CentrosCoste">
+              <PropertyRef Name="IdDelegacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAPHR_CentrosCoste_SAPHR_DireccionesTerritoriales">
+          <End Type="TKRepositorioModel.SAPHR_DireccionesTerritoriales" Role="SAPHR_DireccionesTerritoriales" Multiplicity="0..1" />
+          <End Type="TKRepositorioModel.SAPHR_CentrosCoste" Role="SAPHR_CentrosCoste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAPHR_DireccionesTerritoriales">
+              <PropertyRef Name="IdDT" />
+            </Principal>
+            <Dependent Role="SAPHR_CentrosCoste">
+              <PropertyRef Name="IdDT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SAPHR_CentrosCoste_SAPHR_Empresas">
+          <End Type="TKRepositorioModel.SAPHR_Empresas" Role="SAPHR_Empresas" Multiplicity="1" />
+          <End Type="TKRepositorioModel.SAPHR_CentrosCoste" Role="SAPHR_CentrosCoste" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAPHR_Empresas">
+              <PropertyRef Name="CodigoEmpresa" />
+            </Principal>
+            <Dependent Role="SAPHR_CentrosCoste">
+              <PropertyRef Name="Empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SAPHR_UnidadesOrganizativas">
+          <Key>
+            <PropertyRef Name="IdUniOrganizativa" />
+            <PropertyRef Name="Empresa" />
+          </Key>
+          <Property Name="IdUniOrganizativa" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Empresa" Type="Int32" Nullable="false" />
+          <Property Name="Baja" Type="Boolean" Nullable="false" />
+          <Property Name="FechaBaja" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="SAPHR_Empresas" Relationship="TKRepositorioModel.FK_SAPHR_UnidadesOrganizativas_SAPHR_Empresas" FromRole="SAPHR_UnidadesOrganizativas" ToRole="SAPHR_Empresas" />
+        </EntityType>
+        <Association Name="FK_SAPHR_UnidadesOrganizativas_SAPHR_Empresas">
+          <End Type="TKRepositorioModel.SAPHR_Empresas" Role="SAPHR_Empresas" Multiplicity="1" />
+          <End Type="TKRepositorioModel.SAPHR_UnidadesOrganizativas" Role="SAPHR_UnidadesOrganizativas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SAPHR_Empresas">
+              <PropertyRef Name="CodigoEmpresa" />
+            </Principal>
+            <Dependent Role="SAPHR_UnidadesOrganizativas">
+              <PropertyRef Name="Empresa" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="GENERAL_PARAMETROS_APLICACIONES">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AGRUPACION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PARAMETRO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VALOR" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NUM_ORDEN" Type="Int32" Nullable="false" />
+          <Property Name="BAJA" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GENERAL_IDIOMAS">
+          <Key>
+            <PropertyRef Name="ID_APLICACION" />
+            <PropertyRef Name="IDIOMA" />
+          </Key>
+          <Property Name="ID_APLICACION" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IDIOMA" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="DESCRIPCION" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ACTIVO" Type="Boolean" Nullable="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TKRepositorioModelStoreContainer" CdmEntityContainer="TKRepositorioEntities">
+          <EntitySetMapping Name="MERSY_USERS_ZONAS">
+            <EntityTypeMapping TypeName="TKRepositorioModel.MERSY_USERS_ZONAS">
+              <MappingFragment StoreEntitySet="MERSY_USERS_ZONAS">
+                <ScalarProperty Name="FechaHoraAlta" ColumnName="FechaHoraAlta" />
+                <ScalarProperty Name="IDZona" ColumnName="IDZona" />
+                <ScalarProperty Name="User_Logon" ColumnName="User_Logon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MERSY_ZONAS">
+            <EntityTypeMapping TypeName="TKRepositorioModel.MERSY_ZONAS">
+              <MappingFragment StoreEntitySet="MERSY_ZONAS">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IDZona" ColumnName="IDZona" />
+                <ScalarProperty Name="Sociedad" ColumnName="Sociedad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAPHR_Delegaciones">
+            <EntityTypeMapping TypeName="TKRepositorioModel.SAPHR_Delegaciones">
+              <MappingFragment StoreEntitySet="SAPHR_Delegaciones">
+                <ScalarProperty Name="IdDistrito" ColumnName="IdDistrito" />
+                <ScalarProperty Name="IdZona" ColumnName="IdZona" />
+                <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+                <ScalarProperty Name="Baja" ColumnName="Baja" />
+                <ScalarProperty Name="IdDT" ColumnName="IdDT" />
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdDelegacion" ColumnName="IdDelegacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAPHR_DireccionesArea">
+            <EntityTypeMapping TypeName="TKRepositorioModel.SAPHR_DireccionesArea">
+              <MappingFragment StoreEntitySet="SAPHR_DireccionesArea">
+                <ScalarProperty Name="idDT" ColumnName="idDT" />
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="DA" ColumnName="DA" />
+                <ScalarProperty Name="ID_DA" ColumnName="ID_DA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAPHR_DireccionesTerritoriales">
+            <EntityTypeMapping TypeName="TKRepositorioModel.SAPHR_DireccionesTerritoriales">
+              <MappingFragment StoreEntitySet="SAPHR_DireccionesTerritoriales">
+                <ScalarProperty Name="IdEmpresa_Medea" ColumnName="IdEmpresa_Medea" />
+                <ScalarProperty Name="IdDT_Medea" ColumnName="IdDT_Medea" />
+                <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+                <ScalarProperty Name="Baja" ColumnName="Baja" />
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdDT" ColumnName="IdDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAPHR_Empresas">
+            <EntityTypeMapping TypeName="TKRepositorioModel.SAPHR_Empresas">
+              <MappingFragment StoreEntitySet="SAPHR_Empresas">
+                <ScalarProperty Name="Activo" ColumnName="Activo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="CodigoEmpresa" ColumnName="CodigoEmpresa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAPHR_FiltroSeleccionCentrosCoste">
+            <EntityTypeMapping TypeName="TKRepositorioModel.SAPHR_FiltroSeleccionCentrosCoste">
+              <MappingFragment StoreEntitySet="SAPHR_FiltroSeleccionCentrosCoste">
+                <ScalarProperty Name="Agrupacion2" ColumnName="Agrupacion2" />
+                <ScalarProperty Name="Agrupacion1" ColumnName="Agrupacion1" />
+                <ScalarProperty Name="FiltroCentroCoste" ColumnName="FiltroCentroCoste" />
+                <ScalarProperty Name="IDSeleccion" ColumnName="IDSeleccion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAPHR_UsuariosSAP">
+            <EntityTypeMapping TypeName="TKRepositorioModel.SAPHR_UsuariosSAP">
+              <MappingFragment StoreEntitySet="SAPHR_UsuariosSAP">
+                <ScalarProperty Name="FechaVolcado" ColumnName="FechaVolcado" />
+                <ScalarProperty Name="IdProvincia" ColumnName="IdProvincia" />
+                <ScalarProperty Name="NacionalidadNac" ColumnName="NacionalidadNac" />
+                <ScalarProperty Name="ProvinciaNac" ColumnName="ProvinciaNac" />
+                <ScalarProperty Name="LugarNac" ColumnName="LugarNac" />
+                <ScalarProperty Name="PaisNac" ColumnName="PaisNac" />
+                <ScalarProperty Name="FecNacimiento" ColumnName="FecNacimiento" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
+                <ScalarProperty Name="CodPostal" ColumnName="CodPostal" />
+                <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+                <ScalarProperty Name="Dni" ColumnName="Dni" />
+                <ScalarProperty Name="Baja" ColumnName="Baja" />
+                <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+                <ScalarProperty Name="FechaAlta" ColumnName="FechaAlta" />
+                <ScalarProperty Name="RelaLaboral" ColumnName="RelaLaboral" />
+                <ScalarProperty Name="IdRelaLaboral" ColumnName="IdRelaLaboral" />
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="CodigoEmpresa" ColumnName="CodigoEmpresa" />
+                <ScalarProperty Name="CategoriaProfesional" ColumnName="CategoriaProfesional" />
+                <ScalarProperty Name="IdCategoriaProfesional" ColumnName="IdCategoriaProfesional" />
+                <ScalarProperty Name="Funcion" ColumnName="Funcion" />
+                <ScalarProperty Name="IdFuncion" ColumnName="IdFuncion" />
+                <ScalarProperty Name="DirArea" ColumnName="DirArea" />
+                <ScalarProperty Name="IdDirArea" ColumnName="IdDirArea" />
+                <ScalarProperty Name="DT" ColumnName="DT" />
+                <ScalarProperty Name="IdDT" ColumnName="IdDT" />
+                <ScalarProperty Name="Delegacion" ColumnName="Delegacion" />
+                <ScalarProperty Name="IdDelegacion" ColumnName="IdDelegacion" />
+                <ScalarProperty Name="CentroCoste" ColumnName="CentroCoste" />
+                <ScalarProperty Name="IdCeco" ColumnName="IdCeco" />
+                <ScalarProperty Name="UniOrganizativa" ColumnName="UniOrganizativa" />
+                <ScalarProperty Name="IdUniOrganizativa" ColumnName="IdUniOrganizativa" />
+                <ScalarProperty Name="SubDivision" ColumnName="SubDivision" />
+                <ScalarProperty Name="IdSubdivision" ColumnName="IdSubdivision" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="IdDivision" ColumnName="IdDivision" />
+                <ScalarProperty Name="Puesto" ColumnName="Puesto" />
+                <ScalarProperty Name="IdPuesto" ColumnName="IdPuesto" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+                <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Logon" ColumnName="Logon" />
+                <ScalarProperty Name="NumeroEmpleado" ColumnName="NumeroEmpleado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAPHR_CentrosCoste">
+            <EntityTypeMapping TypeName="TKRepositorioModel.SAPHR_CentrosCoste">
+              <MappingFragment StoreEntitySet="SAPHR_CentrosCoste">
+                <ScalarProperty Name="IdDT" ColumnName="IdDT" />
+                <ScalarProperty Name="IdDelegacion" ColumnName="IdDelegacion" />
+                <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+                <ScalarProperty Name="Baja" ColumnName="Baja" />
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdCeco" ColumnName="IdCeco" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SAPHR_UnidadesOrganizativas">
+            <EntityTypeMapping TypeName="TKRepositorioModel.SAPHR_UnidadesOrganizativas">
+              <MappingFragment StoreEntitySet="SAPHR_UnidadesOrganizativas">
+                <ScalarProperty Name="FechaBaja" ColumnName="FechaBaja" />
+                <ScalarProperty Name="Baja" ColumnName="Baja" />
+                <ScalarProperty Name="Empresa" ColumnName="Empresa" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="IdUniOrganizativa" ColumnName="IdUniOrganizativa" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GENERAL_PARAMETROS_APLICACIONES">
+            <EntityTypeMapping TypeName="TKRepositorioModel.GENERAL_PARAMETROS_APLICACIONES">
+              <MappingFragment StoreEntitySet="GENERAL_PARAMETROS_APLICACIONES">
+                <ScalarProperty Name="BAJA" ColumnName="BAJA" />
+                <ScalarProperty Name="NUM_ORDEN" ColumnName="NUM_ORDEN" />
+                <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+                <ScalarProperty Name="PARAMETRO" ColumnName="PARAMETRO" />
+                <ScalarProperty Name="AGRUPACION" ColumnName="AGRUPACION" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GENERAL_IDIOMAS">
+            <EntityTypeMapping TypeName="TKRepositorioModel.GENERAL_IDIOMAS">
+              <MappingFragment StoreEntitySet="GENERAL_IDIOMAS">
+                <ScalarProperty Name="ACTIVO" ColumnName="ACTIVO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="IDIOMA" ColumnName="IDIOMA" />
+                <ScalarProperty Name="ID_APLICACION" ColumnName="ID_APLICACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

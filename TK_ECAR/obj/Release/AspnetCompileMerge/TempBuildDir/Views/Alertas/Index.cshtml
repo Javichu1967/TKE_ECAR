@@ -1,0 +1,1100 @@
+﻿
+@using resourceView = TK_ECAR.Content.resources
+@using TK_ECAR.Framework
+@using System.Configuration;
+
+@{ 
+    UserModel user = (UserModel)HttpContext.Current.Session["userProfile"];
+    var perfilUsuario = user.IdPerfil;
+    //var DescripcionfilUsuario = user.DescripcionPerfil;
+    var ListaPerfiles = ViewData["ListaPerfilesDescripcion"].ToString();
+}
+<section>
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "__AjaxAntiForgeryForm" }))
+    {
+        @Html.AntiForgeryToken()
+
+
+    }
+    <div class="row">
+        <div class="col-xs-12 col-md-3">
+            <div class="info">
+                <h3>@resourceView.TK_ECAR_Resource.TitleAlertas</h3>
+                <p>@resourceView.TK_ECAR_Resource.TitleInfAlertas</p>
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-9">
+            <div class="pull-right notifica">
+
+                @{
+                    var actionLink = Ajax.ActionLink("JSTITLEMODAL", "NuevaSolicitud", "Alertas", new
+                    {
+                        tipoAlerta = "JSVARTIPO",
+                        baja = "JSVARBAJA"
+                    },
+                    new AjaxOptions
+                    {
+                        UpdateTargetId = "modalbodySolicitud",
+                        OnBegin = "showAceptar()",
+                        OnSuccess = "showModalSolicitud('JSTITLEMODAL')",
+                        OnComplete = "completeModalAlertas()",
+                        InsertionMode = InsertionMode.Replace
+                    }).ToString();
+                }
+                @if (Convert.ToInt32(perfilUsuario) == (int)EnumTipoPerfil.Administrativo || Convert.ToInt32(perfilUsuario) == (int)EnumTipoPerfil.SuperUsuario)
+                {
+                    <ul class="list-unstyled list-inline">
+                        <li class="dropdown" id="menuSolicitud">
+                            <a data-toggle="dropdown" href="#"><i class="fa fa-bars"></i> @resourceView.TK_ECAR_Resource.TitleNotif</a>
+                            <ul class="dropdown-menu">
+                                @if (Convert.ToInt32(perfilUsuario) == (int)EnumTipoPerfil.SuperUsuario)
+                                {
+                                    <li>
+                                        @Html.Raw(actionLink.Replace("JSVARTIPO", ((int)EnumTipoAlerta.Multa).ToString()).Replace("JSVARBAJA", "0").Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.LNotMulta))
+                                    </li>
+                                    <li>
+                                        @Html.Raw(actionLink.Replace("JSVARTIPO", ((int)EnumTipoAlerta.Multa).ToString()).Replace("JSVARBAJA", "-1").Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.LNotMultaVehiculoBaja))
+                                    </li>
+                                }
+                                <li class="divider"></li>
+                                <li>
+                                    @Html.Raw(actionLink.Replace("JSVARTIPO", ((int)EnumTipoAlerta.CambioConductor).ToString()).Replace("JSVARBAJA", "0").Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.LNotCond))
+                                </li>
+                                <li>
+                                    @Html.Raw(actionLink.Replace("JSVARTIPO", ((int)EnumTipoAlerta.TarjetaSOLRED).ToString()).Replace("JSVARBAJA", "0").Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.LNotCombustible))
+                                </li>
+                                <li>
+                                    @Html.Raw(actionLink.Replace("JSVARTIPO", ((int)EnumTipoAlerta.Robos).ToString()).Replace("JSVARBAJA", "0").Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.LNotRobo))
+                                </li>
+
+                                <li class="divider"></li>
+
+                                <li>
+                                    @Html.Raw(actionLink.Replace("JSVARTIPO", ((int)EnumTipoAlerta.Otras).ToString()).Replace("JSVARBAJA", "0").Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.LNotOtras))
+                                </li>
+
+                                <li>
+                                    @Html.Raw(actionLink.Replace("JSVARTIPO", ((int)EnumTipoAlerta.Otras).ToString()).Replace("JSVARBAJA", "-1").Replace("JSTITLEMODAL", @resourceView.TK_ECAR_Resource.LNotOtrasVehiculoBaja))
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                }
+            </div>
+
+        </div>
+    </div>
+
+    @using (Ajax.BeginForm("AlertasSAPJson", "Alertas", null, new AjaxOptions { OnSuccess = "onSuccess", HttpMethod = "Post" }, new { @id = "formFiltro" }))
+    {
+        @Html.Partial("_FilterAlertas")
+        @*<div class="row">
+            <div class="col-md-12">
+                @Html.Partial("_FilterAlertas")
+            </div>
+        </div>*@
+        @*<div class="row">
+            <div class="col-sm-12 left">
+                <div class="btn-group btn-group-horizontal" data-toggle="buttons">
+                    <label class="btn active">
+                        <input type="radio" name="tipoEstado" value="0" id="VerPendientes" checked><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i>
+                        <span>Ver pendientes</span>
+                    </label>
+                    <label class="btn">
+                        <input type="radio" name="tipoEstado" value="1" id="VerAtendidas"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i>
+                        <span>Ver atendidas</span>
+                    </label>
+                    <label class="btn">
+                        <input type="radio" name="tipoEstado" value="2" id="VerCanceladas"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-dot-circle-o fa-2x"></i>
+                        <span>Ver canceladas</span>
+                    </label>
+                </div>
+            </div>
+        </div>*@
+
+
+    }
+    <br />
+
+    @Html.Partial("_ModalSolicitud")
+
+    @Html.Partial("_ModalCambioConductor")
+
+    @Html.Partial("_ModalRenovarRenting")
+
+    @Html.Partial("_ModalRenovacion")
+
+    @Html.Partial("_ModalOtraNotificacion")
+
+    @Html.Partial("_ModalValidarSolicitud")
+
+    @Html.Partial("~/Views/Shared/MantenimientoVehiculo/_ModalMtoVehiculo.cshtml")
+
+    @Html.Partial("~/Views/TarjetasCombustible/_ModalTarjeta.cshtml")
+
+
+    <table id="alertas" class="display responsive" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>IdAlerta</th>
+                <th>IdTipoAlerta</th>
+                <th data-priority="3">@resourceView.TK_ECAR_Resource.lblPrioridad</th>
+                <th data-priority="1">@resourceView.TK_ECAR_Resource.lblAlerta</th>
+                <th data-priority="4">@resourceView.TK_ECAR_Resource.lblMatricula</th>
+                <th>@resourceView.TK_ECAR_Resource.lblDelegacion</th>
+                <th>@resourceView.TK_ECAR_Resource.lblModelo</th>
+                <th>@resourceView.ModelsResources.lblFechaCreacion</th>
+                <th>@resourceView.TK_ECAR_Resource.lblFecVencimiento</th>
+                <th>@resourceView.TK_ECAR_Resource.lblEstado</th>
+                <th data-priority="2">@resourceView.TK_ECAR_Resource.lblAccion</th>
+                @*<th data-priority="5">@resourceView.AccionCancelar</th>*@
+                <th data-priority="5"> </th>
+                <th>IdPerfil</th>
+                <th>Automatica</th>
+                <th>NombreUsuarioCreacion</th>
+                <th>DescDelegacion</th>
+                <th>EnableRechazar</th>
+                <th>Sociedad</th>
+            </tr>
+        </thead>
+    </table>
+
+    @*Modal Datos*@
+    <div class="modal fade" id="ModalDatosAlertas" role="dialog">
+        <div class="vertical-alignment-helper">
+            <div class="modal-dialog  vertical-align-center modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            <span class="modal-header-logo"></span>
+                        </button>
+                        <h4 class="modal-title">@resourceView.TK_ECAR_Resource.TitleInfDatosGenerales</h4>
+                    </div>
+
+                    <div class="modal-body" id="modalbodyDatos">
+
+
+                    </div>
+
+                    <div class="modal-footer">
+                        @*<button type="button" id="aceptarDatos" class="btn btn-default" data-dismiss="modal">@resourceView.AccionAceptar</button>*@
+                        <button type="button" class="btn btn-cancel" data-dismiss="modal">@resourceView.TK_ECAR_Resource.AccionCerrar</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<style>
+    .export-btn {
+        margin: 10px;
+        padding: 5px;
+    }
+</style>
+
+@section Scripts {
+
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecss")'>
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecssResponsive")'>
+
+    <link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/choosenCSS")'>
+
+
+    <script src='@Scripts.Url("~/bundles/datatable")'> </script>
+    <script src='@Scripts.Url("~/bundles/dtresponsive")'> </script>
+    <script src='@Scripts.Url("~/bundles/DateTimeTableSortJs")'> </script>
+
+
+    <script src='@Scripts.Url("~/bundles/choosenJqJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/choosenAjaxJs")'> </script>
+
+
+    <script src='@Scripts.Url("~/bundles/DataTablesButtonJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsFlashJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesbuttonsHtml5Js")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesjszipJs")'> </script>
+    <script src='@Scripts.Url("~/bundles/DataTablesVfsFontsJs")'> </script>
+
+    <script src="~/Content/scripts/Application/DataTableUtilities.js"></script>
+
+    <script type="text/javascript">
+        var idPerfilDescripcion = 0;
+        var DescripcionPerfil = "";
+        var puedeRechazar = false;
+
+        var tableAlertas = null;
+
+        $(".top").tooltip({
+            placement: "top"
+        });
+
+        /** declaraciones Action Links **/
+
+        var actionLinkConfirmaTarjeta = '@Ajax.ActionLink("JSDATA", "NuevaTarjetaAlerta", "TarjetasCombustible", new { idAlerta = "alertatarjeta", idEstado = "estadoalertatarjeta", matricula = "matriculaalerta" },
+        new AjaxOptions
+        {
+            UpdateTargetId = "modalbodyTarjeta",
+            OnSuccess = "showModalTarjeta();",
+            OnComplete = "completeModalAlertas()",
+            InsertionMode = InsertionMode.Replace,
+            OnBegin = "setTitleModalTarjeta('JSTITLEMODAL')",
+            HttpMethod = "POST"
+        }, new { @class = "text-danger" })';
+        actionLinkConfirmaTarjeta = actionLinkConfirmaTarjeta.replace('JSTITLEMODAL','@resourceView.TK_ECAR_Resource.lblNuevaTarjeta').replace("textoQuitarPorVacio","");
+
+
+        var ajaxActionLinkAccionEditarVehiculo = '@Ajax.ActionLink("textoQuitarPorVacio", "EditarVehiculo", "MiFlota", new { matricula = "matriculaeditar" },
+        new AjaxOptions
+        {
+            UpdateTargetId = "modalbodyMtoVehiculo",
+            OnSuccess = "showModalMtoVehiculo();",
+            OnComplete = "completeModalAlertas()",
+            InsertionMode = InsertionMode.Replace,
+            OnBegin = "setTitleModalMtoVehiculo('JSTITLEMODAL')",
+            HttpMethod = "POST"
+        }, new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionmenu" })';
+        ajaxActionLinkAccionEditarVehiculo = ajaxActionLinkAccionEditarVehiculo.replace('JSTITLEMODAL','@resourceView.TK_ECAR_Resource.AccionEditar').replace("textoQuitarPorVacio","");
+
+
+
+
+        var ajaxActionLinkRenovacion = '@Ajax.ActionLink("JSDATA", "Ver", "Alertas", new { idAlerta = "JSVARIDALERTA" },
+        new AjaxOptions
+        {
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "modalbodyRenovacion",
+            OnComplete = "completeModalAlertas()",
+            OnSuccess = "showModalRenovacion('JSTITLEMODAL')",
+            OnBegin = "showAceptar()",
+            HttpMethod ="POST"
+        },new { @class= "text-danger" })';
+
+        var ajaxActionConfirmarRenting = '@Ajax.ActionLink("JSDATA", "Ver", "Alertas", new { idAlerta = "JSVARIDALERTA" },
+        new AjaxOptions
+        {
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "modalbodyConductores",
+            OnComplete = "completeModalAlertas()",
+            OnSuccess = "showModalConductores()",
+            HttpMethod = "POST",
+            OnBegin = "showAceptar()",
+        },new { @class= "text-danger" })';
+
+        var ajaxActionLinkVerSolicitud = '@Ajax.ActionLink("JSDATA", "Ver", "Alertas", new { idAlerta = "JSVARIDALERTA", modoEdicion = "JSVARMODOEDICION" },
+        new AjaxOptions
+        {
+            UpdateTargetId = "modalbodySolicitud",
+            OnBegin = "hideAceptar()",
+            OnSuccess = "showModalSolicitud('JSDATA')",
+            OnComplete = "completeModalAlertas()",
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "POST"
+        }, new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "nombrepersonacreacion" })';
+
+
+        var ajaxActionLinkVerOtraNotificacion = '@Ajax.ActionLink("JSDATA", "Ver", "Alertas", new { idAlerta = "JSVARIDALERTA", modoEdicion = "JSVARMODOEDICION" },
+        new AjaxOptions
+        {
+            UpdateTargetId = "modalbodyOtraNotificacion",
+            OnBegin = "hideAceptar()",
+            OnSuccess = "showModalOtraNotificacion('JSDATA')",
+            OnComplete = "completeModalAlertas()",
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "POST"
+        }, new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "nombrepersonacreacion" })';
+
+        var ajaxActionLinkValidarSolicitud = '@Ajax.ActionLink("JSDATA", "Ver", "Alertas", new { idAlerta = "JSVARIDALERTA", modoEdicion = "JSVARMODOEDICION" },
+        new AjaxOptions
+        {
+            UpdateTargetId = "modalbodyValidarSolicitud",
+            OnBegin = "hideAceptar()",
+            OnSuccess = "showModalValidarSolicitud('JSDATA')",
+            OnComplete = "completeModalAlertas()",
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "POST"
+        })';
+
+
+        var ajaxActionLinkVerRenovacion = '@Ajax.ActionLink("JSDATA", "Ver", "Alertas", new { idAlerta = "JSVARIDALERTA" },
+        new AjaxOptions
+        {
+            UpdateTargetId = "modalbodyRenovacion",
+            OnSuccess = "showModalRenovacion('JSTITLEMODAL')",
+            OnComplete = "completeModalAlertas()",
+            OnBegin = "hideAceptar()",
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "POST"
+        }, new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "nombrepersonacreacion" })';
+
+        var ajaxActionConfirmarConductorMulta = '@Ajax.ActionLink("JSDATA", "VerConfirmarConductorMulta", "Alertas", new { idAlerta = "JSVARIDALERTA" },
+        new AjaxOptions
+        {
+            UpdateTargetId = "modalbodyConfirmaConductorMulta",
+            OnBegin = "showAceptar()",
+            OnSuccess = "showModalConductorMulta( )",
+            OnComplete = "completeModalAlertas()",
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "POST"
+        })';
+
+        var ajaxActionVerConfirmarConductorMulta = '@Ajax.ActionLink("JSDATA", "VerConfirmarConductorMulta", "Alertas", new { idAlerta = "JSVARIDALERTA" },
+        new AjaxOptions
+        {
+            UpdateTargetId = "modalbodyConfirmaConductorMulta",
+            OnBegin = "JSVARONBEGIN",
+            OnSuccess = "showModalConductorMulta( )",
+            OnComplete = "completeModalAlertas()",
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "POST",
+
+            },new { @data_toggle = "popover", data_trigger = "hover", @title= resourceView.TK_ECAR_Resource.TitleConductorConfirmado, @data_content="JSCONTENT" })';
+
+        var ajaxActionVerConfirmarConductorRenting = '@Ajax.ActionLink("JSDATA", "Ver", "Alertas", new { idAlerta = "JSVARIDALERTA" },
+        new AjaxOptions
+        {
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "modalbodyConductores",
+            OnComplete = "completeModalAlertas()",
+            OnSuccess = "showModalConductores()",
+            HttpMethod = "POST",
+            OnBegin = "hideAceptar()",
+        },new { @data_toggle = "popover", data_trigger = "hover", @title= resourceView.TK_ECAR_Resource.TitleConductorConfirmado, @data_content="JSCONTENT" })';
+
+        /** declaraciones Action Links **/
+
+        $(document).ready(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            $.fn.dataTable.moment('DD/MM/YYYY');
+
+
+            $('#menuSolicitud').hover(
+                function () {
+                    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn();
+                },
+                function () {
+                    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut();
+                }
+            );
+
+            $(".modal").on('hidden.bs.modal',
+               function (event) {
+                   debugger;
+                   //eliminamos el contenido de las modales
+                   //evitamos problemas de ids
+                   $(event.target).find(".modal-body").empty();
+
+               });
+
+            //$("input[name='tipoEstado']")// select the radio by its id
+            //    .change(function () { // bind a function to the change event
+
+            //        if( $(this).is(":checked") ){ // check if the radio is checked
+            //            $('#btnFilterBuscar').trigger('click');
+            //        }
+            ////});
+            var valorIdtipoAlerta = '@(((int?)ViewData["idTipoAlerta"]).HasValue ? ((int)ViewData["idTipoAlerta"]).ToString() : string.Empty)';
+
+            if (valorIdtipoAlerta != '')
+            {
+                $("#TiposAlertasSeleccionadas").val(valorIdtipoAlerta);
+                var valorIdestadosAlerta = '@((string)ViewData["IdTiposEstadosAlerta"])';
+                $("#TiposEstadosAlertasSeleccionadas").val(valorIdestadosAlerta);
+
+            }
+
+
+            tableAlertas = $('#alertas').DataTable({
+                "dom": 'Blfrtip',
+                "ordering": true,
+                "processing": true,
+                "paginate": true,
+                "buttons": [{
+                    text: '@resourceView.TK_ECAR_Resource.btnExportarExcel',
+                    extend: 'excel',
+                    className: 'btn btn-default export-btn',
+                    exportOptions: {
+                        columns: [2, 3, 4, 5, 6, 7, 8, 9]
+                    }
+                }],
+                "ajax": {
+                    "url": '@Url.Action("AlertasSAPJson", "Alertas")',
+                    "datatype": "json",
+                    "type": "POST",
+                    "data": function (d) {
+
+                        d.EmpresasSeleccionadas = $("#EmpresasSeleccionadas").val();
+                        d.DireccionesTerritorialesSeleccionadas = $("#DireccionesTerritorialesSeleccionadas").val();
+                        d.DelegacionesSeleccionadas = $("#DelegacionesSeleccionadas").val();
+                        d.CentrosCosteSeleccionados = $("#CentrosCosteSeleccionados").val();
+                        d.AgrupacionesFiltroSeleccionadas = $("#AgrupacionesFiltroSeleccionadas").val();
+                        d.TiposAlertasSeleccionadas = $("#TiposAlertasSeleccionadas").val();
+                        d.TiposEstadosAlertasSeleccionadas = $("#TiposEstadosAlertasSeleccionadas").val();
+                        d.TiposAccionAlertaSeleccionadas = $("#TiposAccionAlertaSeleccionadas").val();
+                        //d.tipoEstado = $("input[name='tipoEstado']:checked").val();
+
+                    }
+                },
+                "columns": [
+                    { "data": "IdAlerta" },
+                    { "data": "IdTipoAlerta" },
+                    { "data": "Prioridad" },
+                    { "data": "Alerta" },
+                    { "data": "Matricula" },
+                    { "data": "idDelegacion" },
+                    { "data": "Modelo" },
+                    { "data": "FechaCreacion" },
+                    { "data": "FechaVencimiento" },
+                    { "data": "Estado" },
+                    { "data": "Accion" },
+                    { "data": "EnableCancelar" },
+                    { "data": "IdPerfil" },
+                    { "data": "Automatica" },
+                    { "data": "NombreUsuarioCreacion" },
+                    { "data": "DescDelegacion" },
+                    { "data": "EnableRechazar"},
+                    { "data": "Sociedad"},
+                ],
+                "language": {
+
+                    "url": '@Url.Content(ConfigurationManager.AppSettings["baseUrl"] + "/Content/DataTables/i18n/" + @resourceView.TK_ECAR_Resource.ArchivoIdiomaDataTable )'
+                },
+                "drawCallback": function () {
+                    $('[data-toggle="popover"]').popover({html:true});
+                },
+                "order": [[2, "asc"], [0, "desc"]],
+                "columnDefs": [
+                {
+                    "orderData": [2, 0], "targets": 2,
+                    //"orderData": [3, 0], "targets": 3,
+                    //"orderData": [4, 0], "targets": 4,
+                    //"orderData": [5, 0], "targets": 5,
+                    //"orderData": [6, 0], "targets": 6,
+                    //"orderData": [7, 0], "targets": 7,
+                    "targets": [0, 1, 12, 13],
+                    "visible": false,
+                    "searchable": false
+
+                },
+                {
+                    "targets": 2,
+                    "type": "html",
+                    "width": "2%",
+                    "render": function (data, type, row) {
+                        return "<span class='label label-danger  label-priority-" + data + "'>" + data + "</span>";
+                    }
+                },
+                {
+                    "targets": 3,
+                    "type": "html",
+                    "render": function (data, type, row) {
+                        return linkVerAlerta(data,row);
+                    }
+                },
+                {
+                    "targets": 4,
+                    "width": "20%",
+                    "type": "html",
+                    "render": function (data, type, row) {
+                        var divMatricula = "matriculaEspaña";
+                        if (row.Sociedad == 8150){
+                            divMatricula = "matriculaPortugal";
+                        }
+                        var actionVer = '@Ajax.RawActionLink("<span>valordelacolumnamatriculaLink</span>", "VerVehiculo", "MiFlota", new { matricula = "valordelacolumnamatricula" },
+                        new AjaxOptions { UpdateTargetId = "modalbodyDatos", OnSuccess = "showModalDatosAlertas();", OnComplete = "completeModalAlertas()", InsertionMode = InsertionMode.Replace },
+                        new { @data_toggle = "popover", @data_placement = "top", @data_trigger = "hover", @data_content = "accionconsultar" })';
+                        actionVer = actionVer.replace("accionconsultar", "@Html.Raw(@resourceView.TK_ECAR_Resource.AccionConsultar)")
+                                                .replace("valordelacolumnamatriculaLink", row.Matricula)
+                                                .replace("valordelacolumnamatricula", row.Matricula); //Reemplazar valordelacolumnamatricula por el valor de row.columna
+                        if (@perfilUsuario == '@((int)EnumTipoPerfil.SuperUsuario)'){
+                            actionVer = "<div id='wrapperDataTable'><div id='first-div' class='matriculaVer' style='width: 52%;padding-top: 3px;padding-left: 20px;'>" + actionVer + "</div><divid='second-div' style='margin-left: 10px;'><a class='tk-icon-med icon-tk-edit tk-icon-bold ' "
+                               + ajaxActionLinkAccionEditarVehiculo.replace("matriculaeditar", row.Matricula)
+                                       .replace('JSTITLEMODAL', '@Html.Raw(@resourceView.TK_ECAR_Resource.AccionEditar)')
+                                       .replace("accionmenu", "@Html.Raw(@resourceView.TK_ECAR_Resource.AccionEditar)") + " </a></div></div>";
+                        }
+                        return actionVer.replace("matriculaVer", divMatricula);
+                    }
+                },
+                {
+                    "targets": 5,
+                    "width": "2%",
+                    "render": function (data, type, row) {
+                        return "<a data-placement='left' data-toggle='popover' data-trigger='hover' data-content='" + row.DescDelegacion + "' >" + row.idDelegacion + "</a>";}
+
+                },
+                {
+                    "targets": 6,
+                    "width": "26%",
+                },
+                {
+                    "targets": 7,
+                    "render": function (data, type, full, meta) {
+                        return formatJSONDate(data);
+                    }
+                },
+                {
+                    "targets": 8,
+                    "render": function (data, type, full, meta) {
+                        return formatJSONDate(data);
+                    }
+                },
+                {
+                    "targets": 9,
+                    "type": "html",
+                    "render": function (data, type, row) {
+                        return syntaxLinkEstado(data, row);
+
+                    }
+                },
+                {
+                    "targets": 10,
+                    "type": "html",
+                    "render": function (data, type, row) {
+                        return linkAccion(data,row);
+                    }
+                },
+                {
+                    "targets": 11,
+                    "type": "html",
+                    "width": "5%",
+                    "render": function (data, type, row) {
+                        return syntaxLinkCancelar(data, row);
+
+                    }
+                },
+                {
+                    "targets": [14, 15, 16, 17],
+                    "visible": false
+                }]
+            });
+
+
+            $('#alertas').on('click', 'tr', function () {
+                CompruebaDivMtoVehiculo();
+                CompruebaDivTarjeta();
+                if ($(this).hasClass('selected')) {
+                    $(this).removeClass('selected');
+                }
+                else {
+                    tableAlertas.$('tr.selected').removeClass('selected');
+                    $(this).addClass('selected');
+
+                }
+            });
+
+        });
+
+
+        function onSuccess(respuesta) {
+
+            tableAlertas.clear();
+
+            tableAlertas.rows.add(respuesta.data)
+                .draw();
+        }
+
+
+        function formatJSONDate(jsonDate) {
+            var resul = moment(jsonDate);
+            return (resul && resul.isValid()) ? resul.format("DD/MM/YYYY") : "";
+        }
+
+        function hideAceptar()
+        {
+            $('#aceptarSolictud').addClass("ocultar");
+            $('#aceptarRenovacion').addClass("ocultar");
+            $('#confirmarConductor').addClass("ocultar");
+            $('#confirmarRenting').addClass("ocultar");
+            $('#aceptarOtraNotificacion').addClass("ocultar");
+            $('#aceptarValidarSolicitud').addClass("ocultar");
+        }
+        function showAceptar() {
+            $('#aceptarSolictud').removeClass("ocultar");
+            $('#aceptarRenovacion').removeClass("ocultar");
+            $('#confirmarConductor').removeClass("ocultar");
+            $('#confirmarRenting').removeClass("ocultar");
+            $('#aceptarOtraNotificacion').removeClass("ocultar");
+            $('#aceptarValidarSolicitud').removeClass("ocultar");
+        }
+
+        function showModalDatosAlertas(Matricula) {
+            $('#ModalDatosAlertas').modal('show');
+        }
+
+        function showModalSolicitud(title) {
+
+            $('#modaltitleSolicitud').text(title);
+            $('#modalSolicitud').modal('show');
+        }
+
+        function showModalOtraNotificacion(title) {
+
+            $('#modaltitleOtraNotificacion').text(title);
+            $('#modalOtraNotificacion').modal('show');
+        }
+
+        function showModalValidarSolicitud(title) {
+
+            $('#modaltitleValidarSolicitud').text(title);
+            $('#modalValidarSolicitud').modal('show');
+        }
+
+        function showModalRenovacion(title) {
+            $('#modaltitleRenovacion').text(title);
+            $('#modalRenovacion').modal('show');
+        }
+        function showModalConductorMulta( ) {
+
+            $('#modalConfirmaConductorMulta').modal('show');
+        }
+
+
+        function showModalConductores(title) {
+            //esperamos la carga de la tabla
+            setTimeout(function () {
+                $('#modalConductores').modal('show')
+            }, 1500);
+
+        }
+
+        function linkVerAlerta(data, row)
+        {
+            var cadena = "";
+            if (row.IdTipoAlerta == '@((int)EnumTipoAlerta.ITV)' ||
+                row.IdTipoAlerta == '@((int)EnumTipoAlerta.Carnet)') {
+
+                cadena = ajaxActionLinkVerRenovacion
+                   .replace("JSDATA", data)
+                   .replace("JSVARIDALERTA", row.IdAlerta);
+
+                cadena = replaceTitleRenovacion(row, cadena);
+            }
+            else if (row.IdTipoAlerta == '@((int)EnumTipoAlerta.CambioConductor)' ||
+                row.IdTipoAlerta == '@((int)EnumTipoAlerta.Multa)' ||
+                row.IdTipoAlerta == '@((int)EnumTipoAlerta.Robos)' ||
+                row.IdTipoAlerta == '@((int)EnumTipoAlerta.TarjetaSOLRED)') {
+
+                cadena = ajaxActionLinkVerSolicitud
+                .replace("JSDATA", data)
+                .replace("JSDATA", data)
+                .replace("JSVARMODOEDICION", false)
+                .replace("JSVARIDALERTA", row.IdAlerta);
+            }
+            else if (row.IdTipoAlerta == '@((int)EnumTipoAlerta.Otras)'){
+                cadena = ajaxActionLinkVerOtraNotificacion
+                .replace("JSDATA", data)
+                .replace("JSDATA", data)
+                .replace("JSVARMODOEDICION", false)
+                .replace("JSVARIDALERTA", row.IdAlerta);
+            }
+            else {
+                cadena = '<span class="top" title="nombrepersonacreacion" data-original-title="Tooltip on right">datoamostrar</span>'
+                        .replace("datoamostrar",data);
+            }
+
+            var texto = "";
+            if (row.Automatica){
+                texto = '@resourceView.TK_ECAR_Resource.LAlertaAutomatica';
+            }
+            else
+            {
+                texto = '@resourceView.TK_ECAR_Resource.LAlertaCreadaPor' + row.NombreUsuarioCreacion;
+            }
+            cadena = cadena.replace("nombrepersonacreacion", texto);
+            return cadena;
+        }
+
+        function linkAccion(data, row) {
+            var cadena = "";
+            switch(row.IdPerfil)
+            {
+                case @perfilUsuario:
+                    if (row.IdAccion == '@((int)EnumTipoAccion.IdentificarConductor)') {
+                        cadena = ajaxActionConfirmarConductorMulta
+                            .replace("JSDATA", data)
+                            .replace("JSVARIDALERTA", row.IdAlerta);
+                    }
+                    else if (row.IdAccion == '@((int)EnumTipoAccion.ConfirmarRenting)')
+                    {
+                        cadena = ajaxActionConfirmarRenting
+                            .replace("JSDATA", data)
+                            .replace("JSVARIDALERTA", row.IdAlerta);
+
+                    }
+                    else if (row.IdAccion == '@((int)EnumTipoAccion.NotificarRenovacion)')
+                    {
+
+                        cadena = ajaxActionLinkRenovacion
+                            .replace("JSDATA", data)
+                            .replace("JSVARIDALERTA", row.IdAlerta);
+
+                        cadena =  replaceTitleRenovacion(row, cadena);
+                    }
+                    else if (row.IdAccion == '@((int)EnumTipoAccion.ValidarSolicitud)')
+                    {
+                        cadena = ajaxActionLinkValidarSolicitud
+                        .replace("JSDATA", data)
+                        .replace("JSDATA", data)
+                        .replace("JSVARIDALERTA", row.IdAlerta)
+                        .replace("JSVARMODOEDICION", true) ;
+                    }
+                    else if (row.IdAccion == '@((int)EnumTipoAccion.DarRespuesta)')
+                    {
+                        cadena = ajaxActionLinkVerOtraNotificacion
+                        .replace("JSDATA", data)
+                        .replace("JSDATA", data)
+                        .replace("JSVARIDALERTA", row.IdAlerta)
+                        .replace("JSVARMODOEDICION", true) ;
+                    }
+
+                    else if (row.IdAccion == '@((int)EnumTipoAccion.ConfirmarRecepcion)' && row.IdTipoAlerta == '@((int)EnumTipoAlerta.TarjetaSOLRED)')
+                    {
+                        cadena = actionLinkConfirmaTarjeta
+                        .replace("JSDATA", data)
+                        .replace("JSTITLEMODAL", data)
+                        .replace("alertatarjeta", row.IdAlerta)
+                        .replace("estadoalertatarjeta", row.IdEstado)
+                        .replace("matriculaalerta", row.Matricula)
+                        .replace("JSVARMODOEDICION", true) ;
+                    }
+                    else if (row.IdAccion != null)
+                    {
+                        cadena = "<a  href='#' class='text-danger' onclick='clickAction(" + row.IdAlerta + "," + row.IdEstado + ")'>" + data + "</a>";
+                    }
+
+                    //if (cadena !== ""){
+                    //    puedeRechazar = true;
+                    //}
+                    //else{
+                    //    puedeRechazar = false;
+                    //}
+                    break;
+                default:
+                    cadena = setPopover(data, row);
+                    break;
+            }
+
+            return cadena;
+        }
+
+        function setPopover(data, row){
+            var cadena = "";
+
+            idPerfilDescripcion = row.IdPerfil;
+            DescripcionPerfil = "";
+
+            var perfiles = '@ListaPerfiles'.split(',');
+            for (var i = 0; i <= perfiles.length; i++){
+                if (idPerfilDescripcion == (i + 1)){
+                    DescripcionPerfil = perfiles[i];
+                }
+            }
+
+            if (DescripcionPerfil != ""){
+                var mensajePopover = '@Html.Raw(@resourceView.TK_ECAR_Resource.msgAccionPendienteDe + "ladescripciondelperfil")';
+                mensajePopover = mensajePopover.replace('ladescripciondelperfil', DescripcionPerfil);
+
+                @*if (row.IdAccion == '@((int)EnumTipoAccion.IdentificarConductor)' ||
+                        row.IdAccion == '@((int)EnumTipoAccion.ConfirmarRenting)' ||
+                        row.IdAccion == '@((int)EnumTipoAccion.NotificarRenovacion)' ||
+                        row.IdAccion == '@((int)EnumTipoAccion.DarRespuesta)' ||
+                        row.IdAccion == '@((int)EnumTipoAccion.ValidarSolicitud)') {*@
+                cadena = "<span data-placement='top' data-toggle='popover' data-trigger='hover' data-content='" + mensajePopover + "' >" + data + "</span>"; //data;
+                //}
+                //else if (row.IdAccion != null)
+                //{
+                //    cadena = data;
+                //}
+            }
+            else if (row.IdAccion != null)
+            {
+                cadena = data;
+            }
+
+            return cadena;
+        }
+
+
+        function replaceTitleRenovacion(row, cadena) {
+            if (row.IdTipoAlerta == '@((int)EnumTipoAlerta.ITV)')
+                cadena = cadena.replace("JSTITLEMODAL", '@resourceView.TK_ECAR_Resource.LNotITV');
+            else if (row.IdTipoAlerta == '@((int)EnumTipoAlerta.Carnet)')
+                cadena = cadena.replace("JSTITLEMODAL", '@resourceView.TK_ECAR_Resource.LNotCarnet');
+            else if (row.IdTipoAlerta == '@((int)EnumTipoAlerta.Seguro)')
+                cadena = cadena.replace("JSTITLEMODAL", '@resourceView.TK_ECAR_Resource.LNotSeguro');
+
+            return cadena;
+        }
+
+        function syntaxLinkEstado(data, row) {
+            var cadena = "";
+            if (row.ConductorConfirmado != null && row.IdTipoAlerta == '@((int)EnumTipoAlerta.Multa)') {
+
+                cadena = ajaxActionVerConfirmarConductorMulta
+                        .replace("JSDATA", data)
+                        .replace("JSCONTENT", row.ConductorConfirmado)
+                        .replace("JSVARIDALERTA", row.IdAlerta);
+
+                if (row.IdAccion != null) {
+                    cadena = cadena.replace("JSVARONBEGIN", "showAceptar()");
+                }
+                else {//no hay acción pendiente y no se permite ya cambiar los datos del conductor confirmado
+                    cadena = cadena.replace("JSVARONBEGIN", "hideAceptar()");
+                }
+            }
+            else if (row.ConductorConfirmado != null && row.IdTipoAlerta == '@((int)EnumTipoAlerta.Renting)') {
+
+                cadena = ajaxActionVerConfirmarConductorRenting
+                       .replace("JSDATA", data)
+                       .replace("JSCONTENT", row.ConductorConfirmado)
+                       .replace("JSVARIDALERTA", row.IdAlerta);
+
+            }
+            else {
+                cadena =  data;
+            }
+
+            return cadena;
+        }
+
+        function syntaxLinkCancelar(data, row) {
+            var cadena = ""
+            if (data == 1) {//si es verdadero (=1) se puede cancelar
+                //cadena = "<div style='text-align:center'><a class='tk-icon icon-tk-delete' href='#' onclick='return clickCancelar(" + row.IdAlerta + " );'></a><div>";
+                cadena = "<a ";
+                cadena = cadena + "data-placement='left' data-toggle='popover' data-trigger='hover' data-content='" + '@Html.Raw(@resourceView.TK_ECAR_Resource.TitleCancelarAlerta)';
+                cadena = cadena + "' class='tk-icon-med icon-tk-delete tk-icon-bold tk-icon-red' href='#' onclick='return clickCancelar(" + row.IdAlerta + " );'>";
+                cadena = cadena + "</a>";
+                //"<a data-placement='left' data-toggle='popover' data-trigger='hover' data-content=" + row.DescripcionDelegacion + " >" + row.ID_DELEGACION + "</a>";
+            }
+            else {
+                cadena = "";
+            }
+            if (row.EnableRechazar == 1){
+                cadena = cadena + "<a ";
+                cadena = cadena + "data-placement='left' data-toggle='popover' data-trigger='hover' data-content='" + '@Html.Raw(@resourceView.TK_ECAR_Resource.TitleRechazarAlerta)';
+                cadena = cadena + "' class='tk-icon-med icon-tk-close tk-icon-bold tk-icon-red' href='#' onclick='return clickRechazar(" + row.IdAlerta + " );'>";
+                cadena = cadena + "</a>";
+                puedeRechazar = false;
+            }
+            if (row.IdAccion == '@((int)EnumTipoAccion.IdentificarConductor)' &&  row.Estado != '@((int)EnumEstadoAlerta.Atendida)') {
+                if (@perfilUsuario == '@((int)EnumTipoPerfil.SuperUsuario)') {
+                    cadena = cadena + "<a ";
+                    cadena = cadena + "data-placement='left' data-toggle='popover' data-trigger='hover' data-content='" + '@Html.Raw(@resourceView.TK_ECAR_Resource.TitleEnviarMail)';
+                    cadena = cadena + "' class='tk-icon-med icon-tk-mail tk-icon-bold' href='#' onclick='return clickEnviarCorreo(" + row.IdAlerta + " );'>";
+                    cadena = cadena + "</a>";
+                }
+            }
+            //TitleCancelarAlerta
+            //TitleEnviarMail
+            if (cadena != ""){
+                cadena = "<div style='text-align:center'>" + cadena + "<div>";
+            }
+            return cadena;
+        }
+
+        function completeModalAlertas() {
+            //para que funcione los validadores a la viewpartial recien creada.
+            //reconstruye el DOM con los validadores de los campos nuevos
+            $("form").removeData("validator");
+            $("form").removeData("unobtrusiveValidation");
+            $.validator.unobtrusive.parse("form");
+            $("form").validate();
+        }
+
+        function clickAction(IdAlerta, IdEstado)
+        {
+            var form = $('#__AjaxAntiForgeryForm');
+            var token = $('input[name="__RequestVerificationToken"]', form).val();
+            $.ajax({
+                url: '@Url.Action("EjecutarAccion", "Alertas")',
+                type: "POST",
+                data: {
+                    __RequestVerificationToken: token,
+                    IdAlerta: IdAlerta,
+                    IdEstado: IdEstado,
+                }
+            }).done(function (data) {
+                ajaxDoneAlerta(data);
+            });
+        }
+
+        function clickCancelar(IdAlerta) {
+            var form = $('#__AjaxAntiForgeryForm');
+            var token = $('input[name="__RequestVerificationToken"]', form).val();
+            confirm('@resourceView.TK_ECAR_Resource.TitleCancelarSolicitud', '@resourceView.TK_ECAR_Resource.MessageCancelarSolicitud',
+                function (result) {
+                    if (result) {
+
+                        $.ajax({
+                            url: '@Url.Action("Cancelar", "Alertas")',
+                            type: "POST",
+                            data: {
+                                __RequestVerificationToken: token,
+                                IdAlerta: IdAlerta
+                            },
+                        }).done(function (data) {
+                            ajaxDoneAlerta(data);
+                        });
+                    }
+                });
+        }
+
+        function clickRechazar(IdAlerta) {
+            ConfirmRechazoAlerta(IdAlerta, '@resourceView.TK_ECAR_Resource.TitleRechazarAlerta', '@resourceView.TK_ECAR_Resource.MessageRechazlarSolicitud',
+                '@resourceView.TK_ECAR_Resource.TextoDialogoTextAreaRechazo', '@resourceView.TK_ECAR_Resource.TextoDialogoTextAreaRechazoRequired',
+                '@resourceView.TK_ECAR_Resource.AccionAceptar', '@resourceView.TK_ECAR_Resource.AccionCancelar');
+        }
+
+
+        function clickEnviarCorreo(IdAlerta) {
+            $.ajax({
+                url: '@Url.Action("ReenviarCorreo", "Alertas")',
+                type: "POST",
+                data: {
+                    IdAlerta: IdAlerta
+                },
+            }).done(function (data) {
+                notify('@resourceView.TK_ECAR_Resource.toastrInfEnviarCorreo', 'i');
+            });
+        }
+
+
+
+        function ajaxDoneAlerta(data)
+        {
+            if (data == 'Success') {
+
+                tableAlertas.ajax.reload(null, false);
+
+                notify('@resourceView.TK_ECAR_Resource.toastrInfAccionOK', 'i');
+            }
+            else {
+                notify(data, 'e');
+            }
+        }
+
+
+        function ConfirmRechazoAlerta(IdAlerta, titulo, texto, placeholderTexto, textoRequiered, textoBotonAceptar, textoBotonCancelar) {
+            txtoDelRechazo = "";
+            var inputText = texto + ' </br></br><textarea id="idTextoDialogo" class="form-control" placeholder="TextoPlaceHolder..."></textarea>'.replace('TextoPlaceHolder', placeholderTexto);
+            var dialogo = new BootstrapDialog({
+                title: titulo,
+                message: inputText,
+                cssClass: 'vertical-alignment-helper',
+
+                buttons: [{
+                    label: textoBotonAceptar,
+                    cssClass: 'btn btn-default',
+                    action: function(dialogRef){
+                        var valor = dialogRef.getModalBody().find('textarea').val();
+                        if ($.trim(valor.toLowerCase()) == '') {
+                            BootstrapDialog.show({
+                                type: BootstrapDialog.TYPE_WARNING,
+                                title: titulo,
+                                message: textoRequiered,
+                                buttons: [{
+                                    label: textoBotonAceptar,
+                                    cssClass: 'btn btn-default',
+                                    action: function(dialogItself){
+                                        dialogItself.close();
+                                    }
+                                }]
+                            });
+                            return false;
+                        }
+                        dialogRef.close();
+                        var form = $('#__AjaxAntiForgeryForm');
+                        var token = $('input[name="__RequestVerificationToken"]', form).val();
+
+                        $.ajax({
+                            url: '@Url.Action("Rechazar", "Alertas")',
+                            type: "POST",
+                            data: {
+                                __RequestVerificationToken: token,
+                                IdAlerta: IdAlerta,
+                                textoRechazo: valor,
+                            },
+                        }).done(function (data) {
+                            ajaxDoneAlerta(data);
+                        });
+
+                        return true;
+                    }
+                }, {
+                    label: textoBotonCancelar,
+                    cssClass: 'btn btn-cancel',
+                    action: function(dialogItself){
+                        dialogItself.close();
+                    }
+                }]
+            });
+
+            dialogo.open();
+        }
+
+
+        /*Nuevo-Editar**************************/
+        function CompruebaDivMtoVehiculo()
+        {
+            if ($('#modal_body_MtoVehiculo #modalbodyMtoVehiculo').attr('id') == undefined){
+                var e = $('<div> </div>');
+                $('#modal_body_MtoVehiculo').append(e);    
+                e.attr('id', 'modalbodyMtoVehiculo');
+            }
+        }
+
+        function showModalMtoVehiculo() {
+            $('#modalMtoVehiculo').modal('show');
+        }
+        function setTitleModalMtoVehiculo(title) {
+            $('#modaltitleMtoVehiculo').text(title);
+        }
+
+        $("#modalMtoVehiculo").on('hidden.bs.modal', function () {
+            $(this).data('bs.modal', null);
+        });
+        /**************************Nuevo-Editar*/
+
+        /*Nuevo-Tarjeta**************************/
+        function CompruebaDivTarjeta()
+        {
+            if ($('#modal_body_Tarjeta #modalbodyTarjeta').attr('id') == undefined){
+                var e = $('<div> </div>');
+                $('#modal_body_Tarjeta').append(e);    
+                e.attr('id', 'modalbodyTarjeta');
+            }
+        }
+
+        function showModalTarjeta() {
+            $('#modalTarjeta').modal('show');
+        }
+        function setTitleModalTarjeta(title) {
+            $('#modaltitleTarjeta').text(title);
+        }
+
+        $("#modalTarjeta").on('hidden.bs.modal', function () {
+            $(this).data('bs.modal', null);
+        });
+        /**************************Nuevo-Tarjeta*/
+
+        //Controlar eventos de DataTable-> cuando empieza a cargar los datos y cuando termina de cargarlos.
+        $('#alertas')
+            .on( 'init.dt', function () {
+                $('#loaderWorking').hide();
+                //alert( 'Table alertas init.dt' );
+                //console.log( 'Redraw took at: '+(new Date().getTime()-startTime)+'mS' );
+            } );
+
+        $('#alertas')
+            .on( 'preInit.dt', function () {
+                $('#loaderWorking').show();
+                //alert( 'Table alertas preInit.dt' );
+                //console.log( 'Redraw took at: '+(new Date().getTime()-startTime)+'mS' );
+            } );
+
+    </script>
+}
+

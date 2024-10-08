@@ -1,0 +1,68 @@
+﻿ 
+@model DatosRoboModel
+
+@Html.HiddenFor(m => m.IdTipoAlerta)
+@{
+    bool alta = (Model.IdAlerta == 0);
+}
+<div class="form-horizontal">
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.Matricula, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @if (alta)
+            {
+                @Html.EditorFor(m => m.Matricula)
+            }
+            else
+            { @Html.DisplayFor(m => m.Matricula) }
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.RequiredLabelFor(m => m.FechaRobo, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+         
+            @if (alta)
+            {
+                @Html.EditorFor(m => m.FechaRobo)
+            }
+            else
+            { @Html.DisplayFor(m => m.FechaRobo)}
+            
+        </div>     
+    </div> 
+    <div class="form-group">
+        @Html.LabelFor(m => m.Observaciones, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+         
+            @if (alta)
+            {
+                @Html.TextAreaFor(m => m.Observaciones, new { @class = "form-control" })
+            }
+            else
+            { @Html.DisplayFor(m => m.Observaciones)}
+        </div>
+    </div>    
+
+    <div class="form-group">                            
+        @Html.RequiredLabelFor(m => m.FileUpload, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @if (alta)
+            {
+                @Html.EditorFor(m => m.FileUpload)
+            }
+            else if (!string.IsNullOrEmpty(Model.FileDownload))
+            {
+
+                <a href="@Url.Action("DownloadFile", "Alertas", new { idAlerta = Model.IdAlerta, fichero = Model.FileDownload })">
+                    @Html.DisplayFor(m => m.FileDownload)
+                </a>
+
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-12">
+            @Html.Partial("_CustomValidationSummary", ViewData.ModelState)
+        </div>
+    </div>                 
+</div> 

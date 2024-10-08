@@ -1,0 +1,34 @@
+﻿@using TK_ECAR.Models
+@model PreguntasModel
+
+@Html.HiddenFor(m => m.idPregunta)
+@Html.HiddenFor(m => m.Accion)
+<div class="form-horizontal">
+    <div class="form-group">       
+        @Html.LabelFor(m => m.idCategoria, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">       
+            @Html.DropDownListTiposAlertas("idCategoria", new { @class = "form-control", @disabled = "disabled" }, Model.idCategoria)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Pregunta, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.TextAreaFor(m=>m.Pregunta, new { @class = "form-control", @readonly = true })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Respuesta, new { @class = "control-label col-sm-3" })
+        <div class="col-sm-8">
+            @Html.TextAreaFor(m => m.Respuesta, new { @class = "form-control", @readonly = true })
+        </div>
+    </div>                       
+    <div class="form-group">
+        <div class="col-sm-12">
+            @Html.Partial("_CustomValidationSummary", ViewData.ModelState)
+        </div>
+    </div>
+</div>
+
+ 

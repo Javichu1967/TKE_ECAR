@@ -1,0 +1,68 @@
+﻿
+@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+@using TK_ECAR.Models
+@model DatosVehiculoModel
+
+@{ 
+    var HayVehiculoAsociado = false;
+    if (Model != null)
+    {
+        HayVehiculoAsociado = (Model.DatosConductor_Vehiculo != null);
+    }
+
+}
+
+<input type="text" id="idHayVehiculoAsociado" class="input-small" value="@HayVehiculoAsociado" style="visibility:hidden " />
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="infoMiVeh">
+            <h3>@resourceView.TitleMiVehiculo</h3>
+            <p>@resourceView.TitleMiVehiculoInf</p>
+        </div>
+    </div>
+  
+</div>
+ 
+@if (HayVehiculoAsociado)
+{
+    <div class="row">
+        <div class="col-sm-12">            
+            @{ Html.RenderPartial("_Vehiculo",Model);  }
+        </div>
+</div>
+}
+
+
+
+@section Scripts {
+
+
+<link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecss")'>
+<link rel="stylesheet" type="text/css" href='@Styles.Url("~/Content/dataTablecssResponsive")'>
+
+
+<script src='@Scripts.Url("~/bundles/datatable")'> </script>
+<script src='@Scripts.Url("~/bundles/dtresponsive")'> </script>
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var vehiculoasociado = $("#idHayVehiculoAsociado").val();
+            if (!vehiculoasociado) {
+                @*toastr["info"]("@resourceView.LNoHayVehiculoAsociado");*@
+                notify('@resourceView.LNoHayVehiculoAsociado', 'i');
+            }
+
+            //$('#tabledatosRenting').dataTable({
+            //    "language": {
+            //        "url": "//desapps.thyssenkrupp.gtk.local/TKCommon/Content/DataTables/i18n/Spanish.json"
+            //    }
+            //});
+
+
+        });
+    </script>
+}

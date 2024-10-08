@@ -1,0 +1,2 @@
+2017-10-03 13:31:37,080 [22] ERROR <GetFacturaLeasing> <PASO> Añadiendo ConceptoFacturacion ITV en factura 11312397113, The ObjectContext instance has been disposed and can no longer be used for operations that require a connection. - [C:\Workspaces\Projects\TK_ECAR\TK_ECAR\Utils\Global.cs:165]
+2017-10-03 13:37:58,635 [9] ERROR <GetFacturaLeasing> <PASO> Añadiendo ConceptoFacturacion ITV en factura 11312397113, The ObjectContext instance has been disposed and can no longer be used for operations that require a connection. - [:0]

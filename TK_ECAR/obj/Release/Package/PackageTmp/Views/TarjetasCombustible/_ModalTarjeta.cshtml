@@ -1,0 +1,120 @@
+﻿@using resourceView = TK_ECAR.Content.resources.TK_ECAR_Resource
+
+<style>
+    .tooltip .tooltiptext {
+        background-color: #0055be !important;
+        color: #fff !important;
+    }
+</style>
+
+<script type="text/javascript">
+    $.validator.setDefaults({ ignore: null }); //para validar campos ocultos
+</script>
+
+@using (Html.BeginForm("GuardarTarjeta", "TarjetasCombustible", null, FormMethod.Post, new { enctype = "multipart/form-data", onsubmit = "stripHtml('formTarjetas')", @id= "formTarjetas" }))
+{ @Html.AntiForgeryToken()
+    
+        <div class="modal fade" id="modalTarjeta" role="dialog">
+            <div class="vertical-alignment-helper">
+                <div class="modal-dialog  vertical-align-center">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                <span class="modal-header-logo"></span>
+                            </button>
+                            <h4 class="modal-title" id="modaltitleTarjeta"> </h4>
+                        </div>
+                         
+                        <div id="modal_body_Tarjeta" class="modal-body"> 
+                            @*<div id="toast-container"></div>*@              
+                            <div id="modalbodyTarjeta"></div> 
+                            
+                        </div>                             
+                        <div class="modal-footer">
+                            <button type="submit" id="aceptarTarjeta" class="btn btn-default">@resourceView.AccionAceptar</button>
+                            <button type="button" class="btn btn-cancel" data-dismiss="modal">@resourceView.AccionCerrar</button>
+                         </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        $(document).on('click', '#btnTarjetaExistente', function (event) {
+            var link = '@Html.Raw(Url.Action("TarjetaYaExistente", "TarjetasCombustible", new { IdAlerta = "idalertatarjeta", IdEstado = "idestadoalertatarjeta" }))';
+            link = link.replace("idalertatarjeta", $('#IdAlerta').val()).replace("idestadoalertatarjeta", $('#IdEstado').val());
+            $.ajax({
+                "url": link,
+                "dataType": 'json',
+                "success": function (data) {
+                    if (data == 'Success') {
+                        ajaxSuccessTarjetas();
+                        if ($('#alertas').val() != undefined) {
+                            tableAlertas.ajax.reload(null, false);
+                            notify('@resourceView.toastrInfAccionOK', 'i');
+                        }
+                    }
+                    else {
+                        ajaxErrorTarjetas();
+                    }
+                }
+            });
+        });
+
+        $("#formTarjetas").submit(function (e) {
+            if ($("#formTarjetas").valid()) {//validamos el form
+                var formData = new FormData(this);
+                $.ajax({
+                    type: this.method,
+                    url: this.action,
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+
+                    success: function (data) {
+                        if (data == 'Success'){
+                            ajaxSuccessTarjetas();
+                            if ($('#tableTarjeta').val() != undefined) {
+                                reloadTableTarjeta();
+                            }
+                            else if ($('#alertas').val() != undefined) {
+                                tableAlertas.ajax.reload(null, false);
+                                notify('@resourceView.toastrInfAccionOK', 'i');
+                            }
+                        }
+                        else{
+                            ajaxErrorTarjetas();
+                        }
+                        //setTimeout(function () { window.location.replace(uRl) }, 1000);
+
+                    },
+                    error: function (error) {
+                        ajaxErrorTarjetas();
+                    }
+                });
+            }
+            e.preventDefault();
+        });
+
+    });
+    
+    function ajaxSuccessTarjetas() {
+        notify('@resourceView.toastrInfTarjetaCorrecta', 'i');
+        $('#modalTarjeta').modal('hide');
+    }
+
+    function ajaxErrorTarjetas() {
+        notify('@resourceView.toastrInfTarjetaError', 'e');
+    }
+
+    function LimpiaValidationSummary() {
+        $("#divValidationSummaryPanel_body ul").empty();
+    }
+
+</script>
